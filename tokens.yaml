@@ -1,0 +1,169 @@
+openapi: 3.0.3
+info:
+  title: Hexbatch token management
+  description: Creates, manages token sets
+  version: 1.0.0
+  termsOfService: 'https://api.hexbatch.com/v1/service'
+  contact:
+    email: development@hexbatch.com
+    url: 'https://api.hexbatch.com/v1/contact'
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+  - url: 'https://api.hexbatch.com/v1/tokens'
+    description: Used to show and test this api
+
+
+
+security:
+  - BasicAuth: []
+tags:
+  - name: tokenType
+    description: Each token has at least one type
+    externalDocs:
+      description: Find out more
+      url: https://api.hexbatch.com/v1/token_types
+  - name: token
+    description: What is managed here. Tokens have one or more token types
+    externalDocs:
+      description: Find out more
+      url: https://api.hexbatch.com/v1/tokens
+
+paths:
+  /token_type:
+    put:
+      tags:
+        - tokenType
+      summary: Update an existing token type
+      description: Update an existing token type by Id
+      operationId: updateTokenType
+      requestBody:
+        description: Update an existing token type the user owns
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokenType'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenType'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Pet not found
+        '405':
+          description: Validation exception
+      security:
+        - petstore_auth:
+            - write:pets
+            - read:pets
+    post:
+      tags:
+        - tokenType
+      summary: Creates a new token type
+      description: Creates a token type owned by the user
+      operationId: addPet
+      requestBody:
+        description: Create a new pet in the store
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokenType'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenType'
+        '405':
+          description: Invalid input
+      security:
+        - petstore_auth:
+            - write:pets
+            - read:pets
+components:
+  schemas:
+
+    TokenType:
+      required:
+        - name
+        - parents
+        - siblingList
+        - descendantList
+        -
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 10
+        name:
+          type: string
+          example: doggie
+        category:
+          $ref: '#/components/schemas/Category'
+        photoUrls:
+          type: array
+          xml:
+            wrapped: true
+          items:
+            type: string
+            xml:
+              name: photoUrl
+        tags:
+          type: array
+          xml:
+            wrapped: true
+          items:
+            $ref: '#/components/schemas/Tag'
+        status:
+          type: string
+          description: pet status in the store
+          enum:
+            - available
+            - pending
+            - sold
+      xml:
+        name: pet
+    ApiResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        type:
+          type: string
+        message:
+          type: string
+      xml:
+        name: '##default'
+  requestBodies:
+    Pet:
+      description: Pet object that needs to be added to the store
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Pet'
+        application/xml:
+          schema:
+            $ref: '#/components/schemas/Pet'
+    UserArray:
+      description: List of user object
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/User'
+  securitySchemes:
+    # Basic authentication
+    BasicAuth:
+      type: http
+      scheme: basic

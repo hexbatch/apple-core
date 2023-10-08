@@ -1,0 +1,78 @@
+token types
+    create token type
+    edit | retire
+
+
+ token type properties:
+    guid:
+    owner_guid:
+    parents:
+    token appearance:
+    attributes:
+    bounds:
+
+   token appearance
+     name:
+        symbol:
+        primary_color:
+        background_color:
+        description:
+
+   token type attribute:
+      name:
+      value_type: numeric, string
+      min:
+      max:
+      enum:
+      default:
+
+
+ token bounds:
+    map:
+        names: array
+    time:
+       names: array
+   allowed_siblings: guid array
+   allowed_descendants: guid array
+
+
+----------------------
+
+token group
+  token_type:
+  count:
+  attribute_data: [{attribute_name: value}]
+
+
+token_set:
+    token_types:
+    owner_guid:
+
+set operations:
+    combine: A source B source  C pattern D destination
+    divide: sets A source B pattern C destinations
+    create set: => empty set
+    delete set: A removes a set
+    list_user => C pattern(optional) , returns set
+    populate_set => T type, D destination
+    edit attribute => attribute name, attribute value , A source
+
+user: create user guid, delete user guid, list user guids
+
+Boundary operations
+ create|edit|delete map bounds
+
+ map bounds:
+    name:
+    polygon array:
+
+ create|edit|delete cron bounds
+
+ time bounds:
+    name:
+    cron:
+    period_length:
+    start:
+    stop:
+
+
