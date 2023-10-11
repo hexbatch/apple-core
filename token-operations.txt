@@ -26,15 +26,115 @@ token types
       enum:
       default:
 
+       attribute limits on change can be : rate limits, times, area, whitelist of who can change this
+       attributes can inherit from multiple older attributes, overwriting their values
 
- token bounds:
+        token attributes can contain large binary data , or large text data, there is an api to attach a file contents to an attribute
+
+        attributes for rate limits too, the rate limits is how often a user, or users, can do a trade with this token type or set
+           creating new tokens based on parent also has a rate limit
+           To set different rate limits for specific users, then create a new token that inherits the older token and add new rate limits
+
+       token type attributes can be constants (never set again) or variable (set by other token attributes or operations)
+       attributes can have limits on how many times they can be set:
+           attribute limits on change can be : rate limits, times, area
+
+        attributes can have whitelists for allowed sibling attributes in both type and sets
+        attributes can have whitelists for allowed users for inheriting from older attributes
+
+        attributes have an owner
+
+        the above says attributes, but attributes have types
+
+        when a token type is made, it uses attribute types
+        when a token is made, the attributes can take on dynamic values if not constant
+
+
+------------------------------------------
+ is a token set made out of a token type with the number of tokens, or is each token individually tracked
+ if each token, that is a lot of resources to track distributed tokens when they all have the same values
+ possible to create a token pointer or reference, and when a previously unused token is changed, then that token is stored then (like copy on write similar to strings)
+
+ Then, that would mean each token set is a collection of token types only, and the optional quantity of each type
+ this makes things a lot more complex, but does it?
+ Token sets can contain references to unused tokens, or instantiated tokens
+ How about instead of using copy on write, token sets can have the token type instead
+ so two different types of token sets:
+    one set has the number of token-types with the quantity of each
+    another set has a collection of tokens
+ Both sets are owned
+ Sets can have boundaries and attributes
+ Set operations also look at set attributes
+
+ -----------------------------------
+data types:
+    map bounds
+    time bounds
+    attributes
+    token-type
+    token-type-set
+    token
+    token-set
+
+each data type has its own set of api operations
+
+------------------------------------------
+ attribute bounds:
     map:
         names: array
     time:
        names: array
-   allowed_siblings: guid array
+   allowed_siblings:
+       guid array
    allowed_descendants: guid array
+   allowed_attribute_owners: guid array
+   allowed_changers: guid array
+   rates:
+     0 or more of the following
+     {
+     rate-type: value changed, inherit, new made
+     per-user rate
+     default rate
+     }
 
+--- note: for the whitelists and allowed, if empty then everyone can do/use/alter
+
+there is an attribute for the token_value
+for contracts, the token_value attribute has some removed and another token's token_value has that added
+    but: the calculation is dynamic here, and the recipient token has to be listed
+    ??(how to do that)???!
+
+ attribute:
+    name:
+    owner-guid:
+    bounds:
+    value_type: numeric, string,json, markdown, binary
+    min: (numeric only)
+    max: (numeric only)
+    enum:
+    default:
+
+each attribute can only have one value
+instantiated attributes have the live value, if an attribute is only using the default, then the current value is not recorded (values are recorded when value set to other than default)
+
+attribute values can be a number, string, json, markdown, binary (image , pdf only)
+string specific types can be :
+    iso date time, color, url, email, social account , phone
+number is any numeric value
+--------------------------
+a token bounds is the sum of its attribute bounds
+tokens have some default attributes.
+tokens are just attribute sets what have ownership?
+
+
+>   !--------------------
+attributes can adjust other attribute values, but there is a permission system for that
+attribute value changing other attribute values permissions , what are they? there is an optional white list for attributes allowed to change its value
+
+
+!!     ~~~~
+how are new attribute plugins added and used here?
+are all non-standard attributes a plugin?
 
 ----------------------
 
@@ -57,7 +157,10 @@ set operations:
     populate_set => T type, D destination
     edit attribute => attribute name, attribute value , A source
 
-user: create user guid, delete user guid, list user guids
+user: create user guid, delete user guid, list user guids, edit user
+
+user: guid , which is normal but can be set to something else for easy tracking when testing
+             user details is handled in the next layer
 
 Boundary operations
  create|edit|delete map bounds
@@ -74,5 +177,12 @@ Boundary operations
     period_length:
     start:
     stop:
+
+
+ tokens can have no value for trade, but set boundaries
+ tokens can have attributes that they are usable for trade
+ inventory is a type of token with attributes to describe it: so managing inventory is just using the regular token management api; however wrapper api to help with that
+
+
 
 
