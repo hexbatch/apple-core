@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
-  title: Hexbatch attributes management
-  description: Creates, manages attributes
+  title: Hexbatch scripts management
+  description: Creates, manages, tests the action scripts
   version: 1.0.0
   termsOfService: 'https://api.hexbatch.com/v1/service'
   contact:
@@ -11,13 +11,17 @@ info:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
 servers:
-  - url: 'https://api.hexbatch.com/v1/attributes'
+  - url: 'https://api.hexbatch.com/v1/actions'
     description: Used to show and test this api
 
 security:
   - BasicAuth: []
-
-tags: []
+tags:
+  - name: script
+    description: this holds the script to be run
+    externalDocs:
+      description: Find out more
+      url: https://api.hexbatch.com/v1/docs/script
 
 paths: {}
 components:

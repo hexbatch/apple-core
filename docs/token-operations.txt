@@ -68,6 +68,7 @@ token types
 
  -----------------------------------
 data types:
+    action
     map bounds
     time bounds
     attributes
@@ -76,65 +77,93 @@ data types:
     token
     token-set
 
+
 each data type has its own set of api operations
 
 ------------------------------------------
- attribute bounds:
-    map:
-        names: array
-    time:
-       names: array
-   allowed_siblings:
-       guid array
-   allowed_descendants: guid array
-   allowed_attribute_owners: guid array
-   allowed_changers: guid array
-   rates:
-     0 or more of the following
-     {
-     rate-type: value changed, inherit, new made
-     per-user rate
-     default rate
-     }
 
---- note: for the whitelists and allowed, if empty then everyone can do/use/alter
+-------------------
+actions can be registered that run javascript functions
+ so maybe like this : actions only happen in the same token set, and if multiple actions of same guid, only one runs
+    actions could run when attribute holding the action will be added to the token set, or when token set changed after that
 
-there is an attribute for the token_value
-for contracts, the token_value attribute has some removed and another token's token_value has that added
-    but: the calculation is dynamic here, and the recipient token has to be listed
-    ??(how to do that)???!
+    target attribute guid:
+    target-from-state: string value or numeric range
+    target-to-state: string value or numeric range
+    md5 of script:
+    script_state stored json and passed to script as an object, updated in the script
+    script: input(target attribute a , token-set, script_state) : {array changed values in token set token id, new value, new script_state}
+    action_location_entering: []
+    action_location_leaving: []
+    action_cron: []
+
+but also need actions on new token instantiation for inherited attributes
+     target attribute guid:
+     recipient attribute :
+     recipient token ;
+     md5 of script:
+     script_state stored json and passed to script as an object, updated in the script
+     script: input(new token a) : {value to add to recipient,  new script_state}
+     //the bounds of the attribute determine if this can be done
+    action_location_entering: []  //the starting location of the token when its instantiated
+    action_cron: [] //when the location is instantiated
+
+so, to charge for the token use, include attribute that has this action as its value
+
+Scripts that are run not able to call the api, so the passed in values is the object copy of the thing only, and can be altered by the script without api changing
+
+rate limiting is an action, so can be the permissions for creation using the token as a parent or ancestor
+
+
+actions can run on boundary set on the attribute, cron times make it run, entering or exiting areas: see location_entering, location_leaving
+-------------------
 
  attribute:
     name:
     owner-guid:
     bounds:
-    value_type: numeric, string,json, markdown, binary
-    min: (numeric only)
-    max: (numeric only)
-    enum:
-    default:
+        map:
+            names: array
+        time:
+           names: array
+       allowed_siblings:
+           guid array
+       allowed_descendants: guid array
+       allowed_attribute_owners: guid array
+       allowed_changers: guid array //for letting others change this value
 
-each attribute can only have one value
+
+        --- note: for the whitelists and allowed, if empty then everyone can do/use/alter
+        --- a descendant inherits the whitelists and can change it , but any rates and token instantiation still works for the parents
+
+    value:
+        value_type: numeric, string,json, markdown, binary, action
+                --- note:
+                    attribute values can be a number, string, json, markdown, binary (image , pdf only)
+                    string specific types can be :
+                        iso date time, color, url, email, social account , phone, javascript, any
+                    number is any numeric value
+        min: (numeric only)
+        max: (numeric only)
+        enum: (string only)
+        default:
+    action:
+        see above action, there are some extra fields here, each attribute can only have one action (of any type)
+
+each instantiated attribute can only have one value
 instantiated attributes have the live value, if an attribute is only using the default, then the current value is not recorded (values are recorded when value set to other than default)
 
-attribute values can be a number, string, json, markdown, binary (image , pdf only)
-string specific types can be :
-    iso date time, color, url, email, social account , phone
-number is any numeric value
+
 --------------------------
-a token bounds is the sum of its attribute bounds
+a token bounds is the sum of its attribute bounds, but action attributes are not used for this
 tokens have some default attributes.
 tokens are just attribute sets what have ownership?
 
 
 >   !--------------------
-attributes can adjust other attribute values, but there is a permission system for that
-attribute value changing other attribute values permissions , what are they? there is an optional white list for attributes allowed to change its value
-
+attributes can adjust other attribute values, but  only if on the whitelist, see allowed_changers
 
 !!     ~~~~
-how are new attribute plugins added and used here?
-are all non-standard attributes a plugin?
 
 ----------------------
 
