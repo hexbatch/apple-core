@@ -11,8 +11,13 @@ This concept has seen several abandoned previous versions. This version is named
 
 The api has several different layers. Each layer has its own iteration of writing the api and code. 
 
-The first layer is the one that deals with the basic data types described in [my-overview.md](v1%2Fdocs%2Fmy-overview.md).
-This will be coded and tested, then only after that will be the next layer of api stuff talked about in [next-layer.txt](v1%2Fdocs%2Fnext-layer.txt) 
+The first layer is the one that deals with the basic data types described in [core-overview.md](v1/docs/core-overview.md).
+This will be coded and tested, then only after that will be the next layer of api stuff talked about in [next-layer.txt](v1/docs/next-layer.txt) 
+
+## Api Pages
+
+* [core-overview.md](v1/docs/core-overview.md)
+* [user-overview.md](v1/docs/user-overview.md)
 
 
 # notes:

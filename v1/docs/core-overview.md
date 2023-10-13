@@ -1,8 +1,18 @@
-We have some objects (tokens) that are made out of attributes.
-A token has an owner and starts with some standard attributes. 
-A token is always in at least one token-set.
-A token can be in many token sets.
-A token set can contain tokens not owned by the owner of the token set.
+# Apple Core
+
+The core api is not meant to be exposed directly to the public, but still needs basic auth to use when the services call on it
+
+The core is meant to be stand alone for testing and demonstration purposes though
+
+# Parts of the core api
+
+* We have some objects (tokens) that are made out of attributes.
+* A token has an owner and starts with some standard attributes. 
+* A token is always in at least one token-set.
+* A token can be in many token sets.
+* A token set can contain tokens not owned by the owner of the token set.
+* Token sets are altered, created and destroyed via set commands using type-groups
+* Actions listening in on different lifecycle stages of a token, and when a token joins a set, can run javascript to decide to allow this and do auto transfers of tokens
 
 Attributes are defined by themselves, and attached to the token-type. The tokens are instances of the token-type
 
@@ -16,6 +26,7 @@ Tokens can have one or more parents, they can have many ancestors.
         attributes: []
         parents: []
 
+
 # Type groups
 
 A token-type can be added into a type-group:
@@ -23,17 +34,24 @@ A token-type can be added into a type-group:
     A type-group can be used in token-set operations, where tokens are added or removed between sets
     Type-groups can have attributes, to give it a name and appearance, or notes, and to provide logic for set operations
     type groups can be owned if attaching appearance and docs. But ownership is not used when type-groups are used in set operations
+    The token types can have a max and min amounts. In set operations the exact amount used will default to be either the min,then max if min not set, or all available if neither
 
     So: a type-group:
         user: maybe one user owns the type
         attributes: []
-        token-types: []
+        token-types: [ {
+            type: token-type
+            minimum_needed: optional
+            maximum_needed: optional
+        }]
 
 
 # Token set
 
 All tokens belong to one or more token sets.
+
 A token set does not have any definition or structure, it's a loose organization of tokens.
+
 A token set must be owned by only one user. Ownership is not transferred, but the tokens in one set can be added to the tokens in another set
 
     So a token-set:
@@ -48,7 +66,9 @@ A token set must be owned by only one user. Ownership is not transferred, but th
 Boundaries are only applied to attributes.
 
 map bounds is a set of closed polygons denoting map coordinates , that is applied to an attribute. 
+
 A token's total map bounds is the union of all the map bounds in the attributes of a token-type or a type-group except do not use any script type attribute bounds in this
+
 An attribute can have zero , one or many map bounds
 
     so a map-bound:
@@ -58,7 +78,8 @@ An attribute can have zero , one or many map bounds
 
 
 Time bounds is defined by both a range to start and stop using this bounds, and an option period that includes a duration.
-How the bounds are used on attributes, and how they propogate is same as described in the map bound
+
+How the bounds are used on attributes, and how they propagate is same as described in the map bound
 
     so a time-bound:
         user: must be one user.
@@ -76,42 +97,60 @@ Boundary operations:
 # User 
 
 A user is described in the api this way.
-A user has an id, a guid, and a list of attributes. A user can include non system attributes they have permission for
+
+A user has an id, a guid, and their own token type.
+
+The token type has the list of attributes. A user can include non system attributes they have permission for
 
     So a user:
         id: number
         guid: string
-        attributes: []
+        token-type: made new for the user, inherits from the system user token type (see system tokens and attributes)
+
+When a user is created, a user group is created as well, whose token inherits both from the default group token, and the user token made here.
+
+Anyone added to the user group will be able to read the user's private data. An admin on the user's group will be able to also write all private and public data
 
 ----------------------------------------
 # User Groups
 
 A user group is a collection of users who have permissions.
+
 A user group is not discoverable to non-members, but a user can see which groups they belong in
+
 A user group can have attributes for image, docs, but scripts do not run here.
+
 Because user groups do not have an owner, only system attributes or attributes that do not need permission checks can be used here
+
+Each user group inherits from a base user group token type. For example, if a company creates a group
 
     So a user-group:
         users: [] who is in the group
         admins: [] who can directly modify the list using the api
-        attributes: []
+        token-type: made new for the group, inherits from the system group token type (see system tokens and attributes)
 
 ----------------------------------------
 
 # Attributes
 
 Are the core of the api here. 
+
 Attributes can be defined by the code, in which case they are not owned, and cannot be edited or deleted.
+
 Attributes can be created|edited|deleted by a user.
+
 Attributes can be restricted to only be used in a token or type-group if there are one or more other specified siblings. 
     These siblings can have an ancestor or parent that matches this.
+
 Attributes can have an optional whitelist to allow which users can own, change the value of, and read this value of this attribute.
     A descendant can change the groups, but only by limiting the groups further
 
-Attribute values can be a number, string, json, markdown, binary (image , pdf only), a script to run
+Attribute values can be a number, string, json, markdown, binary (image , pdf only), a script to run, location
+
 string specific types can be :
-iso date time, color, url, email, social account , phone, any
-number is any numeric value
+* iso date time, color, url, email, social account , phone, any
+* number is any numeric value
+* location is lat, lon
 
 An attribute is defined, when applied its value is put next to the action's instantiated values (a token or type group has a list of their attributes and current values)
 Starting out, the default value is used, if no default then null
@@ -141,7 +180,9 @@ Starting out, the default value is used, if no default then null
 # Actions
 
 Actions can be registered that run javascript functions.
+
 Scripts that are run, are not able to access the api, so the passed in values is the object copy of the thing only, and can be altered by the script without api changing.
+
 Scripts can change the local and global settings for themselves.
 
 Actions can run on boundary set on the attribute, cron times make it run, entering or exiting areas: see location_entering, location_leaving.
@@ -149,20 +190,26 @@ Actions can run on boundary set on the attribute, cron times make it run, enteri
 Actions can be used to change own parent or other thing's values (so token or the token sets the token is in) (permission apply).
 
 Actions can be used to set rules for creation of a token 
-    To disallow creation, each token starts with a created attribute whose value must be truthful, if this value is false, then the token is not saved and creation fails.
-    Creation rate limiting is handled by the creation actions script_state
+* To disallow creation, each token starts with a created attribute whose value must be truthful, if this value is false, then the token is not saved and creation fails.
+* Creation rate limiting is handled by the creation actions script_state
 
 Rate limiting is scripts running on token set changes, or lifecycle changes
 
 Multiple actions can listen to the same lifecycle changes or other conditions.
-    So, to rate limit token creation and charge someone have two actions. One to limit and one to charge
-(need to figure out how to set up value transfers from one user/token attribute to another)
+* So, to rate limit token creation and charge someone have two actions. One to limit and one to charge
+* But, this can also be the same action
+
+An inheritance chain will run the actions from the ancestors to the current
+  * if any action fails, then there will be a db rollback, and nothing is saved
+
+When setting a charge, if there are not enough tokens in the source token set, the action will fail
+ * The charge will only happen if the script returns a truthful value to the target attribute
 
 Lifecycle for attributes:
-creation
-owner-change
-token-set addition
-token-set removal
+* creation
+* owner-change
+* token-set addition
+* token-set removal
 
 
     so an action:
@@ -172,18 +219,24 @@ token-set removal
         target attribute guid:
         target-from-state: literal string, number or regex (empty means always) can be used with the lifecycles
         lifecycle: [] array of life cycles this script runs on, without looking at the target from-state, can be empty
-        recipient attribute: the script can only change the recipient attribute
-        recipient token: if not empty, this token must be writable by the user of the action, the token does not have to be the target, and no other tokens will be written to
+        recipient: //optional
+            recipient attribute: the script can only change the recipient attribute
+            recipient token: if not empty, this token must be writable by the user of the action, the token does not have to be the target, and no other tokens will be written to
+        charge : //optional
+            charge_type: the type-group to charge with
+            charge_source_set: the token-set to remove tokens from
+            charge_destination_set: the token-set to put the tokens
         per-token: if true, this script runs per token that has the attribute meet requirements, and only its attribute can be changed
                    if false then script runs per set, and all the set population tokens and their target attributes are looked at,  and any recipient token in the set can be changed.
         run-when-out-area: default false, else runs when token or type-group is outside of location bounds
         run-when-in-area: default true runs when the token or type-group is inside the location bounds
-        md5 of script: makes sure the script is not changed when this is applied to any instantiated actions
-        param_attributes: [] if not empty then these attributes must exist on the token or type-group for the action to run
-        local_script_state: stored json and passed to script as an object, updated in the script. This is per instantiation
-        local_script_state_init: the initial local_script_state
-        global_script_state: shared by all instantiated actions, its initial state set in the definition of this action here
-        script: input(target_tokens[], param-attribute-values,token-set, local script_state, global script state) : {array changed recipient attributes  {guid,value}, new script_state local and global}
+        script:
+            md5 of script: makes sure the script is not changed when this is applied to any instantiated actions
+            param_attributes: [] if not empty then these attributes must exist on the token or type-group for the action to run
+            local_script_state: stored json and passed to script as an object, updated in the script. This is per instantiation
+            local_script_state_init: the initial local_script_state
+            global_script_state: shared by all instantiated actions, its initial state set in the definition of this action here
+            script: input(target_tokens[], param-attribute-values,token-set, local script_state, global script state) : {array changed recipient attributes  {guid,value}, new script_state local and global}
 
 
 ----------------------------------------------------
@@ -222,15 +275,51 @@ data types:
 
 -------------------------------------------------------------
 
-# Standard token types
+# System defined items
+
+## Standard token types
+
+### User Tokens
+
+The user token has all the core identification and display attributes. When a user is created, a new token type is inherited
+
+The base user token also is in some system defined groups
+
+### Group Tokens
+
+The group token has all the core identification and display attributes. When a group is created, a new token type is inherited
+
+## Standard groups
+
+* regular_user : this user is a vanilla ordinary user without special privileges 
+* full_admin_user : this user can read, write any attribute, and can create tokens inheriting from any attribute, and assign ownership to anyone of any resource, and do user group changes
+    
+
+## Standard attributes 
+
+ * Core ID and display
+ * Management flags
+
+### Core identification and display
+
+* name: string
+* email: string
+* phone: string
+* address: string
+* location: map_coordinates
+* description: markdown
+* image: binary
+* symbol: binary (small image svg)
+* primary_color: color
+* background_color: color
+* svg_symbol_image  : binary (small image svg)
+* favicon : binary (regular image types) 32px square
+* small_thumbnail: binary (regular image types) 128px square
+* medium_thumbnail: binary (regular image types) 256px square
+
+### Management flags
 
 
-name:
-description:
-image:
-symbol:
-primary_color:
-background_color:
 
 
 

@@ -1,5 +1,6 @@
 Once the api for the overview is set up, there are other apis that allow more specific usages
 
+Users
 Wallet
 Distributions
 Contracts
