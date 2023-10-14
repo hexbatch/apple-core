@@ -30,7 +30,7 @@ So, need an api call to delete/unregister a bearer token given to it
 # Token types
 
 Tokens can have one or more parents, they can have many ancestors.
- Ancestors (which includes parent) cannot by cyclic by having their ancestors be something they are an ancestor of.
+ Ancestors (which includes parent) cannot be cyclic by having their ancestors be something they are an ancestor of.
 
     So: a token-type:
         user: one user owns the type
@@ -48,10 +48,24 @@ A token set does not have any definition or structure, it's a loose organization
 
 A token set must be owned by only one user. Ownership is not transferred, but the tokens in one set can be added to the tokens in another set
 
+A token set may be given a location, this allows map bounded attributes to work. When the token is read or changed by the user,
+    the context of the token set is given. This allows permissions that are set based to run in addition to map bounds
+
+Token sets might be organized to have parents and siblings. There should be ways to navigate through this with the api.
+Note that there is not a restriction of the same user owning the parent and children. Also note that nested folders can be made.
+
+This file structure of sets can be serialized and shared using the normal set serialization.
+
+Children cannot be descendants to ancestors (no inheritance loops)
+
     So a token-set:
         user: must be one user
         tokens: []
         token-type: (optional) if some description is needed for this token set
+        location: the lat and lon (optional)
+        parent-token-set: (optional) may have a parent, used for organizing token sets.
+
+
 
 
 ## Type groups
@@ -120,7 +134,9 @@ Token sets can be exported to be in a json like structure, converted to an objec
 
 ### export data
 
-Token sets can be serialized to have the data in the attributes as key value pairs, as seen by the logged-in user
+Token sets can be serialized to have the data in the attributes as key value pairs, as seen by the logged-in user.
+
+Token set relations can also be serialized with the token set, if chosen, with references to the sibling, parent and children sets to be used to get their data
 
 
 ## Permissions for a token to be added to a set
@@ -281,6 +297,12 @@ Starting out, the default value is used, if no default then null
   Conditional permissions can also be defined to allow the read and write to only occur when another attribute in the same token set is present. 
   This attribute does not need to be in the same token.
 
+
+### Required set attributes for read
+
+ When this is set, actions do not run if that attribute cannot be read by anyone. This allows scripts to run not only when the token is at a certain location and time,
+ But when the token is combined with certain other tokens in a set
+
   
 
 -------------------------------
@@ -340,6 +362,7 @@ Lifecycle for attributes:
         run-when-out-area: default false, else runs when token or type-group is outside of location bounds
         run-when-in-area: default true runs when the token or type-group is inside the location bounds
         script:
+            permissions: []
             md5 of script: makes sure the script is not changed when this is applied to any instantiated actions
             param_attributes: [] if not empty then these attributes must exist on the token or type-group for the action to run
             local_script_state: stored json and passed to script as an object, updated in the script. This is per instantiation
@@ -348,6 +371,13 @@ Lifecycle for attributes:
             script: input(target_tokens[], param-attribute-values,token-set, local script_state, global script state, set operation info) 
                     returns
                     : {array changed recipient attributes  {guid,value}, new script_state local and global}
+
+## script permissions
+ 
+* Scripts are run in a sandbox not allowing file access
+* Scripts may be granted access to make remote calls and wait for data
+* Scripts may be granted extra time to run
+* Scripts may be granted extra memory to run
 
 
 ----------------------------------------------------
