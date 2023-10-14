@@ -19,9 +19,13 @@ Attributes are defined by themselves, and attached to the token-type. The tokens
 # User authentication
 
 Some public and read only api calls do not need to have a logged-in user.
-Otherwise, can use both basic auth and a bearer token.
+Otherwise, can use both basic auth to get a bearer token.
 
-A bearer token can be generated, to use with jobs, so the pw does not have to be sent with the job data
+A user needs to have many different bearer tokens that are valid. Once the user gets his bearer token, he can use an api call to get another one.
+
+A bearer token can be generated, to use with jobs, so the pw does not have to be sent with the job data. But the jobs should have just temporary tokens they delete when done.
+
+So, need an api call to delete/unregister a bearer token given to it
 
 # Token types
 
