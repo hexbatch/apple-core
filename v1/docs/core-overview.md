@@ -1,8 +1,8 @@
 # Apple Core
 
-The core api is not meant to be exposed directly to the public, but still needs basic auth to use when the services call on it
+The core api is not meant to be exposed directly to the public, but still needs basic auth and bearer tokens to use when the services call on it
 
-The core is meant to be stand alone for testing and demonstration purposes though
+The core is meant to be stand-alone for testing and demonstration purposes though
 
 # Parts of the core api
 
@@ -15,6 +15,13 @@ The core is meant to be stand alone for testing and demonstration purposes thoug
 * Actions listening in on different lifecycle stages of a token, and when a token joins a set, can run javascript to decide to allow this and do auto transfers of tokens
 
 Attributes are defined by themselves, and attached to the token-type. The tokens are instances of the token-type
+
+# User authentication
+
+Some public and read only api calls do not need to have a logged-in user.
+Otherwise, can use both basic auth and a bearer token.
+
+A bearer token can be generated, to use with jobs, so the pw does not have to be sent with the job data
 
 # Token types
 
