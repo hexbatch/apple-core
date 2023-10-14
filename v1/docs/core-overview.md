@@ -58,6 +58,25 @@ A token set must be owned by only one user. Ownership is not transferred, but th
         user: must be one user
         tokens: []
 
+## Permissions for a token to be added to a set
+
+By default, a token can always be added to a set if the set is owned by the same person who is owning the token.
+
+By default, a token cannot be added to a set if they are owned by different users.
+
+However, other people can add a token to their sets if the attribute allows_set has a truthful value
+
+if the allows_set is falsy value, even the token owner cannot add to the token set
+
+allows_set, being an attribute, can use a javascript to do complex logic to decide this
+
+## Read and write permissions can be defined by set membership
+
+attributes have the option to be readable or/and writable based on other attributes being present in the same set (not necessarily in the same token)
+
+Between the ability to control when a token is added to a set, and when something is readable. This makes for a powerful set of access choices.
+
+Additionally, user permission is by group, and group membership can be restricted to a boundary (only active in time or location)
 
 ------------------------------------
 
@@ -120,14 +139,23 @@ A user group is not discoverable to non-members, but a user can see which groups
 
 A user group can have attributes for image, docs, but scripts do not run here.
 
-Because user groups do not have an owner, only system attributes or attributes that do not need permission checks can be used here
+Each user group inherits from a base user group token type. For example, if a company creates a group.
 
-Each user group inherits from a base user group token type. For example, if a company creates a group
+The group owner is the owner of the token-type, who is the creator of the group.
+
+When adding attributes to the token-type, the attributes have to be readable and writable by the owner and whoever is editing
 
     So a user-group:
         users: [] who is in the group
         admins: [] who can directly modify the list using the api
         token-type: made new for the group, inherits from the system group token type (see system tokens and attributes)
+
+## Inherited groups to restrict or put conditional membership
+
+Groups that inherit from other group token-types also inherit their memberships and admins
+These tokens can be restricted by space and time, and have extra or fewer members and admins
+
+Inherited groups are good for allowing a subset or geo or time fencing permissions for attribute or sets
 
 ----------------------------------------
 
@@ -162,9 +190,13 @@ Starting out, the default value is used, if no default then null
             map: []
             time: []
         required_siblings: []
-        owner_user_groups: [] if empty then anyone can use this to create their tokens and token-sets
-        read_user_groups: []  if empty anyone can read the attribute value
-        write_user_groups: [] if empty anyone can change the attribute value.
+        permissions:
+            owner_user_groups: [] if empty then anyone can use this to create their tokens and token-sets
+            read_user_groups: []  if empty anyone can read the attribute value
+            write_user_groups: [] if empty anyone can change the attribute value.
+            set_requirements: 
+                read: [] attribute ids
+                write: [] attribute ids
         value:
             value_type: one of: numeric, string, string specific type,json, markdown, binary, action
             min: (numeric only)
@@ -174,6 +206,14 @@ Starting out, the default value is used, if no default then null
             default:
             allow_null: default true, but can only be false if the default is set
 
+## attribute permissions 
+  Permissions can be given to user groups to read, write or create 
+
+### set requirements
+  Conditional permissions can also be defined to allow the read and write to only occur when another attribute in the same token set is present. 
+  This attribute does not need to be in the same token.
+
+  
 
 -------------------------------
 
@@ -243,16 +283,16 @@ Lifecycle for attributes:
 
 # set operations
 
+When putting a token into a token set, using an operation, the allows_set is evaluated if the owners are not the same, or if present
 
 set operations:
 
         combine: A source B source  C pattern D destination
         divide: sets A source B pattern C destinations
         create set: => empty set
-        delete set: A removes a set
-        list_user => C pattern(optional) , returns set
-        populate_set => T type, D destination
-        edit attribute => attribute name, attribute value , A source
+        delete set: removes a set
+        edit_attribute => attribute name, attribute value , A source, C pattern
+        
 
 -------------------------------------------------------------
 
@@ -271,7 +311,7 @@ data types:
     token
     token-set
     user-group
-    user-guid
+    user
 
 -------------------------------------------------------------
 
@@ -299,6 +339,7 @@ The group token has all the core identification and display attributes. When a g
 
  * Core ID and display
  * Management flags
+ * Organization
 
 ### Core identification and display
 
@@ -319,7 +360,19 @@ The group token has all the core identification and display attributes. When a g
 
 ### Management flags
 
+* allows_set: evaluated for truthful determines if a token can be added to a token set
 
+### Organization
+
+Read only tags, to sort tokens. By default, tags can be read by everyone and written to by no one
+
+Base tag attribute, which has direct children being tag categories, then more specific tags inherit from the categories.
+
+Tags should be about what the token contains, or what the token is about
+
+* user - the token is about a user
+* media - the token has media such as image, pdf, or video urls
+* documentation - the token has markdown files to explain stuff
 
 
 

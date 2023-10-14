@@ -40,6 +40,8 @@ user data is either public or private, one needs a grant to read another's priva
 Reading user data:
 
 * name: string
+* token : the user token
+* guid : the user guid string
 * description: markdown
 * location (private)
 * phone (private)
@@ -97,6 +99,8 @@ All users are admins of their own user group, and members of the regular_user gr
 Reading group data:
 * name : string
 * description : markdown
+* schedule (same as when setting time boundary)
+* area (same as when setting map boundary)
 * members: array of user data
 * admins : array of user data
 * token : guid of the group token if need more
@@ -113,6 +117,7 @@ Membership is done by the api calls in the group section
 * delete user
 * list groups
 * create group
+* edit group
 * add group member 
 * remove group member
 * edit group member
@@ -139,12 +144,14 @@ list the groups a user belongs to, as long as can see the attributes describing 
 
 Based on a parent group(s)
 
+## Edit a group 
 
 ## add group member
 
 ## remove group member
 
 ## edit group member
+  Admin or not, can only be done by admins
 
 # Notes
 

@@ -10,25 +10,17 @@ info:
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
+externalDocs:
+  description: Documentation and discussion about this api
+  url: 'https://api.hexbatch.com/v1/docs'
 servers:
   - url: 'https://api.hexbatch.com/v1'
     description: Used to show and test this api
 
 security:
   - BasicAuth: []
-tags:
-  - name: boundary
-    description: token types have boundaries in space and time
-  - name: tokenType
-    description: Each token has at least one type
-    externalDocs:
-      description: Find out more
-      url: https://api.hexbatch.com/v1/token_types
-  - name: token
-    description: What is managed here. Tokens have one or more token types
-    externalDocs:
-      description: Find out more
-      url: https://api.hexbatch.com/v1/tokens
+
+tags: []
 
 paths: {}
 components:

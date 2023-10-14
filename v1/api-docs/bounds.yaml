@@ -21,12 +21,12 @@ tags:
     description: This boundary is defined by an area on a map
     externalDocs:
       description: Find out more
-      url: https://api.hexbatch.com/v1/docs/location_bounds
+      url: https://api.hexbatch.com/v1/docs/core/location_bounds
   - name: time_bounds
     description: This boundary is defined by a slice of time
     externalDocs:
       description: Find out more
-      url: https://api.hexbatch.com/v1/docs/time_bounds
+      url: https://api.hexbatch.com/v1/docs/core/time_bounds
 
 paths: {}
 components:

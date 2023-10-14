@@ -17,11 +17,11 @@ servers:
 security:
   - BasicAuth: []
 tags:
-  - name: script
+  - name: action
     description: this holds the script to be run
     externalDocs:
       description: Find out more
-      url: https://api.hexbatch.com/v1/docs/script
+      url: https://api.hexbatch.com/v1/docs/core/actions
 
 paths: {}
 components:
