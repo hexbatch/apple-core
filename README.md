@@ -24,32 +24,8 @@ This will be coded and tested, then only after that will be the next layer of ap
 
 ## Implementation
 
-### Next Layer authentication with the inner core
+public -> outer layers -> job queue -> inner core -> callback to public or a reference they can get the data later
 
-The outer layers uses Oauth, but they have to log in with the inner core via the job queues.
-
-The outer layers have non expiring bearer token for each user, and there is an admin api that allows these token to be regenerated.
-
-When another user, who is allowed via Oauth roles to act on behalf of a user, makes a call for this user, then when the roles are verified for the logged-in user,
-the outer layer will construct the job queue using the behalf-user's token.
-
-### Job Queues 
-
-Because there is reliance for executed javascript, as well as some db intensive operations. 
-Then some operations, if not all, should be done by a job queue, and the api caller should get back a callback reference 
-and if the api caller provides a url, or another form of callback, then the api will let them know when its done.
-
-The core api does not do callback, but the next layer api will, and what the layers will do is set up some nested operations into a job queue.
-The operations will have ties so that they are done in order, and the needed values from the yet to be executed ops are fed into the ops waiting for them.
-For example, when making a new token, then doing something with it, like putting it into a set.
-
-So the job data should have both the user that is logged in at the time, and the operations are done in the context of that user.
-This implies that the user should have a token to be used, when calling the core api. And the token should expire at the end of the job.
-This means that the core api should use Bearer tokens, and have the api to revoke it
-
-
-* see https://swagger.io/docs/specification/authentication/bearer-authentication/
-* https://laravel.com/docs/10.x/sanctum#api-token-authentication
 
 ## General notes
 
