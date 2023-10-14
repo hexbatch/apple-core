@@ -93,6 +93,9 @@ set operations:
 * A is the source set
 * B is a second source set
 * D is the destination set
+* M is a token type
+* G is a token type guid
+* P is export data for a token set
 
 
         combine/add: A source, B source,  T pattern, D destination
@@ -101,8 +104,23 @@ set operations:
         delete set: removes a set, fails if any token here is not already in another set
         edit_attribute => attribute name, attribute value , A source, T pattern
         change_owner => new owner id, A source, T pattern
+        copy => P source, G token type guid from source , M destination token type, D destination
 
 
+### Copy 
+
+Copy allow tokens to be shared across servers operated by different people.
+
+It takes the publicly visible attributes, and creates new tokens owned by the calling user with its attributes set to the public ones.
+And has an originating data attributes: origin_server_url, origin_token_guid
+
+When a token is verified to have this data, the server that owns it is called, and it can send back an answer, or can send back updated data
+
+Token sets can be exported to be in a json like structure, converted to an object here
+
+### export data
+
+Token sets can be serialized to have the data in the attributes as key value pairs, as seen by the logged-in user
 
 
 ## Permissions for a token to be added to a set
@@ -379,6 +397,7 @@ The group token has all the core identification and display attributes. When a g
  * Core ID and display
  * Management flags
  * Organization
+ * Copy
 
 ### Core identification and display
 
@@ -414,6 +433,11 @@ Tags should be about what the token contains, or what the token is about
 * user - the token is about a user
 * media - the token has media such as image, pdf, or video urls
 * documentation - the token has markdown files to explain stuff
+
+### Copy flags
+
+* origin_server_url string
+* origin_token_guid string
 
 
 

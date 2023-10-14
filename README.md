@@ -19,6 +19,10 @@ This will be coded and tested, then only after that will be the next layer of ap
 * [core-overview.md](v1/docs/core-overview.md)
 * [user-overview.md](v1/docs/user-overview.md)
 
+# Long range plans
+
+* this powers a delivery service I am starting
+* Allows trade between different servers
 
 # notes:
 

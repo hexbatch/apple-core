@@ -7,9 +7,11 @@
 * Stores
 * Inventory
 * Selling
+* Agents
 * Admin
 * Moderator
 * Boards
+* Export and Verification
 * Internal
 
 ## Authentication
@@ -102,3 +104,15 @@ job metrics can be queried, only users who have the job-read role can use this
 There can be both general discussion chat rooms and review area. Some chat rooms can have upvotes.
 
 Board entries can have media as well as markdown, and have options to allow replies
+
+# Export, Import and Verification
+
+* can send a token set as serialized
+* can import a serialized token set
+* can query the originating server, of a copied token, to see if data is accurate, or if an attribute is in a range or regex
+* a logged-in user to the originating server, can alter the original token, and then the changes of state can be propagated out in the next export
+
+# Agents
+
+Agents are those that agree to do sales and operations outside the server, and report back the changes to make to the tokens.
+This can be used with the export, import and verification between different servers, or do some other thing 
