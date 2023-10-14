@@ -27,23 +27,6 @@ Tokens can have one or more parents, they can have many ancestors.
         parents: []
 
 
-# Type groups
-
-A token-type can be added into a type-group:
-    Tokens can belong to one or more type-groups.
-    A type-group can be used in token-set operations, where tokens are added or removed between sets
-    Type-groups can have attributes, to give it a name and appearance, or notes, and to provide logic for set operations
-    type groups can be owned if attaching appearance and docs. But ownership is not used when type-groups are used in set operations
-    The token types can have a max and min amounts. In set operations the exact amount used will default to be either the min,then max if min not set, or all available if neither
-
-    So: a type-group:
-        user: maybe one user owns the type
-        attributes: []
-        token-types: [ {
-            type: token-type
-            minimum_needed: optional
-            maximum_needed: optional
-        }]
 
 
 # Token set
@@ -57,6 +40,59 @@ A token set must be owned by only one user. Ownership is not transferred, but th
     So a token-set:
         user: must be one user
         tokens: []
+        token-type: (optional) if some description is needed for this token set
+
+
+## Type groups
+
+Type groups are used in token set operations
+
+A token-type can be added into a type-group:
+
+Tokens can belong to one or more type-groups.
+
+A type-group can be used in token-set operations, where tokens are added or removed between sets
+
+Type-groups can have attributes, to give it a name and appearance, or notes, and to provide logic for set operations
+* The array of attributes can have those inherited from the attribute_filter which can look at the set to filter and decide which will be allowed
+
+Type groups can be owned if attaching appearance and docs. But ownership is not used when type-groups are used in set operations
+
+The token types can have a max and min amounts. In set operations the exact amount used will default to be either the min,then max if min not set, or all available if neither
+
+    So: a type-group:
+        user: maybe one user owns the type
+        attributes: []
+        token-types: [ {
+            type: token-type
+            minimum_needed: optional
+            maximum_needed: optional
+        }]
+
+## Set operations 
+
+When putting a token into a token set, using an operation, the allows_set is evaluated if the owners are not the same, or if present.
+
+When using a set in an operation, the token set can have an attribute allows_set_operation which has to be truthful to proceed
+The value of this can be a script and set by bounds, the script can do a filter for the type of set operation or what is being used in the operation
+
+set operations:
+
+* T is the type-group and is always optional, if missing it means all are operated on
+* A is the source set
+* B is a second source set
+* D is the destination set
+
+
+        combine/add: A source, B source,  T pattern, D destination
+        remove: A source, T pattern,, D destination / removes tokens from a set puts it in another set
+        create set: => new empty set
+        delete set: removes a set, fails if any token here is not already in another set
+        edit_attribute => attribute name, attribute value , A source, T pattern
+        change_owner => new owner id, A source, T pattern
+
+
+
 
 ## Permissions for a token to be added to a set
 
@@ -86,7 +122,7 @@ Boundaries are only applied to attributes.
 
 map bounds is a set of closed polygons denoting map coordinates , that is applied to an attribute. 
 
-A token's total map bounds is the union of all the map bounds in the attributes of a token-type or a type-group except do not use any script type attribute bounds in this
+A token's total map bounds is the union of all the map bounds in the attributes of a token-type  except do not use any script type attribute bounds in this
 
 An attribute can have zero , one or many map bounds
 
@@ -208,6 +244,9 @@ Starting out, the default value is used, if no default then null
 
 ## attribute permissions 
   Permissions can be given to user groups to read, write or create 
+  
+  By default, if no permissions, attributes can be read by everyone, and only written to by the owner  
+
 
 ### set requirements
   Conditional permissions can also be defined to allow the read and write to only occur when another attribute in the same token set is present. 
@@ -250,6 +289,7 @@ Lifecycle for attributes:
 * owner-change
 * token-set addition
 * token-set removal
+* token-set mass attribute altering
 
 
     so an action:
@@ -262,7 +302,7 @@ Lifecycle for attributes:
         recipient: //optional
             recipient attribute: the script can only change the recipient attribute
             recipient token: if not empty, this token must be writable by the user of the action, the token does not have to be the target, and no other tokens will be written to
-        charge : //optional
+        charge : //optional sets up a token-set operation
             charge_type: the type-group to charge with
             charge_source_set: the token-set to remove tokens from
             charge_destination_set: the token-set to put the tokens
@@ -276,25 +316,13 @@ Lifecycle for attributes:
             local_script_state: stored json and passed to script as an object, updated in the script. This is per instantiation
             local_script_state_init: the initial local_script_state
             global_script_state: shared by all instantiated actions, its initial state set in the definition of this action here
-            script: input(target_tokens[], param-attribute-values,token-set, local script_state, global script state) : {array changed recipient attributes  {guid,value}, new script_state local and global}
+            script: input(target_tokens[], param-attribute-values,token-set, local script_state, global script state, set operation info) 
+                    returns
+                    : {array changed recipient attributes  {guid,value}, new script_state local and global}
 
 
 ----------------------------------------------------
 
-# set operations
-
-When putting a token into a token set, using an operation, the allows_set is evaluated if the owners are not the same, or if present
-
-set operations:
-
-        combine: A source B source  C pattern D destination
-        divide: sets A source B pattern C destinations
-        create set: => empty set
-        delete set: removes a set
-        edit_attribute => attribute name, attribute value , A source, C pattern
-        
-
--------------------------------------------------------------
 
 # Data types
 
@@ -361,6 +389,8 @@ The group token has all the core identification and display attributes. When a g
 ### Management flags
 
 * allows_set: evaluated for truthful determines if a token can be added to a token set
+* allows_set_operation : evaluated for truthful to see if the set operation can take place
+* attribute_filter : if present, only the attribute named here in the target-attribute will be allowed, if the value is truthful
 
 ### Organization
 
