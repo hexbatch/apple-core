@@ -342,35 +342,34 @@ Lifecycle for attributes:
 * token-set removal
 * token-set mass attribute altering
 
-
-    so an action:
-        action-name: can be any unique name
-        action-version: can be a version (optional)
-        action-owner: actions may be owned by a user, but optional
-        target attribute guid:
-        target-from-state: literal string, number or regex (empty means always) can be used with the lifecycles
-        lifecycle: [] array of life cycles this script runs on, without looking at the target from-state, can be empty
-        recipient: //optional
-            recipient attribute: the script can only change the recipient attribute
-            recipient token: if not empty, this token must be writable by the user of the action, the token does not have to be the target, and no other tokens will be written to
-        charge : //optional sets up a token-set operation
-            charge_type: the type-group to charge with
-            charge_source_set: the token-set to remove tokens from
-            charge_destination_set: the token-set to put the tokens
-        per-token: if true, this script runs per token that has the attribute meet requirements, and only its attribute can be changed
-                   if false then script runs per set, and all the set population tokens and their target attributes are looked at,  and any recipient token in the set can be changed.
-        run-when-out-area: default false, else runs when token or type-group is outside of location bounds
-        run-when-in-area: default true runs when the token or type-group is inside the location bounds
-        script:
-            permissions: []
-            md5 of script: makes sure the script is not changed when this is applied to any instantiated actions
-            param_attributes: [] if not empty then these attributes must exist on the token or type-group for the action to run
-            local_script_state: stored json and passed to script as an object, updated in the script. This is per instantiation
-            local_script_state_init: the initial local_script_state
-            global_script_state: shared by all instantiated actions, its initial state set in the definition of this action here
-            script: input(target_tokens[], param-attribute-values,token-set, local script_state, global script state, set operation info) 
-                    returns
-                    : {array changed recipient attributes  {guid,value}, new script_state local and global}
+        so an action:
+            action-name: can be any unique name
+            action-version: can be a version (optional)
+            action-owner: actions may be owned by a user, but optional
+            target attribute guid:
+            target-from-state: literal string, number or regex (empty means always) can be used with the lifecycles
+            lifecycle: [] array of life cycles this script runs on, without looking at the target from-state, can be empty
+            recipient: //optional
+                recipient attribute: the script can only change the recipient attribute
+                recipient token: if not empty, this token must be writable by the user of the action, the token does not have to be the target, and no other tokens will be written to
+            charge : //optional sets up a token-set operation
+                charge_type: the type-group to charge with
+                charge_source_set: the token-set to remove tokens from
+                charge_destination_set: the token-set to put the tokens
+            per-token: if true, this script runs per token that has the attribute meet requirements, and only its attribute can be changed
+                       if false then script runs per set, and all the set population tokens and their target attributes are looked at,  and any recipient token in the set can be changed.
+            run-when-out-area: default false, else runs when token or type-group is outside of location bounds
+            run-when-in-area: default true runs when the token or type-group is inside the location bounds
+            script:
+                permissions: []
+                md5 of script: makes sure the script is not changed when this is applied to any instantiated actions
+                param_attributes: [] if not empty then these attributes must exist on the token or type-group for the action to run
+                local_script_state: stored json and passed to script as an object, updated in the script. This is per instantiation
+                local_script_state_init: the initial local_script_state
+                global_script_state: shared by all instantiated actions, its initial state set in the definition of this action here
+                script: input(target_tokens[], param-attribute-values,token-set, local script_state, global script state, set operation info) 
+                        returns
+                        : {array changed recipient attributes  {guid,value}, new script_state local and global}
 
 ## script permissions
  
