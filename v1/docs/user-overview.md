@@ -17,7 +17,8 @@ While internally, the user info is attributes
 ----------------------
 ## user api types of operations
 
-* create user, edit user
+* log in user using authentication
+* edit user
 * destroy user
 * read user data
 * list user groups
@@ -69,7 +70,7 @@ images can be file uploads or urls, optional starting crop point for medium thum
 
 when editing, can provide just the fields to change, also can set different thumb or favicon by itself
 
-new or edit user data:
+edit user data:
 
 * name: string
 * description: markdown

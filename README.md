@@ -1,63 +1,84 @@
-# api start for Gokabam (iteration apple-core)
+# Api docs for Gokabam (iteration apple-core)
 
-This concept has seen several abandoned previous versions. This version is named apple core, for reasons only known by me :-)
+This concept has seen several abandoned previous versions. 
+This version is named apple core, because it's been eaten at for a while, but has a lot of great seeds that can turn into valuable orchards later
+
+## What is this?
+
+In plain english this is a general approach to sharing information and doing sales between different people. This is designed to work between servers run by different admins.
+
+I plan to use this to do my own sales and services. However, the more people who use this to set up their own stuff, the better off my plans will be. 
+So this is why its open source. Also, I have hopes that fresh ideas, and tested concepts and sales by others can be mixed into my own plans. 
+
 
 ## Planned stages of development
 
-* general wool-gathering: this is where we are at now. Mapping out all the concepts in the docs first. Not only will the low-lying logic be done here, but the higher level logic too.
-    Low level logic here means how the primitives are expected to act, and not the implementation logic.
+This project is still in the most early days. Right now, it's still in the planning.
+There is a core api that will power about 20 microservices, listed below. The microservices here are called the layers.
+
+This is how my end of the development here will go
+
+* general wool-gathering: this is where we are at now. Mapping out all the concepts in the docs first. 
+  * Not only will the low-lying logic of the core be done here, but the higher level logic of the layers too.
+  * Low level logic here means how the primitives are expected to act, and not the implementation logic.
 * Once the docs has a solid go, the api-docs will be filled in and will describe all the data structures and operations
-* Implement the api.
+* Implement and test the core api.
+  * The core api will have a full testing coverage and suit
 
-The api has several different layers. Each layer has its own iteration of writing the api and code. 
+Each layer has its own iteration of writing the api and code. 
 
-The first layer is the one that deals with the basic data types described in [core-overview.md](v1/docs/core-overview.md).
-This will be coded and tested, then only after that will be the next layer of api stuff talked about in [next-layer.txt](v1/docs/next-layer.md) 
+
+## The core 
+
+The Core deals with the basic data types described in [core-overview.md](v1/docs/core-overview.md).
+
+## Layers
+The layers overview is talked about in [next-layer.txt](v1/docs/layers-overview.md)
+
+The layers each do their own thing, but they set up jobs to be dispatched and completed, with callback urls registered by the caller, or they can do polling.
+
+Most of the heavy lifting in the layer codes will be done by api calls to the core.
+
+The layer framework will be storing user bearer tokens that do not expire, and they use those to create temporary token for the core to do stuff for the user.
+
+Each api, including the core, can be different instances, containers or pods. The jobs can be executed via other things.
+This allows horizontal scaling. The different api can also run in one machine, to allow testing by development
+
+General api call in the layer:
+    
+    public -> outer layers -> job queue -> inner core -> callback to public or a reference they can get the data later
+ 
+
+| Layer                   | Description                                                    |
+|-------------------------|----------------------------------------------------------------|
+| Users                   | Managers existing users; creates and changes user groups       |
+| Registrations           | Does all the new user account creation                         |
+| Sets                    | Create and edit token sets                                     |
+| Networks                | Tracks social accounts that are not users, and then later are  |
+| Distributions           | Gives new and existing tokens to people in networks            |
+| Contracts               | Deals with the selling, terms, and use of token types          |
+| Marketplace             | Ownerships of token sets can be bought and sold                |
+| Trends                  | Public read only list of token types bought, sold,contracted   |
+| Organizations           | They are companies or people who do stores                     |
+| Stores                  | Stores sell inventory                                          |
+| Inventory               | Items in a store for sale, need not be physical or even real   |
+| Promotions              | Sets up advertising, monitors impressions                      |
+| Selling                 | Sets up a sales flow that tracks different events in a sale    |
+| Agents                  | Agents are those that agree to do things outside the server    |
+| Admin                   | Fixes broken stuff, sets up moderators, user management        |
+| Moderator               | Moderate some assigned events, locations, changes              |
+| Boards                  | Discussion chat rooms and reviews                              |
+| Export and Verification | How tokens are shared between servers                          |
+| Token                   | High level token management by users                           |
+| Jobs                    | Aid to the jobs in the queue, track job output and give notice |
 
 ## Api Pages
 
 * [core-overview.md](v1/docs/core-overview.md)
+* [core-overview.md](v1/docs/layers-overview.md)
 * [user-overview.md](v1/docs/user-overview.md)
 
-# Long range plans
 
-* this powers a delivery service I am starting
-* Allows trade between different servers
+# Notes
 
-# notes:
-
-## Implementation
-
-public -> outer layers -> job queue -> inner core -> callback to public or a reference they can get the data later
-
-
-## General notes
-
-These are notes used by myself for reference
-
-
-OpenAPI (OAS3/Swagger) definition for GeoJSON objects
-* https://gist.github.com/zit0un/3ac0575eb0f3aabdc645c3faad47ab4a
-* 
-* https://swagger.io/specification/
-* https://swagger.io/docs/specification/data-models/data-types/
-* https://stackoverflow.com/questions/14203122/create-a-regular-expression-for-cron-statement
-
-
-older notes:
-
-* https://docs.google.com/document/d/1S1C40nuKbKuJ89IEOLbtQLDoMeJYNs8SodILw4kkEew/edit  (older db flow)
-* https://drive.google.com/file/d/1x8__LPRIFcZANSuzXwrpj7preNuAjnva/view (object flow)
-* https://docs.google.com/document/d/1sePxG0G4MMc9klXVdCkaTg2xL8EaiuOAgOaFZHSx90I/edit ( sales flow)
-* https://docs.google.com/document/d/1Y-5dHE-WBCT3690wuIXeiJdfwg_gwFJHYzsCmCS2PJk/edit (koin flow)
-* https://docs.google.com/document/d/1yLjXhNiCytMGQhlJucBByoKr9wvyubSAQY8CGVdl4Vg/edit (owner flow)
-* https://drive.google.com/file/d/1D0L1i27KxRQ8MdiGKMuF77bVqfmc_MHf/view (bucket flow)
-* https://drive.google.com/file/d/1kkCQYU41DBzQtrASMFX0HXspUnYu5k7J/view (company flow)
-* 
-* https://davidgarcia.dev/posts/how-to-split-open-api-spec-into-multiple-files/
-* https://github.com/dgarcia360/openapi-boilerplate
-
-
-
-
-
+* [my-notes.md](v1/docs/notes/my-notes.md)
