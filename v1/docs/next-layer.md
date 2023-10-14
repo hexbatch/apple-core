@@ -93,7 +93,9 @@ Additionally, users can chose to designate another user to moderator something t
 
 # Internal
 
-a job can update its status using the job reference, only users who have the job-write role can use this
+a job can update its status using the job reference, only users who have the job-write role can use this.
+
+job metrics can be queried, only users who have the job-read role can use this
 
 # Boards
 
