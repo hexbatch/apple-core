@@ -137,6 +137,7 @@ Stores sell inventory
 * Store inherits from the organization token
 * Stores promote collections of inventory
 * Users can be registered as salesmen for the store, and they can be selling the inventory
+* Manages sells flows
 
 # Inventory
 Items in a store for sale, goods need not be physical or even real
@@ -160,25 +161,12 @@ Sets up a sales flow that tracks different sales events from customer wanting to
 
 # Admin
 
-## User operations
-
-* makes sure the next layers have a good bearer token for the users registered in the inner core.
-* makes sure the user accounts in the next layers are matched correctly with the user accounts in the inner core
-* Freezes a user (by setting an attribute in the user token that disallows any set transfers, and the attribute cannot be removed or changed by the user)
-* Deletes a user info
-
-## Tokens 
-
-* Can change who owns tokens
-
-## Contracts
-* can change the terms of a contract
-
-## setting up moderators
-
-* Sets up moderators for region, tags, or time, and for specific attributes they can edit
-* For example, a moderator can be setup to review all feedback for sales in the livingston area. Or a moderator can review all media for a special event on Tuesday
-* Can also remove or adjust moderators setup in the admin panel or in the moderator api
+* Does maintenance on the tokens used by the outer layers
+* Reviews stuck jobs, and can terminate them
+* User operations: freeze, delete
+* Token operations and sets: change their ownership
+* Contracts: can change terms of a contract
+* Moderators: sets up and manages
 
 # Moderator
 

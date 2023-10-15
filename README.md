@@ -33,50 +33,59 @@ Each layer has its own iteration of writing the api and code.
 The Core deals with the basic data types described in [core-overview.md](v1/docs/core-overview.md).
 
 ## Layers
-The layers overview is talked about in [next-layer.txt](v1/docs/layers-overview.md)
+The layers overview is talked about in [layers overview](v1/docs/layers-overview.md)
 
 The layers each do their own thing, but they set up jobs to be dispatched and completed, with callback urls registered by the caller, or they can do polling.
 
 Most of the heavy lifting in the layer codes will be done by api calls to the core.
 
-The layer framework will be storing user bearer tokens that do not expire, and they use those to create temporary token for the core to do stuff for the user.
+The layer framework will be storing user bearer tokens that do not expire, and they use those to create a temporary token in each api call. 
 
-Each api, including the core, can be different instances, containers or pods. The jobs can be executed via other things.
-This allows horizontal scaling. The different api can also run in one machine, to allow testing by development
+
+When a public api request is made, a job (a class instance) is made that has a list of api calls to make.
+* A temporary bearer token is created for this job only.
+* The job is put on a queue.
+* When the job is run, the apis are called, using the output of earlier calls to be params for the later calls. 
+* The job api is updated, the temp bearer token is undone, and job result sent back via a callback url to the layer that created the job.
+* If the api caller did not specify a callback and wants to wait, then the results are sent back directly. 
+* Otherwise, the original caller can poll or listen to the url it gave the layer for the callback
+
+Each layer api, including the core, can be different instances, containers or pods and there can be many copies of each running behind a load balancer.
+The jobs can be executed by a pool of waiting things that can grow or shrink in number as needed.
+This allows horizontal scaling. All the resources can also run in one k8 or docker compose, to allow testing and development
 
 General api call in the layer:
     
-    public -> outer layers -> job queue -> inner core -> callback to public or a reference they can get the data later
+    public -> outer layers -> job queue 
+    -> inner core -> job sends back results via the url to the outer layer
+    -> outer layer sends callback to public,
+        or public will use a poll reference,
+        or public waits for response and data sent back in same call
  
 
-| Layer                   | Description                                                    |
-|-------------------------|----------------------------------------------------------------|
-| Users                   | Managers existing users; creates and changes user groups       |
-| Registrations           | Does all the new user account creation                         |
-| Sets                    | Create and edit token sets                                     |
-| Networks                | Tracks social accounts that are not users, and then later are  |
-| Distributions           | Gives new and existing tokens to people in networks            |
-| Contracts               | Deals with the selling, terms, and use of token types          |
-| Marketplace             | Ownerships of token sets can be bought and sold                |
-| Trends                  | Public read only list of token types bought, sold,contracted   |
-| Organizations           | They are companies or people who do stores                     |
-| Stores                  | Stores sell inventory                                          |
-| Inventory               | Items in a store for sale, need not be physical or even real   |
-| Promotions              | Sets up advertising, monitors impressions                      |
-| Selling                 | Sets up a sales flow that tracks different events in a sale    |
-| Agents                  | Agents are those that agree to do things outside the server    |
-| Admin                   | Fixes broken stuff, sets up moderators, user management        |
-| Moderator               | Moderate some assigned events, locations, changes              |
-| Boards                  | Discussion chat rooms and reviews                              |
-| Export and Verification | How tokens are shared between servers                          |
-| Token                   | High level token management by users                           |
-| Jobs                    | Aid to the jobs in the queue, track job output and give notice |
+| Layer                   | Description                                                    | Link                                           |
+|-------------------------|----------------------------------------------------------------|------------------------------------------------|
+| Users                   | Managers existing users; creates and changes user groups       | [user-overview.md](v1/docs/user-overview.md)   |
+| Registrations           | Does all the new user account creation                         |                                                |
+| Sets                    | Create and edit token sets                                     |                                                |
+| Networks                | Tracks social accounts that are not users, and then later are  |                                                |
+| Distributions           | Gives new and existing tokens to people in networks            |                                                |
+| Contracts               | Deals with the selling, terms, and use of token types          |                                                |
+| Marketplace             | Ownerships of token sets can be bought and sold                |                                                |
+| Trends                  | Public read only list of token types bought, sold,contracted   |                                                |
+| Organizations           | They are companies or people who do stores                     |                                                |
+| Stores                  | Stores sell inventory                                          |                                                |
+| Inventory               | Items in a store for sale, need not be physical or even real   |                                                |
+| Promotions              | Sets up advertising, monitors impressions                      |                                                |
+| Selling                 | Sets up a sales flow that tracks different events in a sale    |                                                |
+| Agents                  | Agents are those that agree to do things outside the server    |                                                |
+| Admin                   | Fixes broken stuff, sets up moderators, user management        | [admin-overview.md](v1/docs/admin-overview.md) |
+| Moderator               | Moderate some assigned events, locations, changes              |                                                |
+| Boards                  | Discussion chat rooms and reviews                              |                                                |
+| Export and Verification | How tokens are shared between servers                          |                                                |
+| Token                   | High level token management by users                           |                                                |
+| Jobs                    | Aid to the jobs in the queue, track job output and give notice |                                                |
 
-## Api Pages
-
-* [core-overview.md](v1/docs/core-overview.md)
-* [core-overview.md](v1/docs/layers-overview.md)
-* [user-overview.md](v1/docs/user-overview.md)
 
 
 # Notes
