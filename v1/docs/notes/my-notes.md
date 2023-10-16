@@ -6,6 +6,9 @@ This page is to store stuff I need during development, its my bookmarks and refe
 
 These are notes used by myself for reference
 
+rest api naming stuff
+* https://restfulapi.net/resource-naming/
+
 
 OpenAPI (OAS3/Swagger) definition for GeoJSON objects
 * https://gist.github.com/zit0un/3ac0575eb0f3aabdc645c3faad47ab4a

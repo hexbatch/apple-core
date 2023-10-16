@@ -34,6 +34,8 @@ Tokens can have one or more parents, they can have many ancestors.
 
     So: a token-type:
         user: one user owns the type
+        allow_bounds: boolean
+        allow_actions: boolean
         attributes: []
         parents: []
 
@@ -163,147 +165,40 @@ Additionally, user permission is by group, and group membership can be restricte
 
 # Boundaries can be on the map or in time.
 
-Boundaries are only applied to attributes.
+[bounds](core/bounds.md) are only applied to attributes.
 
-map bounds is a set of closed polygons denoting map coordinates , that is applied to an attribute. 
+Each bounds has a location and time component, either is optional
 
-A token's total map bounds is the union of all the map bounds in the attributes of a token-type  except do not use any script type attribute bounds in this
-
-An attribute can have zero , one or many map bounds
-
-    so a map-bound:
-        user: must be one user.
-        name: name of the bounds (unique to maps)
-        polygon array: at least one polygon, they can overlap or not be connected or join
-
-
-Time bounds is defined by both a range to start and stop using this bounds, and an option period that includes a duration.
-
-How the bounds are used on attributes, and how they propagate is same as described in the map bound
-
-    so a time-bound:
-        user: must be one user.
-        name: name of the bounds (unique to times)
-        start: when to apply this bounds, inclusive
-        stop: when to stop this bounds, inclusive
-        cron: optional crontab string
-        period_length: only used and required when the cron is defined, is how long this time is allowed per cron run
-
-Boundary operations:
-    in the api, both type bounds can be created|edited|listed|deleted. When listed will show the attributes this is used on
+If there is no bounds, the attribute is always on. Else, the attribute is only read, written, and applied inside the bounds
 
 
 ----------------------------------------
 # User 
 
-A user is described in the api this way.
+A [user](core/users.md) is both a person (or bot) in this library, and a token type. Any tokens a user creates will inherit from this token type.
 
-A user has an id, a guid, and their own token type.
+A user when created has some default attributes, some of which can only be read by the user.
 
-The token type has the list of attributes. A user can include non system attributes they have permission for
+When a user is created, a user group for it is also created. Any other user added to the group can read the private data. 
+Any other user promoted to admin in the user group can write to the user attributes.
 
-    So a user:
-        id: number
-        guid: string
-        token-type: made new for the user, inherits from the system user token type (see system tokens and attributes)
-
-When a user is created, a user group is created as well, whose token inherits both from the default group token, and the user token made here.
-
-Anyone added to the user group will be able to read the user's private data. An admin on the user's group will be able to also write all private and public data
+User tokens cannot be bounded, and they cannot run actions
 
 ----------------------------------------
 # User Groups
 
-A user group is a collection of users who have permissions.
+A [user group](core/user_groups.md)  is a collection of users. These groups are used for permission lists, and are the bedrock of the permission system in this library
 
-A user group is not discoverable to non-members, but a user can see which groups they belong in
+Actions do not run on the token of the user group
 
-A user group can have attributes for image, docs, but scripts do not run here.
-
-Each user group inherits from a base user group token type. For example, if a company creates a group.
-
-The group owner is the owner of the token-type, who is the creator of the group.
-
-When adding attributes to the token-type, the attributes have to be readable and writable by the owner and whoever is editing
-
-    So a user-group:
-        users: [] who is in the group
-        admins: [] who can directly modify the list using the api
-        token-type: made new for the group, inherits from the system group token type (see system tokens and attributes)
-
-## Inherited groups to restrict or put conditional membership
-
-Groups that inherit from other group token-types also inherit their memberships and admins
-These tokens can be restricted by space and time, and have extra or fewer members and admins
-
-Inherited groups are good for allowing a subset or geo or time fencing permissions for attribute or sets
 
 ----------------------------------------
 
 # Attributes
 
-Are the core of the api here. 
+[attributes](core/attributes.md) are the core of the api here.
 
-Attributes can be defined by the code, in which case they are not owned, and cannot be edited or deleted.
-
-Attributes can be created|edited|deleted by a user.
-
-Attributes can be restricted to only be used in a token or type-group if there are one or more other specified siblings. 
-    These siblings can have an ancestor or parent that matches this.
-
-Attributes can have an optional whitelist to allow which users can own, change the value of, and read this value of this attribute.
-    A descendant can change the groups, but only by limiting the groups further
-
-Attribute values can be a number, string, json, markdown, binary (image , pdf only), a script to run, location
-
-string specific types can be :
-* iso date time, color, url, email, social account , phone, any
-* number is any numeric value
-* location is lat, lon
-
-An attribute is defined, when applied its value is put next to the action's instantiated values (a token or type group has a list of their attributes and current values)
-Starting out, the default value is used, if no default then null
-
-    so an attribute:
-        user: can be one or none
-        name: name of the attribute (unique to attributes that are owned by this user (or owned by none))
-        bounds:
-            map: []
-            time: []
-        required_siblings: []
-        permissions:
-            owner_user_groups: [] if empty then anyone can use this to create their tokens and token-sets
-            read_user_groups: []  if empty anyone can read the attribute value
-            write_user_groups: [] if empty anyone can change the attribute value.
-            set_requirements: 
-                read: [] attribute ids
-                write: [] attribute ids
-        value:
-            value_type: one of: numeric, string, string specific type,json, markdown, binary, action
-            min: (numeric only)
-            max: (numeric only)
-            enum: (string only if no regex)
-            regex: (string only if regex set then enum ignored)
-            default:
-            allow_null: default true, but can only be false if the default is set
-
-## attribute permissions 
-  Permissions can be given to user groups to read, write or create 
-  
-  By default, if no permissions, attributes can be read by everyone, and only written to by the owner  
-
-
-### set requirements
-  Conditional permissions can also be defined to allow the read and write to only occur when another attribute in the same token set is present. 
-  This attribute does not need to be in the same token.
-
-
-### Required set attributes for read
-
- When this is set, actions do not run if that attribute cannot be read by anyone. This allows scripts to run not only when the token is at a certain location and time,
- But when the token is combined with certain other tokens in a set
-
-  
+Attributes can be made to interact with one another, to require each other to be read or used, to set permissions and conditions for anything that happens in this api
 
 -------------------------------
 

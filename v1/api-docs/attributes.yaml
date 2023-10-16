@@ -17,7 +17,12 @@ servers:
 security:
   - BasicAuth: []
 
-tags: []
+tags:
+  - name: attributes
+    description: Attributes are the most central tenant of the api
+    externalDocs:
+      description: Find out more
+      url: https://api.hexbatch.com/v1/docs/core/attributes
 
 paths: {}
 components:

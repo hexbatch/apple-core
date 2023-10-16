@@ -32,6 +32,8 @@ Each layer has its own iteration of writing the api and code.
 
 The Core deals with the basic data types described in [core-overview.md](v1/docs/core-overview.md).
 
+The api list is at [core-api-list.md](v1/docs/core-api-list.md)
+
 ## Layers
 The layers overview is talked about in [layers overview](v1/docs/layers-overview.md)
 

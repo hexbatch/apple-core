@@ -11,27 +11,22 @@ info:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
 servers:
-  - url: 'https://api.hexbatch.com/v1/bounds'
+  - url: 'https://api.hexbatch.com/v1/users'
     description: Used to show and test this api
 
 security:
   - BasicAuth: []
 tags:
-  - name: bounds
-    description: Attributes are only seen, active, and writable in their bounds
+  - name: users
+    description: Users have to be logged in to do most api operations
     externalDocs:
       description: Find out more
-      url: https://api.hexbatch.com/v1/docs/core/bounds
-  - name: location_bounds
-    description: This boundary is defined by an area on a map
+      url: https://api.hexbatch.com/v1/docs/core/users
+  - name: user_groups
+    description: Permissions in the api is defined by the groups the user belongs
     externalDocs:
       description: Find out more
-      url: https://api.hexbatch.com/v1/docs/core/location_bounds
-  - name: time_bounds
-    description: This boundary is defined by a slice of time
-    externalDocs:
-      description: Find out more
-      url: https://api.hexbatch.com/v1/docs/core/time_bounds
+      url: https://api.hexbatch.com/v1/docs/core/user_groups
 
 paths: {}
 components:
