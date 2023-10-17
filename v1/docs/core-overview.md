@@ -203,6 +203,14 @@ if the allows_set is falsy value, even the token owner cannot add to the token s
 
 allows_set, being an attribute, can use a javascript to do complex logic to decide this
 
+### Allergies
+
+Sometimes an attribute does not want to be in a set if another attribute is already in the set. this is set in the attributes allergy array
+
+### Affinities
+
+Sometimes an attribute must have another attribute to already exist in a set before it can join it. This is set in the attribute's affinity array
+
 ## Read and write permissions can be defined by set membership
 
 attributes have the option to be readable or/and writable based on other attributes being present in the same set (not necessarily in the same token)

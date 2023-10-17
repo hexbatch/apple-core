@@ -36,7 +36,12 @@ Attribute have an owner, a name, bounds, requirements, permissions, and a value
             map: []
             time: []
         requirements:
-            required_siblings: []
+            tokens:
+                required_siblings: [attribute ids] for sharing the same token type or token
+                forbidden_siblings: [attribute ids] cannot be in the same token or type
+            sets:
+                allergies: [attribute ids] cannot be in the same set if this attribute is in any of the other tokens. 
+                affinities: [attribute ids] this must be in the same set somewhere before the token can be added to the set
         permissions:
             owner_user_groups: [] if empty then anyone can use this to create their tokens and token-sets
             read_user_groups: []  if empty anyone can read the attribute value
@@ -58,11 +63,14 @@ Permissions can be given to user groups to read, write or create
 
 By default, if no permissions, attributes can be read by everyone, and only written to by the owner
 
+To make attributes read only or write only, make the set_requirements be an attribute that is defined to never be combined with this attribute in any set
 
 ### set requirements
 
 Conditional permissions can also be defined to allow the read and write to only occur when another attribute in the same token set is present.
 This attribute does not need to be in the same token.
+
+affinities and allergies also control when a token is allowed to be or not be in a set
 
 
 ### Required set attributes for read
