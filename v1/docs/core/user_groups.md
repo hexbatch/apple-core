@@ -1,6 +1,6 @@
 # User Groups
 
-A user group is a collection of users who have permissions.
+A user group is a collection of users who have permissions. It is defined by a token that inherits from the user, and the base group token
 
 ## Admins 
 
