@@ -1,0 +1,74 @@
+# Actions
+
+Actions can be registered that run javascript functions.
+
+Scripts that are run, are not able to access the api, so the passed in values is the object copy of the thing only, and can be altered by the script without api changing.
+
+Scripts can change the local and global settings for themselves.
+
+Actions can run on boundary set on the attribute, cron times make it run, entering or exiting areas: see location_entering, location_leaving.
+
+Actions can be used to change own parent or other thing's values (so token or the token sets the token is in) (permission apply).
+
+Actions can be used to set rules for creation of a token
+* To disallow creation, each token starts with a created attribute whose value must be truthful, if this value is false, then the token is not saved and creation fails.
+* Creation rate limiting is handled by the creation actions script_state
+
+Rate limiting is scripts running on token set changes, or lifecycle changes
+* on a lifecycle script, it has to return a truthful value to allow (this is changed from the existing docs) 
+
+Multiple actions can listen to the same lifecycle changes or other conditions.
+* So, to rate limit token creation and charge someone have two actions. One to limit and one to charge
+* But, this can also be the same action
+
+An inheritance chain will run the actions from the ancestors to the current
+* if any action fails, then there will be a db rollback, and nothing is saved
+
+When setting a charge, if there are not enough tokens in the source token set, the action will fail
+* The charge will only happen if the script returns a truthful value to the target attribute
+
+Lifecycle for attributes:
+* creation
+* owner-change
+* token-set addition
+* token-set removal
+  * token-set mass attribute altering
+
+          so an action:
+              action-name: can be any unique name
+              action-version: can be a version (optional)
+              action-owner: actions are be owned by a user
+              target:
+                target attribute guid:
+                target-from-state: literal string, number or regex (empty means always) can be used with the lifecycles
+              lifecycle: [] array of life cycles this script runs on, without looking at the target from-state, can be empty
+              recipient: //optional
+                  recipient attribute: the script can only change the recipient attribute
+                  recipient token: if not empty, this token must be writable by the user of the action, the token does not have to be the target, and no other tokens will be written to
+              charge : //optional sets up a token-set operation
+                  charge_type: the type-group to charge with
+                  charge_source_set: the token-set to remove tokens from
+                  charge_destination_set: the token-set to put the tokens
+              options:  
+                  per-token: if true, this script runs per token that has the attribute meet requirements, and only its attribute can be changed
+                             if false then script runs per set, and all the set population tokens and their target attributes are looked at,  and any recipient token in the set can be changed.
+                  run-when-out-area: default false, else runs when token or type-group is outside of location bounds
+                  run-when-in-area: default true runs when the token or type-group is inside the location bounds
+              script:
+                  permissions: []
+                  md5 of script: makes sure the script is not changed when this is applied to any instantiated actions
+                  param_attributes: [] if not empty then these attributes must exist on the token or type-group for the action to run
+                  local_script_state: stored json and passed to script as an object, updated in the script. This is per instantiation
+                  local_script_state_init: the initial local_script_state
+                  global_script_state: shared by all instantiated actions, its initial state set in the definition of this action here
+                  script: input(target_tokens[], param-attribute-values,token-set, local script_state, global script state, set operation info) 
+                          returns
+                          : {array changed recipient attributes  {guid,value}, new script_state local and global}
+
+## script permissions
+
+* Scripts are run in a sandbox not allowing file access
+* Scripts may be granted access to make remote calls and wait for data
+* Scripts may be granted extra time to run
+* Scripts may be granted extra memory to run
+

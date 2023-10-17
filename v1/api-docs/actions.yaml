@@ -18,7 +18,7 @@ security:
   - BasicAuth: []
 tags:
   - name: action
-    description: this holds the script to be run
+    description: this holds a script to be run
     externalDocs:
       description: Find out more
       url: https://api.hexbatch.com/v1/docs/core/actions

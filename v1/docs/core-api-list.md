@@ -10,7 +10,7 @@ Users and User group operations
 
 | Family | Tags               | Method | Path                    | Operation      | Description                                                                         |
 |--------|--------------------|--------|-------------------------|----------------|-------------------------------------------------------------------------------------|
-| Users  | users              | Post   | user/new                | Create User    | Makes a new user, any user can create a new user                                    |
+| Users  | users              | Post   | user                    | Create User    | Makes a new user, any user can create a new user                                    |
 | Users  | users              | Post   | user/login              | Login User     | Logs the user in, makes a new bearer token for it                                   |
 | Users  | users              | Delete | user/logout             | Logout User    | Deletes the user token provided (used to authenticate this operation)               |
 | Users  | users              | Put    | user/:id                | Edit User      | Edits user information                                                              |
@@ -37,20 +37,20 @@ Bounds can only be edited or deleted if they are not used anywhere.
 
 | Family     | Tags            | Method | Path                                    | Operation                                | Description                                                      |
 |------------|-----------------|--------|-----------------------------------------|------------------------------------------|------------------------------------------------------------------|
-| Boundaries | bounds          | Post   | bounds/new                              | Create Boundary                          | Boundaries are made: the user who made this call and a name      |
+| Boundaries | bounds          | Post   | bounds                                  | Create Boundary                          | Boundaries are made: the user who made this call and a name      |
 | Boundaries | bounds          | Delete | bounds/:id                              | Remove Boundary                          | Deletes an unused boundary                                       |
 | Boundaries | bounds          | Get    | bounds/:id                              | List Boundary                            | Lists the locations and times in a boundary, can filter          |
 | Boundaries | bounds          | Get    | bounds/:id/time/schedule                | List Boundary's schedule                 | Shows a list of start and stop times for the entire boundary     |
 | Boundaries | bounds          | Get    | bounds/:id/location/area                | List Boundary's area                     | Shows a list of polygons for the entire boundary                 |
 | Boundaries | bounds          | Get    | bounds/:id/ping                         | Tell if time and/or location in boundary | returns true or false if a time and or location is in a boundary |
-| Boundaries | bounds          | Get    | boundaries                              | List Boundaries                          | Lists boundaries, options to filter for used or unused           |
+| Boundaries | bounds          | Get    | bounds                                  | List Boundaries                          | Lists boundaries, options to filter for used or unused           |
 | Boundaries | bounds          | Delete | bounds/:id                              | Remove Bounds                            | Unused boundaries can be removed                                 |
-| Boundaries | location_bounds | Post   | bounds/:bound_id/location/new           | Create Location                          | Makes a new location: a name and at least one polygon            |
+| Boundaries | location_bounds | Post   | bounds/:bound_id/location               | Create Location                          | Makes a new location: a name and at least one polygon            |
 | Boundaries | location_bounds | Put    | bounds/:bound_id/location/:id           | Edit Location                            | Changes the polygons or name in a location                       |
 | Boundaries | location_bounds | Delete | bounds/:bound_id/location/:id           | Delete Location                          | Removes location                                                 |
 | Boundaries | location_bounds | Get    | bounds/:bound_id/location/:id           | List Location details                    | Shows location details : list of polygons                        |
 | Boundaries | location_bounds | Get    | bounds/:bound_id/location/:id/ping      | Tells if location is in area             | Returns true or false if a map coordinate is in the locations    |
-| Boundaries | time_bounds     | Post   | bounds/:bound_id/times/new              | Create Times                             | Makes a new times, a name and at least one rule                  |
+| Boundaries | time_bounds     | Post   | bounds/:bound_id/times                  | Create Times                             | Makes a new times, a name and at least one rule                  |
 | Boundaries | time_bounds     | Put    | bounds/:bound_id/time/:id               | Edit Times                               | Changes the time definition or name in a time                    |
 | Boundaries | time_bounds     | Delete | bounds/:bound_id/time/:id               | Delete Times                             | Removes times                                                    |
 | Boundaries | time_bounds     | Get    | bounds/:bound_id/time/:id               | List Times                               | Shows time details, shows the rules here                         |
@@ -64,10 +64,56 @@ Bounds can only be edited or deleted if they are not used anywhere.
 
 -- tags: [attributes](core/attributes.md)
 
-bounds api defined at [attributes.yaml](../api-docs/attributes.yaml)
+attribute api defined at [attributes.yaml](../api-docs/attributes.yaml)
 
-Attribute have an owner, a name, bounds, requirements, permissions, and a value
+Attribute have an owner, a name, bounds, requirements, permissions, and a value.
 
-| Family     | Tags       | Method | Operation         | Description                                                                                            |
-|------------|------------|--------|-------------------|--------------------------------------------------------------------------------------------------------|
-| Attributes | attributes | Post   | Create Attributes | Makes a new attributes with an owner and a name: optional requirements, permissions, bounds, and value |
+While attributes have a lot to set, most of this is done in hte create and edit
+
+| Family     | Tags       | Method | Path                      | Operation                    | Description                                                                                            |
+|------------|------------|--------|---------------------------|------------------------------|--------------------------------------------------------------------------------------------------------|
+| Attributes | attributes | Post   | attribute                 | Create Attribute             | Makes a new attributes with an owner and a name: optional requirements, permissions, bounds, and value |
+| Attributes | attributes | Put    | attribute/:id             | Edit Attributes              | Edits the attribute, if the user can                                                                   |
+| Attributes | attributes | Put    | attribute/:id/value       | Edit Value                   | Edits the attribute value, if the user can                                                             |
+| Attributes | attributes | Get    | attribute/:id             | Edit Attributes              | Reads the attribute details, if the user can                                                           |
+| Attributes | attributes | Get    | attribute/:id/value       | Read Value                   | Reads the attribute value, if the user can. Optional to set position, uses time                        |
+| Attributes | attributes | Get    | attribute/:id/bounds/ping | Ping Attributes              | Determines if the attribute is at the location and time asked about                                    |
+| Attributes | attributes | Get    | attribute/:id/permissions | Ask about permissions        | returns permission about this user and this attribute                                                  |
+| Attributes | attributes | Get    | attribute/:id/list        | Show where attribute is used | returns list of tokens and other where the attribute is used                                           |
+| Attributes | attributes | Delete | attribute/:id             | Delete Attributes            | Deletes the attribute, if the user can and if the attribute is not used anywhere                       |
+
+
+# Actions
+
+-- tags: [actions](core/actions.md)
+
+actions api defined at [actions.yaml](../api-docs/actions.yaml)
+
+Actions have an owner, version, name, target, lifecycle, recipient, charge, options,script
+
+| Family  | Tags    | Method | Path            | Operation         | Description                                                                                                                |
+|---------|---------|--------|-----------------|-------------------|----------------------------------------------------------------------------------------------------------------------------|
+| Actions | actions | Post   | action          | Create Action     | Makes a new action with an owner and a name: optional version, name, target, lifecycle, recipient, charge, options,script  |
+| Actions | actions | Put    | action/:id      | Edit Action       | Edit name, version, name, target, lifecycle, recipient, charge, options,script   : only if not used                        |
+| Actions | actions | Delete | action/:id      | Delete Action     | Only if not used                                                                                                           |
+| Actions | actions | Get    | action/:id/run  | Run Action        | Run action, giving any parameters to pass to script (for testing), get back any (dry run) changes for recipient and charge |
+| Actions | actions | Get    | action/:id/list | Show Action Usage | Gives a list of attributes this action is used at                                                                          |
+
+
+
+# Tokens and Types
+
+-- tags [token_types](core/token_types.md)
+
+token type api defined at [tokens.yaml](../api-docs/tokens.yaml)
+
+Token types have an owner, options, attributes, and parents
+
+Token types name and info are in its attributes 
+
+(other api here involve creating the token, getting token attribute values , and making a type-group)
+
+| Family | Tags        | Method | Path | Operation         | Description                                                           |
+|--------|-------------|--------|------|-------------------|-----------------------------------------------------------------------|
+| Type   | token-types | Post   | type | Create Token Type | Makes a new token type with an owner options, attributes, and parents |
+
