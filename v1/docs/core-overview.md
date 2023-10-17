@@ -255,6 +255,9 @@ Attributes can be made to interact with one another, to require each other to be
 # Scripts
 [scripts](core/scripts.md) are Javascript can be set to run and generate a value when a token attribute is read
 
+# Urls
+[urls](core/urls.md) are remote callbacks to be run and generate a value when a token attribute is read
+
 # Actions
 
 [actions](core/actions.md) are attribute values that are javascript that runs.

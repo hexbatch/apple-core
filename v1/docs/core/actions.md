@@ -67,6 +67,8 @@ depends on what the script is used for: can be a primitive to be evaluated for t
                 script: script_id
                     see input params
                     see script returns
+                OR 
+                url: url_id
                             
 
 
