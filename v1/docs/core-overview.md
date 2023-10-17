@@ -131,6 +131,7 @@ set operations:
 * P is export data for a token set
 * R is an optional bounds for the sets that can be used in any operation, the sets must be in those bounds for this to work. The time used is the current
 * S is an optional bounds for the tokens in the sets. This can be used in any operations. The tokens must be in these bounds. "
+* Path-specifier can be added to any operation
 
 
 
@@ -168,6 +169,27 @@ searching can filter static values via regex, comparison (comparisons can be nes
 
     search: A source,  Z  attributes , T optional pattern, options to recurse levels, to filter, to condense => simple object
 
+#### Using tags to gather - path specifier
+
+Sometimes want to find stuff in set relations, where there is a token in one set, and another token in a set elsewhere, or a token path, 
+
+this token path can be sort of like a url apples/bananas/pears
+
+this will start the search for any sets that have the apples token, then for any sibling or children sets that have bananas, then for any s or c sets that have pears, then do the search
+
+optionally, there can be gaps in between the sets that have the tags, so we may not find apples in the parent set, but in some descendant, then the bananas would be further in a grandchild, etc
+
+both tags and attribute names can be searched for this way, and the search combined
+
+so, in this notation # means a token name, and . means an attribute and :x means value of x, and > means no gaps
+
+that means to search for >#apples>.bears:2/#witches.broomsticks:wooden
+
+would be to start looking in the top set for tokens called apples,
+then for any immediate children or siblings if there is a set with an attribute of bears that has a value of 2,
+for any descendant or sibling chain find witches token that have wooden broomsticks 
+
+A path specifier can be added to any set operation
 
 ### Global Set
 

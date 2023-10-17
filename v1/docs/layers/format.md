@@ -27,4 +27,12 @@ then the plugins can render this to html or markdown or other
 * Pages can be tagged and reorganized , elements of some pages can be combined in a new page
   * For instance, all the images nested N need in the links can be put into a list in a new page
   * or tagged lists can be pulled apart from different pages to be put into one list
+
+## Using path specifiers and gathering with formatting
+
+can do core searches using these to link up data in new ways to analyze and compare or art
+
+## styling
+
+different attributes can be set to have different colors and other inline css, sections with certain attributes can be set to have different css styles
  
