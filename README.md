@@ -41,7 +41,8 @@ The layers each do their own thing, but they set up jobs to be dispatched and co
 
 Most of the heavy lifting in the layer codes will be done by api calls to the core.
 
-The layer framework will be storing user bearer tokens that do not expire, and they use those to create a temporary token in each api call. 
+The layer framework will be storing user bearer tokens that do not expire, and they use those to create a temporary token in each api call.
+The core itself does not have a superuser, or root user. But it does have a permissions system. So the layers doing actions as different users for a single call takes care of the nested permissions.
 
 
 When a public api request is made, a job (a class instance) is made that has a list of api calls to make.

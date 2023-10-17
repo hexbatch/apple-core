@@ -48,7 +48,9 @@ Tokens also have a location, and an owner.
 
 Having a location allows map bounded attributes to work. Attributes that have location bounds in a token without location automatically do not work, and are off.
 
-This also means that some tokens cannot be taken to some locations or usable at some times
+This also means that some tokens cannot be taken to some locations or usable at some times.
+
+Only the token owner can change who owns his token next. A set of tokens can have ownership changed
 
     So a token:
         user: must be one user
