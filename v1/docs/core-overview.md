@@ -37,7 +37,24 @@ So, need an api call to delete/unregister a bearer token given to it
 
 Tokens are made from token types, and have live values of attributes
 
-the token api will get its live attribute values, some or many of the token attribute depend on the set it is in
+the token api will get its live attribute values, some or many of the token attribute depend on the set it is in.
+
+Tokens can have attributes dynamically added to them, even if they are not in the token type. Attributes of the same name added this way overwrite the type attribute.
+The user who owns the token can add attributes, also the token type owner can add attributes.
+
+Static values can be changed just for this token. The actions have their own local state for this token.
+
+Tokens also have a location, and an owner.
+
+Having a location allows map bounded attributes to work. Attributes that have location bounds in a token without location automatically do not work, and are off.
+
+This also means that some tokens cannot be taken to some locations or usable at some times
+
+    So a token:
+        user: must be one user
+        token-type: 
+        location: the lat and lon (optional)
+        live attributes: 
 
 
 # Token set
@@ -48,8 +65,10 @@ A token set does not have any definition or structure, it's a loose organization
 
 A token set must be owned by only one user. Ownership is not transferred, but the tokens in one set can be added to the tokens in another set
 
-A token set may be given a location, this allows map bounded attributes to work. When the token is read or changed by the user,
-    the context of the token set is given. This allows permissions that are set based to run in addition to map bounds
+A token set has a location given by the user token.
+
+This location can be used by set operations.
+
 
 Token sets might be organized to have parents and siblings. There should be ways to navigate through this with the api.
 Note that there is not a restriction of the same user owning the parent and children. Also note that nested folders can be made.
@@ -64,8 +83,6 @@ Children cannot be descendants to ancestors (no inheritance loops)
         token-type: (optional) if some description is needed for this token set
         location: the lat and lon (optional)
         parent-token-set: (optional) may have a parent, used for organizing token sets.
-
-
 
 
 ## Type groups
@@ -110,16 +127,32 @@ set operations:
 * M is a token type
 * G is a token type guid
 * P is export data for a token set
+* R is an optional bounds for the sets that can be used in any operation, the sets must be in those bounds for this to work. The time used is the current
+* S is an optional bounds for the tokens in the sets. This can be used in any operations. The tokens must be in these bounds. "
 
 
-        combine/add: A source, B source,  T pattern, D destination
-        remove: A source, T pattern,, D destination / removes tokens from a set puts it in another set
+
+        combine/add: A source, B source (optional),  T pattern, D destination
+        remove: A source, T pattern, D destination / removes tokens from a set puts it in another set
         create set: => new empty set
         delete set: removes a set, fails if any token here is not already in another set
         edit_attribute => attribute name, attribute value , A source, T pattern
         change_owner => new owner id, A source, T pattern
         copy => P source, G token type guid from source , M destination token type, D destination
 
+### Relation operations
+
+Finds related tokens in sets. Tokens are related by having common ancestors and parents.
+
+These operations can also filter by getting the related tokens that have attributes in common
+
+* Z is an array of attributes the current user can read
+
+        find related: A source, B source,  Z optional attributes, D destination
+
+### Global Set
+
+    All tokens are in a global set (G) so if needing to find any token at all use G for A 
 
 ### Copy 
 

@@ -2,6 +2,10 @@
 
 This page is to store stuff I need during development, its my bookmarks and reference
 
+## ToDo list
+
+* how to list standard attributes
+
 ## General notes
 
 These are notes used by myself for reference

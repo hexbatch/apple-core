@@ -29,7 +29,7 @@ Attribute have an owner, a name, bounds, requirements, permissions, and a value
     so an attribute:
         parent_attribute: attributes can optionally have a single parent
         user: can be one or none
-        name: name of the attribute (unique to attributes that are owned by this user (or owned by none))
+        name: name of the attribute (unique to all attributes)
         bounds:
             map: []
             time: []

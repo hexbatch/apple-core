@@ -1,4 +1,17 @@
-# Admin
+# Administration
+
+Admins will do stuff, logged in as other users, when the core api is executed.
+
+Super admins can log in as anyone to do anything.
+
+Restricted admins can only log in as some people to do some actions.
+
+Moderators are restricted further, able to log in as some people, and change a list of attributes.
+
+The administration layer will find the tokens and users the admins and moderators can use by using the set operations.
+
+One thing that helps this is that different user groups can be made, by changing the base user token. Also, giving users attributes that they cannot read or write to allows sorting
+
 
 ## User operations
 
@@ -24,7 +37,7 @@
 
 * Reviews stuck jobs, and can terminate them
 * Sees job metrics and outputs
-  
+
 ## Promotions
 
 * Reviews promotions and can alter the promotion deal

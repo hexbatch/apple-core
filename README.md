@@ -65,28 +65,28 @@ General api call in the layer:
         or public waits for response and data sent back in same call
  
 
-| Layer                   | Description                                                    | Link                                           |
-|-------------------------|----------------------------------------------------------------|------------------------------------------------|
-| Users                   | Managers existing users; creates and changes user groups       | [user-overview.md](v1/docs/user-overview.md)   |
-| Registrations           | Does all the new user account creation                         |                                                |
-| Sets                    | Create and edit token sets                                     |                                                |
-| Networks                | Tracks social accounts that are not users, and then later are  |                                                |
-| Distributions           | Gives new and existing tokens to people in networks            |                                                |
-| Contracts               | Deals with the selling, terms, and use of token types          |                                                |
-| Marketplace             | Ownerships of token sets can be bought and sold                |                                                |
-| Trends                  | Public read only list of token types bought, sold,contracted   |                                                |
-| Organizations           | They are companies or people who do stores                     |                                                |
-| Stores                  | Stores sell inventory                                          |                                                |
-| Inventory               | Items in a store for sale, need not be physical or even real   |                                                |
-| Promotions              | Sets up advertising, monitors impressions                      |                                                |
-| Selling                 | Sets up a sales flow that tracks different events in a sale    |                                                |
-| Agents                  | Agents are those that agree to do things outside the server    |                                                |
-| Admin                   | Fixes broken stuff, sets up moderators, user management        | [admin-overview.md](v1/docs/admin-overview.md) |
-| Moderator               | Moderate some assigned events, locations, changes              |                                                |
-| Boards                  | Discussion chat rooms and reviews                              |                                                |
-| Export and Verification | How tokens are shared between servers                          |                                                |
-| Token                   | High level token management by users                           |                                                |
-| Jobs                    | Aid to the jobs in the queue, track job output and give notice |                                                |
+| Layer                   | Description                                                    | Link                                         |
+|-------------------------|----------------------------------------------------------------|----------------------------------------------|
+| Users                   | Managers existing users; creates and changes user groups       | [user-overview.md](v1/docs/user-overview.md) |
+| Registrations           | Does all the new user account creation                         |                                              |
+| Sets                    | Create and edit token sets                                     |                                              |
+| Networks                | Tracks social accounts that are not users, and then later are  |                                              |
+| Distributions           | Gives new and existing tokens to people in networks            |                                              |
+| Contracts               | Deals with the selling, terms, and use of token types          |                                              |
+| Marketplace             | Ownerships of token sets can be bought and sold                |                                              |
+| Trends                  | Public read only list of token types bought, sold,contracted   |                                              |
+| Organizations           | They are companies or people who do stores                     |                                              |
+| Stores                  | Stores sell inventory                                          |                                              |
+| Inventory               | Items in a store for sale, need not be physical or even real   |                                              |
+| Promotions              | Sets up advertising, monitors impressions                      |                                              |
+| Selling                 | Sets up a sales flow that tracks different events in a sale    |                                              |
+| Agents                  | Agents are those that agree to do things outside the server    |                                              |
+| Admin                   | Fixes broken stuff, sets up moderators, user management        | [admin](v1/docs/layers/admin.md)             |
+| Moderator               | Moderate some assigned events, locations, changes              |                                              |
+| Boards                  | Discussion chat rooms and reviews                              |                                              |
+| Export and Verification | How tokens are shared between servers                          |                                              |
+| Token                   | High level token management by users                           |                                              |
+| Jobs                    | Aid to the jobs in the queue, track job output and give notice |                                              |
 
 
 
