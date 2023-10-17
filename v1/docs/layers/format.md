@@ -10,7 +10,7 @@ The basic can produce
 * links (the token set can have its links to other sets and children)
 * outside links (pick an attribute to find urls and text)
 * paragraphs (ordered similarly to lists default is creation date)
-* headers and sections (children and their children can be sections instead of links, header 1 is first level children, header 2 is their children etc)
+* headers and sections (children and their children can be sections instead of links, header 1 is first level children, header 2 is their children etc.)
 * images (ordered similarly to lists default is creation date)
 
 
@@ -32,7 +32,23 @@ then the plugins can render this to html or markdown or other
 
 can do core searches using these to link up data in new ways to analyze and compare or art
 
-## styling
+
+## extra data in tags or json
+
+most plugins support the extra attributes or properties that are added to each mapped attribute
+
+
+
+## Plugins 
+
+* json
+* xml
+* html
+* markdown (does not support extra attributes)
+
+
+### html plugin 
+
+#### styling
 
 different attributes can be set to have different colors and other inline css, sections with certain attributes can be set to have different css styles
- 
