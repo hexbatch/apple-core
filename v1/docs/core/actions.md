@@ -44,6 +44,7 @@ Script returns:
 depends on what the script is used for: can be a primitive to be evaluated for truthfulness, can be changed attribute values for the target
 
 
+
             so an action:
                 action-name: can be any unique name
                 action-version: can be a version (optional)
@@ -52,6 +53,7 @@ depends on what the script is used for: can be a primitive to be evaluated for t
                   target attribute guid:
                   target-from-state: literal string, number or regex (empty means always) can be used with the lifecycles
                 lifecycle: [] array of life cycles this script runs on, without looking at the target from-state, can be empty
+                param_attributes: [] if not empty then these attributes must exist on the token or type-group for the action to run
                 recipient: //optional
                     recipient attribute: the script can only change the recipient attribute
                     recipient token: if not empty, this token must be writable by the user of the action, the token does not have to be the target, and no other tokens will be written to

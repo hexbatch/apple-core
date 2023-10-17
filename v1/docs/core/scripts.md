@@ -14,6 +14,7 @@ The script can return a primitive or a simple object to be converted to json
 Actions will pass in more data to the input_param, and the return values are more defined
 
 input_param:
+* write_value: {} empty except when a script attribute is written to
 * current_attributes: {}
 * local script_state (stored in the token its attribute parent is attached to)
 * global script state (stored in the token type attribute that is made when an attribute having the script is attached to the token type)
@@ -36,7 +37,6 @@ A value of null will mean not cached
                 name : unique in scripts
                 permissions: []
                 md5 of script: makes sure the script is not changed when this is applied to any instantiated actions
-                param_attributes: [] if not empty then these attributes must exist on the token or type-group for the action to run
                 local_script_state: stored json and passed to script as an object, updated in the script. This is per instantiation
                 local_script_state_init: the initial local_script_state
                 global_script_state: shared by all instantiated actions, its initial state set in the definition of this action here 

@@ -12,7 +12,9 @@ These siblings can have an ancestor or parent that matches this.
 Attributes can have an optional whitelist to allow which users can own, change the value of, and read this value of this attribute.
 A descendant can change the groups, but only by limiting the groups further
 
-Attribute values can be a number, string, json, markdown, binary (image , pdf only), a script to run, location
+Attribute values can be a number, string, json, markdown, binary (image , pdf only), a script to run, location, an action, a url
+
+A script and url is writable, when a write happens, the last good ts is unset for the token, and the script or url is passed in the write value 
 
 string specific types can be :
 * iso date time, color, url, email, social account , phone, any
@@ -43,7 +45,7 @@ Attribute have an owner, a name, bounds, requirements, permissions, and a value
                 read: [] attribute ids
                 write: [] attribute ids
         value:
-            value_type: one of: numeric, string, string specific type,json, markdown, binary, action, script
+            value_type: one of: numeric, string, string specific type,json, markdown, binary, action, script,url
             min: (numeric only)
             max: (numeric only)
             enum: (string only if no regex)
