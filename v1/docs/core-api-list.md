@@ -27,12 +27,14 @@ Users and User group operations
 
 
 # Bounds
--- tags: [bounds](core/bounds.md), [location_bounds](core/location_bounds.md), [time_bounds](core/time_bounds.md)
+-- tags: [bounds](core/bounds.md), [location_bounds](core/location_bounds.md), [time_bounds](core/time_bounds.md),[bounds](core/set_path_bounds.md),
 
 bounds api defined at [bounds.yaml](../api-docs/bounds.yaml)
 
 Create and manage bounds. Bounds are made up of collections of times and locations.
 Bounds can only be edited or deleted if they are not used anywhere.
+
+TODO add in the set path bounds below
 
 
 | Family     | Tags            | Method | Path                                    | Operation                                | Description                                                      |

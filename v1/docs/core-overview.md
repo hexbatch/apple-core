@@ -55,7 +55,8 @@ Only the token owner can change who owns his token next. A set of tokens can hav
     So a token:
         user: must be one user
         token-type: 
-        location: the lat and lon (optional)
+        location:
+            the lat and lon (optional)
         live attributes: 
 
 
@@ -81,11 +82,13 @@ Children cannot be descendants to ancestors (no inheritance loops)
 
     So a token-set:
         user: must be one user
+        name: unique (optional) used for pathing of set paths for set boundaries (todo boundary type of set paths to read and write or action)
         tokens: []
-        token-type: (optional) if some description is needed for this token set
-        location: the lat and lon (optional)
-        parent-token-set: (optional) may have a parent, used for organizing token sets.
+        token: (optional) if some description is needed for this token set, or for identifying it with a set path
+        parent-token-set: (optional) may have a parent, used for organizing token sets. (cannot be cyclic)
+        linked-sets: (optional) may have links to other sets (can be cyclic so two sets can link to each other)
 
+Tokens here can be reused and shared between sets, and have other roles at the same time
 
 ## Type groups
 
@@ -129,7 +132,6 @@ set operations:
 * M is a token type
 * G is a token type guid
 * P is export data for a token set
-* R is an optional bounds for the sets that can be used in any operation, the sets must be in those bounds for this to work. The time used is the current
 * S is an optional bounds for the tokens in the sets. This can be used in any operations. The tokens must be in these bounds. "
 * Path-specifier can be added to any operation
 
@@ -165,7 +167,7 @@ operations to make simple key value objects for each set ( singular or with sibl
 each token can be a new object of (attribute:value) and these can optionally be left alone or condensed to a single layer of key values
 if condensed, then the values for each attribute turn into an array for each set
 
-searching can filter static values via regex, comparison (comparisons can be nested), or strict string match
+searching can filter static values via regex, numeric_range, comparison (comparisons can be nested), or strict string match
 
     search: A source,  Z  attributes , T optional pattern, options to recurse levels, to filter, to condense => simple object
 
@@ -247,7 +249,7 @@ Additionally, user permission is by group, and group membership can be restricte
 
 [bounds](core/bounds.md) are only applied to attributes.
 
-Each bounds have a location and time component, either is optional
+Each bounds have a location and/or time and/or set path component, either is optional
 
 If there is no bounds, the attribute is always on. Else, the attribute is only read, written, and applied inside the bounds
 

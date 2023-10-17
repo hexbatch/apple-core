@@ -32,9 +32,10 @@ Attribute have an owner, a name, bounds, requirements, permissions, and a value
         parent_attribute: attributes can optionally have a single parent
         user: can be one or none
         name: name of the attribute (unique to all attributes)
-        bounds:
-            map: []
-            time: []
+        activity_bounds: []
+        read_bounds: []
+        write_bounds: []
+            
         requirements:
             tokens:
                 required_siblings: [attribute ids] for sharing the same token type or token
@@ -77,5 +78,19 @@ affinities and allergies also control when a token is allowed to be or not be in
 
 When this is set, actions do not run if that attribute cannot be read by anyone. This allows scripts to run not only when the token is at a certain location and time,
 But when the token is combined with certain other tokens in a set
+
+
+### Boundaries
+
+there are three sorts of boundaries
+
+activity bounds is the token must be in these bounds to do a lifecycle change. If the bounds is a set path bounds, then this only applies to some lifecycles such as set operations.
+The map location, and time existence, of the token must also be in the union of bounds for the activity bounds 
+
+read bounds is that the attribute is readable inside these bounds only. The token can only be read if the union of the attribute bounds allows it
+
+write bounds is that the attribute is writable inside these bounds only. Same as said for reading 
+
+location bounds is calculated using only the token map coordinates
 
   

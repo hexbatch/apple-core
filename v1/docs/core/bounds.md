@@ -6,6 +6,8 @@ Boundaries are only applied to attributes. Here we use location and time.
 
 [Time](time_bounds.md) is a slice of time this attribute is active, it can be a periodic or time range or any combination of this
 
+[Set path](set_path_bounds.md) is if the attribute is actionable, readable or writeable in the context of a set
+
 Bounds can be simple: such as every Wednesday between 12pm and 2pm in Livingston, Tx
 
 or it can be more complex: a complicated time series for different locations, where each location has its own schedule
