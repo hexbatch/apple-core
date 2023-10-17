@@ -150,7 +150,12 @@ These operations can also filter by getting the related tokens that have attribu
 
 * Z is an array of attributes the current user can read
 
-        find related: A source, B source,  Z optional attributes, D destination
+
+        find related: A source, B source,  Z optional attributes , D destination
+
+sets can have children and links. Operations similar to grep of find for the attribute values in a file structure (treat links like a wierd file structure, look up alternate file structures in linux)
+
+
 
 ### Global Set
 
