@@ -83,6 +83,12 @@ While attributes have a lot to set, most of this is done in hte create and edit
 | Attributes | attributes | Delete | attribute/:id             | Delete Attributes            | Deletes the attribute, if the user can and if the attribute is not used anywhere                       |
 
 
+# Scripts
+
+todo add scripts
+
+-- tags: [scripts](core/scripts.md)
+
 # Actions
 
 -- tags: [actions](core/actions.md)
