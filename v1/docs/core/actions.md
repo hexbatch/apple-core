@@ -31,6 +31,8 @@ Lifecycle for attributes:
 * token-set addition
 * token-set removal
 * token-set mass attribute altering
+* destruction
+* value change
 
 Input params:
 input params have more data 
@@ -66,12 +68,30 @@ depends on what the script is used for: can be a primitive to be evaluated for t
                                if false then script runs per set, and all the set population tokens and their target attributes are looked at,  and any recipient token in the set can be changed.
                     run-when-out-area: default false, else runs when token or type-group is outside of location bounds
                     run-when-in-area: default true runs when the token or type-group is inside the location bounds
-                script: script_id
-                    see input params
-                    see script returns
+                
+                action: 
+                    script: script_id
+                        see input params
+                        see script returns
                 OR 
-                url: url_id
-                            
+                    url: url_id
+                        see input params
+                        see script returns
+                OR
+                    target path specifier: a string path specifier ending with the target attribute and a value 
+                    min_allowed: 
+                    max_allowed:
 
+
+# Requirements: making sure only so many paths exists
+
+If needing the requirements that only so many things can or can not exists, in how they are in token sets:
+
+Actions can be set to allow or deny any lifecycle, by seeing if the target attribute value changing will cause a target path specifier to fail.
+This can be done by counting the number of path specifiers anywhere, using the current target attribute value,
+and if only one, before the value change, or not in the allowed count range,
+ it will block the lifecycle change
+
+Such actions do not need scripts or urls
 
 

@@ -144,6 +144,7 @@ set operations:
         edit_attribute => attribute name, attribute value , A source, T pattern
         change_owner => new owner id, A source, T pattern
         copy => P source, G token type guid from source , M destination token type, D destination
+        count => A source, path specifier  > number 
 
 ### Relation operations
 
@@ -192,6 +193,8 @@ then for any immediate children or siblings if there is a set with an attribute 
 for any descendant or sibling chain find witches token that have wooden broomsticks 
 
 A path specifier can be added to any set operation
+
+Once can count the path specifier in a set, this is used for some actions
 
 ### Global Set
 
