@@ -153,8 +153,20 @@ These operations can also filter by getting the related tokens that have attribu
 
         find related: A source, B source,  Z optional attributes , D destination
 
-sets can have children and links. Operations similar to grep of find for the attribute values in a file structure (treat links like a wierd file structure, look up alternate file structures in linux)
+sets can have children and links. 
 
+
+### Gathering operations
+
+Operations similar to grep of find for the attribute values and their static content, in a file structure (treat links like siblings in a folder or more accurately here sibling sets)
+
+operations to make simple key value objects for each set ( singular or with siblings (links) or children) with attribute names the keys and static values
+each token can be a new object of (attribute:value) and these can optionally be left alone or condensed to a single layer of key values
+if condensed, then the values for each attribute turn into an array for each set
+
+searching can filter static values via regex, comparison (comparisons can be nested), or strict string match
+
+    search: A source,  Z  attributes , T optional pattern, options to recurse levels, to filter, to condense => simple object
 
 
 ### Global Set
@@ -205,7 +217,7 @@ Additionally, user permission is by group, and group membership can be restricte
 
 [bounds](core/bounds.md) are only applied to attributes.
 
-Each bounds has a location and time component, either is optional
+Each bounds have a location and time component, either is optional
 
 If there is no bounds, the attribute is always on. Else, the attribute is only read, written, and applied inside the bounds
 

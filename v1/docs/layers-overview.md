@@ -18,6 +18,8 @@
 * Moderator
 * Boards
 * Export and Verification
+* Events
+* Format
 * Token
 * Jobs
 
@@ -181,6 +183,16 @@ a job can update its status using the job reference, only users who have the job
 
 job metrics can be queried, only users who have the job-read role can use this
 
+job metrics allow hooks to be added to allow for events below
+
+# Events 
+  
+  Events hook into the job metrics, and allow users to set up url callbacks with changes to things that they see
+
+# Format
+
+  Will convert a token set to html , or markdown. Other formats can be added as plugins for that project
+
 # Boards
 
 There can be both general discussion chat rooms and review area. Some chat rooms can have upvotes.
@@ -208,3 +220,5 @@ Allow high level token operations
 * Create and edit attributes, create new token types and tokens, edit token attribute values 
 * Allow media uploads to attributes that support those
 * Script attributes cannot be added or edited 
+
+

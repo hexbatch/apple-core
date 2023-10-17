@@ -85,6 +85,8 @@ General api call in the layer:
 | Admin                   | Fixes broken stuff, sets up moderators, user management        | [admin](v1/docs/layers/admin.md)             |
 | Moderator               | Moderate some assigned events, locations, changes              |                                              |
 | Boards                  | Discussion chat rooms and reviews                              |                                              |
+| Events                  | Allows webhooks to be registered and return changes to watches |                                              |
+| Format                  | Converts token sets to different things: html and markup ..    | [format](v1/docs/layers/format.md)           |
 | Export and Verification | How tokens are shared between servers                          |                                              |
 | Token                   | High level token management by users                           |                                              |
 | Jobs                    | Aid to the jobs in the queue, track job output and give notice |                                              |
