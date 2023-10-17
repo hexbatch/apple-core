@@ -63,7 +63,7 @@ Permissions can be given to user groups to read, write or create
 
 By default, if no permissions, attributes can be read by everyone, and only written to by the owner
 
-To make attributes read only or write only, make the set_requirements be an attribute that is defined to never be combined with this attribute in any set
+To make attributes read only or write only, make the set_requirements be an attribute that is defined to be allergic to this attribute
 
 ### set requirements
 
