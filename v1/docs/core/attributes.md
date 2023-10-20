@@ -51,7 +51,7 @@ Attribute have an owner, a name, bounds, requirements, permissions, and a value
                 read: [] attribute ids
                 write: [] attribute ids
         value:
-            value_type: one of: numeric, string, string specific type,json, markdown, binary, action, script,url
+            value_type: one of: numeric, string, string specific type,json, markdown, binary, action, script,url, token id
             min: (numeric only)
             max: (numeric only)
             enum: (string only if no regex)

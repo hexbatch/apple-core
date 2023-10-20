@@ -50,7 +50,10 @@ Having a location allows map bounded attributes to work. Attributes that have lo
 
 This also means that some tokens cannot be taken to some locations or usable at some times.
 
-Only the token owner can change who owns his token next. A set of tokens can have ownership changed
+Only the token owner can change who owns his token next. A set of tokens can have ownership changed.
+
+A token can be affected by some attributes set in the token type, or dynamically.
+* lifetime : this sets the bounds that the token can exist in, for instance will be deleted after a certain time. 
 
     So a token:
         user: must be one user
@@ -72,13 +75,22 @@ A token set has a location given by the user token.
 
 This location can be used by set operations.
 
+## Set relationships
 
-Token sets might be organized to have parents and siblings. There should be ways to navigate through this with the api.
+Token sets might be organized to have parents,siblings and links. There should be ways to navigate through this with the api.
 Note that there is not a restriction of the same user owning the parent and children. Also note that nested folders can be made.
 
 This file structure of sets can be serialized and shared using the normal set serialization.
 
 Children cannot be descendants to ancestors (no inheritance loops)
+
+Links are one way and can be cyclic 
+
+Children are defined by the parent. Links are defined by the token doing the link to the other token
+
+Links are stored in a specific type of attribute as the token id of the child or target
+
+## Definition
 
     So a token-set:
         user: must be one user
@@ -96,20 +108,19 @@ Type groups are used in token set operations
 
 A token-type can be added into a type-group:
 
-Tokens can belong to one or more type-groups.
+Tokens types can belong to one or more type-groups.
 
 A type-group can be used in token-set operations, where tokens are added or removed between sets
 
-Type-groups can have attributes, to give it a name and appearance, or notes, and to provide logic for set operations
-* The array of attributes can have those inherited from the attribute_filter which can look at the set to filter and decide which will be allowed
+Type-group can have a token to denote who owns it, and any attributes , to give it a name and appearance, or notes, and to provide logic for set operations
+* Attributes can have those inherited from the attribute_filter which can look at the set to filter and decide which will be allowed
 
-Type groups can be owned if attaching appearance and docs. But ownership is not used when type-groups are used in set operations
+Ownership is not used when type-groups are used in set operations
 
 The token types can have a max and min amounts. In set operations the exact amount used will default to be either the min,then max if min not set, or all available if neither
 
     So: a type-group:
-        user: maybe one user owns the type
-        attributes: []
+        token: (optional) if some description is needed for this type-group, or for identifying it with a set path, or putting bounds of when this can be used
         token-types: [ {
             type: token-type
             minimum_needed: optional

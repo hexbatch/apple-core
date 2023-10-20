@@ -12,7 +12,8 @@
 * Stores
 * Inventory
 * Promotions
-* Selling
+* Logging in
+* Watchers
 * Agents
 * Admin
 * Moderator
@@ -70,13 +71,14 @@ Probably all jobs can be the same user. See internal api
 
 # Users
 
-* Manages existing users
+* read and edit user , do user group stuff, handles some system data
 * Manages and creates user groups
 
+[users.md](layers/users.md)
 
-# Sets 
+# Logging in 
 
-create and edit token sets
+Handles users logging in and pw resets [user_login.md](layers/user_login.md)
 
 
 
@@ -104,8 +106,7 @@ These social tokens are owned by the person who discovered them, and can be trad
 * the people in the networks are not users, but once they join, by registration, then any tokens assigned to them previously are theirs 
 
 # Contracts
-
-Deals with the selling, terms, and use of token types
+[contracts.md](layers/contracts.md)
 
 Contracts is the ability to use a token type, owned by someone else, as a parent for new token types
 
@@ -114,23 +115,19 @@ Contracts is the ability to use a token type, owned by someone else, as a parent
 
 # Marketplace
 
-Ownerships of token sets can be bought and sold
+Ownerships of tokens is swapped as is, no refunds. Supports direct sales and auctions
+[marketplace](layers/marketplace.md)
 
-Deals with token sets
-
-* There is no sales flow here, or buying rights to use future tokens, all sales are immediate and final
-* A token set, or collection of token sets, is  marked as up for sale
-  * A sale can have a closing time, after which the user can make a new sale 
-* Users can make offers
-* The seller selects an offer
 
 # Trends
 
 Public read only list of token types and quantity bought and sold, or contracted (who, when, amount, payment)
 
 # Organizations
+[organizations.md](layers/organizations.md)
 
-Organizations are groups that have tokens that use some specialized attributes to use in commerce and promotion of inventory to be sold
+Organizations are groups of users that share a wallet and can vote on things to do
+
 
 # Stores
 
@@ -159,7 +156,14 @@ For example, say that I, as a user, sets up a map app on my website and agree to
 * keeps track of impressions
 
 # Selling
+
+Ownerships of token sets is swapped  [selling](layers/selling.md)
 Sets up a sales flow that tracks different sales events from customer wanting to buy, to buying, to delivery, to issues, to feedback
+
+# Watchers 
+
+[Watchers](layers/watcher.md) trigger events when some condition is reached with tokens and sets
+
 
 # Admin
 

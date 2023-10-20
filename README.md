@@ -66,30 +66,31 @@ General api call in the layer:
         or public waits for response and data sent back in same call
  
 
-| Layer                   | Description                                                    | Link                                         |
-|-------------------------|----------------------------------------------------------------|----------------------------------------------|
-| Users                   | Managers existing users; creates and changes user groups       | [user-overview.md](v1/docs/user-overview.md) |
-| Registrations           | Does all the new user account creation                         |                                              |
-| Sets                    | Create and edit token sets                                     |                                              |
-| Networks                | Tracks social accounts that are not users, and then later are  |                                              |
-| Distributions           | Gives new and existing tokens to people in networks            |                                              |
-| Contracts               | Deals with the selling, terms, and use of token types          |                                              |
-| Marketplace             | Ownerships of token sets can be bought and sold                |                                              |
-| Trends                  | Public read only list of token types bought, sold,contracted   |                                              |
-| Organizations           | They are companies or people who do stores                     |                                              |
-| Stores                  | Stores sell inventory                                          |                                              |
-| Inventory               | Items in a store for sale, need not be physical or even real   |                                              |
-| Promotions              | Sets up advertising, monitors impressions                      |                                              |
-| Selling                 | Sets up a sales flow that tracks different events in a sale    |                                              |
-| Agents                  | Agents are those that agree to do things outside the server    |                                              |
-| Admin                   | Fixes broken stuff, sets up moderators, user management        | [admin](v1/docs/layers/admin.md)             |
-| Moderator               | Moderate some assigned events, locations, changes              |                                              |
-| Boards                  | Discussion chat rooms and reviews                              |                                              |
-| Events                  | Allows webhooks to be registered and return changes to watches |                                              |
-| Format                  | Converts token sets to different things: html and markup ..    | [format](v1/docs/layers/format.md)           |
-| Export and Verification | How tokens are shared between servers                          |                                              |
-| Token                   | High level token management by users                           |                                              |
-| Jobs                    | Aid to the jobs in the queue, track job output and give notice |                                              |
+| Layer                   | Description                                                        | Link                                                |
+|-------------------------|--------------------------------------------------------------------|-----------------------------------------------------|
+| Users                   | Managers existing users; creates and changes user groups           | [users.md](v1/docs/layers/users.md)                 |
+| Registrations           | Does all the new user account creation                             |                                                     |
+| Logging in              | Handles users logging in and pw resets                             | [user_login.md](v1/docs/layers/user_login.md)       |
+| Networks                | Tracks social accounts that are not users, and then later are      |                                                     |
+| Distributions           | Gives new and existing tokens to people in networks                |                                                     |
+| Contracts               | Terms of using someone's token in your own stuff. Auto payments    | [contracts.md](v1/docs/layers/contracts.md)         |
+| Marketplace             | Ownerships of token sets can be bought and sold                    | [marketplace](v1/docs/layers/marketplace.md)        |
+| Trends                  | Public read only list of token types bought, sold,contracted       |                                                     |
+| Organizations           | They are companies or people who do stores                         | [organizations.md](v1/docs/layers/organizations.md) |
+| Stores                  | Stores sell inventory                                              |                                                     |
+| Inventory               | Items in a store for sale, need not be physical or even real       |                                                     |
+| Promotions              | Sets up advertising, monitors impressions                          |                                                     |
+| Selling                 | Sets up a sales flow that tracks different events in a sale        | [selling](v1/docs/layers/selling.md)                |
+| Watchers                | Trigger events when some condition is reached with tokens and sets | [Watchers](v1/docs/layers/watcher.md)               |
+| Agents                  | Agents are those that agree to do things outside the server        |                                                     |
+| Admin                   | Fixes broken stuff, sets up moderators, user management            | [admin](v1/docs/layers/admin.md)                    |
+| Moderator               | Moderate some assigned events, locations, changes                  |                                                     |
+| Boards                  | Discussion chat rooms and reviews                                  |                                                     |
+| Events                  | Allows webhooks to be registered and return changes to watches     |                                                     |
+| Format                  | Converts token sets to different things: html and markup ..        | [format](v1/docs/layers/format.md)                  |
+| Export and Verification | How tokens are shared between servers                              |                                                     |
+| Token                   | High level token management by users                               |                                                     |
+| Jobs                    | Aid to the jobs in the queue, track job output and give notice     |                                                     |
 
 
 
