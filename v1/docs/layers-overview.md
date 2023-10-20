@@ -2,72 +2,40 @@
 
 * Users
 * Registrations
-* Sets
+* Authentication and Logging in
 * Networks
+* Network discovery
 * Distributions
 * Contracts
 * Marketplace
 * Trends
+* Pools
 * Organizations
 * Stores
 * Inventory
 * Promotions
-* Logging in
+* Selling
 * Watchers
 * Agents
 * Admin
 * Moderator
 * Boards
-* Export and Verification
 * Events
 * Format
-* Token
+* Export and Verification
 * Jobs
 
-## Authentication
+## Authentication and logging in
 
-Each next layer api call should have the option to immediately execute its job rather than putting it on the job queue, and always return the results.
-This is used for testing. The option is only honored if the logged-in user has the tester role
+Handles users logging in and pw resets [user_login.md](layers/user_login.md)
 
-### Next Layer authentication with the inner core
-
-The outer layers uses Oauth, but they have to log in with the inner core via the job queues.
-
-The outer layers have non expiring bearer token for each user, and there is an admin api that allows these token to be regenerated.
-
-When another user, who is allowed via Oauth roles to act on behalf of a user, makes a call for this user, then when the roles are verified for the logged-in user,
-the outer layer will construct the job queue using the behalf-user's token.
 
 ## Job Queues
 
-Because there is reliance for executed javascript, as well as some db intensive operations.
-Then some operations, if not all, should be done by a job queue, and the api caller should get back a callback reference
-and if the api caller provides a url, or another form of callback, then the api will let them know when its done.
+Each public api call is put into a job queue, which is executed and then makes a private network call back to the waiting task,
+which either returns the output to the user, if the http call is waiting, or calls the url the user set, or the user can poll later
 
-The core api does not do callback, but the next layer api will, and what the layers will do is set up some nested operations into a job queue.
-The operations will have ties so that they are done in order, and the needed values from the yet to be executed ops are fed into the ops waiting for them.
-For example, when making a new token, then doing something with it, like putting it into a set.
-
-So the job data should have both the user that is logged in at the time, and the operations are done in the context of that user, and the callback reference and url.
-This implies that the user should have a token to be used, when calling the core api. And the token should expire at the end of the job.
-This means that the core api should use Bearer tokens, and have the api to revoke it
-
-
-* see https://swagger.io/docs/specification/authentication/bearer-authentication/
-* https://laravel.com/docs/10.x/sanctum#api-token-authentication
-
-### Polling or callback or both
-
-The callback does not need to be defined, instead, there is an api call to get the results using the job reference.
-This job data/status data is only seen by using the reference and if the logged-in user is the one who made the reference, or the user who had the api done by permission
-This implies there needs to be a data storage for the job reference, and has the calling user, the operational user, the job status and job api call response data, and the callback url,
-and whether the callback url call was successful or not.
-
-This way there can be cron jobs to try the callback url later, maybe.
-
-This also means there needs to be an api to update the job reference by the job. but that api should not be exposed to the public.
-Instead, the job itself is logged in as its own user to the outer layers, and has its permission set to use this api.
-Probably all jobs can be the same user. See internal api
+[jobs.md](layers/jobs.md)
 
 # Users
 
@@ -75,10 +43,6 @@ Probably all jobs can be the same user. See internal api
 * Manages and creates user groups
 
 [users.md](layers/users.md)
-
-# Logging in 
-
-Handles users logging in and pw resets [user_login.md](layers/user_login.md)
 
 
 
@@ -91,14 +55,14 @@ Does all the new user account creation
 * once a person joins using a type of login, all the tokens associated to that social account is given to them
 
 # Networks
+[networks.md](layers/networks.md)
 
-Networks are stored in the core as token sets. It creates social account entries (each entry a token) which is a token set
-and then for each entry has a structure of tokens representing the social people
+Networks are things related to a user. These resources might become future users, or become other resources.
+Tracks social accounts that are not users, and then later are
 
-These social tokens are owned by the person who discovered them, and can be traded on the marketplace
-
-* discover networks connected to users
-* create subnetworks by filtering a network of social accounts by different attributes. The subnetwork is a new token that inherits from the network token
+# Network discovery
+[network-disovery.md](layers/network-disovery.md)
+Makes new network entry tokens. Scans social networks.
 
 # Distributions
 
@@ -122,6 +86,11 @@ Ownerships of tokens is swapped as is, no refunds. Supports direct sales and auc
 # Trends
 
 Public read only list of token types and quantity bought and sold, or contracted (who, when, amount, payment)
+
+# Pools
+[pools.md](layers/pools.md)
+Pools are a resource that generates future tokens. Each batch made has a different owner.
+
 
 # Organizations
 [organizations.md](layers/organizations.md)
@@ -166,7 +135,7 @@ Sets up a sales flow that tracks different sales events from customer wanting to
 
 
 # Admin
-
+[admin.md](layers/admin.md)
 * Does maintenance on the tokens used by the outer layers
 * Reviews stuck jobs, and can terminate them
 * User operations: freeze, delete
@@ -183,11 +152,9 @@ Additionally, users can chose to designate another user to moderator something t
 
 # Jobs
 
-a job can update its status using the job reference, only users who have the job-write role can use this.
+[jobs.md](layers/jobs.md)
 
-job metrics can be queried, only users who have the job-read role can use this
-
-job metrics allow hooks to be added to allow for events below
+Jobs are used internally by the layers to execute stuff
 
 # Events 
   

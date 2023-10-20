@@ -1,8 +1,17 @@
 # Marketplace
 
-Any transfer of token sets where ownership is swapped between the two parties. All is sold as is with no refunds.
+Allow things to be bought and sold:
+* Tokens can be traded in ownership. A transfer of token sets where ownership is swapped between the two parties.
+* Tokens can be allowed to be put in someone's set not changing ownership
+* Membership can be given to a user group
+
+All is sold as is with no refunds. As is.
 
 For example an inventory token starts off as being owned by the organization, but then there is a swap between a set of token owned by the customer and the inventory token.
+
+Or someone wants access to some network entries they need, a set is made for that.
+
+Or someone wants to be included in a permission group to use stuff.
 
 
 Flow:
