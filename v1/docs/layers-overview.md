@@ -25,17 +25,19 @@
 * Agents
 * Jobs
 
+## Common things in all api requests
+
+* Most require a logged-in user, when that happens, it requires them using a bearer token, acquired in oauth
+* an optional checksum can be added to any token passed in, the checksum must match for that token before the api operation is carried out
+* all api operations use the jobs api, the work is sent to a job queue
+* all api operations use the core api 
+
 ## Authentication and logging in
 
 Handles users logging in and pw resets [user_login.md](layers/user_login.md)
 
 
-## Job Queues
 
-Each public api call is put into a job queue, which is executed and then makes a private network call back to the waiting task,
-which either returns the output to the user, if the http call is waiting, or calls the url the user set, or the user can poll later
-
-[jobs.md](layers/jobs.md)
 
 # Users
 
@@ -65,9 +67,8 @@ Tracks social accounts that are not users, and then later are
 Makes new network entry tokens. Scans social networks.
 
 # Distributions
-
-* generates new tokens of type(s) and quantity to networks of people 
-* the people in the networks are not users, but once they join, by registration, then any tokens assigned to them previously are theirs 
+[distributions.md](layers/distributions.md)
+Organizes new tokens and token pools,  given to users and and network entities
 
 # Contracts
 [contracts.md](layers/contracts.md)
@@ -168,25 +169,20 @@ Board entries can have media as well as markdown, and have options to allow repl
 Private individual chats and group chats.
 
 # Export, Import and Verification
+[export-import-verification.md](layers/export-import-verification.md)
 
-* can send a token set as serialized
-* can import a serialized token set
-* can query the originating server, of a copied token, to see if data is accurate, or if an attribute is in a range or regex
-* a logged-in user to the originating server, can alter the original token, and then the changes of state can be propagated out in the next export
+How tokens across different servers and installs can work together
+
 
 # Agents
+[agents.md](layers/agents.md)
+Agents are those that are authorized to do token changes outside the server
 
-Agents are those that agree to do token changes outside the server, and report back the changes to make to the tokens.
-This can be used with the export, import and verification between different servers, or do some other thing 
 
+## Job Queues
 
-# Token
+Each public api call is put into a job queue, which is executed and then makes a private network call back to the waiting task,
+which either returns the output to the user, if the http call is waiting, or calls the url the user set, or the user can poll later
 
-Allow high level token operations
-
-* Users can create tokens that inherit from their own token
-* Create and edit attributes, create new token types and tokens, edit token attribute values 
-* Allow media uploads to attributes that support those
-* Script attributes cannot be added or edited 
-
+[jobs.md](layers/jobs.md)
 

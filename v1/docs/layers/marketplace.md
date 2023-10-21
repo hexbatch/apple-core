@@ -15,6 +15,8 @@ Or someone wants access to some network entries they need, a set is made for tha
 
 Or someone wants to be included in a permission group to use stuff.
 
+Tokens and sets that cannot be transferred to a lot set cannot be sold.
+
 
 Flow:
 * Set up a lot, owned by a user or group, to be bid on or automatically sold
@@ -40,6 +42,7 @@ Lots that have prices can accept the very first bid made, if there is a price fo
 
 Lots can be owned by a user or an organization.
 
+Lot sets are inherited from a lot-type, this allows things to be marked to not be sold or transferred
 
 ## Offers
 
@@ -59,7 +62,9 @@ Auctions can be closed or open. If closed, the different bidders cannot see the 
 
 ## Award an offer
 
-When the owner selects the winning offer, or if done automatically, all the tokens in the lot will be transferred to the winner, and the price transferred to the seller
+When the owner selects the winning offer, or if done automatically, all the tokens in the lot will be transferred to the winner, and the price transferred to the seller.
+
+If the buyer does not have enough, the award will fail.
 
 ## Compare operations
 
