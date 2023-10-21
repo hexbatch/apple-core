@@ -8,4 +8,6 @@ Private individual chats and group chats.
 
 Boards can push messages out.
 
-There are apis for managing the different types of boards
+There are apis for managing the different types of boards.
+
+Board messages can be encrypted, by having a thing as its content, instead of a plain text attribute value

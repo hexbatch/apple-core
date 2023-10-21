@@ -87,6 +87,8 @@ General api call in the layer:
 | Admin                         | Fixes broken stuff, sets up moderators, user management               | [admin](v1/docs/layers/admin.md)                                              |
 | Moderator                     | Moderate some assigned events, locations, changes                     |                                                                               |
 | Boards                        | Discussion chat rooms and reviews. Private individual and group chats | [boards.md](v1/docs/layers/boards.md)                                         |
+| Things                        | Allow sharing and communities                                         | [things.md](v1/docs/layers/things.md)                                         |
+| Public grants                 | Allow some users to do some low level operations                      | [public-grants.md](v1/docs/layers/public-grants.md)                           |
 | Events                        | Allows webhooks to be registered and return changes to watches        |                                                                               |
 | Format                        | Converts token sets to different things: html and markup ..           | [format](v1/docs/layers/format.md)                                            |
 | Export and Verification       | How tokens are shared between servers                                 | [export-import-verification.md](v1/docs/layers/export-import-verification.md) |

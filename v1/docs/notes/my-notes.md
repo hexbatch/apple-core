@@ -5,6 +5,7 @@ This page is to store stuff I need during development, its my bookmarks and refe
 ## ToDo list
 
 * how to list standard attributes
+* how allow only one token each per user
 
 ## General notes
 

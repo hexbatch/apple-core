@@ -19,6 +19,7 @@
 * Admin
 * Moderator
 * Boards
+* Things
 * Events
 * Format
 * Export and Verification
@@ -31,6 +32,7 @@
 * an optional checksum can be added to any token passed in, the checksum must match for that token before the api operation is carried out
 * all api operations use the jobs api, the work is sent to a job queue
 * all api operations use the core api 
+* any user can take a resource exposed by the public api, and perform low level operations on it if they have the permissions
 
 ## Authentication and logging in
 
@@ -167,6 +169,15 @@ There can be both general discussion chat rooms, read only review area. Some cha
 Board entries can have media as well as markdown, and have options to allow replies.
 
 Private individual chats and group chats.
+
+# Things
+[things.md](layers/things.md)
+
+Allow sharing and communities
+
+# Public grants
+[public-grants.md](layers/public-grants.md)
+Allow some users to do some low level operations
 
 # Export, Import and Verification
 [export-import-verification.md](layers/export-import-verification.md)
