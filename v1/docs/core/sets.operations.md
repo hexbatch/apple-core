@@ -88,3 +88,25 @@ one can put in required relationships in a set too, this @ is done before the #.
 so #apples>@child(#ads.none).bears:2
 
 searches first sets of apple tokens, then for any immediate child whose set token it type ads with attribute none fine a token with attribute bear value 2 in that set
+
+to start a search at a particular set, use the @set(#apples)
+
+to list all the tokens in a set, do not put any modifiers after the last set: 
+
+
+to search with ownership use the @owner(some user attribute)
+to search all sets a user owns, that you can see just do @owner(.username:will)
+
+to combine searches using the set modifiers and the user modifier
+@set(#apples@owner(.username:will))
+
+
+to see if something exists, without getting an iterator search result back put ? at the end of the search
+
+Search results give back iterators and a page contents, use the iterator id to get the next page, 
+iteration is one way only and can have duplicates in the results as things are updated in between calls for a page
+
+
+### Global Set
+
+    All tokens are in a global set (G) so if needing to find any token at all use G for A 

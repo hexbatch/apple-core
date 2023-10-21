@@ -24,6 +24,7 @@ This is how my end of the development here will go
 * Once the docs has a solid go, the api-docs will be filled in and will describe all the data structures and operations
 * Implement and test the core api.
   * The core api will have a full testing coverage and suit
+  * See [core-development-overview.md](v1/core-dev/core-development-overview.md)
 
 ### Order of writing layers
 

@@ -43,3 +43,9 @@ Groups that inherit from other group token-types also inherit their memberships 
 These tokens can be restricted by space and time, and have extra or fewer members and admins
 
 Inherited groups are good for allowing a subset or geo or time fencing permissions for attribute or sets
+
+
+## Api calls that list groups
+
+Search results give back iterators and a page contents, use the iterator id to get the next page,
+iteration is one way only and can have duplicates in the results as things are updated in between calls for a page

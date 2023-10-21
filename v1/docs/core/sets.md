@@ -43,26 +43,6 @@ Type groups are used in token set operations and anywhere I need some requiremen
 [sets.operations.md](sets.operations.md)
 We can do operations on sets to make new sets, combine sets, and see what is in a set
 
-### Global Set
-
-    All tokens are in a global set (G) so if needing to find any token at all use G for A 
-
-### Copy
-
-Copy allow tokens to be shared across servers operated by different people.
-
-It takes the publicly visible attributes, and creates new tokens owned by the calling user with its attributes set to the public ones.
-And has an originating data attributes: origin_server_url, origin_token_guid
-
-When a token is verified to have this data, the server that owns it is called, and it can send back an answer, or can send back updated data
-
-Token sets can be exported to be in a json like structure, converted to an object here
-
-### export data
-
-Token sets can be serialized to have the data in the attributes as key value pairs, as seen by the logged-in user.
-
-Token set relations can also be serialized with the token set, if chosen, with references to the sibling, parent and children sets to be used to get their data
 
 
 ## Permissions for a token to be added to a set

@@ -29,3 +29,8 @@ For multiple inheritance, that has duplicate attributes, the order of inheritanc
 When inheriting from a series of ancestors, the most recent (closest ancestor) one will be used
 
 This includes default global states
+
+
+## Api list results
+
+If too many results back for api that list token types it uses iterator

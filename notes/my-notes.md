@@ -40,6 +40,14 @@ older notes:
 
     find . -name '*.md' | xargs wc -l
 
+# Hazily made plans
+
+seem like good idea when I write it down
+
+---------------------------------------------
+
+Once the core api is up and running, make js wrapper library to call this via https, and make a simple but graphical way to play with the api
+
 
 
 
