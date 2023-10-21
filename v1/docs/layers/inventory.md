@@ -19,4 +19,8 @@ When the customer puts the inventory in his basket, a new lot is made from the l
 
 All the data for the lot, except for the set, is added to a lot template set, the set has an optional weight and boundary and salemen
 
-Then, when a lot needs to be made, the set to be sold is given to it and the closest match lot is made
+Then, when lot needs to be made, the set to be sold is given to it and the closest match lot is made
+
+### Price calculations
+
+A script attribute can customize the attributes of a lot template, and that affects the price in the tokens (increase Blue by 3, reduce red by 5)

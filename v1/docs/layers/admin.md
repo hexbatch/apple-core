@@ -1,5 +1,12 @@
 # Administration
 
+* Does maintenance on the tokens used by the outer layers
+* Reviews stuck jobs, and can terminate them
+* User operations: freeze, delete
+* Token operations and sets: change their ownership
+* Contracts: can change terms of a contract
+* Moderators: sets up and manages
+
 Admins will do stuff, logged in as other users, when the core api is executed.
 
 Super admins can log in as anyone to do anything.

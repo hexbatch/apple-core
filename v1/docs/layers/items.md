@@ -43,3 +43,11 @@ Items can be reported on, can be individually blocked, and the user making the i
 Items can also be created to mingle, and when together in a set create a new token, which can be a new item token
 
 This allows puzzles and games, as well as sets up the mechanics for notices and listeners
+
+Mixed items can exchange some attribute data, or append attribute data, in one or both of the matched.
+* If more than two matching, then the mixing can either randomly do from one preset, one randomly, some in a set, or all
+* The data can be updated once, a few times or many
+
+## Localized communities
+
+Items can have boards, and these boards and chats are open to any user in a location or time

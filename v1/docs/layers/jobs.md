@@ -47,3 +47,7 @@ Instead, the job itself is logged in as its own user to the outer layers, and ha
 Probably all jobs can be the same user. See internal api
 
 
+### Metrics
+
+Approved users can get some or all of the network metrics. The admin can allow some metrics to be public without login
+

@@ -1,6 +1,6 @@
 # Networks
 
-Networks are things related to a user. These resources might become future users, or become other resources.
+Networks are things online related to a user. These resources might become future users, or become other resources.
 Tracks social accounts that are not users, and then later are
 
 Each network has a type of network, so there is an api to create different types of networks

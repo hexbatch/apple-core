@@ -16,9 +16,9 @@ Actions will pass in more data to the input_param, and the return values are mor
 input_param:
 * write_value: {} empty except when a script attribute is written to
 * current_attributes: {}
+* current token owner, current api user
 * local script_state (stored in the token its attribute parent is attached to)
 * global script state (stored in the token type attribute that is made when an attribute having the script is attached to the token type)
-
 
 
 ##  immutability 
