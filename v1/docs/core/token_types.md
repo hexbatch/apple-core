@@ -15,4 +15,17 @@ Token types do not record location, only sets of tokens do
             allow_bounds: boolean
             allow_actions: boolean
         attributes: []
-        parents: []
+        parents: []  -- the order is important
+        global_states: [attribute_id, state]
+
+
+
+Global states are kept here for url and scripts.
+
+## Multiple inheritance for attributes
+
+For multiple inheritance, that has duplicate attributes, the order of inheritance determines which one is used 
+
+When inheriting from a series of ancestors, the most recent (closest ancestor) one will be used
+
+This includes default global states

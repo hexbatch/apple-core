@@ -36,6 +36,12 @@ older notes:
 * https://davidgarcia.dev/posts/how-to-split-open-api-spec-into-multiple-files/
 * https://github.com/dgarcia360/openapi-boilerplate
 
+# Commands
+
+    find . -name '*.md' | xargs wc -l
+
+
+
 
 
 

@@ -52,8 +52,11 @@ depends on what the script is used for: can be a primitive to be evaluated for t
                 action-version: can be a version (optional)
                 action-owner: actions are be owned by a user
                 target:
-                  target attribute guid:
+                  target token-type : null for self token
+                  target attribute guid: (value changed)
                   target-from-state: literal string, number or regex (empty means always) can be used with the lifecycles
+                  target-switch: the value of the action turns on or off the live attribute for this token (everywhere in all sets)
+                  target-parent-switch: the value of this action turns off the parent listed here for the target 
                 lifecycle: [] array of life cycles this script runs on, without looking at the target from-state, can be empty
                 param_attributes: [] if not empty then these attributes must exist on the token or type-group for the action to run
                 recipient: //optional
@@ -93,5 +96,14 @@ and if only one, before the value change, or not in the allowed count range,
  it will block the lifecycle change
 
 Such actions do not need scripts or urls
+
+
+# Turning on and off a live attribute
+
+A token's live attribute can be turned off and this will be everywhere
+
+# turning on and off a token's parent
+
+All the attributes from a parent of a token can be turned on and off at once, but if the token has dynamic attributes that overwrite this then those stay on
 
 

@@ -32,9 +32,11 @@ Attribute have an owner, a name, bounds, requirements, permissions, and a value
         parent_attribute: attributes can optionally have a single parent
         user: can be one or none
         name: name of the attribute (unique to all attributes)
-        activity_bounds: []
-        read_bounds: []
-        write_bounds: []
+       
+        bounds:
+            activity_bounds: []
+            read_bounds: []
+            write_bounds: []
             
         requirements:
             tokens:
@@ -48,8 +50,8 @@ Attribute have an owner, a name, bounds, requirements, permissions, and a value
             read_user_groups: []  if empty anyone can read the attribute value
             write_user_groups: [] if empty anyone can change the attribute value.
             set_requirements: 
-                read: [] attribute ids
-                write: [] attribute ids
+                read: [] or {} attribute ids  : if this array, if one in a set can read, if object then all must be in set to read
+                write: [] attribute ids : if this array, if one in a set can write, if object then all must be in set to write
         value:
             value_type: one of: numeric, string, string specific type,json, markdown, binary, action, script,url, token id
             min: (numeric only)
@@ -67,11 +69,14 @@ By default, if no permissions, attributes can be read by everyone, and only writ
 To make attributes read only or write only, make the set_requirements be an attribute that is defined to be allergic to this attribute
 
 ### set requirements
+When an api uses a set context, 
 
-Conditional permissions can also be defined to allow the read and write to only occur when another attribute in the same token set is present.
+Conditional permissions can also be defined to allow the read and write to only occur when another(or several) attribute in the same token set is present.
 This attribute does not need to be in the same token.
 
-affinities and allergies also control when a token is allowed to be or not be in a set
+
+## Affinity and allergies 
+affinities and allergies also control when a token is allowed to be or not be in a set, and controls token movement through a network of sets. See sets
 
 
 ### Required set attributes for read
@@ -93,4 +98,20 @@ write bounds is that the attribute is writable inside these bounds only. Same as
 
 location bounds is calculated using only the token map coordinates
 
+
+## Live attributes
+
+When an attribute is on a token, its live, and there is a record about the state of the attribute in the token
+
+    Live attribute:
+        current token id:
+        static attribute id:
+        static source of attribute: token type id, or live if just stuck on
+        current_value: 
+        activated: boolean - if not activated then this attribute does not count in the live, its skipped over
+        local_state: if this attribute holds an action
+
+There can be duplicates of attributes here, one from the token type and one from a live attribute
+When a live attribute is removed from the token, it's removed from the lookup here and the token type attribute is used again
   
+When an attribute is turned off, then the token has no attribute by that name or id. This counts in many scenarios 
