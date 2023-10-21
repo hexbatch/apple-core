@@ -19,7 +19,7 @@
 * Admin
 * Moderator
 * Boards
-* Things
+* Items
 * Events
 * Format
 * Export and Verification
@@ -142,11 +142,11 @@ Sets up a sales flow that tracks different sales events from customer wanting to
 * Moderators: sets up and manages
 
 # Moderator
+[moderators.md](layers/moderators.md)
+Moderators have permissions to change and remove selected attributes from a set of token types.
+The can change and remove some things in chats, boards, stores, items, inventory
 
-Moderators can see all the changed attribute values that they have dominion over.
-They have ability to edit attribute values they have permissions for.
-
-Additionally, users can chose to designate another user to moderator something they control. So company moderators can exist, for example (or sales managers)
+Additionally, users can choose to designate another user to moderator something they control. So company moderators can exist, for example (or sales managers)
 
 # Jobs
 
@@ -170,8 +170,8 @@ Board entries can have media as well as markdown, and have options to allow repl
 
 Private individual chats and group chats.
 
-# Things
-[things.md](layers/things.md)
+# Items
+[Items](layers/items.md)
 
 Allow sharing and communities
 
