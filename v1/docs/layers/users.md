@@ -107,10 +107,17 @@ Any member of a groups can see the full list of the group members and admins
 * edit group attributes (any admin)
 * view group (any member)
 * add group member (any admin)
+* create a membership offer (any admin)
 * remove group member (any admin)
 * add admin (only if group owner)
 * remove admin (only if group owner)
 * change group ownership (only if owner)
+
+### Membership offers
+
+Membership offers can be sold in the marketplace, and allow the holder to redeem this for group membership. it only works one time
+
+Because this is a token, it can also be a token pool, and also have bounds and expiration, and permissions (only some users can use it)
 
 ## User wallet
 

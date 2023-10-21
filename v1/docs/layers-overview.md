@@ -16,13 +16,13 @@
 * Promotions
 * Selling
 * Watchers
-* Agents
 * Admin
 * Moderator
 * Boards
 * Events
 * Format
 * Export and Verification
+* Agents
 * Jobs
 
 ## Authentication and logging in
@@ -99,19 +99,14 @@ Organizations are groups of users that share a wallet and can vote on things to 
 
 
 # Stores
-
+[stores.md](layers/stores.md)
 Stores sell inventory
 
-* Store inherits from the organization token
-* Stores promote collections of inventory
-* Users can be registered as salesmen for the store, and they can be selling the inventory
-* Manages sells flows
 
 # Inventory
+[inventory.md](layers/inventory.md)
 Items in a store for sale, goods need not be physical or even real
 
-* creates a token, based on the store
-* specialized attributes for selling and displaying
 
 # Promotions
 
@@ -165,10 +160,12 @@ Jobs are used internally by the layers to execute stuff
   Will convert a token set to html , or markdown. Other formats can be added as plugins for that project
 
 # Boards
+[boards.md](layers/boards.md)
+There can be both general discussion chat rooms, read only review area. Some chat rooms can have upvotes.
 
-There can be both general discussion chat rooms and review area. Some chat rooms can have upvotes.
+Board entries can have media as well as markdown, and have options to allow replies.
 
-Board entries can have media as well as markdown, and have options to allow replies
+Private individual chats and group chats.
 
 # Export, Import and Verification
 

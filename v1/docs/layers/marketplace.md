@@ -2,8 +2,10 @@
 
 Allow things to be bought and sold:
 * Tokens can be traded in ownership. A transfer of token sets where ownership is swapped between the two parties.
+* Uncreated tokens, in a pool, can be sold, when sold the tokens are created
+* Pools can be bought and sold
 * Tokens can be allowed to be put in someone's set not changing ownership
-* Membership can be given to a user group
+* Membership offers : Membership can be given to a user group
 
 All is sold as is with no refunds. As is.
 
@@ -26,7 +28,9 @@ There is no sales flow here, or buying rights to use future tokens, all sales ar
 
 ## Lots
 
-What is offered for sale, lots can be created but not changed after the first bid on it is made, lots can have an expiring time or other bounds
+What is offered for sale, lots can be created but not changed after the first bid on it is made, lots can have an expiring time or other bounds.
+
+What is offered for sale is a set of tokens, or a pool or a group membership offer 
 
 Lots can have a set of type-groups any of which can be met to be the price. Or a lot may be made without a price and the owner selects a winning bid.
 Type groups can be bounded, so that different prices can be set for different areas or times or bid contexts.
@@ -35,6 +39,7 @@ It could be, that in some times, locations or path contexts - that there is no p
 Lots that have prices can accept the very first bid made, if there is a price for that bound, and automatically close the sale. 
 
 Lots can be owned by a user or an organization.
+
 
 ## Offers
 

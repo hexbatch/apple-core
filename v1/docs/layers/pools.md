@@ -29,3 +29,5 @@ A new smaller pool still has the same contracts as the older pool, but new contr
 This allows resale of pools without breaking older contracts.
 
 A pool can be made to disallow reselling
+
+A sub-pool can be combined back to its parent, destroying the sub-pool and increasing the parent total unallocated  
