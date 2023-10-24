@@ -45,7 +45,8 @@ Reading user data:
     * original_image_url:   (regular image types)
 * primary_color: color
 * background_color: color
-* landing set
+* landing set 
+* session list  (private)
 
 
 
@@ -135,13 +136,17 @@ creates and manages the home set. There is a remembered set that the api uses as
 
 ## Working set
 
-The api allows the person to change the set
-Changes the set context the user looks through.
-A user travels through the sets by joining and leaving sets. The set context the api calls are made from are made using this stored working set.
+The api allows the person to create sessions and change the set
+In a session, this changes the set context the user looks through.
+A user travels through the sets by joining and leaving sets. 
+When a user session changes the set, the working set is changed.
 
+The set context the api calls are made from, in all the layers, are made using a session.
+
+When a user session changes to a new set:
 The user's token is added to the set to use as a context, that way, the set can reject the user, or give a new token to the user (message, access, etc)
 
-A user can do an api call using a different set from his working set without leaving his working set. 
+A user can do an api call using a different set than his working set without leaving his working set. 
 Everything still works the same, but at the end of the api call, the user is still in his chosen working set
 
 ## Bookmarks
@@ -154,3 +159,11 @@ Api gives the ability to set the working set to a bookmark here
 
 A user can create their landing set, that people can join to interact with the user's stuff, without having to be in the user's group.
 This landing set is easily discoverable inheriting the landing type parent. Also this is in the user data given back, if the landing set's permissions allow it to be read
+
+## Session list
+A user can have different sessions at one time. A session can have three things:
+
+* the working set
+* a command pallet
+* session data
+
