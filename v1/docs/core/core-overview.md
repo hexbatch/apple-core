@@ -30,11 +30,11 @@ So, need an api call to delete/unregister a bearer token given to it
 
 # Token types
 
-[Token types](core/token_types.md) make tokens, and can select them from a set. They contain the static attributes that come to life when a token is made
+[Token types](token_types.md) make tokens, and can select them from a set. They contain the static attributes that come to life when a token is made
 
 
 # Tokens
-[tokens.md](core/tokens.md)
+[tokens.md](tokens.md)
 Tokens are made from token types, and have live values of those attributes. 
 
 Tokens can have other attributes added to them individually, either that are not in the token type, or overwriting the token type's added on to them
@@ -43,7 +43,7 @@ Tokens have their aggregate values: bounds, affinities, allergies
 
 
 # Token set
-[sets.md](core/sets.md)
+[sets.md](sets.md)
 All tokens belong to one or more token sets.
 
 A token set does not have any definition or structure, it's a loose organization of tokens.
@@ -52,7 +52,7 @@ A token set does not have any definition or structure, it's a loose organization
 
 # Boundaries can be on the map or in time.
 
-[bounds](core/bounds.md) are only applied to attributes.
+[bounds](bounds.md) are only applied to attributes.
 
 Each bounds have a location and/or time and/or set path component, either is optional
 
@@ -62,7 +62,7 @@ If there is no bounds, the attribute is always on. Else, the attribute is only r
 ----------------------------------------
 # User 
 
-A [user](core/users.md) is both a person (or bot) in this library, and a token type. Any tokens a user creates will inherit from this token type.
+A [user](users.md) is both a person (or bot) in this library, and a token type. Any tokens a user creates will inherit from this token type.
 
 A user when created has some default attributes, some of which can only be read by the user.
 
@@ -74,7 +74,7 @@ User tokens cannot be bounded, and they cannot run actions
 ----------------------------------------
 # User Groups
 
-A [user group](core/user_groups.md)  is a collection of users. These groups are used for permission lists, and are the bedrock of the permission system in this library
+A [user group](user_groups.md)  is a collection of users. These groups are used for permission lists, and are the bedrock of the permission system in this library
 
 Actions do not run on the token of the user group
 
@@ -83,21 +83,21 @@ Actions do not run on the token of the user group
 
 # Attributes
 
-[attributes](core/attributes.md) are the core of the api here.
+[attributes](attributes.md) are the core of the api here.
 
 Attributes can be made to interact with one another, to require each other to be read or used, to set permissions and conditions for anything that happens in this api
 
 -------------------------------
 
 # Scripts
-[scripts](core/scripts.md) are Javascript can be set to run and generate a value when a token attribute is read
+[scripts](scripts.md) are Javascript can be set to run and generate a value when a token attribute is read
 
 # Urls
-[urls](core/urls.md) are remote callbacks to be run and generate a value when a token attribute is read
+[urls](urls.md) are remote callbacks to be run and generate a value when a token attribute is read
 
 # Actions
 
-[actions](core/actions.md) are attribute values that are javascript that runs.
+[actions](actions.md) are attribute values that are javascript that runs.
 
 The actions also handle rate limiting, contracts, and whether a set action can happen
 

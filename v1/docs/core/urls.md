@@ -32,7 +32,7 @@ if additional post data is needing to be attached, that is provided. It is never
     url:
     user: required
     name : unique in urls
-    url: ip or url to call
+    uri: ip or url to call, also has optional different stuff like protocal, port, login stuff
     additional_post_data : constant json
     auth:
         auth_type:
@@ -40,3 +40,8 @@ if additional post data is needing to be attached, that is provided. It is never
         user:
         pw:
     returns primative or object
+
+
+# Not just for http calls outside the cluster
+
+can call private network ips or pipes etc

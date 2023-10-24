@@ -2,9 +2,9 @@
 # List of api operations
 
 # Users 
--- tags: [users](core/users.md), [user_groups](core/user_groups.md)
+-- tags: [users](users.md), [user_groups](user_groups.md)
 
-user and groups api defined at [users.yaml](../api-docs/users.yaml)
+user and groups api defined at [users.yaml](../../api-docs/users.yaml)
 
 Users and User group operations
 
@@ -27,9 +27,9 @@ Users and User group operations
 
 
 # Bounds
--- tags: [bounds](core/bounds.md), [location_bounds](core/location_bounds.md), [time_bounds](core/time_bounds.md),[bounds](core/set_path_bounds.md),
+-- tags: [bounds](bounds.md), [location_bounds](location_bounds.md), [time_bounds](time_bounds.md),[bounds](set_path_bounds.md),
 
-bounds api defined at [bounds.yaml](../api-docs/bounds.yaml)
+bounds api defined at [bounds.yaml](../../api-docs/bounds.yaml)
 
 Create and manage bounds. Bounds are made up of collections of times and locations.
 Bounds can only be edited or deleted if they are not used anywhere.
@@ -64,9 +64,9 @@ TODO add in the set path bounds below
 
 # Attributes
 
--- tags: [attributes](core/attributes.md)
+-- tags: [attributes](attributes.md)
 
-attribute api defined at [attributes.yaml](../api-docs/attributes.yaml)
+attribute api defined at [attributes.yaml](../../api-docs/attributes.yaml)
 
 Attribute have an owner, a name, bounds, requirements, permissions, and a value.
 
@@ -89,17 +89,17 @@ While attributes have a lot to set, most of this is done in hte create and edit
 
 todo add scripts 
 
--- tags: [scripts](core/scripts.md)
+-- tags: [scripts](scripts.md)
 
 
 # Urls
--- tags: [urls](core/urls.md)
+-- tags: [urls](urls.md)
 
 # Actions
 
--- tags: [actions](core/actions.md)
+-- tags: [actions](actions.md)
 
-actions api defined at [actions.yaml](../api-docs/actions.yaml)
+actions api defined at [actions.yaml](../../api-docs/actions.yaml)
 
 Actions have an owner, version, name, target, lifecycle, recipient, charge, options,script
 
@@ -115,9 +115,9 @@ Actions have an owner, version, name, target, lifecycle, recipient, charge, opti
 
 # Tokens and Types
 
--- tags [token_types](core/token_types.md)
+-- tags [token_types](token_types.md)
 
-token type api defined at [tokens.yaml](../api-docs/tokens.yaml)
+token type api defined at [tokens.yaml](../../api-docs/tokens.yaml)
 
 Token types have an owner, options, attributes, and parents
 

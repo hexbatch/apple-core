@@ -15,10 +15,20 @@ Ownership is not used when type-groups are used in set operations
 
 The token types can have a max and min amounts. In set operations the exact amount used will default to be either the min,then max if min not set, or all available if neither
 
+The token types can also have needed attributes with a min or max for number ranges, or/and a value to match strings with constants or regex. or and a numeric value.
+When attributes are set, the live and inherited attributes that are on for the token are filtered here
+
     So: a type-group:
         token: (optional) if some description is needed for this type-group, or for identifying it with a set path, or putting bounds of when this can be used
         token-types: [ {
             type: token-type
             minimum_needed: optional
             maximum_needed: optional
+            attributes: [{
+                attribute id, ( also parent or ancestor)
+                attribute_min:
+                attribute_max:
+                string_value: (constant or regex)
+                numeric_value: (numeric)
+            }]
         }]

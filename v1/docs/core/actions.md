@@ -26,13 +26,24 @@ When setting a charge, if there are not enough tokens in the source token set, t
 * The charge will only happen if the script returns a truthful value to the target attribute
 
 Lifecycle for attributes:
-* creation
+* token creation
 * owner-change
 * token-set addition
 * token-set removal
 * token-set mass attribute altering
 * destruction
 * value change
+* live attribute added to token
+* live attribute removed from token
+* parent in token turned on
+* parent in token turned off
+
+Set tokens (tokens that are part of the definition of a set) have some extra actionable stuff
+* Token was added to the set
+* Token left the set
+* Child was added to the set
+* Parent was added to the set
+* Link was made from the set
 
 Input params:
 input params have more data 

@@ -28,11 +28,13 @@ A new attribute can be made that has all the features of its parent, however any
 
 Attribute have an owner, a name, bounds, requirements, permissions, and a value
 
+Attributes can have optional explaining text
+
     so an attribute:
         parent_attribute: attributes can optionally have a single parent
         user: can be one or none
         name: name of the attribute (unique to all attributes)
-       
+        description: some text explaining why this attribute is used, etc, the author or other info
         bounds:
             activity_bounds: []
             read_bounds: []

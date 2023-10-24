@@ -18,3 +18,7 @@ Board messages can be encrypted, by having a thing as its content, instead of a 
 
 * Chats can use public agents to connect to existing chat software
 * Boards can use agents to use  board code
+
+## Board sets
+
+a board provides a set for people to read and write. A conversation will have one set, but a topics board might have a set for each topic, whose parent is the board root

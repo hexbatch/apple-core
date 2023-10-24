@@ -24,30 +24,30 @@ This is how my end of the development here will go
 * Once the docs has a solid go, the api-docs will be filled in and will describe all the data structures and operations
 * Implement and test the core api.
   * The core api will have a full testing coverage and suit
-  * See [core-development-overview.md](v1/core-dev/core-development-overview.md)
+  * See [core-development-overview.md](v1/dev/core-development-overview.md)
 
 ### Order of writing layers
 
 Each layer has its own iteration of writing the api and code. 
 
-[order-writing-layers.md](v1/docs/order-writing-layers.md)
+[order-writing-layers.md](v1/docs/layers/order-writing-layers.md)
 
 
-## The core 
+# The core 
 
-The Core deals with the basic data types described in [core-overview.md](v1/docs/core-overview.md).
+The Core deals with the basic data types described in [core-overview.md](v1/docs/core/core-overview.md).
 
-The api list is at [core-api-list.md](v1/docs/core-api-list.md)
+The api list is at [core-api-list.md](v1/docs/core/core-api-list.md)
 
-## Layers
-The layers overview is talked about in [layers overview](v1/docs/layers-overview.md)
+# Layers
+The layers overview is talked about in [layers overview](v1/docs/layers/layers-overview.md)
 
 The layers each do their own thing, but they set up jobs to be dispatched and completed, with callback urls registered by the caller, or they can do polling.
 
 Most of the heavy lifting in the layer codes will be done by api calls to the core.
 
 The layer framework will be storing user bearer tokens that do not expire, and they use those to create a temporary token in each api call.
-The core itself does not have a superuser, or root user. But it does have a permissions system. So the layers doing actions as different users for a single call takes care of the nested permissions.
+The core itself does not have a superuser, or root user. But it does have a permission system. So the layers doing actions as different users for a single call takes care of the nested permissions.
 
 
 When a public api request is made, a job (a class instance) is made that has a list of api calls to make.
@@ -99,7 +99,10 @@ General api call in the layer:
 | Agents                        | Agents are authorized to do things outside the server                 | [agents](v1/docs/layers/agents.md)                                         |
 | Jobs                          | Aid to the jobs in the queue, track job output and give notice        | [jobs](v1/docs/layers/jobs.md)                                             |
 
+# Concepts
 
+* [Environment](v1/docs/concepts/environment.md)
+* [Money](v1/docs/concepts/real_money.md)
 
 # Notes
 
