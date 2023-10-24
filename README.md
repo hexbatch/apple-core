@@ -107,6 +107,7 @@ General api call in the layer:
 * [Interfaces](v1/docs/concepts/interfaces.md)
 * [Data Flow](v1/docs/concepts/data-flow.md)
 * [Instances](v1/docs/concepts/instances.md)
+* [Coding with tokens](v1/docs/concepts/coding-with-tokens.md)
 
 # Notes
 

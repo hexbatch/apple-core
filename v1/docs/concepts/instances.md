@@ -10,3 +10,10 @@ Instances should have a welcome shell in the list the instance gives when asked 
 ## Tokens representing instances
 
 Instances can be users in another instance, and can share sets. Users can find instances to go to in these sets. Instances can also discover each other this way too.
+
+
+## Shells linking instances
+
+Instances can be hooked up in such a way that tokens entering a set automatically are set up with an agent to go to another set, and this can be one or two ways.
+The tokens from the other instance can join a set and be sent back to the originating server. There can be networks of instances set up to have specific relations between each other,
+and sessions and tokens can go from one to the other in some set order, or in a layout of relations
