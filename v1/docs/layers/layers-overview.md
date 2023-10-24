@@ -1,5 +1,6 @@
 # Once the api for the overview is set up, there are other apis that allow more specific usages
 
+* Instance
 * Users
 * Registrations
 * Authentication and Logging in
@@ -35,6 +36,10 @@
 * any user can take a resource exposed by the public api, and perform low level operations on it if they have the permissions
 * each user has a working set or tells which set they are working from (so they do not leave their working set)
 
+
+## Instance info
+[instance.md](instance.md)
+Gives information about the instance the api is running at. Acts as a first step in interacting with the instance
 
 ## Authentication and logging in
 [user_login.md](user_login.md)

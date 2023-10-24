@@ -14,7 +14,7 @@ So this is why its open source. Also, I have hopes that fresh ideas, and tested 
 ## Planned stages of development
 
 This project is still in the most early days. Right now, it's still in the planning.
-There is a core api that will power 24 microservices, listed below. The microservices here are called the layers.
+There is a core api that will power 25 microservices, listed below. The microservices here are called the layers.
 
 This is how my end of the development here will go
 
@@ -73,6 +73,7 @@ General api call in the layer:
 
 | Layer                         | Description                                                           | Link                                                                       |
 |-------------------------------|-----------------------------------------------------------------------|----------------------------------------------------------------------------|
+| Instance                      | About the instance the api is running on                              | [instance](v1/docs/layers/instance.md)                                     |
 | Users                         | Managers existing users; creates and changes user groups              | [users](v1/docs/layers/users.md)                                           |
 | Registrations                 | Does all the new user account creation                                | [registrations](v1/docs/layers/registrations.md)                           |
 | Authentication and Logging in | Handles users logging in and pw resets                                | [user_login](v1/docs/layers/user_login.md)                                 |
@@ -105,6 +106,7 @@ General api call in the layer:
 * [Money](v1/docs/concepts/real_money.md)
 * [Interfaces](v1/docs/concepts/interfaces.md)
 * [Data Flow](v1/docs/concepts/data-flow.md)
+* [Instances](v1/docs/concepts/instances.md)
 
 # Notes
 

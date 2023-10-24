@@ -11,11 +11,15 @@ This api handles:
 * system functions for changing the public pw (the api for changing is done in the log in api layer)
 
 The user layer here also remembers the user password, both the public one, and the one used to log into the core for the user.
-It remembers the user token id, and stores the long term user bearer token
+It remembers the user token id, and stores the long term user bearer token. Users can be blocked from doing actions. Users can be given a whitelist of allowed api calls.
+
+The user is joined to a group called the allowed api calls, the user must use the apis in this group only, and its enforced when the user is authenticated in each call.
 
 parts of this layer is public, and parts of this is for the system
 
-this manages the home set, the first set context the user has when logged in and can easily find again
+This manages the home set, the first set context the user has when logged in and can easily find again.
+
+Sessions are also handled here.
 
 
 ## Data structure
