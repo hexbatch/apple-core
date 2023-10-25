@@ -104,6 +104,7 @@ General api call in the layer:
 
 * [Environment](v1/docs/concepts/environment.md)
 * [Money](v1/docs/concepts/real_money.md)
+* [Shipping](v1/docs/concepts/shopping.md)
 * [Interfaces](v1/docs/concepts/interfaces.md)
 * [Data Flow](v1/docs/concepts/data-flow.md)
 * [Instances](v1/docs/concepts/instances.md)
