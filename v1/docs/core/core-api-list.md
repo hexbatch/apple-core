@@ -22,39 +22,9 @@
 
 
 # Bounds
--- tags: [bounds](bounds.md), [location_bounds](location_bounds.md), [time_bounds](time_bounds.md),[bounds](set_path_bounds.md),
-
-bounds api defined at [bounds.yaml](../../api-docs/bounds.yaml)
-
-Create and manage bounds. Bounds are made up of collections of times and locations.
-Bounds can only be edited or deleted if they are not used anywhere.
-
-TODO add in the set path bounds below
-
-
-| Family     | Tags            | Method | Path                                    | Operation                                | Description                                                      |
-|------------|-----------------|--------|-----------------------------------------|------------------------------------------|------------------------------------------------------------------|
-| Boundaries | bounds          | Post   | bounds                                  | Create Boundary                          | Boundaries are made: the user who made this call and a name      |
-| Boundaries | bounds          | Delete | bounds/:id                              | Remove Boundary                          | Deletes an unused boundary                                       |
-| Boundaries | bounds          | Get    | bounds/:id                              | List Boundary                            | Lists the locations and times in a boundary, can filter          |
-| Boundaries | bounds          | Get    | bounds/:id/time/schedule                | List Boundary's schedule                 | Shows a list of start and stop times for the entire boundary     |
-| Boundaries | bounds          | Get    | bounds/:id/location/area                | List Boundary's area                     | Shows a list of polygons for the entire boundary                 |
-| Boundaries | bounds          | Get    | bounds/:id/ping                         | Tell if time and/or location in boundary | returns true or false if a time and or location is in a boundary |
-| Boundaries | bounds          | Get    | bounds                                  | List Boundaries                          | Lists boundaries, options to filter for used or unused           |
-| Boundaries | bounds          | Delete | bounds/:id                              | Remove Bounds                            | Unused boundaries can be removed                                 |
-| Boundaries | location_bounds | Post   | bounds/:bound_id/location               | Create Location                          | Makes a new location: a name and at least one polygon            |
-| Boundaries | location_bounds | Put    | bounds/:bound_id/location/:id           | Edit Location                            | Changes the polygons or name in a location                       |
-| Boundaries | location_bounds | Delete | bounds/:bound_id/location/:id           | Delete Location                          | Removes location                                                 |
-| Boundaries | location_bounds | Get    | bounds/:bound_id/location/:id           | List Location details                    | Shows location details : list of polygons                        |
-| Boundaries | location_bounds | Get    | bounds/:bound_id/location/:id/ping      | Tells if location is in area             | Returns true or false if a map coordinate is in the locations    |
-| Boundaries | time_bounds     | Post   | bounds/:bound_id/times                  | Create Times                             | Makes a new times, a name and at least one rule                  |
-| Boundaries | time_bounds     | Put    | bounds/:bound_id/time/:id               | Edit Times                               | Changes the time definition or name in a time                    |
-| Boundaries | time_bounds     | Delete | bounds/:bound_id/time/:id               | Delete Times                             | Removes times                                                    |
-| Boundaries | time_bounds     | Get    | bounds/:bound_id/time/:id               | List Times                               | Shows time details, shows the rules here                         |
-| Boundaries | time_bounds     | Get    | bounds/:bound_id/time/schedule/:id      | List Times                               | Shows a list of start and stop times for this time               |
-| Boundaries | time_bounds     | Get    | bounds/:bound_id/time/schedule/:id/ping | Tells if time is in schedule             | Returns true or false if a time is in a schedule                 |
-
-
+* [map api](step-1-bounds/map-api.md)
+* [map api](step-1-bounds/time-api.md)
+* [map api](step-1-bounds/path-api.md)
 
 
 # Attributes

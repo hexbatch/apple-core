@@ -10,6 +10,8 @@ Each alias must be unique.
 After an alias is made, any searches can accept the alternate name, and if the user selects a language for the results to be in, if there is a language match, that alias will be used.
 Additionally, the alias can be used as the token|token type|attribute id in api calls
 
+Aliases can only be set for each language-family: totally different character sets
+
 ## Users operations
 
 | Method | Path                                 | Route Name         | Operation                                        | Args                   | Notes |

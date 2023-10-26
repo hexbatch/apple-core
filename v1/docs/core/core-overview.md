@@ -52,7 +52,7 @@ A token set does not have any definition or structure, it's a loose organization
 
 # Boundaries can be on the map or in time.
 
-[bounds](bounds.md) are only applied to attributes.
+[bounds](step-1-bounds/bound-overview.md) are only applied to attributes.
 
 Each bounds have a location and/or time and/or set path component, either is optional
 
