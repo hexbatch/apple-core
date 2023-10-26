@@ -1,6 +1,6 @@
 # Boundaries can be on the map or in time.
 
-Boundaries are only applied to attributes. Here we use location and time.
+Boundaries are only applied to attributes. Here we use location and time and path.
 
 [Location](location_bounds.md) is tied to the world map, and can be any region defined by sets of closed polygons with latitude and longitude coordinates
 

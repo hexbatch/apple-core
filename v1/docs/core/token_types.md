@@ -11,6 +11,7 @@ Token types do not record location, only sets of tokens do
 
     So: a token-type:
         user: one user owns the type
+        name: using the naming rules
         options:
             allow_bounds: boolean
             allow_actions: boolean
@@ -34,3 +35,10 @@ This includes default global states
 ## Api list results
 
 If too many results back for api that list token types it uses iterator
+
+
+### Naming rules
+
+Token types must have a name, but the name must start with the username that created it, followed by a dot. then the alias for the word 'type', another dot, then the name must be unique
+
+Aliases for the token type can be created, via aliases, in different languages. They must follow the naming convention and be unique

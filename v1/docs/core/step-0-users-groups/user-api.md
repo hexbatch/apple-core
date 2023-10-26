@@ -14,12 +14,12 @@ Anyone can read the user info. All api must be using the token except for the re
 
 ## Users operations
 
-| Method | Path                 | Route Name           | Operation                 | Description                                         | Args                      | Notes                  |
-|--------|----------------------|----------------------|---------------------------|-----------------------------------------------------|---------------------------|------------------------|
-| Post   | user/register        | user.create          | Create User               | Makes a new user                                    | username (must be unique) | returns a bearer token |
-| Post   | user/create_token    | user.create_token    | Make/return a user token  | makes a new bearer token for the authenticated user |                           |                        |
-| Delete | user/destroy_token   | user.destroy_token   | Remove the user token     | Deletes the bearer token  (must belong to the user) | token                     |                        |
-| Get    | user/:id             | user.read            | Read User                 | Shows the user information                          |                           |                        |
+| Method | Path                      | Route Name           | Operation                 | Description                                         | Args                      | Notes                  |
+|--------|---------------------------|----------------------|---------------------------|-----------------------------------------------------|---------------------------|------------------------|
+| Post   | user/register/{lang-code} | user.create          | Create User               | Makes a new user, puts the username in the aliases  | username (must be unique) | returns a bearer token |
+| Post   | user/create_token         | user.create_token    | Make/return a user token  | makes a new bearer token for the authenticated user |                           |                        |
+| Delete | user/destroy_token        | user.destroy_token   | Remove the user token     | Deletes the bearer token  (must belong to the user) | token                     |                        |
+| Get    | user/:id                  | user.read            | Read User                 | Shows the user information                          |                           |                        |
 
 ### User Data returned in the user.create or user.read
 

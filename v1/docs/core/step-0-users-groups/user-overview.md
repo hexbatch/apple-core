@@ -46,5 +46,11 @@ The system will create a new token called the User Base token
 
 The core allows another token to be used as a base token for a new user, but that token must be derived from the user base token
 
+### Usernames
+
+Each user has a unique username, with no punctuation of most kinds, and not starting with a digit, and no whitespace
+
+Aliases for the token type can be created, using aliases, in different languages. They must follow the naming convention and be unique
+
 
 

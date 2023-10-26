@@ -117,3 +117,12 @@ There can be duplicates of attributes here, one from the token type and one from
 When a live attribute is removed from the token, it's removed from the lookup here and the token type attribute is used again
   
 When an attribute is turned off, then the token has no attribute by that name or id. This counts in many scenarios 
+
+
+
+
+## Naming rules
+
+Attributes must have a name, but the name must start with the username that created it, followed by a dot. then the alias for the word 'attribute', another dot, then the name must be unique
+
+Aliases for the attribute can be created, via aliases, in different languages. They must follow the naming convention and be unique

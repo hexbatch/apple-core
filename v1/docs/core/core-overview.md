@@ -78,6 +78,12 @@ User tokens cannot be bounded, and they cannot run actions
 Life can get tricky! And the layers may need a way to reset a pw or all tokens. Or when just using the core by itself, a pw might need resetting
 
 
+---------------------------------------
+# Aliases
+[Alias](step-0-users-groups/alias.md)
+It's hard to switch some languages and reference a token in another language (easy enough for things that share same alphabet, harder for different character sets)
+Aliases allow setting different names using different languages
+
 
 ----------------------------------------
 # User Groups
@@ -158,6 +164,7 @@ The group token has all the core identification and display attributes. When a g
  * Management flags
  * Organization
  * Copy
+ * Language
 
 ### Core identification and display
 
