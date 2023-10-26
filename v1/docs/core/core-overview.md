@@ -81,9 +81,12 @@ Life can get tricky! And the layers may need a way to reset a pw or all tokens. 
 ---------------------------------------
 # Aliases
 [Alias](step-0-users-groups/alias-api.md)
-It's hard to switch some languages and reference a token in another language (easy enough for things that share same alphabet, harder for different character sets)
 Aliases allow setting different names using different languages
 
+Api calls can have an optional language set in the call.
+If there is no language, then no aliases will be used. However, if there is a language set, then the aliases will be looked for, if missing the non-alias will be needed.
+
+Cannot mix aliases from different languages in same api call
 
 ----------------------------------------
 # User Groups
@@ -97,14 +100,14 @@ Actions do not run on the token of the user group
 
 # Attributes
 
-[attributes](attributes.md) are the core of the api here.
+[attributes](step-2-attributes/attribute-overview.md) are the core of the api here.
 
 Attributes can be made to interact with one another, to require each other to be read or used, to set permissions and conditions for anything that happens in this api
 
 -------------------------------
 
 # Scripts
-[scripts](scripts.md) are Javascript can be set to run and generate a value when a token attribute is read
+[scripts](step-3-scripts-urls/script-overview.md) are Javascript can be set to run and generate a value when a token attribute is read
 
 # Urls
 [urls](urls.md) are remote callbacks to be run and generate a value when a token attribute is read

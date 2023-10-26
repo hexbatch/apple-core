@@ -19,9 +19,7 @@ The group token has all the core identification and display attributes. When a g
 
 ## Standard groups
 
-* regular_user : this user is a vanilla ordinary user without special privileges
-* full_admin_user : this user can read, write any attribute, and can create tokens inheriting from any attribute, and assign ownership to anyone of any resource, and do user group changes
-
+* script_creation group : members here can create scripts
 
 ## Standard attributes
 

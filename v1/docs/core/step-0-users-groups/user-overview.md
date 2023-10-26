@@ -28,6 +28,14 @@ for the user token, actions cannot run, and bounds cannot be set
         token-type: made new for the user, inherits from the system user token type (see system tokens and attributes)
         token: the actual token represting the user
 
+
+
+The core library has no concept of administrators or moderators, or root, but these users can be added by the layers when they log in as other users.
+
+When a user requests to be removed, then the layers write overwrite any identifying attributes to remove information; and if no tokens by the user is in circulation, will remove them.
+
+## Members of the user's group
+
 When a user is created, a [user group](group-overview.md)  is created as well, whose token inherits both from the default group token, and the user token made here.
 The creator of the user is also the creator of the user group
 
@@ -35,10 +43,8 @@ Anyone added to the user group will be able to read the user's private data. An 
 
 
 
-The core library has no concept of administrators or moderators, or root, but these users can be added by the layers when they log in as other users.
-
-When a user requests to be removed, then the layers write overwrite any identifying attributes to remove information; and if no tokens by the user is in circulation, will remove them.
-
+If the user is admin he can edit resources created by the user, and can see all the resource data.
+If a user is just a member though, he can only view the user token's private data.
 
 ## Groups of base types of users
 
