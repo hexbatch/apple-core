@@ -14,6 +14,8 @@ job metrics can be queried, only users who have the job-read role can use this
 
 job metrics allow hooks to be added to allow for events below
 
+Rate limits are done in this area
+
 
 ## Job Queues
 

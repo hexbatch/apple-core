@@ -20,9 +20,7 @@
 
 [user admin api](step-0-users-groups/admin-api.md)
 
-# Rate Limits
 
-[rate limit api](step-0-users-groups/rate-limits-api.md)
 
 
 # Bounds
