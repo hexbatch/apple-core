@@ -62,7 +62,8 @@ If there is no bounds, the attribute is always on. Else, the attribute is only r
 ----------------------------------------
 # User 
 
-A [user](users.md) is both a person (or bot) in this library, and a token type. Any tokens a user creates will inherit from this token type.
+A [user](step-0-users-groups/user-overview.md) is both a person (or bot) in this library, and a token type.
+Any tokens a user creates will inherit from this token type.
 
 A user when created has some default attributes, some of which can only be read by the user.
 
@@ -71,10 +72,17 @@ Any other user promoted to admin in the user group can write to the user attribu
 
 User tokens cannot be bounded, and they cannot run actions
 
+---------------------------------------
+# User Admin
+[user admin](step-0-users-groups/admin-api.md)
+Life can get tricky! And the layers may need a way to reset a pw or all tokens. Or when just using the core by itself, a pw might need resetting
+
+
+
 ----------------------------------------
 # User Groups
 
-A [user group](user_groups.md)  is a collection of users. These groups are used for permission lists, and are the bedrock of the permission system in this library
+A [user group](step-0-users-groups/group-overview.md)  is a collection of users. These groups are used for permission lists, and are the bedrock of the permission system in this library
 
 Actions do not run on the token of the user group
 

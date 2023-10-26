@@ -11,6 +11,8 @@ Account linking:
 * The user enters the account info first, the network entry is made, or found.
 * Then the user proves control of that thing via plugin
 
+Handles password reset if user lost it
+
 ## Signup Plugins
 
 Each social network, or type of sign up such as email,

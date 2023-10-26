@@ -2,28 +2,16 @@
 # List of api operations
 
 # Users 
--- tags: [users](users.md), [user_groups](user_groups.md)
+    
+[user-api.md](step-0-users-groups/user-api.md)
 
-user and groups api defined at [users.yaml](../../api-docs/users.yaml)
+# User Groups
 
-Users and User group operations
+[groups api](step-0-users-groups/group-api.md)
 
-| Family | Tags               | Method | Path                    | Operation      | Description                                                                         |
-|--------|--------------------|--------|-------------------------|----------------|-------------------------------------------------------------------------------------|
-| Users  | users              | Post   | user                    | Create User    | Makes a new user, any user can create a new user                                    |
-| Users  | users              | Post   | user/login              | Login User     | Logs the user in, makes a new bearer token for it                                   |
-| Users  | users              | Delete | user/logout             | Logout User    | Deletes the user token provided (used to authenticate this operation)               |
-| Users  | users              | Put    | user/:id                | Edit User      | Edits user information                                                              |
-| Users  | users              | Get    | user/:id                | Read User      | Shows the user information the logged in user can read                              |
-| Users  | users, user_groups | Get    | groups                  | List groups    | Shows the groups the user belongs to, lists the admin status                        |
-| Users  | user_groups        | Post   | group/new               | create group   | Creates a new group that inherits from the user's group, can be ancestor or parent  |
-| Users  | user_groups        | Get    | group/:id               | read group     | lists the attributes, and members and admins of this group : can search for members |
-| Users  | user_groups        | Delete | group/:id               | delete group   | Owner of group can delete only if not used anywhere for permissions                 |
-| Users  | user_groups        | Put    | group/:id               | edit group     | Sets the attributes of the group                                                    |
-| Users  | user_groups        | Post   | group/:id/member/new    | add members    | Adds membership via a single user or a group                                        |
-| Users  | user_groups        | Delete | group/:id/member/remove | remove members | Removes membership via a single user or a group                                     |
-| Users  | user_groups        | Delete | group/:id/admin/remove  | remove admins  | Removes admin via a single user or a group, cannot remove some admins               |
-| Users  | user_groups        | Post   | group/:id/admin/new     | add admins     | Add admin via a single user or a group                                              |
+# User Groups
+
+[user admin api](step-0-users-groups/admin-api.md)
 
 
 # Bounds
