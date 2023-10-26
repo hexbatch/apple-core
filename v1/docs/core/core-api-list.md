@@ -1,6 +1,12 @@
 
 # List of api operations
 
+## Common api
+
+* time is read in unix timestamp or iso-standard.
+* any api call can have the wide modifier, showing the attributes, that the user can read, of each token and token type returned
+* each top level and secondary level resource returned has a list of action links for it
+
 # Users 
     
 [user-api.md](step-0-users-groups/user-api.md)
@@ -9,7 +15,7 @@
 
 [groups api](step-0-users-groups/group-api.md)
 
-# User Groups
+# User Admin
 
 [user admin api](step-0-users-groups/admin-api.md)
 

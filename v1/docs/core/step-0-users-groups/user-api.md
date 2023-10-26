@@ -3,24 +3,23 @@
 user and groups api defined at [users.yaml](../../../api-docs/users.yaml)
 
 
-Users can authenticate via basic authentication in the api call header, or by bearer token created.
-Many bearer tokens can be created, and then destroyed.
+Users authenticate via bearer token created. Many bearer tokens can be created, and then destroyed. Its possible to destroy all tokens and lock out the user.
 
-Passwords can be changed but only if the user is using a token or basic auth (so no lost pw recovery, the registration layer can handle that)
 
-There is an admin layer to reset passwords and tokens see [admin-api.md](admin-api.md)
+There is an admin layer to list users and reset tokens see [admin-api.md](admin-api.md)
 
-Once created, there is no editing the basic user object. Attributes for the user, and changes to the user groups is done by other api
+Once created, there is no editing the basic user object. Attributes for the user, and changes to the user groups is done by other api.
+
+Anyone can read the user info. All api must be using the token except for the register call
 
 ## Users operations
 
-| Method | Path                 | Route Name           | Operation                 | Description                                         | Args                 | Notes |
-|--------|----------------------|----------------------|---------------------------|-----------------------------------------------------|----------------------|-------|
-| Post   | user/register        | user.create          | Create User               | Makes a new user                                    | username,password    |       |
-| Put    | user/change_password | user.change_password | Changes the user password | Changes the password for the authenticated user     | password, confirm pw |       |
-| Post   | user/create_token    | user.create_token    | Make/return a user token  | makes a new bearer token for the authenticated user |                      |       |
-| Delete | user/destroy_token   | user.destroy_token   | Remove the user token     | Deletes the bearer token  (must belong to the user) | token                |       |
-| Get    | user/:id             | user.read            | Read User                 | Shows the user information                          |                      |       |
+| Method | Path                 | Route Name           | Operation                 | Description                                         | Args                      | Notes                  |
+|--------|----------------------|----------------------|---------------------------|-----------------------------------------------------|---------------------------|------------------------|
+| Post   | user/register        | user.create          | Create User               | Makes a new user                                    | username (must be unique) | returns a bearer token |
+| Post   | user/create_token    | user.create_token    | Make/return a user token  | makes a new bearer token for the authenticated user |                           |                        |
+| Delete | user/destroy_token   | user.destroy_token   | Remove the user token     | Deletes the bearer token  (must belong to the user) | token                     |                        |
+| Get    | user/:id             | user.read            | Read User                 | Shows the user information                          |                           |                        |
 
 ### User Data returned in the user.create or user.read
 
