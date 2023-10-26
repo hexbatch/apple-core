@@ -17,7 +17,7 @@ Attribute values can be a number, string, json, markdown, binary (image , pdf on
 A script and url is writable, when a write happens, the last good ts is unset for the token, and the script or url is passed in the write value 
 
 string specific types can be :
-* iso date time, color, url, email, social account , phone, any
+* iso date time, color, url, email, social account , phone, markdown,any
 * number is any numeric value
 * location is lat, lon
 

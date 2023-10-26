@@ -12,10 +12,15 @@ Additionally, the alias can be used as the token|token type|attribute id in api 
 
 Aliases can only be set for each language-family: totally different character sets
 
-## Users operations
+## Aliases operations
 
 | Method | Path                                 | Route Name         | Operation                                        | Args                   | Notes |
 |--------|--------------------------------------|--------------------|--------------------------------------------------|------------------------|-------|
 | Post   | alias/{type}/guid/{lang-code}/create | alias.create       | Create Alias for the resource for that language  | alias (must be unique) |       |
-| Delete | alias/{alias name}                   | user.destroy_token | Remove the alias                                 |                        |       |
+| Delete | alias/{alias name}                   | user.destroy_token | Remove the alias, if user owns this              |                        |       |
 | Get    | aliases                              | alias.list         | Lists the aliases the user has made can be paged |                        |       |
+
+## System aliases
+
+Some system defined attributes have names that have no user or dots, these cannot be edited by anyone
+
