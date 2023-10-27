@@ -6,6 +6,8 @@ Allow things to be bought and sold:
 * Pools can be bought and sold
 * Tokens can be allowed to be put in someone's set not changing ownership
 * Membership offers : Membership can be given to a user group
+* Token types can be sold, either transferring the ownership or copying the token type resources so that the purchaser can make similar tokens
+  * The selling has option to remove any auth to remotes first 
 
 All is sold as is with no refunds. As is.
 
