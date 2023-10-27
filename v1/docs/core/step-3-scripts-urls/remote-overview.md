@@ -32,6 +32,8 @@ So, for attribute reading and writing:
   * There can be a read cool-down, so that if the attribute is read again during this time, the remote is not called again to get the value, but use the previous value
   * likewise the remote can be configured to not allow reads during this cool-down
 
+There are also optional rate limits set to limit calls to so many per unit of time
+
 ## Data Going to the remote 
 
 * The data a remote is sent can be packaged in other data, defined in the remote definition.
@@ -94,6 +96,9 @@ The return is the value to read, but output keys can match up to top level json,
             cool_down: (optinal)
             allow_during_cool_down: yes or no
             cool_down_policy: cluster or use last write only
+        call_schedule:
+            max_calls_per_unit: x
+            unit_in_seconds: x
 
 
 # Not just for http calls outside the cluster

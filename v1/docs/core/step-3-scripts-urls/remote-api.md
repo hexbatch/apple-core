@@ -21,8 +21,7 @@ Remotes can be seen and edited in full by anyone in the user's group admin
 | Get    | remote/write/:test_context/:id        |            | Writes to the Remote, returns value or issues            | Runs using context created                      |
 | Get    | remote/read/:test_context/:id         |            | Reads from the Remote, returns value or issues           | Runs using context created                      |
 | POST   | remote/:id/test_context               |            | Makes a new test context to store state for remote tests | required name                                   |
-| Get    | remote/:id/test_contexts              |            | Lists all test contexts for this remote                  |                                                 |
-| Get    | remote/:id/test_context/:test_context |            | Lists one test context for this remote                   |                                                 |
+| Get    | remote/:id/test_contexts              |            | Lists all test context names for this remote             |                                                 |
 | Delete | remote/:id/test_context/:test_context |            | Deletes a test context                                   |                                                 |
 | Delete | remote/:id                            |            | Delete Remote, if the user can                           |                                                 |
 
@@ -59,3 +58,6 @@ Remotes can be seen and edited in full by anyone in the user's group admin
             cool_down: (optinal)
             allow_during_cool_down: yes or no
             cool_down_policy: cluster or use last write only
+        call_schedule:
+        max_calls_per_unit: x
+        unit_in_seconds: x
