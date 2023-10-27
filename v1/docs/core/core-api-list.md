@@ -40,8 +40,8 @@
 * [script api](step-3-scripts-urls/script-api.md)
 
 
-# Urls
--- tags: [urls](urls.md)
+# Remotes
+* [remote api](step-3-scripts-urls/remote-api.md)
 
 # Actions
 

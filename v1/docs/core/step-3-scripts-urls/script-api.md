@@ -3,8 +3,9 @@
 script api defined at 
 
 
-Scripts cannot change ownership
-Scripts can be edited if not used anywhere in any token types or tokens
+Scripts cannot change ownership.
+Scripts can be fully edited if not used anywhere in any token types or tokens. They can be turned off though (things happen like script errors)
+Scripts deletable if the script not used in any token or type.
 Scripts deletable if the script not used in any token or type
 
 Scripts can be tested with a test context. When created the test context will be set to the init states, contexts also have any set parameters
@@ -31,12 +32,13 @@ Scripts can be seen and edited in full by anyone in the user's group admin
 
     user: 
     name :
-    is_retired: default false // if true then cannot be added to token types    
+    is_retired: default false // if true then cannot be added to token types
+    is_on : if off then all read and writes will fail and the remote not called
     local_script_state_init: 
     global_script_state_init: 
     script: 
         script_text
-        extra_script_input_params
+        extra_input_params
         output_keys
 
 ## Data for reading a script 
@@ -49,9 +51,10 @@ Scripts can be seen and edited in full by anyone in the user's group admin
     global_script_state_init: if the read not passed a type
     local_script_state: if the read was passed a token
     global_script_state: if the read was passed a token type
+    cool_down_timestamp: how long to use the cached value of the last call before calling this script again
     script: 
         script_text
-        extra_script_input_params
+        extra_input_params
         output_keys (if returning an object)
  
 ### Data for a test context

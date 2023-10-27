@@ -109,8 +109,8 @@ Attributes can be made to interact with one another, to require each other to be
 # Scripts
 [scripts](step-3-scripts-urls/script-overview.md) are Javascript can be set to run and generate a value when a token attribute is read
 
-# Urls
-[urls](urls.md) are remote callbacks to be run and generate a value when a token attribute is read
+# Remotes
+[Remotes](step-3-scripts-urls/remote-overview.md) are remote callbacks to be run and generate a value when a token attribute is read
 
 # Actions
 

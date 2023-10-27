@@ -21,7 +21,7 @@ Token types do not record location, only sets of tokens do
 
 
 
-Global states are kept here for url and scripts.
+Global states are kept here for remotes and scripts.
 
 ## Multiple inheritance for attributes
 

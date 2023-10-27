@@ -52,6 +52,9 @@ input params have more data
 * set operation info
 * lifecycle
 
+todo set up output_keys and input_params to be mapped to attributes
+
+
 Script returns:
 
 depends on what the script is used for: can be a primitive to be evaluated for truthfulness, can be changed attribute values for the target
@@ -88,7 +91,7 @@ depends on what the script is used for: can be a primitive to be evaluated for t
                         see input params
                         see script returns
                 OR 
-                    url: url_id
+                    remote: remote_id
                         see input params
                         see script returns
                 OR
@@ -106,7 +109,7 @@ This can be done by counting the number of path specifiers anywhere, using the c
 and if only one, before the value change, or not in the allowed count range,
  it will block the lifecycle change
 
-Such actions do not need scripts or urls
+Such actions do not need scripts or remotes
 
 
 # Turning on and off a live attribute
