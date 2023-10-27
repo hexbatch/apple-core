@@ -102,22 +102,7 @@ write bounds is that the attribute is writable inside these bounds only. Same as
 location bounds is calculated using only the token map coordinates
 
 
-## Live attributes
 
-When an attribute is on a token, its live, and there is a record about the state of the attribute in the token
-
-    Live attribute:
-        current token id:
-        static attribute id:
-        static source of attribute: token type id, or live if just stuck on
-        current_value: 
-        activated: boolean - if not activated then this attribute does not count in the live, its skipped over
-        local_state: if this attribute holds an action
-
-There can be duplicates of attributes here, one from the token type and one from a live attribute
-When a live attribute is removed from the token, it's removed from the lookup here and the token type attribute is used again
-
-When an attribute is turned off, then the token has no attribute by that name or id. This counts in many scenarios
 
 
 

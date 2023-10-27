@@ -34,13 +34,13 @@ A token can be affected by some attributes set in the token type, or dynamically
 
 A token has aggregate values made from its attributes: bounds, affinities, allergies 
 
+Tokens have live attributes and live parents
 
 ## Live parents
 
 each inherited parent has a live state, and can be turned off and on
 
-    Live parent:
-        current token id:
-        static token_type id:
-        activated: boolean - if not activated then all the attibutes given to the token by this type are turned off, alternate attributes of same id in other inheritied are not turned on
+## Live attributes
 
+the list of active attributes for a token, it can be added to with attributes not on the list.
+The active attributes from the parents are chosen as the top most attribute for each name, in order of parent inheritance list 

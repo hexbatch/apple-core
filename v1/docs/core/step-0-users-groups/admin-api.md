@@ -1,6 +1,6 @@
 # Admin api
 
-can only be used on localhost, or via command
+can only be used on localhost, or a list of ips defined in the .env ,  or via command (task to run on the command line)
 
 ## Users operations
 
