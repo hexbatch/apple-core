@@ -71,6 +71,10 @@ By default, if no permissions, attributes can be read by everyone, and only writ
 
 To make attributes read only or write only, make the set_requirements be an attribute that is defined to be allergic to this attribute
 
+Ownership groups can use this to add to their own token types and tokens.
+Note that once someone else has permission to create with this attribute, and they make something with it, then that can never be taken back.
+But the attribute could be retired to prevent any new use
+
 ### set requirements
 When an api uses a set context,
 

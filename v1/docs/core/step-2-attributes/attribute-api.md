@@ -11,7 +11,7 @@ When creating or editing the name of the attribute, do not put in the username, 
 When creating the attribute, the user is the owner. After creation attributes cannot change ownership, but they can be copied.
 
 An attribute can be edited in full until it is placed in a token-type. The attribute can be removed from the token type, and edited, and put back in.
-But once an attribute has a live application in a token, it cannot be edited at all.
+But once an attribute has a live application in a token, it cannot be edited much except to retire it, which means nobody can use it for new stuff.
 Only the owner, or someone in the owner's admin group can read and edit the attribute
 Bounds are added as a mix of any bounds types
 

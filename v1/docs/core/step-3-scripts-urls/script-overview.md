@@ -56,6 +56,6 @@ The output keys
 ## script permissions
 
 * Scripts are run in a sandbox not allowing file access
-* The users who can create a script is in the script_creation group 
+* The users who can create a script are in the script_permission group 
 
 

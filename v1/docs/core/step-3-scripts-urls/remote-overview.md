@@ -104,3 +104,7 @@ The return is the value to read, but output keys can match up to top level json,
 # Not just for http calls outside the cluster
 
 can call private network ips or pipes etc
+
+# Permissions
+
+* The users who can create a script are in the remote_permission group

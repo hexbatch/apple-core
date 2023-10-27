@@ -19,7 +19,7 @@ The group token has all the core identification and display attributes. When a g
 
 ## Standard groups
 
-* script_creation group : members here can create scripts
+* script_permission group : members here can create scripts
 
 ## Standard attributes
 

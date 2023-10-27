@@ -43,6 +43,10 @@
 # Remotes
 * [remote api](step-3-scripts-urls/remote-api.md)
 
+# Metrics
+
+* [metrics api](step-3-scripts-urls/metrics-api.md)
+
 # Actions
 
 -- tags: [actions](actions.md)

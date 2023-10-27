@@ -11,13 +11,14 @@ Scripts deletable if the script not used in any token or type
 Scripts can be tested with a test context. When created the test context will be set to the init states, contexts also have any set parameters
 There can be multiple test_contexts for each script
 
-Scripts can be seen and edited in full by anyone in the user's group admin
+Scripts can be seen and edited in full by anyone in the user's group admin, or in the remote_script admin group
 
 | Method | Path                                  | Route Name | Operation                                                | Args                                            |
 |--------|---------------------------------------|------------|----------------------------------------------------------|-------------------------------------------------|
 | Post   | script                                |            | Makes a new script                                       | Required name: optional states, required script |
 | Patch  | script/edit/:id                       |            | Edit part of value, if possible, sparse                  | Any detail , sparse update                      |
 | Put    | script/edit/:id                       |            | Edit Value , if possible, full replacement               | All the values for the definition               |
+| Get    | scripts                               |            | searches for scripts                                     | can pass in filtering                           |
 | Get    | script/:id                            |            | returns full script info                                 | can pass in optional type and token             |
 | Get    | script/run/:test_context/:id          |            | Runs Script, returns value or issues                     | Runs using context created                      |
 | POST   | script/:id/test_context               |            | Makes a new test context to store state for script tests | required name                                   |

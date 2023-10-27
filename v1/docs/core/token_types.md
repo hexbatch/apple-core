@@ -7,7 +7,9 @@ Token types can have many parents, but the attributes have to allow this to happ
 Token types can have one or more parents, they can have many ancestors.
 Ancestors (which includes parent) cannot be cyclic by having their ancestors be something they are an ancestor of.
 
-Token types do not record location, only sets of tokens do
+Types cannot change ownership
+
+But can use attributes owned by others, as long as the permissions work out in the owner_user_groups
 
     So: a token-type:
         user: one user owns the type

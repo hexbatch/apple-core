@@ -10,7 +10,9 @@ Remotes deletable if the remote not used in any token or type
 Remotes can be tested with a test context. When created the test context will be set used to remember stats to follow the rules of cool-down
 There can be multiple test_contexts for each remote. Unlike scripts, these cannot be edited
 
-Remotes can be seen and edited in full by anyone in the user's group admin
+Remotes can be seen and edited in full by anyone in the user's group admin, or in the remote_permission admin group
+
+
 
 | Method | Path                                  | Route Name | Operation                                                | Args                                            |
 |--------|---------------------------------------|------------|----------------------------------------------------------|-------------------------------------------------|
@@ -18,6 +20,7 @@ Remotes can be seen and edited in full by anyone in the user's group admin
 | Patch  | remote/edit/:id                       |            | Edit part of value, if possible, sparse                  | Any detail , sparse update                      |
 | Put    | remote/edit/:id                       |            | Edit Value , if possible, full replacement               | All the values for the definition               |
 | Get    | remote/:id                            |            | returns full remote info                                 | can pass in optional type and token             |
+| Get    | remotes                               |            | searches for remotes                                     | can pass in filtering info                      |
 | Get    | remote/write/:test_context/:id        |            | Writes to the Remote, returns value or issues            | Runs using context created                      |
 | Get    | remote/read/:test_context/:id         |            | Reads from the Remote, returns value or issues           | Runs using context created                      |
 | POST   | remote/:id/test_context               |            | Makes a new test context to store state for remote tests | required name                                   |

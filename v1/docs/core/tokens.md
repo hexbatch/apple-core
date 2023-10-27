@@ -1,4 +1,5 @@
 # Tokens
+Tokens are the only thing which can change ownership
 
 Tokens are made from token types, and have live values of those attributes.
 
