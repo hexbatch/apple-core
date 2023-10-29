@@ -49,20 +49,7 @@
 
 # Actions
 
--- tags: [actions](actions.md)
-
-actions api defined at [actions.yaml](../../api-docs/actions.yaml)
-
-Actions have an owner, version, name, target, lifecycle, recipient, charge, options,script
-
-| Family  | Tags    | Method | Path            | Operation         | Description                                                                                                               |
-|---------|---------|--------|-----------------|-------------------|---------------------------------------------------------------------------------------------------------------------------|
-| Actions | actions | Post   | action          | Create Action     | Makes a new action with an owner and a name: optional version, name, target, lifecycle, recipient, charge, options,script |
-| Actions | actions | Put    | action/:id      | Edit Action       | Edit name, version, name, target, lifecycle, recipient, charge, options,script   : only if not used                       |
-| Actions | actions | Delete | action/:id      | Delete Action     | Only if not used                                                                                                          |
-| Actions | actions | Get    | action/:id/run  | Run Action        | Run action, giving any global or local state, or action info, get back any (dry run) changes for recipient and charge     |
-| Actions | actions | Get    | action/:id/list | Show Action Usage | Gives a list of attributes this action is used at                                                                         |
-
+[actions](step-4-actions/actions-api.md)
 
 
 # Tokens and Types

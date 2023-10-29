@@ -114,7 +114,8 @@ Attributes can be made to interact with one another, to require each other to be
 
 # Actions
 
-[actions](actions.md) are attribute values that are javascript that runs.
+[actions](step-4-actions/action-overview.md) 
+are attribute values that change other attributes
 
 The actions also handle rate limiting, contracts, and whether a set action can happen
 

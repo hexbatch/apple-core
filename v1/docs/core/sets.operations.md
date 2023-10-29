@@ -106,7 +106,7 @@ to see if something exists, without getting an iterator search result back put ?
 Search results give back iterators and a page contents, use the iterator id to get the next page, 
 iteration is one way only and can have duplicates in the results as things are updated in between calls for a page
 
-
+todo max min for value , or regex for value
 ### Global Set
 
     All tokens are in a global set (G) so if needing to find any token at all use G for A 
