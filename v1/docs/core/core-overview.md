@@ -36,7 +36,10 @@ They contain the static attributes that come to life when a token is made
 
 
 # Tokens
-[tokens.md](tokens.md)
+* [tokens.md](step-6-tokens/token-overview.md)
+* [live attributes](step-6-tokens/live-attribute-overview.md)
+* [parents](step-6-tokens/live-parent-overview.md)
+
 Tokens are made from token types, and have live values of those attributes. 
 
 Tokens can have other attributes added to them individually, either that are not in the token type, or overwriting the token type's added on to them

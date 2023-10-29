@@ -15,6 +15,7 @@ Types can use attributes owned by others, as long as the permissions work out in
 
     So: a token-type:
         user: one user owns the type
+        allowed_creators: a list of user groups or individual users who can make tokens from this type
         name: using the naming rules
         is_retired: default false // if true then cannot be added to token types or make new tokens
         options:
@@ -64,3 +65,9 @@ Then the alias for the word 'type', another dot, then the name must be unique
 
 Aliases for the token type can be created, via aliases, in different languages. 
 They must follow the naming convention and be unique
+
+## allowed creators
+
+Others can be given the permission to create tokens from this type, or descendants from this type.
+This means descendants can further restrict, but not expand, the allowed creators.
+Group lists can be used to change the users allowed.

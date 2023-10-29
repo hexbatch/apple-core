@@ -14,18 +14,20 @@ Token types name and info are in its attributes
 
 (other api here involve creating the token, getting token attribute values , and making a type-group)
 
-| Method | Path          | Route Name | Description                         |
-|--------|---------------|------------|-------------------------------------|
-| Post   | type          |            | Makes a new type                    |
-| Put    | type/:id      |            | Sparse edit an type                 |
-| Delete | type/:id      |            | Delete Only if not used             |
-| Get    | type/:id/read |            | Gets the type definition and states |
-| Get    | type/:id/list |            | List a type where used              |
-| Get    | types/list    |            | List all the types                  |
+| Method | Path            | Route Name | Description                         |
+|--------|-----------------|------------|-------------------------------------|
+| Post   | type            |            | Makes a new type                    |
+| Patch  | type/:id        |            | Sparse edit an type                 |
+| Patch  | type/:id/states |            | Sparse edit the states of a type    |
+| Delete | type/:id        |            | Delete Only if not used             |
+| Get    | type/:id/read   |            | Gets the type definition and states |
+| Get    | type/:id/list   |            | List a type where used              |
+| Get    | types/list      |            | List all the types                  |
 
     
         user: one user owns the type
         name: using the naming rules
+        allowed_creators: a list of user groups or individual users who can make tokens from this type
         is_retired: default false // if true then cannot be added to token types or make new tokens
         options:
             allow_changed_map_bounds: boolean
@@ -42,13 +44,18 @@ Token types name and info are in its attributes
 The user running this is the owner,
 Required is name and at least one attribute.
 
+## Reading a token
+
+When getting the token state, the global state for the scripts running on it, and remotes, can be seen
 
 
 ## Editing a type
 
 Any admin in the user's group can edit, but can only edit if not in use
 Any part can be changed if type not used.
-When type is used, only the retired can be set, and that only affects things made in the future.
+When type is used, only the retired  and the allowed users can be set or changed,
+and that only affects things made in the future. Tokens already created are not affected.
+
 One cannot edit a type when tokens are made or children are made.
 
 

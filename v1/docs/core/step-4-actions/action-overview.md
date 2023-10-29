@@ -65,6 +65,8 @@ Multiple actions can listen to the same lifecycle changes or other conditions.
 An inheritance chain will run the actions from the ancestors to the current
 * if any action fails, then there will be a db rollback, and nothing is saved
 
+Some life cycle attributes are not events, but can be changed by actions.
+* time to live - set in seconds and compared to the creation ts
 
 # parts of an action
 
