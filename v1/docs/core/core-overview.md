@@ -30,7 +30,9 @@ So, need an api call to delete/unregister a bearer token given to it
 
 # Token types
 
-[Token types](token_types.md) make tokens, and can select them from a set. They contain the static attributes that come to life when a token is made
+[Token types](step-5-types/type-overview.md)
+make tokens, and can select them from a set.
+They contain the static attributes that come to life when a token is made
 
 
 # Tokens

@@ -9,16 +9,13 @@
 * Pages is done by cursor, long results are paged
 * optional language is chosen by the header of the accept language: the library will choose the best fitting one. `Accept-Language: fr; q=1.0, en; q=0.5`
 
-# Users 
-    
+# Users
 [user-api.md](step-0-users-groups/user-api.md)
 
 # User Groups
-
 [groups api](step-0-users-groups/group-api.md)
 
 # User Admin
-
 [user admin api](step-0-users-groups/admin-api.md)
 
 
@@ -29,42 +26,23 @@
 
 
 # Attributes
-
-
 * [standard attribute api](step-2-attributes/standard-attribute-api.md)
 * [attribute api](step-2-attributes/attribute-api.md)
 
 
 # Scripts
-
-* [script api](step-3-scripts-urls/script-api.md)
+[script api](step-3-scripts-urls/script-api.md)
 
 
 # Remotes
 * [remote api](step-3-scripts-urls/remote-api.md)
 
 # Metrics
-
 * [metrics api](step-3-scripts-urls/metrics-api.md)
 
 # Actions
-
 [actions](step-4-actions/actions-api.md)
 
 
-# Tokens and Types
-
--- tags [token_types](token_types.md)
-
-token type api defined at [tokens.yaml](../../api-docs/tokens.yaml)
-
-Token types have an owner, options, attributes, and parents
-
-Token types name and info are in its attributes 
-
-(other api here involve creating the token, getting token attribute values , and making a type-group)
-
-| Family | Tags        | Method | Path | Operation         | Description                                                           |
-|--------|-------------|--------|------|-------------------|-----------------------------------------------------------------------|
-| Type   | token-types | Post   | type | Create Token Type | Makes a new token type with an owner options, attributes, and parents |
-
+# Types
+[token_types](step-5-types/type-api.md)
