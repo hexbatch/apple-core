@@ -62,4 +62,31 @@ to see if something exists, without getting an iterator search result back put ?
 Search results give back iterators and a page contents, use the iterator id to get the next page,
 iteration is one way only and can have duplicates in the results as things are updated in between calls for a page
 
-todo max min for value , or regex for value
+## Value ranges
+ can add ranges to values bears:2,4, bears:,4 
+ can add regex or enums to values bears:black|red|pink
+
+
+## Search objects
+
+Searches can be saved for future use, search json looks like an array of paths
+
+    a search
+    id
+    user
+    [search parts],
+    optional requirement to order
+    optional requirement to filter
+
+each search part is:
+        
+    skip: > or / (optinal if left out then > )
+     set conditions:
+        owner:
+        relationship_to: search part
+    token name: (optional )
+    attributes:
+        [{
+            attribute name or id,
+            value (literal or range or regex)
+        }]

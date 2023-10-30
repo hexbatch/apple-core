@@ -22,7 +22,8 @@ When attribute requirements are added, then any rules set up for compatibility a
         token: Sets ownership,adds some description is needed for this requirement, or for identifying it with a set path, or putting bounds of when this can be used
         parts: [ {
             part_id: each part has a unique id
-            type: token-type
+            type: token-type,
+            weight: optional
             minimum_needed: optional
             maximum_needed: optional
             attributes: [{
@@ -34,6 +35,7 @@ When attribute requirements are added, then any rules set up for compatibility a
             }]
         }]
 
+the optional weight of the requirement allows sorting of search results, as well as prioritizing which types are the best or more preferred
 
 ## Requirement events
 
