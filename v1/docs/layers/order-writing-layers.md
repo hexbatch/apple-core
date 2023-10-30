@@ -6,45 +6,65 @@ But obviously the first to be written will be the 3 services that all the other 
 Core Layer:
 * User Registration (using name only registration)
 * User Login
-* Jobs
-
-
-Then the next layer p u a w a user-admin-watcher-agent-public:
 * User
+* Jobs
+* Instance
+
+-------------------------
+
+User Layer:
+This handles things for users
+
 * Admin
 * Watcher
 * Agent
 * Public grants
 
+-------------------------
+
 Then the personal layer:
 * notes
 * format
+
+-------------------------
 
 Then the organization layer:
 * pools
 * organizations
 * moderators
 
-They communication and interaction layer
+-------------------------
+
+Then interaction layer
 * Boards
 * Items
 
-Then the first selling layer:
+-------------------------
+
+Then the trading layer:
 * contracts
 * marketplace
+
+-------------------------
 
 The networks layer
 * networks
 
-The second selling layer
+-------------------------
+
+The selling layer
 * stores
 * inventory
 * selling
+
+-------------------------
 
 The promotions layer
 * network discovery
 * distributions
 * promotions
+
+-------------------------
 
 The internet layer
 * export-import-verification

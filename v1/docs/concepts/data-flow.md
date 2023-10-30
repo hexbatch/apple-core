@@ -10,7 +10,10 @@ Actions on the token can do a search in the current set, and report back a forma
 
 ## Mechanisms
 
-Using the allergy and affinity, predefined tokens can route themselves through a network of set relations to find the needed destination
+Using the allergy and affinity, predefined tokens can route themselves through a network of set relations to find the needed destination.
+
+The user token can take a ride using this, to do exploring. By picking up an attribute, or set of attributes, to do the exploring,
+the user can give permission for these attributes to be added or removed.
 
 ## Set guarding
 
@@ -19,8 +22,10 @@ This allows a traffic and control flow to be set up. And also very slow moving p
 
 ## Visitors
 
-A set can have an action that sends any entry to the set to a script or url. Because the token id is known, that is coming in, the remote can directly read or write to the visitor.
-Or the visitor can be given a set of options to chose from, for commands, a command pallet, and this is how the visitor can navigate and access the area.
+A set can have an action that listens to a token's entry event to that set. 
+The remote that gets this call can write tokens to the visitor's working set, if it finds it's a user token.
+These new tokens can be a command pallet to choose from, and the tokens go away when the user leaves the set (set cleanup event handler (token leave set))
+This is how the visitor can navigate and access the area.
 
 # Large set relations
 

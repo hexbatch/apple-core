@@ -1,13 +1,13 @@
 # There is a set each user interacts through
 
-Its like interacting with a shell when logging into a linux. But multiple shells, in relationships
+It's like interacting with a shell when logging into a linux. But multiple shells, in relationships
 
 For instance, when I log into the layers I have my home set. This is all my saved stuff.
 
 There is the concept of a "Working Set" that is the current set context the user does the api through. The working set can be changed.
 The person queries the user layer to change the working set. 
 
-The user's token is added to the set to be in, that way, the set can reject the user, or give a new token to the user (message, access, etc).
+The user's token is added to the set to be in, that way, the set can reject the user, or give a new token to the user (message, access, etc.).
 
 A user can make an api call using a set for context that is not in his working set, it still works the same but the user's next api call will be his working set unless he changes it
 
@@ -39,7 +39,7 @@ But it provides a constant user experience to provide some standard tokens each 
 A user can be given a set of commands that can be used, this set of commands can be updated by something in the set. 
 This can be a UI for the set. The user api supports a working set command pallet.
 
-When the user executes a command that is on a command pallet, the set, or a token in the set, can update the user's command pallet to a new new of commands.
+When the user executes a command that is on a command pallet, the set, or a token in the set, can update the user's command pallet to a new set of commands.
 
 ### Inheritance of commands via set relationship
 

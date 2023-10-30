@@ -3,9 +3,8 @@
 * Does maintenance on the tokens used by the outer layers
 * Reviews stuck jobs, and can terminate them
 * User operations: freeze, delete
-* Token operations and sets: change their ownership
-* Contracts: can change terms of a contract
-* Moderators: sets up and manages
+
+
 
 Admins will do stuff, logged in as other users, when the core api is executed.
 
@@ -13,7 +12,7 @@ Super admins can log in as anyone to do anything.
 
 Restricted admins can only log in as some people to do some actions.
 
-Moderators are restricted further, able to log in as some people, and change a list of attributes.
+
 
 The administration layer will find the tokens and users the admins and moderators can use by using the set operations.
 
@@ -28,28 +27,13 @@ One thing that helps this is that different user groups can be made, by changing
 * Deletes a user info
 * Sets up a whitelist api calls for user groups
 
-## Tokens
 
-* Can change who owns tokens
 
-## Contracts
-* can change the terms of a contract
-
-## setting up moderators
-
-* Sets up moderators for region, tags, or time, and for specific attributes they can edit
-* For example, a moderator can be setup to review all feedback for sales in the livingston area. Or a moderator can review all media for a special event on Tuesday
-* Can also remove or adjust moderators setup in the admin panel or in the moderator api
 
 ## Jobs
 
 * Reviews stuck jobs, and can terminate them
 * Sees job metrics and outputs
 
-## Promotions
 
-* Reviews promotions and can alter the promotion deal
 
-## Sells
-
-Views sell metrics and reviews

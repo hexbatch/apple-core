@@ -1,0 +1,10 @@
+# Instance Api
+
+can only be called by logged-in users who are approved
+
+* Gives instance information (api here allows setting the instance info to permitted users)
+* Adds or removes users from the groups that can execute commands to this interface api
+* Allows instance to be rebooted, shut down, maintenance mode (not the servers, but the instance itself)
+* Sets up an optional whitelist of allowed visitors, and what they can do
+* provides a way to attach plugin listeners for any, or some api calls
+* gives a route all api calls go to, to be dispatched to the appropriate layer

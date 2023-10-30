@@ -71,34 +71,34 @@ General api call in the layer:
         or public waits for response and data sent back in same call
  
 
-| Layer                         | Description                                                           | Link                                                                       |
-|-------------------------------|-----------------------------------------------------------------------|----------------------------------------------------------------------------|
-| Instance                      | About the instance the api is running on                              | [instance](v1/docs/layers/instance.md)                                     |
-| Users                         | Managers existing users; creates and changes user groups              | [users](v1/docs/layers/users.md)                                           |
-| Registrations                 | Does all the new user account creation                                | [registrations](v1/docs/layers/registrations.md)                           |
-| Authentication and Logging in | Handles users logging in and pw resets                                | [user_login](v1/docs/layers/user_login.md)                                 |
-| Networks                      | Tracks social accounts that are not users, and then later are         | [networks](v1/docs/layers/networks.md)                                     |
-| Network discovery             | Makes new network entry tokens. Scans social networks.                | [network-disovery](v1/docs/layers/network-disovery.md)                     |
-| Distributions                 | Gives new and existing tokens to users and people in networks         | [distributions](v1/docs/layers/distributions.md)                           |
-| Contracts                     | Terms of using someone's token in your own stuff. Auto payments       | [contracts](v1/docs/layers/contracts.md)                                   |
-| Marketplace                   | Ownerships of token sets can be bought and sold                       | [marketplace](v1/docs/layers/marketplace.md)                               |
-| Pools                         | Pools are a resource that generates future tokens                     | [pools](v1/docs/layers/pools.md)                                           |
-| Organizations                 | They are companies or people who do stores                            | [organizations](v1/docs/layers/organizations.md)                           |
-| Stores                        | Stores sell inventory                                                 | [stores](v1/docs/layers/stores.md)                                         |
-| Inventory                     | Items in a store for sale, need not be physical or even real          | [inventory](v1/docs/layers/inventory.md)                                   |
-| Promotions                    | Sets up advertising, monitors impressions                             | [promotions](v1/docs/layers/promotions.md)                                 |
-| Selling                       | Sets up a sales flow that tracks different events in a sale           | [selling](v1/docs/layers/selling.md)                                       |
-| Watchers                      | Trigger events when some condition is reached with tokens and sets    | [Watchers](v1/docs/layers/watcher.md)                                      |
-| Admin                         | Fixes broken stuff, sets up moderators, user management               | [admin](v1/docs/layers/admin.md)                                           |
-| Moderator                     | Moderate some assigned events, locations, changes                     | [moderators](v1/docs/layers/moderators.md)                                 |
-| Boards                        | Discussion chat rooms and reviews. Private individual and group chats | [boards](v1/docs/layers/boards.md)                                         |
-| Notes                         | Organize text,images, links, lists                                    | [notes](v1/docs/layers/notes.md)                                           |
-| Items                         | Allow sharing and communities                                         | [items](v1/docs/layers/items.md)                                           |
-| Public grants                 | Allow some users to do some low level operations                      | [public-grants](v1/docs/layers/public-grants.md)                           |
-| Format                        | Converts token sets to different things: html and markup ..           | [format](v1/docs/layers/format.md)                                         |
-| Export and Verification       | How tokens are shared between servers                                 | [export import verification](v1/docs/layers/export-import-verification.md) |
-| Agents                        | Agents are authorized to do things outside the server                 | [agents](v1/docs/layers/agents.md)                                         |
-| Jobs                          | Aid to the jobs in the queue, track job output and give notice        | [jobs](v1/docs/layers/jobs.md)                                             |
+| Layer                         | Description                                                           | Link                                                                                        |
+|-------------------------------|-----------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
+| Instance                      | About the instance the api is running on                              | [instance](v1/docs/layers/a-core-layers/instance-base.md)                                        |
+| Users                         | Managers existing users; creates and changes user groups              | [users](v1/docs/layers/a-core-layers/users.md)                                              |
+| Registrations                 | Does all the new user account creation                                | [registrations](v1/docs/layers/a-core-layers/registrations.md)                              |
+| Authentication and Logging in | Handles users logging in and pw resets                                | [user_login](v1/docs/layers/a-core-layers/user_login.md)                                    |
+| Networks                      | Tracks social accounts that are not users, and then later are         | [networks](v1/docs/layers/g-network-layer/networks.md)                                      |
+| Network discovery             | Makes new network entry tokens. Scans social networks.                | [network-disovery](v1/docs/layers/i-promotion-layers/network-disovery.md)                   |
+| Distributions                 | Gives new and existing tokens to users and people in networks         | [distributions](v1/docs/layers/i-promotion-layers/distributions.md)                         |
+| Contracts                     | Terms of using someone's token in your own stuff. Auto payments       | [contracts](v1/docs/layers/f-trading-layers/contracts.md)                                   |
+| Marketplace                   | Ownerships of token sets can be bought and sold                       | [marketplace](v1/docs/layers/f-trading-layers/marketplace.md)                               |
+| Pools                         | Pools are a resource that generates future tokens                     | [pools](v1/docs/layers/d-organization-layers/pools.md)                                      |
+| Organizations                 | They are companies or people who do stores                            | [organizations](v1/docs/layers/d-organization-layers/organizations.md)                      |
+| Stores                        | Stores sell inventory                                                 | [stores](v1/docs/layers/h-selling-layers/stores.md)                                         |
+| Inventory                     | Items in a store for sale, need not be physical or even real          | [inventory](v1/docs/layers/h-selling-layers/inventory.md)                                   |
+| Promotions                    | Sets up advertising, monitors impressions                             | [promotions](v1/docs/layers/i-promotion-layers/promotions.md)                               |
+| Selling                       | Sets up a sales flow that tracks different events in a sale           | [selling](v1/docs/layers/h-selling-layers/selling.md)                                       |
+| Watchers                      | Trigger events when some condition is reached with tokens and sets    | [Watchers](v1/docs/layers/b-user-layers/watcher.md)                                         |
+| Admin                         | Fixes broken stuff, sets up moderators, user management               | [admin](v1/docs/layers/b-user-layers/admin-base.md)                                              |
+| Moderator                     | Moderate some assigned events, locations, changes                     | [moderators](v1/docs/layers/d-organization-layers/moderators.md)                            |
+| Boards                        | Discussion chat rooms and reviews. Private individual and group chats | [boards](v1/docs/layers/e-interaction-layers/boards.md)                                     |
+| Notes                         | Organize text,images, links, lists                                    | [notes](v1/docs/layers/c-personal-layers/notes.md)                                          |
+| Items                         | Allow sharing and communities                                         | [items](v1/docs/layers/e-interaction-layers/items.md)                                       |
+| Public grants                 | Allow some users to do some low level operations                      | [public-grants](v1/docs/layers/b-user-layers/public-grants.md)                              |
+| Format                        | Converts token sets to different things: html and markup ..           | [format](v1/docs/layers/c-personal-layers/format.md)                                        |
+| Export and Verification       | How tokens are shared between servers                                 | [export import verification](v1/docs/layers/j-internet-layers/export-import-verification.md) |
+| Agents                        | Agents are authorized to do things outside the server                 | [agents](v1/docs/layers/b-user-layers/agents.md)                                            |
+| Jobs                          | Aid to the jobs in the queue, track job output and give notice        | [jobs](v1/docs/layers/a-core-layers/jobs.md)                                                |
 
 # Concepts
 
