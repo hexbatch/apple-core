@@ -9,14 +9,10 @@
 * Pages is done by cursor, long results are paged
 * optional language is chosen by the header of the accept language: the library will choose the best fitting one. `Accept-Language: fr; q=1.0, en; q=0.5`
 
-# Users
-[user-api.md](step-0-users-groups/user-api.md)
-
-# User Groups
-[groups api](step-0-users-groups/group-api.md)
-
-# User Admin
-[user admin api](step-0-users-groups/admin-api.md)
+# Users, groups, admin
+* [user-api.md](step-0-users-groups/user-api.md)
+* [groups api](step-0-users-groups/group-api.md)
+* [user admin api](step-0-users-groups/admin-api.md)
 
 
 # Bounds
@@ -30,22 +26,22 @@
 * [attribute api](step-2-attributes/attribute-api.md)
 
 
-# Scripts
-[script api](step-3-scripts-urls/script-api.md)
-
-
-# Remotes
+# Scripts, Remotes, Metrics
+* [script api](step-3-scripts-urls/script-api.md)
 * [remote api](step-3-scripts-urls/remote-api.md)
 
-# Metrics
 * [metrics api](step-3-scripts-urls/metrics-api.md)
+
 
 # Actions
 [actions](step-4-actions/actions-api.md)
-
 
 # Types
 [token_types](step-5-types/type-api.md)
 
 # Tokens
 [token-api.md](step-6-tokens/token-api.md)
+
+# Sets
+* [set-api.md](step-7-sets/set-api.md)
+* [requirements-api.md](step-7-sets/requirements-api.md)
