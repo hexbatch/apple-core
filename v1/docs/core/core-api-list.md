@@ -46,3 +46,6 @@
 
 # Types
 [token_types](step-5-types/type-api.md)
+
+# Tokens
+[token-api.md](step-6-tokens/token-api.md)

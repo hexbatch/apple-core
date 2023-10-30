@@ -48,7 +48,7 @@ Tokens have their aggregate values: bounds, affinities, allergies
 
 
 # Token set
-[sets.md](sets.md)
+[sets](step-7-sets/set-overview.md)
 All tokens belong to one or more token sets.
 
 A token set does not have any definition or structure, it's a loose organization of tokens.
