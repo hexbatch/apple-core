@@ -29,6 +29,7 @@ The id of the set is unique each time the token is used to make a set. A token c
 | Put    | set/:id/relationship/link/:id/add    |            | Add a link                                         | the set to link to                                    |
 | Delete | set/:id/relationship/link/:id/remove |            | Remove a link                                      | the set that is already linked to                     |
 | Delete | set/:id                              |            | Deletes the set                                    | the set id to delete                                  |
+| put    | set/:id/truncate                     |            | Removes all the tokens in the set                  |                                                       |
 | post   | set:id/tokens/add                    |            | Adds one or more tokens to the set                 | ids of tokens                                         |
 | Delete | set:id/tokens/remove                 |            | Removes one or more tokens from the set            | ids of tokens                                         |
 | GET    | set:id/read                          |            | lists the tokens in a set                          | optional requirements filter                          |

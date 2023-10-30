@@ -43,5 +43,8 @@
 [token-api.md](step-6-tokens/token-api.md)
 
 # Sets
-* [set-api.md](step-7-sets/set-api.md)
-* [requirements-api.md](step-7-sets/requirements-api.md)
+* [set-api](step-7-sets/set-api.md)
+* [requirements-api](step-7-sets/requirements-api.md)
+* [search api](step-7-sets/search-api.md)
+* [operations api](step-7-sets/operations-api.md)
+* [movement api](step-7-sets/movement-api.md)

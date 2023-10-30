@@ -41,7 +41,7 @@ The id of the requirement is unique each time the token is used to define a requ
             }]
         }]
 
-When adding a part, if the same token type is there in another part, its an error
+When adding a part, if the same token type is there in another part, it is replaced
 
 listing requirements, without filters, will show all requirements the user can write to and alter (but may be currently used).
 other filter: currently_used (in type), type in definition, attribute in definition

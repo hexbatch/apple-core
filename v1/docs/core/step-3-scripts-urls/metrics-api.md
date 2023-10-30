@@ -2,6 +2,9 @@
 
 metric api defined at
 
+The metric api is only handled by the same servers as the user admin api (localhost or private network range)
+
+
 There will be a need for people to see how often things are called, and any errors.
 Data sent to and from a resource is not seen here.
 

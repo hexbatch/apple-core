@@ -16,17 +16,79 @@ The core is meant to be stand-alone for testing and demonstration purposes thoug
 
 Attributes are defined by themselves, and attached to the token-type. The tokens are instances of the token-type
 
+
+## Data types
+
+each data type has its own set of api operations
+
+data types:
+
+    action
+    map bounds
+    time bounds
+    attributes
+    token-type
+    requirement
+    token
+    movement-queues (admin)
+    set
+    searches
+    user-group
+    user
+    
+
 # User authentication
 
-Some public and read only api calls do not need to have a logged-in user.
-Otherwise, can use both basic auth to get a bearer token.
+All api, except getting a token, require a token (so the user is logged in).
+The core is not really exposed to the public though, and the outer layers can allow un-logged in people to see stuff, by that layer using some user for public stuff
 
-A user needs to have many different bearer tokens that are valid. Once the user gets his bearer token, he can use an api call to get another one.
+A user can  have many different bearer tokens that are valid. Once the user gets his bearer token, he can use an api call to get another one.
 
 A bearer token can be generated, to use with jobs, so the pw does not have to be sent with the job data. But the jobs should have just temporary tokens they delete when done.
 
 So, need an api call to delete/unregister a bearer token given to it
 
+
+
+------------------------------------
+
+# Boundaries can be on the map or in time.
+
+[bounds](step-1-bounds/bound-overview.md) are only applied to attributes.
+
+Each bounds have a location and/or time and/or set path component, either is optional
+
+If there is no bounds, the attribute is always on. Else, the attribute is only read, written, and applied inside the bounds
+
+----------------------------------------
+
+# Attributes
+
+[attributes](step-2-attributes/attribute-overview.md) are the core of the api here.
+
+Attributes can be made to interact with one another, to require each other to be read or used, to set permissions and conditions for anything that happens in this api
+
+
+# Standard attributes
+[standard-attributes.md](step-2-attributes/standard-attributes.md)
+There is a list of attributes that have standard names
+
+----------------------------------------------------
+
+# Scripts
+[scripts](step-3-scripts-urls/script-overview.md) are Javascript can be set to run and generate a value when a token attribute is read
+
+# Remotes
+[Remotes](step-3-scripts-urls/remote-overview.md) are remote callbacks to be run and generate a value when a token attribute is read# Remotes
+
+# Metrics
+[metrics](step-3-scripts-urls/metrics-api.md) shows stats of calls to scripts and urls
+
+# Actions
+[actions](step-4-actions/action-overview.md)
+are attribute values that listen to events and allow things to happen, they can use scripts and remotes
+
+---------------------------------------------------------
 
 # Token types
 
@@ -53,15 +115,10 @@ All tokens belong to one or more token sets.
 
 A token set does not have any definition or structure, it's a loose organization of tokens.
 
-------------------------------------
-
-# Boundaries can be on the map or in time.
-
-[bounds](step-1-bounds/bound-overview.md) are only applied to attributes.
-
-Each bounds have a location and/or time and/or set path component, either is optional
-
-If there is no bounds, the attribute is always on. Else, the attribute is only read, written, and applied inside the bounds
+* [Operations](step-7-sets/operations-overview.md)
+* [Searches](step-7-sets/set-overview.md)
+* [Movement](step-7-sets/movement-overview.md)
+* [Relationships](step-7-sets/relationship-overview.md)
 
 
 ----------------------------------------
@@ -101,52 +158,11 @@ A [user group](step-0-users-groups/group-overview.md)  is a collection of users.
 Actions do not run on the token of the user group
 
 
-----------------------------------------
-
-# Attributes
-
-[attributes](step-2-attributes/attribute-overview.md) are the core of the api here.
-
-Attributes can be made to interact with one another, to require each other to be read or used, to set permissions and conditions for anything that happens in this api
-
--------------------------------
-
-# Scripts
-[scripts](step-3-scripts-urls/script-overview.md) are Javascript can be set to run and generate a value when a token attribute is read
-
-# Remotes
-[Remotes](step-3-scripts-urls/remote-overview.md) are remote callbacks to be run and generate a value when a token attribute is read
-
-# Actions
-
-[actions](step-4-actions/action-overview.md) 
-are attribute values that change other attributes
-
-The actions also handle rate limiting, contracts, and whether a set action can happen
 
 
-----------------------------------------------------
 
 
-# Data types
 
-each data type has its own set of api operations
-
-data types:
-
-    action
-    map bounds
-    time bounds
-    attributes
-    token-type
-    requirement
-    token
-    token-set
-    user-group
-    user
 
 -------------------------------------------------------------
 
-# Standard attributes
-[standard-attributes.md](step-2-attributes/standard-attributes.md)
-There is a list of attributes that have standard names
