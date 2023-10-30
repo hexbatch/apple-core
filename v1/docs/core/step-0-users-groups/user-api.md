@@ -15,12 +15,12 @@ Some attributes, and even some standard definition attributes will be marked as 
 
 ## Users operations
 
-| Method | Path                      | Route Name           | Description                                         | Args                                  | Notes                  |
-|--------|---------------------------|----------------------|-----------------------------------------------------|---------------------------------------|------------------------|
-| Post   | user/register/{lang-code} | user.create          | Makes a new user, puts the username in the aliases  | username (must be unique)             | returns a bearer token |
-| Post   | user/create_token         | user.create_token    | makes a new bearer token for the authenticated user |                                       |                        |
-| Delete | user/destroy_token        | user.destroy_token   | Deletes the bearer token  (must belong to the user) | token                                 |                        |
-| Get    | user/:id                  | user.read            | Shows the user information                          | optional wide flag to show attributes |                        |
+| Method | Path                      | Route Name              | Description                                         | Args                                  | Notes                  |
+|--------|---------------------------|-------------------------|-----------------------------------------------------|---------------------------------------|------------------------|
+| Post   | user/register/{lang-code} | core.user.create        | Makes a new user, puts the username in the aliases  | username (must be unique)             | returns a bearer token |
+| Post   | user/create_token         | core.user.create_token  | makes a new bearer token for the authenticated user |                                       |                        |
+| Delete | user/destroy_token        | core.user.destroy_token | Deletes the bearer token  (must belong to the user) | token                                 |                        |
+| Get    | user/:id                  | core.user.read          | Shows the user information                          | optional wide flag to show attributes |                        |
 
 ### User Data returned in the user.create or user.read
 
