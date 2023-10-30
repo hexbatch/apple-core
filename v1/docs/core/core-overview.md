@@ -11,7 +11,7 @@ The core is meant to be stand-alone for testing and demonstration purposes thoug
 * A token is always in at least one token-set.
 * A token can be in many token sets.
 * A token set can contain tokens not owned by the owner of the token set.
-* Token sets are altered, created and destroyed via set commands using type-groups
+* Token sets are altered, created and destroyed via set commands using requirements
 * Actions listening in on different lifecycle stages of a token, and when a token joins a set, can run javascript to decide to allow this and do auto transfers of tokens
 
 Attributes are defined by themselves, and attached to the token-type. The tokens are instances of the token-type
@@ -139,7 +139,7 @@ data types:
     time bounds
     attributes
     token-type
-    type-group
+    requirement
     token
     token-set
     user-group

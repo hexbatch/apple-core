@@ -21,3 +21,5 @@ Then dynamic linkage can happen. But if an allergy gets in the way, this link ca
 Same sort of linking for child parent, but here, the attributes need to be on both parent and child and be reciprocal in their values (or affinities for dynamic)
 
 Each link attribute can inherit from a link attribute base
+
+Because links are exposed to the api as attributes, changing these attributes in actions or in set operations is allowed. This allows mass assigning and unassigning  

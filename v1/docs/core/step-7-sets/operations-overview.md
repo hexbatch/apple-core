@@ -1,13 +1,14 @@
 # Set operations
 
-When putting a token into a token set, using an operation, the allows_set is evaluated if the owners are not the same, or if present.
+When putting a token into a token set, or removing it from a set, actions can reject this on the token
 
-When using a set in an operation, the token set can have an attribute allows_set_operation which has to be truthful to proceed
+When using a set in an operation, actions can block different operations
+
 The value of this can be a script and set by bounds, the script can do a filter for the type of set operation or what is being used in the operation
 
 set operations:
 
-* T is the type-group and is always optional, if missing it means all are operated on
+* T is the requirement and is always optional, if missing it means all are operated on
 * A is the source set
 * B is a second source set
 * D is the destination set

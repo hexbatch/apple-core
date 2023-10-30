@@ -12,7 +12,7 @@ Token types have an owner, options, attributes, and parents
 
 Token types name and info are in its attributes
 
-(other api here involve creating the token, getting token attribute values , and making a type-group)
+(other api here involve creating the token, getting token attribute values , and making a requirement)
 
 | Method | Path            | Route Name | Description                         |
 |--------|-----------------|------------|-------------------------------------|

@@ -24,10 +24,10 @@ The group token has all the core identification and display attributes. When a g
 ## Standard attributes
 
 * Core ID and display
-* Management flags
 * Organization
 * Copy
 * Language
+* Events
 
 ### Core identification and display
 
@@ -46,11 +46,6 @@ The group token has all the core identification and display attributes. When a g
 * small_thumbnail: binary (regular image types) 128px square
 * medium_thumbnail: binary (regular image types) 256px square
 
-### Management flags
-
-* allows_set: evaluated for truthful determines if a token can be added to a token set
-* allows_set_operation : evaluated for truthful to see if the set operation can take place
-* attribute_filter : if present, only the attribute named here in the target-attribute will be allowed, if the value is truthful
 
 ### Organization
 
@@ -68,6 +63,11 @@ Tags should be about what the token contains, or what the token is about
 
 * origin_server_url string
 * origin_token_guid string
+
+
+## Events are attributes
+
+Each event listed in the actions is an attribute that is assigned a truthful or false value. False attributes block the event from happening
 
 
 

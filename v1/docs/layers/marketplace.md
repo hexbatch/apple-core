@@ -36,8 +36,8 @@ What is offered for sale, lots can be created but not changed after the first bi
 
 What is offered for sale is a set of tokens, or a pool or a group membership offer 
 
-Lots can have a set of type-groups any of which can be met to be the price. Or a lot may be made without a price and the owner selects a winning bid.
-Type groups can be bounded, so that different prices can be set for different areas or times or bid contexts.
+Lots can have a set of requirements any of which can be met to be the price. Or a lot may be made without a price and the owner selects a winning bid.
+Requirements can be bounded, so that different prices can be set for different areas or times or bid contexts.
 It could be, that in some times, locations or path contexts - that there is no price
 
 Lots that have prices can accept the very first bid made, if there is a price for that bound, and automatically close the sale. 

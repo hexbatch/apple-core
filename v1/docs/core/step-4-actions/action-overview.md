@@ -32,8 +32,6 @@ if an attribute or token is out of bounds, or comes back in bounds, there is no 
 
 * token creation
 * owner-change
-* token-set addition
-* token-set removal
 * token-set mass attribute altering
 * destruction
 * value change
@@ -41,13 +39,25 @@ if an attribute or token is out of bounds, or comes back in bounds, there is no 
 * live attribute removed from token
 * parent in token turned on
 * parent in token turned off
+* token enters a set
+* token leaves a set
 
-Set tokens (tokens that are part of the definition of a set) have some extra actionable stuff
+
+Set operations (run on the token defining a set) 
+
 * Token was added to the set
-* Token left the set
+* Token was removed from the set
 * Child was added to the set
 * Parent was added to the set
 * Link was made from the set
+* Link was made to the set
+* each set operation has its own event, to allow to disallow the operation
+
+
+Requirements have a token, events here can be done on it when it's used to filter
+* Allow token
+
+--------------------------------
 
 
 Actions can be used to set rules for creation of a token:

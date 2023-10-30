@@ -6,7 +6,7 @@ Attributes can be defined by the code, in which case they are not owned, and can
 
 Attributes can be created|edited|deleted by a user.
 
-Attributes can be restricted to only be used in a token or type-group if there are one or more other specified siblings.
+Attributes can be restricted to only be used in a token if there are one or more other specified siblings.
 These siblings can have an ancestor or parent that matches this.
 
 Attributes can have an optional whitelist to allow which users can own, change the value of, and read this value of this attribute.
@@ -21,7 +21,7 @@ string specific types can be :
 * number is any numeric value
 * location is lat, lon
 
-An attribute is defined, when applied its value is put next to the action's instantiated values (a token or type group has a list of their attributes and current values)
+An attribute is defined, when applied its value is put next to the action's instantiated values (a token has a list of their attributes and current values)
 Starting out, the default value is used, if no default then null
 
 A new attribute can be made that has all the features of its parent, however any new things added to this will override the parent's
