@@ -17,3 +17,7 @@ Time bounds always exists inside a created bounds
         stop: when to stop this bounds, inclusive
         cron: optional crontab string
         period_length: only used and required when the cron is defined, is how long this time is allowed per cron run
+        timezone_to_use: if empty will be set by standard attribute of user_timezone
+
+
+The time bounds calculates out the periods of being on, using the timezone to convert this to unix timestamps

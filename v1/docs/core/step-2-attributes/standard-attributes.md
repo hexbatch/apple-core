@@ -36,6 +36,7 @@ The group token has all the core identification and display attributes. When a g
 * phone: string
 * address: string
 * location: map_coordinates
+* user_timezone: the timezone that can be default, if null then use system time zone
 * description: markdown
 * image: binary
 * symbol: binary (small image svg)

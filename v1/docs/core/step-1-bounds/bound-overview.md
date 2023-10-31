@@ -14,7 +14,8 @@ or it can be more complex: a complicated time series for different locations, wh
 
 Each boundary can have a location or time component, and each attribute can have multiple boundaries
 
-An attribute can have zero , one or many bounds. The bounds can be mixes of a time rules, map areas, paths
+An attribute can have zero , one or many bounds. The bounds can be mixes of a time rules, map areas, paths.
+Bounds can be applied to an attribute as long as the user is in a member in the group of the user
 
 Bounds can be edited only if they are not already in use
 

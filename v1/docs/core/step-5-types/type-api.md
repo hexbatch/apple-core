@@ -37,6 +37,7 @@ Token types name and info are in its attributes
             attribute_final_list: [or or more attribute ids that children or descendants cannot have]
         attributes: []
         parents: []  -- the order is important
+        parents_starting_off: [] any of the above (optional)
         global_states: [attribute_id, state] (read only unless use api to set the state)
 
 

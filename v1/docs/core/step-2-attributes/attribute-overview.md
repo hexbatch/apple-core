@@ -1,6 +1,6 @@
 # Attributes
 
-Are the core of the api here.
+Are the core of the api here. Attributes have value. By default, attributes can be read by everyone and written by no one else but the owner admin group
 
 Attributes can be defined by the code, in which case they are not owned, and cannot be edited or deleted.
 
@@ -21,7 +21,10 @@ string specific types can be :
 * number is any numeric value
 * location is lat, lon
 
-An attribute is defined, when applied its value is put next to the action's instantiated values (a token has a list of their attributes and current values)
+An attribute is defined with a starting value.
+When it is applied to a token type, and the type makes a token. Then the attribute's value can be used, unless overridden, and put on the token's live values.
+This value can be changed by any who can write to the token
+
 Starting out, the default value is used, if no default then null
 
 A new attribute can be made that has all the features of its parent, however any new things added to this will override the parent's
@@ -49,9 +52,9 @@ Attributes can have optional explaining text
                 allergies: [attribute ids] cannot be in the same set if this attribute is in any of the other tokens. 
                 affinities: [attribute ids] this must be in the same set somewhere before the token can be added to the set
         permissions:
-            owner_user_groups: [] if empty then anyone can use this to create their tokens and token-sets
+            owner_user_groups: [] if empty then only the user's group can use this to create their types or add to tokens 
             read_user_groups: []  if empty anyone can read the attribute value
-            write_user_groups: [] if empty anyone can change the attribute value.
+            write_user_groups: [] if empty the admin group can change the attribute value.
             set_requirements: 
                 read: [] or {} attribute ids  : if this array, if one in a set can read, if object then all must be in set to read
                 write: [] attribute ids : if this array, if one in a set can write, if object then all must be in set to write

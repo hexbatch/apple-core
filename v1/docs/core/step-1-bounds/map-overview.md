@@ -11,6 +11,6 @@ An attribute's total map bounds is the union of all the map bounds in the attrib
 Map bounds always exist inside a created bounds
 
     so a map-bound:
-       
+        user: id
         name: name of the bounds (unique to the user's bounds)
         polygon array: at least one polygon, they can overlap or not be connected or join

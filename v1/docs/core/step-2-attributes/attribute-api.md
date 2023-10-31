@@ -37,9 +37,9 @@ An attribute can be deleted if only it's not used anywhere
         description: some text explaining why this attribute is used, etc, the author or other info
         is_retired: default false // if true then cannot be added to token types 
         bounds:
-        activity_bounds: []
-        read_bounds: []
-        write_bounds: []
+            activity_bounds: []
+            read_bounds: []
+            write_bounds: []
 
         requirements:
             tokens:
@@ -49,9 +49,9 @@ An attribute can be deleted if only it's not used anywhere
                 allergies: [attribute ids] cannot be in the same set if this attribute is in any of the other tokens. 
                 affinities: [attribute ids] this must be in the same set somewhere before the token can be added to the set
         permissions:
-            owner_user_groups: [] if empty then anyone can use this to create their tokens and token-sets
+            owner_user_groups: [] if empty then only the user's group can use this to create their types or add to tokens
             read_user_groups: []  if empty anyone can read the attribute value
-            write_user_groups: [] if empty anyone can change the attribute value.
+            write_user_groups: [] if empty the user's admin group can change the attribute value
             set_requirements: 
                 read: [] or {} attribute ids  : if this array, if one in a set can read, if object then all must be in set to read
                 write: [] attribute ids : if this array, if one in a set can write, if object then all must be in set to write
@@ -63,3 +63,8 @@ An attribute can be deleted if only it's not used anywhere
             regex: (string only if regex set then enum ignored)
             default:
             allow_null: default true, but can only be false if the default is set
+
+
+
+When adding or editing in, or removing: bounds, attributes,  groups :
+    The user needs to be able to read them (be member in user group of owner or else be allowed to read)

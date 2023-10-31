@@ -25,3 +25,6 @@ Bound names cannot be aliased, but they are not public either, nobody is going t
 | Get    | bounds/schedule/:id/ping |            | returns true or false if in the path       | a set id          |
 
 
+        user: id
+        name: name of the bounds (unique to the user's bounds)
+        search_expressions: array of search expressions ending at a set the token can belong to, or a sibling token in a set the token can belong to

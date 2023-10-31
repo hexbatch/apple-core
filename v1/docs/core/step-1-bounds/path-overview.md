@@ -10,7 +10,7 @@ The same token would have different on or off attributes based on reading it in 
 
 ## Set expressions
 
-each token set has an optional name and token, the token can have attributes with values
+each token set has a token with an id, the token can have attributes with values
 so, a path could be identified by name#token_type.attribute:value
 
 And there can be wild cards too
@@ -21,7 +21,14 @@ And there can be wild cards too
 A set expression can also be a parent/child relationship using the notation of being able to skip
 #token_type.attribute:value/.b-attribute>name
 
+a set expression can also be a required token sibling in a set
+
+a set expression can be conveyed to be a set that has some relationship (other set linking to it, a parent or a child)
 
 
+        so a path-bound:
+        user: id
+        name: name of the bounds (unique to the user's bounds)
+        search_expressions: array of search expressions ending at a set the token can belong to
 
 

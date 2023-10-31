@@ -20,4 +20,6 @@ Bound names cannot be aliased, but they are not public either, nobody is going t
 | Get    | bounds/maps                             |            | Shows a list of all the bounds the user has                   | maybe pagination    |
 | Get    | bounds/map/:id/ping                     |            | returns true or false if a point or area is in bounds         | lat, lng            |
 
-
+        user: id
+        name: name of the bounds (unique to the user's bounds)
+        polygon array: at least one polygon, they can overlap or not be connected or join

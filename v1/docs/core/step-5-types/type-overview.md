@@ -26,6 +26,7 @@ Types can use attributes owned by others, as long as the permissions work out in
             attribute_final_list: [or or more attribute ids that children or descendants cannot have]
         attributes: []
         parents: []  -- the order is important
+        parents_starting_off: [] any of the above (optional)
         global_states: [attribute_id, state]
 
 
@@ -71,3 +72,9 @@ They must follow the naming convention and be unique
 Others can be given the permission to create tokens from this type, or descendants from this type.
 This means descendants can further restrict, but not expand, the allowed creators.
 Group lists can be used to change the users allowed.
+
+
+## starting parents as off
+
+Some or all of the inherited parents can start in the off state, which means while their attributes override any ancestor or other type lesser in inheritance,
+those attributes will not be available for reading or writing until that parent is turned on
