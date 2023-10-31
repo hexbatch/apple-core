@@ -3,7 +3,7 @@
 This repo is meant to contain api definitions for the gokabam project.
 This includes high level overviews and docs. The implementation of the code can be in different repos.
 
-Many concepts in here has seen several abandoned previous versions. 
+Many concepts in here have seen several abandoned previous versions. 
 This project version is named apple core: because it's been eaten at for a while, but has a lot of great seeds that can turn into valuable orchards later.
 
 
