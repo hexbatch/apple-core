@@ -5,6 +5,7 @@
 * will get user details (with attribute values)
 * will edit user details (edit attributes)
 * will store and give a basic user token (to get standard attributes)
+* stores and gives back user layer-only data
 
 # Api
 

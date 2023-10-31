@@ -1,8 +1,14 @@
 # Logging In
 
 * This api handles logging in the user using different ways by setting up plugins to handle each
-* Does password resets
-* Social networks logging in handled in the internet layers
+  * allows logging in via api call and no web page
+  * if api or console then return a me api to show the logged-in user information
+  * Shows a user landing url if browser call
+* Social networks logging in handled in the internet layers for the login api
+* handle regulation demanded forms
+* have a user landing page, or if api a me
+  * in the landing page or me, show news
+* set text only news items (date and news) to show
 
 ## Authentication
 
@@ -23,5 +29,7 @@ the outer layer will construct the job queue using the behalf-user's token.
 
 ## First plugins
 
-Make the first plugin allowing a username and pw login
-Then plugin can log in with: username and password, email.
+
+* Make basic auth for api calls
+* Make plugin allowing a username and pw login via form
+* Make plugin that can log in with: email and password. (allow form and api)

@@ -43,9 +43,12 @@ Calls the standard.family.list for the description args to make the form data. W
 
 ## List plugins
     registrations.list_plugins
+Will return the list in machine format.
+But also will give a page a person can select from.
 
 ## Use plugin for session
     registrations.use_plugin
+Will set the url to select a plugin 
 
 ## Show form to register
     registrations.show_form
