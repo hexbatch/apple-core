@@ -85,3 +85,5 @@ using the selected plugin, will let it show forms and callback urls to reset cre
 # Registration plugins
 
 are activated , loaded using composer plugin setup. Do all configuring via console
+
+They store the user credentials in the user-services

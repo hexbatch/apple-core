@@ -22,3 +22,7 @@ Standard system groups: membership
 Standard system groups: admin
 * script_permission , can list scripts and see details, turn on and off scripts
 * remote_permission , can list and search for remotes and see details, turn on and off remotes
+
+
+## admin.users.list_users
+options to search also token pass-through data, if given something will see if any token info matches a user

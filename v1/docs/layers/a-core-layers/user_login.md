@@ -9,6 +9,7 @@
 * have a user landing page, or if api a me
   * in the landing page or me, show news
 * set text only news items (date and news) to show
+* another series of plugins here can add to the user homepage (me)
 
 ## Authentication
 
@@ -29,7 +30,37 @@ the outer layer will construct the job queue using the behalf-user's token.
 
 ## First plugins
 
+Logins:
 
 * Make basic auth for api calls
 * Make plugin allowing a username and pw login via form
 * Make plugin that can log in with: email and password. (allow form and api)
+
+# API 
+
+## login choice
+    user_login.login_choice
+shows the list of login choices, reading from its plugins here
+each login choice is its own url inside the user_login_layer, created by that plugin
+output can be either an html page, or a json response
+
+## show login form
+    user_login.show_form
+shows the form to fill out to login.
+The plugin will decide what form to show
+
+## do login
+    user_login.do_login
+can be called via api call or webpage
+the plugin handles this (oauth or other social leading to oauth)
+if login successful, returns either the json me or the webpage me,
+
+
+## show me
+    user_login.me
+calls the core to get the user details, and mixes in data from the outer layers too.
+if webpage, this is where any regulation forms might be at.
+Shows news.
+the plugins for the homepage handle the formatting and content of this page
+
+

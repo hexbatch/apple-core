@@ -16,3 +16,11 @@ Will see if cached, if not then will create a new user, no frills, using the cor
 ## store user token
     user_services.store_bearer_token
 Given a user id from the core, will store a bearer token
+
+## stores user data
+    user_services.store_user_data
+user data for layers only, not core
+
+## gets user data
+    user_services.read_user_data
+gets user data stored in the above
