@@ -30,12 +30,24 @@ Optional data can be provided in json
 # This is the only microservice that calls the core api indirectly and directly
 
 Flow for placing a job and getting data and status back via url:
-* caller calls the `job_services.start_job` with the user, function name, and data and a url
+* caller calls the `job_services.do_job` with the user, function name, and data and a url and the wait flag set to false or unset
 
 Flow for placing a job and waiting for it to finish
-* call the task that does the above but polls for completion, sleeping in between, and then returns the data 
+* does the above, but with the wait flag set to truthful 
+
+# console job task for waiting
+* pass in user and function name using args
+* pass in data either with arg for data or arg for file name
+* task will complete when it gets back the callback for finishing
+* then the task returns the printed json of all the task output
 
 # API
+
+## do job
+    job_services.do_job
+* if the wait flag is set, then call the job task for waiting and return when it does
+* otherwise call `job_services.start_job` and return the job id it gives on return
+    
 
 ## start a new job
     job_services.start_job

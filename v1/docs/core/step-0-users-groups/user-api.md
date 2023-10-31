@@ -34,3 +34,5 @@ Some attributes, and even some standard definition attributes will be marked as 
     attributes:[] --empty unless wide
 
 When the wide flag is used in the read, then it will be a list of attribute name: attribute value
+
+When the editable flag is used, only the attributes that are editable, via permissions of the calling user, will be returned
