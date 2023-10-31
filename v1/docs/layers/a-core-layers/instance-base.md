@@ -18,6 +18,6 @@ can only be called by logged-in users who are approved
 
 ## route all calls
     instance.route_call
-  * will check with permissions layer before routing 
+  * calls `permissions_layer.can_i_do_this`, if cannot return or throw 
   * will use event filter find out where to route, to allow dynamic adding of routes
   * will use event action before and after call to route to allow plugin listeners

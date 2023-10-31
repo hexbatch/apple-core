@@ -53,12 +53,16 @@ The plugin will decide what form to show
     user_login.do_login
 can be called via api call or webpage
 the plugin handles this (oauth or other social leading to oauth)
-if login successful, returns either the json me or the webpage me,
+* calls `user_services.read_layer_data`
+* plugin does verification
+* if login successful, returns either the json me or the webpage me,
 
 
 ## show me
     user_login.me
-calls the core to get the user details, and mixes in data from the outer layers too.
+* calls `user_services.read_core_data`
+* calls `user_services.read_layer_data`
+
 if webpage, this is where any regulation forms might be at.
 Shows news.
 the plugins for the homepage handle the formatting and content of this page

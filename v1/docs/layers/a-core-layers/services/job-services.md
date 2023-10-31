@@ -23,16 +23,42 @@ Optional data can be provided in json
 
 ## Plugin driven
 
-* each job function is defined by a plugin (committed to same repo in the plugins folder)
+* each job function is defined by a plugin
+* job functions may be pulled in from other repos
+* each job function will call `core.user.auth.destroy` at the end to destroy its token!
+
+# This is the only microservice that calls the core api indirectly and directly
+
+Flow for placing a job and getting data and status back via url:
+* caller calls the `job_services.start_job` with the user, function name, and data and a url
+
+Flow for placing a job and waiting for it to finish
+* call the task that does the above but polls for completion, sleeping in between, and then returns the data 
 
 # API
 
+## start a new job
+    job_services.start_job
+* makes new db entry for a job
+* takes all the data given here, (the user, the function name, the data to be used in the call) and puts that in a queue
+* returns the job id
+
+## process start job queue
+* this reads from the queue for starting jobs, and calls `job_services.create_job`
+
 ## create a new job
     job_services.create_job
-  * checks with the core permission service to see if this can be made
-  * gets a new token from the core for the user, using the token stored in the user-services. Does not store new token in layer db
+only called in the queue for starting new jobs
+
+  * calls `permissions_core.can_i_do_this` for all the listed api calls in the job, if user cannot then return with data explaining (or throw)
+  * calls `user_services.get_basic_user_auth`
+  * calls `core.user.auth.create` for auth token put in
+  * makes new db row for the job
+  * queues this with given data, and callback url
 
 
-# In each job
-    job_step.destroy_token
-  calls the core to destroy that token
+# job status hook called from the job execution
+    job_services.update_hook
+  * update job status
+  * if this job is not done return
+  * if provided callback url call that

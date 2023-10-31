@@ -1,6 +1,6 @@
 # Users in the core
 
-All the api requires a logged-in user (except for the user creation call).
+All the api requires a logged-in user (except for the user creation call and getting standard attributes).
 Users own most of the resources here. There is a strict permissions used. And its easy to lock down what they create to only allow certain users or groups to interact with them.
 
 There are permission groups, and a permission group for a user can have admins to write to that user's resource, or be a member to read the user's resource.

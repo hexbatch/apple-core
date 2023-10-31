@@ -59,11 +59,10 @@ Attributes can have optional explaining text
                 read: [] or {} attribute ids  : if this array, if one in a set can read, if object then all must be in set to read
                 write: [] attribute ids : if this array, if one in a set can write, if object then all must be in set to write
         value:
-            value_type: one of: numeric, string, string specific type,json, markdown, binary, action, script,url, token id
+            value_type: one of: numeric, string, string specific type,json, markdown, binary, action, script,url, user_id, attribute id,token id,map_coordinates
             min: (numeric only)
             max: (numeric only)
-            enum: (string only if no regex)
-            regex: (string only if regex set then enum ignored)
+            regex: (string only can set enums here)
             default:
             allow_null: default true, but can only be false if the default is set
 

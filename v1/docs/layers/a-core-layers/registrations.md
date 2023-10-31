@@ -38,7 +38,7 @@ Agents api might be used for some, or all, verification and sign in, using a bas
 
 ## Init form data so can display it 
     registrations.form.init
-
+* calls `user_services.list_user_fields`
 Form data is used by all plugins, its the information needed. A plugin decides which info is mandatory
 
 Calls the standard.family.list for the description args to make the form data. Will cache this, can be called again any time to get more recent
@@ -71,16 +71,19 @@ The user will have the extra login credentials set to his account here
 
 ## Register the user when the form is submitted 
     registrations.create
+* calls `user_services.create_user`
 When the user submits the first registration form, the creation will be put to a job
 
 ## Store login credentials
     registrations.store_credentials
+* calls `user_services.store_layer_data`
 using the selected plugin, will give/pass the credentials to it
 
 ## Reset login credentials
     registrations.reset_credentials
-using the selected plugin, will let it show forms and callback urls to reset credentials
-
+* calls `user_services.read_layer_data`
+* using the selected plugin, will let it show forms and callback urls to reset credentials
+* calls `user_services.store_layer_data`
 
 # Registration plugins
 

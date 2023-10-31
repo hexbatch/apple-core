@@ -59,8 +59,7 @@ An attribute can be deleted if only it's not used anywhere
             value_type: one of: numeric, string, string specific type,json, markdown, binary, action, script,url, token id
             min: (numeric only)
             max: (numeric only)
-            enum: (string only if no regex)
-            regex: (string only if regex set then enum ignored)
+            regex: (string only can set enums here)
             default:
             allow_null: default true, but can only be false if the default is set
 

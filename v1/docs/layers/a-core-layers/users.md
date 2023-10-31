@@ -7,19 +7,10 @@ This api handles:
 * user group admin stuff
 * list user groups
 * user wallet
-* system functions for token use
-* system functions for changing the public pw (the api for changing is done in the log in api layer)
+* user files and folder
+* interface (basic static and api) of user sessions
+* interface of bookmarks
 
-The user layer here also remembers the user password, both the public one, and the one used to log into the core for the user.
-It remembers the user token id, and stores the long term user bearer token. Users can be blocked from doing actions. Users can be given a whitelist of allowed api calls.
-
-The user is joined to a group called the allowed api calls, the user must use the apis in this group only, and its enforced when the user is authenticated in each call.
-
-parts of this layer is public, and parts of this is for the system
-
-This manages the home set, the first set context the user has when logged in and can easily find again.
-
-Sessions are also handled here.
 
 
 ## Data structure
@@ -115,28 +106,25 @@ Any member of a groups can see the full list of the group members and admins
 * edit group attributes (any admin)
 * view group (any member)
 * add group member (any admin)
-* create a membership offer (any admin)
 * remove group member (any admin)
 * add admin (only if group owner)
 * remove admin (only if group owner)
 * change group ownership (only if owner)
 
-### Membership offers
-
-Membership offers can be sold in the marketplace, and allow the holder to redeem this for group membership. it only works one time
-
-Because this is a token, it can also be a token pool, and also have bounds and expiration, and permissions (only some users can use it)
 
 ## User wallet
 
 all the tokens a user owns is in a wallet, this can be organized
 
+* creates wallet when user registered
 * list contents
 * organize contents
 
 # User environment
 
-creates and manages the home set. There is a remembered set that the api uses as the context for the user, when he makes future api calls in the layers
+creates and manages the home set. There is a remembered set that the api uses as the context for the user, when he makes future api calls in the layers.
+
+The default user session is from the home set
 
 ## Working set
 
@@ -153,11 +141,15 @@ The user's token is added to the set to use as a context, that way, the set can 
 A user can do an api call using a different set than his working set without leaving his working set. 
 Everything still works the same, but at the end of the api call, the user is still in his chosen working set
 
+## Files
+upload urls can be attached to tokens, and here we define a new attribute for the user, based on the standard file attribute
+
 ## Bookmarks
 
 a series of tokens based on a bookmark, found in the user home set
 
-Api gives the ability to set the working set to a bookmark here
+Api gives the ability to set the working set to a bookmark here. create list and delete bookmarks.
+Organize bookmarks into a folder system
 
 ## Landing set
 

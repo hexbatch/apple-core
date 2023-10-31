@@ -2,7 +2,8 @@
 
 attribute api defined at [attributes.yaml](../../../api-docs/attributes.yaml)
 
-There are groups of standard attributes: can use this api to find them, and their descriptions and documentation
+There are groups of standard attributes: can use this api to find them, and their descriptions and documentation.
+No login is needed to query
 
 | Method | Path                  | Route Name                | Operation                                   | Args |
 |--------|-----------------------|---------------------------|---------------------------------------------|------|
@@ -25,8 +26,13 @@ Family structure:
 standard_attribute structure:
 
     name:
-    default_value:
-    docs: markdown string
+    default_value: (can be null)
+    primitive_type: string,numeric
+    other_type: iso date time, url, etc.
+    min_range: (can be null)
+    max_range: (can be null)
+    regex: (can be null)
+    docs:  string
 
 
 ## For all returns 

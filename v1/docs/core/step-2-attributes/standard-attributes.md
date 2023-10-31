@@ -5,23 +5,24 @@ They do have aliases though.
 
 There is an api to list the system items by type and role: for example list all the system attribute names, and those for identification
 
-## Standard token types
+# Standard token types
 
-### User Tokens
+## User Tokens
 
 The user token has all the core identification and display attributes. When a user is created, a new token type is inherited
 
 The base user token also is in some system defined groups
 
-### Group Tokens
+## Group Tokens
 
 The group token has all the core identification and display attributes. When a group is created, a new token type is inherited
 
-## Standard groups
+# Standard groups
 
 * script_permission group : members here can create scripts
 
-## Standard attributes
+# Standard attributes
+
 
 * Core ID and display
 * Organization
@@ -58,7 +59,11 @@ Tags should be about what the token contains, or what the token is about
 
 * user - the token is about a user
 * media - the token has media such as image, pdf, or video urls
+* media-url -? the attribute has a url for viewing
+* media-mime - the mime type of the media
 * documentation - the token has markdown files to explain stuff
+* file - this token is some uploaded thing, it can be media or not
+* folder - this set acts like a folder to store files
 
 ### Copy flags
 
