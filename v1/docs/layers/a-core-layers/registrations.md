@@ -15,8 +15,10 @@ Each social network, or type of sign up such as email,
 has its own plugin that gets the data, perhaps requires extra api calls by the client to fill in stuff.
 
 Plan to do:
-* the testing one for just entering username
-* registration via email
+* the testing one for just entering username and a pw (no user details)
+* registration via email (full user details), login with pw
+
+Both plugins will have minimum pw requirements set via .env
 
 ## Linking Plugins
 
