@@ -84,6 +84,7 @@ When an api uses a set context,
 Conditional permissions can also be defined to allow the read and write to only occur when another(or several) attribute in the same token set is present.
 This attribute does not need to be in the same token.
 
+These required attributes need to be on, and have their parent type on, in the token, to be marked present
 
 ## Affinity and allergies
 affinities and allergies also control when a token is allowed to be or not be in a set, and controls token movement through a network of sets. See sets

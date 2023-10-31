@@ -53,6 +53,8 @@ to list all the tokens in a set, do not put any modifiers after the last set:
 to search with ownership use the @owner(some user attribute)
 to search all sets a user owns, that you can see just do @owner(.username:will)
 
+can also search for tokens in a set owned by a user : @owner(.username:will)#apples, @owner(.email:*.gmail.com).green:free
+
 to combine searches using the set modifiers and the user modifier
 @set(#apples@owner(.username:will))
 
@@ -85,8 +87,13 @@ each search part is:
         owner:
         relationship_to: search part
     token name: (optional )
+    token_id: (optional)
+    token_owner: (optional)
     attributes:
         [{
             attribute name or id,
             value (literal or range or regex)
         }]
+
+
+the id here is the guid generated, not the proper token name

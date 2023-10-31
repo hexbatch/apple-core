@@ -19,7 +19,7 @@ A user group can have attributes for image, docs, but scripts do not run here.
 
 Each user group inherits from a base user group token type. For example, if a company creates a group.
 
-
+The token can be used as a regular token anywhere else, but can only represent one group, the group its attached to
 
 When adding attributes to the token-type, the attributes have to be readable and writable by the owner and whoever is editing
 

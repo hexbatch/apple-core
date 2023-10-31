@@ -46,6 +46,7 @@ each search part is:
         relationship_to: search part
     token name: (optional )
     token_id: (optional)
+    token_owner: (optional)    
     attributes:
         [{
             attribute name or id,

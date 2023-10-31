@@ -21,6 +21,7 @@ Token owners can add in the extra attributes, or those who are in the user admin
 Tokens have their aggregate values: bounds, affinities, allergies. This is the union of each.
 This also means that some tokens cannot be taken to some locations or usable at some times.
 Token's behavior in a set depends on these aggregate values for affinities, allergies and path bounds.
+When an attribute is off, the bounds are still counted, but the allergies and affinities are not.
 
 Tokens also have an optional location. 
 If map bounds is set but not the location, the token will be considered out of bounds.
