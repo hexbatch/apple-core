@@ -49,8 +49,8 @@ Attributes can have optional explaining text
                 required_siblings: [attribute ids] for sharing the same token type or token
                 forbidden_siblings: [attribute ids] cannot be in the same token or type
             sets:
-                allergies: [attribute ids] cannot be in the same set if this attribute is in any of the other tokens. 
-                affinities: [attribute ids] this must be in the same set somewhere before the token can be added to the set
+                allergies: [force_rules] cannot be in the same set if this attribute is in any of the other tokens. 
+                affinities: [force_rules] this must be in the same set somewhere before the token can be added to the set
         permissions:
             owner_user_groups: [] if empty then only the user's group can use this to create their types or add to tokens 
             read_user_groups: []  if empty anyone can read the attribute value
@@ -88,6 +88,14 @@ These required attributes need to be on, and have their parent type on, in the t
 ## Affinity and allergies
 affinities and allergies also control when a token is allowed to be or not be in a set, and controls token movement through a network of sets. See sets
 
+Each affinity and allergy can have one or more force_rules
+
+    force_rule:
+        attribute_id:
+        weight: number:  (negative means more repulsed, positive means more attracted)
+        numeric_min:
+        numeric_max:
+        string_value: (constant or regex)
 
 ### Required set attributes for read
 

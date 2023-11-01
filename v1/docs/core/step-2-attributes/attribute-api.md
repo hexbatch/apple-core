@@ -46,8 +46,8 @@ An attribute can be deleted if only it's not used anywhere
                 required_siblings: [attribute ids] for sharing the same token type or token
                 forbidden_siblings: [attribute ids] cannot be in the same token or type
             sets:
-                allergies: [attribute ids] cannot be in the same set if this attribute is in any of the other tokens. 
-                affinities: [attribute ids] this must be in the same set somewhere before the token can be added to the set
+                allergies: [force_rules] cannot be in the same set if this attribute is in any of the other tokens. 
+                affinities: [force_rules] this must be in the same set somewhere before the token can be added to the set
         permissions:
             owner_user_groups: [] if empty then only the user's group can use this to create their types or add to tokens
             read_user_groups: []  if empty anyone can read the attribute value

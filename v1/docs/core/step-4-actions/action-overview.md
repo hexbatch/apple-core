@@ -1,6 +1,6 @@
 # Actions
 
-Event listeners, that can change attribute values, and can turn them on or off.
+Event listeners, they can approve an action or can change attributes values on the same token , or can turn attributes on the token on or off.
 Actions can also turn on and off parents of tokens.
 The attributes do not need to be attached to the same token as the attribute that holds the action,
 but as long as the attribute can be changed by the user who owns the token, it can be changed.
@@ -17,6 +17,7 @@ This means an action can be restricted, and different bounds can do different th
 
 Actions listen to events, and can cancel them. If multiple actions are listening to the same event, 
 Only one has to cancel it for the event to not be allowed to happen.
+In that case, if any actions listening to the event is changing attribute values on the token, then those changes are not used
 
 An action can only listen to one event.
 
@@ -96,11 +97,13 @@ When making an action to charge tokens for an event, use a remote set to quickly
             so an action:
                 action-name: can be any unique name for actions
                 action-owner: actions are be owned by a user
-                target-path: see paths
-                action-type: value change or switch or void (just runs a script or remote)
+                event-path: the path of the event (able to filter set context of an event), path must be using an event attribute id or child of one
+                target-path: see paths (must end in attribute on the token this belongs to, ok if path is invalid, in that case no target and no changes)
+                target-remembering: all|set|relationship
+                action-type: permission, value change, switch on|off,  or void (just runs a script or remote)
                 input-params: [{path: name of param on the script or remote}]
                 run-policy: always, per token, per token type, per set, once only per token type, one only per token
-                value: a sript, or remote id, or another attribute path
+                value: a script, or remote id, or another attribute path
 
 
 
@@ -114,6 +117,13 @@ and if only one, before the value change, or not in the allowed count range,
 it will block the lifecycle change
 
 Such actions do not need scripts or remotes
+
+# type of action
+  * an action can be to grant permission 
+  * or to change a value. The values to change must be located on the same token as the action running.
+  * or to turn off or on attributes or clusters on the token
+  * or do nothing (just run the script or remote)
+
 
 
 # Turning on and off a live attribute
