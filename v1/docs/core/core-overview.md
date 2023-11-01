@@ -23,30 +23,33 @@ each data type has its own set of api operations
 
 data types:
 
-    action
-    map bounds
-    time bounds
-    attributes
-    token-type
-    requirement
-    token
-    movement-queues (admin)
-    set
-    searches
-    user-group
-    user
-    
+
+*    actions
+*    token-type
+*    requirement
+*    token
+*    movement
+*    sets
+*    operations
+* searches
+
+* [users](core-concepts/users.md)
+* [groups](core-concepts/groups.md)
+* [bounds](core-concepts/bounds.md)
+* [attributes](core-concepts/attributes.md)
+* [scripts](core-concepts/scripts.md)
+* [scripts](core-concepts/remotes.md)
 
 # User authentication
 
-All api, except getting a token, require a token (so the user is logged in).
-The core is not really exposed to the public though, and the outer layers can allow un-logged in people to see stuff, by that layer using some user for public stuff
+All api, except getting a token, and getting standard attribute info, require a token (so the user is logged in).
+The core is not really exposed to the public though, and the outer layers can allow un-logged in people to see stuff, using some user for public stuff
 
 A user can  have many different bearer tokens that are valid. Once the user gets his bearer token, he can use an api call to get another one.
+This is good to use with jobs.
+A bearer token can be generated, to use with jobs, so the pw does not have to be sent with the job data. 
+But the jobs should have just temporary tokens they delete when done.
 
-A bearer token can be generated, to use with jobs, so the pw does not have to be sent with the job data. But the jobs should have just temporary tokens they delete when done.
-
-So, need an api call to delete/unregister a bearer token given to it
 
 
 
