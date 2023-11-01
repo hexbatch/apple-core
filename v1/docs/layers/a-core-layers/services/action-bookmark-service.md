@@ -1,4 +1,4 @@
-# Actions
+# Bookmark Actions
 
 Actions are tokens seen in a set, and when the action command is run on them, in the session service, they do things. 
 What they do is defined in this service

@@ -8,9 +8,8 @@
 
 ## Authentication
 
-The OAuth authorization flow uses authorizationUrl, tokenUrl and refreshUrl, these are specified in the open api doc
-
-The user logs in with oath2, always
+Once the user is logged in, we use the authentication provided by the laravel framework to authenticate each api call
+see https://laravel.com/docs/10.x/passport#issuing-access-tokens
 
 
 ## Next Layer authentication with the inner core

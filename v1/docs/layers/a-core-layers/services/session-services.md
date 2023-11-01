@@ -37,24 +37,25 @@ Each session has:
 
 # list current area
     session.ls
-* calls `job::session.ls`
-* can be called to get more info for something already listed
+optional args to do different pagination for set contents
+* calls `job:session.ls`
+* loads in command pallet using any loaded action services
+
 
 # change session set
     session.cd
-* calls `job::session.cd`
-* travels user to another set in this session
+travels user to another set in this session
+* calls `session.ls`
+* puts current set into the session set history
+* Changes this session to a new set
+
 
 
 # do action
     session.action
-* calls `job::session.action`
-* given a token, write to it, then read something, do something and return data
+* sends a filter event that the plugin can listen to, and that plugin can run a job (will wait for the job) or do something else
+* will add in the filter response to the data returned. 
 
-discussion: there should be some sort of expected attributes or token types,
-and let some actions jump the user to a new set (bookmark), other actions can list information, others different.
-
-Todo need service to create standard action tokens
 
 # Jobs
 
@@ -85,16 +86,9 @@ Return data:
 * session id
 
 
-## job::session.ls
+## job:session.ls
 
 lists the contents of a set a visitor has his session in
 todo list the contents, and provide a way to get more if too much for one pagination (with extra args here for what to list)
+see user discussion
 
-## job::session.cd
-
-Changes this session to a new set
-* loads in command pallet using any loaded action services
-
-## job::session.action
-
-Takes a token from the command pallet, to do action on, and processes the results

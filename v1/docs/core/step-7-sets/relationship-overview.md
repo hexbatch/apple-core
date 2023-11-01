@@ -22,4 +22,17 @@ Same sort of linking for child parent, but here, the attributes need to be on bo
 
 Each link attribute can inherit from a link attribute base
 
-Because links are exposed to the api as attributes, changing these attributes in actions or in set operations is allowed. This allows mass assigning and unassigning  
+Because links are exposed to the api as attributes, changing these attributes in actions or in set operations is allowed. This allows mass assigning and unassigning .
+
+
+## Relationships as set contents
+
+When a child or a link is added to the set, then the token of those sets are added to that set too.
+
+Actions running on these sets can refuse being added to the set, even though their actions are ok with the event of creating that relationship.
+Both sets of events have to be ok for the relationship to happen
+
+
+Parents are given as set info when their token is listed, but the parent is also an attribute on the child.
+
+When the relationship ends, the token of the set is taken out of the parent or linking set, but no events are called for this.
