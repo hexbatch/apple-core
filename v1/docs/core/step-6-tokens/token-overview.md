@@ -57,3 +57,8 @@ Each inherited parent has a live state, and can be turned off and on
 the list of active attributes for a token, it can be added to with attributes not on the list.
 The active attributes from the parents are chosen as the top most attribute for each name,
 in order of parent inheritance list 
+
+
+## standard attributes that all tokens can have
+
+* time-to-live or attribute inherited from it, calculates token's life before being automatically deleted

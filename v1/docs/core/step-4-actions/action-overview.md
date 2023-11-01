@@ -98,7 +98,7 @@ When making an action to charge tokens for an event, use a remote set to quickly
                 action-name: can be any unique name for actions
                 action-owner: actions are be owned by a user
                 event-path: the path of the event (able to filter set context of an event), path must be using an event attribute id or child of one
-                target-path: see paths (must end in attribute on the token this belongs to, ok if path is invalid, in that case no target and no changes)
+                target-path: see paths (must end in attribute on the token this belongs to  ok if path is invalid, in that case no target and no changes)
                 target-remembering: all|set|relationship
                 action-type: permission, value change, switch on|off,  or void (just runs a script or remote)
                 input-params: [{path: name of param on the script or remote}]
@@ -117,6 +117,11 @@ and if only one, before the value change, or not in the allowed count range,
 it will block the lifecycle change
 
 Such actions do not need scripts or remotes
+
+# event path
+  the event path needs to include an attribute, but can have another token to listen to its events too.
+  granting permission can only happen on the token the event is for
+  however a token can change its own values or state or do things by remotes if another token does something (like change value, enter the same set, only exist in N sets etc.)
 
 # type of action
   * an action can be to grant permission 
