@@ -18,13 +18,13 @@ Each session has:
 # create session
     session.create
 * Makes new db row 
-* calls job:create_session
+* calls `job:session.create_session`
 * fills db row in with the job output
 * return session id
 
 # destroy  session
     session.create
-* calls job:destroy_session
+* calls `job:session.destroy_session`
 * deletes db row when get success
 
 # get session
@@ -35,10 +35,30 @@ Each session has:
     sessions.list
 * returns all the sessions for the user
 
+# list current area
+    session.ls
+* calls `job::session.ls`
+* can be called to get more info for something already listed
+
+# change session set
+    session.cd
+* calls `job::session.cd`
+* travels user to another set in this session
+
+
+# do action
+    session.action
+* calls `job::session.action`
+* given a token, write to it, then read something, do something and return data
+
+discussion: there should be some sort of expected attributes or token types,
+and let some actions jump the user to a new set (bookmark), other actions can list information, others different.
+
+Todo need service to create standard action tokens
 
 # Jobs
 
-## job:create_session
+## job:session.create_session
 
 Creates what is needed for a user session to start
 
@@ -52,7 +72,7 @@ Return data:
 * session data to store, includes the id passed in, and the name
 
 
-## job:destroy_session
+## job:session.destroy_session
 Destroys the resources from a user session
 
 Input data:
@@ -64,3 +84,17 @@ Core calls:
 Return data:
 * session id
 
+
+## job::session.ls
+
+lists the contents of a set a visitor has his session in
+todo list the contents, and provide a way to get more if too much for one pagination (with extra args here for what to list)
+
+## job::session.cd
+
+Changes this session to a new set
+* loads in command pallet using any loaded action services
+
+## job::session.action
+
+Takes a token from the command pallet, to do action on, and processes the results

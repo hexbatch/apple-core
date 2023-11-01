@@ -17,3 +17,11 @@ grants can be removed
 ## operations
 
 This is done by doing the job api, so it's still job distributed core use
+
+# editing token descriptions
+
+allows the user to edit token standard attributes they can write to
+
+# creating and deleting and linking sets, and moving tokens around
+
+allows the user to create and organize set relationships, and move tokens, or copy tokens between them

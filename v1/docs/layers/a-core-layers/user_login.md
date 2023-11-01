@@ -1,15 +1,10 @@
 # Logging In
 
-* This api handles logging in the user using different ways by setting up plugins to handle each
-  * allows logging in via api call and no web page
-  * if api or console then return a me api to show the logged-in user information
-  * Shows a user landing url if browser call
+* This api handles logging in the user via api call
+* different ways of logging in provided by plugins
 * Social networks logging in handled in the internet layers for the login api
-* handle regulation demanded forms
-* have a user landing page, or if api a me
-  * in the landing page or me, show news
-* set text only news items (date and news) to show
-* another series of plugins here can add to the user homepage (me)
+* have an identity api call, and also shows this information after a login with the call return
+
 
 ## Authentication
 
@@ -45,17 +40,19 @@ each login choice is its own url inside the user_login_layer, created by that pl
 output can be either an html page, or a json response
 
 ## show login form
-    user_login.show_form
-shows the form to fill out to login.
-The plugin will decide what form to show
+    user_login.show_fields
+the plugin handles this.
+shows the fields required, and some description for each, to login.
+Will give the url to call.
+The plugin will decide what to show, and the fields may vary a lot
 
 ## do login
     user_login.do_login
-can be called via api call or webpage
-the plugin handles this (oauth or other social leading to oauth)
+
+the plugin handles this 
 * calls `user_services.read_layer_data`
 * plugin does verification
-* if login successful, returns either the json me or the webpage me,
+* if login successful, returns `user_login.me`
 
 
 ## show me
@@ -63,8 +60,7 @@ the plugin handles this (oauth or other social leading to oauth)
 * calls `user_services.read_core_data`
 * calls `user_services.read_layer_data`
 
-if webpage, this is where any regulation forms might be at.
-Shows news.
-the plugins for the homepage handle the formatting and content of this page
+* Shows the user logged in
+* Plugin used to log in may have some extra information
 
 

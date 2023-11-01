@@ -6,6 +6,13 @@ And then there are a set of layers, microservices, which use the core.
 Each of these have their own api and docs. 
 The apis share some [general-api-usage](docs/general-api-usage/general-api-usage.md) 
 
+This api is designed to be in three layers.
+* There is an inner core that provides the general logic for the rest of the layers
+* There is a layer of services that defines some interaction and introduces a concepts
+* A presentation and ui layer
+
+This set of documentation describes the first two layers. It does not try to make any web pages or gui
+
 # The core
 
 The Core deals with the basic data types described in [core-overview.md](docs/core/core-overview.md).
