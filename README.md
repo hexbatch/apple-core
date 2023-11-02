@@ -25,7 +25,7 @@ So this is why its open source.
 ## Planned stages of development
 
 This project is still in the most early days. Right now, it's still in the planning.
-Later, there are plans to have a core api that will power 25 microservices.
+Later, there are plans to have a core api that will power 27 microservices.
 
 The status now is: mapping out all the concepts in the docs first. 
  

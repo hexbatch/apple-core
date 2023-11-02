@@ -119,7 +119,7 @@ Each layer has its own iteration of writing the api and code.
 
 | Event                                                                            | Expected Date   |                                                                                       |
 |----------------------------------------------------------------------------------|-----------------|---------------------------------------------------------------------------------------|
-| Complete planning of all layer api                                               | Feb 15, 2024    | Map out api and high level logic for 26 microservices                                 |
+| Complete planning of all layer api                                               | Feb 15, 2024    | Map out api and high level logic for 27 microservices                                 |
 | Write api definitions for core and layers in open api format                     | March 30, 2024  | All api fully documented in the open api specifications                               |
 | Finish writing core library first version                                        | August 30, 2024 | Fully working core according to spec. Updated layer api changes                       |
 | Write javascript playground and test and refine core, making core second version | Oct 30, 2024    | More documentation, able to play with core in graphical way. Updated layers as needed |
