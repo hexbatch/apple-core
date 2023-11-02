@@ -26,8 +26,8 @@ An attribute can be deleted if only it's not used anywhere
 | Get    | attribute/read/:id        |            | Read Attribute , giving the value (default or live)   | Optional token type, token,set, location, time                       |
 | Get    | attribute/:id/bounds/ping |            | Determines if the attribute is in bounds              | Location, Time and Set                                               |
 | Get    | attribute/:id/permissions |            | Determines if the attribute can be read or written to | User,Location, Time and Set                                          |
-| Get    | attribute/:id/list/types  |            | Show where attribute is used in the types             | can provide a search using token type and other attributes           |
-| Get    | attribute/:id/list/tokens |            | Show where attribute is used in the tokens            | can provide a search                                                 |
+| Get    | attribute/:id/list/types  |            | Show where attribute is used in the types             | can provide a search using token type and other attributes,iterator  |
+| Get    | attribute/:id/list/tokens |            | Show where attribute is used in the tokens            | can provide a search,iterator                                        |
 | Delete | attribute/:id             |            | Delete Attribute, if the user can                     |                                                                      |
 
 

@@ -18,12 +18,12 @@ Scripts can be seen and edited in full by anyone in the user's group admin, or i
 | Post   | script                                |            | Makes a new script                                       | Required name: optional states, required script |
 | Patch  | script/edit/:id                       |            | Edit part of value, if possible, sparse                  | Any detail , sparse update                      |
 | Put    | script/edit/:id                       |            | Edit Value , if possible, full replacement               | All the values for the definition               |
-| Get    | scripts                               |            | searches for scripts                                     | can pass in filtering                           |
+| Get    | scripts/list                          |            | searches for scripts                                     | iterator,can pass in filtering                  |
 | Get    | script/:id                            |            | returns full script info                                 | can pass in optional type and token             |
 | Get    | script/run/:test_context/:id          |            | Runs Script, returns value or issues                     | Runs using context created                      |
 | POST   | script/:id/test_context               |            | Makes a new test context to store state for script tests | required name                                   |
-| Get    | script/:id/test_contexts              |            | Lists all test contexts for this script                  |                                                 |
-| Get    | script/:id/test_context/:test_context |            | Lists one test context for this script                   |                                                 |
+| Get    | script/:id/test_contexts/list         |            | Lists all test contexts for this script                  |                                                 |
+| Get    | script/:id/test_context/:test_context |            | Shows one test context for this script                   | iterator                                        |
 | Patch  | script/:id/test_context/:test_context |            | Changes test context                                     | can either update local or global or both       |
 | Delete | script/:id/test_context/:test_context |            | Deletes a test context                                   |                                                 |
 | Delete | script/:id                            |            | Delete Script, if the user can                           |                                                 |

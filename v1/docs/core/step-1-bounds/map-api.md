@@ -12,13 +12,13 @@ Bound names cannot be aliased, but they are not public either, nobody is going t
 
 :id here is either the guid of the bounds, or the bound name. The id must be owned by the user 
 
-| Method | Path                                    | Route Name | Operation                                                     | Args                |
-|--------|-----------------------------------------|------------|---------------------------------------------------------------|---------------------|
-| Post   | bounds/map                              |            | Makes a new map boundary                                      | name, geo json info |
-| Delete | bounds/map/:id                          |            | Deletes an unused map boundary                                |                     |
-| Get    | bounds/map/:id                          |            | shows the map bound data with geo json                        |                     |
-| Get    | bounds/maps                             |            | Shows a list of all the bounds the user has                   | maybe pagination    |
-| Get    | bounds/map/:id/ping                     |            | returns true or false if a point or area is in bounds         | lat, lng            |
+| Method | Path                | Route Name | Operation                                             | Args                |
+|--------|---------------------|------------|-------------------------------------------------------|---------------------|
+| Post   | bounds/map          |            | Makes a new map boundary                              | name, geo json info |
+| Delete | bounds/map/:id      |            | Deletes an unused map boundary                        |                     |
+| Get    | bounds/map/:id      |            | shows the map bound data with geo json                |                     |
+| Get    | bounds/maps/list    |            | Shows a list of all the bounds the user has           | iterator            |
+| Get    | bounds/map/:id/ping |            | returns true or false if a point or area is in bounds | lat, lng            |
 
         user: id
         name: name of the bounds (unique to the user's bounds)

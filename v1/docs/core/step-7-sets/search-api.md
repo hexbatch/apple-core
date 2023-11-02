@@ -9,20 +9,19 @@ Searches can be deleted by anyone in the user admin group
 Searches can be used to count or to get results, the results are iterated
 
 
-| Method | Path               | Route Name | Operation                             | Args                                                           |
-|--------|--------------------|------------|---------------------------------------|----------------------------------------------------------------|
-| Post   | search             |            | Creates a search                      | The search info, optional flag to immediately run the search   |
-| Post   | search/from_string |            | Creates a search from string notation | The string search, optional flag to immediately run the search |
-| put    | search/:id/filter  |            | Set or remove filter                  | set filter, id of filter, or clear filter with null            |
-| put    | search/:id/order   |            | Set or remove order                   | set order by, id of order, or clear order with null            |
-| patch  | search/:id/part    |            | Add or change a part                  | one or more parts, processed in order of the post data         |
-| Delete | search/:id/part    |            | Remove a part                         | array of part indexes                                          |
-| get    | search/:id/count   |            | Counts search results                 |                                                                |
-| get    | search/:id/results |            | gets the iteration of results         | iteration id provided by earlier, or if missing from the start |
-| post   | search/:id/copy    |            | Copies a search                       |                                                                |
-| Delete | search/:id         |            | Deletes the search                    |                                                                |
-| GET    | search:id/read     |            | lists the search                      | optional requirements filter                                   |
-| GET    | searches/list      |            | lists the searches of a user          | optional filters                                               |
+| Method | Path                    | Route Name | Operation                             | Args                                                           |
+|--------|-------------------------|------------|---------------------------------------|----------------------------------------------------------------|
+| Post   | search                  |            | Creates a search                      | The search info, optional flag to immediately run the search   |
+| Post   | search/from_string      |            | Creates a search from string notation | The string search, optional flag to immediately run the search |
+| put    | search/:id/filter       |            | Set or remove filter                  | set filter, id of filter, or clear filter with null            |
+| put    | search/:id/order        |            | Set or remove order                   | set order by, id of order, or clear order with null            |
+| patch  | search/:id/part         |            | Add or change a part                  | one or more parts, processed in order of the post data         |
+| Delete | search/:id/part         |            | Remove a part                         | array of part indexes                                          |
+| post   | search/:id/copy         |            | Copies a search                       |                                                                |
+| Delete | search/:id              |            | Deletes the search                    |                                                                |
+| GET    | search:id/readable/list |            | lists the results for readable        | iterator, optional requirements filter                         |
+| GET    | search:id/writable/list |            | lists the results for writeable       | iterator, optional requirements filter                         |
+| GET    | searches/list           |            | lists the searches made by a user     | iterator, optional filters                                     |
 
 
 

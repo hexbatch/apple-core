@@ -5,6 +5,8 @@ attribute api defined at [attributes.yaml](../../../api-docs/attributes.yaml)
 There are groups of standard attributes: can use this api to find them, and their descriptions and documentation.
 No login is needed to query
 
+no pagination here
+
 | Method | Path                  | Route Name                | Operation                                   | Args |
 |--------|-----------------------|---------------------------|---------------------------------------------|------|
 | Get    | standard/families     |                           | gets list of families (string array)        |      |

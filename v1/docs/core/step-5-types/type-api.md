@@ -21,8 +21,8 @@ Token types name and info are in its attributes
 | Patch  | type/:id/states |            | Sparse edit the states of a type    |
 | Delete | type/:id        |            | Delete Only if not used             |
 | Get    | type/:id/read   |            | Gets the type definition and states |
-| Get    | type/:id/list   |            | List a type where used              |
-| Get    | types/list      |            | List all the types                  |
+| Get    | type/:id/list   |            | iterator, List a type where used    |
+| Get    | types/list      |            | iterator, List all the types        |
 
     
         user: one user owns the type

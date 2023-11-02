@@ -16,13 +16,13 @@ Bound names cannot be aliased, but they are not public either, nobody is going t
 
 
 
-| Method | Path                     | Route Name | Operation                                  | Args              |
-|--------|--------------------------|------------|--------------------------------------------|-------------------|
+| Method | Path                     | Route Name | Operation                                  | Args                |
+|--------|--------------------------|------------|--------------------------------------------|---------------------|
 | Post   | bounds/path              |            | Makes a new path                           | name, search string |
-| Delete | bounds/path/:id          |            | Deletes an unused path                     |                   |
-| Get    | bounds/path/:id          |            | shows the path associated with this        |                   |
-| Get    | bounds/paths             |            | Shows a list of all the paths the user has | maybe pagination  |
-| Get    | bounds/schedule/:id/ping |            | returns true or false if in the path       | a set id          |
+| Delete | bounds/path/:id          |            | Deletes an unused path                     |                     |
+| Get    | bounds/path/:id          |            | shows the path associated with this        |                     |
+| Get    | bounds/paths/list        |            | Shows a list of all the paths the user has | iterator            |
+| Get    | bounds/schedule/:id/ping |            | returns true or false if in the path       | a set id            |
 
 
         user: id

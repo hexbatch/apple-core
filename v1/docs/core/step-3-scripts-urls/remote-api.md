@@ -20,11 +20,11 @@ Remotes can be seen and edited in full by anyone in the user's group admin, or i
 | Patch  | remote/edit/:id                       |            | Edit part of value, if possible, sparse                  | Any detail , sparse update                      |
 | Put    | remote/edit/:id                       |            | Edit Value , if possible, full replacement               | All the values for the definition               |
 | Get    | remote/:id                            |            | returns full remote info                                 | can pass in optional type and token             |
-| Get    | remotes                               |            | searches for remotes                                     | can pass in filtering info                      |
+| Get    | remotes/list                          |            | searches for remotes                                     | iterator,can pass in filtering info             |
 | Get    | remote/write/:test_context/:id        |            | Writes to the Remote, returns value or issues            | Runs using context created                      |
 | Get    | remote/read/:test_context/:id         |            | Reads from the Remote, returns value or issues           | Runs using context created                      |
 | POST   | remote/:id/test_context               |            | Makes a new test context to store state for remote tests | required name                                   |
-| Get    | remote/:id/test_contexts              |            | Lists all test context names for this remote             |                                                 |
+| Get    | remote/:id/test_contexts/list         |            | Lists all test context names for this remote             | iterator                                        |
 | Delete | remote/:id/test_context/:test_context |            | Deletes a test context                                   |                                                 |
 | Delete | remote/:id                            |            | Delete Remote, if the user can                           |                                                 |
 

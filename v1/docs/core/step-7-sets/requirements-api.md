@@ -14,14 +14,14 @@ If a user can write to the defining token, then the requirement can be altered.
 The id of the requirement is unique each time the token is used to define a requirement.
 
 
-| Method | Path                           | Route Name | Operation               | Args                                                                   |
-|--------|--------------------------------|------------|-------------------------|------------------------------------------------------------------------|
-| Post   | requirement                    |            | Creates a requirement   | Token, and optional parts                                              |
-| post   | requirement:id/part/add        |            | Add a part              | the part added                                                         |
-| delete | requirement:id/part/:id/delete |            | Deletes a part          | the id of the part to remove                                           |
-| get    | requirement:id/read            |            | gets the requirement    |                                                                        |
-| Delete | requirement/:id                |            | Deletes the requirement |                                                                        |
-| get    | requirements/list              |            | Lists the requirements  | can filter by token type in definition or part. Otherwise it lists all |
+| Method | Path                           | Route Name | Operation               | Args                                                                            |
+|--------|--------------------------------|------------|-------------------------|---------------------------------------------------------------------------------|
+| Post   | requirement                    |            | Creates a requirement   | Token, and optional parts                                                       |
+| post   | requirement:id/part/add        |            | Add a part              | the part added                                                                  |
+| delete | requirement:id/part/:id/delete |            | Deletes a part          | the id of the part to remove                                                    |
+| get    | requirement:id/read            |            | gets the requirement    |                                                                                 |
+| Delete | requirement/:id                |            | Deletes the requirement |                                                                                 |
+| get    | requirements/list              |            | Lists the requirements  | iterator,can filter by token type in definition or part. Otherwise it lists all |
 
 
         id

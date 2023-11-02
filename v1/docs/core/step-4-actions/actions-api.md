@@ -6,15 +6,15 @@ Actions have an owner, version, name, target, lifecycle, recipient, charge, opti
 
 actions can be attached to multiple different attributes
 
-| Method | Path            | Route name | Description                 |
-|--------|-----------------|------------|-----------------------------|
-| Post   | action          |            | Makes a new action          |
-| Put    | action/:id      |            | Sparse edit an action       |
-| Delete | action/:id      |            | Delete Only if not used     |
-| Get    | action/:id/test |            | Test an action with dry run |
-| Get    | action/:id/read |            | Gets the action definition  |
-| Get    | action/:id/list |            | List an action where used   |
-| Get    | actions/list    |            | List all the actions        |
+| Method | Path            | Route name | Description                        |
+|--------|-----------------|------------|------------------------------------|
+| Post   | action          |            | Makes a new action                 |
+| Put    | action/:id      |            | Sparse edit an action              |
+| Delete | action/:id      |            | Delete Only if not used            |
+| Get    | action/:id/test |            | Test an action with dry run        |
+| Get    | action/:id/read |            | Gets the action definition         |
+| Get    | action/:id/list |            | iterator,List an action where used |
+| Get    | actions/list    |            | iterator,List all the actions      |
 
     action-name: can be any unique name for actions
     action-owner: actions are be owned by a user

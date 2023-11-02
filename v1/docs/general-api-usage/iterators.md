@@ -18,3 +18,10 @@ Each page will have the following attached at the top of the response body. if n
     previous_page_uri	The URI for the previous page of this list.
     page	            The current page number. Zero-indexed, so the first page is 0.
     page_size	        How many items are in each page
+
+The core will also have the fields just for the iterators
+
+    Property	            Description
+    current_iterator	    iterator for the current page
+    next_page_iterator	    next iterator
+    previous_page_iterator	previous iterator

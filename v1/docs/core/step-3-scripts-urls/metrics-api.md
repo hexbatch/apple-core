@@ -9,10 +9,10 @@ There will be a need for people to see how often things are called, and any erro
 Data sent to and from a resource is not seen here.
 
 
-| Method | Path            | Route Name | Operation                               | Args                       |
-|--------|-----------------|------------|-----------------------------------------|----------------------------|
-| Get    | metrics/scripts |            | gets a paginated list of script_metrics | can pass in filtering info |
-| Get    | metrics/remotes |            | gets a paginated list of remote_metrics | can pass in filtering info |
+| Method | Path                 | Route Name | Operation                               | Args                                 |
+|--------|----------------------|------------|-----------------------------------------|--------------------------------------|
+| Get    | metrics/scripts/list |            | gets a paginated list of script_metrics | iterator, can pass in filtering info |
+| Get    | metrics/remotes/list |            | gets a paginated list of remote_metrics | iterator, can pass in filtering info |
 
 
 Filtering data can be:

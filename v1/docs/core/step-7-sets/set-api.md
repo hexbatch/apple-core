@@ -32,8 +32,8 @@ The id of the set is unique each time the token is used to make a set. A token c
 | put    | set/:id/truncate                     |            | Removes all the tokens in the set                  |                                                       |
 | post   | set:id/tokens/add                    |            | Adds one or more tokens to the set                 | ids of tokens                                         |
 | Delete | set:id/tokens/remove                 |            | Removes one or more tokens from the set            | ids of tokens                                         |
-| GET    | set:id/read                          |            | lists the tokens in a set                          | optional requirements filter                          |
-| GET    | sets/list                            |            | lists the sets                                     | optional filters                                      |
+| GET    | set:id/list                          |            | lists the tokens in a set                          | iterator,optional requirements filter                 |
+| GET    | sets/list                            |            | lists the sets owned by the user                   | iterator,optional filters                             |
 
 
     id: the id of the set

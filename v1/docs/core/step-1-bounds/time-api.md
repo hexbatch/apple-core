@@ -14,13 +14,13 @@ Bound names cannot be aliased, but they are not public either, only your admin g
 
 
 
-| Method | Path                     | Route Name | Operation                                        | Args                                                |
-|--------|--------------------------|------------|--------------------------------------------------|-----------------------------------------------------|
-| Post   | bounds/schedule          |            | Makes a new schedule                             | name, cron, start, stop, period                     |
-| Delete | bounds/schedule/:id      |            | Deletes an unused schedule                       |                                                     |
-| Get    | bounds/schedule/:id      |            | shows the time data with maybe list of schedules | optional time range for scheduling                  |
-| Get    | bounds/schedules         |            | Shows a list of all the bounds the user has      | maybe pagination , optional range to show schedules |
-| Get    | bounds/schedule/:id/ping |            | returns true or false if a time in bounds        | date time or none for now                           |
+| Method | Path                     | Route Name | Operation                                        | Args                                        |
+|--------|--------------------------|------------|--------------------------------------------------|---------------------------------------------|
+| Post   | bounds/schedule          |            | Makes a new schedule                             | name, cron, start, stop, period             |
+| Delete | bounds/schedule/:id      |            | Deletes an unused schedule                       |                                             |
+| Get    | bounds/schedule/:id      |            | shows the time data with maybe list of schedules | optional time range for scheduling          |
+| Get    | bounds/schedules/list    |            | Shows a list of all the bounds the user has      | iterator , optional range to show schedules |
+| Get    | bounds/schedule/:id/ping |            | returns true or false if a time in bounds        | date time or none for now                   |
 
 
         user: id
