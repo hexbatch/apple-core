@@ -40,6 +40,8 @@ all api calls are sent through the instance.route_call
   * calls `permissions_layer.can_i_do_this`, if cannot return or throw 
   * will use event filter find out where to route, to allow dynamic adding of routes
   * will use event action before and after call to route to allow plugin listeners
+  * sets language from header to top level post or query param
+
 
 ## instance info
     instance.info
