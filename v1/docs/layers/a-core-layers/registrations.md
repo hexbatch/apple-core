@@ -13,10 +13,13 @@ Does all the new user account creation
 Each type of sign up has its own plugin. It has different data requirements and flow.
 There might be extra api calls required by the client and plugin to fill in stuff.
 
-The first plugin for registration is only for testing, only requiring a username and a password 
+The first plugin for registration is only for testing, or use in the api, only requiring a username and a password.
+
 
 Plugins set their own pw requirements, if they even use passwords
 
+Plugins are managed by composer, but there is a config set in the .env that sets a registration plugin to only be used for certain ips.
+The simple registration may be whitelisted, or turned off when not needed
 
 
 # Api

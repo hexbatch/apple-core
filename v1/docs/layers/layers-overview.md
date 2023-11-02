@@ -2,6 +2,7 @@
 
 * Instance
 * Users
+* Sessions
 * Registrations
 * Authentication and Logging in
 * Networks
@@ -38,7 +39,7 @@
 
 
 ## Instance info
-[instance.md](a-core-layers/instance-base.md)
+[instance.md](a-core-layers/instance.md)
 Gives information about the instance the api is running at. Acts as a first step in interacting with the instance
 
 ## Authentication and logging in
@@ -49,6 +50,10 @@ Handles users logging in and pw resets
 # Users
 [users.md](a-core-layers/users.md)
 Read and edit user, user group stuff, handles some system data
+
+# Sessions
+[sessions.md](a-core-layers/sessions.md)
+manages sessions
 
 
 # Registrations

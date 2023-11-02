@@ -66,8 +66,9 @@ Each layer has its own iteration of writing the api and code.
 
 | Layer                         | Description                                                           | Link                                                                                      |
 |-------------------------------|-----------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
-| Instance                      | About the instance the api is running on                              | [instance](docs/layers/a-core-layers/instance-base.md)                                    |
-| Users                         | Managers existing users; creates and changes user groups              | [users](docs/layers/a-core-layers/users.md)                                               |
+| Instance                      | About the instance the api is running on                              | [instance](docs/layers/a-core-layers/instance.md)                                         |
+| Users                         | Manages existing users; creates and changes user groups               | [users](docs/layers/a-core-layers/users.md)                                               |
+| Sessions                      | Provides sessions to interact with the core                           | [sessions](docs/layers/a-core-layers/sessions.md)                                         |
 | Registrations                 | Does all the new user account creation                                | [registrations](docs/layers/a-core-layers/registrations.md)                               |
 | Authentication and Logging in | Handles users logging in and pw resets                                | [user_login](docs/layers/a-core-layers/user_login.md)                                     |
 | Networks                      | Tracks social accounts that are not users, and then later are         | [networks](docs/layers/g-network-layer/networks.md)                                       |
