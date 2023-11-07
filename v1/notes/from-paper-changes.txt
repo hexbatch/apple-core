@@ -1,0 +1,111 @@
+
+
+Core:
+    Api calls in general:
+        Allow things to be hidden unless the user wants them to be seen. Similar to dot files in OS. Attributes can be hidden by a human filter.
+        This is opt in by any api caller, and does not hide anything unless asked to. Not related to permissions.
+
+    User Groups:
+        Allow way to make constantly updated user lists out of admins from other list(s)
+
+    Remotes:
+        Core only allows remote calls to white-listed urls, ip.
+        New apis to manage list
+
+    Bounds:
+        Path bounds is always the path of the target token in a set, it has nothing to do with the user's working set context, and no api should ask for the set of the user
+        Location: if a token does not define its location, then its location can be that of a set it is in. This means such tokens can have many locations at once.
+                    Each token location is used when determining which tokens in a set are readable and writable.
+                    The same token can be readable or not, writable or not, in different sets at the same time
+
+    Attributes:
+        they can be const: this works if they are not set by action, remote or script
+        they can be static: the value is shared on the token type itself (see type live attributes)
+            static attributes can have remotes and scripts, but not actions (no token type actions)
+                These remotes can be configured to be called only once, on first reading, and this enforces a type of const after that
+        Can be both static and const
+        Add Final status to forbid any usage of this attribute as a parent
+        Add human status, default true, to selectively hide attributes in api calls if the human filter is on
+
+    Types:
+            token types can have live attributes (changes for all tokens and can overwrite inherited on the tokens)
+                live attributes put on the tokens can overwrite the type live ones
+            need discussion about attributes able to overwrite their parents. If I have A inherits from B, and C inherits from B
+                if a token has B, and I add a live of A, then that overwrites the B. However if I add C, then that does not overwrite B (B is not a child of A)
+            scripts and remotes should have their storage as live token level attributes,
+                but not sure how that works with the attribute value being a script and not the state for the script (remote too)
+            Add Final status to forbid any usage of this type as a parent
+            Add human status, default true, to selectively hide tokens made from this type in api calls if the human filter is on
+            Can add parent to type as long as at least one attribute is readable
+            Can add attribute to type or live when attribute is both readable and writable. Do not have to own attribute (this causes some changes in sketched out ntoes)
+
+    Requirements:
+        Add data-type of an attribute to filter by
+
+    Events:
+        Can send custom event, one that inherits from the custom even attribute, to any one token per api call to send event.
+
+    Set:
+        Set tokens are seen as normal tokens unless in a set which has them as a child or link or parent.
+        Sets that have a location set and a map bounds can only accept tokens that are in its bounds, or do not have a location set for them.
+        Set parents are in the child as a token, just as the child is in the parent as a token
+           Removing either breaks the parent child relationship
+           Relationships for sets are still also defined by special defined attribute
+        Can filter its content via one or more path boundaries
+
+    Set operations:
+        Aggregation operations: So group operations on selected attributes in a set to get one value which is written to a target token attribute as a live attribute on the token
+
+    Mutual sets:
+        Two or more sets that have one or more exact same tokens in their collections are connected together by these tokens, but not in a linked relationship
+        These can be many sets bound together in different patterns and geometries. Mutually bound sets can also be connected via parent child relationships and links.
+        Can select these relations into a set known as a view, which only contains mutually connected set systems (all the sets have to be directly or indirectly sharing the same tokens).
+
+
+    Mutual operations:
+        Aggregation operations: can do aggregation operations on mutual sets. The operations can be written to a single attribute on a target token
+        Strong attribute operations
+        Superimposed operations.
+        Operations on mutual sets.
+        Selection on mutuals, this can be custom, see below.
+        Mutual set selection: different ways to select mutual sets into a view
+            When selecting, can put limits of how many mutual distance, and limit the mutual token types.
+        Able to make macros. Macros made from push and pop of other operations. Only mutual operations allowed because they do no events
+            Macros can be run by actions (not using script or remote, just set the macro id)
+        Can register custom macros in the core, not by users, but by plugin. For instance macros to select via topology and area charges on mutual entanglements.
+
+    Search:
+        need to be able to distinguish between a token in its set view and a token view, is this needing work?
+        Search results of sets should list its parent.
+        New Search operations and search modifiers
+
+ Layers:
+    User:
+        A user's home set is the same token as the user, the token will be the defining token for the home set (any token can make a set and still be a regular token)
+
+    Remote calls (new layer):
+        Api to allow remotes to call non whitelisted urls and ips. Makes sure any actual calling and waiting is done after an api call is done.
+         Prevents slowdowns and cascading events by fast responses.
+
+    Actions doing set operations (new layer):
+        Api to set up actions that can do set operations. This is done after the api call is completed to avoid event cascading
+
+    Maps (new layer) : used to run shapes in
+
+    Goals (new layer): used to drive animals and plants in eco
+
+    Set shapes (new layer)
+
+    Mutual shapes (new layer)
+
+    Conversion (new layer): agent that takes some input and makes new tokens and sets
+
+    Eco (new layer): animals and plants having goals, with a shape
+
+    Topology for mutuals (new layer): provides selection operations, for mutuals, that is based on how the geometry is
+
+
+
+
+ Mechanisms: small programs the remotes can call to do stuff:
+    state machine

@@ -1,17 +1,19 @@
 # Apple core version 1
 
-This is an api for a set of ideas. These are ideas are divided different parts. The central idea is the core, which does all the heavy lifting for the common concepts.
-And then there are a set of layers, microservices, which use the core.
+This is an api for a set of ideas. 
 
-Each of these have their own api and docs. 
-The apis share some [general-api-usage](docs/general-api-usage/general-api-usage.md) 
-
-This api is designed to be in three layers.
 * There is an inner core that provides the general logic for the rest of the layers
-* There is a layer of services that defines some interaction and introduces a concepts
-* A presentation and ui layer
+* There is a layer of services that defines some interaction and introduces concepts
+* The services are shown in a presentation and ui layer
 
-This set of documentation describes the first two layers. It does not try to make any web pages or gui
+This set of documentation describes the first two layers. It does not try to make any web pages or gui, but some services will generate html.
+
+The central idea is the core, this does all the heavy lifting for the common concepts.
+And then there are a set of layers, microservices, which use the core, to help expand the concepts
+
+Each part can run on different machines. But it's planned to use kubernetes to have them together with fast networking and scaling.
+
+The apis share some [general-api-usage](docs/general-api-usage/general-api-usage.md)
 
 # The core
 
@@ -27,15 +29,21 @@ See [core-development-overview.md](dev/core-development-overview.md)
 The layers overview is talked about in [layers overview](docs/layers/layers-overview.md)
 
 The layers each do their own thing, but they have a few things in common.
-They set up jobs to be dispatched and completed later: but have optional callback urls registered by the caller, or the caller can do polling, or the caller can wait.
-
 Most of the heavy lifting in the layer codes will be done by api calls to the core.
+They set up jobs to be dispatched and completed later. But often, the caller to these layers will not notice because that is hidden and fast.
 
-The layer framework will be storing user bearer tokens that do not expire, and they use those to create a temporary token in each api call.
-The core itself does not have a superuser, or root user. But it does have a permission system. So the layers doing actions as different users for a single call takes care of the nested permissions.
+The caller can decide how to get the results, he can wait for the api call to return, or he can use a callback url, or do polling later.
+
+The core has its own user and authentication system. The layers use OAuth2 to register and log-in people.
+The layers talk to the core by storing core user bearer tokens that do not expire, and when they need to do the core to do things,
+they dispatch jobs using a temporary auth token that expires at the end of the job.
+
+The core itself does not have a superuser, or root user.
+But it does have a permission system. So the layers can be doing actions as different users to implement nested permissions.
 
 
-When a public api request is made, a job (a class instance) is made that has a list of api calls to make.
+When a public api request is made, a job is made that has a list of api core calls to make.
+
 * A temporary bearer token is created for this job only.
 * The job is put on a queue.
 * When the job is run, the apis are called, using the output of earlier calls to be params for the later calls.
