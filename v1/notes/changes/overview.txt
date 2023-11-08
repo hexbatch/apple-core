@@ -13,7 +13,9 @@ Core:
         New apis to manage list
 
     Bounds:
-        Path bounds is always the path of the target token in a set, it has nothing to do with the user's working set context, and no api should ask for the set of the user
+        Path bounds is always the path of the target token in a set, it has nothing to do with the user's working set context, and no api should ask for the set of the user.
+            Path bounds only affect attributes inside the set the bounds is activated
+
         Location: if a token does not define its location, then its location can be that of a set it is in. This means such tokens can have many locations at once.
                     Each token location is used when determining which tokens in a set are readable and writable.
                     The same token can be readable or not, writable or not, in different sets at the same time
@@ -29,7 +31,8 @@ Core:
 
     Types:
             token types can have live attributes (changes for all tokens and can overwrite inherited on the tokens)
-                live attributes put on the tokens can overwrite the type live ones
+                live attributes put on the tokens can overwrite an attribute already there, by design or later action.
+                no limit to how many live attributes that overwrite the earlier one. They stack by when applied.
             need discussion about attributes able to overwrite their parents. If I have A inherits from B, and C inherits from B
                 if a token has B, and I add a live of A, then that overwrites the B. However if I add C, then that does not overwrite B (B is not a child of A)
             scripts and remotes should have their storage as live token level attributes,
@@ -40,7 +43,7 @@ Core:
             Can add attribute to type or live when attribute is both readable and writable. Do not have to own attribute (this causes some changes in sketched out ntoes)
 
     Requirements:
-        Add data-type of an attribute to filter by
+        Now done via sets
 
     Events:
         Can send custom event, one that inherits from the custom even attribute, to any one token per api call to send event.
@@ -54,7 +57,8 @@ Core:
         Can filter its content via one or more path boundaries
 
     Set operations:
-        Aggregation operations: So group operations on selected attributes in a set to get one value which is written to a target token attribute as a live attribute on the token
+        Aggregation operations: So group operations on selected attributes in a set to get one value which is written to a target token attribute as a live attribute on the token.
+        set operations can use the human filter
 
     Mutual sets:
         Two or more sets that have one or more exact same tokens in their collections are connected together by these tokens, but not in a linked relationship
@@ -81,7 +85,9 @@ Core:
 
  Layers:
     User:
-        A user's home set is the same token as the user, the token will be the defining token for the home set (any token can make a set and still be a regular token)
+        A user's home set is the same token as the user, the token will be the defining token for the home set (any token can make a set and still be a regular token).
+        A user's session can have a filter, and can be set to human mode or not
+
 
     Remote calls (new layer):
         Api to allow remotes to call non whitelisted urls and ips. Makes sure any actual calling and waiting is done after an api call is done.

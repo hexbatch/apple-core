@@ -1,0 +1,15 @@
+The execution of each api should allow pauses and resumes based on stuff to wait on.
+When an api executes, it will get a copy of what it is operating on, and after that not look at more recent changes to those.
+When it finishes, it will write the changes to the attributes for others to see, and release any created resources so its seen outside of the api call
+
+Api Scope
+Changes made during an api call is only seen inside that api call until its done
+Option to throw away all changes if cannot write all changes. Cannot write to attributes that have been changed since the api call started
+
+Pauses:
+Remotes can be designed to interrupt the execution of call, and then the core api allows a user to provide the waiting results and can get the data being sent to the remote.
+It's like a human interacted remote.
+When a call pauses, it serializes the copied values and what its doing, and when resumes deserializes itself.
+So a pause can take any length of time
+
+Core has no memory of completed api calls, only current waiting ones.

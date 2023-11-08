@@ -26,4 +26,14 @@ Mutual operation categories:
     * Discover the common bounds for all the sets in a mutual group: the pattern of time all the sets exist, or a shared area on the map
         * Do aggregation operations on the bounds in a mutual group
 
+Selecting tokens from mutuals
+    * the shared tokens are of interest and can be filtered by different priorities
+    * select tokens that are shared N,M times
+    * select shared tokens based on attribute types and values and ranges of values
+    * after selecting, can filter by attribute or token type into different sets or sub aggregation operations
+
+
+Aggregation operations:
+   Any tokens in a set can be reduced and have that number applied to an attribute (new or already existing) on a token. The set can be filtered to allow for sub-group operations and reductions
+
 Mutuals can make filters by using their aggregations and counting per family of attributes, or per attribute
