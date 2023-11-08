@@ -1,0 +1,29 @@
+A token can belong to any number of sets at the same time.
+When two or more sets share that token, they have something in common.
+
+What is a mutual group of sets?
+    If I find a set, then discover all the sets it has one or more tokens in common.
+    Then I can look at those sets, and find all the other sets they have shared tokens.
+    These tokens may be different from the ones shared with the first set.
+    After I do this as much as possible, or until I decide to stop including sets, then I have something called a mutual group of sets
+
+
+Mutual sets have a topology. Things can be done with them and their shared tokens.
+    * We can put these tokens into a new set
+    * We can do group aggregation operations on the attributes of these tokens: such as sum, or counts or averages or concatenation or json operations or min or max
+    * We can do these aggregations on families of these attributes or all the attributes, much like the group by in sql
+    * We can do operations on these mutual sets such as union (or), intersection (and) and exclusive and (xor)
+    * Because these operations do not cause events to possibly cascade into lengthy operations, we can allow for new custom mutual operations
+    * We can do topology operations on these mutual sets, do overlays and superimpose them: creating new groups of mutuals or selecting common tokens for things that match up
+        * For example, say I have  5 sets connected in a ring, and I match it up to a larger set of mutuals where there are some rings here and there.
+            I can match to all the rings, and collect tokens there. Or I can match to just rings of 5.
+
+
+Mutual operation categories:
+    * Reduction of attribute values, and assign these group calculations to attributes on any token we can write. This can be dynamic or typed attributes.
+    * Select some or all of the shared tokens into a new set, or search result
+    * Split a mutual set, make a new mutual set from other mutuals, and combine mutual sets.
+    * Discover the common bounds for all the sets in a mutual group: the pattern of time all the sets exist, or a shared area on the map
+        * Do aggregation operations on the bounds in a mutual group
+
+Mutuals can make filters by using their aggregations and counting per family of attributes, or per attribute
