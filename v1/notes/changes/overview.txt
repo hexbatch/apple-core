@@ -11,6 +11,7 @@ Core:
     Remotes:
         Core only allows remote calls to white-listed urls, ip.
         New apis to manage list
+        Remotes can be type pause, allowing a user to enter remote response via api. When an api pauses, the waiting remote can be filled in by the caller, even if they do not make the remote
 
     Bounds:
         Path bounds is always the path of the target token in a set, it has nothing to do with the user's working set context, and no api should ask for the set of the user.
@@ -27,7 +28,10 @@ Core:
                 These remotes can be configured to be called only once, on first reading, and this enforces a type of const after that
         Can be both static and const
         Add Final status to forbid any usage of this attribute as a parent
-        Add human status, default true, to selectively hide attributes in api calls if the human filter is on
+        Add human status, default true, to selectively hide attributes in api calls if the human filter is on.
+        On the type of value, add in specific id categories: token, type, attribute, search, script, remote, action, bounds
+        When a token is also a set, a group, or represents a user, it has an attribute showing that. A filter can filter api types with this attribute set to that type
+        Attribute values has a microsecond time stamp of when last written to
 
     Types:
             token types can have live attributes (changes for all tokens and can overwrite inherited on the tokens)
@@ -60,9 +64,12 @@ Core:
         Aggregation operations: So group operations on selected attributes in a set to get one value which is written to a target token attribute as a live attribute on the token.
         set operations can use the human filter
         set operations use the pre-filter to decide to do the set operation
-        set operations do the push and related,
+        set operations do the push and related
 
-    Any api call an provide a token or attribute using an iterator from a set (current token), if need to get an attribute specify attr to use.
+        Aggregation operations take a set of tokens, can do operations on it to reduce this to a single value. The operation can be filtered
+
+        Any api call can provide a token or attribute using an iterator from a set (current token), if need to get an attribute specify attr to use.
+
 
     Mutual sets:
         Two or more sets that have one or more exact same tokens in their collections are connected together by these tokens, but not in a linked relationship

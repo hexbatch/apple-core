@@ -34,7 +34,8 @@ Selecting tokens from mutuals
 
 
 Aggregation operations:
-   Any tokens in a set can be reduced and have that number applied to an attribute (new or already existing) on a token. The set can be filtered to allow for sub-group operations and reductions
+   Any tokens in a set can be reduced and have that number applied to an attribute (new or already existing) on a token. The set can be filtered to allow for sub-group operations and reductions.
+
 
 Mutuals can make filters by using their aggregations and counting per family of attributes, or per attribute
 
