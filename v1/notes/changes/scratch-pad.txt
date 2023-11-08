@@ -12,6 +12,9 @@ Can this replace the requirements data structure? It makes it more fluid
 Add push and pop and queue and dequeue to set operations: children in sets should have optional ordering (ordering is same attribute as above)
 the above can also be done to tokens going into a set. Put a live category attribute on a token, and give it an order attribute. Or define which those two attributes are in the api call,
 same with sets.
+Api call to iterate tokens in the set this way. Do loops that end or cycle. New tokens can come in and out of the set and be part of this based on their order attribute.
+    Same order rank will skip all but one randomly chosen
+Can do set operation on the current token, any api call that can take a token can take the current token in a set
 ----------------------
 tokens in a set can be organized by the order attribute, its possible to do arrays
 ----------------------
@@ -33,4 +36,8 @@ Live attributes that are dynamically added can be added in only a set context or
 set context can also be shared attributes in sets that contain the token, and can be a mutual group of sets that contain the token
 Mutual groups should have their own context for token changes, the mutual operations should allow these to be sticky or not when making new mutual groups out of older ones
   Non sticky operations throw out any mutual context of token changes
+  -----------------
+
+  set operations can have some logic now, optional set and filter to put in to decide to do the set operation in the api call.
+  There has to be at least one token in the set that gets matched by the filter. This is not the filter to do the operation with, but to decide to do it or not
 

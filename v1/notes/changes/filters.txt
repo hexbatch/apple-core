@@ -3,3 +3,5 @@ Filters in set and mutual operations
 Filters can be a type group, but more things will be allowed to be filters
 
 Set of tokens can be a filter, to match the type groups of tokens in there.
+
+see scratch-pad for more

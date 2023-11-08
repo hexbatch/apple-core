@@ -83,11 +83,14 @@ Core:
         Search results of sets should list its parent.
         New Search operations and search modifiers
 
+    Movement: now layer and allergies will not kick a token out of the set, in the core without the layers, but will prevent it from joining a set
+
  Layers:
     User:
         A user's home set is the same token as the user, the token will be the defining token for the home set (any token can make a set and still be a regular token).
         A user's session can have a filter, and can be set to human mode or not
 
+    Movement: is now an api layer. Tokens will be able to registered and they will be moved around
 
     Remote calls (new layer):
         Api to allow remotes to call non whitelisted urls and ips. Makes sure any actual calling and waiting is done after an api call is done.

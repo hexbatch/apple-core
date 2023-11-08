@@ -37,3 +37,7 @@ Aggregation operations:
    Any tokens in a set can be reduced and have that number applied to an attribute (new or already existing) on a token. The set can be filtered to allow for sub-group operations and reductions
 
 Mutuals can make filters by using their aggregations and counting per family of attributes, or per attribute
+
+Custom mutual operators : no event side effects so these operators can do anything!
+    * add new selection operators to choose a mutual group
+    * add new combination and other ways to manipulate groups
