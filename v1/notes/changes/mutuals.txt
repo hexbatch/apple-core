@@ -12,7 +12,7 @@ Mutual sets have a topology. Things can be done with them and their shared token
     * We can put these tokens into a new set
     * We can do group aggregation operations on the attributes of these tokens: such as sum, or counts or averages or concatenation or json operations or min or max
     * We can do these aggregations on families of these attributes or all the attributes, much like the group by in sql
-    * We can do operations on these mutual sets such as union (or), intersection (and) and exclusive and (xor)
+    * We can do operations on these mutual sets such as union (or), intersection (and) , difference (xor), and complement (those in A not in B)
     * Because these operations do not cause events to possibly cascade into lengthy operations, we can allow for new custom mutual operations
     * We can do topology operations on these mutual sets, do overlays and superimpose them: creating new groups of mutuals or selecting common tokens for things that match up
         * For example, say I have  5 sets connected in a ring, and I match it up to a larger set of mutuals where there are some rings here and there.

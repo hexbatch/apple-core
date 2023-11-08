@@ -59,6 +59,10 @@ Core:
     Set operations:
         Aggregation operations: So group operations on selected attributes in a set to get one value which is written to a target token attribute as a live attribute on the token.
         set operations can use the human filter
+        set operations use the pre-filter to decide to do the set operation
+        set operations do the push and related,
+
+    Any api call an provide a token or attribute using an iterator from a set (current token), if need to get an attribute specify attr to use.
 
     Mutual sets:
         Two or more sets that have one or more exact same tokens in their collections are connected together by these tokens, but not in a linked relationship
@@ -68,6 +72,7 @@ Core:
 
     Mutual operations:
         Aggregation operations: can do aggregation operations on mutual sets. The operations can be written to a single attribute on a target token
+            Agg op to combine ordered tokens in a set to json array
         Strong attribute operations
         Superimposed operations.
         Operations on mutual sets.
