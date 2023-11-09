@@ -24,3 +24,8 @@ As long as user can read a set, then they can add it to their own set, and link 
 These custom mutuals are kept as sets in their home area, in a set to store those, and then later the user can combine these views or do mutual operations on them
 
 The custom views can be mutually operated on with the existing views from elsewhere
+
+
+# selections via topology and shape of the selected area
+
+Adds in custom mutual operations for this

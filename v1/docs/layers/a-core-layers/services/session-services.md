@@ -11,7 +11,9 @@ Each session has:
 * a command pallet - a set that allows tokens to have well known attributes to read and write from
   * each token has a sorting attribute, a read attribute and a write attribute. These can be remotes or scripts 
 * session data - a set that stores tokens used to remember stuff about this session
-
+* options: 
+  * can have a filter to limit the tokens reported back
+  * can be set to human mode
 
 # API
 

@@ -64,6 +64,7 @@ Core:
            Relationships for sets are still also defined by special defined attribute
         Can filter its content via one or more path boundaries
         Sets have an attribute to mark them as a view
+        state: "any token can make a set and still be a regular token"
 
     Set operations:
         Aggregation operations: So group operations on selected attributes in a set to get one value which is written to a target token attribute as a live attribute on the token.
@@ -103,24 +104,8 @@ Core:
         Search results of sets should list its parent.
         New Search operations and search modifiers
 
- Layers:
-    User:
-        A user's home set is the same token as the user, the token will be the defining token for the home set (any token can make a set and still be a regular token).
-        A user's session can have a filter, and can be set to human mode or not
-
-
- No remote calls layer due to how we are processing each api call
- No action operation layer, any action can run a remote, due to how the api does calls, this is now allowed
-
-
-    Topology for mutuals (new layer): provides selection operations, for mutuals, that is based on how the geometry is
 
 
 
 
- Mechanisms: small programs/patterns the remotes can call to do stuff:
-    state machine
-    build set linkages
-        sets added to a set, and on entering the set will add a common token to make them mutual
-            or links them
-        when enough sets links/mutuals made job is done, like an enzyme
+

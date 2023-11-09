@@ -126,7 +126,8 @@ A user can create their landing set, that people can join to interact with the u
 This landing set is easily discoverable inheriting the landing type parent. Also, this is in the user data given back, if the landing set's permissions allow it to be read.
 
 ### Home
-Each user is also given a home set.
+Each user is also given a home set. A user's home set is a type derived from the user token.
+
 The default user session is from the home set, and the home set can store stuff not in the command pallet.
 
 ### User wallet
