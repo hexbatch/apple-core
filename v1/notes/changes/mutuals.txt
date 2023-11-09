@@ -42,3 +42,50 @@ Mutuals can make filters by using their aggregations and counting per family of 
 Custom mutual operators : no event side effects so these operators can do anything!
     * add new selection operators to choose a mutual group
     * add new combination and other ways to manipulate groups
+
+
+operations:
+
+    Selecting
+    ----------
+
+   Can use a search to get the mutuals that share a token type
+   But there are interconnected mutuals that share more than one, and these may not be related to others except indirectly
+
+    But there are better ways: can pick out which sets using mutual select operations
+        These can pick out a starting set based on some criteria, and then a limit of how far from the set to go. and will find interconnected paths
+            tokens (sets connected by a, that shares a token b, find sets connected by b, that shares a c, etc)
+
+        Different selects can choose differently using different options: ie(topology or start at certain shared token)
+            However any select will return sets that are all connected, there are no disconnected sets or groups of sets
+            Can nest select operations to trim down from the start
+
+    ----------------
+    Editing sets:
+
+    * Connect two sets with same token
+    * remove a shared token from a group of mutual sets
+
+    --------------------
+    grouping:
+    * union (or), intersection (and) , difference (xor), and complement (those in A not in B)
+
+    -----------------------
+
+
+Selecting tokens in mutual sets:
+    these selections are put in a new set, where aggregation can happen, or other operations
+
+    concept of a strong token: the more a token is shared in a mutual group, the stronger it is
+    concept of a strong attribute: the more an attribute is in selection of strong tokens, the stronger it is
+    can select using strength, along with other things, like ancestry of token or attribute
+    can select by min and max shares of a set in a group of mutual (set a has 3 connections set b has 5) select for more than 4
+    can select using number of times a token shared
+
+-----------------
+    custom select operations can be registered
+allow macros to be made and remembered:
+    do push and popup on each pop to set precedent
+    api to combine , list, get, delete
+    use macro id when calling view operation (is this set too or just mutual operations)
+    marcos can call a remote or script

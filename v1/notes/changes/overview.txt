@@ -33,6 +33,7 @@ Core:
         When a token is also a set, a group, or represents a user, it has an attribute showing that. A filter can filter api types with this attribute set to that type
         Attribute values has a microsecond time stamp of when last written to
         When live attributes are added to a token,  record the user that added them
+        Add a priority number setting, to help with ordering in different ways in the api
 
     Types:
             token types can have live attributes (changes for all tokens and can overwrite inherited on the tokens)
@@ -67,7 +68,7 @@ Core:
         set operations can use the human filter
         set operations use the pre-filter to decide to do the set operation
         set operations do the push and related
-
+        get common tokens from a group of sets, put them in a new set, option to remove tokens from group
         Aggregation operations take a set of tokens, can do operations on it to reduce this to a single value. The operation can be filtered
 
         Any api call can provide a token or attribute using an iterator from a set (current token), if need to get an attribute specify attr to use.
@@ -105,9 +106,7 @@ Core:
 
     Transaction layer (new layer) see transaction-layer.txt, the marketplace will use this layer also
 
-    Remote calls (new layer):
-        Api to allow remotes to call non whitelisted urls and ips. Makes sure any actual calling and waiting is done after an api call is done.
-         Prevents slowdowns and cascading events by fast responses.
+ No remote calls layer due to how we are processing each api call
 
     Actions doing set operations (new layer):
         Api to set up actions that can do set operations. This is done after the api call is completed to avoid event cascading

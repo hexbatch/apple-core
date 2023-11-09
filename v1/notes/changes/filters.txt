@@ -1,7 +1,13 @@
-Filters in set and mutual operations
+Replacing the requirements structure with a set of tokens
 
-Filters can be a type group, but more things will be allowed to be filters
+Allow for a system defined attribute to have a family of attributes used for searching:
 
-Set of tokens can be a filter, to match the type groups of tokens in there.
+An attribute definition can give a range (min max) and weight (priority) for a token or attribute, and set for exact or allow descendants (null)
+    its live value can hold the target token type or attribute type
 
-see scratch-pad for more
+Any attributes of this kind in a token or set can be an "and"
+    To put or conditions then have those in a child related sets. To have only or then have the first set by empty of this attribute family
+
+
+Keep most of the current requirement api, but make this above instead of the requirements structure
+
