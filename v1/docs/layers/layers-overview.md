@@ -2,6 +2,7 @@
 
 * Instance
 * Users
+* User Groups
 * Sessions
 * Registrations
 * Authentication and Logging in
@@ -67,7 +68,11 @@ Handles users logging in and pw resets
 
 # Users
 [users.md](a-core-layers/users.md)
-Read and edit user, user group stuff, handles some system data
+Read and edit user, manage user sessions, sets up user for first time
+
+# User Groups
+[users groups](a-core-layers/user-groups.md)
+Do stuff with user groups
 
 # Sessions
 [sessions.md](a-core-layers/sessions.md)

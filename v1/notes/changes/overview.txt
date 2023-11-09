@@ -13,6 +13,11 @@ Core:
          When an api pauses, the waiting remote can be filled in by the caller, even if they do not make the remote.
          see api-execution
 
+    Sets:
+        now can decide to drop attributes, or attach them via the return info. Can set token properties of coordinates.
+        Can set the token time to live attribute to 0, or add that, and the token will be removed
+        scripts adding these allow for events to react to them
+
     Bounds:
         Path bounds is always the path of the target token in a set, it has nothing to do with the user's working set context, and no api should ask for the set of the user.
             Path bounds only affect attributes inside the set the bounds is activated
@@ -33,7 +38,7 @@ Core:
         When a token is also a set, a group, or represents a user, it has an attribute showing that. A filter can filter api types with this attribute set to that type
         Attribute values has a microsecond time stamp of when last written to
         When live attributes are added to a token,  record the user that added them.
-        Live Attributes can be set so that they are destroyed after being read N times by any user
+
 
 
     Types:
@@ -54,7 +59,8 @@ Core:
 
     Events:
         Can send custom event, one that inherits from the custom even attribute, to any one token per api call to send event.
-        Add event to a set that is used to decide if an api operation can be done. This puts more control over automated api calls using decisions to js and remotes
+        Add event to a set that is used to decide if an api operation can be done. This puts more control over automated api calls using decisions to js and remotes.
+        Can have a read event. Cycles prevented by new api mechanisms
 
     Set:
         Set tokens are seen as normal tokens unless in a set which has them as a child or link or parent.

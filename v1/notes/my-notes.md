@@ -50,7 +50,7 @@ Once the core api is up and running, make js wrapper library to call this via ht
 
 
 
-
+Live Attributes can be set so that they are destroyed after being read N times by any user. Script listens to a read event, keeps count and does that when it wants
 
 
 
