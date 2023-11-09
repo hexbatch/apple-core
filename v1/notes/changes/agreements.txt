@@ -25,4 +25,7 @@ Agreements can be set to allow a percentage of users to decide, or can be set to
 
 Agreements can be cancelled later by any user removing his token, or having it be set to a percentage of users or weights. A cancelled agreement is an empty set
 
-An agreement can be used as the set to decide to do a repeating api
+An agreement can be used as the set to decide to do a repeating api.
+
+Agreements do not have to be public or published, but if they are published then can be used as a basis for other agreements on other servers, and there is a record of that
+The internet layer will publish agreements

@@ -31,13 +31,9 @@ someplace needs to cache this and the values of this can be verified outside the
     This means marketplace transactions can be agreed to be reversed before they are finalized, and reversed under a time or event condition.
 
     -----------------
-    Set up something that only written to if all users in a group write the same value... possible to do only in layer?
-        - but this can be done via a set, and have selected people write to the set, and then do an agg function to count their token, and then match the value,
-           if value matches then write to an attribute on a token whose permissions is not allowing the users submitting values to write directly
-
-    -------------------
-    events between users of different servers can be recorded in transaction chains
-    (this can be done by agreements and transaction layer)
+    Agreements do not have to be public or published, but if they are published then can be used as a basis for other agreements on other servers, and there is a record of that
+    The internet layer will publish agreements
+    these are the events between users of different servers can be recorded in agreement and transaction chains
 ---------------------
 tokens can be imported by the user agent (the owner of the token) connecting between the two servers. This can be made so that a live read done anytime someone reads it after a TTL
     and any api can wait on writes. But only for some attributes. This is done by overwriting the special attributes, in the token created for the import, to be a remote for read or write
