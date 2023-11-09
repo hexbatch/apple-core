@@ -105,6 +105,10 @@ Core:
 
     Movement: is now an api layer. Tokens will be able to registered, and then they will be moved around
 
+    Agreement layer (new layer in d-organization-layers) see agreements.txt, the transactions and organizations and others will use this layer also
+
+    Organizations using the agreement layer
+
     Transaction layer (new layer) see transaction-layer.txt, the marketplace will use this layer also
 
     Remote calls (new layer):

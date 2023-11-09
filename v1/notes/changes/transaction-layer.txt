@@ -17,6 +17,8 @@ The creator of the transaction can delete it only if nobody has agreed yet.
 A person can remove their user token if decide they changed their mind.
 A transaction can be set up to have a delay or datetime to do the transaction after all signed
 
+it uses the agreement layer
+
 In the internet layer, a visiting user is wrapped in a local user, so can sign that way.
 
 

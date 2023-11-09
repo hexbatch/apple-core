@@ -39,5 +39,7 @@ Mutual groups should have their own context for token changes, the mutual operat
   -----------------
 
   set operations can have some logic now, optional set and filter to put in to decide to do the set operation in the api call.
-  There has to be at least one token in the set that gets matched by the filter. This is not the filter to do the operation with, but to decide to do it or not
+  There has to be at least one token in the set that gets matched by the filter. This is not the filter to do the operation with, but to decide to do it or not.
+  By default, if a set is used to decide an api, then its true if any tokens, and false if no tokens
+
 
