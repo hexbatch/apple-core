@@ -32,6 +32,7 @@ Core:
         On the type of value, add in specific id categories: token, type, attribute, search, script, remote, action, bounds
         When a token is also a set, a group, or represents a user, it has an attribute showing that. A filter can filter api types with this attribute set to that type
         Attribute values has a microsecond time stamp of when last written to
+        When live attributes are added to a token,  record the user that added them
 
     Types:
             token types can have live attributes (changes for all tokens and can overwrite inherited on the tokens)
@@ -102,7 +103,9 @@ Core:
         A user's home set is the same token as the user, the token will be the defining token for the home set (any token can make a set and still be a regular token).
         A user's session can have a filter, and can be set to human mode or not
 
-    Movement: is now an api layer. Tokens will be able to registered and they will be moved around
+    Movement: is now an api layer. Tokens will be able to registered, and then they will be moved around
+
+    Transaction layer (new layer) see transaction-layer.txt, the marketplace will use this layer also
 
     Remote calls (new layer):
         Api to allow remotes to call non whitelisted urls and ips. Makes sure any actual calling and waiting is done after an api call is done.
