@@ -26,10 +26,6 @@ A set can have a requirement to specify what tokens are allowed in there.
 Token sets might be organized to have parents,siblings and links. There should be ways to navigate through this with the api.
 
 
-## Movement
-[movement-overview.md](movement-overview.md)
-Tokens can move, on their own, through set relationships. They move on set relationship at a time to the next set that has the most compatibility.
-This only happens if the affinity or allergies are set up for the token.
 
 
 ## Requirements
@@ -68,18 +64,7 @@ If there is no attraction to a set, and a repulsion, then the token cannot be ad
 
 However, if there is a mix or only attraction, then token can be added to the set.
 
-If a set has relations, then if there is a mix and the token finds a better attraction in a link or child or parent, it will move sets on its own.
-
-A set has these measured by the token by having the current set and its neighbors summed up:  
-The total "charge" of this token to a set is +1 for each attraction in a set, and -1 for each repulsion, this total number is the charge-per-set or -+
-
-* -+ in the current set is 100%
-* each immediate neighbor has its -+ set at 50%
-* so if the current is at 3 and the neighbors are at -1/2 and 5/2 , the total charge for the current set is 5, and for the neighbors is 3/2 - 2  = -1/2 and 5 + 3/2 = 8 1/2 the token goes to the neighbor at 8.5
-
-This movement is calculated when the token is first added, and whenever any new set links/relations are made/removed, and when new tokens are added or removed from the current or connected sets
-
-internally, the counting takes place after all movement is done via an api command
+If a token, already in a set, has more of an allergy to it, its not removed from the set automatically
 
 ## Allergies
 

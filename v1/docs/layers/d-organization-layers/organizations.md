@@ -36,15 +36,12 @@ An organization can do anything a regular user can do.
 
 # Voting
 
-Organizations can do polls 
+Organizations do agreements to decide on everything needed to be done. The org user itself is always part of the agreement but has zero weight for its vote.
 
-Polls can be made automatic, when they close by all answering or after a set time, to do what the majority of shares wants.
+An organization ties something to be done to these agreements, and can decide how often to repeat this without needing extra votes
 
-Any owner can set up the organization to do anything, but that is put into a voting queue first, then acted on automatically after the vote succeeds.
+Any owner can set up the organization to do anything, but that is put into the agreement
 
-This queue is done via the deferred action attribute on the user of the organization, see deferred actions in the user section.
-Here, the permissions are set so that nobody can set this to be off. So, everything the organization does is put into the deferred queue until 
-the deferred-action-job attribute for the job is made. 
-
-
-The permission for the org are set so that the only way for that deferred attribute to be set, is when a vote attribute is set for the job, which is done via the polling result 
+Decisions can be acted on automatically after the vote succeeds. This is done via the deferred layer.
+Or the agreement allows people to manually do the stuff, using the agreement.
+The layers do not allow direct login to the user organization, but allows owners to do api actions using an agreement as the credentials

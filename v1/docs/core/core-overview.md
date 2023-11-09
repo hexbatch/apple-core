@@ -120,7 +120,6 @@ A token set does not have any definition or structure, it's a loose organization
 
 * [Operations](step-7-sets/operations-overview.md)
 * [Searches](step-7-sets/set-overview.md)
-* [Movement](step-7-sets/movement-overview.md)
 * [Relationships](step-7-sets/relationship-overview.md)
 
 

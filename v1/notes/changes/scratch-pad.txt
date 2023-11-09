@@ -32,14 +32,20 @@ and put an attribute on that link
 set apis should be organized by those that can produce events, and those that do not. But, I think all set operations can produce events?
 
 ---------------------------------
-Live attributes that are dynamically added can be added in only a set context or for the token everywhere.
-set context can also be shared attributes in sets that contain the token, and can be a mutual group of sets that contain the token
+Live attributes that are dynamically added can be added in only a set context, or optionally for the token everywhere.
+The same set context for a token can also be in more than one set. Mutual sets can optionally have the same context unless its overridden in a per set bounds.
+However, that means only the attributes that have a path bounds override this context, so a token can have attributes some of which are in a mutual context, a set context or global
+
 Mutual groups should have their own context for token changes, the mutual operations should allow these to be sticky or not when making new mutual groups out of older ones
-  Non sticky operations throw out any mutual context of token changes
+  Non-sticky operations throw out any mutual context of token changes
   -----------------
 
   set operations can have some logic now, optional set and filter to put in to decide to do the set operation in the api call.
   There has to be at least one token in the set that gets matched by the filter. This is not the filter to do the operation with, but to decide to do it or not.
   By default, if a set is used to decide an api, then its true if any tokens, and false if no tokens
+
+
+  ---------------
+  Mutual operations have no side effects, so can make decisions on set tokens belonging to a set of mutuals done after some mutual operations
 
 

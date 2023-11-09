@@ -1,5 +1,7 @@
 Agreements and consensus
 
+This is a way for people or scripts to agree on something
+
     Set up something that only written to if all users in a group write the same value... possible to do only in layer?
         - but this can be done via a set, and have selected people write to the set, and then do an agg function to count their token, and then match the value,
            if value matches then write to an attribute on a token whose permissions is not allowing the users submitting values to write directly
@@ -8,7 +10,7 @@ Agreements and consensus
 Make agreement set that has to have the users put their user token in, and the value or consensus is reached
 
 Agreements can expire after a certain time, or have other conditions before a user can put their token in,
-    such as contents of tokens in a set done after a set or mutual operation is done
+such as contents of tokens in a set done after a set or mutual operation is done
 
 An agreement can be made to be decided on, but not done, until conditions.
 Conditions can be previous agreements
@@ -29,3 +31,12 @@ An agreement can be used as the set to decide to do a repeating api.
 
 Agreements do not have to be public or published, but if they are published then can be used as a basis for other agreements on other servers, and there is a record of that
 The internet layer will publish agreements
+
+An agreement can be used once or many times to power an api, by being the set to decide if it's going to be used by an operation.
+This is done by setting up an action to listen to the event of being used as a switch for an api.
+
+Agreements can be used to do actions for another user (such as an org or regular user). 
+Any user participating in the agreement (that is agreed on and still in force) can do layer api calls while logged in as themselves.
+
+The agreement will store the user to do the actions for, and whitelist of api calls to make and any constant params to the calls (allowing chosen params to be vars done at the user description)
+the user to be proxied has to sign the agreement.

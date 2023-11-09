@@ -11,6 +11,9 @@
 * Contracts
 * Marketplace
 * Pools
+* Agreements
+* User Proxy
+* Deferred
 * Organizations
 * Stores
 * Inventory
@@ -91,9 +94,17 @@ Ownerships of tokens is swapped as is, no refunds. Supports direct sales and auc
 Pools are a resource that generates future tokens. Each batch made has a different owner.
 
 
+# Agreements
+[agreements.md](d-organization-layers/agreements.md)
+Are how to reach consensus and do group driven actions
+
+# Deferred
+[deferred.md](d-organization-layers/deferred.md)
+Agreed things done by script or remote
+
 # Organizations
 [organizations.md](d-organization-layers/organizations.md)
-Organizations are groups of users that share a wallet and can vote on things to do
+Organizations are groups of users that share a wallet and use agreements by voting based on how much the org they own
 
 
 # Stores
@@ -154,6 +165,12 @@ Organize text,images, links, lists
 Allow sharing and communities
 
 
+# Movement
+[movement.md](e-interaction-layers/movement.md)
+Tokens can move, on their own, through set relationships by always going to the set that best fits them with their affinity. 
+This only happens if the affinity or allergies are set up for the token, and its registered
+
+
 # Public grants
 [public-grants.md](b-user-layers/public-grants.md)
 Allow some users to do some low level operations
@@ -173,6 +190,10 @@ Agents are those that are authorized to do token changes outside the server
 [jobs.md](a-core-layers/jobs.md)
 Each public api call is put into a job queue, which is executed and then makes a private network call back to the waiting task,
 which either returns the output to the user, if the http call is waiting, or calls the url the user set, or the user can poll later
+
+## User Proxy
+[user-proxy.md](b-user-layers/user-proxy.md)
+Internal api to allow one user to do things as another user
 
 
 

@@ -86,6 +86,8 @@ Each layer has its own iteration of writing the api and code.
 | Marketplace                   | Ownerships of token sets can be bought and sold                       | [marketplace](docs/layers/f-trading-layers/marketplace.md)                                |
 | Pools                         | Pools are a resource that generates future tokens                     | [pools](docs/layers/d-organization-layers/pools.md)                                       |
 | Organizations                 | They are companies or people who do stores                            | [organizations](docs/layers/d-organization-layers/organizations.md)                       |
+| Agreements                    | Are how to reach consensus and do group driven actions                | [agreements](docs/layers/d-organization-layers/agreements.md)                             |
+| Deferred                      | Agreed things done by script or remote                                | [deferred.md](docs/layers/d-organization-layers/deferred.md)                              |
 | Stores                        | Stores sell inventory                                                 | [stores](docs/layers/h-selling-layers/stores.md)                                          |
 | Inventory                     | Items in a store for sale, need not be physical or even real          | [inventory](docs/layers/h-selling-layers/inventory.md)                                    |
 | Promotions                    | Sets up advertising, monitors impressions                             | [promotions](docs/layers/i-promotion-layers/promotions.md)                                |
@@ -96,11 +98,13 @@ Each layer has its own iteration of writing the api and code.
 | Boards                        | Discussion chat rooms and reviews. Private individual and group chats | [boards](docs/layers/e-interaction-layers/boards.md)                                      |
 | Notes                         | Organize text,images, links, lists                                    | [notes](docs/layers/c-personal-layers/notes.md)                                           |
 | Items                         | Allow sharing and communities                                         | [items](docs/layers/e-interaction-layers/items.md)                                        |
+| Movement                      | Tokens move around connected sets                                     | [movement](docs/layers/e-interaction-layers/movement.md)                                  |
 | Public grants                 | Allow some users to do some low level operations                      | [public-grants](docs/layers/b-user-layers/public-grants.md)                               |
 | Format                        | Converts token sets to different things: html and markup ..           | [format](docs/layers/c-personal-layers/format.md)                                         |
 | Export and Verification       | How tokens are shared between servers                                 | [export import verification](docs/layers/j-internet-layers/export-import-verification.md) |
 | Agents                        | Agents are authorized to do things outside the server                 | [agents](docs/layers/b-user-layers/agents.md)                                             |
 | Jobs                          | Aid to the jobs in the queue, track job output and give notice        | [jobs](docs/layers/a-core-layers/jobs.md)                                                 |
+| User Proxy                    | Internal api to allow one user to do things as another user           | [user-proxy.md](docs/layers/b-user-layers/user-proxy.md)                                  |
 
 # Concepts
 

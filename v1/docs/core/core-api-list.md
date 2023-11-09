@@ -47,4 +47,3 @@
 * [requirements-api](step-7-sets/requirements-api.md)
 * [search api](step-7-sets/search-api.md)
 * [operations api](step-7-sets/operations-api.md)
-* [movement api](step-7-sets/movement-api.md)
