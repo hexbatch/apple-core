@@ -9,9 +9,9 @@ Core:
         Allow way to make constantly updated user lists out of admins from other list(s)
 
     Remotes:
-        Core only allows remote calls to white-listed urls, ip.
-        New apis to manage list
-        Remotes can be type pause, allowing a user to enter remote response via api. When an api pauses, the waiting remote can be filled in by the caller, even if they do not make the remote
+        Remotes can be type pause, allowing a user to enter remote response via api.
+         When an api pauses, the waiting remote can be filled in by the caller, even if they do not make the remote.
+         see api-execution
 
     Bounds:
         Path bounds is always the path of the target token in a set, it has nothing to do with the user's working set context, and no api should ask for the set of the user.
@@ -32,8 +32,9 @@ Core:
         On the type of value, add in specific id categories: token, type, attribute, search, script, remote, action, bounds
         When a token is also a set, a group, or represents a user, it has an attribute showing that. A filter can filter api types with this attribute set to that type
         Attribute values has a microsecond time stamp of when last written to
-        When live attributes are added to a token,  record the user that added them
-        Add a priority number setting, to help with ordering in different ways in the api
+        When live attributes are added to a token,  record the user that added them.
+        Live Attributes can be set so that they are destroyed after being read N times by any user
+
 
     Types:
             token types can have live attributes (changes for all tokens and can overwrite inherited on the tokens)
@@ -62,6 +63,7 @@ Core:
            Removing either breaks the parent child relationship
            Relationships for sets are still also defined by special defined attribute
         Can filter its content via one or more path boundaries
+        Sets have an attribute to mark them as a view
 
     Set operations:
         Aggregation operations: So group operations on selected attributes in a set to get one value which is written to a target token attribute as a live attribute on the token.
@@ -70,8 +72,11 @@ Core:
         set operations do the push and related
         get common tokens from a group of sets, put them in a new set, option to remove tokens from group
         Aggregation operations take a set of tokens, can do operations on it to reduce this to a single value. The operation can be filtered
-
         Any api call can provide a token or attribute using an iterator from a set (current token), if need to get an attribute specify attr to use.
+
+                set operations can have some logic now, optional set and filter to put in to decide to do the set operation in the api call.
+                There has to be at least one token in the set that gets matched by the filter. This is not the filter to do the operation with, but to decide to do it or not.
+        see new-set-operations for push and iterations
 
 
     Mutual sets:
@@ -104,29 +109,18 @@ Core:
         A user's session can have a filter, and can be set to human mode or not
 
 
-    Transaction layer (new layer) see transaction-layer.txt, the marketplace will use this layer also
-
  No remote calls layer due to how we are processing each api call
+ No action operation layer, any action can run a remote, due to how the api does calls, this is now allowed
 
-    Actions doing set operations (new layer):
-        Api to set up actions that can do set operations. This is done after the api call is completed to avoid event cascading
-
-    Maps (new layer) : used to run shapes in
-
-    Goals (new layer): used to drive animals and plants in eco
-
-    Set shapes (new layer)
-
-    Mutual shapes (new layer)
-
-    Conversion (new layer): agent that takes some input and makes new tokens and sets
-
-    Eco (new layer): animals and plants having goals, with a shape
 
     Topology for mutuals (new layer): provides selection operations, for mutuals, that is based on how the geometry is
 
 
 
 
- Mechanisms: small programs the remotes can call to do stuff:
+ Mechanisms: small programs/patterns the remotes can call to do stuff:
     state machine
+    build set linkages
+        sets added to a set, and on entering the set will add a common token to make them mutual
+            or links them
+        when enough sets links/mutuals made job is done, like an enzyme

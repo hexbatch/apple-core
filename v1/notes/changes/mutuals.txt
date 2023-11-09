@@ -5,8 +5,14 @@ What is a mutual group of sets?
     If I find a set, then discover all the sets it has one or more tokens in common.
     Then I can look at those sets, and find all the other sets they have shared tokens.
     These tokens may be different from the ones shared with the first set.
-    After I do this as much as possible, or until I decide to stop including sets, then I have something called a mutual group of sets
+    After I do this as much as possible, or until I decide to stop including sets, then I have something called a mutual group of sets.
 
+What is a view?
+    Views are sets that produce no events to the tokens added or removed to the set here.
+    Set operations on views have no side effects, tokens in the set do not react to value changes or what is happening in the set. Allergies do not apply.
+    Think of a view as a read only selection of tokens. Views can be used for any tokens, not just mutuals.
+    Views can have every set operations done to them as normal sets, they are sets themselves, but silence events.
+    A set is made into a view, and vice versa by adding or removing an attribute system defined
 
 Mutual sets have a topology. Things can be done with them and their shared tokens.
     * We can put these tokens into a new set

@@ -12,6 +12,7 @@
 * Marketplace
 * Pools
 * Agreements
+* Transactions
 * User Proxy
 * Deferred
 * Organizations
@@ -25,11 +26,25 @@
 * Boards
 * Notes
 * Items
+* Movement
 * Public grants
 * Format
 * Export and Verification
 * Agents
 * Jobs
+* Shapes
+* Audio
+* Avatars
+* Mutual Editor
+* Goals
+* Tech Trees
+* Rates
+* Conversions
+* Eco
+
+
+
+
 
 ## Common things in all api requests
 
@@ -70,7 +85,7 @@ Networks are things online related to a user: social networks, friends lists
 
 
 # Network discovery
-[network-disovery.md](i-promotion-layers/network-disovery.md)
+[network-discovery.md](i-promotion-layers/network-discovery.md)
 Makes new network entry tokens. Scans social networks.
 
 
@@ -170,6 +185,10 @@ Allow sharing and communities
 Tokens can move, on their own, through set relationships by always going to the set that best fits them with their affinity. 
 This only happens if the affinity or allergies are set up for the token, and its registered
 
+# Transactions
+[transactions.md](d-organization-layers/transactions.md)
+The transaction layer changes ownership of tokens after an agreement between two or more people.
+Transactions can be in many parts and swap more than one owner. All have to succeed for the ownership to be changed for any
 
 # Public grants
 [public-grants.md](b-user-layers/public-grants.md)
@@ -196,4 +215,45 @@ which either returns the output to the user, if the http call is waiting, or cal
 Internal api to allow one user to do things as another user
 
 
+## Shapes
+[shapes](k-representation-layers/shapes.md)
+Sets can have 3d shapes and be in an area they intersect each other and move
+
+## Audio
+[audio](k-representation-layers/audio.md)
+Sets can make sounds
+
+
+## Avatars
+[set-avatar](k-representation-layers/set-avatar.md)
+Sets can be animated by outside programs
+
+
+## Mutual Editor
+[mutual-editor](k-representation-layers/mutual-editor.md)
+View and edit mutual relations
+
+
+## Goals
+[goals](m-eco-layers/goals.md)
+Get resources for achievements
+
+
+## Tech trees
+[tech-trees](m-eco-layers/tech-trees.md)
+Figure things out, and get rewards
+
+
+## Rates
+[rates](m-eco-layers/rates.md)
+One way to meet out api usage to sets a user has
+
+
+## Conversions
+[conversions](m-eco-layers/conversions.md)
+Convert data to shapes and sets
+
+## Eco
+[eco](m-eco-layers/eco.md)
+Plants and animals 
 

@@ -9,5 +9,6 @@ Any attributes of this kind in a token or set can be an "and"
     To put or conditions then have those in a child related sets. To have only or then have the first set by empty of this attribute family
 
 
+ There is another attribute family that is for ordering search results and prioritizing filters. If I have some or filters, and a match in more than one, I can pick the higher priority one
 Keep most of the current requirement api, but make this above instead of the requirements structure
 

@@ -2,6 +2,7 @@ aggregations
     take a set of tokens apply an operation to them
     can be all the tokens, or use a filter to sort by attribute family and or token type
     result is an attached attribute (new or already existing) to a token
+    Can be done just for the tokens in one set, if the tokens have some ordering then this affects the json
 
 Types of aggregations supported:
 

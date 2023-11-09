@@ -35,8 +35,7 @@ The internet layer will publish agreements
 An agreement can be used once or many times to power an api, by being the set to decide if it's going to be used by an operation.
 This is done by setting up an action to listen to the event of being used as a switch for an api.
 
-Agreements can be used to do actions for another user (such as an org or regular user). 
-Any user participating in the agreement (that is agreed on and still in force) can do layer api calls while logged in as themselves.
+Agreements can be used to do actions for another user (such as an org or regular user) by using the deferred. 
 
-The agreement will store the user to do the actions for, and whitelist of api calls to make and any constant params to the calls (allowing chosen params to be vars done at the user description)
-the user to be proxied has to sign the agreement.
+
+
