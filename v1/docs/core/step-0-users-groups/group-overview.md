@@ -1,51 +1,64 @@
 # User Groups
 
-A user group is a collection of users who have permissions. It is defined by a token that inherits from the user, and the base group token
+A user group is a collection of users who have permissions.
+It is defined by a token that inherits from the user, and inherits the base group token.
+
+
+The user list of the group, and the admin list, is reflected in the api as attributes, but it's also stored in the db as user lists.
+The attributes allow other parts of the api to read it. The attribute type here is created for the group, and inherits from a base user membership attribute.
+
+The admins are also listed as attributes, which inherits from the group admin attribute which inherits from the user memberships. 
+
+The user group base type is not allowed to create tokens unless its by an api call that creates groups.
+Attributes that define members and admins are not allowed to be created or destroyed except in api calls that do group lists.
+
+User groups can contain live memberships or admins from other groups. These are represented as attributes that point to the group
+and are using the system attribute types for attached member group, attached admin group which inherits from the base user membership attribute
+
+an admin can remove a member, the token owner can remove an admin. When this happens the attribute listing them is removed.
+
+The attributes store the ids of the users and groups in json arrays
 
 ## Admins
 
-When a group is created, the creator of the group is recorded as the owner , and has special privileges.
+When a group is created, the creator of the group is the owner of the token , and has special privileges.
 
 A user group has admins, which can alter the membership of the groups. Admins are also members.
-Only the group owner,  can add or remove other admins.
+Only the token owner,  can add or remove other admins.
 
+A user group membership is not discoverable to non-members, the attributes read list is updated by that. 
+But members can see all the other members and admins.
+A user can see which groups they belong in.
 
-A user group is not discoverable to non-members, but a user can see which groups they belong in.
 Any member of a group can see the full roster, and admins, and any attributes of the group they have permissions to see.
 
-The layers can maintain a public user directory, where any user in the public directory can see all the other users
+A user group can have attributes for image, docs, actions can run on when adding or removing attributes (including the membership attributes)
 
-A user group can have attributes for image, docs, but scripts do not run here.
 
-Each user group inherits from a base user group token type. For example, if a company creates a group.
+The token can be used as a regular token anywhere else, but can only represent one group, the group its attached to.
+It cannot represent another resource
 
-The token can be used as a regular token anywhere else, but can only represent one group, the group its attached to
-
-When adding attributes to the token-type, the attributes have to be readable and writable by the owner and whoever is editing
-
-Actions do not run on the token of the user group
 
     So a user-group:
         users: [] who is members in the group
-        user_groups: [] list of groups, any member here is a member of this group 
-        admins: [] who can directly modify the list using the api. 
-        admin_groups: list of groups, any member here is an admin of this group. 
-        token-type: made new for the group, inherits from the system group token type (see system tokens and attributes), the owner of the group is the owner of the token type
+        admins: [] who can directly modify the list using the api.
         token: the token representing the user group
 
 
-## Inherited groups to restrict or put conditional membership
+## Restricting the context a group can be used in
 
-The group owner, o can change the token type rules for who can use this to make new token types: so can restrict or allow this to be inherited.
+The group token can have bounds set on it.
+If a subgroup needs to be made, or allowing a subset or geo or time fencing permissions or path restrictions,
+then a new group can be made, and the members added to it from the older group.
+Membership or administration in the earlier group does not affect status in the newer group
 
-Groups that inherit from other group token-types also inherit their memberships and admins.
 
-These tokens can be restricted by space and time, and have extra or fewer members and admins
 
-Inherited groups are good for allowing a subset or geo or time fencing permissions for attribute or sets
+### Multi membership and admin additions that repeat
+
+The admin or membership is the union of all the users added
 
 
 ## Api calls that list groups
 
-Search results give back iterators and a page contents, use the iterator id to get the next page,
-iteration is one way only and can have duplicates in the results as things are updated in between calls for a page
+Can search for groups using attributes, values and who owns them, or what set they may belong to

@@ -52,9 +52,10 @@ Attributes can have optional explaining text
                 allergies: [force_rules] cannot be in the same set if this attribute is in any of the other tokens. 
                 affinities: [force_rules] this must be in the same set somewhere before the token can be added to the set
         permissions:
-            owner_user_groups: [] if empty then only the user's group can use this to create their types or add to tokens 
-            read_user_groups: []  if empty anyone can read the attribute value
-            write_user_groups: [] if empty the admin group can change the attribute value.
+            user_groups:
+                usage: [] if empty then only the user's group can use this to create their types or add to tokens 
+                read: []  if empty anyone can read the attribute value
+                write: [] if empty the admin group can change the attribute value.
             set_requirements: 
                 read: [] or {} attribute ids  : if this array, if one in a set can read, if object then all must be in set to read
                 write: [] attribute ids : if this array, if one in a set can write, if object then all must be in set to write

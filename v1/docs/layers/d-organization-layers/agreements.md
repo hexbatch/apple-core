@@ -32,10 +32,11 @@ An agreement can be used as the set to decide to do a repeating api.
 Agreements do not have to be public or published, but if they are published then can be used as a basis for other agreements on other servers, and there is a record of that
 The internet layer will publish agreements
 
-An agreement can be used once or many times to power an api, by being the set to decide if it's going to be used by an operation.
+An agreement can be used once or many times to power an api, by being the decision set to decide if it's going to be used by an operation.
 This is done by setting up an action to listen to the event of being used as a switch for an api.
 
-Agreements can be used to do actions for another user (such as an org or regular user) by using the deferred. 
+Agreements can be used to do actions for another user (such as an org or regular user) 
+But agreement layer by itself does not decide which actions or api calls allowed. To limit that or times used, use the deferred layer. 
 
 
 

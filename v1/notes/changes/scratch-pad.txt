@@ -1,0 +1,9 @@
+All api are also represented as tokens: this is true for the core as well as the layers
+
+All api in core and layer can have a decision set or token that will respond to "can api call be used" event, not having an event means api call can be done.
+
+Rate limits can be enforced via the layers, but in the layers also this can be bypassed by using a decision set that has tokens of allowed api calls,
+with an attribute for a counter to mark down/keep track of allowed usages. This decision set can also have user tokens for allowed users to do this for.
+These sets can be traded
+
+This is probably done by the rates.md

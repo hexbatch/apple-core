@@ -1,22 +1,7 @@
 
 
 Core:
-    Api calls in general:
-        Allow things to be hidden unless the user wants them to be seen. Similar to dot files in OS. Attributes can be hidden by a human filter.
-        This is opt in by any api caller, and does not hide anything unless asked to. Not related to permissions.
 
-    User Groups:
-        Allow way to make constantly updated user lists out of admins from other list(s)
-
-    Remotes:
-        Remotes can be type pause, allowing a user to enter remote response via api.
-         When an api pauses, the waiting remote can be filled in by the caller, even if they do not make the remote.
-         see api-execution
-
-    Sets:
-        now can decide to drop attributes, or attach them via the return info. Can set token properties of coordinates.
-        Can set the token time to live attribute to 0, or add that, and the token will be removed
-        scripts adding these allow for events to react to them
 
     Bounds:
         Path bounds is always the path of the target token in a set, it has nothing to do with the user's working set context, and no api should ask for the set of the user.
@@ -40,11 +25,23 @@ Core:
         When live attributes are added to a token,  record the user that added them.
 
 
+    Remotes:
+        Remotes can be type pause, allowing a user to enter remote response via api.
+         When an api pauses, the waiting remote can be filled in by the caller, even if they do not make the remote.
+         see api-execution
+
+    Scripts and Remotes:
+        Now can decide add live attributes, via the return info the system will attach the live.
+            * Scripts adding these will only be able to if events reacting allow this
+            * Can only apply live or remove live if the action's attribute is in the same context (a token type added at design, a live for all the token, or just in a set context)
+        Can set token coordinates.
+        Can set the token time to live attribute to 0, or add that, and the token will be removed
 
     Types:
-            token types can have live attributes (changes for all tokens and can overwrite inherited on the tokens)
-                live attributes put on the tokens can overwrite an attribute already there, by design or later action.
-                no limit to how many live attributes that overwrite the earlier one. They stack by when applied.
+            token types can have live attributes that apply to all the tokens (but not the type itself)
+                * changes for all tokens and can overwrite inherited on the tokens
+                * live attributes put on the tokens can overwrite an attribute already there, by design or later action.
+                * no limit to how many live attributes that overwrite the earlier one. They stack by when applied.
             need discussion about attributes able to overwrite their parents. If I have A inherits from B, and C inherits from B
                 if a token has B, and I add a live of A, then that overwrites the B. However if I add C, then that does not overwrite B (B is not a child of A)
             scripts and remotes should have their storage as live token level attributes,
@@ -55,31 +52,34 @@ Core:
             Can add attribute to type or live when attribute is both readable and writable. Do not have to own attribute (this causes some changes in sketched out ntoes)
 
     Requirements:
-        Now done via sets
+        Now done via sets see filters.txt
 
     Events:
         Can send custom event, one that inherits from the custom even attribute, to any one token per api call to send event.
         Add event to a set that is used to decide if an api operation can be done. This puts more control over automated api calls using decisions to js and remotes.
         Can have a read event. Cycles prevented by new api mechanisms
+        * Can have an event for applying a live type on a type, for all tokens, as well as on the token, as well as on the token in a set context, can have one event for all three also
+        * Same for removing
 
     Set:
         Set tokens are seen as normal tokens unless in a set which has them as a child or link or parent.
+            * "any token can make a set and still be a regular token"
         Sets that have a location set and a map bounds can only accept tokens that are in its bounds, or do not have a location set for them.
         Set parents are in the child as a token, just as the child is in the parent as a token
            Removing either breaks the parent child relationship
            Relationships for sets are still also defined by special defined attribute
         Can filter its content via one or more path boundaries
-        Sets have an attribute to mark them as a view
-        state: "any token can make a set and still be a regular token"
+        Sets can have an attribute to mark them as a view
+
 
     Set operations:
-        Aggregation operations: So group operations on selected attributes in a set to get one value which is written to a target token attribute as a live attribute on the token.
+
         set operations can use the human filter
         set operations use the pre-filter to decide to do the set operation
-        set operations do the push and related
-        get common tokens from a group of sets, put them in a new set, option to remove tokens from group
+        get common tokens from a group of sets, put them in a new set. Can do opposite too: remove common tokens from groups
+        Aggregation operations: Use group operations on selected attributes in a set to calculate one value which then is written to a target token attribute as a live attribute on the token.
         Aggregation operations take a set of tokens, can do operations on it to reduce this to a single value. The operation can be filtered
-        Any api call can provide a token or attribute using an iterator from a set (current token), if need to get an attribute specify attr to use.
+        Any api call can provide a token or attribute using an iterator from a set (current token), can filter attribute(s)  to use.
 
                 set operations can have some logic now, optional set and filter to put in to decide to do the set operation in the api call.
                 There has to be at least one token in the set that gets matched by the filter. This is not the filter to do the operation with, but to decide to do it or not.
@@ -106,7 +106,6 @@ Core:
         Can register custom macros in the core, not by users, but by plugin. For instance macros to select via topology and area charges on mutual entanglements.
 
     Search:
-        need to be able to distinguish between a token in its set view and a token view, is this needing work?
         Search results of sets should list its parent.
         New Search operations and search modifiers
 
