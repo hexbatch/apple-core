@@ -1,14 +1,24 @@
 # Set Path boundaries
 
-Means the attribute can only be active when the token is in one of a group of set expressions
+A set path bounds is one or more search expressions.
 
-A set path bounds is one or more of the set expressions.
+Means the attribute can only be active when the token is in a set matched by the search path.
+The search path must end in a token being the set, or a set containing something.
+
+So, this means api calls when doing stuff to tokens in a set, activate any possible path bounds to turn things on or off.
+This is not related to any other set the api call is involved in. Only when changing tokens or sets in an api call, its the set that is changed or has tokens inside it change.
+
+Path bounds only affect attributes inside the set the bounds is activated
+
+
 
 So, the attribute is only on when then token is inside those set conditions, and then the attribute might be readable or writable from that set only.
 
 The same token would have different on or off attributes based on reading it in another set, which it can belong to, at the same time.
 
 ## Set expressions
+
+(see search expressions for more info)
 
 each token set has a token with an id, the token can have attributes with values
 so, a path could be identified by name#token_type.attribute:value

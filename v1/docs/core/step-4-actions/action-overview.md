@@ -140,4 +140,9 @@ A token's live attribute can be turned off and this will be everywhere
 All the attributes from a parent of a token can be turned on and off at once,
 but if the token has dynamic attributes that overwrite this then those stay on
 
+# Multiple target paths
+
+If selecting multiple target attributes to listen to, then they all have to have events fired for them first before the action will activate and do its own thing.
+It can remember the counts, and this resets for each api operation
+
 

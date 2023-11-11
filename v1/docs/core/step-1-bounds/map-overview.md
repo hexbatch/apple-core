@@ -14,3 +14,12 @@ Map bounds always exist inside a created bounds
         user: id
         name: name of the bounds (unique to the user's bounds)
         polygon array: at least one polygon, they can overlap or not be connected or join
+
+
+# how map bounds work with locations defined by tokens and sets
+
+Location: if a token does not define its location, then its location can be that of a set it is in. This means such tokens can have many locations at once.
+
+Each token location is used when determining which tokens in a set are readable and writable. But if no location set, then this bounds not applied.
+
+The same token can be readable or not, writable or not, in different sets at the same time

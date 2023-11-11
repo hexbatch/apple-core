@@ -7,4 +7,7 @@
 
 ## can i do this
     permissions_layer.can_i_do_this
-takes the layer function call, and decides if it can be called now
+
+has a quick way to lookup to see if the layer api call is allowed by the rate set given.
+
+The rate set might be a shared one, see deferred.

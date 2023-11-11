@@ -250,8 +250,8 @@ Figure things out, and get rewards
 
 
 ## Rates
-[rates](m-eco-layers/rates.md)
-One way to meet out api usage to sets a user has
+[rates](a-core-layers/rates.md)
+How api rate limits are granted
 
 
 ## Conversions

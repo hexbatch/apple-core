@@ -97,6 +97,10 @@ We create the wallet when user registered.
 The wallet can be organized like other tokens and sets
 
 
+### Rate set
+
+Each user gets one rate set to start out with. Tokens for api access are set here
+
 # Sessions 
 
 ## Concept of Working set

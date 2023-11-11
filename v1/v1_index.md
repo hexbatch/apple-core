@@ -113,7 +113,7 @@ Each layer has its own iteration of writing the api and code.
 | Mutual Editor                 | View and edit mutual relations                                        | [mutual-editor](docs/layers/k-representation-layers/mutual-editor.md)                     |
 | Goals                         | Get resources for achievements                                        | [goals](docs/layers/m-eco-layers/goals.md)                                                |
 | Tech trees                    | Figure things out, and get rewards                                    | [tech-trees](docs/layers/m-eco-layers/tech-trees.md)                                      |
-| Rates                         | One way to meet out api usage to sets a user has                      | [rates](docs/layers/m-eco-layers/rates.md)                                                |
+| Rates                         | how api limits are enforced                                           | [rates](docs/layers/a-core-layers/rates.md)                                                |
 | Conversions                   | Convert data to shapes and sets                                       | [conversions](docs/layers/m-eco-layers/conversions.md)                                    |
 | Eco                           | Plants and animals                                                    | [eco](docs/layers/m-eco-layers/eco.md)                                                    |
 

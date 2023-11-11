@@ -3,13 +3,6 @@
 Core:
 
 
-    Bounds:
-        Path bounds is always the path of the target token in a set, it has nothing to do with the user's working set context, and no api should ask for the set of the user.
-            Path bounds only affect attributes inside the set the bounds is activated
-
-        Location: if a token does not define its location, then its location can be that of a set it is in. This means such tokens can have many locations at once.
-                    Each token location is used when determining which tokens in a set are readable and writable.
-                    The same token can be readable or not, writable or not, in different sets at the same time
 
     Attributes:
         they can be const: this works if they are not set by action, remote or script
@@ -21,7 +14,7 @@ Core:
         Add human status, default true, to selectively hide attributes in api calls if the human filter is on.
         On the type of value, add in specific id categories: token, type, attribute, search, script, remote, action, bounds
         When a token is also a set, a group, or represents a user, it has an attribute showing that. A filter can filter api types with this attribute set to that type
-        Attribute values has a microsecond time stamp of when last written to
+        Attribute values has a microsecond time stamp of when last written to, or turned on
         When live attributes are added to a token,  record the user that added them.
 
 

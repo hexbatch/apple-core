@@ -52,6 +52,10 @@ But the jobs should have just temporary tokens they delete when done.
 
 
 
+# api execution
+[api-commons.md](api-commons.md)
+Some things in api calls are done the same way
+
 
 ------------------------------------
 

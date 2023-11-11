@@ -62,7 +62,6 @@ Flow for placing a job and waiting for it to finish
     job_services.create_job
 only called in the queue for starting new jobs
 
-  * calls `permissions_core.can_i_do_this` for all the listed api calls in the job, if user cannot then return with data explaining (or throw)
   * calls `user_services.get_basic_user_auth`
   * calls `core.user.auth.create` for auth token put in
   * makes new db row for the job

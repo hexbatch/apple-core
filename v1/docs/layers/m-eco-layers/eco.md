@@ -1,5 +1,9 @@
 Ecosystems allow data to be processed for whatever reason, as well as be fun
 
+Tech tries give rates, and other resources from tokens, as rewards to the sets that first possess the token.
+
+This creates competition so that it makes sense to block another thing from getting a goal so that the first thing can be getting more rates.
+
 
 # Plants and grazers
 
@@ -17,10 +21,12 @@ Grazers use much more api moving around and finding stuff.
 
 # secondary level
 
-Other sets look around for the plants and grazers, and enter their space and take the tech token(s) to process it further.
+Other sets look around for the plants and grazers, and enter their space and set the tech token attributes to process it further.
+If there are multiple attributes to set, then the last one to set it gets the next tech tree advancement token.
+
 And they can feed on the rates.
 
-The tech token will transfer ownership to that user when its taken. 
+The older tech token will go away, and the thing that last provided the needed attribute will own the newly created tech token 
 
 # higher 
 
