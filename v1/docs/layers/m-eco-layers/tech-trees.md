@@ -19,5 +19,12 @@ However it can be made so that a certain number of different editables have to b
 
 Regardless the set that has the reader is given the next token.
 
-That next token has to have its attributes filled out correctly to get the next token
+That next token has to have its attributes filled out correctly to get the next token.
+
+## Multiple required attributes to advancement
+
+Should there be more than one attribute to fill in, the user to fill in the last remaining attribute gets the tech token.
+If this is a tie, then one is chosen only, and the other does not get the token
+
+All tech tokens are destroyed when they generate a new token in the next level
 
