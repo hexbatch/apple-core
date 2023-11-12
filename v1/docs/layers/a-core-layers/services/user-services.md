@@ -1,7 +1,5 @@
 # User services
 
-* remembers the user bearer token
-* will get a new user bearer token
 * will get user details (with attribute values)
 * will edit user details (edit attributes)
 * will store and give a basic user token (to get standard attributes)
@@ -14,14 +12,14 @@
     user_services.create_user
 * calls job:create_user 
 * stores the user data (bearer token, sets)
-* calls session.create
+* calls `session.create`
 * stores the first session id
 * returns user data
 
 ## get user fields
     user_services.list_user_fields
 * if cached data in good time range, return cached data
-* calls job:get_user_fields
+* calls `job:get_user_fields`
 * stores the fields
 * returns the fields
 
@@ -55,12 +53,16 @@ Makes a new user. Fills in the user attributes on the user token. Makes the  use
 Input data:
 * user info
 
+Pre layer calls:
+* calls `permissions_layer.default_rate_setting` to get info to pass to core to create the new rates
+
 Core calls:
 * list of core calls 
 
 Return data:
 * user_wallet, landing, and home set ids
 * bearer token
+* rate set
 
 -------------------------------------------
 

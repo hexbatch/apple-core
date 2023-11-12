@@ -1,3 +1,3 @@
 # Sessions
 
-new layer because users have too much?
+* api to sessions and their command pallets

@@ -23,3 +23,10 @@ it's just the tokens that cannot be modified other than the ownership. Once a to
 A rate set can have multiple tokens for the same api call.
 
 * Rate sets can be used by more than one user, this is recorded in the layers only in this rate api
+* Stores rate data in a fast lookup, but layers still passes the rate set to the core for adjustment
+
+## create rates
+
+## adjust rates
+
+## destroy rates

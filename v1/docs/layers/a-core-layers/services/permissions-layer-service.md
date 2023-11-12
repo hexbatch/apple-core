@@ -8,6 +8,12 @@
 ## can i do this
     permissions_layer.can_i_do_this
 
-has a quick way to lookup to see if the layer api call is allowed by the rate set given.
+checks to see if the user has passed in an alternate rates, 
+
+has a quick way to lookup (set up by the rates service) to see if the layer api call is allowed by the rate set given.
 
 The rate set might be a shared one, see deferred.
+
+## get default rate info
+    permissions_layer.default_rate_setting
+Calls the rate layer with some default setting for a user

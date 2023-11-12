@@ -1,5 +1,9 @@
 # User groups
 
+* user groups : creating , editing, deleting groups
+* user group admin stuff
+* list user groups
+
 ## Listing Groups
 
 Any member of a groups can see the full list of the group members and admins
