@@ -38,7 +38,7 @@ The individual attributes and tokens can repeat, in different Identities, but ea
     
 
 An interface is created when we apply an interface definition to a mutual set. If all the identities can be located in the mutual, then we have an interface connected tto this mutual.
-The interface has the pointers to the things it finds, and it, and the mutual are put into a set. This set is an interface, and only other interfaces can enter it.
+The interface has the pointers to the things it finds, and it, and the mutual are put into a set called the container. This set is an interface, and only other interfaces can enter it.
 
 The interface remembers the last write value to each of its writes, and last write time that the data was accepted
 
@@ -57,6 +57,8 @@ When the click paths different, even if just for one, then the clicking will end
 
 Clicked together interfaces can be very nested and complex, or simple.
 
+Clicked attributes are not readable or writable by anything except their pairings. Any attributes that are not clicked on an interface are called exposed.
+
 A token can have more than one write attributes in a mutual, they are all written to at the same time.
 A write attribute can have more than one unique data being sent to them at one time, if there are 
 multiple read attributes in other interfaces that meshes with it.
@@ -68,6 +70,53 @@ A read attribute cannot be read if it has a time bounds, and can also have a tim
 ---------
 
 There are api operations to build up interfaces, and how they click
+
+--------------
+
+Can set a container to be read only
+
+----------------
+Events for this are sent to the container. The events can elect to now allow the operation,
+and the events are given all the outputs or inputs at the time for the attribute paths they are listening.
+
+Events can be used for blocking something, regulating it (being an iterator), forwarding all the interface changes somewhere.
+Write actions are only sent when the action is writable (in its own bounds and the write bounds for it)
+
+
+----------------------------
+Can make a wrapper for the interface. Given a container, can connect read and/or write either way .
+A wrapper will make a new interface definition, a temporary one, that changes according to the wrapped container's exposed interface, to encompass all the container's exposed read/writes
+Can also limit this wrapper by filtering it with other interface definitions.
+
+The wrappers are their own interfaces.
+
+There are api operations to make wrappers.
+
+A wrapper does not affect what they wrap, and to the container they wrap, are invisible. However can find the wrappers of a container via api call.
+
+Wrappers can be chained together to allow alternate paths for read and writes, and can be done to create pipelines between containers in different sets.
+
+Can have listening script or remote on a wrapper to do side jobs as conditions happen.
+
+---------------------
+
+once created, a container is just a token to be put into any set, or sets. The reads are activated in an interface when their read attributes, found in the mutual they are attached to,
+are written to in other api operations.
+
+The activated read interfaces drive the write interfaces 
+
+
+--------------------------
+Interfaces have to always be attached to live mutuals. If the mutual is changed (evolves) so that one or more identities cannot be fulfilled, then the interface is evaporated (destroyed)
+There is an event that is fired (cannot cancel that event) to allow remote to learn and act on this
+
+If a wrapper is using a container that has no more interfaces, then that wrapper is evaporated. Constructs made out of the wrappers, such as a pipeline can be cascaded evaporated too
+
+----------------------
+A container in a set is not affected by other tokens entering or leaving the set. A container entering or leaving the set does not trigger any events on the host set.
+However, other tokens in the set can be affected by the presence or absence of that container set based on their listeners
+
+
 
 
 

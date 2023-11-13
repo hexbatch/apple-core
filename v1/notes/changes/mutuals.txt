@@ -96,3 +96,25 @@ allow macros to be made and remembered:
     api to combine , list, get, delete
     use macro id when calling view operation (is this set too or just mutual operations)
     marcos can call a remote or script
+
+
+    ---------------------------
+    When a mutual is made, it is showing the tokens are they are when the api call was made. Tokens can change after that.
+    Mutuals do have the option to be live, in other words updated so the next time they are read, or used, it reflects accurately
+
+    In the code, when a token is part of a live mutual, then when that token leaves or enters a set, the mutual is updated.
+    This may break some or all of the mutual.
+
+    A mutual can have event listener for when a mutual is "evaporated" and is no more, or when its changed. static mutuals, those not live, receive no such updates though.
+
+    -----------------------------------------
+
+    Entanglement, its possible to add in a live or static mutual to a set. If a static mutual, this is just adding in the strong tokens and that is all there is.
+    Live mutuals though, can move their tokens in and out of a set by moving the set holding the live mutual in and out. If a mutual mutates then more tokens are added or removed as a result.
+    Evaporated mutuals remove all the tokens.
+
+    A set can host multiple entanglements at the same time. Duplicate tokens from more than one entanglement are, of course, only added once to the host set.
+    When an entanglement enters, if the set has event listeners, then all the tokens have to accepted, or none of them.
+    When a mutual mutates, then if the set denies the exit or entry of the token, then all the tokens from that mutual are removed, even if a same token, also in the mutual,
+     has been added separately, and there are no events called here. If more than one entanglement is in a set, and one gets evicted, and the evicted one has one or more shared tokens in another mutual,
+     then that other mutual gets evicted too.

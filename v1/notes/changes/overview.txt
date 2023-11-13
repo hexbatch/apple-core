@@ -43,6 +43,7 @@ Core:
             Add human status, default true, to selectively hide tokens made from this type in api calls if the human filter is on
             Can add parent to type as long as at least one attribute is readable
             Can add attribute to type or live when attribute is both readable and writable. Do not have to own attribute (this causes some changes in sketched out ntoes)
+            New user group for ghosts listening to the token events, and filter which events
 
     Requirements:
         Now done via sets see filters.txt
