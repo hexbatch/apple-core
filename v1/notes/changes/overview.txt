@@ -16,7 +16,7 @@ Core:
         When a token is also a set, a group, or represents a user, it has an attribute showing that. A filter can filter api types with this attribute set to that type
         Attribute values has a microsecond time stamp of when last written to, or turned on
         When live attributes are added to a token,  record the user that added them.
-
+        Ghost attributes
 
     Remotes:
         Remotes can be type pause, allowing a user to enter remote response via api.
@@ -101,6 +101,8 @@ Core:
     Search:
         Search results of sets should list its parent.
         New Search operations and search modifiers
+
+    Interfaces: see interfaces.md
 
 
 
