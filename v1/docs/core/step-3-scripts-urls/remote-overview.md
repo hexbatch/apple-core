@@ -89,7 +89,7 @@ The return is the value to read, but output keys can match up to top level json,
             output_keys
         read_policy:
             allow: yes or no
-            cool_down: (optinal)
+            cool_down: (optional)
             allow_during_cool_down: yes or no
         write_policy:
             allow:
@@ -108,3 +108,9 @@ can call private network ips or pipes etc
 # Permissions
 
 * The users who can create a script are in the remote_permission group
+
+# Manual entry 
+
+Remotes can be type manual, by not having a uri, and that is all that needs to be changed to make it manual.
+When a remote is manual, the api call will pause until the user enters the answer needed.
+This is done via the api call method handling. See  [execution.md](../core-api-general/execution.md)

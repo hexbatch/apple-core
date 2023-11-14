@@ -24,6 +24,8 @@ includes call to remotes:  details with data, and key value pairs needing to be 
 update waiting to give task data
 User who made the waiting can delete it if they want
 
+For remotes without a uri, then the user must enter the data to be returned by the remote. There can be more than one remote needing manual updating
+
 
 ## When an api is called:
 
