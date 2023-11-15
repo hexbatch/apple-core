@@ -1,0 +1,4 @@
+when a token is propagated to another instance, then this is much like a token going into a set.
+
+The type state is copied over though, and any changes are not copied back to the original instance.
+The only thing that allows connection is remotes calling to the instance

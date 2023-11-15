@@ -28,6 +28,11 @@ Core:
         Can set token coordinates.
         Can set the token time to live attribute to 0, or add that, and the token will be removed
 
+--------------------
+Actions that listen to events about read or write attribute data can be chained to be filters.
+    The read data of one can be altered by the one before. The write data of one can be altered by one after.
+    This is only done when a priority is set on the action definition.
+     Those with same priority do not affect each other. Null is a priority level.
 -------------------
 
     Types:
@@ -74,12 +79,6 @@ Core:
 
 
         * More events in interfaces
-
-        * Need events to mirror tokens: global-attribute-on-write global-attribute-on-read. These actions can be added to the type itself as live attributes
-          * the writes on the global attribute context are trigger global-attribute-on-write, and a single action could handle all the attributes it wants
-          * reads on global attribute context (stored in the type) trigger the global-attribute-on-read
-          * action not responding to event means it's not handled by it, and go to next layer of getting or setting info
-          * there can be multiple actions listening to these events
 
 -------------------
 
