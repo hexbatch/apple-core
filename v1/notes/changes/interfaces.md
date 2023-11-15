@@ -116,7 +116,30 @@ If a wrapper is using a container that has no more interfaces, then that wrapper
 A container in a set is not affected by other tokens entering or leaving the set. A container entering or leaving the set does not trigger any events on the host set.
 However, other tokens in the set can be affected by the presence or absence of that container set based on their listeners
 
+----
+using any interface definition, and can select on a search path for groups using this. 
+If this interface definition finds any interfaces in the sets that their read attributes match all the given interface definition writes,
+then it will return the matched interfaces to a set or to be listed out
 
+can take an interface and do same as above, and any matched interface that can react to all the first interface's writes will write to it, one at a time
+This is a one way react, the targets are only read from.
 
+Can do boolean matching this way too, for more than one interface definitions. 
+Take a nested group operation for or and xor, with the logic connecting tests to be able to react one way, then will return this filtered list
+This filtered list can be put into a set, where they only one way react. Or can be listed out
+---------------------------
+can aggregate an interface current write values (the container will remember the last write values) using aggregation operations
+
+when having one interface be written by several, can do operation where this results in selected attributes being aggregated
+
+----------------------------
+
+interface operations can be created and used later in a structured environment, like the mutual group operations. Here do and or and xor.
+where a match to be able to write to all the source interface is a 1, and not being able to is a 0.
+Can put a 1 or 0 as a constant to help make other bool operations
+
+This ultimately produces a true or false result
+
+----
 
 
