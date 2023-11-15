@@ -24,3 +24,10 @@ When the intersection ends, the previously overlapping sets are given an all cle
 When entering a set map, the new users can be assigned a position via an event (event fired when user enters because token enters set, normal event)
 
 A parent set can move its children in concert, to have different parts of the same visual be processed by different sets (different hit regions and interactions in the same unit)
+
+-----------------------------------------------------
+
+Can use a container of an interface to have a shape, and can link that shape to the values of that interface being read.
+Pipelines can be matched to turn on and off parts of the shape definition. When one or more things comes through the pipeline, then that shape part is activated for the next N time
+
+This allows complex associations to be marked by simpler shapes and colors.

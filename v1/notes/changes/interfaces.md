@@ -73,7 +73,11 @@ There are api operations to build up interfaces, and how they click
 
 --------------
 
-Can set a container to be read only
+Can set a container to be read only.
+Can set a container to be read only after it's not, and flip it back and forth as needed. 
+
+Can set a container to be const. Cannot write.
+The last reads are saved, and that cache is used without asking the attributes for more recent info
 
 ----------------
 Events for this are sent to the container. The events can elect to now allow the operation,
@@ -145,4 +149,21 @@ This can be used to drive goals, and make promises
 
 ----
 
+# Pipelines
+
+Pipelines copy or transfer interfaces from one set to another. They are a set themselves.
+
+* They are one way
+* They can have a filter using an interface type that must match the reads or the writes, or both, of other interfaces to let them in
+  * Can optionally use an interface expression to filter through
+
+Pipeline joints allow more than one pipeline to be joined, inputs match outputs.
+Each pipeline at the joint can select to copy the action and also move the token in its pipeline, or make sure its the only pipeline to process the container
+
+can be any order of joints and pipelines
+A container can only get into the same pipeline one time only, before its put into a set, and then its can start over again
+
+## Pipeline events
+
+When an instance enters the pipeline, the regular events for having the container enter and leave can be activated.
 

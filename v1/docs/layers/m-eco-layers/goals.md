@@ -18,4 +18,7 @@ Goals can be paused
 
 Goals can be nested and grouped in operation to produce more complex goals. So events can be sent for both the smaller goals and the more complex goals.
 
-Meeting goals can be attached to a transaction, so the goal achiever gets tokens
+Meeting goals can be attached to a transaction, so the goal achiever gets tokens.
+
+Goals can be made out of Interface operations. Can match the number of a desired aggregated operation to the aggregated of the operation, or indeed if the operation is true or false
+bool interface operations can be weighted to make a goal score
