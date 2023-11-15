@@ -140,6 +140,9 @@ Can put a 1 or 0 as a constant to help make other bool operations
 
 This ultimately produces a true or false result
 
+
+This can be used to drive goals, and make promises
+
 ----
 
 
