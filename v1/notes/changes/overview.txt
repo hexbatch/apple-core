@@ -63,12 +63,23 @@ Core:
 -------------------
 
     Events:
-        Can send custom event, one that inherits from the custom even attribute, to any one token per api call to send event.
-        Add event to a set that is used to decide if an api operation can be done. This puts more control over automated api calls using decisions to js and remotes.
-        Can have a read event. Cycles prevented by new api mechanisms
-        * Can have an event for applying a live type on a type, for all tokens, as well as on the token, as well as on the token in a set context, can have one event for all three also
-        * Same for removing
-        More events in interfaces
+        * Can send custom event, one that inherits from the custom even attribute, to any one token per api call to send event.
+
+        * Can have a read event. Cycles prevented by new api mechanisms
+
+        * Can have an event for applying or removing a live attribute, on the type level, for all tokens.
+          * same event can be on the per token
+          * same can be for live added or removed in a set context (the live cannot be seen outside that set)
+          * can have one event for all three also
+
+
+        * More events in interfaces
+
+        * Need events to mirror tokens: global-attribute-on-write global-attribute-on-read. These actions can be added to the type itself as live attributes
+          * the writes on the global attribute context are trigger global-attribute-on-write, and a single action could handle all the attributes it wants
+          * reads on global attribute context (stored in the type) trigger the global-attribute-on-read
+          * action not responding to event means it's not handled by it, and go to next layer of getting or setting info
+          * there can be multiple actions listening to these events
 
 -------------------
 
