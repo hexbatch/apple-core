@@ -13,7 +13,7 @@ And then there are a set of layers, microservices, which use the core, to help e
 
 Each part can run on different machines. But it's planned to use kubernetes to have them together with fast networking and scaling.
 
-The apis share some [general-api-usage](docs/general-api-usage/general-api-usage.md)
+The apis share some [general-api-usage](docs/core/core-api-general/general-api-usage.md)
 
 # The core
 
