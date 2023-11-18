@@ -4,13 +4,6 @@ Core:
         * Can send custom event, one that inherits from the custom even attribute, to any one token per api call to send event.
 
 
--------------------
-
-    Set:
-
-        Set parents are in the child as a token, just as the child is in the parent as a token
-           Removing either breaks the parent child relationship
-           Relationships for sets are still also defined by special defined attribute
 
 
 

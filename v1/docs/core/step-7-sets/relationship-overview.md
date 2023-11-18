@@ -25,6 +25,12 @@ Each link attribute can inherit from a link attribute base
 Because links are exposed to the api as attributes, changing these attributes in actions or in set operations is allowed. This allows mass assigning and unassigning .
 
 
+Set parents are in the child as a token, just as the child is in the parent as a token
+* Removing either token from that set breaks the parent child relationship, and removes the parent child attributes
+* Relationships for sets are still also defined by special defined attributes, and removing those also removes the tokens from each other's sets, unless api calls says not to
+
+When linking to a set, that set's token is in the linker's set, and follows the same rules as the parent child tokens and special attributes
+
 ## Relationships as set contents
 
 When a child or a link is added to the set, then the token of those sets are added to that set too.

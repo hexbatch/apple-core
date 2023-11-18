@@ -49,3 +49,5 @@ Deleting a set does not change any tokens in the set, nor is any actions run on 
 
 listing sets, without filters, will show all sets the user can write to and alter 
 other filters: by set definition token type, or its attributes. use the search api for set contents
+
+When removing parent child relationship, or links, the caller can elect to keep former parent/child/linkee tokens in the sets, otherwise will be removed
