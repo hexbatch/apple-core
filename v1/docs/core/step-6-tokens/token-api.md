@@ -19,8 +19,6 @@
     
           user: must be one user
           token-type:
-          location:
-            the lat and lon 
           live attributes: 
           live parents: 
           script and remote states:  

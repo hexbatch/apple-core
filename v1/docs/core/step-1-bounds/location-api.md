@@ -18,8 +18,9 @@ Bound names cannot be aliased, but they are not public either, nobody is going t
 | Delete | bounds/map/:id      |            | Deletes an unused map boundary                        |                     |
 | Get    | bounds/map/:id      |            | shows the map bound data with geo json                |                     |
 | Get    | bounds/maps/list    |            | Shows a list of all the bounds the user has           | iterator            |
-| Get    | bounds/map/:id/ping |            | returns true or false if a point or area is in bounds | lat, lng            |
+| Get    | bounds/map/:id/ping |            | returns true or false if a given point is in a bounds | lat, lng or x,y,z   |
 
         user: id
         name: name of the bounds (unique to the user's bounds)
         polygon array: at least one polygon, they can overlap or not be connected or join
+        unit: either geo or cart

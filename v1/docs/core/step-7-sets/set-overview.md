@@ -19,6 +19,8 @@ Tokens about to be added or removed can have their actions handle those events, 
 Likewise, the token defining the set can have actions handle the event for the token entering and leaving the set.
 
 A set can have a requirement to specify what tokens are allowed in there.
+If a set has a location bounds, then it has an option to only accept tokens inside it that have no location set.
+the option for location_checks can be turned on or off at set definition time
 
 
 ## Set relationships
@@ -49,6 +51,7 @@ We can do operations on sets to make new sets, combine sets, and see what is in 
         parent-token-set: (optional) may have a parent, used for organizing token sets. (cannot be cyclic)
         linked-sets: (optional) may have links to other sets (can be cyclic so two sets can link to each other)
         requirement: id (optional), if there are max and min requirements, or not, this types the set and filters tokens
+        location_checks: true or false
 
 # Requirements in a set definition
 

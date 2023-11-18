@@ -42,6 +42,7 @@ The id of the set is unique each time the token is used to make a set. A token c
     parent-token-set: (optional) may have a parent, used for organizing token sets. (cannot be cyclic)
     linked-sets: (optional) may have links to other sets (can be cyclic so two sets can link to each other)
     requirement: id (optional), if there are max and min requirements, or not, this types the set and filters tokens
+    location_checks: true or false
 
 
 Deleting a set does not change any tokens in the set, nor is any actions run on the tokens in the set when the set is deleted

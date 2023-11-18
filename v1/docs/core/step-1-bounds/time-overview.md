@@ -4,14 +4,14 @@ Time bounds is defined by both a range to start and stop using this bounds, and 
 
 When creating a bounds, it can have 0 , 1 or many time bounds.
 
-The union of the times is when that attribute is active
+The union of the times is when that token is active.
+The attribute's time boundary is when it is active.
 
-Bounds can also have a location part, so that means even if the attribute is at the right time, it also must be at the right place too
 
 Time bounds always exists inside a created bounds
 
     so a time-bound:
-        
+        user: id    
         name: name of the bounds (unique to any bounds owned by the user)
         start: when to apply this bounds, inclusive
         stop: when to stop this bounds, inclusive
@@ -20,4 +20,6 @@ Time bounds always exists inside a created bounds
         timezone_to_use: if empty will be set by standard attribute of user_timezone
 
 
-The time bounds calculates out the periods of being on, using the timezone to convert this to unix timestamps
+The time bounds calculates out the periods of being on, using the timezone to convert this to unix timestamps.
+
+Time bounds are always calculated on now

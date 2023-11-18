@@ -12,7 +12,7 @@ Core:
           * Can be both static and const
         * Add Final status to forbid any usage of this attribute as a parent
         * Add human status, default true, to selectively hide attributes in api calls if the human filter is on.
-        * On the type of value, add in specific id categories: token, type, attribute, search, script, remote, action, bounds
+        * On the type of value, add in specific id categories: token, type, attribute, search, script, remote, action, bounds, location coordinates of both systems
         * When a token is also a set, a group, or represents a user, it has an attribute showing that. A filter can filter api types with this attribute set to that type
 
 
@@ -48,7 +48,7 @@ Actions that listen to events about read or write attribute data can be chained 
             Add human status, default true, to selectively hide tokens made from this type in api calls if the human filter is on
             Can add parent to type as long as at least one attribute is readable
             Can add attribute to type or live when attribute is both readable and writable. Do not have to own attribute (this causes some changes in sketched out ntoes)
-            New user group for ghosts listening to the token events, and filter which events
+              New user group for ghosts listening to the token events, and filter which events
 
 -------------------
 
@@ -139,7 +139,8 @@ Actions that listen to events about read or write attribute data can be chained 
 
     Search:
         Search results of sets should list its parent.
-        New Search operations and search modifiers
+        New Search operations and search modifiers.
+        Searches can select on intersections of bounds (to select those that do or do not) for tokens inside the same set
 
 -------------------
 
