@@ -13,7 +13,7 @@ The user token has all the core identification and display attributes. When a us
 
 The base user token also is in some system defined groups
 
-## Group Tokens
+## User Group Tokens
 
 The group token has all the core identification and display attributes. When a group is created, a new token type is inherited
 
@@ -65,15 +65,19 @@ Tags should be about what the token contains, or what the token is about
 * file - this token is some uploaded thing, it can be media or not
 * folder - this set acts like a folder to store files
 
-### Copy flags
 
-* origin_server_url string
-* origin_token_guid string
 
 
 ## Events are attributes
 
 Each event listed in the actions is an attribute that is assigned a truthful or false value. False attributes block the event from happening
+
+
+# Role attributes
+
+When a token is also a set, view, container, group, or represents a user, it has an attribute showing that. A filter can filter api types with this attribute set to that type
+
+
 
 
 

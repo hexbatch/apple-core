@@ -21,10 +21,12 @@ actions can be attached to multiple different attributes
     event-path: the path of the event (able to filter set context of an event), path must be using an event attribute id or child of one
     target-path: see paths (must end in attribute on the token this belongs to, ok if path is invalid, in that case no target and no changes)
     target-remembering: all|set|relationship
-    action-type: permission, value change, switch on|off,  or void (just runs a script or remote)
+    action-type: permission, value change, switch on|off, live add, live remove,  or void 
     input-params: [{path: name of param on the script or remote}]
     run-policy: always, per token, per token type, per set, once only per token type, one only per token
     value: a script, or remote id, or another attribute path
+    priority: optional number
+
 
 ## Creating an action
 The user running this is the owner,

@@ -51,11 +51,21 @@ A value of null will mean not cached
                     extra_input_params
                     output_keys
 
-The output keys
+The output keys define what the value returned will be, more than one key makes a json object. A single output key can be a primitive 
 
 ## script permissions
 
 * Scripts are run in a sandbox not allowing file access
 * The users who can create a script are in the script_permission group 
+
+### Setting live attributes
+
+Scripts and Remotes:
+Now can decide add live attributes, via the return info the system will attach the live.
+* Scripts adding these will only be able to if events reacting allow this
+* Can only apply live or remove live if the action's attribute is in the same context (a token type added at design, a live for all the token, or just in a set context)
+
+
+--------------------
 
 

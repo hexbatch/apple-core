@@ -100,10 +100,13 @@ When making an action to charge tokens for an event, use a remote set to quickly
                 event-path: the path of the event (able to filter set context of an event), path must be using an event attribute id or child of one
                 target-path: see paths (must end in attribute on the token this belongs to  ok if path is invalid, in that case no target and no changes)
                 target-remembering: all|set|relationship
-                action-type: permission, value change, switch on|off,  or void (just runs a script or remote)
+                action-type: permission, value change, switch on|off, live add, live remove,  or void (just runs a script or remote)
                 input-params: [{path: name of param on the script or remote}]
                 run-policy: always, per token, per token type, per set, once only per token type, one only per token
-                value: a script, or remote id, or another attribute path
+                value: a script, or remote id, or another attribute path for setting values
+                  value_param_name: when changing value, the older value is passed via an input param name of the script or remote
+                  static_other_params: passed to the remote or script unchanged
+                priority: optional number
 
 
 
@@ -124,16 +127,22 @@ Such actions do not need scripts or remotes
   however a token can change its own values or state or do things by remotes if another token does something (like change value, enter the same set, only exist in N sets etc.)
 
 # type of action
-  * an action can be to grant permission 
-  * or to change a value. The values to change must be located on the same token as the action running.
-  * or to turn off or on attributes or clusters on the token
+  * an action can be to grant permission , they return a value that is truthful or not to approve it. Only one action needs to approve an action even if others deny.
+
+The other types of actions only happen if the events they are listening to are approved by permission actions:
+  * or to change a value. The value they hold is applied. If this is a script or remote then the return from that is applied.
+    * The values to change must be located on the same token as the action running
+    * Can only change attribute values, not properties of anything
+  * Turn off or on  attributes or clusters on the token
+    * depends on the target if this is an attribute or cluster
+  * Apply, update or remove  a live attribute
+    * value needs to be a json of the attribute id and selected value.
+    * If run and live is there, the value will be updated. If removing will remove attribute.
   * or do nothing (just run the script or remote)
 
 
 
-# Turning on and off a live attribute
-
-A token's live attribute can be turned off and this will be everywhere
+--------------------
 
 # turning on and off a token's parent
 
@@ -144,5 +153,29 @@ but if the token has dynamic attributes that overwrite this then those stay on
 
 If selecting multiple target attributes to listen to, then they all have to have events fired for them first before the action will activate and do its own thing.
 It can remember the counts, and this resets for each api operation
+
+# Action run order (priority)
+
+* Actions that respond to the same event can be given an optional run order, and the actions are run from the lowest to the highest
+* Once the first action approves an event, the others are not called
+* Once the first action to turn on or off or toggle an attribute, cluster or live is run, the others are not run
+* Voids are always run
+* If more than one action is responding to the same approved event, and they are changing the same attribute value this becomes a filter
+  * Only if this action is running a remote or script
+  * the lowest priority will run first, and its value to set is passed to the next highest one, until all the actions have run. The highest priority action will have final say
+  * the value can change data type, earlier actions can send up json with flags, and the final one can produce a primitive, or filter out json 
+  * The passed value will be put into the script or remote params as the original value to change
+  
+
+
+# Actions changing values by script or remote
+
+  While an action can set a constant value , it can all a remote or script to do that. In this case, the remote and script 
+  will be passed the original value via the set value_param_name.
+
+  If given priority, this becomes a filter for the same attribute and same event
+
+# static params passed to script or remote
+  The static_other_params will be passed to allow scripts and remotes to have context
 
 

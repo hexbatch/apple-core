@@ -41,11 +41,13 @@ Ownership of tokens can take place in bulk via set operations.
 A token may be in any number of sets at once.
 The token bounds does not change when the set bounds changes.
 
+A token can have the date set so that after it, it's not used or usable, and eventually is recycled. This is determined by the types time to live option
+
 
       So a token:
           user: must be one user
           token-type:
-
+          expiration_at: (optional by type)  
           live attributes: (see attributes)
           live parents:  
           script and remote states:  
@@ -64,6 +66,7 @@ The active attributes from the parents are chosen as the top most attribute for 
 in order of parent inheritance list 
 
 
-## standard attributes that all tokens can have
+## time to live
 
-* time-to-live or attribute inherited from it, calculates token's life before being automatically deleted
+is like a very hard set time boundary for the token, and in many ways is just that, it's factored into any time boundaries the token.
+Once its past the time to live, the token is not usable, because of the time boundary ending, and there is an api in the admin area to start gc

@@ -63,7 +63,7 @@ A token can have more than one write attributes in a mutual, they are all writte
 A write attribute can have more than one unique data being sent to them at one time, if there are 
 multiple read attributes in other interfaces that meshes with it.
 If a write attribute is a json type, then these values are put into key value pairs. If the write attribute is a number or string or identity then it will get a random read from 2 or more sources.
-When reading from multiple same read attributes, can use an iterator attribute (even a ghost attribute)
+When reading from multiple same read attributes, can use an iterator attribute 
 
 A write attribute can have a time bounds, or a time-out between writes, or can only write when there is a different value
 A read attribute cannot be read if it has a time bounds, and can also have a timeout

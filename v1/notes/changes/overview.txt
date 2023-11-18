@@ -3,38 +3,6 @@
 Core:
 
 
-
-    Attributes:
-        * they can be const: this works if they are not set by action, remote or script
-        * they can be static: the value is shared on the token type itself (see type live attributes)
-            static attributes can have remotes and scripts, but not actions (no token type actions)
-                These remotes can be configured to be called only once, on first reading, and this enforces a type of const after that
-          * Can be both static and const
-        * Add Final status to forbid any usage of this attribute as a parent
-        * Add human status, default true, to selectively hide attributes in api calls if the human filter is on.
-        * On the type of value, add in specific id categories: token, type, attribute, search, script, remote, action, bounds, location coordinates of both systems
-        * When a token is also a set, a group, or represents a user, it has an attribute showing that. A filter can filter api types with this attribute set to that type
-
-
-
-            Summary: const , static, final, human, better value types for ids, standard attributes for token roles
-
--------------------
-
-    Scripts and Remotes:
-        Now can decide add live attributes, via the return info the system will attach the live.
-            * Scripts adding these will only be able to if events reacting allow this
-            * Can only apply live or remove live if the action's attribute is in the same context (a token type added at design, a live for all the token, or just in a set context)
-        Can set token coordinates.
-        Can set the token time to live attribute to 0, or add that, and the token will be removed
-
---------------------
-Actions that listen to events about read or write attribute data can be chained to be filters.
-    The read data of one can be altered by the one before. The write data of one can be altered by one after.
-    This is only done when a priority is set on the action definition.
-     Those with same priority do not affect each other. Null is a priority level.
--------------------
-
     Types:
             token types can have live attributes that apply to all the tokens (but not the type itself)
                 * changes for all tokens and can overwrite inherited on the tokens
@@ -48,15 +16,13 @@ Actions that listen to events about read or write attribute data can be chained 
             Add human status, default true, to selectively hide tokens made from this type in api calls if the human filter is on
             Can add parent to type as long as at least one attribute is readable
             Can add attribute to type or live when attribute is both readable and writable. Do not have to own attribute (this causes some changes in sketched out ntoes)
-              New user group for ghosts listening to the token events, and filter which events
+
 
 -------------------
 
     Live tokens:
         * When live attributes are added to a token,  record the user that added them.
-        * Ghost attributes
         * Attribute values has a microsecond time stamp of when last written to, or turned on
-        * ghost status
 
 
 -------------------

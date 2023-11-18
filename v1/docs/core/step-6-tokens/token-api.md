@@ -40,3 +40,4 @@ Only the token owner can delete a token, but actions can alter the time to live 
  
 # Reading a token definition
 If someone can read a token, they can read its definition, but not its state
+

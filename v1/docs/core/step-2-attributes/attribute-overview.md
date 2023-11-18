@@ -33,39 +33,86 @@ Attribute have an owner, a name, bounds, requirements, permissions, and a value
 
 Attributes can have optional explaining text
 
-    so an attribute:
-        parent_attribute: attributes can optionally have a single parent
-        user: can be one or none
-        name: name of the attribute (unique to all attributes)
-        description: some text explaining why this attribute is used, etc, the author or other info
-        is_retired: default false // if true then cannot be added to token types
-        bounds:
-            activity_bounds: []
-            read_bounds: []
-            write_bounds: []
+options:
+  * Attributes can be constant in that their defined value never changes. Constants cannot have actions, remotes or scripts
+  * Attributes can be static so that their value is always read and written from the type and not the token
+    * static attributes cannot have actions but can have scripts and remotes
+  * Final means cannot be used as a parent
+  * Human status, to selectively hide this attribute from searches if the human filter is on.
+
+
+      so an attribute:
+          parent_attribute: attributes can optionally have a single parent
+          user: can be one or none
+          name: name of the attribute (unique to all attributes)
+          description: some text explaining why this attribute is used, etc, the author or other info
+          is_retired: default false // if true then cannot be added to token types
+          bounds:
+              // each bounds can have max one type of bounds: location, time , path
+              activity_bounds: [] 
+              read_bounds: [] 
+              write_bounds: []
             
-        requirements:
-            tokens:
-                required_siblings: [attribute ids] for sharing the same token type or token
-                forbidden_siblings: [attribute ids] cannot be in the same token or type
-            sets:
-                allergies: [force_rules] cannot be in the same set if this attribute is in any of the other tokens. 
-                affinities: [force_rules] this must be in the same set somewhere before the token can be added to the set
-        permissions:
-            user_groups:
-                usage: [] if empty then only the user's group can use this to create their types or add to tokens 
-                read: []  if empty anyone can read the attribute value
-                write: [] if empty the admin group can change the attribute value.
-            set_requirements: 
-                read: [] or {} attribute ids  : if this array, if one in a set can read, if object then all must be in set to read
-                write: [] attribute ids : if this array, if one in a set can write, if object then all must be in set to write
-        value:
-            value_type: one of: numeric, string, string specific type,json, markdown, binary, action, script,url, user_id, attribute id,token id,map_coordinates
-            min: (numeric only)
-            max: (numeric only)
-            regex: (string only can set enums here)
-            default:
-            allow_null: default true, but can only be false if the default is set
+          requirements:
+              tokens:
+                  required_siblings: [attribute ids] for sharing the same token type or token
+                  forbidden_siblings: [attribute ids] cannot be in the same token or type
+              sets:
+                  allergies: [force_rules] cannot be in the same set if this attribute is in any of the other tokens. 
+                  affinities: [force_rules] this must be in the same set somewhere before the token can be added to the set
+          permissions:
+              user_groups:
+                  usage: [] if empty then only the user's group can use this to create their types or add to tokens 
+                  read: []  if empty anyone can read the attribute value
+                  write: [] if empty the admin group can change the attribute value.
+              set_requirements: 
+                  read: [] or {} attribute ids  : if this array, if one in a set can read, if object then all must be in set to read
+                  write: [] attribute ids : if this array, if one in a set can write, if object then all must be in set to write
+          value:
+              value_type: (name of the type of data )
+              min: (numeric only)
+              max: (numeric only)
+              regex: (string only can set enums here)
+              default:
+              allow_null: default true, but can only be false if the default is set
+          options:
+              constant:
+              static: (can be static or constant)
+              final:
+              human:  
+
+## Value types
+
+Data can be marked as:
+
+* numeric
+* string
+  * regular strings
+  * json
+  * markdown
+  * html
+  * xml
+  * binary 
+
+* points to something 
+  * user_id
+  * attribute id
+  * token id
+  * script
+  * remote
+  * action
+  * attribute
+  * search
+  * bounds
+  * view
+  * mutual
+  * container
+
+
+* Coordinates
+  * map (lat lon)
+  * cartesian (x,y,z)
+
 
 ## attribute permissions
 Permissions can be given to user groups to read, write or create
@@ -115,11 +162,7 @@ read bounds is that the attribute is readable inside these bounds only. The toke
 
 write bounds is that the attribute is writable inside these bounds only. Same as said for reading
 
-location bounds is calculated using only the token map coordinates
-
-
-
-
+Each category of boundary use can only use of of each boundary type (location, time, path)
 
 
 

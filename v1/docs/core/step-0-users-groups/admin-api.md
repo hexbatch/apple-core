@@ -13,6 +13,7 @@ can only be used on localhost, or a list of ips defined in the .env ,  or via co
 | patch  | admin/system_groups/add_admin     | admin.system_groups.add_admin     | Adds an admin to a system group             | user id                         |       |
 | delete | admin/system_groups/remove_member | admin.system_groups.remove_member | removes a user from a system group          | user id                         |       |   
 | delete | admin/system_groups/remove_admin  | admin.system_groups.remove_admin  | removes an admin from a system group        | user id                         |       |
+| delete | admin/tokens/gc                   | admin.tokens.garbage_collection   | removes expired tokens                      | time to run or number tokens    |       |
 
 
 Standard system groups: membership

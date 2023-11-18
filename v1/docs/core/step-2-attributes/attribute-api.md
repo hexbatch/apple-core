@@ -37,6 +37,7 @@ An attribute can be deleted if only it's not used anywhere
         description: some text explaining why this attribute is used, etc, the author or other info
         is_retired: default false // if true then cannot be added to token types 
         bounds:
+            // each bounds can have max one type of bounds: location, time , path
             activity_bounds: []
             read_bounds: []
             write_bounds: []
@@ -57,12 +58,17 @@ An attribute can be deleted if only it's not used anywhere
                 read: [] or {} attribute ids  : if this array, if one in a set can read, if object then all must be in set to read
                 write: [] attribute ids : if this array, if one in a set can write, if object then all must be in set to write
         value:
-            value_type: one of: numeric, string, string specific type,json, markdown, binary, action, script,url, token id
+            value_type: (name of the type of data )
             min: (numeric only)
             max: (numeric only)
             regex: (string only can set enums here)
             default:
             allow_null: default true, but can only be false if the default is set
+        options:
+            constant:
+            static: (can be static or constant)
+            final:
+            human:
 
 
 
