@@ -3,6 +3,7 @@
 * Does maintenance on the tokens used by the outer layers
 * Reviews stuck jobs, and can terminate them
 * User operations: freeze, delete
+* Other layers can add in admin api here
 
 
 

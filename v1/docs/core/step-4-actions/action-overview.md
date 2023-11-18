@@ -56,7 +56,7 @@ Set operations (run on the token defining a set)
 
 
 Requirements have a token, events here can be done on it when it's used to filter
-* Allow token
+* allow_token
 
 --------------------------------
 

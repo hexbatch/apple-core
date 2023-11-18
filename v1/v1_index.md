@@ -25,6 +25,21 @@ The core api will have a full testing coverage and suit.
 
 See [core-development-overview.md](dev/core-development-overview.md)
 
+## List of expansions in the core
+
+There are some cool stuff that can be done at the core level, that is not universally needed by all operations
+
+| Expansion                        | Description                        | Link                                                              |
+|----------------------------------|------------------------------------|-------------------------------------------------------------------|
+| Overview                         | Intro how these are organized      | [aa-overview.md](docs/layers/c1-core-expansions/aa-overview.md)   |
+| Aggregations                     | Reduce values in sets              | [aggregations.md](docs/layers/c1-core-expansions/aggregations.md) |
+| Iterations                       | Organize successive api calls      | [iterations.md](docs/layers/c1-core-expansions/iterations.md)     |
+| Push Pop                         | Organize api calls done in batches | [push-pops.md](docs/layers/c1-core-expansions/push-pops.md)       |
+| Dynamic Filters and requirements | Expand the concept of filters      | [filters.md](docs/layers/c1-core-expansions/dynamic-filters.md)   |
+| Mutuals                          | Interlinked sets                   | [mutuals.md](docs/layers/c1-core-expansions/mutuals.md)           |
+| Interfaces                       | Higher order data flow             | [interfaces.md](docs/layers/c1-core-expansions/interfaces.md)     |
+
+
 # Layers
 The layers overview is talked about in [layers overview](docs/layers/layers-overview.md)
 
@@ -98,11 +113,11 @@ Each layer has its own iteration of writing the api and code.
 | Admin                         | Fixes broken stuff, sets up moderators, user management               | [admin](docs/layers/b-user-layers/admin-base.md)                                          |
 | Moderator                     | Moderate some assigned events, locations, changes                     | [moderators](docs/layers/d-organization-layers/moderators.md)                             |
 | Boards                        | Discussion chat rooms and reviews. Private individual and group chats | [boards](docs/layers/e-interaction-layers/boards.md)                                      |
-| Notes                         | Organize text,images, links, lists                                    | [notes](docs/layers/c-personal-layers/notes.md)                                           |
+| Notes                         | Organize text,images, links, lists                                    | [notes](docs/layers/c2-personal-layers/notes.md)                                           |
 | Items                         | Allow sharing and communities                                         | [items](docs/layers/e-interaction-layers/items.md)                                        |
 | Movement                      | Tokens move around connected sets                                     | [movement](docs/layers/e-interaction-layers/movement.md)                                  |
 | Public grants                 | Allow some users to do some low level operations                      | [public-grants](docs/layers/b-user-layers/public-grants.md)                               |
-| Format                        | Converts token sets to different things: html and markup ..           | [format](docs/layers/c-personal-layers/format.md)                                         |
+| Format                        | Converts token sets to different things: html and markup ..           | [format](docs/layers/c2-personal-layers/format.md)                                         |
 | Export and Verification       | How tokens are shared between servers                                 | [export import verification](docs/layers/j-internet-layers/export-import-verification.md) |
 | Agents                        | Agents are authorized to do things outside the server                 | [agents](docs/layers/b-user-layers/agents.md)                                             |
 | Jobs                          | Aid to the jobs in the queue, track job output and give notice        | [jobs](docs/layers/a-core-layers/jobs.md)                                                 |

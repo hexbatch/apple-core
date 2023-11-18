@@ -23,7 +23,8 @@ When attribute requirements are added, then any rules set up for compatibility a
         parts: [ {
             part_id: each part has a unique id
             type: token-type,
-            weight: optional
+            weight: optional,
+            required: (default false)
             minimum_needed: optional
             maximum_needed: optional
             attributes: [{
@@ -35,9 +36,11 @@ When attribute requirements are added, then any rules set up for compatibility a
             }]
         }]
 
-the optional weight of the requirement allows sorting of search results, as well as prioritizing which types are the best or more preferred
+options:
+* weight of the part allows sorting of search results, as well as prioritizing which types are the best or more preferred
+* some parts are optional, some are required. More than one can be required, or none at all
 
 ## Requirement events
 
 Because the requirement has an optional token, events here can be done on it when it's used to filter
-* Allow token
+* allow_token event

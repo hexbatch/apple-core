@@ -166,7 +166,7 @@ Jobs are used internally by the layers to execute stuff
 
 
 # Format
-[format](c-personal-layers/format.md)
+[format](c2-personal-layers/format.md)
   Will convert a token set to html , or markdown. Other formats can be added as plugins for that project
 
 
@@ -176,7 +176,7 @@ Conversations either in chat or forums or posts. Can be read only or other stuff
 
 
 # Notes
-[notes](c-personal-layers/notes.md)
+[notes](c2-personal-layers/notes.md)
 Organize text,images, links, lists
 
 

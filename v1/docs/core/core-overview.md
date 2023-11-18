@@ -49,6 +49,10 @@ users log in
 [execution.md](core-api-general/execution.md)
 Some things in api calls are done the same way
 
+# expansions
+[expansions.md](core-api-general/expansions.md)
+Can extend the core later
+
 # visualization while learning and testing
 [visualization-testing.md](core-api-general/visualization-testing.md)
 Be nice to the developers and testing!

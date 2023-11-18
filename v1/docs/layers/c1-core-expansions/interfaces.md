@@ -1,12 +1,12 @@
-What are interfaces?
+# What are interfaces?
 
 We can pick any token, and one or two attributes. The attributes do not have to be on the token, or related to the token, or in the same set as the token
-If we pick one attribute, it can be used for reading and writing, or just writing or just reading. 
+If we pick one attribute, it can be used for reading and writing, or just writing or just reading.
 If we use the second attribute it has to be used for the opposite (if first is reading, the second must write, and vice versa)
 
 The token and the two attributes do not have to be related or connected
 
-Now we have an identifier (the token) and a way to read something or a way to write something or a way to do both reading and writing. 
+Now we have an identifier (the token) and a way to read something or a way to write something or a way to do both reading and writing.
 The reading and writing and token do not have to be connected, associated or have anything to do with each other.
 
 We can also specify the bounds and path of each of the three things. So, sometimes there is not a way to read, write or identify.
@@ -35,7 +35,7 @@ The individual attributes and tokens can repeat, in different Identities, but ea
          name: using the naming rules
          identities: [identity]
          clusters: [clicking names]   
-    
+
 
 An interface is created when we apply an interface definition to a mutual set. If all the identities can be located in the mutual, then we have an interface connected tto this mutual.
 The interface has the pointers to the things it finds, and it, and the mutual are put into a set called the container. This set is an interface, and only other interfaces can enter it.
@@ -44,7 +44,7 @@ The interface remembers the last write value to each of its writes, and last wri
 
 When two or more interfaces are put into any one set, they can react to other interfaces if one or more read/write attributes, on different interfaces, match up.
 The reading attribute can send data to the writing attribute. The reading attribute can be a descendant of the writing attribute, or the same type.
-The reading cannot be a base type of the writing 
+The reading cannot be a base type of the writing
 (if I want to take in data for only an Algerian description, then I do not want a Japanese description. But if I am taking data for any description, then the Japanese will be fine)
 
 If I have set up a clicking of one interface, then if that interface is in the set, and the paths allow it, then I will only listen to that set, and not another interface that can write to me.
@@ -60,10 +60,10 @@ Clicked together interfaces can be very nested and complex, or simple.
 Clicked attributes are not readable or writable by anything except their pairings. Any attributes that are not clicked on an interface are called exposed.
 
 A token can have more than one write attributes in a mutual, they are all written to at the same time.
-A write attribute can have more than one unique data being sent to them at one time, if there are 
+A write attribute can have more than one unique data being sent to them at one time, if there are
 multiple read attributes in other interfaces that meshes with it.
 If a write attribute is a json type, then these values are put into key value pairs. If the write attribute is a number or string or identity then it will get a random read from 2 or more sources.
-When reading from multiple same read attributes, can use an iterator attribute 
+When reading from multiple same read attributes, can use an iterator attribute
 
 A write attribute can have a time bounds, or a time-out between writes, or can only write when there is a different value
 A read attribute cannot be read if it has a time bounds, and can also have a timeout
@@ -74,7 +74,7 @@ There are api operations to build up interfaces, and how they click
 --------------
 
 Can set a container to be read only.
-Can set a container to be read only after it's not, and flip it back and forth as needed. 
+Can set a container to be read only after it's not, and flip it back and forth as needed.
 
 Can set a container to be const. Cannot write.
 The last reads are saved, and that cache is used without asking the attributes for more recent info
@@ -107,7 +107,7 @@ Can have listening script or remote on a wrapper to do side jobs as conditions h
 once created, a container is just a token to be put into any set, or sets. The reads are activated in an interface when their read attributes, found in the mutual they are attached to,
 are written to in other api operations.
 
-The activated read interfaces drive the write interfaces 
+The activated read interfaces drive the write interfaces
 
 
 --------------------------
@@ -121,14 +121,14 @@ A container in a set is not affected by other tokens entering or leaving the set
 However, other tokens in the set can be affected by the presence or absence of that container set based on their listeners
 
 ----
-using any interface definition, and can select on a search path for groups using this. 
+using any interface definition, and can select on a search path for groups using this.
 If this interface definition finds any interfaces in the sets that their read attributes match all the given interface definition writes,
 then it will return the matched interfaces to a set or to be listed out
 
 can take an interface and do same as above, and any matched interface that can react to all the first interface's writes will write to it, one at a time
 This is a one way react, the targets are only read from.
 
-Can do boolean matching this way too, for more than one interface definitions. 
+Can do boolean matching this way too, for more than one interface definitions.
 Take a nested group operation for or and xor, with the logic connecting tests to be able to react one way, then will return this filtered list
 This filtered list can be put into a set, where they only one way react. Or can be listed out
 ---------------------------
@@ -155,7 +155,7 @@ Pipelines copy or transfer interfaces from one set to another. They are a set th
 
 * They are one way
 * They can have a filter using an interface type that must match the reads or the writes, or both, of other interfaces to let them in
-  * Can optionally use an interface expression to filter through
+    * Can optionally use an interface expression to filter through
 
 Pipeline joints allow more than one pipeline to be joined, inputs match outputs.
 Each pipeline at the joint can select to copy the action and also move the token in its pipeline, or make sure its the only pipeline to process the container

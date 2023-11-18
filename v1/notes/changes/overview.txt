@@ -1,5 +1,3 @@
-
-
 Core:
 
 
@@ -23,19 +21,11 @@ Core:
     Live tokens:
         * When live attributes are added to a token,  record the user that added them.
         * Attribute values has a microsecond time stamp of when last written to, or turned on
-
-
--------------------
-
-    Requirements:
-        Now done via sets see filters.txt
-
-
+        * Live attributes can be added to a type, and that is used only for the tokens created by that type
 -------------------
 
     Events:
         * Can send custom event, one that inherits from the custom even attribute, to any one token per api call to send event.
-
         * Can have a read event. Cycles prevented by new api mechanisms
 
         * Can have an event for applying or removing a live attribute, on the type level, for all tokens.
@@ -43,21 +33,19 @@ Core:
           * same can be for live added or removed in a set context (the live cannot be seen outside that set)
           * can have one event for all three also
 
-
-        * More events in interfaces
-
 -------------------
 
 
     Set:
         Set tokens are seen as normal tokens unless in a set which has them as a child or link or parent.
             * "any token can make a set and still be a regular token"
-        Sets that have a location set and a map bounds can only accept tokens that are in its bounds, or do not have a location set for them.
+
         Set parents are in the child as a token, just as the child is in the parent as a token
            Removing either breaks the parent child relationship
            Relationships for sets are still also defined by special defined attribute
+
         Can filter its content via one or more path boundaries
-        Sets can have an attribute to mark them as a view
+
 
 
 -------------------
@@ -67,39 +55,9 @@ Core:
         set operations can use the human filter
         set operations use the pre-filter to decide to do the set operation
         get common tokens from a group of sets, put them in a new set. Can do opposite too: remove common tokens from groups
-        Aggregation operations: Use group operations on selected attributes in a set to calculate one value which then is written to a target token attribute as a live attribute on the token.
-        Aggregation operations take a set of tokens, can do operations on it to reduce this to a single value. The operation can be filtered
-        Any api call can provide a token or attribute using an iterator from a set (current token), can filter attribute(s)  to use.
+        starting with a token or set of tokens, and a target set, find the mutual sets shared with these tokens.
+            can omit the token(s) and just provide a set, and will find all the mutual sets to it
 
-                set operations can have some logic now, optional set and filter to put in to decide to do the set operation in the api call.
-                There has to be at least one token in the set that gets matched by the filter. This is not the filter to do the operation with, but to decide to do it or not.
-        see new-set-operations for push and iterations
-
-
--------------------
-
-    Mutual sets:
-        Two or more sets that have one or more exact same tokens in their collections are connected together by these tokens, but not in a linked relationship
-        These can be many sets bound together in different patterns and geometries. Mutually bound sets can also be connected via parent child relationships and links.
-        Can select these relations into a set known as a view, which only contains mutually connected set systems (all the sets have to be directly or indirectly sharing the same tokens).
-
-
-
--------------------
-
-
-    Mutual operations:
-        Aggregation operations: can do aggregation operations on mutual sets. The operations can be written to a single attribute on a target token
-            Agg op to combine ordered tokens in a set to json array
-        Strong attribute operations
-        Superimposed operations.
-        Operations on mutual sets.
-        Selection on mutuals, this can be custom, see below.
-        Mutual set selection: different ways to select mutual sets into a view
-            When selecting, can put limits of how many mutual distance, and limit the mutual token types.
-        Able to make macros. Macros made from push and pop of other operations. Only mutual operations allowed because they do no events
-            Macros can be run by actions (not using script or remote, just set the macro id)
-        Can register custom macros in the core, not by users, but by plugin. For instance macros to select via topology and area charges on mutual entanglements.
 
 -------------------
 
@@ -108,9 +66,59 @@ Core:
         New Search operations and search modifiers.
         Searches can select on intersections of bounds (to select those that do or do not) for tokens inside the same set
 
--------------------
 
-    Interfaces: see interfaces.md
+        ---------
+
+        @mutual()
+
+        returns sets that share the same tokens in this path
+
+        can combine with @set() or other, when finding the @set, then will use that set token
+
+        @set and @mutual can have an upper or lower number for members or connected sets
+        @set(.what)[2,5] between 2 and 5 different tokens with attribute .what
+        can also do [2,] for lower bounds and [,5] for upper
+
+        will give paginated if too big
+
+        ------------
+
+        nested @ stuff
+        @mutual(@child(@user('will')))
+
+        ----------------
+
+        Ancestry modifiers
+
+        ~ means descended from but not including
+
+        = means exact token no descendants
+
+        =#cats.furry   -- matches cats token only
+        ~#cats.furry   -- only descendants of this token
+
+        use in attributes and tokens
+        ---------------------
+        multiple things
+        , comma separates  use in @set and @mutual and multiple inheritance
+
+        #catty@set(.long, =#tickle)  gets sets defined by catty or descenents which contain both tokens with long attribute and exact match for tickle
+
+        @mutual(.run, .go) gets interconnecting sets that share one or more tokens which have the attributes of .run and .go
+
+
+        (#runs, =#running).poking  gets a token that inherits from both runs (and descendants) and running exact
+
+        --------------------------------
+        @child(.who) selects any child that is a set that contains the .who attribute
+        @child(.who).what  above but the child token defining the set must have a who attribute
+        ------------------------
+
+        .bookmark @child(@mutual(.gosh) )#go  a token defining a set must be a child of another set that has a bookmark attribute,
+        and contain at least two set tokens who have a mutual token of attribute .goth
+
+        -----------------
+        @view is shorthand for @set(@mutual)
 
 
 
