@@ -86,3 +86,8 @@ Group lists can be used to change the users allowed.
 
 Some or all of the inherited parents can start in the off state, which means while their attributes override any ancestor or other type lesser in inheritance,
 those attributes will not be available for reading or writing until that parent is turned on
+
+# events on the type token
+
+Can have an event listeners for applying or removing a live attribute, on the type level, for all tokens.
+These events are same name as those live events on token. The token event can override

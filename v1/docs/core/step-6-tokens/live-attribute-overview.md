@@ -4,16 +4,26 @@ When a token launches, then the top most attribute of each inherited parent is p
 
 When an attribute is on a token, its live, and there is a record about the state of the attribute in the token
 
-
+* Can add attribute to type or token when attribute is both readable and writable and the token is writable and readable.
 * When live attributes are added to a token,  record the user that added them. (added_by) only dynamic live attributes have user recorded
 * Attribute values has a microsecond time stamp of when last written to (updated_at) and or turned on (toggled_at)
+* an attribute can be overwritten if the same type, or a child, is added. Siblings do not overwrite each other
+* an attribute added to the token can overwrite global attribute for that token only
+* a set context attribute will overwrite a per token attribute, or a type attribute
+* a child set attribute changes overwrites the parent
+* no limit to how many live attributes that overwrite the earlier one. They stack by when applied.
+* live attributes added after the type definition created can hold actions, remotes and scripts
+* live attributes added in a set context that have event listener actions can override more general ones
+* live attributes' actions added in a smaller context have higher priority than general action same event listener 
 
 
 
     Live attribute:
-        current token id:
-        static attribute id:
-        static source of attribute: token type id, or live if just stuck on
+        current token id: (null for global all tokens)
+        attribute id:
+        overwritten_by : when a new live token is added that overwrites, this is filled in by what is overwriting it
+        set: set id for set only changes
+        parent: set id if traveling through parent child relationships
         current_value: 
         activated: boolean - if not activated then this attribute does not count in the live, its skipped over
         toggled_at: timestamp 

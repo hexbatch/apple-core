@@ -1,34 +1,8 @@
 Core:
 
-
-    Types:
-            token types can have live attributes that apply to all the tokens (but not the type itself)
-                * changes for all tokens and can overwrite inherited on the tokens
-                * live attributes put on the tokens can overwrite an attribute already there, by design or later action.
-                * no limit to how many live attributes that overwrite the earlier one. They stack by when applied.
-            need discussion about attributes able to overwrite their parents. If I have A inherits from B, and C inherits from B
-                if a token has B, and I add a live of A, then that overwrites the B. However if I add C, then that does not overwrite B (B is not a child of A)
-            scripts and remotes should have their storage as live token level attributes,
-                but not sure how that works with the attribute value being a script and not the state for the script (remote too)
-
-            Can add attribute to type or live when attribute is both readable and writable. Do not have to own attribute (this causes some changes in sketched out ntoes)
-
-
--------------------
-
-    Live tokens:
-
-        * Live attributes can be added to a type, and that is used only for the tokens created by that type
--------------------
-
     Events:
         * Can send custom event, one that inherits from the custom even attribute, to any one token per api call to send event.
-        * Can have a read event. Cycles prevented by new api mechanisms
 
-        * Can have an event for applying or removing a live attribute, on the type level, for all tokens.
-          * same event can be on the per token
-          * same can be for live added or removed in a set context (the live cannot be seen outside that set)
-          * can have one event for all three also
 
 -------------------
 
