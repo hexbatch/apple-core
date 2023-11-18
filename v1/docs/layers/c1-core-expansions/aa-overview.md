@@ -7,7 +7,7 @@
 see [core expansions.md](../../core/core-api-general/expansions.md)
 
 
-Expansions are done here because not everything needs them, but some layers do
+Expansions are done here because not everything needs them, but some layers do. The expansions can be implemented when needed
 
 # Api
 

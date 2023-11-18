@@ -24,6 +24,8 @@ Types can use attributes owned by others, as long as the permissions work out in
             allow_changed_path_bounds: boolean
             allow_actions: boolean
             attribute_final_list: [or or more attribute ids that children or descendants cannot have]
+            final:
+            human:
         attributes: []
         parents: []  -- the order is important
         parents_starting_off: [] any of the above (optional)
@@ -34,6 +36,8 @@ Types can use attributes owned by others, as long as the permissions work out in
 Global states are kept here for remotes and scripts.
 
 ## Inheritance 
+
+Can add parent to type as long as at least one attribute is readable
 
 ### Multiple inheritance for attributes
 
@@ -57,6 +61,10 @@ So can any attributes, to make sure actions cannot be overridden.
 
 If any of the event attributes are on the final list, then any descendant cannot do that event.
 This includes creation or destruction
+
+A type can mark its tokens to be used in the human filter, to selectively hide tokens made from this type in api calls if the human filter is on
+
+A type can forbid being used to make other types
 
 
 ## Naming rules

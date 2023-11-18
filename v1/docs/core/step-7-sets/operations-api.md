@@ -7,15 +7,18 @@ For the write operations (attributes, change owner) this only works when the use
 
 
 
-| Method | Path                   | Route Name | Operation                                | Args                                                           |
-|--------|------------------------|------------|------------------------------------------|----------------------------------------------------------------|
-| Post   | operation/combine      |            | Combines two sets                        | see docs                                                       |
-| Post   | operation/difference   |            | Intersection of two sets                 | see docs                                                       |
-| Post   | operation/remove       |            | Removes tokens from a set                | see docs                                                       |
-| Post   | operation/copy         |            | Adds tokens found in A to B              | see docs                                                       |
-| Post   | operation/attributes   |            | Modifies all token attribute(s) in a set | see docs                                                       |
-| Post   | operation/change_owner |            | Changes all token owners in a set        | see docs                                                       |
-| Post   | operation/results      |            | Puts search results (per page) in a set  | see docs                                                       |
+| Method | Path                           | Route Name | Operation                                | Args     |
+|--------|--------------------------------|------------|------------------------------------------|----------|
+| Post   | operation/combine              |            | Combines two sets                        | see docs |
+| Post   | operation/difference           |            | Intersection of two sets                 | see docs |
+| Post   | operation/remove               |            | Removes tokens from a set                | see docs |
+| Post   | operation/copy                 |            | Adds tokens found in A to B              | see docs |
+| Post   | operation/attributes           |            | Modifies all token attribute(s) in a set | see docs |
+| Post   | operation/change_owner         |            | Changes all token owners in a set        | see docs |
+| Post   | operation/results              |            | Puts search results (per page) in a set  | see docs |
+| Post   | operation/find_common_tokens   |            | Find Common tokens                       | see docs |
+| Post   | operation/remove_common_tokens |            | Remove Common tokens                     | see docs |
+| Post   | operation/mutuals              |            | Find mutual sets                         | see docs |
 
 
 Sets are referenced by their token id
@@ -36,3 +39,6 @@ Requirements are referenced by their id (and not their token)
         change_owner => new owner id, A source,  G group, T pattern
         copy => A source, B source ,  G group, T pattern, D destination
         results => search ,   G group, T Pattern , D destination
+        find_common_tokens => A source, B source ,  T pattern,  G group, D destination 
+        remove_common_tokens => A source, B source ,  T pattern,  G group, D destination 
+        mutuals => A source, B source (optional),  T pattern,  G group,D destination

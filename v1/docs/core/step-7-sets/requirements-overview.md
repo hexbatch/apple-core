@@ -3,8 +3,8 @@
 Requirements are used in token set operations and to restrict the types, amounts, and attributes going into a set, or being part of a set operation
 A requirement can be used in token-set operations, where tokens are added or removed between sets
 
-Requirement has a token to denote who owns it. This token can also give it a name, appearance, and notes and bounds.
-the requirement token can be used anywhere else in the system at the same time, and one token can do many requirements
+Requirements are owned by a user. It can also have a token to explain more about it. This token can also give it a name, appearance, and notes and bounds.
+The requirement token can be used anywhere else in the system at the same time, and one token can do many requirements
 
 
 A type in the group can have a max and/or min amounts. If only a max or min is set, then that is the only rule used.
@@ -17,13 +17,21 @@ When an attribute is filtered, so are all its descendants.
 
 When attribute requirements are added, then any rules set up for compatibility are ignored
 
+Requirements can have a token:
+(only for top leve) Sets ownership,adds some description is needed for this requirement, or for identifying it with a set path, or putting bounds of when this can be used
+
+Requirements can have children, and be a tree
+
     So: a requirement:
         id
-        token: Sets ownership,adds some description is needed for this requirement, or for identifying it with a set path, or putting bounds of when this can be used
+        user_id:
+        token: (optional)
         parts: [ {
             part_id: each part has a unique id
             type: token-type,
             weight: optional,
+            parent_part_id: (optional)
+            children: [] (read only)
             required: (default false)
             minimum_needed: optional
             maximum_needed: optional
@@ -44,3 +52,7 @@ options:
 
 Because the requirement has an optional token, events here can be done on it when it's used to filter
 * allow_token event
+
+## Requirement trees
+
+Parts can be done in stages, from the bottom most leaves on up, each layer passes the allowed tokens to the parent node

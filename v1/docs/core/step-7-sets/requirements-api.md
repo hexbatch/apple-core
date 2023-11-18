@@ -13,6 +13,8 @@ If a user can write to the defining token, then the requirement can be altered.
 
 The id of the requirement is unique each time the token is used to define a requirement.
 
+trees are made by setting the parent part
+
 
 | Method | Path                           | Route Name | Operation               | Args                                                                            |
 |--------|--------------------------------|------------|-------------------------|---------------------------------------------------------------------------------|
@@ -25,11 +27,15 @@ The id of the requirement is unique each time the token is used to define a requ
 
 
         id
-        token:  sets ownership, adds description is needed for this requirement, or for identifying it with a set path, or putting bounds of when this can be used
+        user_id:
+        token: (optional)
         parts: [ {
             part_id: each part has a unique id
-            type: token-type
-            weight: optional
+            type: token-type,
+            weight: optional,
+            parent_part_id: (optional)
+            children: [] (read only)
+            required: (default false)
             minimum_needed: optional
             maximum_needed: optional
             attributes: [{

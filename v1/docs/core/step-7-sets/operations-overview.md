@@ -28,3 +28,18 @@ Set operations:
         change_owner => new owner id, A source, T pattern ,  G group
         copy => A source, B source ,  T pattern,  G group, D destination
         results => search ,  T Pattern ,  G group, D destination
+        find_common_tokens => A source, B source ,  T pattern,  G group, D destination 
+        remove_common_tokens => A source, B source ,  T pattern,  G group, D destination 
+        mutuals => A source, B source (optional),  T pattern,  G group,D destination
+
+Common tokens:
+    get common tokens from a group of sets, put them in a new set. Can do opposite too: remove common tokens from groups
+
+Mutuals:
+  starting with a token or set of tokens, and a target set, find the mutual sets shared with these tokens.
+    can omit the token(s) and just provide a set, and will find all the mutual sets to it
+
+
+## Common flags for operations
+
+* human set operations can use the human filter, which when used will filter out any token or attribute used in a filter that is marked as not human

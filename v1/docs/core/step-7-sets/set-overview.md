@@ -6,11 +6,20 @@ A token can belong to one or more sets at the same time. Tokens can be shared be
 A token set is owned by the owner of the token that defines it.
 But others' tokens can be added to the set, if possible.
 
-The defining token of a set can have its ownership transferred
+
+
+The defining token of a set can have its ownership transferred. This is also known as the set token.
+Set tokens are seen as normal tokens unless in a set which has them as a child or link or parent.
+Any token can make a set and still be a regular token.
+Set tokens can have action handlers for set events. An action handler processing the token-adding-to-set event can filter out tokens using any logic
 
 The token defining the set determines who can read (see the tokens in it) and write to the set (do set operations on it).
+This is by who can read and write to the token.
+
 The defining token can have a location, and bounds, given to it, like any normal token.
 This location can be used by set operations.
+
+
 
 Tokens about to be added, or it a set, have allergies and affinities. This can prevent the token from being added,
 or it can cause the token to move to a relative of the set soon after its added.

@@ -29,15 +29,16 @@ See [core-development-overview.md](dev/core-development-overview.md)
 
 There are some cool stuff that can be done at the core level, that is not universally needed by all operations
 
-| Expansion                        | Description                        | Link                                                              |
-|----------------------------------|------------------------------------|-------------------------------------------------------------------|
-| Overview                         | Intro how these are organized      | [aa-overview.md](docs/layers/c1-core-expansions/aa-overview.md)   |
-| Aggregations                     | Reduce values in sets              | [aggregations.md](docs/layers/c1-core-expansions/aggregations.md) |
-| Iterations                       | Organize successive api calls      | [iterations.md](docs/layers/c1-core-expansions/iterations.md)     |
-| Push Pop                         | Organize api calls done in batches | [push-pops.md](docs/layers/c1-core-expansions/push-pops.md)       |
-| Dynamic Filters and requirements | Expand the concept of filters      | [filters.md](docs/layers/c1-core-expansions/dynamic-filters.md)   |
-| Mutuals                          | Interlinked sets                   | [mutuals.md](docs/layers/c1-core-expansions/mutuals.md)           |
-| Interfaces                       | Higher order data flow             | [interfaces.md](docs/layers/c1-core-expansions/interfaces.md)     |
+| Expansion                        | Description                        | Link                                                                          |
+|----------------------------------|------------------------------------|-------------------------------------------------------------------------------|
+| Overview                         | Intro how these are organized      | [aa-overview.md](docs/layers/c1-core-expansions/aa-overview.md)               |
+| Aggregations                     | Reduce values in sets              | [aggregations.md](docs/layers/c1-core-expansions/aggregations.md)             |
+| Iterations                       | Organize successive api calls      | [iterations.md](docs/layers/c1-core-expansions/iterations.md)                 |
+| Push Pop                         | Organize api calls done in batches | [push-pops.md](docs/layers/c1-core-expansions/push-pops.md)                   |
+| Dynamic Filters and requirements | Expand the concept of filters      | [filters.md](docs/layers/c1-core-expansions/dynamic-filters.md)               |
+| Same set location searching      | Using shape relations              | [location-searching.md](docs/layers/c1-core-expansions/location-searching.md) |
+| Mutuals                          | Interlinked sets                   | [mutuals.md](docs/layers/c1-core-expansions/mutuals.md)                       |
+| Interfaces                       | Higher order data flow             | [interfaces.md](docs/layers/c1-core-expansions/interfaces.md)                 |
 
 
 # Layers
