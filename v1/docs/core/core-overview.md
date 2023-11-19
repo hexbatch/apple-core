@@ -96,6 +96,8 @@ There is a list of attributes that have standard names
 [actions](step-4-actions/action-overview.md)
 are attribute values that listen to events and allow things to happen, they can use scripts and remotes
 
+[events](step-4-actions/events.md) are listed here
+
 ---------------------------------------------------------
 
 # Token types

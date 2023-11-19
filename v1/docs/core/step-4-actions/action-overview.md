@@ -21,47 +21,15 @@ In that case, if any actions listening to the event is changing attribute values
 
 An action can only listen to one event.
 
-## Events
+-------------------------------
+## Events 
 
-Each event has a system attribute that must have a value of truthful for the event to be allowed.
-When something is going to happen, any action has the ability to decide to set the event attribute to false or 0,
-or event_success of false in a json value
-
-For any event, the attribute is the same, so all tokens have the same creation attribute to listen to.
-
-if an attribute or token is out of bounds, or comes back in bounds, there is no event. Either the thing exists or not.
-
-* token creation
-* owner-change
-* token-set mass attribute altering
-* destruction
-* value change
-* live attribute added to token
-* live attribute removed from token
-* parent in token turned on
-* parent in token turned off
-* token enters a set
-* token leaves a set
-
-
-Set operations (run on the token defining a set) 
-
-* Token was added to the set
-* Token was removed from the set
-* Child was added to the set
-* Parent was added to the set
-* Link was made from the set
-* Link was made to the set
-* each set operation has its own event, to allow to disallow the operation
-
-
-Requirements have a token, events here can be done on it when it's used to filter
-* allow_token
+see [events.md](events.md)
 
 --------------------------------
 
 
-Actions can be used to set rules for creation of a token:
+## Actions can be used to set rules for creation of a token:
 
 * To disallow creation, each token starts with a created attribute whose value must be truthful, if this value is false, then the token is not saved and creation fails.
 * Creation rate limiting is handled by the creation actions script_state
