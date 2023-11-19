@@ -1,4 +1,4 @@
-Agreements and consensus
+# Agreements and consensus
 
 This is a way for people or scripts to agree on something
 

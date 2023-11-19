@@ -92,11 +92,12 @@ Each layer has its own iteration of writing the api and code.
 |-------------------------------|-----------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
 | Instance                      | About the instance the api is running on                              | [instance](docs/layers/a-core-layers/instance.md)                                         |
 | Users                         | Manages existing users (non admin)                                    | [users](docs/layers/a-core-layers/users.md)                                               |
-| User Groups                   | Do stuff with user groups                                             | [users groups](docs/layers/a-core-layers/user-groups.md)                                               |
+| User Groups                   | Do stuff with user groups                                             | [users groups](docs/layers/a-core-layers/user-groups.md)                                  |
 | Sessions                      | Provides sessions to interact with the core                           | [sessions](docs/layers/a-core-layers/sessions.md)                                         |
 | Registrations                 | Does all the new user account creation                                | [registrations](docs/layers/a-core-layers/registrations.md)                               |
 | Authentication and Logging in | Handles users logging in and pw resets                                | [user_login](docs/layers/a-core-layers/user_login.md)                                     |
-| Networks                      | Tracks social accounts that are not users, and then later are         | [networks](docs/layers/g-network-layer/networks.md)                                       |
+| Networks                      | Networks are things online related to a user                          | [networks](docs/layers/e-interaction-layers/networks.md)                                  |
+| Network Pools                 | Pools used with networks                                              | [network pools](docs/layers/g-network-layer/network-pools.md)                             |
 | Network discovery             | Makes new network entry tokens. Scans social networks.                | [network-discovery](docs/layers/i-promotion-layers/network-discovery.md)                  |
 | Distributions                 | Gives new and existing tokens to users and people in networks         | [distributions](docs/layers/i-promotion-layers/distributions.md)                          |
 | Contracts                     | Terms of using someone's token in your own stuff. Auto payments       | [contracts](docs/layers/f-trading-layers/contracts.md)                                    |
@@ -114,11 +115,11 @@ Each layer has its own iteration of writing the api and code.
 | Admin                         | Fixes broken stuff, sets up moderators, user management               | [admin](docs/layers/b-user-layers/admin-base.md)                                          |
 | Moderator                     | Moderate some assigned events, locations, changes                     | [moderators](docs/layers/d-organization-layers/moderators.md)                             |
 | Boards                        | Discussion chat rooms and reviews. Private individual and group chats | [boards](docs/layers/e-interaction-layers/boards.md)                                      |
-| Notes                         | Organize text,images, links, lists                                    | [notes](docs/layers/c2-personal-layers/notes.md)                                           |
+| Notes                         | Organize text,images, links, lists                                    | [notes](docs/layers/c2-personal-layers/notes.md)                                          |
 | Items                         | Allow sharing and communities                                         | [items](docs/layers/e-interaction-layers/items.md)                                        |
 | Movement                      | Tokens move around connected sets                                     | [movement](docs/layers/e-interaction-layers/movement.md)                                  |
 | Public grants                 | Allow some users to do some low level operations                      | [public-grants](docs/layers/b-user-layers/public-grants.md)                               |
-| Format                        | Converts token sets to different things: html and markup ..           | [format](docs/layers/c2-personal-layers/format.md)                                         |
+| Format                        | Converts token sets to different things: html and markup ..           | [format](docs/layers/c2-personal-layers/format.md)                                        |
 | Export and Verification       | How tokens are shared between servers                                 | [export import verification](docs/layers/j-internet-layers/export-import-verification.md) |
 | Agents                        | Agents are authorized to do things outside the server                 | [agents](docs/layers/b-user-layers/agents.md)                                             |
 | Jobs                          | Aid to the jobs in the queue, track job output and give notice        | [jobs](docs/layers/a-core-layers/jobs.md)                                                 |
@@ -129,7 +130,7 @@ Each layer has its own iteration of writing the api and code.
 | Mutual Editor                 | View and edit mutual relations                                        | [mutual-editor](docs/layers/k-representation-layers/mutual-editor.md)                     |
 | Goals                         | Get resources for achievements                                        | [goals](docs/layers/m-eco-layers/goals.md)                                                |
 | Tech trees                    | Figure things out, and get rewards                                    | [tech-trees](docs/layers/m-eco-layers/tech-trees.md)                                      |
-| Rates                         | how api limits are enforced                                           | [rates](docs/layers/a-core-layers/rates.md)                                                |
+| Rates                         | how api limits are enforced                                           | [rates](docs/layers/a-core-layers/rates.md)                                               |
 | Conversions                   | Convert data to shapes and sets                                       | [conversions](docs/layers/m-eco-layers/conversions.md)                                    |
 | Eco                           | Plants and animals                                                    | [eco](docs/layers/m-eco-layers/eco.md)                                                    |
 

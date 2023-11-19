@@ -8,6 +8,11 @@ Watchers can be set to expire and be removed after a certain time
 
 Watchers can be turned on and off
 
+Watchers can send push notifications about changes on selected tokens, assuming the user ordering it can add a live attribute on to the watched tokens or types
+    They do this by being the remote talked to about changes
+
+Watchers can also send notifications about changes found on the instance
+
 ## Some usages
 
 For bidding in auctions, to make a new bid if outbid

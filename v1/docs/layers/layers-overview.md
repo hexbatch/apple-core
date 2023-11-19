@@ -6,6 +6,7 @@
 * Sessions
 * Registrations
 * Authentication and Logging in
+* Network Pools
 * Networks
 * Network discovery
 * Distributions
@@ -85,9 +86,11 @@ Does all the new user account creation
 
 
 # Networks
-[networks.md](g-network-layer/networks.md)
+[networks.md](e-interaction-layers/networks.md)
 Networks are things online related to a user: social networks, friends lists
 
+[network pools](g-network-layer/network-pools.md). 
+Pools can be used with networks.
 
 # Network discovery
 [network-discovery.md](i-promotion-layers/network-discovery.md)

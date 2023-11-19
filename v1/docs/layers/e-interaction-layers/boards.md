@@ -1,17 +1,25 @@
 # Boards
-Conversations either in chat or forums or posts. Can be read only or other stuff
 
-There can be both general discussion chat rooms, read only review area. Some chat rooms can have upvotes.
+Are a type of agent that allow a bridge between outside communication and chat systems,  and the tokens and sets on the instance.
 
-Board entries can have media as well as markdown, and have options to allow replies.
+For example, if someone messages a user on a jabber server, an agent listening to that on some server or software somewhere 
+ can talk to the instance here and create a token with that new message and put it into selected sets (inbox set etc.).
 
-Private individual chats and group chats.
+Likewise, if someone writes or creates a token, it can be made a message in a chat system or internet board.
 
-Boards can push messages out.
+Boards can also integrate multi-user group chats. Boards can be read only also, just delivering new notifications from the outside.
 
-There are apis for managing the different types of boards.
+Boards will use chat networks. This allows integrated conversations on popular chat and boards which also tie into the instance here.
 
-Board messages can be encrypted, by having a thing as its content, instead of a plain text attribute value.
+The boards layer is the api the agents use to do this. 
+
+Also, chat agents can be registered here, as well as listed.
+
+Some intended agents:
+* an email agent
+* a jabber agent
+* something to use on both ios and android
+* at least one internet board system somewhere
 
 
 ## Using chat and board libraries and display
