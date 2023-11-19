@@ -1,5 +1,44 @@
 # What are interfaces?
 
+# (changelist todo or ponder about)
+------------------------
+
+* containers do not need to be mutual sets, containers can hold the token to any group of sets, and they can be unrelated
+  * container can hold the tokens directly, or do the below
+  * there can be set tokens there, any set tokens directly added to the container will look at the tokens inside each set
+  * the set relations will work here. Adding a parent set will also have its children and descendants and links looked at too
+  * can optionally specify when adding each set to ignore some|all relations too
+
+* regular actions on sets can hold a container (set) of interfaces. The container will try to react to containers in other actions.
+  * If they click this can be a pipeline, how it attaches
+  * Additionally, should the containers click, they can emmit another event that is processed at the same api call, and anything can listen to this event,
+      * event is custom, but can be listened to while being on something else in the same set, on in the set. 
+      * This allows reacting interfaces to be able to change the set they are in
+        * for example, reacting interfaces can make two shapes be next to each other
+
+* An interface definition can include option to only allow reacting if all the reads to writes match up, and not just some
+* the identities can specify in the path that there are no descendants to match
+
+## Concept of binders
+
+Need a way to connect two or more perhaps incompatible interfaces together and get them to react, indirectly
+Binders provide a mechanism to construct larger and more complex things based on how two or more interfaces are coordinating
+They do this through custom actions fired on the binder's container's set token, which can keep state, alter other attributes which act as flags to non interface stuff
+
+* Concept of binders
+  * Binders have no tokens in their own container, but have two or more interface definitions, and a way to map from one definition to another.
+    * reads in A to writes in B, and vice versa . Not just one on one though. Can have mappings for each interface going to one, some or all of the other interfaces
+  * Binders have an off and on state for each interface, when its on, then the interface is open to react.
+    * once its reacting then it will stay reacting until the other interface from the other container  stops
+    * or can turn off its interface 
+  * Binders have custom events fired to the binder that starts or stops a reaction, to allow logic to be processed when the interfaces are turned on or off
+    * Each interface defined in the binder has a matching attribute on the container token whose truthful value turns on the interface and whose falsy value turns it off
+  * Binders can also be attachment points to pipes, but I am not sure how that works yet
+---------------------------------------------
+---------------------------------------------
+
+# description
+
 We can pick any token, and one or two attributes. The attributes do not have to be on the token, or related to the token, or in the same set as the token
 If we pick one attribute, it can be used for reading and writing, or just writing or just reading.
 If we use the second attribute it has to be used for the opposite (if first is reading, the second must write, and vice versa)

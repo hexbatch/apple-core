@@ -146,4 +146,8 @@ It can remember the counts, and this resets for each api operation
 # static params passed to script or remote
   The static_other_params will be passed to allow scripts and remotes to have context
 
+# action hooks
+
+to allow extensions to use different sorts of actions, there is a hook done before the action is triggered, and after the action is done
+
 

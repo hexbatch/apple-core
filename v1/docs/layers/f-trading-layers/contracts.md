@@ -1,5 +1,13 @@
 # Contracts
 
+# (changelist todo or ponder about)
+------------------------
+Now using transactions to power this
+Now using agreements too (because of transactions)
+
+---------------------------------------------
+---------------------------------------------
+
 Deals with the selling, terms, and use of token types
 
 Contracts is the ability to use a token type, owned by someone else, as a parent for new token types.

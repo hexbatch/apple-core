@@ -1,5 +1,13 @@
 # Marketplace
 
+# (changelist todo or ponder about)
+------------------------
+Now using transactions to power this
+Now using agreements too (because of transactions)
+
+---------------------------------------------
+---------------------------------------------
+
 Allow things to be bought and sold: (or traded)
 * Tokens can be traded in ownership. A transfer of token sets where ownership is swapped between the two parties.
 * Uncreated tokens, in a pool, can be sold, when sold the tokens are created

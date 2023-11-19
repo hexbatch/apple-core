@@ -1,4 +1,13 @@
 # Shapes
+# (changelist todo or ponder about)
+------------------------
+There have been updates about the core supporting some of these features
+
+Also, binders in the transactions should be addressed?
+
+---------------------------------------------
+---------------------------------------------
+
 
 A Set can be represented by a shape, with texture and color. The model is stored as json but can be converted and rendered by something else.
 All images are stored elsewhere, and the json has urls

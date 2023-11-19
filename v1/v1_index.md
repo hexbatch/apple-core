@@ -6,7 +6,8 @@ This is an api for a set of ideas.
 * There is a layer of services that defines some interaction and introduces concepts
 * The services are shown in a presentation and ui layer
 
-This set of documentation describes the first two layers. It does not try to make any web pages or gui, but some services will generate html.
+This set of documentation describes the first two levels of concepts: the core and the layers.
+It does not try to make any web pages or gui, but some services will generate html.
 
 The central idea is the core, this does all the heavy lifting for the common concepts.
 And then there are a set of layers, microservices, which use the core, to help expand the concepts

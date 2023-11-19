@@ -47,7 +47,10 @@ The group token has all the core identification and display attributes. When a g
 * favicon : binary (regular image types) 32px square
 * small_thumbnail: binary (regular image types) 128px square
 * medium_thumbnail: binary (regular image types) 256px square
-* current_location: lat,lng
+* current_location_map: lat,lng
+* current_location_cartesian: x,y,z
+* shape_cartesian -- the shape is centered at the current location
+* shape_map -- the shape is centered at the current location 
 
 ### Organization
 
