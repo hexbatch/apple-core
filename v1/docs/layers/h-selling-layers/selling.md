@@ -42,6 +42,10 @@ Issue tokens are put into the basket, these issues have a lifecycle
 There is api methods for handling issues and resolving them
 
 
+Sales can be agreed to be reversed before they are finalized, and reversed under a time or event condition.
+
+
+
 
 
 

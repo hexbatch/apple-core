@@ -1,3 +1,0 @@
-How to best tell when attributes, on a watched token, has changed, been created or deleted?
-
-Need way to do nested transaction chains that include remote transactions. Need to detail this process

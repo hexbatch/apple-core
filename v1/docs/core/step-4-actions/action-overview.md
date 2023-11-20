@@ -138,10 +138,15 @@ It can remember the counts, and this resets for each api operation
 
 # Actions changing values by script or remote
 
-  While an action can set a constant value , it can all a remote or script to do that. In this case, the remote and script 
+  While an action can set a constant value , it can call a remote or script to do that. In this case, the remote and script 
   will be passed the original value via the set value_param_name.
 
   If given priority, this becomes a filter for the same attribute and same event
+
+# Actions listening to value_change_filtered
+
+When there are multiple actions (more than one) listening on the same token, and listening to the same path, they can take that changed value, alter it and pass it to the next.
+
 
 # static params passed to script or remote
   The static_other_params will be passed to allow scripts and remotes to have context

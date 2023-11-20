@@ -18,6 +18,7 @@ if an attribute or token is out of bounds, or comes back in bounds, there is no 
 * token-set mass attribute altering
 * destruction
 * value change
+* value_change_filtered (allows the ordering of actions to filter the read value)
 * live attribute added to token
 * live attribute removed from token
 * parent in token turned on

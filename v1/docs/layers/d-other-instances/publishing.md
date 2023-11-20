@@ -23,9 +23,6 @@ At a min, the user and limited info about the type
 
 Anything with certain attributes will be watched, and when a change happens, it will be broadcast
 
------------------------------
--- Not sure how to best do this. How to best tell when attributes, on a watched token, has changed, been created or deleted?
--- is this a different layer?
--- add in mirroring layer and remote user layer to this d-organization-layers
-
------------------------------
+When something is made public, that is a decision by someone who can write to the token. 
+In that case there is are two value_change_filtered listeners for the token, that first filters anything to update via a javascript,
+then that is passed to the remote that talks to this api

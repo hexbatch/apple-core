@@ -38,5 +38,20 @@ This is done by setting up an action to listen to the event of being used as a s
 Agreements can be used to do actions for another user (such as an org or regular user) 
 But agreement layer by itself does not decide which actions or api calls allowed. To limit that or times used, use the deferred layer. 
 
+Agreements are marked as done when all parties mark their part of the agreement as done. In this way, agreements can be like milestones.
+Agreements can be chained, so that the next agreement is only active when the previous agreements are completed. There can be any number of previous agreements and they do not have to be
+related. Also. some of these agreements can already be done.
+
+however all agreements depended on are part of the agreement upfront before anyone signs, and the dependencies cannot be changed after the first signing.
+
+# Remote agreements
+
+Agreements on this instance can depend on agreements completed on another instance. Agreements can be public and published.
+If a wrapped agreement is used, then the mirroring has to update its condition to finished before any dependent agreements here are started.
+So, this is just like a local dependent agreement, just the signers here cannot update that status,
+but must do it on the other instance (either manual or part of a process done in their user there)
+
+Agreements do not have to be public or published, but if they are published then can be used as a basis for other agreements on other servers, and there is a record of that
+
 
 
