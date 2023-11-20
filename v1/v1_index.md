@@ -98,7 +98,7 @@ Each layer has its own iteration of writing the api and code.
 | Registrations                 | Does all the new user account creation                                | [registrations](docs/layers/a-core-layers/registrations.md)                               |
 | Authentication and Logging in | Handles users logging in and pw resets                                | [user_login](docs/layers/a-core-layers/user_login.md)                                     |
 | Networks                      | Networks are things online related to a user                          | [networks](docs/layers/e-interaction-layers/networks.md)                                  |
-| Network Pools                 | Pools used with networks                                              | [network pools](docs/layers/g-network-layer/network-pools.md)                             |
+| Network Pools                 | Pools used with networks                                              | [network pools](docs/layers/f-trading-layers/network-pools.md)                             |
 | Network discovery             | Makes new network entry tokens. Scans social networks.                | [network-discovery](docs/layers/i-promotion-layers/network-discovery.md)                  |
 | Distributions                 | Gives new and existing tokens to users and people in networks         | [distributions](docs/layers/i-promotion-layers/distributions.md)                          |
 | Contracts                     | Terms of using someone's token in your own stuff. Auto payments       | [contracts](docs/layers/f-trading-layers/contracts.md)                                    |
@@ -107,6 +107,7 @@ Each layer has its own iteration of writing the api and code.
 | Organizations                 | They are companies or people who do stores                            | [organizations](docs/layers/d-organization-layers/organizations.md)                       |
 | Agreements                    | Reach consensus to do group driven actions                            | [agreements](docs/layers/d-organization-layers/agreements.md)                             |
 | Transactions                  | Changes ownership of tokens after an agreement                        | [transactions.md](docs/layers/d-organization-layers/transactions.md)                      |
+| Auditing                      | Api for record keeping of new types and public transactions           | [Auditing](docs/layers/d-organization-layers/auditing.md)                     |
 | Deferred                      | Agreed things done by script or remote                                | [deferred.md](docs/layers/d-organization-layers/deferred.md)                              |
 | Stores                        | Stores sell inventory                                                 | [stores](docs/layers/h-selling-layers/stores.md)                                          |
 | Inventory                     | Items in a store for sale, need not be physical or even real          | [inventory](docs/layers/h-selling-layers/inventory.md)                                    |

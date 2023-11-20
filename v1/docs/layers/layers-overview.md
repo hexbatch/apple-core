@@ -10,6 +10,7 @@
 * Networks
 * Network discovery
 * Distributions
+* Auditing
 * Contracts
 * Marketplace
 * Pools
@@ -89,7 +90,7 @@ Does all the new user account creation
 [networks.md](e-interaction-layers/networks.md)
 Networks are things online related to a user: social networks, friends lists
 
-[network pools](g-network-layer/network-pools.md). 
+[network pools](f-trading-layers/network-pools.md). 
 Pools can be used with networks.
 
 # Network discovery
@@ -110,6 +111,18 @@ Deals with the selling, terms, and use of token types
 # Marketplace
 Ownerships of tokens is swapped as is, no refunds. Supports direct sales and auctions
 [marketplace](f-trading-layers/marketplace.md)
+
+
+# Transactions
+[transactions.md](d-organization-layers/transactions.md)
+The transaction layer changes ownership of tokens after an agreement between two or more people.
+Transactions can be in many parts and swap more than one owner. All have to succeed for the ownership to be changed for any
+
+# Auditing
+[Auditing](d-organization-layers/auditing.md)
+Api for record keeping of new types and public transactions
+
+
 
 
 # Pools
@@ -193,10 +206,6 @@ Allow sharing and communities
 Tokens can move, on their own, through set relationships by always going to the set that best fits them with their affinity. 
 This only happens if the affinity or allergies are set up for the token, and its registered
 
-# Transactions
-[transactions.md](d-organization-layers/transactions.md)
-The transaction layer changes ownership of tokens after an agreement between two or more people.
-Transactions can be in many parts and swap more than one owner. All have to succeed for the ownership to be changed for any
 
 # Public grants
 [public-grants.md](b-user-layers/public-grants.md)

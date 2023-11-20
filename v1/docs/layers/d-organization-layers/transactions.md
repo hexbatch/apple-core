@@ -30,13 +30,14 @@ The escrow status once the agreement starts the transaction.
 Due to allowing long pauses to complete a transaction, this is great for allowing multiserver transactions
 In the internet layer, a visiting user is wrapped in a local user, so can sign that way.
 
--- discovery
-
-Transactions can be marked as public, remembered and discoverable.
-The api lets these transaction be listed, and something else can do something , like put in a blockchain
-
--- depositing
+## depositing
 
 Each user getting ownership can designate a set the tokens are placed in , once the transaction completes
+
+# discovery
+
+Transactions can be marked as public, what that happens its pushed to the auditing api
+
+
 
 

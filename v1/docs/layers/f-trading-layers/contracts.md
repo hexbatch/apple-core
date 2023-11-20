@@ -4,7 +4,7 @@
 ------------------------
 Now using transactions to power this
 Now using agreements too (because of transactions)
-
+disentangle from the marketplace
 ---------------------------------------------
 ---------------------------------------------
 
