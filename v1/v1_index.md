@@ -32,14 +32,14 @@ There are some cool stuff that can be done at the core level, that is not univer
 
 | Expansion                        | Description                        | Link                                                                          |
 |----------------------------------|------------------------------------|-------------------------------------------------------------------------------|
-| Overview                         | Intro how these are organized      | [aa-overview.md](docs/layers/c1-core-expansions/aa-overview.md)               |
-| Aggregations                     | Reduce values in sets              | [aggregations.md](docs/layers/c1-core-expansions/aggregations.md)             |
-| Iterations                       | Organize successive api calls      | [iterations.md](docs/layers/c1-core-expansions/iterations.md)                 |
-| Push Pop                         | Organize api calls done in batches | [push-pops.md](docs/layers/c1-core-expansions/push-pops.md)                   |
-| Dynamic Filters and requirements | Expand the concept of filters      | [filters.md](docs/layers/c1-core-expansions/dynamic-filters.md)               |
-| Same set location searching      | Using shape relations              | [location-searching.md](docs/layers/c1-core-expansions/location-searching.md) |
-| Mutuals                          | Interlinked sets                   | [mutuals.md](docs/layers/c1-core-expansions/mutuals.md)                       |
-| Interfaces                       | Higher order data flow             | [interfaces.md](docs/layers/c1-core-expansions/interfaces.md)                 |
+| Overview                         | Intro how these are organized      | [aa-overview.md](docs/layers/y-core-expansions/aa-overview.md)               |
+| Aggregations                     | Reduce values in sets              | [aggregations.md](docs/layers/y-core-expansions/aggregations.md)             |
+| Iterations                       | Organize successive api calls      | [iterations.md](docs/layers/y-core-expansions/iterations.md)                 |
+| Push Pop                         | Organize api calls done in batches | [push-pops.md](docs/layers/y-core-expansions/push-pops.md)                   |
+| Dynamic Filters and requirements | Expand the concept of filters      | [filters.md](docs/layers/y-core-expansions/dynamic-filters.md)               |
+| Same set location searching      | Using shape relations              | [location-searching.md](docs/layers/y-core-expansions/location-searching.md) |
+| Mutuals                          | Interlinked sets                   | [mutuals.md](docs/layers/y-core-expansions/mutuals.md)                       |
+| Interfaces                       | Higher order data flow             | [interfaces.md](docs/layers/y-core-expansions/interfaces.md)                 |
 
 
 # Layers
@@ -97,32 +97,33 @@ Each layer has its own iteration of writing the api and code.
 | Sessions                      | Provides sessions to interact with the core                           | [sessions](docs/layers/a-core-layers/sessions.md)                                         |
 | Registrations                 | Does all the new user account creation                                | [registrations](docs/layers/a-core-layers/registrations.md)                               |
 | Authentication and Logging in | Handles users logging in and pw resets                                | [user_login](docs/layers/a-core-layers/user_login.md)                                     |
-| Networks                      | Networks are things online related to a user                          | [networks](docs/layers/e-interaction-layers/networks.md)                                  |
-| Network Pools                 | Pools used with networks                                              | [network pools](docs/layers/f-trading-layers/network-pools.md)                             |
+| Publishing                    | Api for broadcasting new types and changes in tokens                  | [publishing](docs/layers/d-other-instances/publishing.md)                                |
+| Mirroring                     | Updates followed tokens and types that are not based here             | [mirroring](docs/layers/d-other-instances/mirroring.md)                                  |
+| External Users                | Coordinates users from other instances here                           | [external-users](docs/layers/d-other-instances/external-user.md)                         |
+| Networks                      | Networks are things online related to a user                          | [networks](docs/layers/f-interaction-layers/networks.md)                                  |
+| Network Pools                 | Pools used with networks                                              | [network pools](docs/layers/g-trading-layers/network-pools.md)                            |
 | Network discovery             | Makes new network entry tokens. Scans social networks.                | [network-discovery](docs/layers/i-promotion-layers/network-discovery.md)                  |
 | Distributions                 | Gives new and existing tokens to users and people in networks         | [distributions](docs/layers/i-promotion-layers/distributions.md)                          |
-| Contracts                     | Terms of using someone's token in your own stuff. Auto payments       | [contracts](docs/layers/f-trading-layers/contracts.md)                                    |
-| Marketplace                   | Ownerships of token sets can be bought and sold                       | [marketplace](docs/layers/f-trading-layers/marketplace.md)                                |
-| Pools                         | Pools are a resource that generates future tokens                     | [pools](docs/layers/d-organization-layers/pools.md)                                       |
-| Organizations                 | They are companies or people who do stores                            | [organizations](docs/layers/d-organization-layers/organizations.md)                       |
-| Agreements                    | Reach consensus to do group driven actions                            | [agreements](docs/layers/d-organization-layers/agreements.md)                             |
-| Transactions                  | Changes ownership of tokens after an agreement                        | [transactions.md](docs/layers/d-organization-layers/transactions.md)                      |
-| Auditing                      | Api for record keeping of new types and public transactions           | [Auditing](docs/layers/d-organization-layers/auditing.md)                     |
-| Deferred                      | Agreed things done by script or remote                                | [deferred.md](docs/layers/d-organization-layers/deferred.md)                              |
+| Contracts                     | Terms of using someone's token in your own stuff. Auto payments       | [contracts](docs/layers/g-trading-layers/contracts.md)                                    |
+| Marketplace                   | Ownerships of token sets can be bought and sold                       | [marketplace](docs/layers/g-trading-layers/marketplace.md)                                |
+| Pools                         | Pools are a resource that generates future tokens                     | [pools](docs/layers/e-organization-layers/pools.md)                                       |
+| Organizations                 | They are companies or people who do stores                            | [organizations](docs/layers/e-organization-layers/organizations.md)                       |
+| Agreements                    | Reach consensus to do group driven actions                            | [agreements](docs/layers/e-organization-layers/agreements.md)                             |
+| Transactions                  | Changes ownership of tokens after an agreement                        | [transactions.md](docs/layers/e-organization-layers/transactions.md)                      |
+| Auditing                      | Api for record keeping/verification of transactions                   | [Auditing](docs/layers/e-organization-layers/auditing.md)                                 |
+| Deferred                      | Agreed things done by script or remote                                | [deferred.md](docs/layers/e-organization-layers/deferred.md)                              |
 | Stores                        | Stores sell inventory                                                 | [stores](docs/layers/h-selling-layers/stores.md)                                          |
 | Inventory                     | Items in a store for sale, need not be physical or even real          | [inventory](docs/layers/h-selling-layers/inventory.md)                                    |
 | Promotions                    | Sets up advertising, monitors impressions                             | [promotions](docs/layers/i-promotion-layers/promotions.md)                                |
 | Selling                       | Sets up a sales flow that tracks different events in a sale           | [selling](docs/layers/h-selling-layers/selling.md)                                        |
-| Watchers                      | Trigger events when some condition is reached with tokens and sets    | [Watchers](docs/layers/b-user-layers/watcher.md)                                          |
 | Admin                         | Fixes broken stuff, sets up moderators, user management               | [admin](docs/layers/b-user-layers/admin-base.md)                                          |
-| Moderator                     | Moderate some assigned events, locations, changes                     | [moderators](docs/layers/d-organization-layers/moderators.md)                             |
-| Boards                        | Discussion chat rooms and reviews. Private individual and group chats | [boards](docs/layers/e-interaction-layers/boards.md)                                      |
-| Notes                         | Organize text,images, links, lists                                    | [notes](docs/layers/c2-personal-layers/notes.md)                                          |
-| Items                         | Allow sharing and communities                                         | [items](docs/layers/e-interaction-layers/items.md)                                        |
-| Movement                      | Tokens move around connected sets                                     | [movement](docs/layers/e-interaction-layers/movement.md)                                  |
+| Moderator                     | Moderate some assigned events, locations, changes                     | [moderators](docs/layers/e-organization-layers/moderators.md)                             |
+| Boards                        | Discussion chat rooms and reviews. Private individual and group chats | [boards](docs/layers/f-interaction-layers/boards.md)                                      |
+| Notes                         | Organize text,images, links, lists                                    | [notes](docs/layers/c-personal-layers/notes.md)                                          |
+| Items                         | Allow sharing and communities                                         | [items](docs/layers/f-interaction-layers/items.md)                                        |
+| Movement                      | Tokens move around connected sets                                     | [movement](docs/layers/f-interaction-layers/movement.md)                                  |
 | Public grants                 | Allow some users to do some low level operations                      | [public-grants](docs/layers/b-user-layers/public-grants.md)                               |
-| Format                        | Converts token sets to different things: html and markup ..           | [format](docs/layers/c2-personal-layers/format.md)                                        |
-| Export and Verification       | How tokens are shared between servers                                 | [export import verification](docs/layers/j-internet-layers/export-import-verification.md) |
+| Format                        | Converts token sets to different things: html and markup ..           | [format](docs/layers/c-personal-layers/format.md)                                        |
 | Agents                        | Agents are authorized to do things outside the server                 | [agents](docs/layers/b-user-layers/agents.md)                                             |
 | Jobs                          | Aid to the jobs in the queue, track job output and give notice        | [jobs](docs/layers/a-core-layers/jobs.md)                                                 |
 | User Proxy                    | Internal api to allow one user to do things as another user           | [user-proxy.md](docs/layers/b-user-layers/user-proxy.md)                                  |

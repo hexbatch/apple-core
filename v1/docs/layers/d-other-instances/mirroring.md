@@ -1,6 +1,6 @@
 # Mirroring
 
-Related to the auditing, provides some apis to allow outside programs to tell it when something changes on another instance
+Related to the auditing, provides some apis to allow outside programs to tell this instance when something changes on another instance
 
 When it gets info, it will see if this is for 
 anything with a wrapper type parent.

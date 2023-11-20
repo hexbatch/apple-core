@@ -69,6 +69,7 @@ When a lot is set for an auction, the seller cannot choose a winner until a cert
 Auctions can be closed or open. If closed, the different bidders cannot see the other bids. If open, then anyone can see the bids.
 
 * The marketplace offers some apis to do bids
+* There are remotes on the auction tokens that will start telling when someone is outbid, or other marketplace events 
 
 ## Award an offer
 

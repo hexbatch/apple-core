@@ -6,6 +6,9 @@
 * Sessions
 * Registrations
 * Authentication and Logging in
+* Publishing
+* Mirroring
+* External Users
 * Network Pools
 * Networks
 * Network discovery
@@ -23,7 +26,6 @@
 * Inventory
 * Promotions
 * Selling
-* Watchers
 * Admin
 * Moderator
 * Boards
@@ -32,7 +34,6 @@
 * Movement
 * Public grants
 * Format
-* Export and Verification
 * Agents
 * Jobs
 * Shapes
@@ -86,11 +87,24 @@ manages sessions
 Does all the new user account creation
 
 
+# Publishing
+[publishing](d-other-instances/publishing.md)
+Api for broadcasting new types and changes in tokens
+
+# Mirroring
+[mirroring.md](d-other-instances/mirroring.md)
+Updates followed tokens and types that are not based here
+
+# External Users
+[external-user.md](d-other-instances/external-user.md)
+Coordinates users from other instances here
+
+
 # Networks
-[networks.md](e-interaction-layers/networks.md)
+[networks.md](f-interaction-layers/networks.md)
 Networks are things online related to a user: social networks, friends lists
 
-[network pools](f-trading-layers/network-pools.md). 
+[network pools](g-trading-layers/network-pools.md). 
 Pools can be used with networks.
 
 # Network discovery
@@ -104,42 +118,44 @@ Organizes new tokens and token pools,  given to users and and network entities
 
 
 # Contracts
-[contracts.md](f-trading-layers/contracts.md)
+[contracts.md](g-trading-layers/contracts.md)
 Deals with the selling, terms, and use of token types
 
 
 # Marketplace
 Ownerships of tokens is swapped as is, no refunds. Supports direct sales and auctions
-[marketplace](f-trading-layers/marketplace.md)
+[marketplace](g-trading-layers/marketplace.md)
 
 
 # Transactions
-[transactions.md](d-organization-layers/transactions.md)
+[transactions.md](e-organization-layers/transactions.md)
 The transaction layer changes ownership of tokens after an agreement between two or more people.
 Transactions can be in many parts and swap more than one owner. All have to succeed for the ownership to be changed for any
 
 # Auditing
-[Auditing](d-organization-layers/auditing.md)
-Api for record keeping of new types and public transactions
+[auditing](e-organization-layers/auditing.md)
+Api for record keeping/verification of transactions
+
+
 
 
 
 
 # Pools
-[pools.md](d-organization-layers/pools.md)
+[pools.md](e-organization-layers/pools.md)
 Pools are a resource that generates future tokens. Each batch made has a different owner.
 
 
 # Agreements
-[agreements.md](d-organization-layers/agreements.md)
+[agreements.md](e-organization-layers/agreements.md)
 Are how to reach consensus and do group driven actions
 
 # Deferred
-[deferred.md](d-organization-layers/deferred.md)
+[deferred.md](e-organization-layers/deferred.md)
 Agreed things done by script or remote
 
 # Organizations
-[organizations.md](d-organization-layers/organizations.md)
+[organizations.md](e-organization-layers/organizations.md)
 Organizations are groups of users that share a wallet and use agreements by voting based on how much the org they own
 
 
@@ -162,17 +178,13 @@ Advertisement agreements for promotion of sales inventory
 [selling](h-selling-layers/selling.md)
 Sets up a sales flow that tracks different sales events from customer wanting to buy, to buying, to delivery, to issues, to feedback
 
-# Watchers
-[Watchers](b-user-layers/watcher.md) trigger events when some condition is reached with tokens and sets
-
-
 # Admin
 [admin.md](b-user-layers/admin-base.md)
 Admins will do stuff, logged in as other users
 
 
 # Moderator
-[moderators.md](d-organization-layers/moderators.md)
+[moderators.md](e-organization-layers/moderators.md)
 Moderators have permissions to change and remove selected attributes from a set of token types.
 
 
@@ -182,27 +194,27 @@ Jobs are used internally by the layers to execute stuff
 
 
 # Format
-[format](c2-personal-layers/format.md)
+[format](c-personal-layers/format.md)
   Will convert a token set to html , or markdown. Other formats can be added as plugins for that project
 
 
 # Boards
-[boards.md](e-interaction-layers/boards.md)
+[boards.md](f-interaction-layers/boards.md)
 Conversations either in chat or forums or posts. Can be read only or other stuff
 
 
 # Notes
-[notes](c2-personal-layers/notes.md)
+[notes](c-personal-layers/notes.md)
 Organize text,images, links, lists
 
 
 # Items
-[Items](e-interaction-layers/items.md)
+[Items](f-interaction-layers/items.md)
 Allow sharing and communities
 
 
 # Movement
-[movement.md](e-interaction-layers/movement.md)
+[movement.md](f-interaction-layers/movement.md)
 Tokens can move, on their own, through set relationships by always going to the set that best fits them with their affinity. 
 This only happens if the affinity or allergies are set up for the token, and its registered
 
@@ -212,9 +224,6 @@ This only happens if the affinity or allergies are set up for the token, and its
 Allow some users to do some low level operations
 
 
-# Export, Import and Verification
-[export-import-verification.md](j-internet-layers/export-import-verification.md)
-How tokens across different servers and installs can work together
 
 
 # Agents
