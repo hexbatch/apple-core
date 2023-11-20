@@ -24,3 +24,16 @@ At a minimum the guids of each user and the tokens (and their types), and amount
 ### Types
 
 At a min, the user and limited info about the type
+
+## what is sent out?
+
+Besides transactions and owner changes
+
+Anything with certain attributes will be watched, and when a change happens, it will be broadcast
+
+-----------------------------
+-- Not sure how to best do this. How to best tell when attributes, on a watched token, has changed, been created or deleted?
+-- is this a different layer?
+-- add in mirroring layer and remote user layer to this d-organization-layers
+
+-----------------------------

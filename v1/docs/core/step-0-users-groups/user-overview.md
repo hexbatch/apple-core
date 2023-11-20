@@ -3,6 +3,7 @@
 User is both a person (or bot) in this library, and a token type. Any tokens a user creates will inherit from this token type.
 
 A user, when created, has some default attributes, some of which can only be read by the user.
+The user token inherits from a user type, but other types can be added here to mixin with that user type also.
 
 When a user is created, a user group for it is also created. Any other user added to the group can read the private data.
 Any other user promoted to admin in the user group can write to the user attributes.

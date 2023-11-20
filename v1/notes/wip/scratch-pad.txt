@@ -1,4 +1,3 @@
-when a token is propagated to another instance, then this is much like a token going into a set.
+How to best tell when attributes, on a watched token, has changed, been created or deleted?
 
-The type state is copied over though, and any changes are not copied back to the original instance.
-The only thing that allows connection is remotes calling to the instance
+Need way to do nested transaction chains that include remote transactions. Need to detail this process
