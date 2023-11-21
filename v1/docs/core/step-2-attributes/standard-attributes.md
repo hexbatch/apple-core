@@ -55,10 +55,8 @@ The group token has all the core identification and display attributes. When a g
 * transparency - number to use when the shape is being rendered by software for color transparency
 * texture - binary (if renderer wants texture for a shape)
 * model - binary (to store rendering models)
-* audio - base attribute type for sound file urls
-* audio-starts-at number seconds offset
-* video - base attribute type for video urls
-* video-starts-at number seconds offset
+* audio - base attribute type for sound file urls - json has url , start at offset, loop, total play time
+* video - base attribute type for video urls - json has url , start at offset,  total play time
 * (for sets when token enters) default position inside set. When a token enters, if it does not have its positioning attribute set, then assigned this
 
 ### Organization

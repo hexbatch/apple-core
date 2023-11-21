@@ -24,4 +24,4 @@ Give info about the expansions used
 * [iterations.md](iterations.md)
 * [location.md](location.md)
 * [mutuals.md](mutuals.md)
-* [push-pops.md](push-pops.md)[aggregations.md](aggregations.md)
+* [push-pops.md](push-pops.md)

@@ -71,6 +71,8 @@ Pipelines can be matched to turn on and off parts of the shape definition. When 
 
 This allows complex associations to be marked by simpler shapes and colors.
 
+Also, if you need animation, or certain frames per time, have process call on a timer, and let user make a lot of api calls. This is probably best done in local install.
+
 
 
 
