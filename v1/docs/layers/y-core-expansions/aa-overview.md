@@ -14,3 +14,14 @@ Expansions are done here because not everything needs them, but some layers do. 
 ## add expansion
     core_expansions.list
 Give info about the expansions used
+
+
+# Current expansion list
+
+* [aggregations.md](aggregations.md)
+* [dynamic-filters.md](dynamic-filters.md)
+* [interfaces.md](interfaces.md)
+* [iterations.md](iterations.md)
+* [location.md](location.md)
+* [mutuals.md](mutuals.md)
+* [push-pops.md](push-pops.md)[aggregations.md](aggregations.md)

@@ -37,7 +37,7 @@ There are some cool stuff that can be done at the core level, that is not univer
 | Iterations                       | Organize successive api calls      | [iterations.md](docs/layers/y-core-expansions/iterations.md)                 |
 | Push Pop                         | Organize api calls done in batches | [push-pops.md](docs/layers/y-core-expansions/push-pops.md)                   |
 | Dynamic Filters and requirements | Expand the concept of filters      | [filters.md](docs/layers/y-core-expansions/dynamic-filters.md)               |
-| Same set location searching      | Using shape relations              | [location-searching.md](docs/layers/y-core-expansions/location-searching.md) |
+| Same set location searching      | Using shape relations              | [location-searching.md](docs/layers/y-core-expansions/location.md) |
 | Mutuals                          | Interlinked sets                   | [mutuals.md](docs/layers/y-core-expansions/mutuals.md)                       |
 | Interfaces                       | Higher order data flow             | [interfaces.md](docs/layers/y-core-expansions/interfaces.md)                 |
 
@@ -127,15 +127,10 @@ Each layer has its own iteration of writing the api and code.
 | Agents                        | Agents are authorized to do things outside the server                 | [agents](docs/layers/b-user-layers/agents.md)                            |
 | Jobs                          | Aid to the jobs in the queue, track job output and give notice        | [jobs](docs/layers/a-core-layers/jobs.md)                                |
 | User Proxy                    | Internal api to allow one user to do things as another user           | [user-proxy.md](docs/layers/b-user-layers/user-proxy.md)                 |
-| Shapes                        | Sets can have 3d shapes, intersect each other and move                | [shapes](docs/layers/k-representation-layers/shapes.md)                  |
-| Audio                         | Sets can make sounds                                                  | [audio](docs/layers/k-representation-layers/audio.md)                    |
-| Avatars                       | Sets can be animated by outside programs                              | [set-avatar](docs/layers/k-representation-layers/set-avatar.md)          |
-| Mutual Editor                 | View and edit mutual relations                                        | [mutual-editor](docs/layers/k-representation-layers/mutual-editor.md)    |
 | Goals                         | Get resources for achievements                                        | [goals](docs/layers/m-eco-layers/goals.md)                               |
 | Tech trees                    | Figure things out, and get rewards                                    | [tech-trees](docs/layers/m-eco-layers/tech-trees.md)                     |
 | Rates                         | how api limits are enforced                                           | [rates](docs/layers/a-core-layers/rates.md)                              |
 | Conversions                   | Convert data to shapes and sets                                       | [conversions](docs/layers/m-eco-layers/conversions.md)                   |
-| Eco                           | Plants and animals                                                    | [eco](docs/layers/m-eco-layers/eco.md)                                   |
 
 # Concepts
 

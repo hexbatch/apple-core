@@ -39,9 +39,10 @@ The group token has all the core identification and display attributes. When a g
 * location: map_coordinates
 * user_timezone: the timezone that can be default, if null then use system time zone
 * description: markdown
-* image: binary
+* image: binary - base attribute
 * symbol: binary (small image svg)
 * primary_color: color
+* secondary_color: color
 * background_color: color
 * svg_symbol_image  : binary (small image svg)
 * favicon : binary (regular image types) 32px square
@@ -51,6 +52,14 @@ The group token has all the core identification and display attributes. When a g
 * current_location_cartesian: x,y,z
 * shape_cartesian -- the shape is centered at the current location
 * shape_map -- the shape is centered at the current location 
+* transparency - number to use when the shape is being rendered by software for color transparency
+* texture - binary (if renderer wants texture for a shape)
+* model - binary (to store rendering models)
+* audio - base attribute type for sound file urls
+* audio-starts-at number seconds offset
+* video - base attribute type for video urls
+* video-starts-at number seconds offset
+* (for sets when token enters) default position inside set. When a token enters, if it does not have its positioning attribute set, then assigned this
 
 ### Organization
 

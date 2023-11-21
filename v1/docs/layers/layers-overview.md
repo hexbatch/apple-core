@@ -36,15 +36,10 @@
 * Format
 * Agents
 * Jobs
-* Shapes
-* Audio
-* Avatars
-* Mutual Editor
 * Goals
 * Tech Trees
 * Rates
 * Conversions
-* Eco
 
 
 
@@ -241,24 +236,6 @@ which either returns the output to the user, if the http call is waiting, or cal
 Internal api to allow one user to do things as another user
 
 
-## Shapes
-[shapes](k-representation-layers/shapes.md)
-Sets can have 3d shapes and be in an area they intersect each other and move
-
-## Audio
-[audio](k-representation-layers/audio.md)
-Sets can make sounds
-
-
-## Avatars
-[set-avatar](k-representation-layers/set-avatar.md)
-Sets can be animated by outside programs
-
-
-## Mutual Editor
-[mutual-editor](k-representation-layers/mutual-editor.md)
-View and edit mutual relations
-
 
 ## Goals
 [goals](m-eco-layers/goals.md)
@@ -278,8 +255,4 @@ How api rate limits are granted
 ## Conversions
 [conversions](m-eco-layers/conversions.md)
 Convert data to shapes and sets
-
-## Eco
-[eco](m-eco-layers/eco.md)
-Plants and animals 
 

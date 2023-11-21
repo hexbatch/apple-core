@@ -104,6 +104,10 @@ each search part is:
 
 the id here is the guid generated, not the proper token name
 
+### Search objects extendable
+
+Extensions can add in new fields in the overall and part of the search
+
 
 # Other search operations
 
