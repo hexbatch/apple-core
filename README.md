@@ -1,14 +1,26 @@
-# Api docs for Gokabam Apple Core
+# Hexbatch plans
 
-Here are current working plans for a new system which helps share information, 
-and facilitate interactions, across different platforms and servers.
+This is the future home of the api documents for the hexbatch open source project.
 
-This is a work in progress. Many concepts in here have been used in previous versions.
+This is a baby project. Many things are still growing as ideas. It is not meant for people to easily read through right now.
+
+Eventually, this repo will include an open api spec with readable,detailed explanations and docs.
+At this stage, is just a growing set of requirements.
+
+
+## What is this?
+
+Here, data and interactions are represented as elements in sets.
+
+It's hoped to create new types of connections between online users, their transactions and interactions.
+
+One goal here is to share information, and facilitate services and access, across different platforms and servers.
+It can be seen as a glue connecting disparate systems.
+
+This is my own approach on how I want to do logic in systems. So this is more than web apps.
+
+Many concepts in here have been used in previous versions.
 This version is named apple core: because it's been eaten at for a while, but has a lot of great seeds that can turn into valuable orchards later.
-
-There will be no code here: only discussions, documentation and api call definitions.
-This includes high level overviews and docs. The implementation of the code will be in other repos.
-After the coding starts, those will be added here, along with links for testing and tutorials.
 
 
 
@@ -24,9 +36,6 @@ Timeline is:
 * coding the core
 * coding the services
 
-This is currently looking like a multi-year project.
-Now, this is a baby project. Many things are growing here.
-There are more plans than substance at this time.
 
 see [the version 1 index for more info](v1/v1_index.md)
 

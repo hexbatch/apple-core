@@ -32,6 +32,8 @@ Subscriptions have info and the api allows them to be listed and cancelled.
 Subscriptions can be set or edited to be expired after N time, by either the buyer or user.
 The buyer can choose to set an earlier date.
 
+Subscriptions can have a different value, different time until expiring, for the first offer
+
 ### Penalties
 
 A contract can have penalties for early cancellation by either party. If a marketplace job and offer and sell cannot be created immediately, then the contract cannot be cancelled

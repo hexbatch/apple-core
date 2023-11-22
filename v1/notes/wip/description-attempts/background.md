@@ -33,29 +33,6 @@ So:
   * (sets, token sets, set operations)
 
 
-## A story
-
-A run down of a use case here is that I have a bag of marbles to give to my friend Jim. 
-What follows is a crazy story, totally made up, that illustrates what the library does in the code.
-
-Some of the marbles are green, some red,  and some decide on a color when you look at it each time.
-The color might be different if you look at it outside the bag, or when the marble is in Jim's possession.
-Two marbles only exist at half past ten o'clock in the morning, for 5 minutes.
-And half the marbles will drop out of the bag when Jim goes down a certain street, but not the other streets.
-
-When Jim goes home, and adds these marbles to the others he has, one marble then unlocks a video on his phone. 
-And another marble goes gray forever, and makes a stink.
-He will have to throw that one out.
-
-Because Jim now has 5 red marbles,
-Jill can now start her car and get milk from the store. 
-On the way back, she steals one of Jim's marbles, so she can get her door unlocked.
-Once back inside, she throws away the marble, and the same marble is now back in Jim's bag,
-and also in the cash register at the church bake off. An elderly Gentleman, Sam, used that to buy bread ten minutes ago.
-He could not have done that without Jim loosing his marble for a little bit.
-
-Sam, Jill, and Jim do not know each other and live far apart.
-
 
 ## What we can learn from the story
 
