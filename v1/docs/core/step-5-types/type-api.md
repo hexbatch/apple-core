@@ -54,7 +54,7 @@ When getting the token state, the global state for the scripts running on it, an
 
 Any admin in the user's group can edit, but can only edit if not in use
 Any part can be changed if type not used.
-When type is used, only the retired  and the allowed users can be set or changed,
+When type is used, only the retired status and the allowed users can be set or changed,
 and that only affects things made in the future. Tokens already created are not affected.
 
 One cannot edit a type when tokens are made or children are made.

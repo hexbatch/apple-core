@@ -55,6 +55,11 @@ Agreements do not have to be public or published, but if they are published then
 
 # Agreement logic
 
+Agreements can be chained together similar to promises. One or more agreements can be waited on, 
+and other agreements done or not done based on the final result of that.
+
+Because waiting on an agreement can take a long time, and be waiting on events on many installs,
+this is a great way to coordinate multi server logic and conditions.
 
 ## agreement if else 
 
@@ -75,6 +80,11 @@ A number of events start out at the same time, the first one to succeed will mar
 Set one or more agreements as the loop control variable, all the agreements will start (single, block of, survivor, if else) and be attempted to be executed once
 When each of those agreements are finalized, then will look to the agreements in loop control,
     if all the agreements there succeed , then the loop is done again, repeatedly, until one control agreement fails
+
+### generating new agreements 
+
+A loop can make a new agreement automatically signed each time it loops after checking the control agreement.
+There must be a minimum delay. Any of the parties of the new agreement can cancel it, or the control agreement
 
 ##  Ancestry
 

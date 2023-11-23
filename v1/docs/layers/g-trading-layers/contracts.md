@@ -1,5 +1,6 @@
 # Contracts
-
+contracts are memberships, because the usage of types is determined by membership to a group
+move memberships here and merge with that
 # (changelist todo or ponder about)
 ------------------------
 Now using transactions to power this
@@ -8,7 +9,14 @@ disentangle from the marketplace
 ---------------------------------------------
 ---------------------------------------------
 
-Deals with the selling, terms, and use of token types
+Contracts set up future transactions, which can be looped, based on changes of tokens in a set
+(need to add new tokens made to the set this contract is based on)
+
+Contracts extend transactions to apply a looped transaction whose conditions are calculated by the number
+of new tokens added to a set compared to the last child transaction made in this agreed loop
+A script can be part of this, and the md5 part of the agreement
+
+Deals with  terms, and use of token types that people do not own
 
 Contracts is the ability to use a token type, owned by someone else, as a parent for new token types.
 

@@ -1,37 +1,58 @@
 # Transactions
 
-The transaction layer changes ownership of tokens after an agreement, or series of agreements, between two or more people.
-Transactions can be in many parts and swap more than one owner. All have to succeed for the ownership to be changed for any
+The transaction layer changes ownership of tokens after an agreement,
+or series of agreements, between two or more people.
 
-The transaction layer makes an agreement to change ownership of tokens.
-There can be multiple parties to the agreement token.
+The transaction can also not change the ownership, but move a token to a protected group
 
+Each transaction  is limited to one user swapping a set of tokens with another user.
+Or moving tokens from one set to another.
 
-The creator of the transaction can delete it only if nobody has agreed yet.
-A person can remove their user token if decide they changed their mind.
-A transaction can be set up to have a delay or datetime to do the transaction after all signed
-The transfer can happen after all agree.
-While waiting, anyone who previously agreed can remove their token from the agreement.
+Transactions can be in many parts and swap more than one owner.
+They are chained by agreement chains, but the transactions also reference a transaction parent.
+So there are two parent chains, the agreement parent and the transaction parent.
+Like any agreement chain, all the conditional agreements have to pass to get to the next ones.
+A transaction failing also fails the agreement.
 
-Transactions can be set to be deleted after N time after no agreement is reached.
-Transactions can be set to allow reuse by doing a new agreement, all agreements to a transaction will be linked to that
-
-
-The tokens exchanged here can be more than trading, it can be part of mechanics and set new relationships
-
-The transaction layer allows nested transactions, and each transaction can be between different users of the agreement,
-If any of the nested transactions do not work out then the transaction does not happen.
-And ownership of all is rolled back, the tokens removed from escrow.
-
-The nested transactions work by using nested agreements.
-
-
-Escrow: Tokens that have their ownership changed, but the entire transaction chain has not finished, cannot change their ownership in a new transaction until that is done.
-They are held in escrow, new/old owners do not have any special privileges, but can read/change them as a non owning user.
-The escrow status once the agreement starts the transaction.
+If in an agreement chain, the txn cannot start until the chain starts.
 
 Due to allowing long pauses to complete a transaction, this is great for allowing multiserver transactions
 These transaction chains can wait on a remote agreement to be completed.
+
+
+The transaction layer makes an agreement to change ownership of tokens.
+* A previously made agreement can be passed as a conditional
+* The agreement made here can be inserted into agreement chains to be executed or not later
+
+There can be multiple parties to the agreement token. 
+* The swapper users must be parties.
+* One set can be empty, but not both
+* The swappers have to be different users
+* The agreeing users must include both of the swappers, but can include any number of other users
+* The creator of the transaction can delete it only if nobody has agreed yet.
+* Any party to the agreement can cancel the transaction before it runs.
+  * Any party can remove their user token from the agreement before it executes, this cancels the transaction
+
+
+After all agreement, and any delay passes between after all agree and execution, 
+the transfer will take place
+
+Different options when making a transaction:
+* Transactions can be set to be deleted after N time after no agreement is reached.
+* Transactions can be set to allow reuse by looping the agreement to make a new agreement
+  * the new transaction will be a copy of the old, but using the new agreement.
+* A transaction can be set up to have a delay or datetime to do the transaction after all signed
+
+
+## Escrow
+
+Escrow: Tokens that have their ownership changed, but the entire transaction chain has not finished,
+cannot change their ownership in a new transaction until that is done.
+They are held in escrow, new/old owners do not have any special privileges,
+but can read/change them as a non owning user.
+The escrow status once the agreement starts the transaction.
+
+
 
 ## depositing
 
@@ -49,7 +70,8 @@ There can be a timeout for the transaction to go through too, and if not, then a
 
 # Transactions depending on multiple agreements
 
-A transaction can wait on any number of agreements to be finished, before that starts. Agreements can be wrapped ones from other servers
+A transaction can wait on any number of agreements to be finished, before that starts.
+Agreements can be wrapped ones from other servers
 
 public transactions and agreements can be used across different servers as dependencies of each other.
 
