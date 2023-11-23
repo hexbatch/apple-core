@@ -114,7 +114,6 @@ Each layer has its own iteration of writing the api and code.
 | Deferred                      | Agreed things done by script or remote                                | [deferred.md](docs/layers/e-organization-layers/deferred.md)             |
 | Stores                        | Stores sell inventory                                                 | [stores](docs/layers/h-selling-layers/stores.md)                         |
 | Inventory                     | Items in a store for sale, need not be physical or even real          | [inventory](docs/layers/h-selling-layers/inventory.md)                   |
-| Memberships                   | Sell or subscription for membership in a group                        | [memberships](docs/layers/h-selling-layers/memberships.md)               |
 | Promotions                    | Sets up advertising, monitors impressions                             | [promotions](docs/layers/i-promotion-layers/promotions.md)               |
 | Selling                       | Sets up a sales flow that tracks different events in a sale           | [selling](docs/layers/h-selling-layers/selling.md)                       |
 | Admin                         | Fixes broken stuff, sets up moderators, user management               | [admin](docs/layers/b-user-layers/admin-base.md)                         |

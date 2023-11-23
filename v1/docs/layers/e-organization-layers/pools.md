@@ -30,4 +30,8 @@ This allows resale of pools without breaking older contracts.
 
 A pool can be made to disallow reselling
 
-A sub-pool can be combined back to its parent, destroying the sub-pool and increasing the parent total unallocated  
+A sub-pool can be combined back to its parent, destroying the sub-pool and increasing the parent total unallocated
+
+# Pool stub
+
+A pool stub is the identifier created which can be created into a token

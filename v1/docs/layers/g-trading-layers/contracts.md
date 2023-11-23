@@ -1,67 +1,74 @@
-# Contracts
-contracts are memberships, because the usage of types is determined by membership to a group
-move memberships here and merge with that
-# (changelist todo or ponder about)
-------------------------
-Now using transactions to power this
-Now using agreements too (because of transactions)
-disentangle from the marketplace
----------------------------------------------
----------------------------------------------
+# Contracts and Memberships
 
-Contracts set up future transactions, which can be looped, based on changes of tokens in a set
-(need to add new tokens made to the set this contract is based on)
+Api for selling inclusion in a user group for a period of time or permanently .
+Sell or subscription for membership in a group.
 
-Contracts extend transactions to apply a looped transaction whose conditions are calculated by the number
-of new tokens added to a set compared to the last child transaction made in this agreed loop
-A script can be part of this, and the md5 part of the agreement
+Subscriptions can have penalties for early cancellation by either party.
 
-Deals with  terms, and use of token types that people do not own
+Membership in a group also determine token creation rights.
 
-Contracts is the ability to use a token type, owned by someone else, as a parent for new token types.
+Here can be offered to sell a membership to a group for a single time frame,
+or a subscription that auto-renews 
+* as long as can be paid for and is not cancelled.
+    
+Breakdown of a subscription or single sell:
+* the transaction for the initial cost to move a token to a protected group.
+  * this can be missing for no cost, but then no txn recording in auditing
+  * If provided, then the txn should already be agreed on and optionally done
+  * has the time this membership expires. If missing then its forever.
+  
+* The transaction for each subscription cost to keep from moving the token out of the group
+  * must have a txn
+  * must have an end time
+  * At the end time, will move the token out of the group
+    * unless the loop agreement is pending or successful for the next one
+    * do not need loop transaction but just provide a new transaction to be agreed on
 
-Contracts can also just be auto payments, to be cancelled by either party with or without penalty
-
-* Can set up rates, terms, limits and costs
+With subscriptions, can set up rates, terms, limits and costs
 * Can set up how the costs are paid
+* the costs can be based on number of tokens created, when moving the user to a type creation group.
+* can set up how many renewals, or min renewals without penalty, then add a fail penalty
+* Can set up auto transaction for each usage, paid before token created from type
 
-I think contracts will use the marketplace in a automatic job and offer and acceptance when a new token is made,
-or every N tokens, or when conditions are met. 
+The rates are then set up to be calculated by a js script that is generated from a script template.
+And the script md5 is put into the agreement.
 
-Basically it sets up an action to call the api and see if permission is given, and looking at the contract, to see if its time to do another auto marketplace
+Loop transaction provides an unchangeable subscription cost until cancelled.
+Can hook on agreements to this agreement's fail condition for penalties.
 
+Setting a new transaction before the subscription period ends can be done automatically or manually.
+If automatic, then will use a script to determine the cost (can md5 the script as part of the agreement)
 
-## subscriptions
+Subscriptions are optional, and can be priced in any way.
+If a subscription is missing, then the token will stay in the group for as long as the initial cost has set.
 
-Is the terms and conditions for doing the automatic job/offer/accept
-
-Subscriptions have info and the api allows them to be listed and cancelled.
-
-Subscriptions can be set or edited to be expired after N time, by either the buyer or user.
-The buyer can choose to set an earlier date.
-
-Subscriptions can have a different value, different time until expiring, for the first offer
-
-### Penalties
-
-A contract can have penalties for early cancellation by either party. If a marketplace job and offer and sell cannot be created immediately, then the contract cannot be cancelled
-
-### Arrears
-
-Penalties can be done for arrears, these can stack up. When a user has new tokens then a watcher api set can automatically transfer owned tokens
-
-The api can list a user's arrears
-
-### Cancellation 
-
-Contracts can be set up to be cancelled by seller, buyer, both or none. With or without penalties
-
-### Selling of contracts
-
-The seller of the contract can put up the contract via the selling api, contracts can be sold that are in arrears
+The moving the token into the user group can also include admin rights or not.
 
 
-## Auto transfer
+# Usages
 
-Contracts can be set up to automatically transfer a percentage or set amount in a wallet to another user, using either a schedule or when the wallet has enough
-(watcher api)
+## Membership sold in stores
+
+Membership offers can be sold in stores,
+and the transaction completing allows for the user to be an admin or member.
+
+
+# Membership invites
+
+An invite is a membership set up to run when a person is given a selected token,
+or a pool stub is created to be a token  
+
+When the invite is activated by the ownership or token creation, then the owner is the one given membership.
+Invites need to have no up front costs.
+
+A membership offered to bearer can also be made, whoever has a token can give (transaction) in exchange for membership.
+Perhaps other tokens will also be required, that is up to whoever makes the invitation.
+
+Can use the token's or stub's bounds and expiration, and permissions (only some users can use it).
+
+
+The subscription template can be set up to generate new subscriptions when sold or ownership is given to a token.
+Templates are complete membership deals, but the user who gets the template or who pays is not defined.
+When a template has a new subscription made, then the user is picked.
+
+Subscription templates can have descriptions and media attached.

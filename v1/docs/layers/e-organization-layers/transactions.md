@@ -3,8 +3,6 @@
 The transaction layer changes ownership of tokens after an agreement,
 or series of agreements, between two or more people.
 
-The transaction can also not change the ownership, but move a token to a protected group
-
 Each transaction  is limited to one user swapping a set of tokens with another user.
 Or moving tokens from one set to another.
 

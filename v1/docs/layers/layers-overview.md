@@ -24,7 +24,6 @@
 * Organizations
 * Stores
 * Inventory
-* Memberships
 * Promotions
 * Selling
 * Admin
@@ -164,9 +163,6 @@ Stores sell inventory
 [inventory.md](h-selling-layers/inventory.md)
 Items in a store for sale, goods need not be physical or even real
 
-# Membership
-[memberships](h-selling-layers/memberships.md)
-Sell or subscription for membership in a group
 
 
 # Promotions

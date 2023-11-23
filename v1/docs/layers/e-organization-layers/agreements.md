@@ -44,6 +44,8 @@ related. Also. some of these agreements can already be done.
 
 however all agreements depended on are part of the agreement upfront before anyone signs, and the dependencies cannot be changed after the first signing.
 
+A script's md5 or a remote's md5 (both includes the params) can be part of the agreement
+
 # Remote agreements
 
 Agreements on this instance can depend on agreements completed on another instance. Agreements can be public and published.
@@ -90,3 +92,7 @@ There must be a minimum delay. Any of the parties of the new agreement can cance
 
 Agreements can have a block of agreements be done first, and then either all or one of them has to succeed, or one or all fail (choose which of 4 conditions)
 will propagate to start the agreement waiting on them.
+
+## Failure fallbacks
+
+Can set a certain time range for a new agreement to be agreed on automatically if its parent has failed

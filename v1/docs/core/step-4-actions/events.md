@@ -11,7 +11,8 @@ or event_success of false in a json value
 
 For any event, the attribute is the same, so all tokens can listen to the same things
 
-if an attribute or token is out of bounds, or comes back in bounds, there is no event. Either the thing exists or not.
+if an attribute or token is out of bounds, or comes back in bounds, there is no event.
+Either the thing exists or not.
 
 * token creation
 * owner-change
@@ -25,6 +26,12 @@ if an attribute or token is out of bounds, or comes back in bounds, there is no 
 * parent in token turned off
 * token enters a set
 * token leaves a set
+
+On the type token definer: the events for token creation and destruction are sent:
+* before creation (can refuse)
+* after creation (notification)
+* before destruction (can refuse)
+* after destruction (notification)
 
 
 Set operations (run on the token defining a set)

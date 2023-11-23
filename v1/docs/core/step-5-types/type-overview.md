@@ -15,7 +15,7 @@ Types can use attributes owned by others, as long as the permissions work out in
 
     So: a token-type:
         user: one user owns the type
-        allowed_creators: a list of user groups or individual users who can make tokens from this type
+        allowed_creators: an optional user group
         name: using the naming rules
         is_retired: default false // if true then cannot be added to token types or make new tokens
         options:
@@ -77,9 +77,15 @@ They must follow the naming convention and be unique
 
 ## allowed creators
 
+Admins of the owners group can create tokens from this type
+
 Others can be given the permission to create tokens from this type, or descendants from this type.
 This means descendants can further restrict, but not expand, the allowed creators.
-Group lists can be used to change the users allowed.
+The group list to add others more than the creator's user group is optional, but can be added during definition
+( cannot add after creation but can make new child for this)
+
+Change membership on this group to give or remove token creation powers.
+Admin ability, for the set group, does not make a creation ability difference, except to edit the members
 
 
 ## starting parents as off
