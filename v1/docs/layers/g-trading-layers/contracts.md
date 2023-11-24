@@ -72,3 +72,13 @@ Templates are complete membership deals, but the user who gets the template or w
 When a template has a new subscription made, then the user is picked.
 
 Subscription templates can have descriptions and media attached.
+
+## Contracts for pools
+
+A contract can be made for a pool, and then the stubs created are treated like created tokens for that type
+Once a stub is paid for, then the token it later creates is not subject to a contract.
+
+Pools can be subcontracted out, and there is no limit to nesting of these contracts.
+The older ones are done first, and all contracts have to transfer the needed tokens before the stub is created.
+
+Pool templates can be made to give the contract to the user it is rendered for.

@@ -1,88 +1,71 @@
 # Marketplace
 
-# (changelist todo or ponder about)
-------------------------
-Now using transactions to power this
-Now using agreements too (because of transactions)
+The marketplace allows more structure for transactions and contracts and pools.
+It allows a common set of apis for all any kind of trade.
 
----------------------------------------------
----------------------------------------------
+In the marketplace, one makes an offer, that offer can be for a specific user only. This offer can have a window
+Then all that user has to do is accept the offer to start the sell (transaction or contract).
+Or the offer can be for anyone to bid on, and then the offer user can accept the bid they want.
+Bidding can be set for a time period.
 
-Allow things to be bought and sold: (or traded)
-* Tokens can be traded in ownership. A transfer of token sets where ownership is swapped between the two parties.
-* Uncreated tokens, in a pool, can be sold, when sold the tokens are created
-* Pools can be bought and sold
-* Tokens can be allowed to be put in someone's set not changing ownership
-* Membership offers : Membership can be given to a user group
-* Token type plans can be sold, by copying the token type resources so that the purchaser can make similar tokens
-  * The selling has option to remove any auth to remotes first 
-
-All is sold as is with no refunds. As is.
-
-For example an inventory token starts off as being owned by the organization, but then there is a swap between a set of token owned by the customer and the inventory token.
-
-Or someone wants access to some network entries they need, a set is made for that.
-
-Or someone wants to be included in a permission group to use stuff.
-
-Tokens and sets that cannot be transferred to a lot set cannot be sold.
-
-
-Flow:
-* Set up a lot, owned by a user or group, to be bid on or automatically sold
-* Offers can be made
-* The lot owner or group member selects the winning offer, or this can be done automatically
-
-
-
-There is no sales flow here, or buying rights to use future tokens, all sales are immediate and final when the lot owner accepts an offer
+All is sold as is with no refunds. As is. The selling layer will provide other stuff to marketplace sells.
 
 
 ## Lots
 
-What is offered for sale, lots can be created but not changed after the first bid on it is made, lots can have an expiring time or other bounds.
+Lots are what are offered for sale.
+lots can be created but not changed after the first bid on it is made, lots can have an expiring time or other bounds.
 
-What is offered for sale is a set of tokens, or a pool or a group membership offer 
-
-Lots can have a set of requirements any of which can be met to be the price. Or a lot may be made without a price and the owner selects a winning bid.
+Each lot can have different prices (one or more types of tokens with the min or max which can be the same).
+A lot must have at least one price.
+But lots can have several prices.
+Lots can have a set of requirements any of which can be met to choose a price.
 Requirements can be bounded, so that different prices can be set for different areas or times or bid contexts.
-It could be, that in some times, locations or path contexts - that there is no price
+It could be, that in some times, locations or path contexts - that there are different prices.
 
-Lots that have prices can accept the very first bid made, if there is a price for that bound, and automatically close the sale. 
+Requirements for choosing a price can also be done by groups of users added to each price.
 
-Lots can be owned by a user or an organization.
+Lots can have a range of times they can be sold or bid on.
+Lots can be set to be deleted after no offers after a certain date.
 
-Lot sets are inherited from a lot-type, this allows things to be marked to not be sold or transferred
+Lot has a set which includes the tokens and resources that are to be traded.
+The lo sets are inherited from a lot-type, and this is searchable.
 
 ## Offers
 
-An offer is an attempt to buy the lot, for an offer to be created, it has to meet a price when its made.
+An offer is an attempt to buy the lot, for an offer to be created, it has to meet the price given.
+Once an offer is made, the price cannot be changed. An offer can be retracted.
+If the lot owner changes the price the user would have seen otherwise, later.
+Then that does not change the offer already made.
 
-If the owner considers or selects this in a bounds that turns off the price this offer was made on, that offer is still valid. 
+An offer can contain text, media, contact details etc.
 
-An offer can contain text, media, contact details etc
+Based on the lot settings, the offer can be automatically accepted. Or the offer can be reviewed later.
+If this is not an auction, and not set to automatically accept the first offer,
+then lot owner can decide at any time to accept the offer, or can refuse all offers.
+if there are not enough tokens for the offer when it is selected, the offer will fail.
 
 ### Auctions
 
 When a lot is set for an auction, the seller cannot choose a winner until a certain time.
 
-Auctions can be closed or open. If closed, the different bidders cannot see the other bids. If open, then anyone can see the bids.
+Auctions can be closed or open. If closed, the different bidders cannot see the other bids. 
+If open, then anyone can see the bids.
 
-* The marketplace offers some apis to do bids
-* There are remotes on the auction tokens that will start telling when someone is outbid, or other marketplace events 
+A bidder can increase their offer.
+There are remotes on the auction tokens that will start telling when someone is outbid, or other marketplace events 
 
 ## Award an offer
 
-When the owner selects the winning offer, or if done automatically, all the tokens in the lot will be transferred to the winner, and the price transferred to the seller.
+When the owner selects the winning offer, or if done automatically, then the resources in the lot set are done.
+If this is tokens to be traded, then a transaction is made and agreed on.
+If this is a contract template, then that template is rendered, and the agreement made and started.
+if this is a pool template, then the pool is created and given to the user,
+and the transaction to get the pool is created and done, and the contract for the pool is created
 
-If the buyer does not have enough, the award will fail.
+If the buyer does not have enough, when the offer is selected, the award will fail.
 
 ## Compare operations
 
 Checks to see which offers can accept which prices at the current time
 
-
-## Free stuff to someone 
-
-To just give tokens to someone else, no price required, then just set the requirements to an empty set, and set the first offer to be accepted, and make an empty offer at the same time, 
-There is an api thing to make this simple
