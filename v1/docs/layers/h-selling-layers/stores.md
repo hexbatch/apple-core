@@ -2,7 +2,7 @@
 
 Stores sell inventory
 
-Stores has an api to help make inventory discoverable and answer questions before purchase
+Stores have an api to help make inventory discoverable and answer questions before purchase
 
 Stores can be run by a single user or an organization
 

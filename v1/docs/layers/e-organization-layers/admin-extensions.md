@@ -1,8 +1,10 @@
 # more admin api
 
 * Moderators: sets up and manages
+* transaction summary and cancelling
+* contract summary
 
-## setting up moderators
+# setting up moderators
 
 * Sets up moderators for region, tags, or time, and for specific attributes they can edit
 * For example, a moderator can be setup to review all feedback for sales in the livingston area. Or a moderator can review all media for a special event on Tuesday
@@ -11,3 +13,19 @@
 
 Moderators are very restricted admins, able to log in as some people, and change a list of attributes. Can set up each moderator type to do changes to some families of attributes.
 Then assign that moderator role to specific users to supervise, or discover a pool of users to automatically gain control of some of their attributes in some sets (some contexts)
+
+
+More admin api that can help with trading
+
+* Token operations and sets: change their ownership
+* Contracts: can change terms of a contract
+
+
+
+# Transactions
+
+* Can see and cancel pending transactions
+
+
+# Contracts
+* can see contracts
