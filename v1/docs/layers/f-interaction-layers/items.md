@@ -1,38 +1,50 @@
 # Items
 
-Tokens can be made to share information and to create items people participate in
+An item is both a message and how to share info.
+The original item itself is a type, and has constant static attributes to store text, links, markup, etc. 
+If replying to the item, then a new child type is created from the original item type.
 
-These tokens can have boundaries and media put in: They can have a schedule and location they are seen
+Tokens can be made from the types to share information and make sets to organize the info. The sets can be used in transactions.
 
 
-This is a token type that generates tokens of item to be had. These tokens can be limited to allow only one token each per user
+These tokens can have boundaries and extra media put in: They can have a schedule and location they are seen, and be like announcements.
+
+Those who can reply to an item are limited to the allowed parents user group, and the admins of the user who created the item.
+This is enforced by each reply being a child of the thing that is being replied to.
+Items can reply to two or more parent items, otherwise unrelated, at the same time.
+
+Item tokens can be sorted into sets.
+
+Some or all of the info in the item can be made public readable, or only readable via a membership in a user group.
+
+Contracts can be made to allow other users to be able to read the info, and/or reply to an item.
+
+The item type has custom event when something replies to it, and then that is propagated to another event replied-to-descendant.
+This means being able to reply to an item can do things outside the instance via remotes on the actions.
+
+* Items can be used for access to an outside url or streaming service
+* Items can reflect discussion boards, postings and feeds
+* Items can hold invitations to other items, and announcements and messages to be rendered into html or other, to be delivered into people's wallet
+* Items can be sorted into sets for organization via flag attributes provided by this api
+
+Because items can reflect conversations and discussions, these are used by the board api to listen to, and create new items, when there are responses.
 
 
-Items can have a restricted group, and admins, and moderators just for the item. Tickets can be sold for a item
-* tickets are group member invitations
+## Protected message set
 
-Items can have discussion boards, postings and feeds
+Items can also have organized tokens of itself in a set whose token is from the same type. So the set and items in it are all tokens of the same type.
+There can be organization here with parent child sets nested, again of the same type. Live attributes are added here to enforce with scripts removing the parent child relationship.
+The tokens in this set, and also nested sets, cannot be put into other sets, they are only to be in one set forever, until deleted
 
-Items can be used for access to an outside url or streaming service
-
-Items can be attached to message boards as attachments
-
-Items can hold invitations to other items, and announcements and messages to be rendered into html or other, to be delivered into people's wallet
 
 ## Locking and unlocking
 
-Information in a item can be encrypted. Only the users in the membership group of a item will be given the keys to use it. 
+Information in an item can be encrypted. Only the users in the membership group of an item will be given the keys to use it. 
 The key will be added to their wallet sets, and viewing software can use that to show the content.
 
-But this key can be encrypted also, in another item, and the user must possess the key token also.
+But this key can be encrypted also, in another item, and the user must be able to be read, or reply to, another item user. In order to use that key
 
-Tokens of a item can be duplicated from an encrypted item will use the same key, that way
 
-## News and mail and announcements
-
-Items can be created to deliver messages, and chat invitations, to a person's wallet.
-
-Items can be sorted into the wallet
 
 ### Blocking and reporting and spam
 
@@ -40,14 +52,11 @@ Items can be reported on, can be individually blocked, and the user making the i
 
 ## Mixing and matching 
 
-Items can also be created to mingle, and when together in a set create a new token, which can be a new item token
+Items can also be created to mingle, and be combined in replies.
+Some items may be needed to read the rest of the message.
+This allows puzzles and games, as well as sets up the mechanics for additional things.
 
-This allows puzzles and games, as well as sets up the mechanics for notices and listeners
-
-Mixed items can exchange some attribute data, or append attribute data, in one or both of the matched.
-* If more than two matching, then the mixing can either randomly do from one preset, one randomly, some in a set, or all
-* The data can be updated once, a few times or many
 
 ## Localized communities
 
-Items can have boards, and these boards and chats are open to any user in a location or time
+Items can be open to any user in a location or time
