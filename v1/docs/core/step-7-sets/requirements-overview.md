@@ -47,6 +47,7 @@ Requirements can have children, and be a tree
 options:
 * weight of the part allows sorting of search results, as well as prioritizing which types are the best or more preferred
 * some parts are optional, some are required. More than one can be required, or none at all
+* Can have maximum_needed be zero to disallow something
 
 ## Requirement events
 

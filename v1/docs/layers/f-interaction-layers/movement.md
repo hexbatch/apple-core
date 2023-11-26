@@ -1,6 +1,6 @@
 # Movement in sets
 
-Register a token here and it will move it around sets connected in relationships
+Register a token here, and this will move it around sets connected in relationships
 
 When a token is placed in a set, it can sense if it should shift sets.
 When it does that:

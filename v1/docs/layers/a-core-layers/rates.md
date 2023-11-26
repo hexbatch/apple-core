@@ -24,6 +24,10 @@ A rate set can have multiple tokens for the same api call.
 
 * Rate sets can be used by more than one user, this is recorded in the layers only in this rate api
 * Stores rate data in a fast lookup, but layers still passes the rate set to the core for adjustment
+* An agent can have different rates for each user they represent.
+
+Rates are changed by admins. (unless no admin layer, then rates are changed by anyone on local ip)
+
 
 ## create rates
 

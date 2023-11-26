@@ -19,7 +19,6 @@
 * Pools
 * Agreements
 * Transactions
-* User Proxy
 * Deferred
 * Organizations
 * Stores
@@ -27,7 +26,6 @@
 * Promotions
 * Selling
 * Admin
-* Moderator
 * Boards
 * Notes
 * Items
@@ -179,10 +177,6 @@ Sets up a sales flow that tracks different sales events from customer wanting to
 Admins will do stuff, logged in as other users
 
 
-# Moderator
-[moderators.md](e-organization-layers/moderators.md)
-Moderators have permissions to change and remove selected attributes from a set of token types.
-
 
 # Jobs
 [jobs.md](a-core-layers/jobs.md)
@@ -216,7 +210,7 @@ This only happens if the affinity or allergies are set up for the token, and its
 
 
 # Public grants
-[public-grants.md](b-user-layers/public-grants.md)
+[public-grants.md](b-user-layers/low-level-access.md)
 Allow some users to do some low level operations
 
 
@@ -231,11 +225,6 @@ Agents are those that are authorized to do token changes outside the server
 [jobs.md](a-core-layers/jobs.md)
 Each public api call is put into a job queue, which is executed and then makes a private network call back to the waiting task,
 which either returns the output to the user, if the http call is waiting, or calls the url the user set, or the user can poll later
-
-## User Proxy
-[user-proxy.md](b-user-layers/user-proxy.md)
-Internal api to allow one user to do things as another user
-
 
 
 ## Goals

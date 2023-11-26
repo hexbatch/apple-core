@@ -2,8 +2,10 @@
 
 * Does maintenance on the tokens used by the outer layers
 * Reviews stuck jobs, and can terminate them
+* Can see all job logs
 * User operations: freeze, delete
 * Other layers can add in admin api here
+* Able to use the rate api
 
 
 
@@ -26,7 +28,7 @@ One thing that helps this is that different user groups can be made, by changing
 * makes sure the user accounts in the next layers are matched correctly with the user accounts in the inner core
 * Freezes a user (by setting an attribute in the user token that disallows any set transfers, and the attribute cannot be removed or changed by the user)
 * Deletes a user info
-* Sets up a whitelist api calls for user groups
+* Changes rates for a user
 
 
 

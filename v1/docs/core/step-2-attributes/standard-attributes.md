@@ -39,7 +39,8 @@ The group token has all the core identification and display attributes. When a g
 * location: map_coordinates
 * user_timezone: the timezone that can be default, if null then use system time zone
 * description: markdown
-* image: binary - base attribute
+* image: binary - binary (stores the image in the attribute value)
+* image-url (string for the url)
 * symbol: binary (small image svg)
 * primary_color: color
 * secondary_color: color

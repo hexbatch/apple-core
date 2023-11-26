@@ -1,11 +1,8 @@
 # Agreements and consensus
 
-This is a way for people or scripts to agree on something
-
-    Set up something that only written to if all users in a group write the same value... possible to do only in layer?
-        - but this can be done via a set, and have selected people write to the set, and then do an agg function to count their token, and then match the value,
-           if value matches then write to an attribute on a token whose permissions is not allowing the users submitting values to write directly
-
+This is a way for people or scripts to agree on something. Agreements can be made to be unanimous,
+or by setting each user in the agreement to have a certain weight. And the greatest weight wins.
+Using the weighted version, then some users can skip the vote as long as the majority of the weights agree or disagree.
 
 Make agreement set that has to have the users put their user token in, and the value or consensus is reached
 
@@ -48,26 +45,25 @@ A script's md5 or a remote's md5 (both includes the params) can be part of the a
 
 # Remote agreements
 
-Agreements on this instance can depend on agreements completed on another instance. Agreements can be public and published.
-If a wrapped agreement is used, then the mirroring has to update its condition to finished before any dependent agreements here are started.
-So, this is just like a local dependent agreement, just the signers here cannot update that status,
-but must do it on the other instance (either manual or part of a process done in their user there)
+Agreements on this instance can depend on agreements completed on another instance. As long as they are wrapped up in a transaction.
+But agreements stay on only one server.
 
-Agreements do not have to be public or published, but if they are published then can be used as a basis for other agreements on other servers, and there is a record of that
+It is transactions that are multi instance. However, can chain agreements using this way.
+
 
 # Agreement logic
 
 Agreements can be chained together similar to promises. One or more agreements can be waited on, 
 and other agreements done or not done based on the final result of that.
 
-Because waiting on an agreement can take a long time, and be waiting on events on many installs,
-this is a great way to coordinate multi server logic and conditions.
+Because waiting on an agreement can take a long time, 
+this is a great way to coordinate complex logic and conditions that depends on thing being done on their own time schedules.
 
 ## agreement if else 
 
 If an agreement is not completed by some time or future condition of another agreement. Then, an alternate agreement, and the terms of it happening, can be agreed on in the first agreement
 
-Agreements can be put into if else conditions, when first agreement succeeds, this will will mark the other agreement as failed.
+Agreements can be put into if else conditions, when first agreement succeeds, this  will mark the other agreement as failed.
 Or, if the first one does not work out, the second agreement will be able to start.
 
 This can be done with multiple else if where there can be unlimited fallbacks.

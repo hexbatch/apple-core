@@ -117,16 +117,14 @@ Each layer has its own iteration of writing the api and code.
 | Promotions                    | Sets up advertising, monitors impressions                             | [promotions](docs/layers/i-promotion-layers/promotions.md)               |
 | Selling                       | Sets up a sales flow that tracks different events in a sale           | [selling](docs/layers/h-selling-layers/selling.md)                       |
 | Admin                         | Fixes broken stuff, sets up moderators, user management               | [admin](docs/layers/b-user-layers/admin-base.md)                         |
-| Moderator                     | Moderate some assigned events, locations, changes                     | [moderators](docs/layers/e-organization-layers/moderators.md)            |
 | Boards                        | Discussion chat rooms and reviews. Private individual and group chats | [boards](docs/layers/f-interaction-layers/boards.md)                     |
 | Notes                         | Organize text,images, links, lists                                    | [notes](docs/layers/c-personal-layers/notes.md)                          |
 | Items                         | Allow sharing and communities                                         | [items](docs/layers/f-interaction-layers/items.md)                       |
 | Movement                      | Tokens move around connected sets                                     | [movement](docs/layers/f-interaction-layers/movement.md)                 |
-| Public grants                 | Allow some users to do some low level operations                      | [public-grants](docs/layers/b-user-layers/public-grants.md)              |
+| Public grants                 | Allow some users to do some low level operations                      | [public-grants](docs/layers/b-user-layers/low-level-access.md)              |
 | Format                        | Converts token sets to different things: html and markup ..           | [format](docs/layers/c-personal-layers/format.md)                        |
 | Agents                        | Agents are authorized to do things outside the server                 | [agents](docs/layers/b-user-layers/agents.md)                            |
 | Jobs                          | Aid to the jobs in the queue, track job output and give notice        | [jobs](docs/layers/a-core-layers/jobs.md)                                |
-| User Proxy                    | Internal api to allow one user to do things as another user           | [user-proxy.md](docs/layers/b-user-layers/user-proxy.md)                 |
 | Goals                         | Get resources for achievements                                        | [goals](docs/layers/m-eco-layers/goals.md)                               |
 | Tech trees                    | Figure things out, and get rewards                                    | [tech-trees](docs/layers/m-eco-layers/tech-trees.md)                     |
 | Rates                         | how api limits are enforced                                           | [rates](docs/layers/a-core-layers/rates.md)                              |

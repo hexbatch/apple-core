@@ -1,19 +1,37 @@
 # Notes
-Organize text,images, links, lists
 
-Make it easy to add text, images, link and lists
-Group them in different ways and sort things differently
+Make note tokens that have text, images, links, and a list.
+The list is made up of other notes
 
-Notes can be edited by admins in a note group, or viewed in a user list, or public.
+Each note is a new token created based on a type defined here.
+Notes are also a set, which contain note tokens in its list. Lists can be nested this way.
 
-There is a uri where a view can be seen as a html or json or other(the format api)
+Each note can have a name which is the standard attribute name.
 
-A view is a grouping of the note items.
+Notes can be public or be given a user group
 
-Can add tag different things with any phrase or word, and then change the views and sorting using these tags.
 
-Can link to different notes, and include tagged parts of there into a new view.
+* Text is the  description standard attribute.
+* Image is the image-url standard attribute.
+* links use an attribute defined in this layer
+* anything added to the list is a note that is put into the list
+* notes can contain each other in a list
 
-A note with a view can be added to a token to be shared with a user group.
 
-Notes can be traded on the marketplace by the owner of the note.
+
+There is an api call to make a new token with this.
+
+And an api to edit a note, and add to its list, or modify its list
+
+There is a uri, using the format layer, where a view can be seen as a html, xml , markdown, or json.
+
+Can do search for text and/or tags  in a user's notes, or all readable notes.
+
+## Tags in a note
+
+Each note can have tags which are an attribute defined here, each tag descends from that attribute.
+Can give each note unlimited tags.
+A tag is a string value.
+
+
+Notes can be traded on the marketplace or transaction.

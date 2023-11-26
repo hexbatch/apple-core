@@ -1,41 +1,24 @@
 # Formatting
 
-Converts the attributes of a token set, the attributes the user can read, into html markup, or markdown
+Converts readable attributes of a token set, or search result, into html markup, markdown,json or xml.
+This is a read only operation.
 
-Each formatting type will be a plugin for that project
+Each formatting type will be a plugin
 
-The basic can produce 
+A map for attributes can be given which will correspond to html and xml tags
+The tag attributes (not to be confused with token attributes) can be mapped to other attributes on the same token.
+Markdown is made by first converting to html
+
+Json mapping can map each attribute in a token to a key value pair, with the value being the attribute value, or json combination of values, or an array
+
+
+The basic html can produce 
 
 * ordered lists (using a picked attribute to order the list (number or string sorting and direction)) , default is creation date
 * links (the token set can have its links to other sets and children)
-* outside links (pick an attribute to find urls and text)
 * paragraphs (ordered similarly to lists default is creation date)
 * headers and sections (children and their children can be sections instead of links, header 1 is first level children, header 2 is their children etc.)
 * images (ordered similarly to lists default is creation date)
-
-
-then the plugins can render this to html or markdown or other
-
-## Possible formatting ideas
-
-* social postings to different sites and systems (including used in token propagation)
-
-## Side effects with existing
-
-* Pages can be protected to be read by only some users, or made private
-* Because token sets can be arranged to only be readable when certain tokens are combined, this makes pages only readable to those that have a certain combination of tokens in their sets
-* Pages can be tagged and reorganized , elements of some pages can be combined in a new page
-  * For instance, all the images nested N need in the links can be put into a list in a new page
-  * or tagged lists can be pulled apart from different pages to be put into one list
-
-## Using path specifiers and gathering with formatting
-
-can do core searches using these to link up data in new ways to analyze and compare or art
-
-
-## extra data in tags or json
-
-most plugins support the extra attributes or properties that are added to each mapped attribute
 
 
 
@@ -46,9 +29,19 @@ most plugins support the extra attributes or properties that are added to each m
 * html
 * markdown (does not support extra attributes)
 
+### Possible other formatting ideas
+
+* social postings to different sites and systems (including used in token propagation)
+
 
 ### html plugin 
 
-#### styling
+* Block tags correspond to sets with certain attributes.
+* Inline tags correspond to tokens inside a set
+* Ordering is done by selected attribute values
 
-different attributes can be set to have different colors and other inline css, sections with certain attributes can be set to have different css styles
+For styling in css:
+* sets with certain attributes can be given css rules provided in the mapping
+* tokens that are not sets can have attributes mapped to different inline css
+  * this can include colors or text styles 
+

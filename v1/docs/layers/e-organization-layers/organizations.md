@@ -1,13 +1,21 @@
 # Organizations
 
 Organization is a special user, that represents group of users who have shares. All actions of this special user must be voted on.
+Any user who owns shares can log in as this special user to read anything. But cannot write or change anything.
+This is done by having zero rates for any changing api calls for the organization itself.
 
+Doing changes for this user, or making or changing resources, requires an agreement that has majority ownership winning.
 The majority of shares voting for something wins.
+
+Agreements can allow designating specific users to do specific future things without needing a vote. These future things can be limited to one time or repeat times.
+Internally this is done by making the user an agent for the organization, and adjusting the rate api for the agent when it's being the org user.
+Agreements can cancel any designation.
+
+For example, if the owners want to make a transaction for the org wallet, then they vote on having one of them be an agent for that one transaction.
 
 The organization has a shared wallet, that each owner has a percentage of. A vote is required to do anything with the wallet contents, or part of the contents.
 Including transferring tokens of that wallet to the users.
 
-Many things can be automated to be kept on doing, again and again, once a vote is made. Another vote is required to stop the automated thing.
 
 ## Shares
 

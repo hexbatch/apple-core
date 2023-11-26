@@ -1,23 +1,25 @@
 # Agents
 
-Agents are those that agree to do token changes outside the server, and report back the changes to make to the tokens.
-This can be used with the export, import and verification between different servers, or do some other thing
+Agents are users that do token changes for other users.
+Any user can be an agent for any other user. An agent can do changes for many users at once.
 
-Agents are used in a grant system by users
+Agents can be used for reporting changes outside the server. For instance an email server or hook can have an agent, that 
+records new emails as new board api. 
 
-Agents have categories to use in the api below
+Agents can have a different rate setting for each user they represent.
 
-* Agents can be authorized to do changes to user's tokens because of things not from this server.
-* Agents can update tokens based on something that is happening off the server, they can also listen to token changes and 
-    update something on their end.
-* Agents can be sent push notifications about changes made to the tokens when they are made by the layer api here (watcher api)
+Agents have categories to use in the api below. Agents can be authorized to only use a subset, or one or more, api calls for the user.
 
-Agents get an oauth grant to optionally:
-* change tokens in a set(s). The oath role is keyed to the sets you make for them
-  * editing the agreed on set will destroy that grant, as well as deleting the set
-* change tokens of one or more types
-  * Each type is a different grant
-* Only change some attributes in the above
+Agents can be assigned to do only one api call for a user, or do N api calls or do N api calls within a time range. 
+
+Agents can be assigned to do something for anyone in a user group.
+
+Agents can be limited to only do api calls for specific tokens, this allowed token list can be updated as needed.
+The whitelist of tokens is maintained by this layer.
+
+Agents can be moderators (human or bot) that can change and remove some things in chats, boards, stores, items, inventory.
+
+A user can be his own agent, to allow for advanced api call handling.
 
 
 ## Logs:
@@ -30,6 +32,7 @@ Agents get an oauth grant to optionally:
 * create agent (no agreement, private api)
 * list agents the logged-in user made, or categories of agents made by group members
 * turn on and off agents
+* manage token whitelist
 * end agent
 * show log of agent
 
