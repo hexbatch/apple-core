@@ -4,6 +4,7 @@ The deferred is attached to the agreement during the creation of it and is part 
 Each agreement can have multiple deferred.
 
 The deferred creates an agent which will call the api or a remote after an agreement succeeds.
-And this can be run once, or a few times or periodically repeat, depending on the setup.
+And this is done immediately after the agreement succeeds.
+If one needs to repeat agreements, then do a looping agreement.
 
 The api or remote has its call, params, and expected returns be md5 hashed to be included in the agreement.

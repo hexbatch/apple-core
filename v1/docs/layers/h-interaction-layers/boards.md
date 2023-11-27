@@ -38,3 +38,11 @@ The board api uses items api to record the messages and info, and to send that i
 
 Some board integrations it makes more sense to use a protected message set for chat or reply chains, for things like chat conversations, or message board replies.
 For example, a new top level email can be a new item, and the replies under it can be protected message tokens in that message set.
+
+
+## Agent networking
+
+Each agent type, email or jabber, has a network type, as defined by this layer from a basic network type.
+and each user account from a network inherits from the user type and the network type. This is called a board-account type
+
+When a board makes an item, that item also inherits from the board-account type
