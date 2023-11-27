@@ -1,44 +1,46 @@
 # Once the api for the overview is set up, there are other apis that allow more specific usages
 
-* Instance
-* Users
-* User Groups
-* Sessions
-* Registrations
-* Authentication and Logging in
-* Publishing
-* Mirroring
-* External Users
-* Network Pools
-* Networks
-* Network discovery
-* Distributions
-* Auditing
-* Contracts
-* Marketplace
-* Pools
-* Agreements
-* Transactions
-* Deferred
-* Organizations
-* Stores
-* Inventory
-* Promotions
-* Selling
-* Admin
-* Boards
-* Notes
-* Items
-* Movement
-* Public grants
-* Format
-* Agents
-* Jobs
-* Goals
-* Tech Trees
-* Rates
-* Conversions
+* [instance.md](a-core-layers/instance.md)
+* [rates.md](a-core-layers/rates.md)
+* [sessions.md](a-core-layers/sessions.md)
+* [jobs.md](a-core-layers/jobs.md)
+* [low-level-access.md](a-core-layers/low-level-access.md)
 
+
+* [agents.md](b-user-layers/agents.md)
+* [registrations.md](b-user-layers/registrations.md)
+* [user_login.md](b-user-layers/user_login.md)
+* [users.md](b-user-layers/users.md)
+* [user-groups.md](b-user-layers/user-groups.md)
+
+
+* [notes.md](c-personal-layers/notes.md)
+* [format.md](c-personal-layers/format.md)
+
+
+* [publishing.md](d-other-instances/publishing.md)
+* [mirroring.md](d-other-instances/mirroring.md)
+* [external-user.md](d-other-instances/external-user.md)
+
+
+* [agreements.md](e-organization-layers/agreements.md)
+* [deferred.md](e-organization-layers/deferred.md)
+* [pools.md](e-organization-layers/pools.md)
+* [organizations.md](e-organization-layers/organizations.md)
+
+* [auditing.md](f-transactions/auditing.md)
+* [transactions.md](f-transactions/transactions.md)
+* [contracts.md](f-transactions/contracts.md)
+
+
+* [boards.md](h-interaction-layers/boards.md)
+* [items.md](h-interaction-layers/items.md)
+
+
+* [movement.md](m-eco-layers/movement.md)
+* [goals.md](m-eco-layers/goals.md)
+* [tech-trees.md](m-eco-layers/tech-trees.md)
+* [conversions.md](m-eco-layers/conversions.md)
 
 
 
@@ -58,16 +60,16 @@
 Gives information about the instance the api is running at. Acts as a first step in interacting with the instance
 
 ## Authentication and logging in
-[user_login.md](a-core-layers/user_login.md)
+[user_login.md](b-user-layers/user_login.md)
 Handles users logging in and pw resets 
 
 
 # Users
-[users.md](a-core-layers/users.md)
+[users.md](b-user-layers/users.md)
 Read and edit user, manage user sessions, sets up user for first time
 
 # User Groups
-[users groups](a-core-layers/user-groups.md)
+[users groups](b-user-layers/user-groups.md)
 Do stuff with user groups
 
 # Sessions
@@ -76,7 +78,7 @@ manages sessions
 
 
 # Registrations
-[registrations.md](a-core-layers/registrations.md)
+[registrations.md](b-user-layers/registrations.md)
 Does all the new user account creation
 
 
@@ -93,40 +95,21 @@ Updates followed tokens and types that are not based here
 Coordinates users from other instances here
 
 
-# Networks
-[networks.md](f-interaction-layers/networks.md)
-Networks are things online related to a user: social networks, friends lists
-
-[network pools](g-trading-layers/network-pools.md). 
-Pools can be used with networks.
-
-# Network discovery
-[network-discovery.md](i-promotion-layers/network-discovery.md)
-Makes new network entry tokens. Scans social networks.
-
-
-# Distributions
-[distributions.md](i-promotion-layers/distributions.md)
-Organizes new tokens and token pools,  given to users and and network entities
-
 
 # Contracts
-[contracts.md](g-trading-layers/contracts.md)
+[contracts.md](f-transactions/contracts.md)
 Deals with the selling, terms, and use of token types
 
 
-# Marketplace
-Ownerships of tokens is swapped as is, no refunds. Supports direct sales and auctions
-[marketplace](g-trading-layers/marketplace.md)
 
 
 # Transactions
-[transactions.md](e-organization-layers/transactions.md)
+[transactions.md](f-transactions/transactions.md)
 The transaction layer changes ownership of tokens after an agreement between two or more people.
 Transactions can be in many parts and swap more than one owner. All have to succeed for the ownership to be changed for any
 
 # Auditing
-[auditing](e-organization-layers/auditing.md)
+[auditing](f-transactions/auditing.md)
 Api for record keeping/verification of transactions
 
 
@@ -152,29 +135,6 @@ Agreed things done by script or remote
 Organizations are groups of users that share a wallet and use agreements by voting based on how much the org they own
 
 
-# Stores
-[stores.md](h-selling-layers/stores.md)
-Stores sell inventory
-
-
-# Inventory
-[inventory.md](h-selling-layers/inventory.md)
-Items in a store for sale, goods need not be physical or even real
-
-
-
-# Promotions
-[promotions](i-promotion-layers/promotions.md)
-Advertisement agreements for promotion of sales inventory
-
-
-# Selling
-[selling](h-selling-layers/selling.md)
-Sets up a sales flow that tracks different sales events from customer wanting to buy, to buying, to delivery, to issues, to feedback
-
-# Admin
-[admin.md](b-user-layers/admin-base.md)
-Admins will do stuff, logged in as other users
 
 
 
@@ -189,7 +149,7 @@ Jobs are used internally by the layers to execute stuff
 
 
 # Boards
-[boards.md](f-interaction-layers/boards.md)
+[boards.md](h-interaction-layers/boards.md)
 Conversations either in chat or forums or posts. Can be read only or other stuff
 
 
@@ -199,18 +159,18 @@ Organize text,images, links, lists
 
 
 # Items
-[Items](f-interaction-layers/items.md)
+[Items](h-interaction-layers/items.md)
 Allow sharing and communities
 
 
 # Movement
-[movement.md](f-interaction-layers/movement.md)
+[movement.md](m-eco-layers/movement.md)
 Tokens can move, on their own, through set relationships by always going to the set that best fits them with their affinity. 
 This only happens if the affinity or allergies are set up for the token, and its registered
 
 
 # Public grants
-[public-grants.md](b-user-layers/low-level-access.md)
+[public-grants.md](a-core-layers/low-level-access.md)
 Allow some users to do some low level operations
 
 

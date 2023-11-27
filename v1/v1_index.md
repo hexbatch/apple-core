@@ -81,54 +81,40 @@ General api call in the layer:
         or public waits for response and data sent back in same call
 
 
-# Order of writing layers
 
-Each layer has its own iteration of writing the api and code.
-
-[order-writing-layers.md](docs/layers/order-writing-layers.md)
 
 # List of layers
 
-| Layer                         | Description                                                           | Link                                                                     |
-|-------------------------------|-----------------------------------------------------------------------|--------------------------------------------------------------------------|
-| Instance                      | About the instance the api is running on                              | [instance](docs/layers/a-core-layers/instance.md)                        |
-| Users                         | Manages existing users (non admin)                                    | [users](docs/layers/a-core-layers/users.md)                              |
-| User Groups                   | Do stuff with user groups                                             | [users groups](docs/layers/a-core-layers/user-groups.md)                 |
-| Sessions                      | Provides sessions to interact with the core                           | [sessions](docs/layers/a-core-layers/sessions.md)                        |
-| Registrations                 | Does all the new user account creation                                | [registrations](docs/layers/a-core-layers/registrations.md)              |
-| Authentication and Logging in | Handles users logging in and pw resets                                | [user_login](docs/layers/a-core-layers/user_login.md)                    |
-| Publishing                    | Api for broadcasting new types and changes in tokens                  | [publishing](docs/layers/d-other-instances/publishing.md)                |
-| Mirroring                     | Updates followed tokens and types that are not based here             | [mirroring](docs/layers/d-other-instances/mirroring.md)                  |
-| External Users                | Coordinates users from other instances here                           | [external-users](docs/layers/d-other-instances/external-user.md)         |
-| Networks                      | Networks are things online related to a user                          | [networks](docs/layers/f-interaction-layers/networks.md)                 |
-| Network Pools                 | Pools used with networks                                              | [network pools](docs/layers/g-trading-layers/network-pools.md)           |
-| Network discovery             | Makes new network entry tokens. Scans social networks.                | [network-discovery](docs/layers/i-promotion-layers/network-discovery.md) |
-| Distributions                 | Gives new and existing tokens to users and people in networks         | [distributions](docs/layers/i-promotion-layers/distributions.md)         |
-| Contracts                     | Terms of using someone's token in your own stuff. Auto payments       | [contracts](docs/layers/g-trading-layers/contracts.md)                   |
-| Marketplace                   | Ownerships of token sets can be bought and sold                       | [marketplace](docs/layers/g-trading-layers/marketplace.md)               |
-| Pools                         | Pools are a resource that generates future tokens                     | [pools](docs/layers/e-organization-layers/pools.md)                      |
-| Organizations                 | They are companies or people who do stores                            | [organizations](docs/layers/e-organization-layers/organizations.md)      |
-| Agreements                    | Reach consensus to do group driven actions                            | [agreements](docs/layers/e-organization-layers/agreements.md)            |
-| Transactions                  | Changes ownership of tokens after an agreement                        | [transactions.md](docs/layers/e-organization-layers/transactions.md)     |
-| Auditing                      | Api for record keeping/verification of transactions                   | [Auditing](docs/layers/e-organization-layers/auditing.md)                |
-| Deferred                      | Agreed things done by script or remote                                | [deferred.md](docs/layers/e-organization-layers/deferred.md)             |
-| Stores                        | Stores sell inventory                                                 | [stores](docs/layers/h-selling-layers/stores.md)                         |
-| Inventory                     | Items in a store for sale, need not be physical or even real          | [inventory](docs/layers/h-selling-layers/inventory.md)                   |
-| Promotions                    | Sets up advertising, monitors impressions                             | [promotions](docs/layers/i-promotion-layers/promotions.md)               |
-| Selling                       | Sets up a sales flow that tracks different events in a sale           | [selling](docs/layers/h-selling-layers/selling.md)                       |
-| Admin                         | Fixes broken stuff, sets up moderators, user management               | [admin](docs/layers/b-user-layers/admin-base.md)                         |
-| Boards                        | Discussion chat rooms and reviews. Private individual and group chats | [boards](docs/layers/f-interaction-layers/boards.md)                     |
-| Notes                         | Organize text,images, links, lists                                    | [notes](docs/layers/c-personal-layers/notes.md)                          |
-| Items                         | Allow sharing and communities                                         | [items](docs/layers/f-interaction-layers/items.md)                       |
-| Movement                      | Tokens move around connected sets                                     | [movement](docs/layers/f-interaction-layers/movement.md)                 |
-| Public grants                 | Allow some users to do some low level operations                      | [public-grants](docs/layers/b-user-layers/low-level-access.md)              |
-| Format                        | Converts token sets to different things: html and markup ..           | [format](docs/layers/c-personal-layers/format.md)                        |
-| Agents                        | Agents are authorized to do things outside the server                 | [agents](docs/layers/b-user-layers/agents.md)                            |
-| Jobs                          | Aid to the jobs in the queue, track job output and give notice        | [jobs](docs/layers/a-core-layers/jobs.md)                                |
-| Goals                         | Get resources for achievements                                        | [goals](docs/layers/m-eco-layers/goals.md)                               |
-| Tech trees                    | Figure things out, and get rewards                                    | [tech-trees](docs/layers/m-eco-layers/tech-trees.md)                     |
-| Rates                         | how api limits are enforced                                           | [rates](docs/layers/a-core-layers/rates.md)                              |
-| Conversions                   | Convert data to shapes and sets                                       | [conversions](docs/layers/m-eco-layers/conversions.md)                   |
+| Layer                         | Description                                                           | Link                                                                |
+|-------------------------------|-----------------------------------------------------------------------|---------------------------------------------------------------------|
+| Instance                      | About the instance the api is running on                              | [instance](docs/layers/a-core-layers/instance.md)                   |
+| Users                         | Manages existing users (non admin)                                    | [users](docs/layers/b-user-layers/users.md)                         |
+| User Groups                   | Do stuff with user groups                                             | [users groups](docs/layers/b-user-layers/user-groups.md)            |
+| Sessions                      | Provides sessions to interact with the core                           | [sessions](docs/layers/a-core-layers/sessions.md)                   |
+| Registrations                 | Does all the new user account creation                                | [registrations](docs/layers/b-user-layers/registrations.md)         |
+| Authentication and Logging in | Handles users logging in and pw resets                                | [user_login](docs/layers/b-user-layers/user_login.md)               |
+| Publishing                    | Api for broadcasting new types and changes in tokens                  | [publishing](docs/layers/d-other-instances/publishing.md)           |
+| Mirroring                     | Updates followed tokens and types that are not based here             | [mirroring](docs/layers/d-other-instances/mirroring.md)             |
+| External Users                | Coordinates users from other instances here                           | [external-users](docs/layers/d-other-instances/external-user.md)    |
+| Contracts                     | Terms of using someone's token in your own stuff. Auto payments       | [contracts](docs/layers/f-transactions/contracts.md)                |
+| Pools                         | Pools are a resource that generates future tokens                     | [pools](docs/layers/e-organization-layers/pools.md)                 |
+| Organizations                 | They are companies or people who do stores                            | [organizations](docs/layers/e-organization-layers/organizations.md) |
+| Agreements                    | Reach consensus to do group driven actions                            | [agreements](docs/layers/e-organization-layers/agreements.md)       |
+| Transactions                  | Changes ownership of tokens after an agreement                        | [transactions.md](docs/layers/f-transactions/transactions.md)       |
+| Auditing                      | Api for record keeping/verification of transactions                   | [Auditing](docs/layers/f-transactions/auditing.md)                  |
+| Deferred                      | Agreed things done by script or remote                                | [deferred.md](docs/layers/e-organization-layers/deferred.md)        |
+| Boards                        | Discussion chat rooms and reviews. Private individual and group chats | [boards](docs/layers/h-interaction-layers/boards.md)                |
+| Notes                         | Organize text,images, links, lists                                    | [notes](docs/layers/c-personal-layers/notes.md)                     |
+| Items                         | Allow sharing and communities                                         | [items](docs/layers/h-interaction-layers/items.md)                  |
+| Movement                      | Tokens move around connected sets                                     | [movement](docs/layers/m-eco-layers/movement.md)            |
+| Low level                     | Allow some users to do some low level operations                      | [low level](docs/layers/a-core-layers/low-level-access.md)          |
+| Format                        | Converts token sets to different things: html and markup ..           | [format](docs/layers/c-personal-layers/format.md)                   |
+| Agents                        | Agents are authorized to do things outside the server                 | [agents](docs/layers/b-user-layers/agents.md)                       |
+| Jobs                          | Aid to the jobs in the queue, track job output and give notice        | [jobs](docs/layers/a-core-layers/jobs.md)                           |
+| Goals                         | Get resources for achievements                                        | [goals](docs/layers/m-eco-layers/goals.md)                          |
+| Tech trees                    | Figure things out, and get rewards                                    | [tech-trees](docs/layers/m-eco-layers/tech-trees.md)                |
+| Rates                         | how api limits are enforced                                           | [rates](docs/layers/a-core-layers/rates.md)                         |
+| Conversions                   | Convert data to shapes and sets                                       | [conversions](docs/layers/m-eco-layers/conversions.md)              |
 
 # Concepts
 
@@ -143,10 +129,10 @@ Each layer has its own iteration of writing the api and code.
 
 # Calender
 
-| Event                              | Date         |                                                                                                                                                               |
-|------------------------------------|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Project first started              | Oct 8, 2023  | While this is a repeated attempt, started from scratch . First commit made                                                                                    |
-| Core api first planning version    | Oct 30, 2023 | Wrote out in md files each api call, method and a rough idea of expected args and behavior                                                                    |
+| Event                              | Date         |                                                                                                                                                                |
+|------------------------------------|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Project first started              | Oct 8, 2023  | While this is a repeated attempt, started from scratch . First commit made                                                                                     |
+| Core api first planning version    | Oct 30, 2023 | Wrote out in md files each api call, method and a rough idea of expected args and behavior                                                                     |
 | Layers, extension, changes to core | Nov 20, 2023 | Semi stable plans for all layers in the first version. Some ideas for the core are in extensions. Core updated to be able to do plans in layers and extensions |
 
 

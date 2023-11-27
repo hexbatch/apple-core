@@ -11,6 +11,19 @@ can only be called by logged-in users who are approved
   * figures out format asked for (json, html) and passes that format to the route being dispatched
 
 
+Basic user management
+* freeze users (user cannot use api, gets message about why)
+* delete users (removes user in layer, keeps core user)
+* able to use the rate api
+* Does maintenance on the tokens used by the outer layers
+* add user manually with pw
+* login user with pw
+
+Job Queues
+* Reviews stuck jobs, and can terminate them
+* Sees job metrics and outputs
+* Can see all job logs
+
 # instance description and admin lists for instance
 
 The instance is represented by a user (will create it here, if not existing, and store reference to it).
@@ -30,6 +43,12 @@ Logging services are a great way to use the plugins.
 # routing
 
 all api calls are sent through the instance.route_call
+
+# basic user management
+
+* make new users with pw via api call and be able to log them in
+  * allows testing of users in the first layer before any of the user layers, also good to bypass that layer if needed later
+* freeze and delete users
 
 # Api
 
