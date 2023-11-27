@@ -106,15 +106,11 @@ General api call in the layer:
 | Boards                        | Discussion chat rooms and reviews. Private individual and group chats | [boards](docs/layers/h-interaction-layers/boards.md)                |
 | Notes                         | Organize text,images, links, lists                                    | [notes](docs/layers/c-personal-layers/notes.md)                     |
 | Items                         | Allow sharing and communities                                         | [items](docs/layers/h-interaction-layers/items.md)                  |
-| Movement                      | Tokens move around connected sets                                     | [movement](docs/layers/m-eco-layers/movement.md)            |
 | Low level                     | Allow some users to do some low level operations                      | [low level](docs/layers/a-core-layers/low-level-access.md)          |
 | Format                        | Converts token sets to different things: html and markup ..           | [format](docs/layers/c-personal-layers/format.md)                   |
 | Agents                        | Agents are authorized to do things outside the server                 | [agents](docs/layers/b-user-layers/agents.md)                       |
 | Jobs                          | Aid to the jobs in the queue, track job output and give notice        | [jobs](docs/layers/a-core-layers/jobs.md)                           |
-| Goals                         | Get resources for achievements                                        | [goals](docs/layers/m-eco-layers/goals.md)                          |
-| Tech trees                    | Figure things out, and get rewards                                    | [tech-trees](docs/layers/m-eco-layers/tech-trees.md)                |
 | Rates                         | how api limits are enforced                                           | [rates](docs/layers/a-core-layers/rates.md)                         |
-| Conversions                   | Convert data to shapes and sets                                       | [conversions](docs/layers/m-eco-layers/conversions.md)              |
 
 # Concepts
 

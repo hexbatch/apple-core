@@ -37,10 +37,7 @@
 * [items.md](h-interaction-layers/items.md)
 
 
-* [movement.md](m-eco-layers/movement.md)
-* [goals.md](m-eco-layers/goals.md)
-* [tech-trees.md](m-eco-layers/tech-trees.md)
-* [conversions.md](m-eco-layers/conversions.md)
+
 
 
 
@@ -163,10 +160,6 @@ Organize text,images, links, lists
 Allow sharing and communities
 
 
-# Movement
-[movement.md](m-eco-layers/movement.md)
-Tokens can move, on their own, through set relationships by always going to the set that best fits them with their affinity. 
-This only happens if the affinity or allergies are set up for the token, and its registered
 
 
 # Public grants
@@ -187,14 +180,7 @@ Each public api call is put into a job queue, which is executed and then makes a
 which either returns the output to the user, if the http call is waiting, or calls the url the user set, or the user can poll later
 
 
-## Goals
-[goals](m-eco-layers/goals.md)
-Get resources for achievements
 
-
-## Tech trees
-[tech-trees](m-eco-layers/tech-trees.md)
-Figure things out, and get rewards
 
 
 ## Rates
@@ -202,7 +188,5 @@ Figure things out, and get rewards
 How api rate limits are granted
 
 
-## Conversions
-[conversions](m-eco-layers/conversions.md)
-Convert data to shapes and sets
+
 
