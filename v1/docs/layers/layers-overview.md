@@ -1,10 +1,10 @@
 # Once the api for the overview is set up, there are other apis that allow more specific usages
 
-* [instance.md](a-core-layers/instance.md)
-* [rates.md](a-core-layers/rates.md)
-* [sessions.md](a-core-layers/sessions.md)
-* [jobs.md](a-core-layers/jobs.md)
-* [low-level-access.md](a-core-layers/low-level-access.md)
+* [instance.md](a-inner-layers/instance.md)
+* [rates.md](a-inner-layers/rates.md)
+* [sessions.md](b-user-layers/sessions.md)
+* [jobs.md](a-inner-layers/jobs.md)
+* [low-level-access.md](a-inner-layers/low-level-access.md)
 
 
 * [agents.md](b-user-layers/agents.md)
@@ -18,9 +18,9 @@
 * [format.md](c-personal-layers/format.md)
 
 
-* [publishing.md](d-other-instances/publishing.md)
-* [mirroring.md](d-other-instances/mirroring.md)
-* [external-user.md](d-other-instances/external-user.md)
+* [publishing.md](d-connection-layers/publishing.md)
+* [mirroring.md](d-connection-layers/mirroring.md)
+* [external-user.md](d-connection-layers/external-user.md)
 
 
 * [agreements.md](e-organization-layers/agreements.md)
@@ -33,7 +33,7 @@
 * [contracts.md](f-transactions/contracts.md)
 
 
-* [boards.md](g-interaction-layers/boards.md)
+* [boards.md](g-interaction-layers/communication.md)
 * [items.md](g-interaction-layers/items.md)
 
 
@@ -53,7 +53,7 @@
 
 
 ## Instance info
-[instance.md](a-core-layers/instance.md)
+[instance.md](a-inner-layers/instance.md)
 Gives information about the instance the api is running at. Acts as a first step in interacting with the instance
 
 ## Authentication and logging in
@@ -70,7 +70,7 @@ Read and edit user, manage user sessions, sets up user for first time
 Do stuff with user groups
 
 # Sessions
-[sessions.md](a-core-layers/sessions.md)
+[sessions.md](b-user-layers/sessions.md)
 manages sessions
 
 
@@ -80,15 +80,15 @@ Does all the new user account creation
 
 
 # Publishing
-[publishing](d-other-instances/publishing.md)
+[publishing](d-connection-layers/publishing.md)
 Api for broadcasting new types and changes in tokens
 
 # Mirroring
-[mirroring.md](d-other-instances/mirroring.md)
+[mirroring.md](d-connection-layers/mirroring.md)
 Updates followed tokens and types that are not based here
 
 # External Users
-[external-user.md](d-other-instances/external-user.md)
+[external-user.md](d-connection-layers/external-user.md)
 Coordinates users from other instances here
 
 
@@ -136,7 +136,7 @@ Organizations are groups of users that share a wallet and use agreements by voti
 
 
 # Jobs
-[jobs.md](a-core-layers/jobs.md)
+[jobs.md](a-inner-layers/jobs.md)
 Jobs are used internally by the layers to execute stuff
 
 
@@ -146,7 +146,7 @@ Jobs are used internally by the layers to execute stuff
 
 
 # Boards
-[boards.md](g-interaction-layers/boards.md)
+[boards.md](g-interaction-layers/communication.md)
 Conversations either in chat or forums or posts. Can be read only or other stuff
 
 
@@ -163,7 +163,7 @@ Allow sharing and communities
 
 
 # Public grants
-[public-grants.md](a-core-layers/low-level-access.md)
+[public-grants.md](a-inner-layers/low-level-access.md)
 Allow some users to do some low level operations
 
 
@@ -175,7 +175,7 @@ Agents are those that are authorized to do token changes outside the server
 
 
 ## Jobs
-[jobs.md](a-core-layers/jobs.md)
+[jobs.md](a-inner-layers/jobs.md)
 Each public api call is put into a job queue, which is executed and then makes a private network call back to the waiting task,
 which either returns the output to the user, if the http call is waiting, or calls the url the user set, or the user can poll later
 
@@ -184,7 +184,7 @@ which either returns the output to the user, if the http call is waiting, or cal
 
 
 ## Rates
-[rates](a-core-layers/rates.md)
+[rates](a-inner-layers/rates.md)
 How api rate limits are granted
 
 

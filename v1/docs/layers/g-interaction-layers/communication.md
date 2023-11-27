@@ -1,6 +1,6 @@
-# Boards
+# Communication
 
-Are an api for connecting to agents for email, chat and board systems. This ranges from bulletin boards to live chats to emails.
+Are an api for connecting to agents for email, chat and communication systems. This ranges from bulletin communications to live chats to emails.
 The agents convert any incoming to an item,
 
 The user can reply to the item and then an action on that item has a remote that calls this api.
@@ -13,9 +13,9 @@ For example, if someone messages a user on a jabber server, an agent listening t
 
 Likewise, if someone adds a child token to a parent item token, it can be made a message in a chat system or internet board.
 
-Boards can also integrate multi-user group chats. Boards can be read only also, just delivering new notifications from the outside.
+Communications can also integrate multi-user group chats. Communications can be read only also, just delivering new notifications from the outside.
 
-Boards will use chat networks. This allows integrated conversations on popular chat and boards which also tie into the instance here.
+Communications will use chat networks. This allows integrated conversations on popular chat and communications which also tie into the instance here.
 
 
 Also, chat agents can be registered here, as well as listed.
@@ -27,22 +27,22 @@ Some intended agents:
 * at least one internet board system somewhere
 
 
-## Using chat and board libraries and display
+## Using chat and communication libraries and display
 
 * Chats can use public agents to connect to existing chat software
-* Boards can use agents to use  board code
+* Communications can use agents to use  communication code
 
-## Board items
+## Communication items
 
-The board api uses items api to record the messages and info, and to send that info to the users in the instance.
+The communication api uses items api to record the messages and info, and to send that info to the users in the instance.
 
-Some board integrations it makes more sense to use a protected message set for chat or reply chains, for things like chat conversations, or message board replies.
+Some communication integrations it makes more sense to use a protected message set for chat or reply chains, for things like chat conversations, or message communication replies.
 For example, a new top level email can be a new item, and the replies under it can be protected message tokens in that message set.
 
 
 ## Agent networking
 
 Each agent type, email or jabber, has a network type, as defined by this layer from a basic network type.
-and each user account from a network inherits from the user type and the network type. This is called a board-account type
+and each user account from a network inherits from the user type and the network type. This is called a communication-account type
 
-When a board makes an item, that item also inherits from the board-account type
+When a communication makes an item, that item also inherits from the communication-account type

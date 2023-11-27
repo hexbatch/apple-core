@@ -1,20 +1,23 @@
 # Making money
 
-# Using tokens for shopping
+# Connecting tokens with real money
 
-When someone shops, tokens can be distributed for friend lists on social media. 
-The seller can arrange that the friends combine their coupons to get a good deal next time people shop.
+Sometimes things of value can be traded, or people want tokens that represent actual money.
+Or need a token that marks a transaction successfully completed with money
 
-How do people combine their coupons? They give it to their friend. 
+Online stores and other places can use agents to create and change token state for transactions, and these tokens represent the money.
 
-They can give the tokens to their friend without logging in, because if they do not have an account, the tokens are still in a pool not created yet
-An agent is created that will apply the ownership for those new tokens to the buyer.
+So, when a merchant offers goods for sale, and wants a mix of real money and other tokens,
+the user purchasing is given a token that has a url for them to go pay, and then that token is updated when the payment goes through and the user is given a new token.
+That new token is made and added to the user's set to purchase with.
+Then, the token can complete the required type-set and the deal continues if all the matching tokens work out.
 
-However, to give it to someone else other than the buyer, they have to sign up or log in
-Then, any of their tokens will be owned by them, and they can send it anywhere.
-Again, this is done via an agent in the website doing this.
+## Tokens representing money only work for the user made for it
 
-Ads can be served later, when traffic increases
+A token that represents a transaction is defined by the user selling the stuff, or trading. There is no set token type for representing value.
+Likewise, there is no cryptocurrency here that works out of the box.
+Users can apply this as part of their own currencies though, and tokens can be part of the mechanisms that run after a transaction is made
+
 
 
 # Charging for using the selling api

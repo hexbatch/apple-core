@@ -1,6 +1,6 @@
 # Mirroring
 
-Related to the auditing, provides some apis to allow outside programs to tell this instance when something changes on another instance
+Related to the publishing, provides some apis to allow outside programs to tell this instance when something changes on another instance
 
 When it gets info, it will see if this is for 
 anything with a wrapper type parent.
@@ -22,11 +22,11 @@ A token is only followed if the user here, or a followed user, owns them
 # Discussion
 
 Allows the usage of some other network and protocol and other software to link the instances together.
-For example, the auditing will tell the other stuff that there is a change, and the other stuff will inform here at the listening when something is changed
+For example, the publishing will tell the other stuff that there is a change, and the other stuff will inform here at the listening when something is changed
 
 ## Notice of things being listened to elsewhere
 
-Other instances can use the auditing layer to announce when new things are being listened to, then can add in attributes here, or make some list to watch
+Other instances can use the publishing layer to announce when new things are being listened to, then can add in attributes here, or make some list to watch
 
 
 # Wrapping

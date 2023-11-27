@@ -85,38 +85,39 @@ General api call in the layer:
 
 # List of layers
 
-| Layer                         | Description                                                           | Link                                                                |
-|-------------------------------|-----------------------------------------------------------------------|---------------------------------------------------------------------|
-| Instance                      | About the instance the api is running on                              | [instance](docs/layers/a-core-layers/instance.md)                   |
-| Users                         | Manages existing users (non admin)                                    | [users](docs/layers/b-user-layers/users.md)                         |
-| User Groups                   | Do stuff with user groups                                             | [users groups](docs/layers/b-user-layers/user-groups.md)            |
-| Sessions                      | Provides sessions to interact with the core                           | [sessions](docs/layers/a-core-layers/sessions.md)                   |
-| Registrations                 | Does all the new user account creation                                | [registrations](docs/layers/b-user-layers/registrations.md)         |
-| Authentication and Logging in | Handles users logging in and pw resets                                | [user_login](docs/layers/b-user-layers/user_login.md)               |
-| Publishing                    | Api for broadcasting new types and changes in tokens                  | [publishing](docs/layers/d-other-instances/publishing.md)           |
-| Mirroring                     | Updates followed tokens and types that are not based here             | [mirroring](docs/layers/d-other-instances/mirroring.md)             |
-| External Users                | Coordinates users from other instances here                           | [external-users](docs/layers/d-other-instances/external-user.md)    |
-| Contracts                     | Terms of using someone's token in your own stuff. Auto payments       | [contracts](docs/layers/f-transactions/contracts.md)                |
-| Pools                         | Pools are a resource that generates future tokens                     | [pools](docs/layers/e-organization-layers/pools.md)                 |
-| Organizations                 | They are companies or people who do stores                            | [organizations](docs/layers/e-organization-layers/organizations.md) |
-| Agreements                    | Reach consensus to do group driven actions                            | [agreements](docs/layers/e-organization-layers/agreements.md)       |
-| Transactions                  | Changes ownership of tokens after an agreement                        | [transactions.md](docs/layers/f-transactions/transactions.md)       |
-| Auditing                      | Api for record keeping/verification of transactions                   | [Auditing](docs/layers/f-transactions/auditing.md)                  |
-| Deferred                      | Agreed things done by script or remote                                | [deferred.md](docs/layers/e-organization-layers/deferred.md)        |
-| Boards                        | Discussion chat rooms and reviews. Private individual and group chats | [boards](docs/layers/g-interaction-layers/boards.md)                |
-| Notes                         | Organize text,images, links, lists                                    | [notes](docs/layers/c-personal-layers/notes.md)                     |
-| Items                         | Allow sharing and communities                                         | [items](docs/layers/g-interaction-layers/items.md)                  |
-| Low level                     | Allow some users to do some low level operations                      | [low level](docs/layers/a-core-layers/low-level-access.md)          |
-| Format                        | Converts token sets to different things: html and markup ..           | [format](docs/layers/c-personal-layers/format.md)                   |
-| Agents                        | Agents are authorized to do things outside the server                 | [agents](docs/layers/b-user-layers/agents.md)                       |
-| Jobs                          | Aid to the jobs in the queue, track job output and give notice        | [jobs](docs/layers/a-core-layers/jobs.md)                           |
-| Rates                         | how api limits are enforced                                           | [rates](docs/layers/a-core-layers/rates.md)                         |
+| Group        | Layer                         | Description                                                           | Link                                                                |
+|:-------------|-------------------------------|-----------------------------------------------------------------------|---------------------------------------------------------------------|
+| Inner        | Instance                      | About the instance the api is running on                              | [instance](docs/layers/a-inner-layers/instance.md)                  |
+|              | Jobs                          | Aid to the jobs in the queue, track job output and give notice        | [jobs](docs/layers/a-inner-layers/jobs.md)                          |
+|              | Rates                         | how api limits are enforced                                           | [rates](docs/layers/a-inner-layers/rates.md)                        |
+|              | Low level                     | Allow some users to do some low level operations                      | [low level](docs/layers/a-inner-layers/low-level-access.md)         |
+| User         | Users                         | Manages existing users (non admin)                                    | [users](docs/layers/b-user-layers/users.md)                         |
+|              | User Groups                   | Do stuff with user groups                                             | [users groups](docs/layers/b-user-layers/user-groups.md)            |
+|              | Sessions                      | Provides sessions to interact with the core                           | [sessions](docs/layers/b-user-layers/sessions.md)                   |
+|              | Agents                        | Agents are authorized to do things outside the server                 | [agents](docs/layers/b-user-layers/agents.md)                       |
+|              | Registrations                 | Does all the new user account creation                                | [registrations](docs/layers/b-user-layers/registrations.md)         |
+|              | Authentication and Logging in | Handles users logging in and pw resets                                | [user_login](docs/layers/b-user-layers/user_login.md)               |
+| Personal     | Notes                         | Organize text,images, links, lists                                    | [notes](docs/layers/c-personal-layers/notes.md)                     |
+|              | Format                        | Converts token sets to different things: html and markup ..           | [format](docs/layers/c-personal-layers/format.md)                   |
+| Connection   | Publishing                    | Api for broadcasting new types and changes in tokens                  | [publishing](docs/layers/d-connection-layers/publishing.md)         |
+|              | Mirroring                     | Updates followed tokens and types that are not based here             | [mirroring](docs/layers/d-connection-layers/mirroring.md)           |
+|              | External Users                | Coordinates users from other instances here                           | [external-users](docs/layers/d-connection-layers/external-user.md)  |
+|              | Pools                         | Pools are a resource that generates future tokens                     | [pools](docs/layers/e-organization-layers/pools.md)                 |
+| Organization | Organizations                 | They are companies or people who do stores                            | [organizations](docs/layers/e-organization-layers/organizations.md) |
+|              | Agreements                    | Reach consensus to do group driven actions                            | [agreements](docs/layers/e-organization-layers/agreements.md)       |
+|              | Deferred                      | Agreed things done by script or remote                                | [deferred.md](docs/layers/e-organization-layers/deferred.md)        |
+| Transaction  | Transactions                  | Changes ownership of tokens after an agreement                        | [transactions.md](docs/layers/f-transactions/transactions.md)       |
+|              | Auditing                      | Api for record keeping/verification of transactions                   | [Auditing](docs/layers/f-transactions/auditing.md)                  |
+|              | Contracts                     | Terms of using someone's token in your own stuff. Auto payments       | [contracts](docs/layers/f-transactions/contracts.md)                |
+| Interaction  | Boards                        | Discussion chat rooms and reviews. Private individual and group chats | [Communication](docs/layers/g-interaction-layers/communication.md)  |
+|              | Items                         | Allow sharing and communities                                         | [items](docs/layers/g-interaction-layers/items.md)                  |
+
+
 
 # Concepts
 
 * [Environment](docs/concepts/environment.md)
-* [Money](docs/concepts/real_money.md)
-* [Shipping](docs/concepts/shopping.md)
+* [Shopping](docs/concepts/money.md)
 * [Interfaces](docs/concepts/interfaces.md)
 * [Data Flow](docs/concepts/data-flow.md)
 * [Instances](docs/concepts/instances.md)
