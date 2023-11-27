@@ -18,8 +18,6 @@ The creator of the agreement can delete it only if nobody has agreed yet.
 
 A person can remove their user token if decide they changed their mind.
 
-An agreement  can be set up to have a delay or datetime to do the transaction after all signed
-
 Agreements can be set to allow a percentage of users to decide, or can be set to allow different users to have different weights
 
 Agreements can be cancelled later by any user removing his token, or having it be set to a percentage of users or weights. A cancelled agreement is an empty set
@@ -73,16 +71,6 @@ Any one agreement here, finalizing, will result in closing out all the other agr
 
 A number of events start out at the same time, the first one to succeed will mark the others as failed
 
-## Looping agreements
-
-Set one or more agreements as the loop control variable, all the agreements will start (single, block of, survivor, if else) and be attempted to be executed once
-When each of those agreements are finalized, then will look to the agreements in loop control,
-    if all the agreements there succeed , then the loop is done again, repeatedly, until one control agreement fails
-
-### generating new agreements 
-
-A loop can make a new agreement automatically signed each time it loops after checking the control agreement.
-There must be a minimum delay. Any of the parties of the new agreement can cancel it, or the control agreement
 
 ##  Ancestry
 

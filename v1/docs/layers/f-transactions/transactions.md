@@ -32,14 +32,11 @@ There can be multiple parties to the agreement token.
   * Any party can remove their user token from the agreement before it executes, this cancels the transaction
 
 
-After all agreement, and any delay passes between after all agree and execution, 
-the transfer will take place
+After the agreement succeeds, the transfer will take place
 
 Different options when making a transaction:
 * Transactions can be set to be deleted after N time after no agreement is reached.
-* Transactions can be set to allow reuse by looping the agreement to make a new agreement
-  * the new transaction will be a copy of the old, but using the new agreement.
-* A transaction can be set up to have a delay or datetime to do the transaction after all signed
+
 
 
 ## Escrow
@@ -87,7 +84,7 @@ However, transactions can be combined in different instances by using the listen
 
 So, I can agree that tokens A on server X have some equivalence to tokens C on this server,and when I get tokens A on X, I will do transaction in Tokens C on here.
 These chains can be extended indefinitely.
-If they loop, then the completed agreements will pass things through automatically
+Completed agreements will pass things through automatically
 
 but, things can mess up, and an agreement will not finish somewhere. If that is the case, there is a rollback clause in the transactions if there is no progress after X seconds
 

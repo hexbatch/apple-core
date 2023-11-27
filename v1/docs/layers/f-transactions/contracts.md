@@ -20,9 +20,9 @@ Breakdown of a subscription or single sell:
 * The transaction for each subscription cost to keep from moving the token out of the group
   * must have a txn
   * must have an end time
-  * At the end time, will move the token out of the group
-    * unless the loop agreement is pending or successful for the next one
-    * do not need loop transaction but just provide a new transaction to be agreed on
+  * At the end time, will try to do the re-subscription using that txn (unless limits to resubscribing)
+    * txn failure will move the token out
+    * agreement failure will move the token out (someone cancelled)
 
 With subscriptions, can set up rates, terms, limits and costs
 * Can set up how the costs are paid
@@ -33,7 +33,7 @@ With subscriptions, can set up rates, terms, limits and costs
 The rates are then set up to be calculated by a js script that is generated from a script template.
 And the script md5 is put into the agreement.
 
-Loop transaction provides an unchangeable subscription cost until cancelled.
+Re-subscriptions provide an unchangeable subscription cost until cancelled.
 Can hook on agreements to this agreement's fail condition for penalties.
 
 Setting a new transaction before the subscription period ends can be done automatically or manually.
@@ -55,8 +55,7 @@ and the transaction completing allows for the user to be an admin or member.
 
 # Membership invites
 
-An invite is a membership set up to run when a person is given a selected token,
-or a pool stub is created to be a token  
+An invitation is a membership set up to run when a person is given a selected token, or a pool stub is created to be a token  
 
 When the invite is activated by the ownership or token creation, then the owner is the one given membership.
 Invites need to have no up front costs.
