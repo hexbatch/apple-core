@@ -33,8 +33,8 @@
 * [contracts.md](f-transactions/contracts.md)
 
 
-* [boards.md](h-interaction-layers/boards.md)
-* [items.md](h-interaction-layers/items.md)
+* [boards.md](g-interaction-layers/boards.md)
+* [items.md](g-interaction-layers/items.md)
 
 
 
@@ -146,7 +146,7 @@ Jobs are used internally by the layers to execute stuff
 
 
 # Boards
-[boards.md](h-interaction-layers/boards.md)
+[boards.md](g-interaction-layers/boards.md)
 Conversations either in chat or forums or posts. Can be read only or other stuff
 
 
@@ -156,7 +156,7 @@ Organize text,images, links, lists
 
 
 # Items
-[Items](h-interaction-layers/items.md)
+[Items](g-interaction-layers/items.md)
 Allow sharing and communities
 
 

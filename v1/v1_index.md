@@ -103,9 +103,9 @@ General api call in the layer:
 | Transactions                  | Changes ownership of tokens after an agreement                        | [transactions.md](docs/layers/f-transactions/transactions.md)       |
 | Auditing                      | Api for record keeping/verification of transactions                   | [Auditing](docs/layers/f-transactions/auditing.md)                  |
 | Deferred                      | Agreed things done by script or remote                                | [deferred.md](docs/layers/e-organization-layers/deferred.md)        |
-| Boards                        | Discussion chat rooms and reviews. Private individual and group chats | [boards](docs/layers/h-interaction-layers/boards.md)                |
+| Boards                        | Discussion chat rooms and reviews. Private individual and group chats | [boards](docs/layers/g-interaction-layers/boards.md)                |
 | Notes                         | Organize text,images, links, lists                                    | [notes](docs/layers/c-personal-layers/notes.md)                     |
-| Items                         | Allow sharing and communities                                         | [items](docs/layers/h-interaction-layers/items.md)                  |
+| Items                         | Allow sharing and communities                                         | [items](docs/layers/g-interaction-layers/items.md)                  |
 | Low level                     | Allow some users to do some low level operations                      | [low level](docs/layers/a-core-layers/low-level-access.md)          |
 | Format                        | Converts token sets to different things: html and markup ..           | [format](docs/layers/c-personal-layers/format.md)                   |
 | Agents                        | Agents are authorized to do things outside the server                 | [agents](docs/layers/b-user-layers/agents.md)                       |
