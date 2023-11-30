@@ -47,9 +47,9 @@ The moving the token into the user group can also include admin rights or not.
 
 # Usages
 
-## Membership sold in stores
+## Membership sold in transactions
 
-Membership offers can be sold in stores,
+Membership offers can be sold in transactions,
 and the transaction completing allows for the user to be an admin or member.
 
 

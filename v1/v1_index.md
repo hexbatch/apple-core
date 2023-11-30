@@ -25,21 +25,31 @@ The core api list is at [core-api-list.md](docs/core/core-api-list.md)
 The core api will have a full testing coverage and suit. 
 
 See [core-development-overview.md](dev/core-development-overview.md)
+Some selected links below cover the main parts, the overview has more
+
+| Concept    | Description                | Link                                                            |
+|------------|----------------------------|-----------------------------------------------------------------|
+| Bounds     | Limits of a token          | [bounds](docs/core/step-1-bounds/bound-overview.md)             |
+| Attributes | Data in a token            | [attributes](docs/core/step-2-attributes/attribute-overview.md) |
+| Actions    | Event listeners on a token | [actions](docs/core/step-4-actions/action-overview.md)          |
+| Types      | A definition of a token    | [types](docs/core/step-5-types/type-overview.md)                |
+| Tokens     | Definition of a token      | [tokens.md](docs/core/step-6-tokens/token-overview.md)          |
+| Sets       | Tokens are put into a set  | [sets](docs/core/step-7-sets/set-overview.md)                   |
 
 ## List of expansions in the core
 
 There are some cool stuff that can be done at the core level, that is not universally needed by all operations
 
-| Expansion                        | Description                        | Link                                                                         |
-|----------------------------------|------------------------------------|------------------------------------------------------------------------------|
-| Overview                         | Intro how these are organized      | [aa-overview.md](docs/layers/y-core-expansions/aa-overview.md)               |
-| Aggregations                     | Reduce values in sets              | [aggregations.md](docs/layers/y-core-expansions/aggregations.md)             |
-| Iterations                       | Organize successive api calls      | [iterations.md](docs/layers/y-core-expansions/iterations.md)                 |
-| Push Pop                         | Organize api calls done in batches | [push-pops.md](docs/layers/y-core-expansions/push-pops.md)                   |
-| Dynamic Filters and requirements | Expand the concept of filters      | [filters.md](docs/layers/y-core-expansions/dynamic-filters.md)               |
-| Same set location searching      | Using shape relations              | [location-searching.md](docs/layers/y-core-expansions/location.md) |
-| Mutuals                          | Interlinked sets                   | [mutuals.md](docs/layers/y-core-expansions/mutuals.md)                       |
-| Interfaces                       | Higher order data flow             | [interfaces.md](docs/layers/y-core-expansions/interfaces.md)                 |
+| Expansion                        | Description                        | Link                                                             |
+|----------------------------------|------------------------------------|------------------------------------------------------------------|
+| Overview                         | Intro how these are organized      | [aa-overview.md](docs/core/y-core-expansions/aa-overview.md)     |
+| Aggregations                     | Reduce values in sets              | [aggregations.md](docs/core/y-core-expansions/aggregations.md)   |
+| Iterations                       | Organize successive api calls      | [iterations.md](docs/core/y-core-expansions/iterations.md)       |
+| Push Pop                         | Organize api calls done in batches | [push-pops.md](docs/core/y-core-expansions/push-pops.md)         |
+| Dynamic Filters and requirements | Expand the concept of filters      | [filters.md](docs/core/y-core-expansions/dynamic-filters.md)     |
+| Same set location searching      | Using shape relations              | [location-searching.md](docs/core/y-core-expansions/location.md) |
+| Mutuals                          | Interlinked sets                   | [mutuals.md](docs/core/y-core-expansions/mutuals.md)             |
+| Interfaces                       | Higher order data flow             | [interfaces.md](docs/core/y-core-expansions/interfaces.md)       |
 
 
 # Layers
@@ -132,17 +142,6 @@ General api call in the layer:
 | Core api first planning version    | Oct 30, 2023 | Wrote out in md files each api call, method and a rough idea of expected args and behavior                                                                     |
 | Layers, extension, changes to core | Nov 20, 2023 | Semi stable plans for all layers in the first version. Some ideas for the core are in extensions. Core updated to be able to do plans in layers and extensions |
 
-
-# Future Milestones
-
-* (currently working on this) List all the api calls done in each layer, with at least a rough description. Layers can still be altered at this stage. Core can still have tweaks.
-* Fill in the description of all the layer api calls, and list all the core api used in those layers
-* Define input and output data structures in all the layer api
-* Write open api specs for the core
-* Write open api specs for the layers and extensions
-* Code the core
-* Code the testing and tutorial and experimental environment for the core
-* Build the layers in group order
 
 
 

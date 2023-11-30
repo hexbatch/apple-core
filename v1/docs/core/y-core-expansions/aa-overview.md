@@ -4,7 +4,7 @@
 * Once added, the modules add new api operations that the layers and others can call just like normal core api
 * The api for managing extensions is added to the admin api
 
-see [core expansions.md](../../core/core-api-general/expansions.md)
+see [core expansions.md](../core-api-general/expansions.md)
 
 
 Expansions are done here because not everything needs them, but some layers do. The expansions can be implemented when needed

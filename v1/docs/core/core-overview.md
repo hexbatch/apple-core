@@ -17,32 +17,22 @@ The core is meant to be stand-alone for testing and demonstration purposes thoug
 Attributes are defined by themselves, and attached to the token-type. The tokens are instances of the token-type
 
 
-## Data types
+## General concepts
 
-each data type has its own set of api operations
-
-data types:
-
-
-*    actions
-*    token-type
-*    requirement
-*    token
-*    movement
-* [sets ](core-concepts/sets.md)
-*    operations
-* searches
 
 * [users](core-concepts/users.md)
 * [groups](core-concepts/groups.md)
 * [bounds](core-concepts/bounds.md)
 * [attributes](core-concepts/attributes.md)
 * [scripts](core-concepts/scripts.md)
-* [scripts](core-concepts/remotes.md)
+* [remotes](core-concepts/remotes.md)
+* [actions](core-concepts/actions.md)
+* [types](core-concepts/types.md)
+* [token](core-concepts/token.md)
+* [sets](core-concepts/sets.md)
+* [operations](core-concepts/operations.md)
+* [searches](core-concepts/searches.md)
 
-# User authentication
-[authentication.md](core-api-general/authentication.md)
-users log in
 
 
 # api execution
@@ -57,6 +47,49 @@ Can extend the core later
 [visualization-testing.md](core-api-general/visualization-testing.md)
 Be nice to the developers and testing!
 
+
+----------------------------------------
+# User
+
+A [user](step-0-users-groups/user-overview.md) is both a person (or bot) in this library, and a token type.
+Any tokens a user creates will inherit from this token type.
+
+A user when created has some default attributes, some of which can only be read by the user.
+
+When a user is created, a user group for it is also created. Any other user added to the group can read the private data.
+Any other user promoted to admin in the user group can write to the user attributes.
+
+User tokens cannot be bounded, and they cannot run actions
+
+---------------------------------------
+# User Admin
+[user admin](step-0-users-groups/admin-api.md)
+Life can get tricky! And the layers may need a way to reset a pw or all tokens. Or when just using the core by itself, a pw might need resetting
+
+
+---------------------------------------
+# Aliases
+[Alias](step-0-users-groups/alias-api.md)
+Aliases allow setting different names using different languages
+
+Api calls can have an optional language set in the call.
+If there is no language, then no aliases will be used. However, if there is a language set, then the aliases will be looked for, if missing the non-alias will be needed.
+
+Cannot mix aliases from different languages in same api call
+
+----------------------------------------
+# User Groups
+
+A [user group](step-0-users-groups/group-overview.md)  is a collection of users. These groups are used for permission lists, and are the bedrock of the permission system in this library
+
+Actions do not run on the token of the user group
+
+
+-----------------------------------
+
+# User authentication
+[authentication.md](core-api-general/authentication.md)
+users log in
 
 ------------------------------------
 
@@ -130,43 +163,5 @@ A token set does not have any definition or structure, it's a loose organization
 * [Relationships](step-7-sets/relationship-overview.md)
 
 
-----------------------------------------
-# User 
 
-A [user](step-0-users-groups/user-overview.md) is both a person (or bot) in this library, and a token type.
-Any tokens a user creates will inherit from this token type.
-
-A user when created has some default attributes, some of which can only be read by the user.
-
-When a user is created, a user group for it is also created. Any other user added to the group can read the private data. 
-Any other user promoted to admin in the user group can write to the user attributes.
-
-User tokens cannot be bounded, and they cannot run actions
-
----------------------------------------
-# User Admin
-[user admin](step-0-users-groups/admin-api.md)
-Life can get tricky! And the layers may need a way to reset a pw or all tokens. Or when just using the core by itself, a pw might need resetting
-
-
----------------------------------------
-# Aliases
-[Alias](step-0-users-groups/alias-api.md)
-Aliases allow setting different names using different languages
-
-Api calls can have an optional language set in the call.
-If there is no language, then no aliases will be used. However, if there is a language set, then the aliases will be looked for, if missing the non-alias will be needed.
-
-Cannot mix aliases from different languages in same api call
-
-----------------------------------------
-# User Groups
-
-A [user group](step-0-users-groups/group-overview.md)  is a collection of users. These groups are used for permission lists, and are the bedrock of the permission system in this library
-
-Actions do not run on the token of the user group
-
-
-
--------------------------------------------------------------
 
