@@ -17,9 +17,9 @@ Some attributes, and even some standard definition attributes will be marked as 
 
 | Method | Path                      | Route Name                  | Description                                         | Args                                  | Notes                             |
 |--------|---------------------------|-----------------------------|-----------------------------------------------------|---------------------------------------|-----------------------------------|
-| Post   | user/register/{lang-code} | core.user.create            | Makes a new user, puts the username in the aliases  | username (must be unique)             | returns a bearer token            |
+| Post   | user/register/{lang-code} | core.user.register            | Makes a new user, puts the username in the aliases  | username (must be unique)             | returns a bearer token            |
 | Post   | user/auth/create          | core.user.auth.create       | makes a new bearer token for the authenticated user | optional pass through data to store   |                                   |
-| Get    | user/auth/pass_through    | core.user.auth.pass_through | makes a new bearer token for the authenticated user |                                       | uses the log in token to get data |
+| Get    | user/auth/pass_through    | core.user.auth.pass_through | gets associated data in the token                   |                                       | uses the log in token to get data |
 | Delete | user/auth/delete          | core.user.auth.destroy      | Deletes the token being used in this call           |                                       | cannot delete last token          |
 | Get    | user/:id                  | core.user.read              | Shows the user information                          | optional wide flag to show attributes |                                   |
 

@@ -11,7 +11,10 @@ Example:
         "message": "No to number is specified",
         "code": 21201,
         "more_info": "http:\/\/www.twilio.com\/docs\/errors\/21201"
+        "errors": []
         }
+
+errors array are additional errors, and can be missing
 
 Errors are under the api_errors, in the response. A response may have this missing if no errors. There can be more than one error here,
 so this is an array
