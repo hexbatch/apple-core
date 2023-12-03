@@ -4,7 +4,7 @@ Choose language in the Accept-Language header, example: `Accept-Language: fr; q=
 
 This is optional, if not there then the system default will be used (for now English)
 
-When provided aliases in that language will be used.
+When provided, system defined stuff will try to use the names in that language. 
 
 The library will choose the best fitting language, but looking at the weights and what is supported.
 So, will choose the highest ranked one that is supported, else will use the default

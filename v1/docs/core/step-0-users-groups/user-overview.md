@@ -57,7 +57,5 @@ The core allows another token to be used as a base token for a new user, but tha
 
 Each user has a unique username, with no punctuation of most kinds, and not starting with a digit, and no whitespace
 
-Aliases for the token type can be created, using aliases, in different languages. They must follow the naming convention and be unique
-
 
 

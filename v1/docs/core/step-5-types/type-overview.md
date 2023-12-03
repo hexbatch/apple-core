@@ -70,10 +70,8 @@ A type can forbid being used to make other types
 ## Naming rules
 
 Token types must have a name, but the name must start with the username that created it, followed by a dot.
-Then the alias for the word 'type', another dot, then the name must be unique
+Then something for the word 'type', another dot, then the name must be unique
 
-Aliases for the token type can be created, via aliases, in different languages. 
-They must follow the naming convention and be unique
 
 ## allowed creators
 

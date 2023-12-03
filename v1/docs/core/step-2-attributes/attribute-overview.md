@@ -168,6 +168,4 @@ Each category of boundary use can only use of of each boundary type (location, t
 
 ## Naming rules
 
-Attributes must have a name, but the name must start with the username that created it, followed by a dot. then the alias for the word 'attribute', another dot, then the name must be unique
-
-Aliases for the attribute can be created, via aliases, in different languages. They must follow the naming convention and be unique
+Attributes must have a name, but the name must start with the username that created it, followed by a dot. then something for 'attribute', another dot, then the name must be unique

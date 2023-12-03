@@ -7,11 +7,11 @@ No login is needed to query
 
 no pagination here
 
-| Method | Path                  | Route Name                | Operation                                   | Args |
-|--------|-----------------------|---------------------------|---------------------------------------------|------|
-| Get    | standard/families     |                           | gets list of families (string array)        |      |
-| Get    | standard/:family/list | core.standard.family.list | returns a family structure                  |      |
-| Get    | standard/:id          |                           | returns single standard attribute structure |      |
+| Method | Path                      | Route Name                | Operation                                                                                                    |
+|--------|---------------------------|---------------------------|--------------------------------------------------------------------------------------------------------------|
+| Get    | standard/families         |                           | gets list of families (string array)                                                                         |
+| Get    | standard/:family/list     | core.standard.family.list | returns a family structure                                                                                   |
+| Get    | standard/:id/{?lang_code} |                           | returns single standard attribute structure, if lang code provided then docs will try to be in that language |
 
 
 Families return for each family
@@ -35,6 +35,7 @@ standard_attribute structure:
     max_range: (can be null)
     regex: (can be null)
     docs:  string
+    aliases: [string array of names in all languages]
 
 
 ## For all returns 

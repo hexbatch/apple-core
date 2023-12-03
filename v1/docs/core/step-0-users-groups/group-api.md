@@ -15,7 +15,7 @@ when members are listed, it's their ids
 when adding or removing group members or admins, the adding can be done with groups. If using a group in a non group api, then the current members only are added or removed
 When using a group in a group api, then at any future time, that group membership will be used
 
-names of groups: must be unique, starts with the username then a dot, then an alias for 'group', then another dot,  then a unique name for a group
+names of groups: must be unique, starts with the username then a dot, then a something for 'group', then another dot,  then a unique name for a group
 
 | Method | Path                          | Route Name | Description                                                           | Args                                                                            |
 |--------|-------------------------------|------------|-----------------------------------------------------------------------|---------------------------------------------------------------------------------|

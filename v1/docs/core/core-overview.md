@@ -67,16 +67,6 @@ User tokens cannot be bounded, and they cannot run actions
 Life can get tricky! And the layers may need a way to reset a pw or all tokens. Or when just using the core by itself, a pw might need resetting
 
 
----------------------------------------
-# Aliases
-[Alias](step-0-users-groups/alias-api.md)
-Aliases allow setting different names using different languages
-
-Api calls can have an optional language set in the call.
-If there is no language, then no aliases will be used. However, if there is a language set, then the aliases will be looked for, if missing the non-alias will be needed.
-
-Cannot mix aliases from different languages in same api call
-
 ----------------------------------------
 # User Groups
 
