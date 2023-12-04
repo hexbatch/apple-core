@@ -96,6 +96,7 @@ Data can be marked as:
 
 * points to something 
   * user_id
+  * user group id
   * attribute id
   * token id
   * script

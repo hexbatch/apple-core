@@ -8,8 +8,9 @@ The user's type can only create one token, that of the user, but can be used as 
 A user, when created, has some default attributes, on his token, some of which can only be read by the user.
 
 
-When a user is created, a user group for it is also created. Any other user added to the group can read the private data.
-Any other user promoted to admin in the user group can write to the user attributes.
+When a user is created, a user group for it is also created. This user group has the same name as the user.
+Any other user added to the group can read the private data.
+Any other user promoted to admin in the user group can write to the user attributes, and manage resources for the user.
 
 
 The only top level information a user contains is its id, its guid (automatically made or changed to a unique string in the system),

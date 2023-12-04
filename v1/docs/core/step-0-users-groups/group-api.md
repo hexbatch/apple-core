@@ -11,16 +11,16 @@ when :id is mentioned here, it's the group token guid, or the name of the group
 when members and admins are mentioned, it's their tokens
 
 
-| Method | Path                    | Route Name | Description                                                   | Args                   |
-|--------|-------------------------|------------|---------------------------------------------------------------|------------------------|
-| Post   | group/create            |            | create group,returns the group guid                           | required name          |
-| Delete | group/:id/destroy       |            | destroy group.Can only be deleted if not in use anywhere      |                        |
-| Put    | group/:id/member/add    |            | Adds membership to a single user                              | user token guid or id  |
-| Delete | group/:id/member/remove |            | Removes membership for a single user                          | user token guid or id  |
-| Delete | group/:id/admin/remove  |            | Removes admin status for a single user, they are still member | user token guid or id  |
-| Put    | group/:id/admin/add     |            | Add admin status for a single user                            | user token guid or id  |
-| GET    | group/:id/list          |            | lists the membership and admins                               | iterator for next page |
-| GET    | groups/list             |            | lists the groups by guid, that user is involved in            | iterator for next page |
+| Method | Path                    | Route Name               | Description                                                   | Args                   |
+|--------|-------------------------|--------------------------|---------------------------------------------------------------|------------------------|
+| Post   | group/create            | core.group.create        | create group,returns the group guid                           | required name          |
+| Delete | group/:id/destroy       | core.group.destroy       | destroy group.Can only be deleted if not in use anywhere      |                        |
+| Put    | group/:id/member/add    | core.group.member.add    | Adds membership to a single user                              | user token guid or id  |
+| Delete | group/:id/member/remove | core.group.member.remove | Removes membership for a single user                          | user token guid or id  |
+| Delete | group/:id/admin/remove  | core.group.admin.remove  | Removes admin status for a single user, they are still member | user token guid or id  |
+| Put    | group/:id/admin/add     | core.group.admin.add     | Add admin status for a single user                            | user token guid or id  |
+| GET    | group/:id/list          | core.group.list          | lists the membership and admins                               | iterator for next page |
+| GET    | groups/list             | core.user.groups.list    | lists the groups by guid, that user is involved in            | iterator for next page |
 
 
     user-group:
