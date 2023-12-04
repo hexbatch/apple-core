@@ -69,8 +69,8 @@ A type can forbid being used to make other types
 
 ## Naming rules
 
-Token types must have a name, but the name must start with the username that created it, followed by a dot.
-Then something for the word 'type', another dot, then the name must be unique
+Token types must have a name, this can be anything unique to that user. 
+When using that name to search, then its qualified by the username, seperated by a dot.
 
 
 ## allowed creators

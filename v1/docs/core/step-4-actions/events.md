@@ -49,6 +49,13 @@ Requirements have a token, events here can be done on it when it's used to filte
 * allow_token
 
 
+Group sets have events for membership
+* member_added
+* member_removed
+* admin_added
+* admin_removed
+
+
 ## custom events 
 
 Sometimes extensions and layers need to fire off their own events.

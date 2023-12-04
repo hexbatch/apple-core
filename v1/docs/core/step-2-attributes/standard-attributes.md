@@ -7,19 +7,17 @@ There is an api to list the system items by type and role: for example list all 
 
 # Standard token types
 
-## User Tokens
+## User Type
 
-The user token has all the core identification and display attributes. When a user is created, a new token type is inherited
+Each user type inherits from the same base standard user type which has all the core identification and display attributes.
+When a user is created, a new type is made just for the user.
 
-The base user token also is in some system defined groups
 
-## User Group Tokens
+##  Group Set Type
 
-The group token has all the core identification and display attributes. When a group is created, a new token type is inherited
+The group-set type has all the core identification and display attributes. When a group-set is created, a new type is made
 
-# Standard groups
 
-* script_permission group : members here can create scripts
 
 # Standard attributes
 

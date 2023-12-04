@@ -1,21 +1,23 @@
 # User
 
 User is both a person (or bot) in this library, and a token type. Any tokens a user creates will inherit from this token type.
+The type for the user is created when the user is made, The type has the same name as the user.
+The user type inherits from a standard user type, but other types can be added here to mixin with that user type also.
+The user's type can only create one token, that of the user, but can be used as a parent for other types.
 
-A user, when created, has some default attributes, some of which can only be read by the user.
-The user token inherits from a user type, but other types can be added here to mixin with that user type also.
+A user, when created, has some default attributes, on his token, some of which can only be read by the user.
+
 
 When a user is created, a user group for it is also created. Any other user added to the group can read the private data.
 Any other user promoted to admin in the user group can write to the user attributes.
 
-User base token can be chosen from any token that inherits from the user token
 
 The only top level information a user contains is its id, its guid (automatically made or changed to a unique string in the system),
 its token type, and the token of the user itself.
 
 The user data is found by getting the attributes of the user token.
 
-The token type starts with a list of standard attributes. By default all of the "Core ID and display" attributes are there.
+The token type starts with a list of standard attributes. By default, all the "Core ID and display" attributes are there.
 
 A user can include non system attributes they have permission for, and this is added directly to the token type, and the token automatically picks up on this new attribute.
 

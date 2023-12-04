@@ -56,7 +56,7 @@ The output keys define what the value returned will be, more than one key makes 
 ## script permissions
 
 * Scripts are run in a sandbox not allowing file access
-* The users who can create a script are in the script_permission group 
+
 
 ### Setting live attributes
 

@@ -44,6 +44,7 @@
 
 # Sets
 * [set-api](step-7-sets/set-api.md)
+* [group-set-api](step-7-sets/group-set-api.md)
 * [requirements-api](step-7-sets/requirements-api.md)
 * [search api](step-7-sets/search-api.md)
 * [operations api](step-7-sets/operations-api.md)

@@ -36,7 +36,8 @@ the option for location_checks can be turned on or off at set definition time
 [relationships](relationship-overview.md)
 Token sets might be organized to have parents,siblings and links. There should be ways to navigate through this with the api.
 
-
+## Group sets
+[group sets](group-set-overview.md) allow groups to be used more in the api for many things
 
 
 ## Requirements
