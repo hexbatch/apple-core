@@ -21,7 +21,7 @@ Some attributes, and even some standard definition attributes will be marked as 
 | Post   |      | user/auth/create       | core.user.auth.create       | makes a new bearer token for the authenticated user | optional pass through data to store   |                                   |
 | Get    |      | user/auth/pass_through | core.user.auth.pass_through | gets associated data in the token                   |                                       | uses the log in token to get data |
 | Delete |      | user/auth/delete       | core.user.auth.destroy      | Deletes the token being used in this call           |                                       | cannot delete last token          |
-| Get    | *    | user/:id               | core.user.read              | Shows the user information                          | optional wide flag to show attributes |                                   |
+| Get    | *    | user/get/:id           | core.user.read              | Shows the user information                          | optional wide flag to show attributes |                                   |
 
 ### User Data returned in the user.create or user.read
 
@@ -36,3 +36,7 @@ Some attributes, and even some standard definition attributes will be marked as 
 When the wide flag is used in the read, then it will be a list of attribute name: attribute value
 
 When the editable flag is used, only the attributes that are editable, via permissions of the calling user, will be returned
+
+# Todo
+
+do get wide flag to show attribute values 
