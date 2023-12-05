@@ -1,6 +1,6 @@
 # Attributes
 
-attribute api defined at [attributes.yaml](../../../api-docs/attributes.yaml)
+attribute api defined at [attributes.yaml](../../api-docs/attributes.yaml)
 
 Attribute have an owner, a name, bounds, requirements, permissions, and a value.
 

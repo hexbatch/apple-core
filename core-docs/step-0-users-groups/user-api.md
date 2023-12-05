@@ -1,6 +1,6 @@
 # Users
 
-user and groups api defined at [users.yaml](../../../api-docs/users.yaml)
+user and groups api defined at [users.yaml](../../api-docs/users.yaml)
 
 
 Users authenticate via bearer token created. Many bearer tokens can be created, and then destroyed. Its possible to destroy all tokens and lock out the user.

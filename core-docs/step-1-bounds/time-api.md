@@ -1,6 +1,6 @@
 # Scheduling Bounds
 
-bounds api defined at [bounds.yaml](../../../api-docs/bounds.yaml)
+bounds api defined at [bounds.yaml](../../api-docs/bounds.yaml)
 
 Create and manage time bounds. These bounds are made up of cron rules, stop and start time, and length of period
 Bounds can only be deleted if they are not used anywhere.

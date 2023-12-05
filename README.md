@@ -21,7 +21,7 @@ This project is still being planned
 
 
 
-see [the version 1 index for more info](v1/v1_index.md)
+see [the version 1 index for more info](v1_index.md)
 
 ## Contributions
 

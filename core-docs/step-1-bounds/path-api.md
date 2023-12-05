@@ -1,6 +1,6 @@
 # Pathing Bounds
 
-bounds api defined at [bounds.yaml](../../../api-docs/bounds.yaml)
+bounds api defined at [bounds.yaml](../../api-docs/bounds.yaml)
 
 Create and manage a set path rule. The token's set context must match the path rule.
 This will allow the same token to do different things based on the set it uses as its context in an api call.
