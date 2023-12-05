@@ -17,7 +17,7 @@ when members and admins are mentioned, it's their tokens
 | Delete | group/:id/destroy             | core.group.destroy       | destroy group.Can only be deleted if not in use anywhere      |                        |
 | Put    | group/:id/member/add/:user    | core.group.member.add    | Adds membership to a single user                              | user token guid or id  |
 | Delete | group/:id/member/remove/:user | core.group.member.remove | Removes membership for a single user                          | user token guid or id  |
-| Delete | group/:id/admin/remove/:user  | core.group.admin.remove  | Removes admin status for a single user, they are still member | user token guid or id  |
+| Patch  | group/:id/admin/remove/:user  | core.group.admin.remove  | Removes admin status for a single user, they are still member | user token guid or id  |
 | Put    | group/:id/admin/add/:user     | core.group.admin.add     | Add admin status for a single user                            | user token guid or id  |
 | GET    | group/:id/list                | core.group.list          | lists the membership and admins                               | iterator for next page |
 | GET    | groups/list                   | core.user.groups.list    | lists the groups by guid, that user is involved in            | iterator for next page |
