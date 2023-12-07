@@ -63,7 +63,7 @@ User tokens cannot be bounded, and they cannot run actions
 
 ---------------------------------------
 # User Admin
-[user admin](step-0-users-groups/admin-api.md)
+[user admin](step-0-users-groups/user-admin-tasks.md)
 Life can get tricky! And the layers may need a way to reset a pw or all tokens. Or when just using the core by itself, a pw might need resetting
 
 
@@ -107,13 +107,13 @@ There is a list of attributes that have standard names
 ----------------------------------------------------
 
 # Scripts
-[scripts](step-3-scripts-urls/script-overview.md) are Javascript can be set to run and generate a value when a token attribute is read
+[scripts](step-3-scripts-remotes/script-overview.md) are Javascript can be set to run and generate a value when a token attribute is read
 
 # Remotes
-[Remotes](step-3-scripts-urls/remote-overview.md) are remote callbacks to be run and generate a value when a token attribute is read# Remotes
+[Remotes](step-3-scripts-remotes/remote-overview.md) are remote callbacks to be run and generate a value when a token attribute is read# Remotes
 
 # Metrics
-[metrics](step-3-scripts-urls/metrics-api.md) shows stats of calls to scripts and urls
+[metrics](step-3-scripts-remotes/metrics-tasks.md) shows stats of calls to scripts and urls
 
 # Actions
 [actions](step-4-actions/action-overview.md)

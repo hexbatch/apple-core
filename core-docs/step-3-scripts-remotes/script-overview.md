@@ -47,6 +47,7 @@ A value of null will mean not cached
                 global_script_state: shared by all scripts of the same token type 
                 cool_down_timestamp: how long to use the cached value of the last call before calling this script again
                 script: 
+                    script_type: javascript
                     script_text
                     extra_input_params
                     output_keys

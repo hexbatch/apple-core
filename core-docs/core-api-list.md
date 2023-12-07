@@ -12,7 +12,7 @@
 # Users, groups, admin
 * [user-api.md](step-0-users-groups/user-api.md)
 * [groups api](step-0-users-groups/group-api.md)
-* [user admin api](step-0-users-groups/admin-api.md)
+* [user admin api](step-0-users-groups/user-admin-tasks.md)
 
 
 # Bounds
@@ -27,10 +27,10 @@
 
 
 # Scripts, Remotes, Metrics
-* [script api](step-3-scripts-urls/script-api.md)
-* [remote api](step-3-scripts-urls/remote-api.md)
+* [script api](step-3-scripts-remotes/script-api.md)
+* [remote api](step-3-scripts-remotes/remote-api.md)
 
-* [metrics api](step-3-scripts-urls/metrics-api.md)
+* [metrics api](step-3-scripts-remotes/metrics-tasks.md)
 
 
 # Actions
