@@ -1,6 +1,5 @@
 # Actions
 
-actions api defined at [actions.yaml](../../api-docs/actions.yaml)
 
 Actions have an owner, version, name, target, lifecycle, recipient, charge, options,script
 

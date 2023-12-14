@@ -1,6 +1,5 @@
 # Users
 
-user and groups api defined at [users.yaml](../../api-docs/users.yaml)
 
 
 Users authenticate via bearer token created. Many bearer tokens can be created, and then destroyed. Its possible to destroy all tokens and lock out the user.
@@ -11,7 +10,7 @@ There is an admin layer to list users and reset tokens see [admin-api.md](user-a
 Once created, there is no editing the basic user object. Attributes for the user, and changes to the user groups is done by other api.
 
 Anyone can read the user info. All api must be using the token except for the register call.
-Some attributes, and even some standard definition attributes will be marked as readable by user or his admin group only.
+Some attributes and even some standard definition attributes will be marked as readable by user or his admin group only.
 
 ## Users operations
 

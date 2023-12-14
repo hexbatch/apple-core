@@ -23,6 +23,7 @@ Group ownership cannot be transferred
 
     So a user-group:
         owner: user_id
+        guid: string
         users: [] who is members in the group
         admins: [] who can directly modify the list using the api.
         name: any name unique to the user's other groups

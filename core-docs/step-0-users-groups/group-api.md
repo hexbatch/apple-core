@@ -1,6 +1,6 @@
 # Users
 
-groups api defined at [users.yaml](../../api-docs/users.yaml)
+
 
 group operations:
 

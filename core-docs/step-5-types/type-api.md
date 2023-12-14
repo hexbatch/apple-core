@@ -1,6 +1,5 @@
 #  Types
 
-token type api defined at [tokens.yaml](../../api-docs/tokens.yaml)
 
 The owner of the type is the user who creates it. Type ownership cannot be transferred.
 

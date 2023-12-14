@@ -1,31 +1,118 @@
 openapi: 3.0.3
 info:
-  title: Gokabam API
+  title: Hexbatch API
   description: defines the logic structure for the Gokabam hexbatch token and delivery service
   version: 1.0.0
-  termsOfService: 'https://api.hexbatch.com/v1/service'
+  termsOfService: 'http://localhost/v1/service'
   contact:
     email: development@hexbatch.com
-    url: 'https://api.hexbatch.com/v1/contact'
+    url: 'http://localhost/v1/contact'
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
 externalDocs:
   description: Documentation and discussion about this api
-  url: 'https://api.hexbatch.com/v1/docs'
+  url: 'http://localhost/v1/docs'
 servers:
-  - url: 'https://api.hexbatch.com/v1'
-    description: Used to show and test this api
-
+  - url: 'http://localhost/v1'
+    description: Local development
 security:
-  - BasicAuth: []
-
-tags: []
-
-paths: {}
+  - bearerAuth: []
+tags:
+  - name: users
+    description: Users have to be logged in to do most api operations
+    externalDocs:
+      description: Find out more
+      url: http://localhost/v1/docs/concepts/users
+  - name: user_groups
+    description: Permissions in the api is defined by the groups the user belongs
+    externalDocs:
+      description: Find out more
+      url: http://localhost/v1/docs/concepts/groups
+paths:
+  /user/register:
+    post:
+      tags:
+        - user
+      summary: Create user
+      description: This can be done by anyone
+      operationId: core.user.register
+      security: []
+      requestBody:
+        description: Created user object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewUser'
+      responses:
+        '201':
+          description: Created new user
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '422':
+         description: Cannot create the new user
+         content:
+           application/json:
+             schema:
+               $ref: '#/components/schemas/Error'
 components:
   securitySchemes:
-    # Basic authentication
-    BasicAuth:
+    bearerAuth:
       type: http
-      scheme: basic
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    Error:
+      type: object
+      properties:
+        status:
+          type: integer
+          description: http code returned
+        message:
+          type: string
+          description: translated error message
+        code:
+          type: integer
+          description: a reference code to the issue
+        more_info:
+          type: string
+          format: uri
+          description: a url that has more context for this error
+        errors:
+          oneOf:
+            - type: object
+            - type: array
+              items:
+                type: array
+                items:
+                  type: string
+    NewUser:
+      type: object
+      properties:
+        username:
+          type: string
+          pattern: '^\p{L}[\p{L}0-9_]{2,30}$'
+          example: will_the_king
+        password:
+          type: string
+          format: password
+          description: one letter, number, special char, min 10
+        password_confirmation:
+          type: string
+          format: password
+    User:
+      type: object
+      properties:
+        uuid:
+          type: string
+          format: uuid
+        username:
+          type: string
+          pattern: '^\p{L}[\p{L}0-9_]{2,30}$'
+        element_uuid:
+          type: string
+          format: uuid
+
+

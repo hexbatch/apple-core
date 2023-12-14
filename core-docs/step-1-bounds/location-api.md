@@ -1,6 +1,5 @@
 # Map and area Bounds
 
-bounds api defined at [bounds.yaml](../../api-docs/bounds.yaml)
 
 Create and manage map bounds. These bounds are made up of geo json polygons
 Bounds can only be deleted if they are not used anywhere.
