@@ -13,13 +13,13 @@ Bound names are not public, nobody is going to see your bound names
 
 
 
-| Method | Path                     | Route Name | Operation                                        | Args                                        |
-|--------|--------------------------|------------|--------------------------------------------------|---------------------------------------------|
-| Post   | bounds/schedule          |            | Makes a new schedule                             | name, cron, start, stop, period             |
-| Delete | bounds/schedule/:id      |            | Deletes an unused schedule                       |                                             |
-| Get    | bounds/schedule/:id      |            | shows the time data with maybe list of schedules | optional time range for scheduling          |
-| Get    | bounds/schedules/list    |            | Shows a list of all the bounds the user has      | iterator , optional range to show schedules |
-| Get    | bounds/schedule/:id/ping |            | returns true or false if a time in bounds        | date time or none for now                   |
+| Method | Path                     | Route Name                  | Operation                                        | Args                                        |
+|--------|--------------------------|-----------------------------|--------------------------------------------------|---------------------------------------------|
+| Post   | bounds/schedule          | core.bounds.schedule.create | Makes a new schedule                             | name, cron, start, stop, period             |
+| Delete | bounds/schedule/:id      |                             | Deletes an unused schedule                       |                                             |
+| Get    | bounds/schedule/:id      |                             | shows the time data with maybe list of schedules | optional time range for scheduling          |
+| Get    | bounds/schedules/list    |                             | Shows a list of all the bounds the user has      | iterator , optional range to show schedules |
+| Get    | bounds/schedule/:id/ping |                             | returns true or false if a time in bounds        | date time or none for now                   |
 
 
         user: id
@@ -29,3 +29,11 @@ Bound names are not public, nobody is going to see your bound names
         cron: optional crontab string
         period_length: only used and required when the cron is defined, is how long this time is allowed per cron run
         timezone_to_use: if empty will be set by standard attribute of user_timezone
+
+
+## Time bound operations (runs on the command line)
+
+| Task             | todo | Operation                                   | Args |
+|------------------|------|---------------------------------------------|------|
+| make_time_spans  |      | Makes new time spans for a given time slice |      |
+| clean_time_spans |      | clears out old spans                        |      |

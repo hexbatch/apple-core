@@ -23,3 +23,5 @@ Time bounds always exists inside a created bounds
 The time bounds calculates out the periods of being on, using the timezone to convert this to unix timestamps.
 
 Time bounds are always calculated on now
+
+internally, time spans are made from the cron strings
