@@ -13,7 +13,7 @@ Time bounds always exists inside a created bounds
     so a time-bound:
         user: id    
         bounds_name: name of the bounds (unique to any bounds owned by the user)
-        is_retired: default false // if true then cannot be added to token types 
+        is_retired: default false // if true then cannot be added later 
         start: when to apply this bounds, inclusive
         stop: when to stop this bounds, inclusive
         cron: optional crontab string

@@ -13,17 +13,19 @@ Bound names are not public, nobody is going to see your bound names
 
 
 
-| Method | Path                     | Route Name                  | Operation                                        | Args                                        |
-|--------|--------------------------|-----------------------------|--------------------------------------------------|---------------------------------------------|
-| Post   | bounds/schedule          | core.bounds.schedule.create | Makes a new schedule                             | name, cron, start, stop, period             |
-| Delete | bounds/schedule/:id      |                             | Deletes an unused schedule                       |                                             |
-| Get    | bounds/schedule/:id      |                             | shows the time data with maybe list of schedules | optional time range for scheduling          |
-| Get    | bounds/schedules/list    |                             | Shows a list of all the bounds the user has      | iterator , optional range to show schedules |
-| Get    | bounds/schedule/:id/ping |                             | returns true or false if a time in bounds        | date time or none for now                   |
+| Method | Path                       | Route Name                  | Operation                                        | Args                            |
+|--------|----------------------------|-----------------------------|--------------------------------------------------|---------------------------------|
+| Post   | bounds/schedule            | core.bounds.schedule.create | Makes a new schedule                             | name, cron, start, stop, period |
+| Delete | bounds/schedule/:id/delete | core.bounds.schedule.delete | Deletes an unused schedule                       |                                 |
+| Get    | bounds/schedule/:id/get    | core.bounds.schedule.get    | shows the time data with maybe list of schedules |                                 |
+| Get    | bounds/schedule/:id/edit   | core.bounds.schedule.edit   | edit unused, can always set retired and name     |                                 |
+| Get    | bounds/schedules/list      | core.bounds.schedule.list   | Shows a list of all the bounds the user has      | iterator                        |
+| Get    | bounds/schedule/:id/ping   | core.bounds.schedule.ping   | returns  if a time in bounds                     | date time or none for now       |
 
 
         user: id
         name: name of the bounds (unique to any bounds owned by the user)
+        is_retired: default false // if true then cannot be added later
         start: when to apply this bounds, inclusive
         stop: when to stop this bounds, inclusive
         cron: optional crontab string
