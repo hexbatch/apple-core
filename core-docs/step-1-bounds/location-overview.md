@@ -18,6 +18,7 @@ If both stacking units are used in A and B, then both stacking units need to int
 If they only have bounds in different units, this is the same as no bounds calculation and are not considered.
 
 If a set has a location bounds, then it has an option to only accept tokens inside it that have no location set.
+(note: how?)
 
 If a set has a smaller area or volume than a token entering it, that token can still be active with the set.
 A token's location area is its area of possibility. 
