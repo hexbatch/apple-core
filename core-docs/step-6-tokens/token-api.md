@@ -18,7 +18,7 @@
 
     
           user: must be one user
-          token-type:
+          type:
           live attributes: 
           live parents: 
           script and remote states:  

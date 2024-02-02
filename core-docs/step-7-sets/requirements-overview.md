@@ -28,7 +28,7 @@ Requirements can have children, and be a tree
         token: (optional)
         parts: [ {
             part_id: each part has a unique id
-            type: token-type,
+            type: type,
             weight: optional,
             parent_part_id: (optional)
             children: [] (read only)

@@ -29,7 +29,7 @@ for the user token, actions cannot run, and bounds cannot be set
     So a user:
         id: number
         guid: string
-        token-type: made new for the user, inherits from the system user token type (see system tokens and attributes)
+        type: made new for the user, inherits from the system user token type (see system tokens and attributes)
         token: the actual token represting the user
 
 

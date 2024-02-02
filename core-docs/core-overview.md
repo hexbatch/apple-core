@@ -14,7 +14,7 @@ The core is meant to be stand-alone for testing and demonstration purposes thoug
 * Token sets are altered, created and destroyed via set commands using requirements
 * Actions listening in on different lifecycle stages of a token, and when a token joins a set, can run javascript to decide to allow this and do auto transfers of tokens
 
-Attributes are defined by themselves, and attached to the token-type. The tokens are instances of the token-type
+Attributes are defined by themselves, and attached to the type. The tokens are instances of the type
 
 
 ## General concepts

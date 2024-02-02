@@ -5,7 +5,7 @@ They do have aliases though. These aliases in different languages are hard coded
 
 There is an api to list the system items by type and role: for example list all the system attribute names, and those for identification
 
-# Standard token types
+# Standard element types
 
 ## User Type
 
@@ -56,22 +56,22 @@ The group-set type has all the core identification and display attributes. When 
 * model - binary (to store rendering models)
 * audio - base attribute type for sound file urls - json has url , start at offset, loop, total play time
 * video - base attribute type for video urls - json has url , start at offset,  total play time
-* (for sets when token enters) default position inside set. When a token enters, if it does not have its positioning attribute set, then assigned this
+* (for sets when element enters) default position inside set. When a element enters, if it does not have its positioning attribute set, then assigned this
 
 ### Organization
 
-Read only tags, to sort tokens. By default, tags can be read by everyone and written to by no one
+Read only tags, to sort elements. By default, tags can be read by everyone and written to by no one
 
 Base tag attribute, which has direct children being tag categories, then more specific tags inherit from the categories.
 
-Tags should be about what the token contains, or what the token is about
+Tags should be about what the element contains, or what the element is about
 
-* user - the token is about a user
-* media - the token has media such as image, pdf, or video urls
+* user - the element is about a user
+* media - the element has media such as image, pdf, or video urls
 * media-url -? the attribute has a url for viewing
 * media-mime - the mime type of the media
-* documentation - the token has markdown files to explain stuff
-* file - this token is some uploaded thing, it can be media or not
+* documentation - the element has markdown files to explain stuff
+* file - this element is some uploaded thing, it can be media or not
 * folder - this set acts like a folder to store files
 
 
@@ -84,7 +84,7 @@ Each event listed in the actions is an attribute that is assigned a truthful or 
 
 # Role attributes
 
-When a token is also a set, view, container, group, or represents a user, it has an attribute showing that. A filter can filter api types with this attribute set to that type
+When a element is also a set, view, container, group, or represents a user, it has an attribute showing that. A filter can filter api types with this attribute set to that type
 
 
 

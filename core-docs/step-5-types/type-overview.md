@@ -13,7 +13,7 @@ Types cannot change ownership.
 
 Types can use attributes owned by others, as long as the permissions work out in the owner_user_groups
 
-    So: a token-type:
+    So: a type:
         user: one user owns the type
         allowed_creators: an optional user group
         name: using the naming rules
