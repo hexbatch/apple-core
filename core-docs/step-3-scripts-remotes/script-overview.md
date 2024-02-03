@@ -52,17 +52,23 @@ A value of null will mean not cached
                     extra_input_params
                     output_keys
 
-The output keys define what the value returned will be, more than one key makes a json object. A single output key can be a primitive 
+The output keys define what the value returned will be, more than one key makes a json object. A single output key can be a primitive .
+The script will should return either a single value to match a single output key, or an object to match the keys of the output_keys object.
+not returning enough keys to match will result in a script error
 
 ## script permissions
 
 * Scripts are run in a sandbox not allowing file access
 
+## scripts run in actions
+
+Other than testing, a script always runs in an action. An action can have a custom event, if this is needed to be run on command
+
 
 ### Setting live attributes
 
 Scripts and Remotes:
-Now can decide add live attributes, via the return info the system will attach the live.
+Now can decide to add/deny live attributes, via the return info the system will attach the live.
 * Scripts adding these will only be able to if events reacting allow this
 * Can only apply live or remove live if the action's attribute is in the same context (a token type added at design, a live for all the token, or just in a set context)
 

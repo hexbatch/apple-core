@@ -37,6 +37,7 @@ Scripts can be seen and edited in full by anyone in the user's group admin, or i
     is_on : if off then all read and writes will fail and the remote not called
     local_script_state_init: 
     global_script_state_init: 
+    cool_down_timestamp: how long to use the cached value of the last call before calling this script again
     script: 
         script_text
         extra_input_params
@@ -61,5 +62,6 @@ Scripts can be seen and edited in full by anyone in the user's group admin, or i
 ### Data for a test context
 
     input_data: {}
+    output_data: {}
     local_status: {}
     global_state: {}

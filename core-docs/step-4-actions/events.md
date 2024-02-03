@@ -64,5 +64,11 @@ And the target can be one token per api call
 
 The token has to have the actions listening to that custom event, to act on it
 
+## Script and remote errors
+* script_error
+* remote_error 
+
+An action can listen to errors happening to the elements, on one,some or all of the events. Remotes can have issues connecting, and scripts can have issues (not run, not returning miniumum data or exceeds permissions)
+
 
 

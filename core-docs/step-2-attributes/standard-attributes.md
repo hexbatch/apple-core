@@ -84,7 +84,7 @@ Each event listed in the actions is an attribute that is assigned a truthful or 
 
 # Role attributes
 
-When a element is also a set, view, container, group, or represents a user, it has an attribute showing that. A filter can filter api types with this attribute set to that type
+When an element is also a set, view, container, group, or represents a user, it has an attribute showing that. A filter can filter api types with this attribute set to that type
 
 
 
