@@ -121,6 +121,7 @@ Data can be marked as:
   * schedule_bounds
   * map_bounds
   * shape_bounds
+  * set
   * view
   * mutual
   * container

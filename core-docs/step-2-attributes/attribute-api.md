@@ -32,8 +32,17 @@ An attribute can be deleted if only it's not used anywhere
         parent_attribute: attributes can optionally have a single parent
         user: can be one or none
         name: name of the attribute (unique to all attributes)
-        description: some text explaining why this attribute is used, etc, the author or other info
         is_retired: default false // if true then cannot be added to element types 
+
+        meta:
+            (can be in different langs or default lang)
+            description: (in plain text or markup)
+            name: (translate the name or a name that does not fit in the name rules for the legal name)
+            standard-family: if named here this is a standard attribute
+            author: who made this
+            copywrite: any copywrite on the attribute content
+            url: where to go for more info
+            rating: marks adult or otherwise sensitive content (includes trigger warnings)
         bounds:
             // each bounds can have max one type of bounds: location, time , path
             read_bounds: []
