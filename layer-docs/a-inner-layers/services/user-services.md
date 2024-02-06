@@ -2,7 +2,7 @@
 
 * will get user details (with attribute values)
 * will edit user details (edit attributes)
-* will store and give a basic user token (to get standard attributes)
+* will store and give a basic user element (to get standard attributes)
 * stores and gives back user layer-only data
 * creates, stores and gets the user_wallet, landing, and home set
 
@@ -23,7 +23,7 @@
 * stores the fields
 * returns the fields
 
-## get basic user token
+## get basic user element
     user_services.get_basic_user_auth
 * returns stored auth
 
@@ -48,7 +48,7 @@ gets user data stored in the above
 --------------------------------------------
 
 ## job:create_user
-Makes a new user. Fills in the user attributes on the user token. Makes the  user_wallet, landing, and home sets
+Makes a new user. Fills in the user attributes on the user element. Makes the  user_wallet, landing, and home sets
 
 Input data:
 * user info

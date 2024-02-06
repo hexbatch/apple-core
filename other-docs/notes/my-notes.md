@@ -1,6 +1,6 @@
 # notes:
 
-This page is to store stuff I need during development, its my bookmarks and reference
+This page is to store stuff I need during development, my bookmarks and reference
 
 ## ToDo list
 

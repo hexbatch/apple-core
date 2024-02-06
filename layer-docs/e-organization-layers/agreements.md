@@ -4,23 +4,23 @@ This is a way for people or scripts to agree on something. Agreements can be mad
 or by setting each user in the agreement to have a certain weight. And the greatest weight wins.
 Using the weighted version, then some users can skip the vote as long as the majority of the weights agree or disagree.
 
-Make agreement set that has to have the users put their user token in, and the value or consensus is reached
+Make agreement set that has to have the users put their user element in, and the value or consensus is reached
 
-Agreements can expire after a certain time, or have other conditions before a user can put their token in,
-such as contents of tokens in a set done after a set or mutual operation is done
+Agreements can expire after a certain time, or have other conditions before a user can put their element in,
+such as contents of elements in a set done after a set or mutual operation is done
 
 An agreement can be made to be decided on, but not done, until conditions.
 Conditions can be previous agreements
 
-Agreements can have different attribute in their set token designating if ready to be agreed on, or voted, or if waiting, or if everyone did that
+Agreements can have different attribute in their set element designating if ready to be agreed on, or voted, or if waiting, or if everyone did that
 
 The creator of the agreement can delete it only if nobody has agreed yet.
 
-A person can remove their user token if decide they changed their mind.
+A person can remove their user element if decide they changed their mind.
 
 Agreements can be set to allow a percentage of users to decide, or can be set to allow different users to have different weights
 
-Agreements can be cancelled later by any user removing his token, or having it be set to a percentage of users or weights. A cancelled agreement is an empty set
+Agreements can be cancelled later by any user removing his element, or having it be set to a percentage of users or weights. A cancelled agreement is an empty set
 
 An agreement can be used as the set to decide to do a repeating api.
 

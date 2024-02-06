@@ -2,7 +2,7 @@
 
 
 
-Users authenticate via bearer token created. Many bearer tokens can be created, and then destroyed. Its possible to destroy all tokens and lock out the user.
+Users authenticate via bearer token created. Many bearer tokens can be created, and then destroyed. It is possible to destroy all tokens and lock out the user.
 
 
 There is an admin layer to list users and reset tokens see [admin-api.md](user-admin-tasks.md)
@@ -26,10 +26,10 @@ Some attributes and even some standard definition attributes will be marked as r
 
     id: number
     guid: string 
-    user_token_type: string-guid / the base token type for this user
-    token: string-guid / the token representing the user
-    group: string-guid / the token representing the group
-    group_token_type: string-guid / the base token type for this group
+    user_element_type: string-guid / the base element type for this user
+    element: string-guid / the element representing the user
+    group: string-guid / the element representing the group
+    group_element_type: string-guid / the base element type for this group
     attributes:[] --empty unless wide
 
 When the wide flag is used in the read, then it will be a list of attribute name: attribute value

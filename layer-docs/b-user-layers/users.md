@@ -18,15 +18,15 @@ user data is either public or private, one needs a grant to read another users p
 Reading user data:
 
 * name: string
-* token : the user token
+* element : the user element
 * guid : the user guid string
 * description: markdown
 * location (private)
 * phone (private)
 * email (private)
 * address (private)
-* schedule (time boundary applied to the user token)
-* area (map boundary applied to the user token)
+* schedule (time boundary applied to the user element)
+* area (map boundary applied to the user element)
 * symbol:
     * favicon_url:   (regular image types) 32px square
     * small_thumbnail_url:  (regular image types) 128px square
@@ -81,7 +81,7 @@ gets the user asked for, the data only returns the attributes the asking user ca
 ## show me
     user.me
 
-get the data for the logged in user, same as user.show with the id set to the current
+get the data for the logged-in user, same as user.show with the id set to the current
 
 # edit me
     user.edit

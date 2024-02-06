@@ -6,11 +6,11 @@ When membership of a group becomes more than just permissions, there is the grou
 
 When making a group set, a new type is made that must have one of its parents be from the standard group set type (it can have other parents).
 
-Then a token is made from this to create a set, and all the members and admin user tokens are in this set.
+Then an element is made from this to create a set, and all the members and admin user elements are in this set.
 
-The set token has special events that fire on it when members/admins are added or removed. And the token provides standard attributes to describe the group.
+The set element has special events that fire on it when members/admins are added or removed. And the element provides standard attributes to describe the group.
 
-The new type can be parents of other things types related to the group. But only one token can be made from this type.
+The new type can be parents of other things types related to the group. But only one element can be made from this type.
 
 Admins of the group have permissions to write the attributes, and add in new attributes, members have ability to read the attributes
 
@@ -24,7 +24,7 @@ Admins of the group have permissions to write the attributes, and add in new att
 
 ## Restricting the context a group can be used in
 
-The group token can have bounds set on it.
+The group element can have bounds set on it.
 If a subgroup needs to be made, or have some members be in one bounds compared to others, or a group needs to be sorted and organzied,
 Then a new group can be made, and put as a child into the parent group set, this can be nested. 
 The new group has the members added to it from the parent group.

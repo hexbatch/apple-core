@@ -4,16 +4,16 @@ An item is both a message and how to share info.
 The original item itself is a type, and has constant static attributes to store text, links, markup, etc. 
 If replying to the item, then a new child type is created from the original item type.
 
-Tokens can be made from the types to share information and make sets to organize the info. The sets can be used in transactions.
+Elements can be made from the types to share information and make sets to organize the info. The sets can be used in transactions.
 
 
-These tokens can have boundaries and extra media put in: They can have a schedule and location they are seen, and be like announcements.
+These elements can have boundaries and extra media put in: They can have a schedule and location they are seen, and be like announcements.
 
 Those who can reply to an item are limited to the allowed parents user group, and the admins of the user who created the item.
 This is enforced by each reply being a child of the thing that is being replied to.
 Items can reply to two or more parent items, otherwise unrelated, at the same time.
 
-Item tokens can be sorted into sets.
+Item elements can be sorted into sets.
 
 Some or all of the info in the item can be made public readable, or only readable via a membership in a user group.
 
@@ -32,9 +32,9 @@ Because items can reflect conversations and discussions, these are used by the b
 
 ## Protected message set
 
-Items can also have organized tokens of itself in a set whose token is from the same type. So the set and items in it are all tokens of the same type.
+Items can also have organized elements of itself in a set whose element is from the same type. So the set and items in it are all elements of the same type.
 There can be organization here with parent child sets nested, again of the same type. Live attributes are added here to enforce with scripts removing the parent child relationship.
-The tokens in this set, and also nested sets, cannot be put into other sets, they are only to be in one set forever, until deleted
+The elements in this set, and also nested sets, cannot be put into other sets, they are only to be in one set forever, until deleted
 
 
 ## Locking and unlocking

@@ -6,7 +6,7 @@ Attributes can be defined by the code, in which case they are not owned, and can
 
 Attributes can be created|edited|deleted by a user.
 
-Attributes can be restricted to only be used in a element if there are one or more other specified siblings.
+Attributes can be restricted to only be used in an element if there are one or more other specified siblings.
 These siblings can have an ancestor or parent that matches this.
 
 Attributes can have an optional whitelist to allow which users can own, change the value of, and read this value of this attribute.
@@ -22,7 +22,7 @@ string specific types can be :
 * location is lat, lon
 
 An attribute is defined with a starting value.
-When it is applied to a element type, and the type makes a element. Then the attribute's value can be used, unless overridden, and put on the element's live values.
+When it is applied to an element type, and the type makes an element. Then the attribute's value can be used, unless overridden, and put on the element's live values.
 This value can be changed by any who can write to the element
 
 Starting out, the default value is used, if no default then null
@@ -75,8 +75,8 @@ options:
                   read: []  if empty anyone can read the attribute value
                   write: [] if empty the admin group can change the attribute value.
               set_requirements: 
-                  read_policy: all|one  
-                  write_policy: all|one  
+                  is_read_policy_all: bool  
+                  is_write_policy_all: bool  
                   read: [] attribute ids  : based on policy, if one, then any matches in a set makes it readable, or all must match
                   write: [] attribute ids : based on policy, if one, then any matches in a set makes it readable, or all must match
           value:
@@ -152,7 +152,7 @@ This attribute does not need to be in the same element.
 These required attributes need to be on, and have their parent type on, in the element, to be marked present
 
 ## Affinity and allergies
-affinities and allergies also control when a element is allowed to be or not be in a set
+affinities and allergies also control when an element is allowed to be or not be in a set
 
 Each affinity and allergy can have one or more force_rules
 

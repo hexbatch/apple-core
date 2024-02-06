@@ -43,9 +43,9 @@ each search part is:
     set conditions:
         owner:
         relationship_to: search part
-    token name: (optional )
-    token_id: (optional)
-    token_owner: (optional)    
+    element name: (optional )
+    element_id: (optional)
+    element_owner: (optional)    
     attributes:
         [{
             attribute name or id,
@@ -66,6 +66,6 @@ Removing parts
     The index places are removed, and then the parts are re-indexed to start at 0
 
 Listing searches
-    can filter by token id, or attribute or owner
+    can filter by element id, or attribute or owner
 
 results can have options to show different amount of data in the results (-wide option)

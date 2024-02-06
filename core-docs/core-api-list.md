@@ -4,7 +4,7 @@
 ## Common api
 
 * time is read in unix timestamp or iso-standard.
-* any api call can have the wide modifier, showing the attributes, that the user can read, of each token and token type returned
+* any api call can have the wide modifier, showing the attributes, that the user can read, of each element and element type returned
 * each top level and secondary level resource returned has a list of action links for it
 * Pages is done by cursor, long results are paged
 * optional language is chosen by the header of the accept language: the library will choose the best fitting one. `Accept-Language: fr; q=1.0, en; q=0.5`
@@ -37,10 +37,10 @@
 [actions](step-4-actions/actions-api.md)
 
 # Types
-[token_types](step-5-types/type-api.md)
+[element_types](step-5-types/type-api.md)
 
-# Tokens
-[token-api.md](step-6-tokens/token-api.md)
+# Elements
+[element-api.md](step-6-elements/element-api.md)
 
 # Sets
 * [set-api](step-7-sets/set-api.md)

@@ -1,13 +1,13 @@
-# Token types
+# Element types
 
-A token type is a template to make a token from,
+AN element type is a template to make an element from,
 
-Token types can have many parents type parents,
+Element types can have many parents type parents,
 but the attributes have to allow this to happen 
 (attributes in different types may prevent some combinations)
 
-Token types can have one or more parents, they can have many ancestors.
-Tokens cannot be ancestors or parents of themselves.
+Element types can have one or more parents, they can have many ancestors.
+Elements cannot be ancestors or parents of themselves.
 
 Types cannot change ownership.
 
@@ -17,7 +17,7 @@ Types can use attributes owned by others, as long as the permissions work out in
         user: one user owns the type
         allowed_creators: an optional user group
         name: using the naming rules
-        is_retired: default false // if true then cannot be added to token types or make new tokens
+        is_retired: default false // if true then cannot be added to element types or make new elements
         options:
             allow_changed_map_bounds: boolean
             allow_changed_time_bounds: boolean
@@ -56,33 +56,33 @@ Descendants of the script or remote have their own storage.
 
 ## Options
 
-A token type can be made unchangeable in part or whole. Different bound types an be made final.
+AN element type can be made unchangeable in part or whole. Different bound types can be made final.
 So can any attributes, to make sure actions cannot be overridden.
 
 If any of the event attributes are on the final list, then any descendant cannot do that event.
 This includes creation or destruction
 
-A type can mark its tokens to be used in the human filter, to selectively hide tokens made from this type in api calls if the human filter is on
+A type can mark its elements to be used in the human filter, to selectively hide elements made from this type in api calls if the human filter is on
 
 A type can forbid being used to make other types
 
 
 ## Naming rules
 
-Token types must have a name, this can be anything unique to that user. 
-When using that name to search, then its qualified by the username, seperated by a dot.
+Element types must have a name, this can be anything unique to that user. 
+When using that name to search, then it is qualified by the username, seperated by a dot.
 
 
 ## allowed creators
 
-Admins of the owners group can create tokens from this type
+Admins of the owners group can create elements from this type
 
-Others can be given the permission to create tokens from this type, or descendants from this type.
+Others can be given the permission to create elements from this type, or descendants from this type.
 This means descendants can further restrict, but not expand, the allowed creators.
 The group list to add others more than the creator's user group is optional, but can be added during definition
 ( cannot add after creation but can make new child for this)
 
-Change membership on this group to give or remove token creation powers.
+Change membership on this group to give or remove element creation powers.
 Admin ability, for the set group, does not make a creation ability difference, except to edit the members
 
 
@@ -91,7 +91,7 @@ Admin ability, for the set group, does not make a creation ability difference, e
 Some or all of the inherited parents can start in the off state, which means while their attributes override any ancestor or other type lesser in inheritance,
 those attributes will not be available for reading or writing until that parent is turned on
 
-# events on the type token
+# events on the type element
 
-Can have an event listeners for applying or removing a live attribute, on the type level, for all tokens.
-These events are same name as those live events on token. The token event can override
+Can have an event listeners for applying or removing a live attribute, on the type level, for all elements.
+These events are same name as those live events on element. The element event can override

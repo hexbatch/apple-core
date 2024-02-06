@@ -7,15 +7,15 @@ because the relationships may be very large, a chunk of n x n tied together sets
 
 The user can move around the parent set of this mapping and see new chunks.
 
-The user can interact with the shapes to change the tokens connecting the mutual sets.
+The user can interact with the shapes to change the elements connecting the mutual sets.
 
 The user can do mutual operations to do union and intersection and all the other ways to change a view
 
 # existing mutual relationships
 
-This editor can load in existing view via a search and then regular permissions allow the user to add or remove tokens to the sets that they can edit
+This editor can load in existing view via a search and then regular permissions allow the user to add or remove elements to the sets that they can edit
 
-For any tokens in the sets that can be read, the user can do aggregations
+For any elements in the sets that can be read, the user can do aggregations
 
 # Per user mutual relationships
 

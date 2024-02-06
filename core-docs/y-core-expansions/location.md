@@ -21,23 +21,23 @@ can have parent send all children custom events for specific behavior
 
 ## Add new search terms
 
-Searches can select on the spacing (@intersection, @bordering, @seperated) of the tokens in a same set.
+Searches can select on the spacing (@intersection, @bordering, @seperated) of the elements in a same set.
 
 
 # Discussion
 
-A token can be represented by a shape, with texture and colors and models.
+AN element can be represented by a shape, with texture and colors and models.
 
-A token can have a 3d or 2d shape, or both at the same time. Sets are tokens also, and can show their children shapes inside.
+AN element can have a 3d or 2d shape, or both at the same time. Sets are elements also, and can show their children shapes inside.
 Children sets can have position inside their parents, that is relative to the parent and not the grandparent.
 There is no limit to parent child shape depth.
 
 
 The set's visual can be represented by the children, and not have any shape itself.
 But a child set will have a position inside the parent set in order for it to be seen and interacted with by shape.
-Other sets and tokens inside the set can affect behavior and other things though.
+Other sets and elements inside the set can affect behavior and other things though.
 
-When a user token enters a set that is also a map, then software can render the shapes using the standard attributes for shapes (defined in the core).
+When a user element enters a set that is also a map, then software can render the shapes using the standard attributes for shapes (defined in the core).
 
 Because child sets will be seen as objects inside the parent set, those objects can be entered by the user also, and then that new set is the rendered view.
 This can be nested to any level.
@@ -52,8 +52,8 @@ When the intersection ends, the previously overlapping elements are given an all
 
 A bordering event is sent to each element when they are touching but not intersecting. So intersection bounds is when go one unit past bordering.
 
-When entering a set , sets and tokens that are shapes can be assigned a position via an event.
-Sets have ultimate ability to position their tokens and sets inside, but cannot violate their bounds at all.
+When entering a set , sets and elements that are shapes can be assigned a position via an event.
+Sets have ultimate ability to position their elements and sets inside, but cannot violate their bounds at all.
 
 A set can position its elements the same in all paths, or in a set context (if the parent set is somewhere else it can have different positioning)
 Due to attribute value context.

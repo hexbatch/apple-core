@@ -20,12 +20,12 @@ A basket can be set to dissolve or do other things based on attributes.
 ## The sale
 
 When the user wants to buy, offers are made on the marketplace and the owner has the offer accepted for him.
-The offers are put in the basket, along with the tokens that were transferred to him.
-A delivery of goods token is also put in the basket.
+The offers are put in the basket, along with the elements that were transferred to him.
+A delivery of goods element is also put in the basket.
 
 ## Transfer of goods
 
-If no transfer of goods needed, then the delivery of goods token is marked as done
+If no transfer of goods needed, then the delivery of goods element is marked as done
 
 If this is a digital download, then the delivery of goods has different series of steps than a physical transfer
 
@@ -33,11 +33,11 @@ If this is a digital download, then the delivery of goods has different series o
 
 if all is well and good, then the sale is marked as final with a complete delivery of goods.
 
-A review set up is made, with those tokens put into the token set of the basket
+A review set up is made, with those elements put into the element set of the basket
 
 ## When problems happen
 
-Issue tokens are put into the basket, these issues have a lifecycle
+Issue elements are put into the basket, these issues have a lifecycle
 
 There is api methods for handling issues and resolving them
 

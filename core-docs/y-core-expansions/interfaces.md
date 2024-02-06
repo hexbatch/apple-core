@@ -3,9 +3,9 @@
 # (changelist todo or ponder about)
 ------------------------
 
-* containers do not need to be mutual sets, containers can hold the token to any group of sets, and they can be unrelated
-  * container can hold the tokens directly, or do the below
-  * there can be set tokens there, any set tokens directly added to the container will look at the tokens inside each set
+* containers do not need to be mutual sets, containers can hold the element to any group of sets, and they can be unrelated
+  * container can hold the elements directly, or do the below
+  * there can be set elements there, any set elements directly added to the container will look at the elements inside each set
   * the set relations will work here. Adding a parent set will also have its children and descendants and links looked at too
   * can optionally specify when adding each set to ignore some|all relations too
 
@@ -23,41 +23,41 @@
 
 Need a way to connect two or more perhaps incompatible interfaces together and get them to react, indirectly
 Binders provide a mechanism to construct larger and more complex things based on how two or more interfaces are coordinating
-They do this through custom actions fired on the binder's container's set token, which can keep state, alter other attributes which act as flags to non interface stuff
+They do this through custom actions fired on the binder's container's set element, which can keep state, alter other attributes which act as flags to non interface stuff
 
 * Concept of binders
-  * Binders have no tokens in their own container, but have two or more interface definitions, and a way to map from one definition to another.
+  * Binders have no elements in their own container, but have two or more interface definitions, and a way to map from one definition to another.
     * reads in A to writes in B, and vice versa . Not just one on one though. Can have mappings for each interface going to one, some or all of the other interfaces
   * Binders have an off and on state for each interface, when its on, then the interface is open to react.
     * once its reacting then it will stay reacting until the other interface from the other container  stops
     * or can turn off its interface 
   * Binders have custom events fired to the binder that starts or stops a reaction, to allow logic to be processed when the interfaces are turned on or off
-    * Each interface defined in the binder has a matching attribute on the container token whose truthful value turns on the interface and whose falsy value turns it off
+    * Each interface defined in the binder has a matching attribute on the container element whose truthful value turns on the interface and whose falsy value turns it off
   * Binders can also be attachment points to pipes, but I am not sure how that works yet
 ---------------------------------------------
 ---------------------------------------------
 
 # description
 
-We can pick any token, and one or two attributes. The attributes do not have to be on the token, or related to the token, or in the same set as the token
+We can pick any element, and one or two attributes. The attributes do not have to be on the element, or related to the element, or in the same set as the element
 If we pick one attribute, it can be used for reading and writing, or just writing or just reading.
 If we use the second attribute it has to be used for the opposite (if first is reading, the second must write, and vice versa)
 
-The token and the two attributes do not have to be related or connected
+The element and the two attributes do not have to be related or connected
 
-Now we have an identifier (the token) and a way to read something or a way to write something or a way to do both reading and writing.
-The reading and writing and token do not have to be connected, associated or have anything to do with each other.
+Now we have an identifier (the element) and a way to read something or a way to write something or a way to do both reading and writing.
+The reading and writing and element do not have to be connected, associated or have anything to do with each other.
 
 We can also specify the bounds and path of each of the three things. So, sometimes there is not a way to read, write or identify.
 
 An interface definition is one or more of these Identities .
-The individual attributes and tokens can repeat, in different Identities, but each Identity is unique in an interface definition.
+The individual attributes and elements can repeat, in different Identities, but each Identity is unique in an interface definition.
 
       Identity:
-         N: path to a token, that can have bounds. Required
-         R: path to a read attribute, that can be on any token that could have bounds. Can be missing if W
+         N: path to an element, that can have bounds. Required
+         R: path to a read attribute, that can be on any element that could have bounds. Can be missing if W
                 time bounds (not on parent attribute, or is there?), timeout, setting to only allow read when there is different data
-         W: path to a write, also on any token and cna have bound. Can be missing if R
+         W: path to a write, also on any element and cna have bound. Can be missing if R
                 time bounds, timeout, setting to only write if different data from before
 
     
@@ -98,7 +98,7 @@ Clicked together interfaces can be very nested and complex, or simple.
 
 Clicked attributes are not readable or writable by anything except their pairings. Any attributes that are not clicked on an interface are called exposed.
 
-A token can have more than one write attributes in a mutual, they are all written to at the same time.
+AN element can have more than one write attributes in a mutual, they are all written to at the same time.
 A write attribute can have more than one unique data being sent to them at one time, if there are
 multiple read attributes in other interfaces that meshes with it.
 If a write attribute is a json type, then these values are put into key value pairs. If the write attribute is a number or string or identity then it will get a random read from 2 or more sources.
@@ -135,7 +135,7 @@ The wrappers are their own interfaces.
 
 There are api operations to make wrappers.
 
-A wrapper does not affect what they wrap, and to the container they wrap, are invisible. However can find the wrappers of a container via api call.
+A wrapper does not affect what they wrap, and to the container they wrap, are invisible. However, can find the wrappers of a container via api call.
 
 Wrappers can be chained together to allow alternate paths for read and writes, and can be done to create pipelines between containers in different sets.
 
@@ -143,7 +143,7 @@ Can have listening script or remote on a wrapper to do side jobs as conditions h
 
 ---------------------
 
-once created, a container is just a token to be put into any set, or sets. The reads are activated in an interface when their read attributes, found in the mutual they are attached to,
+once created, a container is just an element to be put into any set, or sets. The reads are activated in an interface when their read attributes, found in the mutual they are attached to,
 are written to in other api operations.
 
 The activated read interfaces drive the write interfaces
@@ -156,8 +156,8 @@ There is an event that is fired (cannot cancel that event) to allow remote to le
 If a wrapper is using a container that has no more interfaces, then that wrapper is evaporated. Constructs made out of the wrappers, such as a pipeline can be cascaded evaporated too
 
 ----------------------
-A container in a set is not affected by other tokens entering or leaving the set. A container entering or leaving the set does not trigger any events on the host set.
-However, other tokens in the set can be affected by the presence or absence of that container set based on their listeners
+A container in a set is not affected by other elements entering or leaving the set. A container entering or leaving the set does not trigger any events on the host set.
+However, other elements in the set can be affected by the presence or absence of that container set based on their listeners
 
 ----
 using any interface definition, and can select on a search path for groups using this.
@@ -197,10 +197,10 @@ Pipelines copy or transfer interfaces from one set to another. They are a set th
     * Can optionally use an interface expression to filter through
 
 Pipeline joints allow more than one pipeline to be joined, inputs match outputs.
-Each pipeline at the joint can select to copy the action and also move the token in its pipeline, or make sure its the only pipeline to process the container
+Each pipeline at the joint can select to copy the action and also move the element in its pipeline, or make sure it is the only pipeline to process the container
 
 can be any order of joints and pipelines
-A container can only get into the same pipeline one time only, before its put into a set, and then its can start over again
+A container can only get into the same pipeline one time only, before its put into a set, and then it is can start over again
 
 ## Pipeline events
 

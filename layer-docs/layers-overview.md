@@ -44,8 +44,8 @@
 
 ## Common things in all api requests
 
-* Most require a logged-in user, when that happens, it requires them using a bearer token, acquired in oauth
-* an optional checksum can be added to any token passed in, the checksum must match for that token before the api operation is carried out
+* Most require a logged-in user, when that happens, it requires them using a bearer element, acquired in oauth
+* an optional checksum can be added to any element passed in, the checksum must match for that element before the api operation is carried out
 * all api operations use the jobs api, the work is sent to a job queue
 * all api operations use the core api 
 * any user can take a resource exposed by the public api, and perform low level operations on it if they have the permissions
@@ -81,11 +81,11 @@ Does all the new user account creation
 
 # Publishing
 [publishing](d-connection-layers/publishing.md)
-Api for broadcasting new types and changes in tokens
+Api for broadcasting new types and changes in elements
 
 # Mirroring
 [mirroring.md](d-connection-layers/mirroring.md)
-Updates followed tokens and types that are not based here
+Updates followed elements and types that are not based here
 
 # External Users
 [external-user.md](d-connection-layers/external-user.md)
@@ -95,14 +95,14 @@ Coordinates users from other instances here
 
 # Contracts
 [contracts.md](f-transactions/contracts.md)
-Deals with the selling, terms, and use of token types
+Deals with the selling, terms, and use of element types
 
 
 
 
 # Transactions
 [transactions.md](f-transactions/transactions.md)
-The transaction layer changes ownership of tokens after an agreement between two or more people.
+The transaction layer changes ownership of elements after an agreement between two or more people.
 Transactions can be in many parts and swap more than one owner. All have to succeed for the ownership to be changed for any
 
 # Auditing
@@ -116,7 +116,7 @@ Api for record keeping/verification of transactions
 
 # Pools
 [pools.md](e-organization-layers/pools.md)
-Pools are a resource that generates future tokens. Each batch made has a different owner.
+Pools are a resource that generates future elements. Each batch made has a different owner.
 
 
 # Agreements
@@ -142,7 +142,7 @@ Jobs are used internally by the layers to execute stuff
 
 # Format
 [format](c-personal-layers/format.md)
-  Will convert a token set to html , or markdown. Other formats can be added as plugins for that project
+  Will convert an element set to html , or markdown. Other formats can be added as plugins for that project
 
 
 # Boards
@@ -171,7 +171,7 @@ Allow some users to do some low level operations
 
 # Agents
 [agents.md](b-user-layers/agents.md)
-Agents are those that are authorized to do token changes outside the server
+Agents are those that are authorized to do element changes outside the server
 
 
 ## Jobs

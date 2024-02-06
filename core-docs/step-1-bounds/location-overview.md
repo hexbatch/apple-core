@@ -12,16 +12,16 @@ Locations of the same unit type can stack, and be compared. Is A in B? does A in
 
 When attributes stack the locations, there are two stacks set up. One for map, one for cartesian.
 
-When adding a token to a set, both the token being added and a set can have one or more location bounds stacked.
-If both stacking units are used in A and B, then both stacking units need to intersect for the token to join the set.
+When adding an element to a set, both the element being added and a set can have one or more location bounds stacked.
+If both stacking units are used in A and B, then both stacking units need to intersect for the element to join the set.
 
 If they only have bounds in different units, this is the same as no bounds calculation and are not considered.
 
-If a set has a location bounds, then it has an option to only accept tokens inside it that have no location set.
+If a set has a location bounds, then it has an option to only accept elements inside it that have no location set.
 (note: how?)
 
-If a set has a smaller area or volume than a token entering it, that token can still be active with the set.
-A token's location area is its area of possibility. 
+If a set has a smaller area or volume than an element entering it, that element can still be active with the set.
+AN element's location area is its area of possibility. 
 
 locations of the same units can be compared (is this point or plane in this 3d object), is this shape located in my town, is this point in the ocean,
 is this cube intersecting this boundary. But different units are not comparable. 

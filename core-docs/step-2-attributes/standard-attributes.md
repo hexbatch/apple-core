@@ -56,7 +56,7 @@ The group-set type has all the core identification and display attributes. When 
 * model - binary (to store rendering models)
 * audio - base attribute type for sound file urls - json has url , start at offset, loop, total play time
 * video - base attribute type for video urls - json has url , start at offset,  total play time
-* (for sets when element enters) default position inside set. When a element enters, if it does not have its positioning attribute set, then assigned this
+* (for sets when element enters) default position inside set. When an element enters, if it does not have its positioning attribute set, then assigned this
 
 ### Organization
 

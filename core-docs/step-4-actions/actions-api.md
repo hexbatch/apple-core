@@ -14,16 +14,16 @@ actions can be attached to multiple different attributes
 | Get    | action/:id/read          |            | Gets the action definition         |
 | Get    | action/:id/list          |            | iterator,List an action where used |
 | Get    | actions/list             |            | iterator,List all the actions      |
-| Post   | events/send_custom_event |            | event attribute, target token      |
+| Post   | events/send_custom_event |            | event attribute, target element    |
 
     action-name: can be any unique name for actions
     action-owner: actions are be owned by a user
     event-path: the path of the event (able to filter set context of an event), path must be using an event attribute id or child of one
-    target-path: see paths (must end in attribute on the token this belongs to, ok if path is invalid, in that case no target and no changes)
+    target-path: see paths (must end in attribute on the element this belongs to, ok if path is invalid, in that case no target and no changes)
     target-remembering: all|set|relationship
     action-type: permission, value change, switch on|off, live add, live remove,  or void 
     input-params: [{path: name of param on the script or remote}]
-    run-policy: always, per token, per token type, per set, once only per token type, one only per token
+    run-policy: always, per element, per element type, per set, once only per element type, one only per element
     value: a script, or remote id, or another attribute path
     priority: optional number
 
@@ -40,13 +40,13 @@ Any admin in the user's group can edit, but can only edit if not in use
 Any part can be changed
 
 ## Test an action
-Run action, set an event and a token for the action to run on, and perhaps a set,
+Run action, set an event and an element for the action to run on, and perhaps a set,
 Get back the value the action gives
 
 
 ## Listing where an action is used at
 
-Gives a list of attributes this action is used at, wide option to list the token types and tokens
+Gives a list of attributes this action is used at, wide option to list the element types and elements
 
 ## Listing actions owned by this user
 

@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: Hexbatch API
-  description: defines the logic structure for the Gokabam hexbatch token and delivery service
+  description: defines the logic structure for the Gokabam hexbatch element and delivery service
   version: 1.0.0
   termsOfService: 'http://localhost/v1/service'
   contact:

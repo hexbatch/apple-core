@@ -9,17 +9,17 @@
 ## Authentication
 
 Once the user is logged in, we use the authentication provided by the laravel framework to authenticate each api call
-see https://laravel.com/docs/10.x/passport#issuing-access-tokens
+see https://laravel.com/docs/10.x/passport#issuing-access-elements
 
 
 ## Next Layer authentication with the inner core
 
 The outer layers uses Oauth, but they have to log in with the inner core via the job queues.
 
-The outer layers have non expiring bearer token for each user, and there is an admin api that allows these token to be regenerated.
+The outer layers have non expiring bearer element for each user, and there is an admin api that allows these element to be regenerated.
 
 When another user, who is allowed via Oauth roles to act on behalf of a user, makes a call for this user, then when the roles are verified for the logged-in user,
-the outer layer will construct the job queue using the behalf-user's token.
+the outer layer will construct the job queue using the behalf-user's element.
 
 
 ## First plugins
@@ -36,7 +36,7 @@ Logins:
     user_login.login_choice
 shows the list of login choices, reading from its plugins here
 each login choice is its own url inside the user_login_layer, created by that plugin
-output can be either an html page, or a json response
+output can be either html page, or a json response
 
 ## show login form
     user_login.show_fields

@@ -9,9 +9,9 @@ The response will be published on the service by the agent.
 
 
 For example, if someone messages a user on a jabber server, an agent listening to that on some server or software somewhere 
- can talk to the instance here and create a token with that new message and put it into selected sets (inbox set etc.).
+ can talk to the instance here and create an element with that new message and put it into selected sets (inbox set etc.).
 
-Likewise, if someone adds a child token to a parent item token, it can be made a message in a chat system or internet board.
+Likewise, if someone adds a child element to a parent item element, it can be made a message in a chat system or internet board.
 
 Communications can also integrate multi-user group chats. Communications can be read only also, just delivering new notifications from the outside.
 
@@ -37,7 +37,7 @@ Some intended agents:
 The communication api uses items api to record the messages and info, and to send that info to the users in the instance.
 
 Some communication integrations it makes more sense to use a protected message set for chat or reply chains, for things like chat conversations, or message communication replies.
-For example, a new top level email can be a new item, and the replies under it can be protected message tokens in that message set.
+For example, a new top level email can be a new item, and the replies under it can be protected message elements in that message set.
 
 
 ## Agent networking

@@ -1,20 +1,20 @@
 # Apple Core
 
-The core api is not meant to be exposed directly to the public, but still needs basic auth and bearer tokens to use when the services call on it
+The core api is not meant to be exposed directly to the public, but still needs basic auth and bearer elements to use when the services call on it
 
 The core is meant to be stand-alone for testing and demonstration purposes though
 
 # Parts of the core api
 
-* We have some objects (tokens) that are made out of attributes.
-* A token has an owner and starts with some standard attributes. 
-* A token is always in at least one token-set.
-* A token can be in many token sets.
-* A token set can contain tokens not owned by the owner of the token set.
-* Token sets are altered, created and destroyed via set commands using requirements
-* Actions listening in on different lifecycle stages of a token, and when a token joins a set, can run javascript to decide to allow this and do auto transfers of tokens
+* We have some objects (elements) that are made out of attributes.
+* AN element has an owner and starts with some standard attributes. 
+* AN element is always in at least one element-set.
+* AN element can be in many element sets.
+* AN element set can contain elements not owned by the owner of the element set.
+* Element sets are altered, created and destroyed via set commands using requirements
+* Actions listening in on different lifecycle stages of an element, and when an element joins a set, can run javascript to decide to allow this and do auto transfers of elements
 
-Attributes are defined by themselves, and attached to the type. The tokens are instances of the type
+Attributes are defined by themselves, and attached to the type. The elements are instances of the type
 
 
 ## General concepts
@@ -28,7 +28,7 @@ Attributes are defined by themselves, and attached to the type. The tokens are i
 * [remotes](core-concepts/remotes.md)
 * [actions](core-concepts/actions.md)
 * [types](core-concepts/types.md)
-* [token](core-concepts/token.md)
+* [element](core-concepts/element.md)
 * [sets](core-concepts/sets.md)
 * [operations](core-concepts/operations.md)
 * [searches](core-concepts/searches.md)
@@ -51,20 +51,20 @@ Be nice to the developers and testing!
 ----------------------------------------
 # User
 
-A [user](step-0-users-groups/user-overview.md) is both a person (or bot) in this library, and a token type.
-Any tokens a user creates will inherit from this token type.
+A [user](step-0-users-groups/user-overview.md) is both a person (or bot) in this library, and an element type.
+Any elements a user creates will inherit from this element type.
 
 A user when created has some default attributes, some of which can only be read by the user.
 
 When a user is created, a user group for it is also created. Any other user added to the group can read the private data.
 Any other user promoted to admin in the user group can write to the user attributes.
 
-User tokens cannot be bounded, and they cannot run actions
+User elements cannot be bounded, and they cannot run actions
 
 ---------------------------------------
 # User Admin
 [user admin](step-0-users-groups/user-admin-tasks.md)
-Life can get tricky! And the layers may need a way to reset a pw or all tokens. Or when just using the core by itself, a pw might need resetting
+Life can get tricky! And the layers may need a way to reset a pw or all elements. Or when just using the core by itself, a pw might need resetting
 
 
 ----------------------------------------
@@ -72,7 +72,7 @@ Life can get tricky! And the layers may need a way to reset a pw or all tokens. 
 
 A [user group](step-0-users-groups/group-overview.md)  is a collection of users. These groups are used for permission lists, and are the bedrock of the permission system in this library
 
-Actions do not run on the token of the user group
+Actions do not run on the element of the user group
 
 
 -----------------------------------
@@ -87,7 +87,7 @@ users log in
 
 [bounds](step-1-bounds/bound-overview.md) are only applied to attributes.
 
-Each bounds have a location and/or time and/or set path component, either is optional
+Each bound has a location and/or time and/or set path component, either is optional
 
 If there is no bounds, the attribute is always on. Else, the attribute is only read, written, and applied inside the bounds
 
@@ -107,10 +107,10 @@ There is a list of attributes that have standard names
 ----------------------------------------------------
 
 # Scripts
-[scripts](step-3-scripts-remotes/script-overview.md) are Javascript can be set to run and generate a value when a token attribute is read
+[scripts](step-3-scripts-remotes/script-overview.md) are Javascript can be set to run and generate a value when an element attribute is read
 
 # Remotes
-[Remotes](step-3-scripts-remotes/remote-overview.md) are remote callbacks to be run and generate a value when a token attribute is read# Remotes
+[Remotes](step-3-scripts-remotes/remote-overview.md) are remote callbacks to be run and generate a value when an element attribute is read# Remotes
 
 # Metrics
 [metrics](step-3-scripts-remotes/metrics-tasks.md) shows stats of calls to scripts and urls
@@ -123,30 +123,30 @@ are attribute values that listen to events and allow things to happen, they can 
 
 ---------------------------------------------------------
 
-# Token types
+# Element types
 
-[Token types](step-5-types/type-overview.md)
-make tokens, and can select them from a set.
-They contain the static attributes that come to life when a token is made
-
-
-# Tokens
-* [tokens.md](step-6-tokens/token-overview.md)
-* [live attributes](step-6-tokens/live-attribute-overview.md)
-* [parents](step-6-tokens/live-parent-overview.md)
-
-Tokens are made from token types, and have live values of those attributes. 
-
-Tokens can have other attributes added to them individually, either that are not in the token type, or overwriting the token type's added on to them
-
-Tokens have their aggregate values: bounds, affinities, allergies
+[Element types](step-5-types/type-overview.md)
+make elements, and can select them from a set.
+They contain the static attributes that come to life when an element is made
 
 
-# Token set
+# Elements
+* [elements.md](step-6-elements/element-overview.md)
+* [live attributes](step-6-elements/live-attribute-overview.md)
+* [parents](step-6-elements/live-parent-overview.md)
+
+Elements are made from element types, and have live values of those attributes. 
+
+Elements can have other attributes added to them individually, either that are not in the element type, or overwriting the element type's added on to them
+
+Elements have their aggregate values: bounds, affinities, allergies
+
+
+# Element set
 [sets](step-7-sets/set-overview.md)
-All tokens belong to one or more token sets.
+All elements belong to one or more element sets.
 
-A token set does not have any definition or structure, it's a loose organization of tokens.
+AN element set does not have any definition or structure, it's a loose organization of elements.
 
 * [Operations](step-7-sets/operations-overview.md)
 * [Searches](step-7-sets/set-overview.md)

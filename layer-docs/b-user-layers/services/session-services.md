@@ -8,11 +8,11 @@ Each session has:
 * the layer user_id
 * a name
 * the working set
-* a command pallet - a set that allows tokens to have well known attributes to read and write from
-  * each token has a sorting attribute, a read attribute and a write attribute. These can be remotes or scripts 
-* session data - a set that stores tokens used to remember stuff about this session
+* a command pallet - a set that allows elements to have well known attributes to read and write from
+  * each element has a sorting attribute, a read attribute and a write attribute. These can be remotes or scripts 
+* session data - a set that stores elements used to remember stuff about this session
 * options: 
-  * can have a filter to limit the tokens reported back
+  * can have a filter to limit the elements reported back
   * can be set to human mode
 
 # API
@@ -66,7 +66,7 @@ travels user to another set in this session
 Creates what is needed for a user session to start
 
 Input data:
-* user id, auth token, name of session, id of session
+* user id, auth element, name of session, id of session
 
 Core calls:
 * list of core calls
@@ -79,7 +79,7 @@ Return data:
 Destroys the resources from a user session
 
 Input data:
-* session data, auth token
+* session data, auth element
 
 Core calls:
 * list of core calls

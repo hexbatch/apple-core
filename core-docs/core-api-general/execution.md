@@ -1,11 +1,11 @@
-# Executing Api operations that write to tokens or make resources
+# Executing Api operations that write to elements or make resources
 
 The execution of each api should allow pauses and resumes based on stuff to wait on.
 When an api executes, it will get a copy of what it is operating on, and after that not look at more recent changes to those.
-When it finishes, it will write the changes to the attributes for others to see, and release any created resources so its seen outside of the api call
+When it finishes, it will write the changes to the attributes for others to see, and release any created resources so that it is seen outside the api call
 
 ## Api Scope
-Changes made during an api call is only seen inside that api call until its done
+Changes made during an api call is only seen inside that api call until it is done
 Option to throw away all changes if cannot write all changes. Cannot write to attributes that have been changed since the api call started
 
 ## Pauses:
@@ -29,9 +29,9 @@ For remotes without a uri, then the user must enter the data to be returned by t
 
 ## When an api is called:
 
-it gets a list of tokens to read, and then it goes into a bubble
-if it has to wait to read a token, it is paused after getting a list of all waiting reads
-a token can be waiting to read because of a remote of type pause, or an extra long time remote, or other issue
+it gets a list of elements to read, and then it goes into a bubble
+if it has to wait to read an element, it is paused after getting a list of all waiting reads
+an element can be waiting to read because of a remote of type pause, or an extra long time remote, or other issue
 once it has all reads needed, then it either continues or unpauses
 it only reads the data it cached, and does not do updates on what it reads for rest of api call
 Events
@@ -41,8 +41,8 @@ writes
 event value changes are also writes, so has list of changes from above
 api writes are added to that list
 checks to see can write to all, if not pause
-moves tokens via sets
-if a token is needing to change sets, does it now (events already called for approval in above ) . No pause
+moves elements via sets
+if an element is needing to change sets, does it now (events already called for approval in above ) . No pause
 creates new resources
 no pause
 created resources not available for use in the above

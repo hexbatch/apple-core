@@ -15,7 +15,7 @@ Basic user management
 * freeze users (user cannot use api, gets message about why)
 * delete users (removes user in layer, keeps core user)
 * able to use the rate api
-* Does maintenance on the tokens used by the outer layers
+* Does maintenance on the elements used by the outer layers
 * add user manually with pw
 * login user with pw
 
@@ -56,7 +56,7 @@ all api calls are sent through the instance.route_call
     instance.route_call 
   this is where all calls are forwarded 
 
-  * calls `permissions_layer.can_i_do_this`, with the user's rate set, or the one provided., or the system public one. if cannot return or throw 
+  * calls `permissions_layer.can_i_do_this`, with the user's rate set, or the one provided., or the system public one. if it cannot return or throw 
   * will use event filter find out where to route, to allow dynamic adding of routes
   * will use event action before and after call to route to allow plugin listeners
   * sets language from header to top level post or query param

@@ -10,8 +10,8 @@ There are rules that can be set up to how often, and what happens, when a remote
 Similar to scripts, the urls have a global and a local storage. But the remote does not use this, and does not see this.
 The storage is for keeping track about how often its called, and if it should be called again:
 
-* local state (stored in the token its attribute parent is attached to)
-* global state (stored in the token type attribute that is made when an attribute having the url is attached to the token type)
+* local state (stored in the element its attribute parent is attached to)
+* global state (stored in the element type attribute that is made when an attribute having the url is attached to the element type)
 
 
 As an attribute write value, remotes do not have to be called each and every time. This means writing to the attribute may be ignored or delayed.
@@ -20,8 +20,8 @@ If this happens the write will be treated as done, but the read will not work un
 The read will only be possible when the server has answered back. Between the write and the server answering, the attribute holding this url will be unreadable by anyone.
 If the owner queries it, the value will be marked as (pending) or something like that.
 
-Multiple writes can be collected together at the token or type level. Then after a certain period, the server is called for each.
-Each write value is paired with the token guid in the storage, so that when the server reports back, the state of each token is updated for the read.
+Multiple writes can be collected together at the element or type level. Then after a certain period, the server is called for each.
+Each write value is paired with the element guid in the storage, so that when the server reports back, the state of each element is updated for the read.
 
 So, for attribute reading and writing:
 * If the remote is configured to be only called when writing:
@@ -37,12 +37,12 @@ There are also optional rate limits set to limit calls to so many per unit of ti
 ## Data Going to the remote 
 
 * The data a remote is sent can be packaged in other data, defined in the remote definition.
-* The gui of the token the data is associated with is also sent with the data 
-* current_attributes (names and values) of the token: {}
-* current token owner
+* The gui of the element the data is associated with is also sent with the data 
+* current_attributes (names and values) of the element: {}
+* current element owner
 * current api user
 * the earlier value of the attribute this is on
-* extra_input_params can be tied to other attributes not on the token, by the action. If not bound, these are not sent
+* extra_input_params can be tied to other attributes not on the element, by the action. If not bound, these are not sent
 
 when gathering the current_attributes:
 * Other remote attribute values are not sent unless there can be a cached read (so no remotes calling each other in endless cycles)
@@ -60,7 +60,7 @@ The return is the value to read, but output keys can match up to top level json,
 
 ### Other Settings
 
-* If there is some sort of login needed, the supported auth types are basic and bearer token, and there are fields set up for each
+* If there is some sort of login needed, the supported auth types are basic and bearer element, and there are fields set up for each
 * settings for how to call: IP, port, url, protocol, http method
 
 
@@ -69,7 +69,7 @@ The return is the value to read, but output keys can match up to top level json,
     remote:
         user: required
         name : unique in urls
-        is_retired: default false // if true then cannot be added to token types
+        is_retired: default false // if true then cannot be added to element types
         is_on : if off then all read and writes will fail and the remote not called
         redirect: id of another remote
         uri: 
@@ -80,7 +80,7 @@ The return is the value to read, but output keys can match up to top level json,
                 port:
         auth:
             auth_type:
-            token:
+            element:
             user:
             pw:
         data:

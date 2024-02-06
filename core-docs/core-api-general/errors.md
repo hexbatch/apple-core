@@ -2,7 +2,7 @@
 
 errors and warnings will show up in expected areas in any response
 
-both errors and warnings have a int status, message string, code string ,and more_info url
+both errors and warnings have int status, message string, code string ,and more_info url
 
 Example:
 

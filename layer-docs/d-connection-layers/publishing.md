@@ -9,17 +9,17 @@
 ## what is sent out?
 
 
-Any token with certain attributes will be watched, and when a change happens, it will be broadcast
+Any element with certain attributes will be watched, and when a change happens, it will be broadcast
 
-When something is made public, that is a decision by someone who can write to the token.
-In that case there is are two value_change_filtered listeners for the token, that first filters anything to update via a javascript,
+When something is made public, that is a decision by someone who can write to the element.
+In that case there is are two value_change_filtered listeners for the element, that first filters anything to update via a javascript,
 then that is passed to the remote that talks to this api
 
 
 ## Info in the publishing
 
 
-At a minimum the give guids of each token published, its user, its type, the name, and key values of the attributes that are readable by the public
+At a minimum the give guids of each element published, its user, its type, the name, and key values of the attributes that are readable by the public
 
 
 ### Types

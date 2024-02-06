@@ -32,7 +32,7 @@ Reading group data:
 * area (same as when setting map boundary)
 * members: array of user data
 * admins : array of user data
-* token : guid of the group token if need more
+* element : guid of the group element if one needs more info
 
 
 writing group data is done by setting the name and/or description

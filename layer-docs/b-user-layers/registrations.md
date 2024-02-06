@@ -27,7 +27,7 @@ The simple registration may be whitelisted, or turned off when not needed
 ## Init form data so can display it 
     registrations.form.init
 * calls `user_services.list_user_fields`
-Form data is used by all plugins, its the information needed. A plugin decides which info is mandatory
+Form data is used by all plugins, it is the information needed. A plugin decides which info is mandatory
 
 Calls the standard.family.list for the description args to make the form data. Will cache this, can be called again any time to get more recent
 

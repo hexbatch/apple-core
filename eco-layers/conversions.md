@@ -15,10 +15,10 @@ So, if they are transferred to another set, then they do away from that map
 Conversion constructs can be permanent or have a lifetime.
 
 Conversion constructs can have their permission set so that they have to be destroyed to be able to read the data.
-Their attributes will self-destruct after the first read, and if enough attributes on a token is read, then the token will be self destroyed.
+Their attributes will self-destruct after the first read, and if enough attributes on an element is read, then the element will be self destroyed.
 
 Conversions have their permissions set so that they can be destroyed, or can have permissions so that they are not changeable.
-Destroyed when read produces the first token in a tech tree. Advancing up the tech tree via goals gives more tokens in the tech tree
+Destroyed when read produces the first element in a tech tree. Advancing up the tech tree via goals gives more elements in the tech tree
 
 The only way to read some conversion's attributes is by a shaped set entering its space, permissions are set that way
 

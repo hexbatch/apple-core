@@ -7,10 +7,10 @@ When a group is created, it only has the owner (the user who created the group) 
 
 ## Admins
 
-The creator of the group is the owner of the token , and has special privileges.
+The creator of the group is the owner of the element , and has special privileges.
 The owner is always a member, and an admin. Nobody can remove the owner as admin or member (cannot be kicked out of own group)
 
-Admins are also members. Only the token owner can add or remove other admins. Any admin can add or remove a member
+Admins are also members. Only the element owner can add or remove other admins. Any admin can add or remove a member
 
 A user group membership is not discoverable to non-members, the attributes read list is updated by that. 
 But members can see all the other members and admins.

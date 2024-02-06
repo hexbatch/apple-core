@@ -1,7 +1,7 @@
 # Types
 
-Before creating a token, it has to have a design. Each type can have zero or more parents of other types.
+Before creating an element, it has to have a design. Each type can have zero or more parents of other types.
 
-The type contains the defined attributes of the token
+The type contains the defined attributes of the element
 
-Each type is owned by a user who can allow other users to create tokens from it
+Each type is owned by a user who can allow other users to create elements from it

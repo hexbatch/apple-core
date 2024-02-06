@@ -4,7 +4,7 @@ Time bounds is defined by both a range to start and stop using this bounds, and 
 
 When creating a bounds, it can have 0 , 1 or many time bounds.
 
-The union of the times is when that token is active.
+The union of the times is when that element is active.
 The attribute's time boundary is when it is active.
 
 

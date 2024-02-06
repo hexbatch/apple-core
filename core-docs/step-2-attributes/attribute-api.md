@@ -10,7 +10,7 @@ When creating or editing the name of the attribute, do not put in the username, 
 When creating the attribute, the user is the owner. After creation attributes cannot change ownership, but they can be copied.
 
 An attribute can be edited in full until it is placed in a type. The attribute can be removed from the element type, and edited, and put back in.
-But once an attribute has a live application in a element, it cannot be edited much except to retire it, which means nobody can use it for new stuff.
+But once an attribute has a live application in an element, it cannot be edited much except to retire it, which means nobody can use it for new stuff.
 Only the owner, or someone in the owner's admin group can read and edit the attribute
 Bounds are added as a mix of any bounds types
 
@@ -61,8 +61,8 @@ An attribute can be deleted if only it's not used anywhere
                 read: []  if empty anyone can read the attribute value
                 write: [] if empty the admin group can change the attribute value.
             set_requirements: 
-                read_policy: all|one  
-                write_policy: all|one  
+                is_read_policy_all: bool  
+                is_write_policy_all: bool  
                 read: [] attribute ids  : based on policy, if one, then any matches in a set makes it readable, or all must match
                 write: [] attribute ids : based on policy, if one, then any matches in a set makes it readable, or all must match
         value:

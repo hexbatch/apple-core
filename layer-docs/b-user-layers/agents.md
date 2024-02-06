@@ -1,6 +1,6 @@
 # Agents
 
-Agents are users that do token changes for other users.
+Agents are users that do element changes for other users.
 Any user can be an agent for any other user. An agent can do changes for many users at once.
 
 Agents can be used for reporting changes outside the server. For instance an email server or hook can have an agent, that 
@@ -14,8 +14,8 @@ Agents can be assigned to do only one api call for a user, or do N api calls or 
 
 Agents can be assigned to do something for anyone in a user group.
 
-Agents can be limited to only do api calls for specific tokens, this allowed token list can be updated as needed.
-The whitelist of tokens is maintained by this layer.
+Agents can be limited to only do api calls for specific elements, this allowed element list can be updated as needed.
+The whitelist of elements is maintained by this layer.
 
 Agents can be moderators (human or bot) that can change and remove some things in chats, boards, stores, items, inventory.
 
@@ -32,7 +32,7 @@ A user can be his own agent, to allow for advanced api call handling.
 * create agent (no agreement, private api)
 * list agents the logged-in user made, or categories of agents made by group members
 * turn on and off agents
-* manage token whitelist
+* manage element whitelist
 * end agent
 * show log of agent
 

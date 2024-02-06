@@ -11,20 +11,20 @@ A user can create their landing set, that people can join to interact with the u
 This landing set is easily discoverable inheriting the landing type parent. Also, this is in the user data given back, if the landing set's permissions allow it to be read.
 
 ### Home
-Each user is also given a home set. A user's home set is a type derived from the user token.
+Each user is also given a home set. A user's home set is a type derived from the user element.
 
 The default user session is from the home set, and the home set can store stuff not in the command pallet.
 
 ### User wallet
 
-All the tokens a user owns, that is not some file or action, is in a wallet, this can be organized
+All the elements a user owns, that is not some file or action, is in a wallet, this can be organized
 We create the wallet when user registered.
-The wallet can be organized like other tokens and sets
+The wallet can be organized like other elements and sets
 
 
 ### Rate set
 
-Each user gets one rate set to start out with. Tokens for api access are set here
+Each user gets one rate set to start out with. Elements for api access are set here
 
 # Sessions
 
@@ -39,7 +39,7 @@ This means for most of the other api calls made in the layers, the user's workin
 And all the other layer api needs to refer to this, which will be set in the user-services for easy access.
 
 When a user session changes to a new set:
-The user's token is added to the set to use as a context, that way, the set can reject the user, or give a new token to the user (message, access, etc)
+The user's element is added to the set to use as a context, that way, the set can reject the user, or give a new element to the user (message, access, etc.)
 
 A user can do an api call using a different set than his working set without leaving his working set.
 Everything still works the same, but at the end of the api call, the user is still in his chosen working set

@@ -27,14 +27,14 @@ The core api will have a full testing coverage and suit.
 See [core-development-overview.md](other-docs/dev/core-development-overview.md)
 Some selected links below cover the main parts, the overview has more
 
-| Concept    | Description                | Link                                                            |
-|------------|----------------------------|-----------------------------------------------------------------|
-| Bounds     | Limits of a token          | [bounds](core-docs/step-1-bounds/bound-overview.md)             |
-| Attributes | Data in a token            | [attributes](core-docs/step-2-attributes/attribute-overview.md) |
-| Actions    | Event listeners on a token | [actions](core-docs/step-4-actions/action-overview.md)          |
-| Types      | A definition of a token    | [types](core-docs/step-5-types/type-overview.md)                |
-| Tokens     | Definition of a token      | [tokens.md](core-docs/step-6-tokens/token-overview.md)          |
-| Sets       | Tokens are put into a set  | [sets](core-docs/step-7-sets/set-overview.md)                   |
+| Concept    | Description                   | Link                                                            |
+|------------|-------------------------------|-----------------------------------------------------------------|
+| Bounds     | Limits of an element          | [bounds](core-docs/step-1-bounds/bound-overview.md)             |
+| Attributes | Data in an element            | [attributes](core-docs/step-2-attributes/attribute-overview.md) |
+| Actions    | Event listeners on an element | [actions](core-docs/step-4-actions/action-overview.md)          |
+| Types      | A definition of an element    | [types](core-docs/step-5-types/type-overview.md)                |
+| Elements   | Definition of an element      | [elements.md](core-docs/step-6-elements/element-overview.md)    |
+| Sets       | Elements are put into a set   | [sets](core-docs/step-7-sets/set-overview.md)                   |
 
 ## List of expansions in the core
 
@@ -62,8 +62,8 @@ They set up jobs to be dispatched and completed later. But often, the caller to 
 The caller can decide how to get the results, he can wait for the api call to return, or he can use a callback url, or do polling later.
 
 The core has its own user and authentication system. The layers use OAuth2 to register and log-in people.
-The layers talk to the core by storing core user bearer tokens that do not expire, and when they need to do the core to do things,
-they dispatch jobs using a temporary auth token that expires at the end of the job.
+The layers talk to the core by storing core user bearer elements that do not expire, and when they need to do the core to do things,
+they dispatch jobs using a temporary auth element that expires at the end of the job.
 
 The core itself does not have a superuser, or root user.
 But it does have a permission system. So the layers can be doing actions as different users to implement nested permissions.
@@ -71,10 +71,10 @@ But it does have a permission system. So the layers can be doing actions as diff
 
 When a public api request is made, a job is made that has a list of api core calls to make.
 
-* A temporary bearer token is created for this job only.
+* A temporary bearer element is created for this job only.
 * The job is put on a queue.
 * When the job is run, the apis are called, using the output of earlier calls to be params for the later calls.
-* The job api is updated, the temp bearer token is undone, and job result sent back via a callback url to the layer that created the job.
+* The job api is updated, the temp bearer element is undone, and job result sent back via a callback url to the layer that created the job.
 * If the api caller did not specify a callback and wants to wait, then the results are sent back directly.
 * Otherwise, the original caller can poll or listen to the url it gave the layer for the callback
 
@@ -108,17 +108,17 @@ General api call in the layer:
 |              | Registrations                 | Does all the new user account creation                                | [registrations](layer-docs/b-user-layers/registrations.md)         |
 |              | Authentication and Logging in | Handles users logging in and pw resets                                | [user_login](layer-docs/b-user-layers/user_login.md)               |
 | Personal     | Notes                         | Organize text,images, links, lists                                    | [notes](layer-docs/c-personal-layers/notes.md)                     |
-|              | Format                        | Converts token sets to different things: html and markup ..           | [format](layer-docs/c-personal-layers/format.md)                   |
-| Connection   | Publishing                    | Api for broadcasting new types and changes in tokens                  | [publishing](layer-docs/d-connection-layers/publishing.md)         |
-|              | Mirroring                     | Updates followed tokens and types that are not based here             | [mirroring](layer-docs/d-connection-layers/mirroring.md)           |
+|              | Format                        | Converts element sets to different things: html and markup ..         | [format](layer-docs/c-personal-layers/format.md)                   |
+| Connection   | Publishing                    | Api for broadcasting new types and changes in elements                | [publishing](layer-docs/d-connection-layers/publishing.md)         |
+|              | Mirroring                     | Updates followed elements and types that are not based here           | [mirroring](layer-docs/d-connection-layers/mirroring.md)           |
 |              | External Users                | Coordinates users from other instances here                           | [external-users](layer-docs/d-connection-layers/external-user.md)  |
-|              | Pools                         | Pools are a resource that generates future tokens                     | [pools](layer-docs/e-organization-layers/pools.md)                 |
+|              | Pools                         | Pools are a resource that generates future elements                   | [pools](layer-docs/e-organization-layers/pools.md)                 |
 | Organization | Organizations                 | They are companies or people who do stores                            | [organizations](layer-docs/e-organization-layers/organizations.md) |
 |              | Agreements                    | Reach consensus to do group driven actions                            | [agreements](layer-docs/e-organization-layers/agreements.md)       |
 |              | Deferred                      | Agreed things done by script or remote                                | [deferred.md](layer-docs/e-organization-layers/deferred.md)        |
-| Transaction  | Transactions                  | Changes ownership of tokens after an agreement                        | [transactions.md](layer-docs/f-transactions/transactions.md)       |
+| Transaction  | Transactions                  | Changes ownership of elements after an agreement                      | [transactions.md](layer-docs/f-transactions/transactions.md)       |
 |              | Auditing                      | Api for record keeping/verification of transactions                   | [Auditing](layer-docs/f-transactions/auditing.md)                  |
-|              | Contracts                     | Terms of using someone's token in your own stuff. Auto payments       | [contracts](layer-docs/f-transactions/contracts.md)                |
+|              | Contracts                     | Terms of using someone's element in your own stuff. Auto payments     | [contracts](layer-docs/f-transactions/contracts.md)                |
 | Interaction  | Boards                        | Discussion chat rooms and reviews. Private individual and group chats | [Communication](layer-docs/g-interaction-layers/communication.md)  |
 |              | Items                         | Allow sharing and communities                                         | [items](layer-docs/g-interaction-layers/items.md)                  |
 
@@ -131,7 +131,7 @@ General api call in the layer:
 * [Interfaces](other-docs/docs/concepts/interfaces.md)
 * [Data Flow](other-docs/docs/concepts/data-flow.md)
 * [Instances](other-docs/docs/concepts/instances.md)
-* [Coding with tokens](other-docs/docs/concepts/coding-with-tokens.md)
+* [Coding with elements](other-docs/docs/concepts/coding-with-elements.md)
 
 
 # Calender

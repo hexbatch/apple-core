@@ -8,6 +8,6 @@ And attributes can be made to be incompatible with some other attributes. Or mad
 
 Attributes have permissions about who can read and write to them.
 
-Additionally, attributes can make tokens move around different sets based on what they are most compatible.
+Additionally, attributes can make elements move around different sets based on what they are most compatible.
 
-A token can have many attributes, and they can be grouped into different clusters on the token, by having them come from different parents.
+AN element can have many attributes, and they can be grouped into different clusters on the element, by having them come from different parents.

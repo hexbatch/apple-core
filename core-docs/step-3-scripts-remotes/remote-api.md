@@ -4,8 +4,8 @@ remote api defined at
 
 
 Remotes cannot change ownership
-Remotes can be fully edited if not used anywhere in any token types or tokens. They can be turned off though (things happen to the server). Or given a redirect
-Remotes deletable if the remote not used in any token or type
+Remotes can be fully edited if not used anywhere in any element types or elements. They can be turned off though (things happen to the server). Or given a redirect
+Remotes deletable if the remote not used in any element or type
 
 Remotes can be tested with a test context. When created the test context will be set used to remember stats to follow the rules of cool-down
 There can be multiple test_contexts for each remote. Unlike scripts, these cannot be edited
@@ -19,7 +19,7 @@ Remotes can be seen and edited in full by anyone in the user's group admin, or i
 | Post   | remote                                |            | Makes a new remote                                       | Required name: optional states, required remote |
 | Patch  | remote/edit/:id                       |            | Edit part of value, if possible, sparse                  | Any detail , sparse update                      |
 | Put    | remote/edit/:id                       |            | Edit Value , if possible, full replacement               | All the values for the definition               |
-| Get    | remote/:id                            |            | returns full remote info                                 | can pass in optional type and token             |
+| Get    | remote/:id                            |            | returns full remote info                                 | can pass in optional type and element           |
 | Get    | remotes/list                          |            | searches for remotes                                     | iterator,can pass in filtering info             |
 | Get    | remote/write/:test_context/:id        |            | Writes to the Remote, returns value or issues            | Runs using context created                      |
 | Get    | remote/read/:test_context/:id         |            | Reads from the Remote, returns value or issues           | Runs using context created                      |
@@ -34,7 +34,7 @@ Remotes can be seen and edited in full by anyone in the user's group admin, or i
 
         user: required
         name : unique in urls
-        is_retired: default false // if true then cannot be added to token types
+        is_retired: default false // if true then cannot be added to element types
         is_on : if off then all read and writes will fail and the remote not called
         redirect: id of another remote
         uri: 
@@ -45,7 +45,7 @@ Remotes can be seen and edited in full by anyone in the user's group admin, or i
                 port:
         auth:
             auth_type:
-            token:
+            element:
             user:
             pw:
         data:

@@ -26,23 +26,23 @@ Stores can make categories. They associate inventory with these.
 
 Similar inventory (like different colors of coats of the same type) can share the same categories
 
-When people search via tokens or attributes, which are included in these categories, the store can respond to a list of inventory and a salesman, or choice of salesmen.
+When people search vian elements or attributes, which are included in these categories, the store can respond to a list of inventory and a salesman, or choice of salesmen.
 
 Inventory can be searched with the requirement of a certain selection of salesmen to handle it (asking for someone specific to help with this)
 
 ### Making categories
 
-A category is a set that has inside of it token of attributes, as well as inventory tokens to be grouped here, as well as salesman tokens. This makes it searchable
+A category is a set that has inside of it element of attributes, as well as inventory elements to be grouped here, as well as salesman elements. This makes it searchable
 
 ## Store staff
 
 Users can be in the store staff group. 
 
-Each user is given a store salesman token that inherits from the salesman token and this store.
+Each user is given a store salesman element that inherits from the salesman element and this store.
 
 These users are called salesmen.
 
-Each salesman can have a location or time schedule, or even a search path boundary (to only answer certain searches in the categories or other token searches)
+Each salesman can have a location or time schedule, or even a search path boundary (to only answer certain searches in the categories or other element searches)
 
 ### Salesmen roles
 

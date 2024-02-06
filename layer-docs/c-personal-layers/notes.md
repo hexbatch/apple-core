@@ -1,10 +1,10 @@
 # Notes
 
-Make note tokens that have text, images, links, and a list.
+Make note elements that have text, images, links, and a list.
 The list is made up of other notes
 
-Each note is a new token created based on a type defined here.
-Notes are also a set, which contain note tokens in its list. Lists can be nested this way.
+Each note is a new element created based on a type defined here.
+Notes are also a set, which contain note elements in its list. Lists can be nested this way.
 
 Each note can have a name which is the standard attribute name.
 
@@ -19,7 +19,7 @@ Notes can be public or be given a user group
 
 
 
-There is an api call to make a new token with this.
+There is an api call to make a new element with this.
 
 And an api to edit a note, and add to its list, or modify its list
 

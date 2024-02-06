@@ -1,8 +1,8 @@
 # Pathing Bounds
 
 
-Create and manage a set path rule. The token's set context must match the path rule.
-This will allow the same token to do different things based on the set it uses as its context in an api call.
+Create and manage a set path rule. The element's set context must match the path rule.
+This will allow the same element to do different things based on the set it uses as its context in an api call.
 
 Bounds can only be deleted if they are not used anywhere.
 
@@ -26,4 +26,4 @@ Bound names are not public, nobody is going to see your bound names
 
         user: id
         name: name of the bounds (unique to the user's bounds)
-        search_expressions: array of search expressions ending at a set the token can belong to, or a sibling token in a set the token can belong to
+        search_expressions: array of search expressions ending at a set the element can belong to, or a sibling element in a set the element can belong to

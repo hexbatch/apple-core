@@ -1,22 +1,22 @@
 # Making money
 
-# Connecting tokens with real money
+# Connecting elements with real money
 
-Sometimes things of value can be traded, or people want tokens that represent actual money.
-Or need a token that marks a transaction successfully completed with money
+Sometimes things of value can be traded, or people want elements that represent actual money.
+Or need an element that marks a transaction successfully completed with money
 
-Online stores and other places can use agents to create and change token state for transactions, and these tokens represent the money.
+Online stores and other places can use agents to create and change element state for transactions, and these elements represent the money.
 
-So, when a merchant offers goods for sale, and wants a mix of real money and other tokens,
-the user purchasing is given a token that has a url for them to go pay, and then that token is updated when the payment goes through and the user is given a new token.
-That new token is made and added to the user's set to purchase with.
-Then, the token can complete the required type-set and the deal continues if all the matching tokens work out.
+So, when a merchant offers goods for sale, and wants a mix of real money and other elements,
+the user purchasing is given an element that has a url for them to go pay, and then that element is updated when the payment goes through and the user is given a new element.
+That new element is made and added to the user's set to purchase with.
+Then, the element can complete the required type-set and the deal continues if all the matching elements work out.
 
-## Tokens representing money only work for the user made for it
+## Elements representing money only work for the user made for it
 
-A token that represents a transaction is defined by the user selling the stuff, or trading. There is no set token type for representing value.
+AN element that represents a transaction is defined by the user selling the stuff, or trading. There is no set element type for representing value.
 Likewise, there is no cryptocurrency here that works out of the box.
-Users can apply this as part of their own currencies though, and tokens can be part of the mechanisms that run after a transaction is made
+Users can apply this as part of their own currencies though, and elements can be part of the mechanisms that run after a transaction is made
 
 
 
@@ -32,7 +32,7 @@ There are a few ways of making money here when running this as a selling instanc
 * The company can charge for extra searches (first X searches free)
 * The company can charge for extra api calls in general (api calls capped by plan, including free tier)
 
-None of these depend on the mix or real money with tokens for a purchase, or any deals the seller and customer make.
+None of these depend on the mix or real money with elements for a purchase, or any deals the seller and customer make.
 People can still use this service as they need, and enough people will use one of the above things to make a small profit off of it
 
 # Bandwidth charges

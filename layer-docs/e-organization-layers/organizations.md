@@ -14,14 +14,14 @@ Agreements can cancel any designation.
 For example, if the owners want to make a transaction for the org wallet, then they vote on having one of them be an agent for that one transaction.
 
 The organization has a shared wallet, that each owner has a percentage of. A vote is required to do anything with the wallet contents, or part of the contents.
-Including transferring tokens of that wallet to the users.
+Including transferring elements of that wallet to the users.
 
 
 ## Shares
 
-Any user can create an organization, the organization has a share token type, inherited from the new org, and a pool of shares of that type.
+Any user can create an organization, the organization has a share element type, inherited from the new org, and a pool of shares of that type.
 
-The number of share tokens owned by this user, combined with the number of shares remaining in the pool, is the total number of shares.
+The number of share elements owned by this user, combined with the number of shares remaining in the pool, is the total number of shares.
 
 This initial owner can create a sub pool of these shares, and sell them on the marketplace. Any user who buys this now has shares.
 
@@ -40,7 +40,7 @@ An organization can do anything a regular user can do.
 * An organization can also buy stuff
 * There can be contracts to auto transfer profits via the ownership.
 * But if there are auto-repeat contracts, then each time its renewed,
-* if tokens are being transferred using a ratio of shares, that ratio is recalculated 
+* if elements are being transferred using a ratio of shares, that ratio is recalculated 
 
 # Voting
 

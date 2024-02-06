@@ -4,14 +4,14 @@
 The owner of the type is the user who creates it. Type ownership cannot be transferred.
 
 When editing types, the type must not be used anywhere, except one can always retire a type to prevent
-the type from create new tokens or being a parent in new types
+the type from create new elements or being a parent in new types
 
 
-Token types have an owner, options, attributes, and parents
+Element types have an owner, options, attributes, and parents
 
-Token types name and info are in its attributes
+Element types name and info are in its attributes
 
-(other api here involve creating the token, getting token attribute values , and making a requirement)
+(other api here involve creating the element, getting element attribute values , and making a requirement)
 
 | Method | Path            | Route Name | Description                         |
 |--------|-----------------|------------|-------------------------------------|
@@ -26,8 +26,8 @@ Token types name and info are in its attributes
     
         user: one user owns the type
         name: using the naming rules
-        allowed_creators: a list of user groups or individual users who can make tokens from this type
-        is_retired: default false // if true then cannot be added to token types or make new tokens
+        allowed_creators: a list of user groups or individual users who can make elements from this type
+        is_retired: default false // if true then cannot be added to element types or make new elements
         options:
             allow_changed_map_bounds: boolean
             allow_changed_time_bounds: boolean
@@ -44,9 +44,9 @@ Token types name and info are in its attributes
 The user running this is the owner,
 Required is name and at least one attribute.
 
-## Reading a token
+## Reading an element
 
-When getting the token state, the global state for the scripts running on it, and remotes, can be seen
+When getting the element state, the global state for the scripts running on it, and remotes, can be seen
 
 
 ## Editing a type
@@ -54,20 +54,20 @@ When getting the token state, the global state for the scripts running on it, an
 Any admin in the user's group can edit, but can only edit if not in use
 Any part can be changed if type not used.
 When type is used, only the retired status and the allowed users can be set or changed,
-and that only affects things made in the future. Tokens already created are not affected.
+and that only affects things made in the future. Elements already created are not affected.
 
-One cannot edit a type when tokens are made or children are made.
+One cannot edit a type when elements are made or children are made.
 
 
 
 ## Listing where a type is used at
 
 Gives a list of types that inherits this, use wide option to list the descendants to N levels.
-Can filter for attributes on the token too. 
+Can filter for attributes on the element too. 
 
-## Listing tokens that are created from this type
+## Listing elements that are created from this type
 
-Gives list of tokens, wide option to list tokens made by descendants to N levels
+Gives list of elements, wide option to list elements made by descendants to N levels
 
 ## Listing types owned by this user
 

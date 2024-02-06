@@ -5,7 +5,7 @@
 
 # API 
 
-## can i do this
+## can I do this
     permissions_layer.can_i_do_this
 
 checks to see if the user has passed in an alternate rates, 

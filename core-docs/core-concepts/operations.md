@@ -1,3 +1,3 @@
 # Operations
 
-Operations allow mass editing of sets to change token membership between sets
+Operations allow mass editing of sets to change element membership between sets
