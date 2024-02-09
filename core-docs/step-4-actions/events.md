@@ -64,11 +64,10 @@ And the target can be one element per api call
 
 The element has to have the actions listening to that custom event, to act on it
 
-## Script and remote errors
-* script_error
+## remote errors
 * remote_error 
 
-An action can listen to errors happening to the elements, on one,some or all of the events. Remotes can have issues connecting, and scripts can have issues (not run, not returning miniumum data or exceeds permissions)
+An action can listen to errors happening to the elements, on one,some or all of the events. Remotes can have issues connecting, or return bad http codes
 
 
 

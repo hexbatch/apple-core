@@ -12,7 +12,7 @@ The core is meant to be stand-alone for testing and demonstration purposes thoug
 * AN element can be in many element sets.
 * AN element set can contain elements not owned by the owner of the element set.
 * Element sets are altered, created and destroyed via set commands using requirements
-* Actions listening in on different lifecycle stages of an element, and when an element joins a set, can run javascript to decide to allow this and do auto transfers of elements
+* Actions listening in on different lifecycle stages of an element, and when an element joins a set, can run the remote to decide to allow this and do auto transfers of elements
 
 Attributes are defined by themselves, and attached to the type. The elements are instances of the type
 
@@ -24,7 +24,6 @@ Attributes are defined by themselves, and attached to the type. The elements are
 * [groups](core-concepts/groups.md)
 * [bounds](core-concepts/bounds.md)
 * [attributes](core-concepts/attributes.md)
-* [scripts](core-concepts/scripts.md)
 * [remotes](core-concepts/remotes.md)
 * [actions](core-concepts/actions.md)
 * [types](core-concepts/types.md)
@@ -106,18 +105,15 @@ There is a list of attributes that have standard names
 
 ----------------------------------------------------
 
-# Scripts
-[scripts](step-3-scripts-remotes/script-overview.md) are Javascript can be set to run and generate a value when an element attribute is read
-
 # Remotes
-[Remotes](step-3-scripts-remotes/remote-overview.md) are remote callbacks to be run and generate a value when an element attribute is read# Remotes
+[Remotes](step-3-remotes/remote-overview.md) are remote callbacks to be run and generate a value when an element attribute is read# Remotes
 
 # Metrics
-[metrics](step-3-scripts-remotes/metrics-tasks.md) shows stats of calls to scripts and urls
+[metrics](step-3-remotes/metrics-tasks.md) shows stats of calls to urls
 
 # Actions
 [actions](step-4-actions/action-overview.md)
-are attribute values that listen to events and allow things to happen, they can use scripts and remotes
+are attribute values that listen to events and allow things to happen, they can use remotes
 
 [events](step-4-actions/events.md) are listed here
 

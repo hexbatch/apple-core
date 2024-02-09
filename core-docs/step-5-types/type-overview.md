@@ -33,7 +33,7 @@ Types can use attributes owned by others, as long as the permissions work out in
 
 
 
-Global states are kept here for remotes and scripts.
+Global states are kept here for remotes.
 
 ## Inheritance 
 
@@ -51,8 +51,8 @@ This includes default global states
 
 ### inherited or duplicated default global states
 
-Each script or remote id has one stored global state under the key of that id.
-Descendants of the script or remote have their own storage.
+Each remote id has one stored global state under the key of that id.
+Descendants of the remote have their own storage.
 
 ## Options
 

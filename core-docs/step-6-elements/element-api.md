@@ -21,7 +21,7 @@
           type:
           live attributes: 
           live parents: 
-          script and remote states:  
+          remote states:  
 
 
 # Making a new element from the element type

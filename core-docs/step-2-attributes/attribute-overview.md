@@ -12,9 +12,9 @@ These siblings can have an ancestor or parent that matches this.
 Attributes can have an optional whitelist to allow which users can own, change the value of, and read this value of this attribute.
 A descendant can change the groups, but only by limiting the groups further
 
-Attribute values can be a number, string, json, markdown, binary (image , pdf only), a script to run, location, an action, a remote
+Attribute values can be a number, string, json, markdown, binary (image , pdf only), a remote to run, location, an action, a remote
 
-A script and remote is writable, when a write happens, the last good ts is unset for the element, and the script or remote is passed in the write value
+A remote is writable, when a write to attribute happens, the remote is passed in the write value
 
 string specific types can be :
 * iso date time, color, url, email, social account , phone, markdown,any
@@ -34,9 +34,9 @@ Attribute have an owner, a name, bounds, requirements, permissions, and a value
 Attributes can have optional explaining text
 
 options:
-  * Attributes can be constant in that their defined value never changes. Constants cannot have actions, remotes or scripts
+  * Attributes can be constant in that their defined value never changes. Constants cannot have actions, remotes
   * Attributes can be static so that their value is always read and written from the type and not the element
-    * static attributes cannot have actions but can have scripts and remotes
+    * static attributes cannot have actions but can have remotes
   * Final means cannot be used as a parent
   * Human status, to selectively hide this attribute from searches if the human filter is on.
 
@@ -114,7 +114,6 @@ Data can be marked as:
   * attribute
   * element
   * element_type 
-  * script 
   * remote
   * action
   * search
@@ -167,7 +166,7 @@ attributes normally hidden to a user do apply to force rules.
 
 ### Required set attributes for read
 
-When this is set, actions do not run if that attribute cannot be read by anyone. This allows scripts to run not only when the element is at a certain location and time,
+When this is set, actions do not run if that attribute cannot be read by anyone. This allows remotes to run not only when the element is at a certain location and time,
 But when the element is combined with certain other elements in a set
 
 

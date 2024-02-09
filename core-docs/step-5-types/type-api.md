@@ -44,9 +44,9 @@ Element types name and info are in its attributes
 The user running this is the owner,
 Required is name and at least one attribute.
 
-## Reading an element
+## Reading an type
 
-When getting the element state, the global state for the scripts running on it, and remotes, can be seen
+When getting the type state, the type state for the remotes running on it can be seen
 
 
 ## Editing a type

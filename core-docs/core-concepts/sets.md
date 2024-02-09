@@ -7,7 +7,7 @@ Sets can link to each other, have children and a parent.
 Users can put elements they do not own into sets, as long as they can read some attribute on the element, then can add it to sets they control or can write to themselves.
 
 Elements can be designed to choose to not enter certain sets, or not leave them. Or only enter a set if there are certain attributes there in other elements, or missing.
-Elements can limit themselves to being shared by a max number of sets at one time. Much more can be done with element interactions because they can be controlled by scripts and remote calls,
+Elements can limit themselves to being shared by a max number of sets at one time. Much more can be done with element interactions because they can be controlled by actions,
 to decide what to do.
 
 AN element can be added to unlimited sets at the same time.

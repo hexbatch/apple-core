@@ -139,7 +139,7 @@ A wrapper does not affect what they wrap, and to the container they wrap, are in
 
 Wrappers can be chained together to allow alternate paths for read and writes, and can be done to create pipelines between containers in different sets.
 
-Can have listening script or remote on a wrapper to do side jobs as conditions happen.
+Can have listening  remote on a wrapper to do side jobs as conditions happen.
 
 ---------------------
 

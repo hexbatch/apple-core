@@ -57,7 +57,7 @@ AN element can have the date set so that after it, it's not used or usable, and 
           expiration_at: (optional by type)  
           live attributes: (see attributes)
           live parents:  
-          script and remote states:  
+          remote states:  
 
 
 ## Live parents

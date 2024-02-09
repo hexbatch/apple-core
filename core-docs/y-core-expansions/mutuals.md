@@ -107,7 +107,7 @@ allow macros to be made and remembered:
 do push and popup on each pop to set precedent
 api to combine , list, get, delete
 use macro id when calling view operation (is this set too or just mutual operations)
-marcos can call a remote or script
+macros can call a remote
 
 
 ---------------------------
@@ -144,5 +144,5 @@ When a mutual mutates, then if the set denies the exit or entry of the element, 
 * Mutual set selection: different ways to select mutual sets into a view
     When selecting, can put limits of how many mutual distance, and limit the mutual element types.
 * Able to make macros. Macros made from push and pop of other operations. Only mutual operations allowed because they do no events
-    Macros can be run by actions (not using script or remote, just set the macro id)
+    Macros can be run by actions (not using remote, just set the macro id?)
 * Can register custom macros in the core, not by users, but by plugin. For instance macros to select via topology and area charges on mutual entanglements.

@@ -1,7 +1,7 @@
 # Actions
 
 
-Actions have an owner, version, name, target, lifecycle, recipient, charge, options,script
+Actions have an owner, version, name, target, lifecycle, recipient, charge, options,remote
 
 actions can be attached to multiple different attributes
 
@@ -22,9 +22,9 @@ actions can be attached to multiple different attributes
     target-path: see paths (must end in attribute on the element this belongs to, ok if path is invalid, in that case no target and no changes)
     target-remembering: all|set|relationship
     action-type: permission, value change, switch on|off, live add, live remove,  or void 
-    input-params: [{path: name of param on the script or remote}]
+    input-params: [{path: name of param on the remote}]
     run-policy: always, per element, per element type, per set, once only per element type, one only per element
-    value: a script, or remote id, or another attribute path
+    value: a remote id, or another attribute path
     priority: optional number
 
 

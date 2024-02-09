@@ -8,9 +8,8 @@ Remotes can be fully edited if not used anywhere in any element types or element
 Remotes deletable if the remote not used in any element or type
 
 Remotes can be tested with a test context. When created the test context will be set used to remember stats to follow the rules of cool-down
-There can be multiple test_contexts for each remote. Unlike scripts, these cannot be edited
+There can be multiple test_contexts for each remote.
 
-Remotes can be seen and edited in full by anyone in the user's group admin, or in the remote_permission admin group
 
 
 
@@ -36,31 +35,52 @@ Remotes can be seen and edited in full by anyone in the user's group admin, or i
         name : unique in urls
         is_retired: default false // if true then cannot be added to element types
         is_on : if off then all read and writes will fail and the remote not called
-        redirect: id of another remote
-        uri: 
-            url: (can be ip)
-                method:
+        timeout_seconds: if an attempt is made to sent to the remote, this is how many seconds until the read or write of the attribute ends in failure
+        uri: (one type of uri)
+            url: (can be ip )
+                uri: (without port or protocal or query)
+                method: (get, post, patch, etc)
+                protocal: http|https
                 port:
-            socket: ( if set the url is ignored) 
+                auth:
+                    auth_type: basic|bearer
+                    user:
+                    pw:
+            socket: 
                 port:
-        auth:
-            auth_type:
-            element:
-            user:
-            pw:
+                command:
+            command_line:
+                command:
+            manual: true|null
+                This is executed when a api call is made, and that call will get the data back, then another api call will send back the response
+                the api calls will use this name to help id this.
         data:
-            additional_post_data : constant json
-            extra_input_params
-            output_keys
+            constant_post_data : constant json
+            constant_uri : plugged into uri templates, makes searching for specific uri data easier 
+            xml_path:
+            output_keys: array< name of output key, name of key this is sent under>
         read_policy:
-            allow: yes or no
-            cool_down: (optinal)
-            allow_during_cool_down: yes or no
+            allow: bool
+            cache: bool, if true then each last call updates the cache, and if same input params then cache is used
+            cache-ttl-seconds: how old the cache is allowed to be
         write_policy:
-            allow:
-            cool_down: (optinal)
-            allow_during_cool_down: yes or no
-            cool_down_policy: cluster or use last write only
+            allow: bool,
+            store_until_next_write: bool
+        data_policy:
+            input_attribute_map: array<name of attribute, name of key this is sent under> 
+            output_map: array<name of key of data from server, name of key output object will have> 
         call_schedule:
-        max_calls_per_unit: x
-        unit_in_seconds: x
+            max_calls_per_unit: x
+            unit_in_seconds: x
+        state
+            local_state_init: the initial state for per attribute or action
+            element_state_init: the initial shared state for any element that has this an attribute or action with this remote
+            type_state_init: the initial shared state for all elements of the same type that has this remote in an attribute or action
+            global_state: shared by all usages of this remote
+
+## Data for a test context
+
+    local_data: {}
+    element_data: {}
+    type_data: {}
+    global_data: {}

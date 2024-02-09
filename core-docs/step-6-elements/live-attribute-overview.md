@@ -12,7 +12,7 @@ When an attribute is on an element, its live, and there is a record about the st
 * a set context attribute will overwrite a per element attribute, or a type attribute
 * a child set attribute changes overwrites the parent
 * no limit to how many live attributes that overwrite the earlier one. They stack by when applied.
-* live attributes added after the type definition created can hold actions, remotes and scripts
+* live attributes added after the type definition created can hold actions, remotes
 * live attributes added in a set context that have event listener actions can override more general ones
 * live attributes' actions added in a smaller context have higher priority than general action same event listener 
 
@@ -29,7 +29,7 @@ When an attribute is on an element, its live, and there is a record about the st
         toggled_at: timestamp 
         updated_at: timestamp
         added_by: user_id
-        local_state: if this attribute holds an action, script or remote
+        local_state: if this attribute holds an action remote
 
 There can be duplicates of attributes here, one from the element type and one from a live attribute
 When a live attribute is removed from the element, it's removed from the lookup here and the element type attribute is used again

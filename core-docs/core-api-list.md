@@ -26,11 +26,10 @@
 * [attribute api](step-2-attributes/attribute-api.md)
 
 
-# Scripts, Remotes, Metrics
-* [script api](step-3-scripts-remotes/script-api.md)
-* [remote api](step-3-scripts-remotes/remote-api.md)
+# Remotes, Metrics
+* [remote api](step-3-remotes/remote-api.md)
 
-* [metrics api](step-3-scripts-remotes/metrics-tasks.md)
+* [metrics api](step-3-remotes/metrics-tasks.md)
 
 
 # Actions
