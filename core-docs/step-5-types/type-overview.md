@@ -9,7 +9,8 @@ but the attributes have to allow this to happen
 Element types can have one or more parents, they can have many ancestors.
 Elements cannot be ancestors or parents of themselves.
 
-Types cannot change ownership.
+Types cannot change ownership, unless all the attributes and bounds and groups also change ownership, or are usuable by the new owner, at the same time.
+(but elements can easiliy change owners)
 
 Types can use attributes owned by others, as long as the permissions work out in the owner_user_groups
 
@@ -19,16 +20,10 @@ Types can use attributes owned by others, as long as the permissions work out in
         name: using the naming rules
         is_retired: default false // if true then cannot be added to element types or make new elements
         options:
-            allow_changed_map_bounds: boolean
-            allow_changed_time_bounds: boolean
-            allow_changed_path_bounds: boolean
-            allow_actions: boolean
-            attribute_final_list: [or or more attribute ids that children or descendants cannot have]
             final:
             human:
         attributes: []
-        parents: []  -- the order is important
-        parents_starting_off: [] any of the above (optional)
+        parents: []  -- the order is important, this list also has which ones are on and off
         global_states: [attribute_id, state]
 
 
@@ -55,12 +50,6 @@ Each remote id has one stored global state under the key of that id.
 Descendants of the remote have their own storage.
 
 ## Options
-
-AN element type can be made unchangeable in part or whole. Different bound types can be made final.
-So can any attributes, to make sure actions cannot be overridden.
-
-If any of the event attributes are on the final list, then any descendant cannot do that event.
-This includes creation or destruction
 
 A type can mark its elements to be used in the human filter, to selectively hide elements made from this type in api calls if the human filter is on
 
@@ -91,7 +80,3 @@ Admin ability, for the set group, does not make a creation ability difference, e
 Some or all of the inherited parents can start in the off state, which means while their attributes override any ancestor or other type lesser in inheritance,
 those attributes will not be available for reading or writing until that parent is turned on
 
-# events on the type element
-
-Can have an event listeners for applying or removing a live attribute, on the type level, for all elements.
-These events are same name as those live events on element. The element event can override

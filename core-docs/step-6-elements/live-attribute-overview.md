@@ -4,17 +4,15 @@ When an element launches, then the top most attribute of each inherited parent i
 
 When an attribute is on an element, its live, and there is a record about the state of the attribute in the element
 
-* Can add attribute to type or element when attribute is both readable and writable and the element is writable and readable.
-* When live attributes are added to an element,  record the user that added them. (added_by) only dynamic live attributes have user recorded
+The same attribute on the same element can have different values based on its context (set membership or parent child relations)
+
 * Attribute values has a microsecond time stamp of when last written to (updated_at) and or turned on (toggled_at)
 * an attribute can be overwritten if the same type, or a child, is added. Siblings do not overwrite each other
 * an attribute added to the element can overwrite global attribute for that element only
 * a set context attribute will overwrite a per element attribute, or a type attribute
 * a child set attribute changes overwrites the parent
 * no limit to how many live attributes that overwrite the earlier one. They stack by when applied.
-* live attributes added after the type definition created can hold actions, remotes
-* live attributes added in a set context that have event listener actions can override more general ones
-* live attributes' actions added in a smaller context have higher priority than general action same event listener 
+
 
 
 
@@ -27,12 +25,10 @@ When an attribute is on an element, its live, and there is a record about the st
         current_value: 
         activated: boolean - if not activated then this attribute does not count in the live, its skipped over
         toggled_at: timestamp 
-        updated_at: timestamp
-        added_by: user_id
-        local_state: if this attribute holds an action remote
+        local_state: if this attribute holds a remote
 
-There can be duplicates of attributes here, one from the element type and one from a live attribute
-When a live attribute is removed from the element, it's removed from the lookup here and the element type attribute is used again
+There can be duplicates of attributes here, one from the element type , the element and the context
+When a context ends, it's removed from the lookup here and the element type attribute is used again
 
 When an attribute is turned off, then the element has no attribute by that name or id. This counts in many scenarios
 

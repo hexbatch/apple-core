@@ -29,9 +29,6 @@ Element types name and info are in its attributes
         allowed_creators: a list of user groups or individual users who can make elements from this type
         is_retired: default false // if true then cannot be added to element types or make new elements
         options:
-            allow_changed_map_bounds: boolean
-            allow_changed_time_bounds: boolean
-            allow_changed_path_bounds: boolean
             allow_actions: boolean
             attribute_final_list: [or or more attribute ids that children or descendants cannot have]
         attributes: []

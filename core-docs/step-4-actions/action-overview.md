@@ -12,8 +12,8 @@ If remote, then it calls that, if it can (rate limiting or in process), when it 
 Can overwrite/add some params going to the remote.
 Can have a list of rules:
 Can map the remote's out keys to attributes and things it will do with them.
-Can use another out key to approve event, set value, or decide if switch on or off, or add/remove a live attribute, or nothing (just ran the remote)
-Except for adding live attributes, must target an attribute attached to the element, or must target the element parent
+Can use another out key to approve event, set value, or decide if switch on or off,  or nothing (just ran the remote)
+must target an attribute attached to the element, or must target the element parent if turning on and off that
 
 If using value, it can read an attribute from anywhere via a path.
 If that value is truthful, then it will do one or more actions, and if setting values of other attributes just copies that attribute value over
@@ -22,12 +22,12 @@ If that value is truthful, then it will do one or more actions, and if setting v
 Remote rules:
 
 remote out param A| -> attribute listens to see if truthful|-> targets an attribute 
-decides to use B to set value, or be a switch, or approve event, or add or remove live attributes
+decides to use B to set value, or be a switch, or approve event
 remote out param B| -> attribute listens to see if truthful (switch, approval, add or remove) or get value (to set value)|-> targets an attribute 
 
 
 and based on what is listened to in the remote, if that is truthful it will do its thing 
-(event acceptance or turning on or off switches, or change value of one or more attributes on the element, or add or remove live attributes to the element)
+(event acceptance or turning on or off switches, or change value of one or more attributes on the element)
 
 so:
     remote
@@ -36,7 +36,7 @@ so:
 
 Remotes can have unlimited map entries but can only target attributes in the element it is part of for value changes, or target the parent of the element
 
-action-type: permission, value change, switch parents on|off, live add, live remove,  or void (just runs remote)
+action-type: permission, value change, switch parents on|off, turn on or off attributes,  or void (just runs remote)
 
 so an action:
 
@@ -110,10 +110,11 @@ so an action:
             map: (array of)
                 action type to do, target attribute path id, (value to write with, if not logic action, is the value of the other attribute above)
 
-    event-path: the path of the event (able to filter set context of an event), path must be using an event attribute id or child of one
+    event-id:  the event These are attributes, can use one event or a parent event. Actions can be turned off and on, to not listen to event, 
+                based on the path boundaries of the attribute the action is hooked up to
     
 
-    target-remembering: all|set|relationship
+    target-remembering: all|set|relationship|parent_relationship|chidren_relationship
     run-policy: always, per element, per element type, per set, once only per element type, one only per element
     priority: optional number
 
@@ -133,9 +134,6 @@ they do not have to approve or disapprove it.
     * Can only change attribute values, not properties of anything
   * Turn off or on  attributes or clusters on the element
     * depends on the target if this is an attribute or cluster
-  * Apply, update or remove  a live attribute
-    * value needs to be a json of the attribute id and selected value.
-    * If run and live is there, the value will be updated. If removing will remove attribute.
   * or do nothing (just run the remote)
 
 
@@ -145,7 +143,11 @@ they do not have to approve or disapprove it.
 # turning on and off an element's parent
 
 All the attributes from a parent of an element can be turned on and off at once,
-but if the element has dynamic attributes that overwrite this then those stay on
+but if the element has dynamic attributes that overwrite this then those stay on.
+The context here also means that the parent can be turned off in only a parent-child relation, or only in a set, or all
+
+# turning on and off an element's attribute, or setting the value to that attribute
+must be in the element but can also target the parent in a relationship context. Can write to the parent above, or all immediate children in the relationship below
 
 # Multiple target paths
 
@@ -156,7 +158,7 @@ It can remember the counts, and this resets for each api operation
 
 * Actions that respond to the same event can be given an optional run order, and the actions are run from the lowest to the highest
 * Once the first action approves an event, the others are not called
-* Once the first action to turn on or off or toggle an attribute, cluster or live is run, the others are not run
+* Once the first action to turn on or off or toggle an attribute, cluster  is run, the others are not run
 * Voids are always run
 * If more than one action is responding to the same approved event, and they are changing the same attribute value this becomes a filter
   * Only if this action is running a remote

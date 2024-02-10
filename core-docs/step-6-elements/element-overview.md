@@ -27,11 +27,11 @@ Elements by themselves do not have a location, they can have an attribute though
 This is only valid for lat and lon. The current_location can be anywhere in the element bounds, and this is not used to determine if the element matches a set location.
 A single element can have many current_location values at once, if the values are not global, but set based.
 
-The cartesian bounds also can set their current location too, with current_location_cartesian attributes
+The shape bounds also can set their current location too, with current_location_shape attributes
  
-Elements can describe their shape or area, this description is clipped to their locations bounds. The standard attributes shape_cartesian, shape_map.
+Elements can describe their shape or area, this description is clipped to their locations bounds. The standard attributes shape_shape, shape_map.
 if there are more than one attribute that inherits from this, on the element, then each family of attributes is unionized to make the shape, which is still clipped to the bounds.
-The shape is centered at the current location (map to map and cartesian to cartesian never the two shall meet )
+The shape is centered at the current location (map to map and shape to shape never the two shall meet )
 
 
 When an element defines a set, it's location bounds is what defines the membership in a set:
@@ -57,7 +57,7 @@ AN element can have the date set so that after it, it's not used or usable, and 
           expiration_at: (optional by type)  
           live attributes: (see attributes)
           live parents:  
-          remote states:  
+          states: for remotes  
 
 
 ## Live parents
@@ -68,10 +68,9 @@ Each inherited parent has a live state, and can be turned off and on
 ## Live attributes
 [Live attributes](live-attribute-overview.md)
 
-the list of active attributes for an element, it can be added to with attributes not on the list.
-The active attributes from the parents are chosen as the top most attribute for each name,
-in order of parent inheritance list 
-
+the list of active attributes for an element.
+The active attributes from the parents are chosen as the top most attribute for each name, ordered by parent inheritance list 
+The attributes can be toggled on or off
 
 ## time to live
 
