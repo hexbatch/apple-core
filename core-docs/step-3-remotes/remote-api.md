@@ -55,6 +55,7 @@ There can be multiple test_contexts for each remote.
         data:
             from_remote_map: array<rule to convert data from the remote to value in (attr or action)>
             to_remote_map: array<rule to convert either pre-set value, or data in (attr or action) to some part of a data format to the remote>
+            is_sending_context_to_remote: bool (default false)
         call_schedule:
             rate_limit_max_per_unit: x
             rate_limit_unit_in_seconds: x

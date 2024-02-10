@@ -39,6 +39,7 @@ Remotes handle their own state, this is made easier when each remote call is giv
         data:
             from_remote_map: array<rule to convert data from the remote to value in (attr or action)>
             to_remote_map: array<rule to convert either pre-set value, or data in (attr or action) to some part of a data format to the remote>
+            is_sending_context_to_remote: bool (default false)
         call_schedule:
             rate_limit_max_per_unit: x
             rate_limit_unit_in_seconds: x
@@ -62,12 +63,11 @@ Constant data can also be included in these rules, which does not depend on the 
 Header key values can be put in the output map for those to be included.
 
 
-
-
+if the is_sending_context_to_remote: bool is on (default off)
+then the following is also sent to the remote:
 * The guid of the type the remote is associated with is also sent with the data as type_guid
 * The guid of the element the remote is associated with is also sent with the data as element_guid
 * The guid of the attribute the remote is associated with is also sent with the data as attribute_guid
-
 * The guid of the element user the remote is associated with is also sent with the data as owner_guid
 * The guid of the api call user the remote is associated with is also sent with the data as caller_guid
 
