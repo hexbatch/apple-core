@@ -6,7 +6,46 @@ The attributes do not need to be attached to the same element as the attribute t
 but as long as the attribute can be changed by the user who owns the element, it can be changed.
 
 
-Actions hold remotes that do the logic
+It holds a remote, or reads an attribute elsewhere to make a decision when an event is fired
+
+If remote, then it calls that, if it can (rate limiting or in process), when it gets an event it listens to
+Can overwrite/add some params going to the remote.
+Can have a list of rules:
+Can map the remote's out keys to attributes and things it will do with them.
+Can use another out key to approve event, set value, or decide if switch on or off, or add/remove a live attribute, or nothing (just ran the remote)
+Except for adding live attributes, must target an attribute attached to the element, or must target the element parent
+
+If using value, it can read an attribute from anywhere via a path.
+If that value is truthful, then it will do one or more actions, and if setting values of other attributes just copies that attribute value over
+
+
+Remote rules:
+
+remote out param A| -> attribute listens to see if truthful|-> targets an attribute 
+decides to use B to set value, or be a switch, or approve event, or add or remove live attributes
+remote out param B| -> attribute listens to see if truthful (switch, approval, add or remove) or get value (to set value)|-> targets an attribute 
+
+
+and based on what is listened to in the remote, if that is truthful it will do its thing 
+(event acceptance or turning on or off switches, or change value of one or more attributes on the element, or add or remove live attributes to the element)
+
+so:
+    remote
+    event to listen to (parent or leaf), this can be a path to only listen to events in certain cicumstances
+    target map (remote param A, path to attribute,remote param B, action it does with B)
+
+Remotes can have unlimited map entries but can only target attributes in the element it is part of for value changes, or target the parent of the element
+
+action-type: permission, value change, switch parents on|off, live add, live remove,  or void (just runs remote)
+
+so an action:
+
+    
+
+note: when making this before paths, just add a table that is called the selection, and only have the attribute id in it until later
+
+
+
 The values returned by these are the new values of the attribute,
 or the truthful value that turns on or off attributes or parent clusters.
 
@@ -31,25 +70,20 @@ see [events.md](events.md)
 
 ## Actions can be used to set rules for creation of an element:
 
-* To disallow creation, each element starts with a created attribute whose value must be truthful, if this value is false, then the element is not saved and creation fails.
+* To disallow creation, do not approve the creation event, then the element is not saved and creation fails.
 
-Rate limiting is remotes running on element set changes, or lifecycle changes
-* on a lifecycle remote, it has to return a truthful value to allow (this is changed from the existing docs)
-
-Multiple actions can listen to the same lifecycle changes or other conditions.
+Multiple actions can listen to the same events.
 * So, to rate limit element creation and charge someone have two actions. One to limit and one to charge
 * But, this can also be the same action
 
-An inheritance chain will run the actions from the ancestors to the current
-* if any action fails, then there will be a db rollback, and nothing is saved
+if listening to a parent event of more than one type, An inheritance chain will run the actions from the ancestors to the current
 
-Some life cycle attributes are not events, but can be changed by actions.
-* time to live - set in seconds and compared to the creation ts
 
 # parts of an action
 
-* what attribute the action targets, each action can only change one attribute type. 
+* each attribute the action targets can only change one attribute type. 
   * But, any children or descendants of that type can also be affected, so many attributes can possibly be changed.
+  * This can be modified in the selection
   * Optionally, the target can be a parent of an element to turn it on and off 
 * What the action does to the target, it can be a switch, or a value change. 
   * If targeting element parents, it can only be a switch
@@ -58,34 +92,32 @@ Some life cycle attributes are not events, but can be changed by actions.
   * to select an attribute on same element, no path needed. 
   * to select a parent of the element this is on, no path needed
 
-When making an action to charge elements for an event, use a remote set to quickly run api to check balance and transfer
-
-
-            so an action:
-                action-name: can be any unique name for actions
-                action-owner: actions are be owned by a user
-                event-path: the path of the event (able to filter set context of an event), path must be using an event attribute id or child of one
-                target-path: see paths (must end in attribute on the element this belongs to  ok if path is invalid, in that case no target and no changes)
-                target-remembering: all|set|relationship
-                action-type: permission, value change, switch on|off, live add, live remove,  or void (just runs remote)
-                input-params: another layer of mapping for the remote input_attribute_map
-                run-policy: always, per element, per element type, per set, once only per element type, one only per element
-                value: a remote id, or another attribute path for deciding action
-                  static_other_params: passed to the remote  unchanged
-                priority: optional number
 
 
 
-# Requirements: making sure only so many paths exists
+so an action:
 
-If needing the requirements that only so many things can or can not exist, in how they are in element sets:
+    action-name: can be any unique name for actions
+    action-owner: actions are be owned by a user
+    logic:
+        remote:
+            remote it holds: remote_id
+            extra constant params to override remote input params
+            map: (array of) 
+                remote param a id, remote param b id, action type to do, target attribute path id (same element)
+        value:
+            other attribute id path (does not have to be in the same element but if not readable no action done)
+            map: (array of)
+                action type to do, target attribute path id, (value to write with, if not logic action, is the value of the other attribute above)
 
-Actions can be set to allow or deny any lifecycle, by seeing if the target attribute value changing will cause a target path specifier to fail.
-This can be done by counting the number of path specifiers anywhere, using the current target attribute value,
-and if only one, before the value change, or not in the allowed count range,
-it will block the lifecycle change
+    event-path: the path of the event (able to filter set context of an event), path must be using an event attribute id or child of one
+    
 
-Such actions do not need remotes
+    target-remembering: all|set|relationship
+    run-policy: always, per element, per element type, per set, once only per element type, one only per element
+    priority: optional number
+
+
 
 # event path
   the event path needs to include an attribute, but can have another element to listen to its events too.
@@ -93,10 +125,10 @@ Such actions do not need remotes
   however an element can change its own values or state or do things by remotes if another element does something (like change value, enter the same set, only exist in N sets etc.)
 
 # type of action
-  * an action can be to grant permission , they return a value that is truthful or not to approve it. Only one action needs to approve an action even if others deny.
-
-The other types of actions only happen if the events they are listening to are approved by permission actions:
-  * or to change a value. The value they hold is applied. If this is remote then the return from that is applied.
+  * an action can be to grant permission , they find a value that is truthful or not to approve it. Only one action needs to approve an event even if others deny.
+But actions can change things, regardless if they approve or do not approve the event. While every action only is activated by events, 
+they do not have to approve or disapprove it.
+  * Change a value. The value they have in the rules is applied. 
     * The values to change must be located on the same element as the action running
     * Can only change attribute values, not properties of anything
   * Turn off or on  attributes or clusters on the element

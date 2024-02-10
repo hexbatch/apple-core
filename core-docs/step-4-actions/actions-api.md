@@ -18,13 +18,22 @@ actions can be attached to multiple different attributes
 
     action-name: can be any unique name for actions
     action-owner: actions are be owned by a user
+    logic:
+        remote:
+            remote it holds: remote_id
+            extra constant params to override remote input params
+            map: (array of) 
+                remote param a id, remote param b id, action type to do, target attribute path id (same element)
+        value:
+            other attribute id path (does not have to be in the same element but if not readable no action done)
+            map: (array of)
+                action type to do, target attribute path id, (value to write with, if not logic action, is the value of the other attribute above)
+
     event-path: the path of the event (able to filter set context of an event), path must be using an event attribute id or child of one
-    target-path: see paths (must end in attribute on the element this belongs to, ok if path is invalid, in that case no target and no changes)
+    
+
     target-remembering: all|set|relationship
-    action-type: permission, value change, switch on|off, live add, live remove,  or void 
-    input-params: [{path: name of param on the remote}]
     run-policy: always, per element, per element type, per set, once only per element type, one only per element
-    value: a remote id, or another attribute path
     priority: optional number
 
 
