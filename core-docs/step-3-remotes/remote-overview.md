@@ -10,46 +10,30 @@ Remotes attached to an attribute are called when that attribute is read or writt
 
     remote:
         user: required
-        name : unique in urls
+        name : unique in remotes
         is_retired: default false // if true then cannot be added to element types
         is_on : if off then all read and writes will fail and the remote not called
         timeout_seconds: if an attempt is made to sent to the remote, this is how many seconds until the read or write of the attribute ends in failure
-        uri: (one type of uri)
-            url: (can be ip )
-                uri: (without port or protocal or query)
-                method: (get, post, patch, etc)
-                protocal: http|https
-                port:
-                auth:
-                    auth_type: basic|bearer
-                    user:
-                    pw:
-            socket: 
-                port:
-                command:
-            command_line:
-                command:
-            manual: true|null
-                This is executed when a api call is made, and that call will get the data back, then another api call will send back the response
-                the api calls will use this name to help id this.
-        data:
-            constant_post_data : constant json
-            constant_uri : plugged into uri templates, makes searching for specific uri data easier 
-            xml_path:
-            output_keys: array< name of output key, name of key this is sent under>
+       uri:
+            uri_type: (none,url,socket,console,manual)
+            uri_method (post, get, patch.. etc)
+            uri_port:
+            uri_string 
+                
         read_policy:
             allow: bool
-            cache: bool, if true then each last call updates the cache, and if same input params then cache is used
-            cache-ttl-seconds: how old the cache is allowed to be
+            cache: bool, if true then each last call updates the cache, and if same cache param key values then cache is used
+            cache_ttl_seconds: how old the cache is allowed to be
+            cache_keys: array of string keys to use for the cache, empty means cache returned always
         write_policy:
             allow: bool,
-            store_until_next_write: bool
-        data_policy:
-            input_attribute_map: array<name of attribute, name of key this is sent under> 
-            output_map: array<name of key of data from server, name of key output object will have> 
+        data:
+            input_attribute_map: array<name of attribute, name of key this is sent under>
+            output_map: array<name of server output key or xml path, name of key output object will have>
+            remote_data : key value pairs with remote_data_type ('none','basic_auth','bearer_auth','data','header') and name, value and is_secret
         call_schedule:
-            max_calls_per_unit: x
-            unit_in_seconds: x
+            rate_limit_max_per_unit: x
+            rate_limit_unit_in_seconds: x
         state
             local_state_init: the initial state for per attribute or action
             element_state_init: the initial shared state for any element that has this an attribute or action with this remote
@@ -122,3 +106,4 @@ Admin (command line terminal) only can do this
 Remotes can be type manual, by not having a uri, and that is all that needs to be changed to make it manual.
 When a remote is manual, the api call will pause until the user enters the answer needed.
 This is done via the api call method handling. See  [execution.md](../core-api-general/execution.md)
+
