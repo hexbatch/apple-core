@@ -4,7 +4,7 @@ remote api defined at
 
 
 Remotes cannot change ownership
-Remotes can be fully edited if not used anywhere in any element types or elements. They can be turned off though (things happen to the server). Or given a redirect
+Remotes can be fully edited if not used anywhere in any element types or elements. They can be turned off though (things happen to the remote). Or given a redirect
 Remotes deletable if the remote not used in any element or type
 
 Remotes can be tested with a test context. When created the test context will be set used to remember stats to follow the rules of cool-down
@@ -32,6 +32,7 @@ There can be multiple test_contexts for each remote.
 
 
         user: required
+        usage_group: (optional)
         name : unique in remotes
         is_retired: default false // if true then cannot be added to element types
         is_on : if off then all read and writes will fail and the remote not called
@@ -41,6 +42,8 @@ There can be multiple test_contexts for each remote.
             uri_method (post, get, patch, put, delete)
             uri_port:
             uri_string 
+            uri_data_input_format
+            uri_data_output_format
                 
         read_policy:
             allow: bool
@@ -50,17 +53,12 @@ There can be multiple test_contexts for each remote.
         write_policy:
             allow: bool,
         data:
-            input_attribute_map: array<name of attribute, name of key this is sent under>
-            output_map: array<name of server output key or xml path, name of key output object will have>
-            remote_data : key value pairs with remote_data_type ('none','basic_auth','bearer_auth','data','header') and name, value and is_secret
+            from_remote_map: array<rule to convert data from the remote to value in (attr or action)>
+            to_remote_map: array<rule to convert either pre-set value, or data in (attr or action) to some part of a data format to the remote>
         call_schedule:
             rate_limit_max_per_unit: x
             rate_limit_unit_in_seconds: x
-        state
-            local_state_init: the initial state for per attribute or action
-            element_state_init: the initial shared state for any element that has this an attribute or action with this remote
-            type_state_init: the initial shared state for all elements of the same type that has this remote in an attribute or action
-            global_state: shared by all usages of this remote
+        
 
 ## Data for a test context
 

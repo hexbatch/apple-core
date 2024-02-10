@@ -59,6 +59,7 @@ We can do operations on sets to make new sets, combine sets, and see what is in 
         element: Every set has an element to define it, which adds ways to describe the set, search for it in path operations, or give it some location and time
         elements: []
         parent-element-set: (optional) may have a parent, used for organizing element sets. (cannot be cyclic)
+        parent-context-set: may have a context parent in a context relationship (not related to the parent-element-set)
         linked-sets: (optional) may have links to other sets (can be cyclic so two sets can link to each other)
         requirement: id (optional), if there are max and min requirements, or not, this types the set and filters elements
         location_checks: true or false
@@ -68,6 +69,8 @@ We can do operations on sets to make new sets, combine sets, and see what is in 
 When a set has a requirement in its definition, the means only the types and quantity of elements are allowed into the set.
 It can be that the requirement has a minimum of greater than 0 for one or more types.
 This means that elements can only be added via set operations that have that many at the same time
+
+for more fine-tuning, the set-element has the events run at it when an element is added or removed 
 
 # Allergies and Affinities
 

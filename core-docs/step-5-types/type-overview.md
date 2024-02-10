@@ -74,6 +74,13 @@ The group list to add others more than the creator's user group is optional, but
 Change membership on this group to give or remove element creation powers.
 Admin ability, for the set group, does not make a creation ability difference, except to edit the members
 
+## creation events
+Each parent can have its own creation events. When an element is created, the creation events are fired from in order of inheritance,
+so the furthest ancestors are fired at first. These actions can pass on the newly created element and owner to the remotes, and they can decide,
+using any logic, to approve or disaprove this.
+
+There can be messages given back to the user when this is denied. See events for how messages can be propogated to the user for failed events.
+
 
 ## starting parents as off
 

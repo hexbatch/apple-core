@@ -68,5 +68,10 @@ The element has to have the actions listening to that custom event, to act on it
 
 An action can listen to errors happening to the elements, on one,some or all of the events. Remotes can have issues connecting, or return bad http codes
 
+# Event messages bubbling up to the user who called the api
+
+Due to this setup, a remote server can decide, for any reason, to not allow something, when there are many elements doing things.
+If the server has a message attribute or key or field in the response, then this will be added to the api response here when something does not succeed
+
 
 

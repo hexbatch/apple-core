@@ -12,11 +12,6 @@ When the attribute of an element is written to or read from, it is using this li
 Elements can have all the attributes of a parent turned off or on by an action.
 Elements have a live parent section that shows which parents are on.
 
-Elements can have other attributes added to them individually. 
-These attributes can be either those are not in the element type,
-or can overwrite the attributes that are already live.
-
-Element owners can add in the extra attributes, or those who are in the user admin group.
 
 Elements have their aggregate values: bounds, affinities, allergies. This is the union of each.
 This also means that some elements cannot be taken to some locations or usable at some times.
@@ -76,3 +71,13 @@ The attributes can be toggled on or off
 
 is like a very hard set time boundary for the element, and in many ways is just that, it's factored into any time boundaries the element.
 Once it is past the time to live, the element is not usable, because of the time boundary ending, and there is an api in the admin area to start gc
+
+# Creating elements
+
+Elements are created from a type, and when this happens, the element is made, but then can be destroyed if any constructor events are forbidden.
+Each ancestor and parent of the type can have an event that says no, only one needs to say no to prevent the creation, and detroy the element (without destruction event)
+See types for more discussion on this.
+
+# Destroying elements
+
+When an element is properly destroyed, each parent and ancestor has a notice, there is no ability to stop the destruction
