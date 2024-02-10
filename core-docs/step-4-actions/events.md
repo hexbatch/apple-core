@@ -20,8 +20,7 @@ Either the thing exists or not.
 * destruction
 * value change
 * value_change_filtered (allows the ordering of actions to filter the read value)
-* live attribute added to element
-* live attribute removed from element
+* live attribute toggled on or off
 * parent in element turned on
 * parent in element turned off
 * element enters a set

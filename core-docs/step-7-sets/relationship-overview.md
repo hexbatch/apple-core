@@ -1,6 +1,10 @@
 # Set relationships
 
 Element sets might be organized to have parents,siblings and links. There should be ways to navigate through this with the api.
+A relationship is defined by adding new elements to the sets which have attributes attuned to each other. 
+    For parents and children, also the child set-definition-elements are inisde the parent set
+These new elements are added or removed by the system when the relationships are created or destroyed
+
 
 Note that there is not a restriction of the same user owning the parent and children. Also note that nested folders can be made.
 
@@ -42,3 +46,15 @@ Both sets of events have to be ok for the relationship to happen
 Parents are given as set info when their element is listed, but the parent is also an attribute on the child.
 
 When the relationship ends, the element of the set is taken out of the parent or linking set, but no events are called for this.
+
+## parent child context
+
+a set can have some or all of its elements added over to a new set. In a normal set operation, which adds or removes elements, this does not make that context.
+But, if the create_context_set operation is made, then the new set made in that operation
+    is a context child of the older set, and actions can write to the same elements in either set. So if there is an element A in one set, actions can only write to the element A,
+but the element A in the parent or child can be written instead. They can have different values in their attributes after the context is created, and they are seperate values.
+
+Otherwise, it's just like making a new set, except the children have to be destroyed before the parents are.
+And the elements in the nested child that is destroyed have their changes thrown out, 
+so the same elements in the parent set never have their values changed by operations in the child set, unless an action decides.
+The same elements can be in unlimited nesting.

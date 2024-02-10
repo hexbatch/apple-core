@@ -30,6 +30,7 @@ Set operations:
         results => search ,  T Pattern ,  G group, D destination
         find_common_elements => A source, B source ,  T pattern,  G group, D destination 
         remove_common_elements => A source, B source ,  T pattern,  G group, D destination 
+        create_context_set => A source, T pattern , creates new D destiation set
         mutuals => A source, B source (optional),  T pattern,  G group,D destination
 
 Common elements:
