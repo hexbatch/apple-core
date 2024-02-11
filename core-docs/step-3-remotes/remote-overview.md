@@ -21,8 +21,6 @@ Remotes handle their own state, this is made easier when each remote call is giv
         is_retired: default false // if true then cannot be added to element types
         is_on : if off then all read and writes will fail and the remote not called
         timeout_seconds: if an attempt is made to sent to the remote, this is how many seconds until the read or write of the attribute ends in failure
-        is_readable: bool (default true)    
-        is_writable: bool (default true)
         uri:
             uri_type: (none,url,socket,console,manual)
             uri_method (post, get, patch, put, delete)
@@ -33,7 +31,7 @@ Remotes handle their own state, this is made easier when each remote call is giv
         cache:
             is_caching: bool, if true then each last call updates the cache, and if same cache param key values then cache is used
             cache_ttl_seconds: how old the cache is allowed to be
-            cache_keys: array of string keys to use for the cache comparisons, empty means no comparison
+            cache_keys: array of string keys to use for the cache comparisons, empty means each response resets the cache
         data:
             from_remote_map: array<rule to convert data from the remote to value in (attr or action)>
             to_remote_map: array<rule to convert either pre-set value, or data in (attr or action) to some part of a data format to the remote>
@@ -44,14 +42,7 @@ Remotes handle their own state, this is made easier when each remote call is giv
             max_concurrent_calls: default 1
         
 
-## Read and Write policy
-When this remote is attached to an attribute, the attribute value can be read and written to. This determines what happens, or if this is allowed.
-If the read policy says no, then that attribute is now allowed for reading.
-If the write policy says no, then that attribute is now allowed for writing.
-Either read or a write will call the remote, unless the read cache is activated.
 
-When waiting for the remote, after its called, and before its completed, the cache is used, if enabled. 
-Otherwise, if no or empty cache, cannot be done and will be considered unreadable or unwritable
 
 ## to remote maps
 
@@ -80,19 +71,20 @@ The output from the remote response is converted to json values in the holder us
 Missing data in the remote response is ok 
 
 
-## state and cache
+## cache
 
+Caches are used when there is more remote calls than allowed, if cache not enabled, or empty,
+then this remote activity will end up in error
 
 
 The caches are stored via implemetation decision. They store and return data based on the cache keys.
-The cache keys can also contain the attribute, action, element, type,set,set parent guids that are involved in the call,
-if one wants to partition the cache along these lines
+The cache keys can only contain predefined keys for the attribute, action, element, type, user  guids that are involved in the call,
+if one wants to partition the cache along these lines. Its optional to include one or many
 
 The live-by timeout applies for each set of input params in the cache.
 
-When the remote responds, if there are any matching from_server rules names, that are the same as the cache keys,
-or any matching context guids, then those keys are updated. 
-Each cache part is totally replaced by the new stuff.
+When the remote responds, then if caching is enabled, the cache for that remote will be set/replaced
+with a string made up on the ref ids denoted in the cache keys
 
 
 ## auth
