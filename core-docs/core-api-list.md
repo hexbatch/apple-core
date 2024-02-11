@@ -29,7 +29,6 @@
 # Remotes, Metrics
 * [remote api](step-3-remotes/remote-api.md)
 
-* [metrics api](step-3-remotes/metrics-tasks.md)
 
 
 # Actions

@@ -41,6 +41,7 @@ Remotes handle their own state, this is made easier when each remote call is giv
         call_schedule:
             rate_limit_max_per_unit: x
             rate_limit_unit_in_seconds: x
+            max_concurrent_calls: default 1
         
 
 ## Read and Write policy

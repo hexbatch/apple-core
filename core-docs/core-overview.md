@@ -108,8 +108,7 @@ There is a list of attributes that have standard names
 # Remotes
 [Remotes](step-3-remotes/remote-overview.md) are remote callbacks to be run and generate a value when an element attribute is read# Remotes
 
-# Metrics
-[metrics](step-3-remotes/metrics-tasks.md) shows stats of calls to urls
+
 
 # Actions
 [actions](step-4-actions/action-overview.md)

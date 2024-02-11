@@ -13,15 +13,16 @@ There can be multiple test_contexts for each remote.
 
 
 
-| Method | Path               | Route Name          | ToDo | Operation                                    | Args                                     |
-|--------|--------------------|---------------------|:-----|----------------------------------------------|------------------------------------------|
-| Post   | remote             | core.remote.create  |      | Makes a new remote                           | Required name                            |
-| Patch  | remote/:id/edit    | core.remote.edit    |      | Edit part of value, if possible, sparse      | Any detail , sparse update               |
-| Get    | remote/:id/get     | core.remote.get     |      | returns full remote info                     | flags for detail level                   |
-| Get    | remotes/list       | core.remote.list    |      | searches for remotes                         | iterator,can pass in filtering info      |
-| Get    | remote/:id/test    | core.remote.test    |      | Sends to the Remote, returns value or issues | add json body for the values it draws on |
-| Delete | remote/:id/destroy | core.remote.destroy |      | Delete Remote, if the user can               |                                          |
-
+| Method | Path                            | Route Name          | ToDo | Operation                                    | Args                                                            |
+|--------|---------------------------------|---------------------|:-----|----------------------------------------------|-----------------------------------------------------------------|
+| Post   | remote                          | core.remote.create  |      | Makes a new remote                           | Required name                                                   |
+| Patch  | remote/:id/edit                 | core.remote.edit    |      | Edit part of value, if possible, sparse      | Any detail , sparse update                                      |
+| Get    | remote/:id/get                  | core.remote.get     |      | returns full remote info                     | flags for detail level                                          |
+| Get    | remotes/list                    | core.remote.list    |      | searches for remotes that can use            | iterator                                                        |
+| Get    | remote/:id/test                 | core.remote.test    |      | Sends to the Remote, returns value or issues | add json body for the values it draws on                        |
+| Delete | remote/:id/destroy              | core.remote.destroy |      | Delete Remote, if the user can               |                                                                 |
+| POST   | remotes/active/:active/complete |                     | *    | completes a manual waiting remote            | json or xml or http code or headers or text                     |
+| get    | remotes/activity/list           |                     | *    | lists activity                               | iterator,can filter it for manual(types), activity state, times |
 
 ## Data for defining a remote
 
@@ -52,4 +53,7 @@ There can be multiple test_contexts for each remote.
         call_schedule:
             rate_limit_max_per_unit: x
             rate_limit_unit_in_seconds: x
+            max_concurrent_calls: default 1
 
+# List activity 
+can also show all remotes not associated with the user if flag passed and the user has that admin attribute to see other remotes
