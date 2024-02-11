@@ -26,6 +26,7 @@ An attribute can be deleted if only it's not used anywhere
 | Get    | attribute/:id/list/types    | *       |                             | Show where attribute is used in the types           | can provide a search using element type and other attributes,iterator |
 | Get    | attribute/:id/list/elements | *       |                             | Show where attribute is used in the elements        | can provide a search,iterator                                         |
 | Get    | attribute/list/managed      |         | core.attribute.list.managed | Show attribute owned or managed by user             | can provide a search,iterator                                         |
+| Get    | attribute/list/usage        |         | core.attribute.list.usage   | Show attribute not manage, but can be used          | can provide a search,iterator                                         |
 | Delete | attribute/:id               |         | core.attribute.destroy      | Delete Attribute, if the user can                   |                                                                       |
 
 

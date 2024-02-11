@@ -21,21 +21,19 @@ Remotes handle their own state, this is made easier when each remote call is giv
         is_retired: default false // if true then cannot be added to element types
         is_on : if off then all read and writes will fail and the remote not called
         timeout_seconds: if an attempt is made to sent to the remote, this is how many seconds until the read or write of the attribute ends in failure
-       uri:
+        is_readable: bool (default true)    
+        is_writable: bool (default true)
+        uri:
             uri_type: (none,url,socket,console,manual)
-            uri_method (post, get, patch.. etc)
+            uri_method (post, get, patch, put, delete)
             uri_port:
             uri_string 
             uri_data_input_format
             uri_data_output_format
-
-        read_policy:
-            allow: bool
-            cache: bool, if true then each last call updates the cache, and if same cache param key values then cache is used
+        cache:
+            is_caching: bool, if true then each last call updates the cache, and if same cache param key values then cache is used
             cache_ttl_seconds: how old the cache is allowed to be
-            cache_keys: array of string keys to use for the cache, empty means all calls will use the same values when reading from the cache
-        write_policy:
-            allow: bool,
+            cache_keys: array of string keys to use for the cache comparisons, empty means no comparison
         data:
             from_remote_map: array<rule to convert data from the remote to value in (attr or action)>
             to_remote_map: array<rule to convert either pre-set value, or data in (attr or action) to some part of a data format to the remote>
