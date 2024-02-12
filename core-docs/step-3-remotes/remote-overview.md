@@ -22,7 +22,7 @@ Remotes handle their own state, this is made easier when each remote call is giv
         is_on : if off then all read and writes will fail and the remote not called
         timeout_seconds: if an attempt is made to sent to the remote, this is how many seconds until the read or write of the attribute ends in failure
         uri:
-            uri_type: (none,url,socket,console,manual)
+            uri_type: (none,url,socket,console,manual, action event)
             uri_method (post, get, patch, put, delete)
             uri_port:
             uri_string 

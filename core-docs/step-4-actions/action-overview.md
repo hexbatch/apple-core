@@ -155,6 +155,7 @@ If selecting multiple target attributes to listen to, then they all have to have
 It can remember the counts, and this resets for each api operation
 
 # Action run order (priority)
+Actions can be both filter and action change.
 
 * Actions that respond to the same event can be given an optional run order, and the actions are run from the lowest to the highest
 * Once the first action approves an event, the others are not called
@@ -165,25 +166,24 @@ It can remember the counts, and this resets for each api operation
   * the lowest priority will run first, and its value to set is passed to the next highest one, until all the actions have run. The highest priority action will have final say
   * the value can change data type, earlier actions can send up json with flags, and the final one can produce a primitive, or filter out json 
   * The passed value will be put into the remote params as the original value to change
-  
 
 
-# Actions changing values by remote
 
-  While an action can set a constant value , it can call a remote to do that. In this case, the remote 
-  will be passed the original value via the set value_param_name.
+## Filtering 
 
-  If given priority, this becomes a filter for the same attribute and same event
+Some events allow data to be attached to them  
+Lower priority actions are given the data returned by the higher priority actions, and can also alter this data, or discard it, before sending their version of the
+data to the finish or next in the filtering list
 
-# Actions listening to value_change_filtered
+# Constant data 
 
-When there are multiple actions (more than one) listening on the same element, and listening to the same path, they can take that changed value, alter it and pass it to the next.
+Actions can be defined with constant data
+* Constants can optionally be applied to event data after server data is applied to it
+* Constants can optionally be applied to data being recieved from remote before anything else is done.
+* Constants can be optinionally applied to data being sent to a remote to go out, before that data is refined by the remote for sending.
 
 
-# static params passed tol remote
-  The static_other_params will be passed to allow remotes to have context
-
-# action hooks
+# Internal action code hooks
 
 to allow extensions to use different sorts of actions, there is a hook done before the action is triggered, and after the action is done
 

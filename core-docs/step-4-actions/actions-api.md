@@ -5,16 +5,16 @@ Actions have an owner, version, name, target, lifecycle, recipient, charge, opti
 
 actions can be attached to multiple different attributes
 
-| Method | Path                     | Route name | Description                        |
-|--------|--------------------------|------------|------------------------------------|
-| Post   | action                   |            | Makes a new action                 |
-| Put    | action/:id               |            | Sparse edit an action              |
-| Delete | action/:id               |            | Delete Only if not used            |
-| Get    | action/:id/test          |            | Test an action with dry run        |
-| Get    | action/:id/read          |            | Gets the action definition         |
-| Get    | action/:id/list          |            | iterator,List an action where used |
-| Get    | actions/list             |            | iterator,List all the actions      |
-| Post   | events/send_custom_event |            | event attribute, target element    |
+| Method | Path                     | Route name | TO Do | Description                        |
+|--------|--------------------------|------------|:------|------------------------------------|
+| Post   | action                   |            |       | Makes a new action                 |
+| Put    | action/:id               |            |       | Sparse edit an action              |
+| Delete | action/:id               |            |       | Delete Only if not used            |
+| Get    | action/:id/test          |            |       | Test an action with dry run        |
+| Get    | action/:id/read          |            |       | Gets the action definition         |
+| Get    | action/:id/list          |            |       | iterator,List an action where used |
+| Get    | actions/list             |            |       | iterator,List all the actions      |
+| Post   | events/send_custom_event |            | *     | event attribute, target element    |
 
     action-name: can be any unique name for actions
     action-owner: actions are be owned by a user
@@ -60,3 +60,7 @@ Gives a list of attributes this action is used at, wide option to list the eleme
 ## Listing actions owned by this user
 
 filter for event type
+
+# Sending custom events
+events can be sent to a search path, and if too many in search, events can be sent to the next page.
+There needs to be some tracking here of pages when they are done. Which implies here for the custom there is a log going on somewhere

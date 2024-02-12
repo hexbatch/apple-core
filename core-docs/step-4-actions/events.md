@@ -63,15 +63,25 @@ And the target can be one element per api call
 
 The element has to have the actions listening to that custom event, to act on it
 
+A custom event to can be sent to a search path, and any action in the search path can listen to it.
+If very large amounts of results, then truncated to first page. Other pages can be run after that.
+
+
 ## remote errors
 * remote_error 
 
 An action can listen to errors happening to the elements, on one,some or all of the events. Remotes can have issues connecting, or return bad http codes
 
-# Event messages bubbling up to the user who called the api
+# Event messages can  have data
 
-Due to this setup, a remote server can decide, for any reason, to not allow something, when there are many elements doing things.
+Events can be designed to hold structured data. They can have accepted top level keys and even a json path to make sure things are as they should be.
+
+When action is run, the remote can give back data, which can be added to the event.
+The event can be defined to only allow some json keys, to filter,and to require some all or none of them
+
+For example, in element creation , a remote server can decide, for any reason, to not allow something, when there are many elements doing things.
 If the server has a message attribute or key or field in the response, then this will be added to the api response here when something does not succeed
+
 
 
 
