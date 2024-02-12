@@ -26,8 +26,8 @@ Remotes handle their own state, this is made easier when each remote call is giv
             uri_method (post, get, patch, put, delete)
             uri_port:
             uri_string 
-            uri_data_input_format
-            uri_data_output_format
+            uri_to_remote_format
+            uri_from_remote_format
         cache:
             is_caching: bool, if true then each last call updates the cache, and if same cache param key values then cache is used
             cache_ttl_seconds: how old the cache is allowed to be
