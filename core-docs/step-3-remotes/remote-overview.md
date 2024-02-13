@@ -20,7 +20,6 @@ Remotes handle their own state, this is made easier when each remote call is giv
         name : unique in remotes
         is_retired: default false // if true then cannot be added to element types
         is_on : if off then all read and writes will fail and the remote not called
-        timeout_seconds: if an attempt is made to sent to the remote, this is how many seconds until the read or write of the attribute ends in failure
         uri:
             uri_type: (none,url,socket,console,manual, action event)
             uri_method (post, get, patch, put, delete)
@@ -91,10 +90,8 @@ with a string made up on the ref ids denoted in the cache keys
 can use basic or bearer auth for url
 
 ## call schedule
-the remote can be rate limited, for writes this means not writable if exceeds limits.
-The call times and numbers, and errors, and http codes are stored in the global_state.
+the remote can be rate limited, which means no more than this amount will be queued to run at any one time
 
-timeout_seconds: is how long the total remote operation can last, regardless if communication is initiated.
 Waiting to connect is hard coded based on uri type
 
 ## turning off
@@ -107,4 +104,8 @@ Admin (command line terminal) only can do this
 Remotes can be type manual, by not having a uri, and that is all that needs to be changed to make it manual.
 When a remote is manual, the api call will pause until the user enters the answer needed.
 This is done via the api call method handling. See  [execution.md](../core-api-general/execution.md)
+
+# Remote activity and logging
+
+Remotes will be logged when used to call or even for cache. Logged may be pruned after a while.
 

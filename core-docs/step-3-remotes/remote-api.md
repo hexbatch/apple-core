@@ -33,7 +33,6 @@ There can be multiple test_contexts for each remote.
         name : unique in remotes
         is_retired: default false // if true then cannot be added to element types
         is_on : if off then all read and writes will fail and the remote not called
-        timeout_seconds: if an attempt is made to sent to the remote, this is how many seconds until the read or write of the attribute ends in failure
         uri:
             uri_type: (none,url,socket,console,manual)
             uri_method (post, get, patch, put, delete)
