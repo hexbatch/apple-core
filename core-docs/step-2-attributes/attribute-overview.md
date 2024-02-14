@@ -64,7 +64,7 @@ options:
                   affinities: [force_rules] this can only be in the set where force rules apply
           permissions:
               user_groups:
-                  usage: [] if empty then only the user's group can use this to create their types or add to elements, unless is_system 
+                  usage: [] if empty then only the user's group can use this to create their types or add to elements
                   read: []  if empty anyone can read the attribute value
                   write: [] if empty the admin group can change the attribute value.
               set_requirements: 
