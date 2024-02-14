@@ -5,7 +5,9 @@ System defined items, they have the user of system.
 
 There is an api to list the system items by type and role: for example list all the system attribute names, and those for identification
 
-These always have the same hard coded uuids 
+These always have the same hard coded uuids.
+
+When a standard attribute is used, a new attribute is created that inherits from it
 
 # Standard element types (base type is standard_type)
 
@@ -37,23 +39,16 @@ The group-set type has all the core identification and display attributes. When 
 * Admin Role
 
 
-### validators 
+### standard attribute validators 
 URL (validate as urlish)
 SVG (validate https://github.com/darylldoyle/svg-sanitizer)
 MAP_LOCATION (always map coord)
 SHAPE_LOCATION (always tripple coord)
-JSON (always array or object in json)
-NUMBER (always a number)
 NATURAL_NUMBER (always a number >= 0)
 STRING (anything)
-BINARY (anything binary string)
 EMAIL (always email like)
 PHONE (always e164)
 TIMEZONE (as a named timezone)
-XML (validate as xml)
-MARKDOWN (???)
-AUDIO  base attribute type for sound file urls - json has url , start at offset, loop, total play time
-VIDEO  base attribute type for video urls - json has url , start at offset,  total play time
 COLOR (validate as css standard color format)
 
 ### identification (base attribute INFO )

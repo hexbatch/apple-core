@@ -133,6 +133,9 @@ Ownership groups can use this to add to their own element types and elements.
 Note that once someone else has permission to create with this attribute, and they make something with it, then that can never be taken back.
 But the attribute could be retired to prevent any new use
 
+Because attributes can have parents, the ownership group memberships are intersected with each ancestor.
+This means that people who use an attribute to make a new one, can only restrict but not increase the permissions of people who can read,write or use theirs
+
 ### set requirements
 When an api uses a set context,
 

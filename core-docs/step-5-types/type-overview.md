@@ -22,9 +22,8 @@ Types can use attributes owned by others, as long as the permissions work out in
         is_retired: default false // if true then cannot be added to element types or make new elements
         is_final: bool, if true attribute cannot be inherited
         live_list: [ list of attributes that have live versions on the element, cannot be on the static list]
-        private_live_list: [] list of attributes that are live and only readable by intersection of type owner group membership and attribute read rules
+        private_live_list: [] list of attributes that are live and only readable by intersection of element owner group membership and attribute read rules
         static_list: [] list of attributes that are static, their values are set at the type level and shared by all elements
-        private_static_list: [] list of attributes that are static and only readable by intersection of type owner group membership and attribute read rules 
         live_actions: [] list of attributes that hold actions for for the elements
         static_actions: [] list of attributes that hold actions for for the type level events
         attributes_final: [list of final attributes that cannot be overwritten by children]
@@ -104,5 +103,10 @@ Attributes can be on a final list, so that any child cannot override them (type 
 
 attributes can be placed in the live_actions if they hold an action, these have state in the elements 
 attributes can be placed in the static_actions same way, but for type wide events
+
+# Privacy for element owners
+if the type defination has private_live_list entries, then these cannot be on the other attribute lists, except for the final.
+Behind the scenes a new attribute is made that inherits from this attribute, that has a group to intersect membership of the parent,
+and it is that attribute that is put into the live list for the element
 
 
