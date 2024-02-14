@@ -30,7 +30,7 @@ Remotes handle their own state, this is made easier when each remote call is giv
         cache:
             is_caching: bool, if true then each last call updates the cache, and if same cache param key values then cache is used
             cache_ttl_seconds: how old the cache is allowed to be
-            cache_keys: array of string keys to use for the cache comparisons, empty means each response resets the cache
+            cache_keys: array of set of allowed keys to use for the cache comparisons, empty means each response resets the cache
         data:
             from_remote_map: array<rule to convert data from the remote to value in (attr or action)>
             to_remote_map: array<rule to convert either pre-set value, or data in (attr or action) to some part of a data format to the remote>

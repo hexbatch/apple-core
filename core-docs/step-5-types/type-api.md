@@ -25,16 +25,16 @@ Element types name and info are in its attributes
 
     
         user: one user owns the type
+        allowed_creators: an optional user group
         name: using the naming rules
-        allowed_creators: a list of user groups or individual users who can make elements from this type
         is_retired: default false // if true then cannot be added to element types or make new elements
-        options:
-            allow_actions: boolean
-            attribute_final_list: [or or more attribute ids that children or descendants cannot have]
-        attributes: []
-        parents: []  -- the order is important
-        parents_starting_off: [] any of the above (optional)
-        global_states: [attribute_id, state] (read only unless use api to set the state)
+        is_final: bool, if true attribute cannot be inherited
+        live_list: [ list of attributes that have live versions on the element, cannot be on the type list]
+        type_list: [] list of attributes that are static const, cannot change them, cannot be on the live list
+        live_actions: [] list of attributes that hold actions for for the elements
+        type_actions: [] list of attributes that hold actions for for the type level events
+        attributes_final: [list of final attributes that cannot be overwritten by children]
+        parents: []  -- the order is important, this list also has which ones are on and off
 
 
 ## Creating a type

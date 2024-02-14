@@ -74,8 +74,6 @@ An attribute can be deleted if only it's not used anywhere
             default:
             allow_null: default true, but can only be false if the default is set
         options:
-            constant:
-            static: (can be static or constant)
             final:
             human:
 

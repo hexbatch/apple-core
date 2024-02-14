@@ -34,9 +34,6 @@ Attribute have an owner, a name, bounds, requirements, permissions, and a value
 Attributes can have optional explaining text
 
 options:
-  * Attributes can be constant in that their defined value never changes. Constants cannot have actions, remotes
-  * Attributes can be static so that their value is always read and written from the type and not the element
-    * static attributes cannot have actions but can have remotes
   * Final means cannot be used as a parent
   * Human status, to selectively hide this attribute from searches if the human filter is on.
 
@@ -87,8 +84,6 @@ options:
               default:
               allow_null: default true, but can only be false if the default is set
           options:
-              constant:
-              static: (can be static or constant)
               final:
               human:  
 

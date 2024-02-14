@@ -19,16 +19,15 @@ Types can use attributes owned by others, as long as the permissions work out in
         allowed_creators: an optional user group
         name: using the naming rules
         is_retired: default false // if true then cannot be added to element types or make new elements
-        options:
-            final:
-            human:
-        attributes: []
+        is_final: bool, if true attribute cannot be inherited
+        live_list: [ list of attributes that have live versions on the element, cannot be on the type list]
+        type_list: [] list of attributes that are static const, cannot change them, cannot be on the live list
+        live_actions: [] list of attributes that hold actions for for the elements
+        type_actions: [] list of attributes that hold actions for for the type level events
+        attributes_final: [list of final attributes that cannot be overwritten by children]
         parents: []  -- the order is important, this list also has which ones are on and off
-        global_states: [attribute_id, state]
 
-
-
-Global states are kept here for remotes.
+        
 
 ## Inheritance 
 
@@ -86,4 +85,18 @@ There can be messages given back to the user when this is denied. See events for
 
 Some or all of the inherited parents can start in the off state, which means while their attributes override any ancestor or other type lesser in inheritance,
 those attributes will not be available for reading or writing until that parent is turned on
+
+# Attributes 
+
+Attributes can be added to the type, so that they are readable in the element:
+* attribues can be live, in which case they are readable and writable on the element.
+* or they can be const, in which case only read, they are not having any state changes. This can be for describing the type itself, or other things that do not change in the elements
+
+Attributes can be on a final list, so that any child cannot override them (type will not be created if attempted)
+
+## Defining action listeners 
+
+attributes can be placed in the live_actions if they hold an action, these have state in the elements 
+attributes can be placed in the type_actions same way, but for type wide events
+
 
