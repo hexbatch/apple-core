@@ -1,19 +1,25 @@
 # System defined items
 
 names of system defined items do not have the user in front of it and have no dots.
-They do have aliases though. These aliases in different languages are hard coded and mapped. When the info is seen about the system type, there will be a list of aliases too
+They do have aliases though. These aliases are in the meta names under the lang codes.
 
 There is an api to list the system items by type and role: for example list all the system attribute names, and those for identification
 
-# Standard element types
+These always have the same hard coded uuids 
 
-## User Type
+# Standard element types (base type is standard_type)
+
+
+## User Type (standard_type.user)
 
 Each user type inherits from the same base standard user type which has all the core identification and display attributes.
 When a user is created, a new type is made just for the user.
 
+## Remote type  (standard_type.remote)
+When a remote has an element type, then it inherits from this and the user type
 
-##  Group Set Type
+
+## Group Set Type  (standard_type.group)
 
 The group-set type has all the core identification and display attributes. When a group-set is created, a new type is made
 
@@ -22,69 +28,73 @@ The group-set type has all the core identification and display attributes. When 
 # Standard attributes
 
 
-* Core ID and display
-* Organization
-* Copy
-* Language
-* Events
 
-### Core identification and display
-
-* name: string
-* email: string
-* phone: string
-* address: string
-* location: map_coordinates
-* user_timezone: the timezone that can be default, if null then use system time zone
-* description: markdown
-* image: binary - binary (stores the image in the attribute value)
-* image-url (string for the url)
-* symbol: binary (small image svg)
-* primary_color: color
-* secondary_color: color
-* background_color: color
-* svg_symbol_image  : binary (small image svg)
-* favicon : binary (regular image types) 32px square
-* small_thumbnail: binary (regular image types) 128px square
-* medium_thumbnail: binary (regular image types) 256px square
-* current_location_map: lat,lng
-* current_location_cartesian: x,y,z
-* shape_cartesian -- the shape is centered at the current location
-* shape_map -- the shape is centered at the current location 
-* transparency - number to use when the shape is being rendered by software for color transparency
-* texture - binary (if renderer wants texture for a shape)
-* model - binary (to store rendering models)
-* audio - base attribute type for sound file urls - json has url , start at offset, loop, total play time
-* video - base attribute type for video urls - json has url , start at offset,  total play time
-* (for sets when element enters) default position inside set. When an element enters, if it does not have its positioning attribute set, then assigned this
-
-### Organization
-
-Read only tags, to sort elements. By default, tags can be read by everyone and written to by no one
-
-Base tag attribute, which has direct children being tag categories, then more specific tags inherit from the categories.
-
-Tags should be about what the element contains, or what the element is about
-
-* user - the element is about a user
-* media - the element has media such as image, pdf, or video urls
-* media-url -? the attribute has a url for viewing
-* media-mime - the mime type of the media
-* documentation - the element has markdown files to explain stuff
-* file - this element is some uploaded thing, it can be media or not
-* folder - this set acts like a folder to store files
+* Types
+* ID
+* Display
+* Event
+* Set Role
+* Admin Role
 
 
+### Types (base attribute standard_type)
+URL (validate as urlish)
+SVG (validate https://github.com/darylldoyle/svg-sanitizer)
+MAP_LOCATION (always map coord)
+SHAPE_LOCATION (always tripple coord)
+JSON (always array or object in json)
+NUMBER (always a number)
+NATURAL_NUMBER (always a number >= 0)
+STRING (anything)
+BINARY (anything binary string)
+EMAIL (always email like)
+PHONE (always e164)
+TIMEZONE (as a named timezone)
+XML (validate as xml)
+MARKDOWN (???)
+AUDIO  base attribute type for sound file urls - json has url , start at offset, loop, total play time
+VIDEO  base attribute type for video urls - json has url , start at offset,  total play time
+COLOR (validate as css standard color format)
+
+### identification (base attribute INFO )
+
+* name: STRING.INFO.NAME
+* email: EMAIL.INFO.EMAIL_ADDRESS
+* phone: PHONE.INFO.PHONE_NUMBER
+* address: STRING.INFO.ADDRESS
+* location: MAP_LOCATION.INFO.LOCATION
+* timezone: TIMEZONE.INFO.USE_TIMEZONE
+* description: MARKDOWN.INFO.DESCRIPTION
 
 
-## Events are attributes
+## display (base attribute DISPLAY )
+* primary_color:                                          color.display.primary_color
+* secondary_color:                                        color.display.secondary_color
+* background_color:                                       color.display.bg_color
+* opacity - how transparent is this when drawn            number natural_number.display.opacity
+* symbol: binary (small image svg)                        svg.display.symbol
+* svg_symbol_image  :                                     svg.display.svg
+* image-url (string for the url)                          url.display.image
+* small_thumbnail: url                                    url.display.image.small_thumbnail              
+* medium_thumbnail: url                                   url.display.image.medium_thumbnail
+  
 
-Each event listed in the actions is an attribute that is assigned a truthful or false value. False attributes block the event from happening
 
+## events (base attribute event)
+* see list of events
 
-# Role attributes
+## type categories (base attribute type_category)
+in addition to having special types, they are also marked by a similar attribute
+* user
+* remote
+* group_set
 
-When an element is also a set, view, container, group, or represents a user, it has an attribute showing that. A filter can filter api types with this attribute set to that type
+## Set Role (base attribute set_role)
+* see set relations
+* see mutuals
+
+## User types can have attributes added or removed at any time (base attribute admin_role)
+* see user admin tasks
 
 
 

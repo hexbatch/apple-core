@@ -30,7 +30,6 @@ There can be multiple test_contexts for each remote.
 
         user: required
         usage_group: (optional)
-        remote_element_type: (optional) This remote type inherits from the standard remote type and the user type of the creator
         name : unique in remotes
         is_retired: default false // if true then cannot be added to element types
         is_on : if off then all read and writes will fail and the remote not called

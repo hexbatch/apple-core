@@ -6,11 +6,11 @@ No login is needed to query
 
 no pagination here
 
-| Method | Path                      | Route Name                | Operation                                                                                                    |
-|--------|---------------------------|---------------------------|--------------------------------------------------------------------------------------------------------------|
-| Get    | standard/families         |                           | gets list of families (string array)                                                                         |
-| Get    | standard/:family/list     | core.standard.family.list | returns a family structure                                                                                   |
-| Get    | standard/:id/{?lang_code} |                           | returns single standard attribute structure, if lang code provided then docs will try to be in that language |
+| Method | Path                      | Route Name | Operation                                                                                                    |
+|--------|---------------------------|------------|--------------------------------------------------------------------------------------------------------------|
+| Get    | standard/families         |            | gets list of families (string array)                                                                         |
+| Get    | standard/:family/list     |            | returns a family structure                                                                                   |
+| Get    | standard/:id/{?lang_code} |            | returns single standard attribute structure, if lang code provided then docs will try to be in that language |
 
 
 Families return for each family

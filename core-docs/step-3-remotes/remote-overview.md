@@ -17,6 +17,7 @@ Remotes handle their own state, this is made easier when each remote call is giv
     remote:
         user: required
         usage_group: (optional)
+        remote_element: (optional) This element is from the type 
         remote_element_type: (optional) This remote type inherits from the standard remote type and the user type of the creator
         name : unique in remotes
         is_retired: default false // if true then cannot be added to element types
