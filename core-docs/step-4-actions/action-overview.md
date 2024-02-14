@@ -6,7 +6,20 @@ The attributes do not need to be attached to the same element as the attribute t
 but as long as the attribute can be changed by the user who owns the element, it can be changed.
 
 
-It holds a remote, or reads an attribute elsewhere to make a decision when an event is fired
+## what actions can do
+* an action can be to grant permission , they find a value that is truthful or not to approve it. Only one action needs to approve an event even if others deny.
+  But actions can change things, regardless if they approve or do not approve the event. While every action only is activated by events,
+  they do not have to approve or disapprove it.
+* Change a value. The value they have in the rules is applied.
+    * The values to change must be located on the same element as the action running
+    * Can only change attribute values, not properties of anything
+* Turn off or on  attributes or clusters on the element
+    * depends on the target if this is an attribute or cluster
+* or do nothing (just run the remote)
+
+## action internals
+
+It holds a remote, or reads an attribute(s) elsewhere to make a decision when an event is fired
 
 If remote, then it calls that, if it can (rate limiting or in process), when it gets an event it listens to
 Can overwrite/add some params going to the remote.
@@ -103,12 +116,11 @@ so an action:
         remote:
             remote it holds: remote_id
             extra constant params to override remote input params
-            map: (array of) 
-                remote param a id, remote param b id, action type to do, target attribute path id (same element)
+            initial_mapping: array, [rules search path to read attributes (can be anywhere), merge policy, to_remote_map]
+            action_mapping: array, [remote from_remote_map id (logic), optional from_remote_map id b (value), action type to do, target attribute path id (same element)]
         value:
-            other attribute id path (does not have to be in the same element but if not readable no action done)
-            map: (array of)
-                action type to do, target attribute path id, (value to write with, if not logic action, is the value of the other attribute above)
+            initial_mapping: array, [rules search path to read attributes (can be anywhere), merge policy, name of the key M to hold value]
+            action_mapping: array, [value of a key from above  (logic), optional value of a key from above (value), action type to do, target attribute path id (same element)]
 
     event-id:  the event These are attributes, can use one event or a parent event. Actions can be turned off and on, to not listen to event, 
                 based on the path boundaries of the attribute the action is hooked up to
@@ -120,21 +132,12 @@ so an action:
 
 
 
-# event path
-  the event path needs to include an attribute, but can have another element to listen to its events too.
-  granting permission can only happen on the element the event is for
-  however an element can change its own values or state or do things by remotes if another element does something (like change value, enter the same set, only exist in N sets etc.)
+# event id
+  each action can listen to one type of event, or one type of family of event
+    this is a standard attribute type of event, or a custom event
+ 
 
-# type of action
-  * an action can be to grant permission , they find a value that is truthful or not to approve it. Only one action needs to approve an event even if others deny.
-But actions can change things, regardless if they approve or do not approve the event. While every action only is activated by events, 
-they do not have to approve or disapprove it.
-  * Change a value. The value they have in the rules is applied. 
-    * The values to change must be located on the same element as the action running
-    * Can only change attribute values, not properties of anything
-  * Turn off or on  attributes or clusters on the element
-    * depends on the target if this is an attribute or cluster
-  * or do nothing (just run the remote)
+
 
 
 

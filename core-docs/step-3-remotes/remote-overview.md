@@ -17,11 +17,12 @@ Remotes handle their own state, this is made easier when each remote call is giv
     remote:
         user: required
         usage_group: (optional)
+        remote_element_type: (optional) This remote type inherits from the standard remote type and the user type of the creator
         name : unique in remotes
         is_retired: default false // if true then cannot be added to element types
         is_on : if off then all read and writes will fail and the remote not called
         uri:
-            uri_type: (none,url,socket,console,manual, action event)
+            uri_type: (none,url,socket,console,manual)
             uri_method (post, get, patch, put, delete)
             uri_port:
             uri_string 
