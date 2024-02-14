@@ -12,18 +12,19 @@ Elements cannot be ancestors or parents of themselves.
 Types cannot change ownership, unless all the attributes and bounds and groups also change ownership, or are usuable by the new owner, at the same time.
 (but elements can easiliy change owners)
 
-Types can use attributes owned by others, as long as the permissions work out in the owner_user_groups
+Types can use attributes owned by others, as long as the permissions work out in the attribute permissions
 
     So: a type:
         user: one user owns the type
+        ref: uuid
         allowed_creators: an optional user group
         name: using the naming rules
         is_retired: default false // if true then cannot be added to element types or make new elements
         is_final: bool, if true attribute cannot be inherited
-        live_list: [ list of attributes that have live versions on the element, cannot be on the type list]
-        type_list: [] list of attributes that are static const, cannot change them, cannot be on the live list
+        live_list: [ list of attributes that have live versions on the element, cannot be on the static list]
+        static_list: [] list of attributes that are static, their values are set at the type level and shared by all elements
         live_actions: [] list of attributes that hold actions for for the elements
-        type_actions: [] list of attributes that hold actions for for the type level events
+        static_actions: [] list of attributes that hold actions for for the type level events
         attributes_final: [list of final attributes that cannot be overwritten by children]
         parents: []  -- the order is important, this list also has which ones are on and off
 
@@ -89,14 +90,17 @@ those attributes will not be available for reading or writing until that parent 
 # Attributes 
 
 Attributes can be added to the type, so that they are readable in the element:
+
 * attribues can be live, in which case they are readable and writable on the element.
-* or they can be const, in which case only read, they are not having any state changes. This can be for describing the type itself, or other things that do not change in the elements
+* or they can be static. This can be for describing the type itself, or other things that do not change in the elements.
+
+Each attribute can be made readable or writable based on their bounds and permissions in their own definition
 
 Attributes can be on a final list, so that any child cannot override them (type will not be created if attempted)
 
 ## Defining action listeners 
 
 attributes can be placed in the live_actions if they hold an action, these have state in the elements 
-attributes can be placed in the type_actions same way, but for type wide events
+attributes can be placed in the static_actions same way, but for type wide events
 
 

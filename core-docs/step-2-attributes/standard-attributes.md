@@ -1,7 +1,7 @@
 # System defined items
 
-names of system defined items do not have the user in front of it and have no dots.
-They do have aliases though. These aliases are in the meta names under the lang codes.
+System defined items, they have the user of system.
+
 
 There is an api to list the system items by type and role: for example list all the system attribute names, and those for identification
 

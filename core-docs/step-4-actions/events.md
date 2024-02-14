@@ -15,6 +15,7 @@ if an attribute or element is out of bounds, or comes back in bounds, there is n
 Either the thing exists or not.
 
 * element creation
+* element batch creation (many created by one operation)
 * owner-change
 * element-set mass attribute altering
 * destruction

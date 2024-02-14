@@ -29,10 +29,10 @@ Element types name and info are in its attributes
         name: using the naming rules
         is_retired: default false // if true then cannot be added to element types or make new elements
         is_final: bool, if true attribute cannot be inherited
-        live_list: [ list of attributes that have live versions on the element, cannot be on the type list]
-        type_list: [] list of attributes that are static const, cannot change them, cannot be on the live list
+        live_list: [ list of attributes that have live versions on the element, cannot be on the static list]
+        static_list: [] list of attributes that are static, their values are set at the type level and shared by all elements
         live_actions: [] list of attributes that hold actions for for the elements
-        type_actions: [] list of attributes that hold actions for for the type level events
+        static_actions: [] list of attributes that hold actions for for the type level events
         attributes_final: [list of final attributes that cannot be overwritten by children]
         parents: []  -- the order is important, this list also has which ones are on and off
 

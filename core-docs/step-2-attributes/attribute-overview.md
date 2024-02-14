@@ -6,23 +6,19 @@ Attributes can be defined by the code, in which case they are not owned, and can
 
 Attributes can be created|edited|deleted by a user.
 
-Attributes can be restricted to only be used in an element if there are one or more other specified siblings.
-These siblings can have an ancestor or parent that matches this.
+Attributes can have a parent.
 
 Attributes can have an optional whitelist to allow which users can own, change the value of, and read this value of this attribute.
 A descendant can change the groups, but only by limiting the groups further
 
-Attribute values can be a number, string, json, markdown, binary (image , pdf only), a remote to run, location, an action, a remote
+Attribute values can be many things, including a number, string, json, markdown, binary, a remote to run, location,
+an action, map coordinates or more
 
 A remote is writable, when a write to attribute happens, the remote is passed in the write value
 
-string specific types can be :
-* iso date time, color, url, email, social account , phone, markdown,any
-* number is any numeric value
-* location is lat, lon
 
 An attribute is defined with a starting value.
-When it is applied to an element type, and the type makes an element. Then the attribute's value can be used, unless overridden, and put on the element's live values.
+When it is applied to a type, and the type makes an element, then this value can be changed and the change is only for that element or type.
 This value can be changed by any who can write to the element
 
 Starting out, the default value is used, if no default then null
@@ -44,7 +40,7 @@ options:
           name: name of the attribute (unique to all attributes)
           description: some text explaining why this attribute is used, etc, the author or other info
           is_retired: default false // if true then cannot be added to element types
-
+          is_system: if so marked, then anyone can use this in their own types  
           meta:
             (can be in different langs or default lang)
             description: (in plain text or markup)
@@ -68,7 +64,7 @@ options:
                   affinities: [force_rules] this can only be in the set where force rules apply
           permissions:
               user_groups:
-                  usage: [] if empty then only the user's group can use this to create their types or add to elements 
+                  usage: [] if empty then only the user's group can use this to create their types or add to elements, unless is_system 
                   read: []  if empty anyone can read the attribute value
                   write: [] if empty the admin group can change the attribute value.
               set_requirements: 
