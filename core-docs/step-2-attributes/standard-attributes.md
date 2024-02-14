@@ -37,7 +37,7 @@ The group-set type has all the core identification and display attributes. When 
 * Admin Role
 
 
-### Types (base attribute standard_type)
+### validators 
 URL (validate as urlish)
 SVG (validate https://github.com/darylldoyle/svg-sanitizer)
 MAP_LOCATION (always map coord)
@@ -58,25 +58,25 @@ COLOR (validate as css standard color format)
 
 ### identification (base attribute INFO )
 
-* name: STRING.INFO.NAME
-* email: EMAIL.INFO.EMAIL_ADDRESS
-* phone: PHONE.INFO.PHONE_NUMBER
-* address: STRING.INFO.ADDRESS
-* location: MAP_LOCATION.INFO.LOCATION
-* timezone: TIMEZONE.INFO.USE_TIMEZONE
-* description: MARKDOWN.INFO.DESCRIPTION
+* name: info.name
+* email: info.email
+* phone: info.phone_number
+* address: info.address
+* location: info.location
+* timezone: timezone
+* description:info.description
 
 
 ## display (base attribute DISPLAY )
-* primary_color:                                          color.display.primary_color
-* secondary_color:                                        color.display.secondary_color
-* background_color:                                       color.display.bg_color
-* opacity - how transparent is this when drawn            number natural_number.display.opacity
-* symbol: binary (small image svg)                        svg.display.symbol
-* svg_symbol_image  :                                     svg.display.svg
-* image-url (string for the url)                          url.display.image
-* small_thumbnail: url                                    url.display.image.small_thumbnail              
-* medium_thumbnail: url                                   url.display.image.medium_thumbnail
+* primary_color:                                          display.primary_color
+* secondary_color:                                        display.secondary_color
+* background_color:                                       display.bg_color
+* opacity - how transparent is this when drawn            display.opacity
+* symbol: binary (small image svg)                        display.symbol
+* svg_symbol_image  :                                     display.svg
+* image-url (string for the url)                          display.image
+* small_thumbnail: url                                    display.image.small_thumbnail              
+* medium_thumbnail: url                                   display.image.medium_thumbnail
   
 
 
