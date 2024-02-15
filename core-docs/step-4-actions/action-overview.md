@@ -126,8 +126,8 @@ so an action:
                 based on the path boundaries of the attribute the action is hooked up to
     
 
-    target-remembering: all|set|relationship|parent_relationship|chidren_relationship
-    run-policy: always, per element, per element type, per set, once only per element type, one only per element
+    context: normal|set|parent|children
+    run-policy: always, per element, per element type, per set
     priority: optional number
 
 
@@ -147,10 +147,11 @@ so an action:
 
 All the attributes from a parent of an element can be turned on and off at once,
 but if the element has dynamic attributes that overwrite this then those stay on.
-The context here also means that the parent can be turned off in only a parent-child relation, or only in a set, or all
+The context here also means that the parent can be turned off in only a shell, or only in a set, or all
 
 # turning on and off an element's attribute, or setting the value to that attribute
-must be in the element but can also target the parent in a relationship context. Can write to the parent above, or all immediate children in the relationship below
+must be in the element but can have the changes in that element seen everywhere, or in a set or shell context
+. Can write to the parent above, or all immediate children in the relationship below
 
 # Multiple target paths
 
@@ -190,4 +191,9 @@ Actions can be defined with constant data
 
 to allow extensions to use different sorts of actions, there is a hook done before the action is triggered, and after the action is done
 
+# context
+context does not work on static attributes
 
+when changing a value for a live, the change can be normal, or only in this set, 
+or writes the value in the context of the element's parent set .
+or writes the value in the context of the of the element in any immediate (no nth decendants) child shells .

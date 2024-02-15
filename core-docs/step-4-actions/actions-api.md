@@ -32,7 +32,7 @@ actions can be attached to multiple different attributes
     event-path: the path of the event (able to filter set context of an event), path must be using an event attribute id or child of one
     
 
-    target-remembering: all|set|relationship|parent_relationship|chidren_relationship
+    context: normal|set|parent|children
     run-policy: always, per element, per element type, per set, once only per element type, one only per element
     priority: optional number
 

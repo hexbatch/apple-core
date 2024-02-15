@@ -21,7 +21,7 @@ The same attribute on the same element can have different values based on its co
         attribute id:
         overwritten_by : when a new live element is added that overwrites, this is filled in by what is overwriting it
         set: set id for set only changes
-        parent: set id if traveling through parent child relationships
+        parent: set id if shell
         current_value: 
         activated: boolean - if not activated then this attribute does not count in the live, its skipped over
         toggled_at: timestamp 
@@ -43,13 +43,26 @@ This includes default global states
 
 # Set context for changed attributes
 
-When one element changes another element's attributes, the writer of the system has a choice to change this just for the set context, or if this is for any set.
+When an action writes to its parent attributes, the attribute can be written in normal, set or shell context.
+Normal is the default, the attribute is changed and the same element in other sets see this change, 
+unless they have their values written to in their own set context.
 
-When this is per set, when the element is taken out of the set, those changes are lost.
-The only time changes are remembered are when the element is traveling through a parent child set relationship.
-This is optional, and allows the attribute to regain any changes made in the parent when it returns from the child.
-This can be nested in different levels of parent child travel, each parent can remember it settings until it leaves that parent.
+When this is set context, this change is only seen by other reads in the same set. 
+When the element is taken out of the set, those changes are lost.
+
+Actions can also write to the element but in the context of a shell's children.
+
+A shell is when selected elements from one set are put into a new set, then the parent set's element's attribute can be written by that action to be in 
+the parent set's context.
+
+Internally, we remember this the changes, kept later or not, by using the live attribute structure above using a set and parent id , 
+in a new row for that attribute.
+
+We push those on when the attribute value is changed in a set or shell context, and pop it off when the element leaves the set,or the shell ends.
 
 
-Internally, we remember this the changes, kept or not, by using the stack id, the live attribute id, and the value there in a table row.
-We push those on when the attribute value is changed in a set, and pop it off when the element leaves the set, not going to a child.
+
+
+# static attributes 
+
+the statics defined in the type are here also, but cannot be overrriden by a set or shell context. Static is always global 
