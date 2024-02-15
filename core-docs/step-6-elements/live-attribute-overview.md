@@ -4,12 +4,13 @@ When an element launches, then the top most attribute of each inherited parent i
 
 When an attribute is on an element, its live, and there is a record about the state of the attribute in the element
 
-The same attribute on the same element can have different values based on its context (set membership or parent child relations)
+The same attribute on the same element can have different values based on its context (if in a shell)
 
 * Attribute values has a microsecond time stamp of when last written to (updated_at) and or turned on (toggled_at)
+
+When building the live attributes from a type:
 * an attribute can be overwritten if the same type, or a child, is added. Siblings do not overwrite each other
-* an attribute added to the element can overwrite global attribute for that element only
-* a set context attribute will overwrite a per element attribute, or a type attribute
+* a shell context attribute is a new row for that element's attribute, with the shell id (the set id, but in)
 * a child set attribute changes overwrites the parent
 * no limit to how many live attributes that overwrite the earlier one. They stack by when applied.
 
@@ -20,18 +21,19 @@ The same attribute on the same element can have different values based on its co
         current element id: (null for global all elements)
         attribute id:
         overwritten_by : when a new live element is added that overwrites, this is filled in by what is overwriting it
-        set: set id for set only changes
-        parent: set id if shell
+        set: set id for shell only changes
+        parent: this table id for the attribute (if shell) allows popping shells
         current_value: 
         activated: boolean - if not activated then this attribute does not count in the live, its skipped over
         toggled_at: timestamp 
         local_state: if this attribute holds a remote
 
-There can be duplicates of attributes here, one from the element type , the element and the context
+There can be duplicates of attributes here, from different parent types , or a shell context
 When a context ends, it's removed from the lookup here and the element type attribute is used again
 
 When an attribute is turned off, then the element has no attribute by that name or id. This counts in many scenarios
 
+When a parent is turned off or on, its done in another table, which is linked to here (see live parents)
 
 ## Multiple inheritance for attributes
 
@@ -43,22 +45,22 @@ This includes default global states
 
 # Set context for changed attributes
 
-When an action writes to its parent attributes, the attribute can be written in normal, set or shell context.
-Normal is the default, the attribute is changed and the same element in other sets see this change, 
-unless they have their values written to in their own set context.
+When an action writes to its parent element's attributes, the attribute can be written in normal, or shell context.
+The action cannot choose which, its just whatever context this takes place.
 
-When this is set context, this change is only seen by other reads in the same set. 
-When the element is taken out of the set, those changes are lost.
+Normal is the default, the attribute is changed and the same element in other sets see this change.
 
-Actions can also write to the element but in the context of a shell's children.
+When this is shell context, this change is only seen by other reads in the same shell. (unless static, that is always global)
+When the  shell ends, those changes are lost.
 
-A shell is when selected elements from one set are put into a new set, then the parent set's element's attribute can be written by that action to be in 
-the parent set's context.
+
+A shell is when selected elements from one set are put into a new set, and the elements can have return policies when the shell ends.
+When a shell ends,the parent set's element's attribute value can be overwritten by, or merged with, the return
 
 Internally, we remember this the changes, kept later or not, by using the live attribute structure above using a set and parent id , 
 in a new row for that attribute.
 
-We push those on when the attribute value is changed in a set or shell context, and pop it off when the element leaves the set,or the shell ends.
+We push those on when the attribute value is changed in a  shell context, and pop it off when the element leaves the set,or the shell ends.
 
 
 

@@ -47,11 +47,11 @@ so:
     event to listen to (parent or leaf), this can be a path to only listen to events in certain cicumstances
     target map (remote param A, path to attribute,remote param B, action it does with B)
 
-Remotes can have unlimited map entries but can only target attributes in the element it is part of for value changes, or target the parent of the element
+Remotes can have unlimited map entries but can only target attributes in the element it is part of for value changes
 
 action-type: permission, value change, switch parents on|off, turn on or off attributes,  or void (just runs remote)
 
-so an action:
+actions can also send out custom events to anywhere and the value of B is that custom event payload
 
     
 
@@ -89,7 +89,7 @@ Multiple actions can listen to the same events.
 * So, to rate limit element creation and charge someone have two actions. One to limit and one to charge
 * But, this can also be the same action
 
-if listening to a parent event of more than one type, An inheritance chain will run the actions from the ancestors to the current
+if listening to a parent event of more than one type, Any event in the inheritance chain be accepted
 
 
 # parts of an action
@@ -126,7 +126,6 @@ so an action:
                 based on the path boundaries of the attribute the action is hooked up to
     
 
-    context: normal|set|parent|children
     run-policy: always, per element, per element type, per set
     priority: optional number
 
@@ -147,26 +146,26 @@ so an action:
 
 All the attributes from a parent of an element can be turned on and off at once,
 but if the element has dynamic attributes that overwrite this then those stay on.
-The context here also means that the parent can be turned off in only a shell, or only in a set, or all
+A shell  context here means that the parent can be turned off in only that shell.
 
 # turning on and off an element's attribute, or setting the value to that attribute
-must be in the element but can have the changes in that element seen everywhere, or in a set or shell context
-. Can write to the parent above, or all immediate children in the relationship below
+must be in the element but if in a shell context this is only toggled for that context
+
 
 # Multiple target paths
 
-If selecting multiple target attributes to listen to, then they all have to have events fired for them first before the action will activate and do its own thing.
+If selecting multiple target attributes to listen to,
+then they all have to have events fired for them first before the action will activate and do its own thing.
 It can remember the counts, and this resets for each api operation
 
 # Action run order (priority)
 Actions can be both filter and action change.
 
-* Actions that respond to the same event can be given an optional run order, and the actions are run from the lowest to the highest
-* Once the first action approves an event, the others are not called
-* Once the first action to turn on or off or toggle an attribute, cluster  is run, the others are not run
+* Actions that respond to the same event can be given an optional priority order, and the actions are run from the lowest to the highest
+* The highest priority action will approve or deny the event, if more than one have same priority, then any one can approve and the others ignored
+* Many actions can do things to the same target, the highest priority will be the one used
 * Voids are always run
-* If more than one action is responding to the same approved event, and they are changing the same attribute value this becomes a filter
-  * Only if this action is running a remote
+* If more than one action is responding to the same event, this becomes a filter
   * the lowest priority will run first, and its value to set is passed to the next highest one, until all the actions have run. The highest priority action will have final say
   * the value can change data type, earlier actions can send up json with flags, and the final one can produce a primitive, or filter out json 
   * The passed value will be put into the remote params as the original value to change
@@ -176,8 +175,8 @@ Actions can be both filter and action change.
 ## Filtering 
 
 Some events allow data to be attached to them  
-Lower priority actions are given the data returned by the higher priority actions, and can also alter this data, or discard it, before sending their version of the
-data to the finish or next in the filtering list
+Lower priority actions are given the data returned by the higher priority actions, 
+    and can also alter this data, or discard it, before sending their version of the data to the finish or next in the filtering list
 
 # Constant data 
 
@@ -191,9 +190,4 @@ Actions can be defined with constant data
 
 to allow extensions to use different sorts of actions, there is a hook done before the action is triggered, and after the action is done
 
-# context
-context does not work on static attributes
 
-when changing a value for a live, the change can be normal, or only in this set, 
-or writes the value in the context of the element's parent set .
-or writes the value in the context of the of the element in any immediate (no nth decendants) child shells .
