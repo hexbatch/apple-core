@@ -50,15 +50,34 @@ Anyone added to the user group will be able to read the user's private data. An 
 If the user is admin he can edit resources created by the user, and can see all the resource data.
 If a user is just a member though, he can only view the user element's private data.
 
-## Groups of base types of users
+## Types of users
 
-The system will create a new element called the User Base element
+The system will create a new type called the User Base type, and it creates an element from that. Other elements can be generated, 
+but the first element can never be deleted
 
-The core allows another element to be used as a base element for a new user, but that element must be derived from the user base element
+The user base type, which always has the same guid across servers, inhertits from the system type, which always has its own guid 
 
 ### Usernames
 
 Each user has a unique username, with no punctuation of most kinds, and not starting with a digit, and no whitespace
+
+# User type patterns
+
+User can be created which has as its base one or more already existing user types.
+When a user is created like this, the admin group of the new user is a child of the parent users' admin groups,
+this membership use the union of all the parent's group members to be the admin members of the shared user.
+Admin priv is transferred likewise.
+
+When one of the contributing users changes its admin group members or admins, then this is reflected in the union of groups
+
+Alternately, the same multiple inheritance user can have its own independent user group, and the inheritance reflects organization rather than permissions.
+
+Also, a user type can include non-user types as parents.
+
+## Organizing users
+
+* Users can be organized by attaching some special attribute(s) to categorize them
+* Users can be organized using some type that has attributes
 
 
 
