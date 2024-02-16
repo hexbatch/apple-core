@@ -64,13 +64,7 @@ Each user has a unique username, with no punctuation of most kinds, and not star
 # User type patterns
 
 User can be created which has as its base one or more already existing user types.
-When a user is created like this, the admin group of the new user is a child of the parent users' admin groups,
-this membership use the union of all the parent's group members to be the admin members of the shared user.
-Admin priv is transferred likewise.
-
-When one of the contributing users changes its admin group members or admins, then this is reflected in the union of groups
-
-Alternately, the same multiple inheritance user can have its own independent user group, and the inheritance reflects organization rather than permissions.
+The multiple inheritance user can have its own independent user group, and the inheritance reflects organization rather than permissions.
 
 Also, a user type can include non-user types as parents.
 

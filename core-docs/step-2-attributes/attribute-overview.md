@@ -6,15 +6,16 @@ Attributes can be defined by the code, in which case they are not owned, and can
 
 Attributes can be created|edited|deleted by a user.
 
-Attributes can have a parent.
+Attributes can have a parent. All attributes on a server have the server attribute parent.
 
-Attributes can have an optional whitelist to allow which users can own, change the value of, and read this value of this attribute.
+Attributes can have an optional whitelist to allow which users can use , change the value of, and read this value of this attribute.
 A descendant can change the groups, but only by limiting the groups further
 
 Attribute values can be many things, including a number, string, json, markdown, binary, a remote to run, location,
 an action, map coordinates or more
 
-A remote is writable, when a write to attribute happens, the remote is passed in the write value
+When an attribute holds a remote, when a write happens the remote is run, and when a read happens the remote is run too.
+Remotes can have caches and other things to prevent that from being overloaded.
 
 
 An attribute is defined with a starting value.
@@ -88,16 +89,9 @@ options:
 Data can be marked as:
 
 * numeric
-  * real
-  * integer
-  * natural
 * string
-  * regular strings
-  * json
-  * markdown
-  * html
-  * xml
-  * binary 
+* json
+  
 
 * points to something 
   * user_id
@@ -133,18 +127,24 @@ Ownership groups can use this to add to their own element types and elements.
 Note that once someone else has permission to create with this attribute, and they make something with it, then that can never be taken back.
 But the attribute could be retired to prevent any new use
 
-Because attributes can have parents, the ownership group memberships are intersected with each ancestor.
-This means that people who use an attribute to make a new one, can only restrict but not increase the permissions of people who can read,write or use theirs
+Attributes can have parents, this means the children can change permissions and bounds. The usage permission can also be changed on a child
+
 
 ### set requirements
-When an api uses a set context,
+
+An attribute can behave differently based on the set it belongs to.
+
+An attribute can make it impossible to join a set. An attribute can define the sets it will join based on the set content.
+To deny entry to any set, then base the allergy on a common attribute ancestory, such as all attributes, or the server attributes.
+And then make the affinities outweigh those.
 
 Conditional permissions can also be defined to allow the read and write to only occur when another(or several) attribute in the same element set is present.
 This attribute does not need to be in the same element.
 
-These required attributes need to be on, and have their parent type on, in the element, to be marked present
+Elements do not have to be visible to the element owner or user in the api to count to the requirements.
 
 ## Affinity and allergies
+
 affinities and allergies also control when an element is allowed to be or not be in a set
 
 Each affinity and allergy can have one or more force_rules

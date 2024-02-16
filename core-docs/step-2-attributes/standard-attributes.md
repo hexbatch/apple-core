@@ -29,7 +29,7 @@ The group-set type has all the core identification and display attributes. When 
 
 # Standard attributes
 
-
+Base server attribute (it has its own gui) is used to make the base standard attribute, whose guid is defined
 
 * Types
 * ID

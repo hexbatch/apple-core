@@ -24,17 +24,7 @@ Group ownership cannot be transferred
     So a user-group:
         owner: user_id
         guid: string
-        user group parent: (optional)
-        parent_combine_strategy (optional) : and, or 
         users: [] who is members in the group
         admins: [] who can directly modify the list using the api.
         name: any name unique to the user's other groups
 
-
-# group parents
-a group can optionally have a single parent, and this restricts or adds to the user group here based on the strategy
-* and - the working membership list includes the common users in  the parent and the current
-* or - the working membership list includes anyone in the parent and child
-
-if a group has a parent, it cannot itself have any children (avoid nested recursion issues or complex logic).
-If it is a child, it cannot be a parent.

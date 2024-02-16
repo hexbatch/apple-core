@@ -17,8 +17,8 @@
 
 # Bounds
 * [map api](step-1-bounds/location-api.md)
-* [map api](step-1-bounds/time-api.md)
-* [map api](step-1-bounds/path-api.md)
+* [time api](step-1-bounds/time-api.md)
+* [path bounds api](step-1-bounds/path-api.md)
 
 
 # Attributes

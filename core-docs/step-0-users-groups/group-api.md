@@ -35,5 +35,3 @@ If one is not in a group, cannot get any group info
         users: [] who is members in the group
         admins: [] who can directly modify the list using the api.
         name: any name unique to the user's other groups
-        user group parent: (optional)
-        parent_combine_strategy (optional) : and, or 

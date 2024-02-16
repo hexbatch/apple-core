@@ -30,8 +30,9 @@ Element types name and info are in its attributes
         is_retired: default false // if true then cannot be added to element types or make new elements
         is_final: bool, if true attribute cannot be inherited
         live_list: [ list of attributes that have live versions on the element, cannot be on the static list]
-        private_live_list: [] list of attributes that are live and only readable by intersection of element owner group membership and attribute read rules
+        private_live_list: [] list of live attributes that are live and only readable and writable by element owner
         static_list: [] list of attributes that are static, their values are set at the type level and shared by all elements
+        private_static_list: [] list of static attributes that are live and only readable and writable by element owner
         live_actions: [] list of attributes that hold actions for for the elements
         static_actions: [] list of attributes that hold actions for for the type level events
         attributes_final: [list of final attributes that cannot be overwritten by children]
