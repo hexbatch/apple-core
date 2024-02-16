@@ -6,6 +6,7 @@ A shell is also a set, and so can be included as an element in any set.
 Any set's defining token, the one that controls the set, can be inside a shell, or many shells, at the same time. See question below.
 
 Elements in a shell context can still be in regular sets, but when an element is put into a new set, its not in a shell context.
+Shells are not accessable to api set operations, or searches
 
 Shells can be created from shells.
 
