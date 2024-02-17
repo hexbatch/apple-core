@@ -22,7 +22,6 @@
 
 
 # Attributes
-* [standard attribute api](step-2-attributes/standard-attribute-api.md)
 * [attribute api](step-2-attributes/attribute-api.md)
 
 
