@@ -111,3 +111,8 @@ This is done via the api call method handling. See  [execution.md](../core-api-g
 
 Remotes will be logged when used to call or even for cache. Logged may be pruned after a while.
 
+# Notifications to remote
+
+Remotes can get notifications for the failure or the success of the api they are used.
+This can be a different uri for either
+

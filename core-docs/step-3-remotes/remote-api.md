@@ -34,12 +34,25 @@ There can be multiple test_contexts for each remote.
         is_retired: default false // if true then cannot be added to element types
         is_on : if off then all read and writes will fail and the remote not called
         uri:
-            uri_type: (none,url,socket,console,manual)
-            uri_method (post, get, patch, put, delete)
-            uri_port:
-            uri_string 
-            uri_to_remote_format
-            uri_from_remote_format
+            action:
+                uri_type: (none,url,socket,console,manual)
+                uri_method (post, get, patch, put, delete)
+                uri_port:
+                uri_string 
+                uri_to_remote_format
+                uri_from_remote_format
+            api_succcess:
+                uri_type: (none,url,socket,console,manual)
+                uri_method (post, get, patch, put, delete)
+                uri_port:
+                uri_string 
+                uri_to_remote_format
+            api_fail:
+                uri_type: (none,url,socket,console,manual)
+                uri_method (post, get, patch, put, delete)
+                uri_port:
+                uri_string 
+                uri_to_remote_format
         cache:
             is_caching: bool, if true then each last call updates the cache, and if same cache param key values then cache is used
             cache_ttl_seconds: how old the cache is allowed to be
