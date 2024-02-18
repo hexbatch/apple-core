@@ -24,6 +24,7 @@ There can be multiple test_contexts for each remote.
 | POST   | remotes/activity/:activity/update | core.remote.activity.update |      | completes a manual waiting remote                     | json or xml or http code or headers or text                              |
 | get    | remotes/activity/list/:status     | core.remote.activity.list   |      | lists activity                                        | iterator,can filter it for manual(types), activity state (or all states) |
 | get    | remotes/activity/:activity/get    | core.remote.activity.get    |      | gets a remote activity                                |                                                                          |
+| get    | remotes/stack/:stack/get          |                             | *    | shows the activities in a stack, and how the stack is |                                                                          |
 
 ## Data for defining a remote
 
@@ -69,3 +70,7 @@ There can be multiple test_contexts for each remote.
 # List activity 
 can optionally list for status or just the single activity
 can also show all remotes in system  if flag passed and the user has that admin attribute to see other remotes
+
+# See the status of a remote stack
+each activity has a stack, show the entire stack status if one is in usage group of any remotes in the stack.
+The call should also show how the values and logic for the calls are, and call statis.
