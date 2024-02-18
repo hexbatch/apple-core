@@ -1,3 +1,5 @@
 # Elements
 
-Elements contain the data and hold the event listeners.
+Elements contain one or more attributes defined by the type they come from.
+Elements can be put into sets.
+

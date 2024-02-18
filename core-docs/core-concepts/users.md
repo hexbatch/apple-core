@@ -12,4 +12,4 @@ Someone has to get a user bearer element to see or change what that user has acc
 There is not much required information to make a new user: a username. Any other information is added by attributes to the user element.
 There are some standard attributes for descriptions.
 
-Each user is also an element type, and an element. So a user can logically be put into sets of elements.
+Each user is also an element type, and an element, and an attribute. So a user can logically be put into sets of elements.

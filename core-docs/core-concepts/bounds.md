@@ -18,4 +18,5 @@ Can be any combination of shapes on the map, these have latitude and longitude c
 
 ## Path bounds
 
-An attribute only exists if the element is being acted on in a set with some characteristics, such a content, relationship, or type of tag making the sets
+An attribute only exists if the element is being acted on in a set with some characteristics:
+such as the set type, or what is in the set, or the relationship a set has with something
