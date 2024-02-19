@@ -1,19 +1,19 @@
 # Elements
 
 
-| Method | Path                             | Route Name | Description                                                     |
-|--------|----------------------------------|------------|-----------------------------------------------------------------|
-| Post   | element                          |            | Makes a new element from an element type, optional set to place |
-| Patch  | element/:id                      |            | Sparse edit an element (but not its attributes or state         |
-| Patch  | element/:id/states               |            | Sparse edit the states of an element                            |
-| Patch  | element/:id/edit_attribute/:id   |            | Edit a live attribute value, or turn it off or on               |
-| Patch  | element/:id/turn_attribute/:id   |            | turn attribute off or on                                        |
-| Patch  | element/:id/turn_parent/:id      |            | Turn parent off and on                                          |
-| Post   | element/:id/add_attribute/:id    |            | Add a live attribute                                            |
-| Delete | element/:id/remove_attribute/:id |            | Remove a live attribute (must be added by above)                |
-| Delete | element/:id                      |            | Deletes the element                                             |
-| Get    | element/read/:id                 |            | Returns the element information                                 |
-| Get    | element/definition/:id           |            | Returns the element definition                                  |
+| Method | Path                              | Route Name | Description                                                     |
+|--------|-----------------------------------|------------|-----------------------------------------------------------------|
+| Post   | element                           |            | Makes a new element from an element type, optional set to place |
+| Patch  | elements/:id                      |            | Sparse edit an element (but not its attributes or state         |
+| Patch  | elements/:id/states               |            | Sparse edit the states of an element                            |
+| Patch  | elements/:id/edit_attribute/:id   |            | Edit a live attribute value, or turn it off or on               |
+| Patch  | elements/:id/turn_attribute/:id   |            | turn attribute off or on                                        |
+| Patch  | elements/:id/turn_parent/:id      |            | Turn parent off and on                                          |
+| Post   | elements/:id/add_attribute/:id    |            | Add a live attribute                                            |
+| Delete | elements/:id/remove_attribute/:id |            | Remove a live attribute (must be added by above)                |
+| Delete | elements/:id                      |            | Deletes the element                                             |
+| Get    | elements/read/:id                 |            | Returns the element information                                 |
+| Get    | elements/definition/:id           |            | Returns the element definition                                  |
 
 
     

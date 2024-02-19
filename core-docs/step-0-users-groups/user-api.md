@@ -14,13 +14,14 @@ Some attributes and even some standard definition attributes will be marked as r
 
 ## Users operations
 
-| Method | todo | Path                   | Route Name                   | Description                                         | Args                                  | Notes                             |
-|--------|------|------------------------|------------------------------|-----------------------------------------------------|---------------------------------------|-----------------------------------|
-| Post   |      | user/register          | core.users.register          | Makes a new user                                    | username (must be unique)             | returns a bearer token            |
-| Post   |      | user/auth/create       | core.users.auth.create       | makes a new bearer token for the authenticated user | optional pass through data to store   |                                   |
-| Get    |      | user/auth/pass_through | core.users.auth.pass_through | gets associated data in the token                   |                                       | uses the log in token to get data |
-| Delete |      | user/auth/delete       | core.users.auth.destroy      | Deletes the token being used in this call           |                                       | cannot delete last token          |
-| Get    | *    | user/get/:id           | core.users.read              | Shows the user information                          | optional wide flag to show attributes |                                   |
+| Method | todo | Path                    | Route Name                   | Description                                         | Args                                  | Notes                             |
+|--------|------|-------------------------|------------------------------|-----------------------------------------------------|---------------------------------------|-----------------------------------|
+| Post   |      | users/register          | core.users.register          | Makes a new user                                    | username (must be unique)             | returns a bearer token            |
+| Post   |      | users/auth/create       | core.users.auth.create       | makes a new bearer token for the authenticated user | optional pass through data to store   |                                   |
+| Get    |      | users/auth/pass_through | core.users.auth.pass_through | gets associated data in the token                   |                                       | uses the log in token to get data |
+| Delete |      | users/auth/delete       | core.users.auth.destroy      | Deletes the token being used in this call           |                                       | cannot delete last token          |
+| Get    | *    | users/get/:id           | core.users.read              | Shows the user information                          | optional wide flag to show attributes |                                   |
+| Get    | *    | users/get/:id           | core.users.read              | Shows the user information                          | optional wide flag to show attributes |                                   |
 
 ### User Data returned in the user.create or user.read
 
@@ -39,3 +40,5 @@ When the editable flag is used, only the attributes that are editable, via permi
 # Todo
 
 do get wide flag to show attribute values 
+
+# Search users is done at the search api

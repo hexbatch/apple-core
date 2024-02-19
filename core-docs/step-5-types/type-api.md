@@ -16,11 +16,11 @@ Element types name and info are in its attributes
 | Method | Path                                      | Route Name | Description                               |
 |--------|-------------------------------------------|------------|-------------------------------------------|
 | Post   | type                                      |            | Makes a new type                          |
-| Patch  | type/:id                                  |            | Sparse edit an type                       |
-| Patch  | type/:id/states                           |            | Sparse edit the states of a type          |
-| Delete | type/:id                                  |            | Delete Only if not used                   |
-| Get    | type/:id/read                             |            | Gets the type definition and states       |
-| Get    | type/:id/list                             |            | iterator, List a type where used          |
+| Patch  | types/:id                                 |            | Sparse edit an type                       |
+| Patch  | types/:id/states                          |            | Sparse edit the states of a type          |
+| Delete | types/:id                                 |            | Delete Only if not used                   |
+| Get    | types/:id/read                            |            | Gets the type definition and states       |
+| Get    | types/:id/list                            |            | iterator, List a type where used          |
 | Get    | types/list                                |            | iterator, List all the types              |
 | Post   | types/server/protected_list/new           |            | Makes a new server protected list         |
 | Post   | types/server/protected_list/:list/edit    |            | Edts a new server protected list          |

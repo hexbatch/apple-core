@@ -6,6 +6,7 @@ Servers
 |--------|----------------------------|------------|:------|---------------------------------------------------|
 | Post   | server/create              |            | *     | Adds a new server that is known about             |
 | Get    | server/:id/get             |            | *     | gets details about the server                     |
+| Get    | server/:id/list            |            | *     | gets details all the servers, cursor              |
 | Delete | server/:id/destroy         |            | *     | removes details about the server                  |
 | Patch  | server/:id/edit            |            | *     | edits details about the server                    |
 | Post   | server/:id/action/:id/call |            | *     | calls the action                                  |

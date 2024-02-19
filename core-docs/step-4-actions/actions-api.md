@@ -8,11 +8,11 @@ actions can be attached to multiple different attributes
 | Method | Path                     | Route name | TO Do | Description                        |
 |--------|--------------------------|------------|:------|------------------------------------|
 | Post   | action                   |            |       | Makes a new action                 |
-| Put    | action/:id               |            |       | Sparse edit an action              |
-| Delete | action/:id               |            |       | Delete Only if not used            |
-| Get    | action/:id/test          |            |       | Test an action with dry run        |
-| Get    | action/:id/read          |            |       | Gets the action definition         |
-| Get    | action/:id/list          |            |       | iterator,List an action where used |
+| Put    | actions/:id              |            |       | Sparse edit an action              |
+| Delete | actions/:id              |            |       | Delete Only if not used            |
+| Get    | actions/:id/test         |            |       | Test an action with dry run        |
+| Get    | actions/:id/read         |            |       | Gets the action definition         |
+| Get    | actions/:id/list         |            |       | iterator,List an action where used |
 | Get    | actions/list             |            |       | iterator,List all the actions      |
 | Post   | events/send_custom_event |            | *     | event attribute, target element    |
 
