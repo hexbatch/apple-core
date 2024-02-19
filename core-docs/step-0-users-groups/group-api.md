@@ -17,17 +17,17 @@ when members and admins are mentioned, it's their elements.
 If one is not in a group, cannot get any group info
 
 
-| Method | Path                          | Route Name               | Description                                                       | Args                    |
-|--------|-------------------------------|--------------------------|-------------------------------------------------------------------|-------------------------|
-| Post   | group/create                  | core.group.create        | create group,returns the group guid                               | required group_name:    |
-| Delete | group/:id/destroy             | core.group.destroy       | destroy group.Can only be deleted if not in use anywhere          |                         |
-| Put    | group/:id/member/add/:user    | core.group.member.add    | Adds membership to a single user                                  | user element guid or id |
-| Delete | group/:id/member/remove/:user | core.group.member.remove | Removes membership for a single user                              | user element guid or id |
-| Patch  | group/:id/admin/remove/:user  | core.group.admin.remove  | Removes admin status for a single user, they are still member     | user element guid or id |
-| Put    | group/:id/admin/add/:user     | core.group.admin.add     | Add admin status for a single user                                | user element guid or id |
-| GET    | group/:id/list                | core.group.list          | lists the membership and admins                                   | iterator for next page  |
-| GET    | groups/list                   | core.user.groups.list    | lists the groups by guid, that user is involved in                | iterator for next page  |
-| GET    | group/:id/get                 | core.group.get           | shows the group and membership status for this user in that group | iterator for next page  |
+| Method | Path                          | Route Name                | Description                                                       | Args                    |
+|--------|-------------------------------|---------------------------|-------------------------------------------------------------------|-------------------------|
+| Post   | group/create                  | core.groups.create        | create group,returns the group guid                               | required group_name:    |
+| Delete | group/:id/destroy             | core.groups.destroy       | destroy group.Can only be deleted if not in use anywhere          |                         |
+| Put    | group/:id/member/add/:user    | core.groups.member.add    | Adds membership to a single user                                  | user element guid or id |
+| Delete | group/:id/member/remove/:user | core.groups.member.remove | Removes membership for a single user                              | user element guid or id |
+| Patch  | group/:id/admin/remove/:user  | core.groups.admin.remove  | Removes admin status for a single user, they are still member     | user element guid or id |
+| Put    | group/:id/admin/add/:user     | core.groups.admin.add     | Add admin status for a single user                                | user element guid or id |
+| GET    | group/:id/list                | core.groups.list          | lists the membership and admins                                   | iterator for next page  |
+| GET    | groups/list                   | core.users.groups.list    | lists the groups by guid, that user is involved in                | iterator for next page  |
+| GET    | group/:id/get                 | core.groups.get           | shows the group and membership status for this user in that group | iterator for next page  |
 
 
     user-group:

@@ -25,7 +25,7 @@ Optional data can be provided in json
 
 * each job function is defined by a plugin
 * job functions may be pulled in from other repos
-* each job function will call `core.user.auth.destroy` at the end to destroy its token!
+* each job function will call `core.users.auth.destroy` at the end to destroy its token!
 
 # This is the only microservice that calls the core api indirectly and directly
 
@@ -63,7 +63,7 @@ Flow for placing a job and waiting for it to finish
 only called in the queue for starting new jobs
 
   * calls `user_services.get_basic_user_auth`
-  * calls `core.user.auth.create` for auth token put in
+  * calls `core.users.auth.create` for auth token put in
   * makes new db row for the job
   * queues this with given data, and callback url
 

@@ -16,19 +16,19 @@ Bounds are added as a mix of any bounds types
 
 An attribute can be deleted if only it's not used anywhere
 
-| Method | Path                        | TODO    | Route Name                   | Operation                                           | Args                                                                  |
-|--------|-----------------------------|:--------|------------------------------|-----------------------------------------------------|-----------------------------------------------------------------------|
-| Post   | attribute                   |         | core.attribute.create        | Makes a new attribute with caller as owner          | Required name: optional requirements, permissions, bounds, and value  |
-| Patch  | attribute/edit/:id          |         | core.attribute.edit          | Edit Attributes                                     | Any detail of the attribute, sparse update                            |
-| Get    | attribute/:id               |         | core.attribute.get           | returns full attribute info                         |                                                                       |
-| Get    | attribute/read/:id          | *       |                              | Read Attribute , giving the value (default or live) | Optional element type, element,set, location, time                    |
-| Get    | attribute/:id/bounds/ping   | * (set) | core.attribute.ping          | Determines if the attribute is in bounds            | Location, Time, Space, User  and Set                                  |
-| Get    | attribute/:id/list/types    | *       |                              | Show where attribute is used in the types           | can provide a search using element type and other attributes,iterator |
-| Get    | attribute/:id/list/elements | *       |                              | Show where attribute is used in the elements        | can provide a search,iterator                                         |
-| Get    | attribute/list/managed      |         | core.attribute.list.managed  | Show attribute owned or managed by user             | can provide a search,iterator                                         |
-| Get    | attribute/list/usage        |         | core.attribute.list.usage    | Show attribute not manage, but can be used          | can provide a search,iterator                                         |
-| Delete | attribute/:id               |         | core.attribute.destroy       | Delete Attribute, if the user can                   |                                                                       |
-| Get    | attribute/standard/list     |         | core.attribute.standard.list | Gets standard attributes                            |                                                                       |
+| Method | Path                        | TODO    | Route Name                    | Operation                                           | Args                                                                  |
+|--------|-----------------------------|:--------|-------------------------------|-----------------------------------------------------|-----------------------------------------------------------------------|
+| Post   | attribute                   |         | core.attributes.create        | Makes a new attribute with caller as owner          | Required name: optional requirements, permissions, bounds, and value  |
+| Patch  | attribute/edit/:id          |         | core.attributes.edit          | Edit Attributes                                     | Any detail of the attribute, sparse update                            |
+| Get    | attribute/:id               |         | core.attributes.get           | returns full attribute info                         |                                                                       |
+| Get    | attribute/read/:id          | *       |                               | Read Attribute , giving the value (default or live) | Optional element type, element,set, location, time                    |
+| Get    | attribute/:id/bounds/ping   | * (set) | core.attributes.ping          | Determines if the attribute is in bounds            | Location, Time, Space, User  and Set                                  |
+| Get    | attribute/:id/list/types    | *       |                               | Show where attribute is used in the types           | can provide a search using element type and other attributes,iterator |
+| Get    | attribute/:id/list/elements | *       |                               | Show where attribute is used in the elements        | can provide a search,iterator                                         |
+| Get    | attribute/list/managed      |         | core.attributes.list.managed  | Show attribute owned or managed by user             | can provide a search,iterator                                         |
+| Get    | attribute/list/usage        |         | core.attributes.list.usage    | Show attribute not manage, but can be used          | can provide a search,iterator                                         |
+| Delete | attribute/:id               |         | core.attributes.destroy       | Delete Attribute, if the user can                   |                                                                       |
+| Get    | attribute/standard/list     |         | core.attributes.standard.list | Gets standard attributes                            |                                                                       |
 
 
         parent_attribute: attributes can optionally have a single parent

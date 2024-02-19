@@ -87,7 +87,7 @@ Input data:
 * core user id that is wanting the data
 
 Core calls:
-* core.user.read
+* core.users.read
 
 Return data:
 * array of name, value for each description

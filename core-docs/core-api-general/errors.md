@@ -1,27 +1,32 @@
-# Errors and warnings
+# Errors 
 
-errors and warnings will show up in expected areas in any response
+use the https://datatracker.ietf.org/doc/rfc9457/ 
+sample format 
 
-both errors and warnings have int status, message string, code string ,and more_info url
-
-Example:
-
-        {
-        "status": 400,
-        "message": "No to number is specified",
-        "code": 21201,
-        "more_info": "http:\/\/www.twilio.com\/docs\/errors\/21201"
-        "errors": []
+    {
+        type: url to explanation related about the issue
+        status: echos the http code
+        title: short readable summary
+        instance: the error code
+        "errors": {
+                //optional with key=>value pairs as object
         }
+    }
 
-errors array are additional errors, and can be missing
 
-Errors are under the api_errors, in the response. A response may have this missing if no errors. There can be more than one error here,
-so this is an array
+    {
+    "title": "The username field must be at least 3 characters. (and 2 more errors)",
+    "instance": 1,
+    "status": 422,
+    "errors": {
+        "username": [
+            "The username field must be at least 3 characters.",
+            "name should have only letters and numbers and underscrores and not start with a number "
+        ],
+        "password": [
+            "The password field confirmation does not match."
+        ]
+    }
+}
 
-Warnings are same, but under api_warnings.
 
-the status of both uses regular http codes, but only the errors will change the call result past 399.
-If multiple errors, then the highest status will be used.
-
-warnings will change the call http code itself to the highest warning status. Warning codes are always below 400 

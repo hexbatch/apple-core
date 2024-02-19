@@ -36,7 +36,7 @@ paths:
         - user
       summary: Create user
       description: This can be done by anyone
-      operationId: core.user.register
+      operationId: core.users.register
       security: []
       requestBody:
         description: Created user object
