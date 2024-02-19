@@ -94,27 +94,27 @@ If there is no bounds, the attribute is always on. Else, the attribute is only r
 
 # Attributes
 
-[attributes](step-2-attributes/attribute-overview.md) are the core of the api here.
-
+* [attributes](step-2-attributes/attribute-overview.md) are the core of the api here. 
 Attributes can be made to interact with one another, to require each other to be read or used, to set permissions and conditions for anything that happens in this api
 
 
-# Standard attributes
-[standard-attributes.md](step-2-attributes/standard-attributes.md)
+* [standard-attributes.md](step-2-attributes/standard-attributes.md)
 There is a list of attributes that have standard names
 
 ----------------------------------------------------
 
 # Remotes
-[Remotes](step-3-remotes/remote-overview.md) are remote callbacks to be run and generate a value when an element attribute is read# Remotes
+* [Remotes](step-3-remotes/remote-overview.md) are remote callbacks to be run and generate a value when an element attribute is read# Remotes
 
 
 
 # Actions
-[actions](step-4-actions/action-overview.md)
+* [actions](step-4-actions/action-overview.md)
 are attribute values that listen to events and allow things to happen, they can use remotes
 
-[events](step-4-actions/events.md) are listed here
+* [events](step-4-actions/events.md) are listed here
+
+* [servers](step-4-actions/servers.md) allow outside calls to use resources
 
 ---------------------------------------------------------
 

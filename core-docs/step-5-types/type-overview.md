@@ -29,12 +29,15 @@ Types can use attributes owned by others, as long as the permissions work out in
         static_actions: [] list of attributes that hold actions for for the type level events
         attributes_final: [list of final attributes that cannot be overwritten by children]
         parents: []  -- the order is important, this list also has which ones are on and off
-
+        servers:
+            allow_public_servers: default false, if true can be on public
+            protected-servers: list id of protected servers
         
 
 ## Inheritance 
 
-Can add parent to type as long as at least one attribute is readable
+Can add parent to type as long as at least one attribute is readable.
+Can optionally set the server_level for that parent, and that parent's attributes or types will not be visible beyond that
 
 ### Multiple inheritance for attributes
 
@@ -117,3 +120,6 @@ and it is that attribute that is put into the live list for the element.
 This allows for values to be hidden from the people who control the attributes that make up the type, it allows privacy.
 
 
+# Protected server list
+
+there is a way to name a protected list to share it between types. the servers have to be registered here.

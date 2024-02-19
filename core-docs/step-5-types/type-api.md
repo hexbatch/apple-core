@@ -13,15 +13,19 @@ Element types name and info are in its attributes
 
 (other api here involve creating the element, getting element attribute values , and making a requirement)
 
-| Method | Path            | Route Name | Description                         |
-|--------|-----------------|------------|-------------------------------------|
-| Post   | type            |            | Makes a new type                    |
-| Patch  | type/:id        |            | Sparse edit an type                 |
-| Patch  | type/:id/states |            | Sparse edit the states of a type    |
-| Delete | type/:id        |            | Delete Only if not used             |
-| Get    | type/:id/read   |            | Gets the type definition and states |
-| Get    | type/:id/list   |            | iterator, List a type where used    |
-| Get    | types/list      |            | iterator, List all the types        |
+| Method | Path                                      | Route Name | Description                               |
+|--------|-------------------------------------------|------------|-------------------------------------------|
+| Post   | type                                      |            | Makes a new type                          |
+| Patch  | type/:id                                  |            | Sparse edit an type                       |
+| Patch  | type/:id/states                           |            | Sparse edit the states of a type          |
+| Delete | type/:id                                  |            | Delete Only if not used                   |
+| Get    | type/:id/read                             |            | Gets the type definition and states       |
+| Get    | type/:id/list                             |            | iterator, List a type where used          |
+| Get    | types/list                                |            | iterator, List all the types              |
+| Post   | types/server/protected_list/new           |            | Makes a new server protected list         |
+| Post   | types/server/protected_list/:list/edit    |            | Edts a new server protected list          |
+| DELETE | types/server/protected_list/:list/destroy |            | Deletes server protected list             |
+| get    | types/server/protected_list/:list/read    |            | shows details about server protected list |
 
     
         user: one user owns the type
@@ -37,6 +41,9 @@ Element types name and info are in its attributes
         static_actions: [] list of attributes that hold actions for for the type level events
         attributes_final: [list of final attributes that cannot be overwritten by children]
         parents: []  -- the order is important, this list also has which ones are on and off
+        servers:
+            allow_public_servers: default false, if true can be on public
+            protected-servers: list id of protected servers
 
 
 ## Creating a type

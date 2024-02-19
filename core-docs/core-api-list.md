@@ -31,7 +31,8 @@
 
 
 # Actions
-[actions](step-4-actions/actions-api.md)
+* [actions](step-4-actions/actions-api.md)
+* [servers](step-4-actions/server-api.md)
 
 # Types
 [element_types](step-5-types/type-api.md)

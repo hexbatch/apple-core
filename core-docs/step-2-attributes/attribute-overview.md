@@ -83,6 +83,9 @@ options:
           options:
               final:
               human:  
+          servers:
+            read_server_level: default is private
+            write_server_level: default is private
 
 ## Value types
 
