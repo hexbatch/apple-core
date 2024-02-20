@@ -15,6 +15,10 @@ actions can be attached to multiple different attributes
 | Get    | actions/:id/list         |            |       | iterator,List an action where used |
 | Get    | actions/list             |            |       | iterator,List all the actions      |
 | Post   | events/send_custom_event |            | *     | event attribute, target element    |
+| Post   | events/custom/create     |            | *     | make custom event                  |
+| delete | events/custom/remove     |            | *     | unregister custom event            |
+| get    | events/custom/list       |            | *     | list custom events in admin group  |
+| get    | events/standard/list     |            | *     | list standard events               |
 
     action-name: can be any unique name for actions
     action-owner: actions are be owned by a user

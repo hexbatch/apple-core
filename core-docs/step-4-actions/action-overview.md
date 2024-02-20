@@ -73,6 +73,9 @@ In that case, if any actions listening to the event is changing attribute values
 
 An action can only listen to one event.
 
+Event data can be mapped to an action's values to send to the remote.
+An action can set the event data via its rule path (the event attribute its listening to is allowed here, along with the element attributes to change value)
+
 -------------------------------
 ## Events 
 

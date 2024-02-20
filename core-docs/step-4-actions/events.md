@@ -75,18 +75,31 @@ If very large amounts of results, then truncated to first page. Other pages can 
 ## remote errors
 * remote_error 
 
-An action can listen to errors happening to the elements, on one,some or all of the events. Remotes can have issues connecting, or return bad http codes
+An action can listen to errors happening to the with a call to a remote, on other actions in the same element.
+This is sent off to be processed after the other remote tree completely ends.
+The action can map into the fields of the remote_error event
 
 # Event messages can  have data
 
 Events can be designed to hold structured data. They can have accepted top level keys and even a json path to make sure things are as they should be.
 
-When action is run, the remote can give back data, which can be added to the event.
-The event can be defined to only allow some json keys, to filter,and to require some all or none of them
+An action can plug in these values to its value mapping to send to the remote or rules to change the value.
+
+When action is run, the remote can give back data, which can be added to the event by the action mapping rules, before that event is passed to a lower priority handler.
+
+The event can be defined to require some or all its data to be filled in before being given to the actions
 
 For example, in element creation , a remote server can decide, for any reason, to not allow something, when there are many elements doing things.
 If the server has a message attribute or key or field in the response, then this will be added to the api response here when something does not succeed
 
+# DB structure
+each event is defined once
 
+    Event
+        attribute_id
+        all_keys: json data array
+        required_keys: json data array
+    
+standard events are put into the events table
 
 
