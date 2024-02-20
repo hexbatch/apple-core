@@ -12,7 +12,9 @@ Elements cannot be ancestors or parents of themselves.
 Types cannot change ownership, unless all the attributes and bounds and groups also change ownership, or are usuable by the new owner, at the same time.
 (but elements can easiliy change owners)
 
-Types can use attributes owned by others, as long as the permissions work out in the attribute permissions
+Types can use attributes owned by others, as long as the type owner can at least read the attribute at some time/place/condition
+
+Types cannot have attributes added or removed once the first element is created 
 
     So: a type:
         user: one user owns the type
@@ -95,7 +97,7 @@ those attributes will not be available for reading or writing until that parent 
 
 # Attributes 
 
-Attributes can be added to the type, so that they are readable in the element:
+Attributes can be added to the type, so that they are used in the element:
 
 * attribues can be live, in which case they are readable and writable on the element. Each element can have a different value for same attribute
 * or they can be static and the same values are in each element. Then the same attribute state is shared in all the elements.

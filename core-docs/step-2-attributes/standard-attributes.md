@@ -20,7 +20,6 @@ Base server attribute (it has its own gui) is used to make the base standard att
 * Display
 * Event
 * Set Role
-* Admin Role
 
 
 ### standard attribute validators 
@@ -72,8 +71,6 @@ in addition to having special types, they are also marked by a similar attribute
 * see set relations
 * see mutuals
 
-## User types can have attributes added or removed at any time (base attribute admin_role)
-* see user admin tasks
 
 
 

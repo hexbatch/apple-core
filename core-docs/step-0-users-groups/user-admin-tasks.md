@@ -22,7 +22,11 @@ Done via command (task to run on the command line)
 
 
 # flagging users
-adds|removes a system attribute to mark users for system stuff:
+adds|removes a system flag to mark users for system stuff:
 * remote_types: allow them to add sensitive remotes like command and socket remotes
 * remote_activity: allow them to see all remote activity
 * user_read: allows to see all a user's attributes
+* ban: bans a user until a future time, or forever, user is logged out, and nobody can make a new token for it
+* unban - removes a ban
+
+Because user types cannot be changed after an element is made from it, these flags are stored elsewhere
