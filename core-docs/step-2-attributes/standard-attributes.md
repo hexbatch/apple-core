@@ -44,7 +44,8 @@ COLOR (validate as css standard color format)
 * location: info.location
 * timezone: timezone
 * description:info.description
-
+* preferred languages and weights
+* iso region or locality
 
 ## display (base attribute DISPLAY )
 * primary_color:                                          display.primary_color

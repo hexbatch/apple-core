@@ -21,7 +21,6 @@ Some attributes and even some standard definition attributes will be marked as r
 | Get    |      | users/auth/pass_through | core.users.auth.pass_through | gets associated data in the token                   |                                       | uses the log in token to get data |
 | Delete |      | users/auth/delete       | core.users.auth.destroy      | Deletes the token being used in this call           |                                       | cannot delete last token          |
 | Get    | *    | users/get/:id           | core.users.read              | Shows the user information                          | optional wide flag to show attributes |                                   |
-| Get    | *    | users/get/:id           | core.users.read              | Shows the user information                          | optional wide flag to show attributes |                                   |
 | Get    | *    | users/:id/servers/list  |                              | Lists servers user is registered at                 | optional wide flag to show attributes |                                   |
 
 ### User Data returned in the user.create or user.read
