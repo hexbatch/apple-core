@@ -97,7 +97,7 @@ So this is a remote tree when done here.
 
 
 # Each server is a user here
-Inherits from the server element type
+Inherits from the server element type, this inherits from the user element type, that inherits from the base type
 
 # The User table username can have conflicts
 Same username on different servers? The new username prefixes the server's name to his username

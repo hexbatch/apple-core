@@ -52,14 +52,15 @@ If a user is just a member though, he can only view the user element's private d
 
 ## Types of users
 
-The system will create a new type called the User Base type, and it creates an element from that. Other elements can be generated, 
-but the first element can never be deleted
+The system will create a new type called the User Base type, and it creates a new type from that. The user has one element generated already for linking to the user in the db.
+Other elements can be generated, but the first element can never be deleted
 
 The user base type, which always has the same guid across servers, inhertits from the system type, which always has its own guid 
 
 ### Usernames
 
-Each user has a unique username, with no punctuation of most kinds, and not starting with a digit, and no whitespace
+Each user has a unique username, with no punctuation of most kinds, and not starting with a digit, and no whitespace.
+If a user is coming from another server, then that server's username is prended with a dot before the username, which is copied from the other server
 
 # User type patterns
 

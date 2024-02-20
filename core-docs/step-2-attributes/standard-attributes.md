@@ -9,22 +9,6 @@ These always have the same hard coded uuids.
 
 When a standard attribute is used, a new attribute is created that inherits from it
 
-# Standard element types (base type is standard_type)
-
-
-## User Type (standard_type.user)
-
-Each user type inherits from the same base standard user type which has all the core identification and display attributes.
-When a user is created, a new type is made just for the user.
-
-## Remote type  (standard_type.remote)
-When a remote has an element type, then it inherits from this and the user type
-
-
-## Group Set Type  (standard_type.group)
-
-The group-set type has all the core identification and display attributes. When a group-set is created, a new type is made
-
 
 
 # Standard attributes

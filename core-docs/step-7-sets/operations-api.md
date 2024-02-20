@@ -19,6 +19,7 @@ For the write operations (attributes, change owner) this only works when the use
 | Post   | operation/find_common_elements   |            | Find Common elements                       | see docs |
 | Post   | operation/remove_common_elements |            | Remove Common elements                     | see docs |
 | Post   | operation/mutuals                |            | Find mutual sets                           | see docs |
+| Post   | operation/xor                    |            | Find unrelated elements                    | see docs |
 
 
 Sets are referenced by their element id
@@ -42,3 +43,4 @@ Requirements are referenced by their id (and not their element)
         find_common_elements => A source, B source ,  T pattern,  G group, D destination 
         remove_common_elements => A source, B source ,  T pattern,  G group, D destination 
         mutuals => A source, B source (optional),  T pattern,  G group,D destination
+        xor => A..N sources  T pattern,  G group,D destination

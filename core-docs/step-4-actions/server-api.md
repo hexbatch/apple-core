@@ -1,6 +1,6 @@
 # Server Api
 
-Servers
+Servers initial calls
 
 | Method | Path                                   | Route name | TO Do | Description                                       |
 |--------|----------------------------------------|------------|:------|---------------------------------------------------|
@@ -23,6 +23,31 @@ Servers
 | Post   | server/:id/user/permission             |            | *     | gives server permission for that registered token |
 | Post   | server/:id/user/revoke                 |            | *     | revokes a server to use that registered token     |
 | Post   | server/:id/user/register               |            | *     | tells a server they want to come in               |
+
+
+callbacks
+
+| Method | Path                               | Route name | TO Do | Description                 |
+|--------|------------------------------------|------------|:------|-----------------------------|
+| Get    | server/callback/on_create          |            | *     |                             |
+| Get    | server/callback/on_get             |            | *     | optional use, can be direct |
+| Get    | server/callback/on_list            |            | *     | optional use, can be direct |
+| Get    | server/callback/on_destroy         |            | *     |                             |
+| Get    | server/callback/on_edit            |            | *     | optional use, can be direct |
+| Get    | server/callback/on_action          |            | *     |                             |
+| Get    | server/callback/on_attribute_read  |            | *     |                             |
+| Get    | server/callback/on_attribute_write |            | *     |                             |
+| Get    | server/callback/on_element_add     |            | *     |                             |
+| Get    | server/callback/on_element_request |            | *     |                             |
+| Get    | server/callback/on_element_remove  |            | *     |                             |
+| Get    | server/callback/on_type_add        |            | *     |                             |
+| Get    | server/callback/on_type_request    |            | *     |                             |
+| Get    | server/callback/on_type_remove     |            | *     |                             |
+| Get    | server/callback/on_set_add         |            | *     |                             |
+| Get    | server/callback/on_user_register   |            | *     |                             |
+| Get    | server/callback/on_user_permission |            | *     | optional use, can be direct |
+| Get    | server/callback/on_user_revoke     |            | *     | optional use, can be direct |
+| Get    | server/callback/on_user_register   |            | *     | optional use, can be direct |
 
 
 #Api 
@@ -110,3 +135,11 @@ will delete this token so further use on that server will not be associated with
 The user can give his uuid, and the server url he is from. Then that server this call is made on will contact the other server to register it.
 The user then has to give permission.
 
+# Callbacks
+
+Because all of these can be in remote trees, waiting on stuff, and because some of these execute other remote trees first, the response is sent later via the callbacks.
+Each primary has a callback, and some of the primary calls can opt not to get a callback, but wait for response.
+
+All the callbacks do is find the waiting manual remote action, and fill it in, and this will finish that call in the remote tree
+
+callback responses or states are not imporant to the primary api when it calls them async and forgets

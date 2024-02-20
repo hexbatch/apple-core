@@ -120,10 +120,11 @@ are attribute values that listen to events and allow things to happen, they can 
 
 # Element types
 
-[Element types](step-5-types/type-overview.md)
+* [Element types](step-5-types/type-overview.md)
 make elements, and can select them from a set.
 They contain the static attributes that come to life when an element is made
 
+* [System types](step-5-types/system-types.md)
 
 # Elements
 * [elements.md](step-6-elements/element-overview.md)
