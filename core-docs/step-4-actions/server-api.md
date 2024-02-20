@@ -15,9 +15,6 @@ Servers initial calls
 | Post   | server/:id/elements/add                |            | *     | adds new elements from the remote                 |
 | Get    | server/:id/elements/request            |            | *     | a remote requests one or more elements by uuid    |
 | DELETE | server/:id/elements/:element_id/remove |            | *     | adds new elements from the remote                 |
-| Post   | server/:id/types/add                   |            | *     | adds new types from the remote                    |
-| Get    | server/:id/types/request               |            | *     | a remote requests one or more types by uuid       |
-| DELETE | server/:id/types/:type_id/remove       |            | *     | adds new types from the remote                    |
 | Post   | server/:id/sets/add                    |            | *     | adds new types from the remote                    |
 | Post   | server/:id/user/register               |            | *     | links a user on that server with here             |
 | Post   | server/:id/user/permission             |            | *     | gives server permission for that registered token |
@@ -40,9 +37,6 @@ callbacks
 | Get    | server/callback/on_element_add     |            | *     |                             |
 | Get    | server/callback/on_element_request |            | *     |                             |
 | Get    | server/callback/on_element_remove  |            | *     |                             |
-| Get    | server/callback/on_type_add        |            | *     |                             |
-| Get    | server/callback/on_type_request    |            | *     |                             |
-| Get    | server/callback/on_type_remove     |            | *     |                             |
 | Get    | server/callback/on_set_add         |            | *     |                             |
 | Get    | server/callback/on_user_register   |            | *     |                             |
 | Get    | server/callback/on_user_permission |            | *     | optional use, can be direct |
@@ -91,19 +85,15 @@ Any server can call and introduce elements from itself.
 These are put into sets or changed after they are added.
 The type has to be already registered.
 The attributes on the elements have to match all the visible attributes to the server (see server level for a type)
-
+The type of the element is added to the server too, when an elemement is first added. A type cannot be added by itself.
 
 ## Removing elements
 a server can call to remove one or more elements, listed by uuid, in an array
 the element is deleted from the records (so removed from all sets)
 
-## adding types
-A server can call and set new types from it to here.
 
-## removing types
-A server can call and remove a type, this also removes all elements of that type
 
-## requesting types and elements
+## requesting elements
 when someone wants to move a set from one server to another, the elements may be from different servers.
 The users owning/moving the set must be known to the target server first.
 The recieving server will see which servers are not on its list, and do the create server handshake,

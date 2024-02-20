@@ -5,7 +5,9 @@ Elements and types can be exchanged between the servers, and events are sent to 
 But which events are sent depends on the server data sharing level.
 
 
-Much like object-oriented data is, there are three levels of servers for an action.
+Much like object-oriented data is, there are three levels of servers for an action. 
+The max level of the action is set in the action, and the type determines if the server is protected or public, or even to allow public.
+
 * Private means just on this server.
 * Protected means both servers agree to be on each other's protected lists
 * Public means all other servers.
@@ -85,9 +87,8 @@ If the type has a constructor event, seen by that server, then calling the const
 
 The server can remove elements and types from that server at any time.
 
-Before an element is added, there is an optional event listener that can be called before_server_add
-this can deny the move to the server
-each element transfer is connected to the remote activity
+Before an element is added, there is an optional event listener before_server_add_element that can be called.
+this can deny the move to the server. A type cannot be transferred over by itself, an element has to be approved first.
 
 # Adding sets to servers
 a server can add in an entire set to another server.
@@ -95,11 +96,15 @@ The elements in the set can be from that or other servers.
 The non-local elements, which can include the set definition element, are sourced from their servers, and all have to succeed, before the set is added
 So this is a remote tree when done here.
 
+# Registration of servers
+a server connects to this instance to register itself, this is talked more about in the server api.
+Before a server is approved, the newly created server user has an event is_server_allowed run on it to decide to automaticaly deny it or approve it
+this event is called 
 
-# Each server is a user here
+## Each server is a user here
 Inherits from the server element type, this inherits from the user element type, that inherits from the base type
 
-# The User table username can have conflicts
+## The User table username can have conflicts
 Same username on different servers? The new username prefixes the server's name to his username
 
 # Server Data we keep
@@ -115,7 +120,10 @@ Same username on different servers? The new username prefixes the server's name 
         calls_made_current_unit:
         unit_ends_at: 
         server_paused_at: null or when, if not null, then server cannot call actions here
-        server_allowed: bool, depending on whitelist options, may need admin editing to turn this server on
+        server_status: enum pending|allowed|blocked, depending on whitelist options, may need admin editing to turn this server on
+        server_auto_inspect_stack_id: nullable but allows tracing of decisions later
+        manual_server_status_user_id: nullable set if using api to manually set
+        last_status_at: when the current status was set
         
 * The current server registers its own user here too
 * The user with this server has its name and description attributes, or any other attributes, applied to any server data seen 
@@ -134,3 +142,4 @@ when a server gets remote elements, or calls a remote for attribute values, it s
 when an operation to transfer stuff between servers is made, then we need a remote tree, for each server api call there is a remote made by the system.
 when that api call is needed, then the regular remote system is used for any communication with the other server.
 The affected users, types and elements are linked into the remote activity
+

@@ -57,10 +57,25 @@ Group sets have events for membership
 
 
 server transfer and copying
-* before_server_add
+* before_server_add_element
+    If an action denies, then this element is not copied over to the server in question
+* is_server_allowed
+  * if existing on the server object, then this can auto accept or reject the server being registered
+  * can be decided manually by admin role
+  * tri value, nullish, truthful, or falsy. nullish means just keep pending 
+* before_server_register_user
+  * called on the user in question, and can automatically allow the user agreeing to be used in actions in another server
+  * can be decided manually by the user later using the api
 
 
-## custom events 
+## remote errors
+* remote_error 
+
+An action can listen to errors happening to the with a call to a remote, on other actions in the same element.
+This is sent off to be processed after the other remote tree completely ends.
+The action can map into the fields of the remote_error event
+
+## custom events
 
 Sometimes extensions and layers need to fire off their own events.
 Here, we can send a custom event, anything that inherits from the custom even attribute.
@@ -71,13 +86,6 @@ The element has to have the actions listening to that custom event, to act on it
 A custom event to can be sent to a search path, and any action in the search path can listen to it.
 If very large amounts of results, then truncated to first page. Other pages can be run after that.
 
-
-## remote errors
-* remote_error 
-
-An action can listen to errors happening to the with a call to a remote, on other actions in the same element.
-This is sent off to be processed after the other remote tree completely ends.
-The action can map into the fields of the remote_error event
 
 # Event messages can  have data
 
