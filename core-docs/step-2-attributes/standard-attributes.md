@@ -19,6 +19,7 @@ Base server attribute (it has its own gui) is used to make the base standard att
 * ID
 * Display
 * Event
+* Servers
 * Set Role
 
 
@@ -61,11 +62,9 @@ COLOR (validate as css standard color format)
 ## events (base attribute event)
 * see list of events
 
-## type categories (base attribute type_category)
-in addition to having special types, they are also marked by a similar attribute
-* user
-* remote
-* group_set
+## servers
+* domain name or subdomain
+* reputation
 
 ## Set Role (base attribute set_role)
 * see set relations

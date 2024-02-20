@@ -14,7 +14,8 @@ When building the live attributes from a type:
 * a child set attribute changes overwrites the parent
 * no limit to how many live attributes that overwrite the earlier one. They stack by when applied.
 
-
+If the  attribute has no default value, then do not put into list until there is a write,
+a missing entry here means the element has null value for the attribute
 
 
     Live attribute:
