@@ -40,6 +40,7 @@ When the editable flag is used, only the attributes that are editable, via permi
 ## List servers the user has been on
 Will list the servers the user is used at, and well as the servers the user gave permission. There is a filter here
 * Another filter can be used to find types, elements, actions or events
+* This can only be seen by the user's admin group or someone with the view user data role
 
 # Todo
 
