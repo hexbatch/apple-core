@@ -22,6 +22,7 @@ Some attributes and even some standard definition attributes will be marked as r
 | Delete |      | users/auth/delete       | core.users.auth.destroy      | Deletes the token being used in this call           |                                       | cannot delete last token          |
 | Get    | *    | users/get/:id           | core.users.read              | Shows the user information                          | optional wide flag to show attributes |                                   |
 | Get    | *    | users/get/:id           | core.users.read              | Shows the user information                          | optional wide flag to show attributes |                                   |
+| Get    | *    | users/:id/servers/list  |                              | Lists servers user is registered at                 | optional wide flag to show attributes |                                   |
 
 ### User Data returned in the user.create or user.read
 
@@ -36,9 +37,15 @@ Some attributes and even some standard definition attributes will be marked as r
 When the wide flag is used in the read, then it will be a list of attribute name: attribute value
 
 When the editable flag is used, only the attributes that are editable, via permissions of the calling user, will be returned
+# Api
+## List servers the user has been on
+Will list the servers the user is used at, and well as the servers the user gave permission. There is a filter here
+* Another filter can be used to find types, elements, actions or events
 
 # Todo
 
 do get wide flag to show attribute values 
 
 # Search users is done at the search api
+
+

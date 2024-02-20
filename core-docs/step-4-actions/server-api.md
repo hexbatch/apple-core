@@ -13,6 +13,10 @@ Servers
 | Post   | server/:id/user/register   |            | *     | links a user on that server with here             |
 | Post   | server/:id/user/permission |            | *     | gives server permission for that registered token |
 | Post   | server/:id/user/revoke     |            | *     | revokes a server to use that registered token     |
+| Post   | server/:id/user/register   |            | *     | tells a server they want to come in               |
+
+
+#Api 
 
 ## create server
 Anybody can call this and claim their url for a new entry. The user has to be logged in, and the logged-in user is associated with that server.
@@ -21,33 +25,43 @@ The server has to set its dns text record with its guid, that guid has to be pas
 If all is ok, then a token is generated and given back.
 A user can only do one server, this is because that user is the server here.
 
-servers have a default rate api and time set to not allow any calls
+servers have a default rate api and time set to not allow any calls.
+The target server, will also call the originating server to register itself, and can pass in any schedule here
 
 ## get server
 The logged-in user, or his admin group, can get details about the server associated with them, including that token generated above.
 This token is what is sent to the action call
 
-# delete server
+## delete server
 The logged-in user only can remove the server associated with him, this also removes any protected tokens.
 Or a user on this server with admin role can do that.
 
-# edit server
+## edit server
 Someone with a server admin role can edit this server to have rate api and a schedule set to anything
 
-# call action
+## call action
 the logged in server/user can call this, with its token and the element guid and the remote user guid .
 If the action,element, and element type match up for existing and levels, the action is run
 
-# user register
-the logged in server or its admin group can register the user guid from here as also there, and get a token back
-if not revoked but exising, will get previous token. If revoked gets new token
+## The server registers a user
+the logged in server or its admin group can register the user guid from here as also being used there. 
+This make a token just for that user and server. If one already is made , that is the one returned.
+This token will not represent the user here, in calls for actions to be done, until that user gives permission.
 
-# user give permission
-The user who is registered gives permission to use that token, that user is logged in for this call, not server.
+## user give permission
+The user who is registered gives permission to use that token in called actions from that server.
 The user is associated with that token.
 Optional time to live
 
-# user revoke permission
-the user who is registerd refuses that token, so the token is deleted (revoked) and will not be associated with that user
+When the action is called by the server user or its admin group, that token is passed in to show this call is being made on behalf of that user.
 
+
+## user revoke permission
+can be called by the server or token's user, or their  admin groups,
+will delete this token so further use on that server will not be associated with the token's  user
+
+
+## The user registers on a server 
+The user can give his uuid, and the server url he is from. Then that server this call is made on will contact the other server to register it.
+The user then has to give permission.
 

@@ -26,7 +26,7 @@ When building the live attributes from a type:
         current_value: 
         activated: boolean - if not activated then this attribute does not count in the live, its skipped over
         toggled_at: timestamp 
-        local_state: if this attribute holds a remote
+        constant_status_type: (not_constant,is_constant,waiting_constant) enum --set a element creation, or first write
 
 There can be duplicates of attributes here, from different parent types , or a shell context
 When a context ends, it's removed from the lookup here and the element type attribute is used again

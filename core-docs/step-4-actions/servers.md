@@ -4,6 +4,7 @@ There can be multiple copies of this libary running at the same time, and they c
 Elements and types can be exchanged between the servers, and events are sent to the original server.
 But which events are sent depends on the server data sharing level.
 
+
 Much like object-oriented data is, there are three levels of servers for an action.
 * Private means just on this server.
 * Protected means both servers agree to be on each other's protected lists
@@ -51,10 +52,57 @@ The writes are always sent
 Attributes also have a read and write server level
 
 # attributes using user permissions on other servers
-Users can register with other servers by passing in their id for this server
-That server will call this and leave a token for that user, when that server is making api calls from the other server, all calls include this token.
-The token is not valid until the user runs an api call, logged in verifying this token as theirs.
-Once this token is verified, then the remote server call user will be mapped to this user, and all permissions work in the attributes.
+A server can call another and say this user is being referenced on my server.
+The server gets a token to associate that user with in calls to run actions. When the action is run, the token is passed in,
+and represents the user this action is for, even though the server user is making that call to run the action
+
+But, the user this token is about has to first approve this. Until then, an action run with that token will result in an error 
+(because everyone needs to be logged in)
+
+Each server has its own token done like this for each user.
+
+Users can register with other servers by passing in their uuid for this server
 
 # rate limits and allowed times
 each server can optionally be given an api rate limit per unit of time, and a schedule
+
+
+# Existing user visits a server
+The user tells the server his uuid, and the server url he is from.
+This is different from new user signup, the user already exists, but not in there.
+
+Then that server calls the user's home server to get a token to use in actions.
+Then that server gets the user token to do the registration for that user. See username conflicts below.
+
+The user does not have to give permissions after this, but then the action will not be called to run when he does stuff. Automatically failing events
+The user can give or remove permission.
+
+# The User table username can have conflicts
+Same username on different servers? The new username prefixes the server's name to his username
+
+# Server Data we keep
+    
+    Server:
+        user:
+        time bounds: (optional)
+        server_token: uuid 
+        domain: (has to be reverse lookable)
+        confirmed_at: null for unconfirmed
+        calls_per_unit:
+        seconds_in_unit:
+        calls_made_current_unit:
+        unit_ends_at: 
+        server_paused_at: null or when, if not null, then server cannot call actions here
+        server_allowed: bool, depending on whitelist options, may need admin editing to turn this server on
+        
+* The current server registers its own user here too
+* The user with this server has its name and description attributes, or any other attributes, applied to any server data seen 
+
+store user tokens for each user on a server (we do not need user tokens on their home server)
+    
+    user token:
+        user_id:
+        server_id:
+        permitted_at: (null for not)
+            
+
