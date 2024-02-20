@@ -56,6 +56,10 @@ Group sets have events for membership
 * admin_removed
 
 
+server transfer and copying
+* before_server_add
+
+
 ## custom events 
 
 Sometimes extensions and layers need to fire off their own events.

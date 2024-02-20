@@ -16,6 +16,7 @@ Types can use attributes owned by others, as long as the permissions work out in
 
     So: a type:
         user: one user owns the type
+        server: null or a remote one so if server is deleted, type stays
         ref: uuid
         allowed_creators: an optional user group
         name: using the naming rules

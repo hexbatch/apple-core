@@ -24,6 +24,7 @@ When building the live attributes from a type:
         set: set id for shell only changes
         parent: this table id for the attribute (if shell) allows popping shells
         current_value: 
+        time_to_live: datetime when this value expires, null for non remote server types, for constant
         activated: boolean - if not activated then this attribute does not count in the live, its skipped over
         toggled_at: timestamp 
         constant_status_type: (not_constant,is_constant,waiting_constant) enum --set a element creation, or first write

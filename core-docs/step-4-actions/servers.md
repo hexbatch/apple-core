@@ -77,6 +77,28 @@ Then that server gets the user token to do the registration for that user. See u
 The user does not have to give permissions after this, but then the action will not be called to run when he does stuff. Automatically failing events
 The user can give or remove permission.
 
+# Elements and types changing servers.
+A server can add in types and elements from their stuff to other servers.
+The added in types cannot be sent to yet another server, instead the origining server has to be told about it and it will do this.
+
+If the type has a constructor event, seen by that server, then calling the constructor action remotely returns the new element information
+
+The server can remove elements and types from that server at any time.
+
+Before an element is added, there is an optional event listener that can be called before_server_add
+this can deny the move to the server
+each element transfer is connected to the remote activity
+
+# Adding sets to servers
+a server can add in an entire set to another server.
+The elements in the set can be from that or other servers.
+The non-local elements, which can include the set definition element, are sourced from their servers, and all have to succeed, before the set is added
+So this is a remote tree when done here.
+
+
+# Each server is a user here
+Inherits from the server element type
+
 # The User table username can have conflicts
 Same username on different servers? The new username prefixes the server's name to his username
 
@@ -104,5 +126,11 @@ store user tokens for each user on a server (we do not need user tokens on their
         user_id:
         server_id:
         permitted_at: (null for not)
-            
 
+When an element type is imported, it has the server_id in the type
+
+when a server gets remote elements, or calls a remote for attribute values, it stores them in the live table, and a time to live.    
+
+when an operation to transfer stuff between servers is made, then we need a remote tree, for each server api call there is a remote made by the system.
+when that api call is needed, then the regular remote system is used for any communication with the other server.
+The affected users, types and elements are linked into the remote activity
