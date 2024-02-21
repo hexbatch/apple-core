@@ -18,6 +18,8 @@ Base server attribute (it has its own gui) is used to make the base standard att
 * Types
 * ID
 * Display
+* Data
+* Content
 * Event
 * Servers
 * Set Role
@@ -59,6 +61,28 @@ COLOR (validate as css standard color format)
 * medium_thumbnail: url                                   display.image.medium_thumbnail
   
 
+## data (base attribute DATA)
+* starts_at  iso_8601
+* ends_at iso_8601
+* created_at iso_8601
+* updated_at iso_8601
+* domain includes subdomain, not path or protocol
+* identifier any
+* hight_px number
+* width_px number
+* hight_cm number
+* width_cm number
+* weight_kg number
+
+# Content (base attribute Content)
+* author
+* copywrite
+* url
+* rating
+* mime_type
+* keywords
+* language_code
+* iso_region
 
 ## events (base attribute event)
 * see list of events
