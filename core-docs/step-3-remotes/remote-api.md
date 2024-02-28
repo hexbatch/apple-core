@@ -36,7 +36,7 @@ There can be multiple test_contexts for each remote.
         is_on : if off then all read and writes will fail and the remote not called
         uri:
             action:
-                uri_type: (none,url,socket,console,manual)
+                uri_type: (none,url,socket,console,manual,code)
                 uri_method (post, get, patch, put, delete)
                 uri_port:
                 uri_string 
@@ -48,7 +48,7 @@ There can be multiple test_contexts for each remote.
                 uri_port:
                 uri_string 
                 uri_to_remote_format
-            api_fail:
+            event_fail:
                 uri_type: (none,url,socket,console,manual)
                 uri_method (post, get, patch, put, delete)
                 uri_port:

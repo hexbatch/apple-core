@@ -23,7 +23,7 @@ Remotes handle their own state, this is made easier when each remote call is giv
         is_retired: default false // if true then cannot be added to element types
         is_on : if off then all read and writes will fail and the remote not called
         uri:
-            uri_type: (none,url,socket,console,manual)
+            uri_type: (none,url,socket,console,manual,code)
             uri_method (post, get, patch, put, delete)
             uri_port:
             uri_string 

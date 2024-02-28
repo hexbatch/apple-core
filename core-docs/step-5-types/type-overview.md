@@ -33,8 +33,7 @@ Types cannot have attributes added or removed once the first element is created
         attributes_final: [list of final attributes that cannot be overwritten by children]
         parents: []  -- the order is important, this list also has which ones are on and off
         servers:
-            allow_public_servers: default false, if true can be on public
-            protected-servers: list id of protected servers
+            list id of protected servers
         
 
 ## Inheritance 
@@ -108,6 +107,11 @@ Attributes can be on a final list, so that any child cannot override them (type 
 
 Once a type has an element created, the type cannot be changed. Attributes cannot be added or removed to the type.
 
+## Types can be created in a set context
+
+Any attribute can be used in a type as long as the type owner making the api call can read the attribute. 
+When a type is defined, it can be defined in a set context. This can change which attributes the user can read
+
 ## Defining action listeners 
 
 attributes can be placed in the live_actions if they hold an action, these have state in the elements 
@@ -122,7 +126,24 @@ and it is that attribute that is put into the live list for the element.
 
 This allows for values to be hidden from the people who control the attributes that make up the type, it allows privacy.
 
+# Servers
 
-# Protected server list
+## allow public
+This allows reading and writing of attributes that are not in the protected or private status
 
+## Protected server list
+This list holds the servers that are allowed to read and write protected data
 there is a way to name a protected list to share it between types. the servers have to be registered here.
+
+## Attribute lists
+* the attribute lists can be just the attribute names or ids, but can also be their server level and if they are read|write|both on that level
+* Private and protected inherit if not mentioned from protected or public
+* only private access unless otherwise defined
+
+example:
+    artimus.banshee: {public:read,protected:read,write} -- private is also read and write
+    artimus.banshee: {public:read,private:read,write} -- protected is read
+    artimus.banshee: {private:read,write} -- only private access
+    artimus.banshee: {} -- only private access
+
+

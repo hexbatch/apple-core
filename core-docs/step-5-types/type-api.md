@@ -42,15 +42,14 @@ Element types name and info are in its attributes
         attributes_final: [list of final attributes that cannot be overwritten by children]
         parents: []  -- the order is important, this list also has which ones are on and off
         servers:
-            allow_public_servers: default false, if true can be on public
-            protected-servers: list id of protected servers
+            protected-servers: list id/name of protected servers
 
 
 ## Creating a type
 The user running this is the owner,
 Required is name and at least one attribute.
 
-## Reading an type
+## Reading a type
 
 When getting the type state, the type state for the remotes running on it can be seen
 
@@ -78,4 +77,6 @@ Gives list of elements, wide option to list elements made by descendants to N le
 ## Listing types owned by this user
 
 filter by attribute name or type parent or ancestor of N level range, or some combinations
+
+    
 

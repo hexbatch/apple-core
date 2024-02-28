@@ -74,6 +74,7 @@ An attribute can be deleted if only it's not used anywhere
             regex: (string only can set enums here)
             default:
             allow_null: default true, but can only be false if the default is set
+            remote_use_policy enum of read_and_write_local,read_only_remote_write_local,write_only_remote_read_local,read_and_write_remote, default is first  
         options:
             final:
             human:

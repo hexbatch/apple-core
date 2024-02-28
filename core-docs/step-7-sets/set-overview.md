@@ -99,3 +99,13 @@ Between the ability to control when an element is added to a set, and when somet
 Additionally, user permission is by group, and group membership can be restricted to a boundary (only active in time or location)
 
 
+# Set visibility
+For an element to be inside a set, it needs to be able to see the set. A set can be in the global space of a server, seen by all in the server. 
+Or it can be inside some other set, seen only by elements in that set or relations. 
+A set in a parent set can be seen in the children sets. 
+A linked set can have its sets seen by elements inside the linker. 
+An element in a parent cannot see sets in children.
+A linked set cannot see sets in its linker, unless it makes a link itself.
+An api operation can try to put any element it can into a set. The element can go inside if:
+* the user can read at least one attribute of the element
+* the set is visible to the element
