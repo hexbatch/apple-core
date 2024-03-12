@@ -1,38 +1,35 @@
 # Urls called to get attribute values
 
-Urls and program calls can be assigned to attributes, to be called when getting an attribute value, or writing an attribute value.
+Urls and program calls can be assigned to actions, to be called when getting responding to events,
+Events can also be when an attribute value is read or written to.
 
-Remotes are created by themselves, and can be tested without an attribute.
+Remotes are created by themselves, and can be tested without an action.
 
-Remotes attached to an attribute are called when that attribute is read or written to, depending on policy in the remote.
 
-Remotes power actions, and are called when that action has an event
 
-Remotes can only write or read from their holder (the action or attribute), they cannot write or read other actions or attributes
-
-Remotes handle their own state, this is made easier when each remote call is given information about the action, attribute,element, type and set its in.
 
 # Definition of a remote
 
+
     remote:
         user: required
+        element: 
         usage_group: (optional) if no usage group then anyone can use
-        remote_element: (optional) This element is from the type 
+        remote_element: (optional) for notes, discovery and more. This element is from the type below
         remote_element_type: (optional) This remote type inherits from the standard remote type and the user type of the creator
-        name : unique in remotes
+        remote_name : unique in remotes
         is_retired: default false // if true then cannot be added to element types
-        is_on : if off then all read and writes will fail and the remote not called
-        uri:
-            uri_type: (none,url,socket,console,manual,code)
-            uri_method (post, get, patch, put, delete)
-            uri_port:
-            uri_string 
-            uri_to_remote_format
-            uri_from_remote_format
-        cache:
-            is_caching: bool, if true then each last call updates the cache, and if same cache param key values then cache is used
-            cache_ttl_seconds: how old the cache is allowed to be
-            cache_keys: array of set of allowed keys to use for the cache comparisons, empty means each response resets the cache
+        is_on : if off then all read and writes will fail and the uri not called
+        uri_type: (none,url,socket,console,manual,code)
+        uri_method (post, get, patch, put, delete)
+        uri_port:
+        uri_protocol: (if url, then choose http or https) 
+        uri_to_remote_format:
+        uri_from_remote_format:
+        remote_uri_main: for url this is domain and subdomain, or ip, for commands and sockets this is the first part before any whitespace. 
+                            Manual leaves this blank. Code has the class with namespace
+        remote_uri_path: for url this is the path, for command and port this is what is left over from the field above, this can have placeholders
+
         data:
             from_remote_map: array<rule to convert data from the remote to value in (attr or action)>
             to_remote_map: array<rule to convert either pre-set value, or data in (attr or action) to some part of a data format to the remote>
@@ -41,6 +38,19 @@ Remotes handle their own state, this is made easier when each remote call is giv
             rate_limit_max_per_unit: x
             rate_limit_unit_in_seconds: x
             max_concurrent_calls: default 1
+        cache:
+            is_caching: bool, if true then each last call updates the cache, and if same cache param key values then cache is used
+            cache_ttl_seconds: how old the cache is allowed to be
+            cache_keys: array of set of allowed keys to use for the cache comparisons, empty means each response resets the cache
+        meta:
+            time_bounds: optional time bounds, 
+            map_bounds: optional map bounds
+            icu_locale_codes: optional locale codes this remote supports
+            privacy_link: optional url 
+            privacy_link: optional terms_of_use_link url 
+            privacy_link: optional about_link url 
+            description: optional man page for how to use this remote
+        
         
 
 

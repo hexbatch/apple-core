@@ -26,46 +26,7 @@ There can be multiple test_contexts for each remote.
 | get    | remotes/activity/:activity/get    | core.remotes.activity.get    |      | gets a remote activity                                |                                                                          |
 | get    | remotes/stack/:stack/get          |                              | *    | shows the activities in a stack, and how the stack is |                                                                          |
 
-## Data for defining a remote
 
-
-        user: required
-        usage_group: (optional)
-        name : unique in remotes
-        is_retired: default false // if true then cannot be added to element types
-        is_on : if off then all read and writes will fail and the remote not called
-        uri:
-            action:
-                uri_type: (none,url,socket,console,manual,code)
-                uri_method (post, get, patch, put, delete)
-                uri_port:
-                uri_string 
-                uri_to_remote_format
-                uri_from_remote_format
-            api_succcess:
-                uri_type: (none,url,socket,console,manual)
-                uri_method (post, get, patch, put, delete)
-                uri_port:
-                uri_string 
-                uri_to_remote_format
-            event_fail:
-                uri_type: (none,url,socket,console,manual)
-                uri_method (post, get, patch, put, delete)
-                uri_port:
-                uri_string 
-                uri_to_remote_format
-        cache:
-            is_caching: bool, if true then each last call updates the cache, and if same cache param key values then cache is used
-            cache_ttl_seconds: how old the cache is allowed to be
-            cache_keys: array of set of allowed keys to use for the cache comparisons, empty means each response resets the cache
-        data:
-            from_remote_map: array<rule to convert data from the remote to value in (attr or action)>
-            to_remote_map: array<rule to convert either pre-set value, or data in (attr or action) to some part of a data format to the remote>
-            is_sending_context_to_remote: bool (default false)
-        call_schedule:
-            rate_limit_max_per_unit: x
-            rate_limit_unit_in_seconds: x
-            max_concurrent_calls: default 1
 
 # List activity 
 can optionally list for status or just the single activity

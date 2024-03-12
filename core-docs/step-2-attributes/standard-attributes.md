@@ -68,10 +68,8 @@ COLOR (validate as css standard color format)
 * updated_at iso_8601
 * domain includes subdomain, not path or protocol
 * identifier any
-* hight_px number
-* width_px number
-* hight_cm number
-* width_cm number
+* size_px number
+* size_cm number
 * weight_kg number
 
 # Content (base attribute Content)

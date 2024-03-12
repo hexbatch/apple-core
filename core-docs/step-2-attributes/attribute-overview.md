@@ -55,7 +55,8 @@ options:
               // each bounds can have max one type of bounds: location, time , path
               read_bounds: [] 
               write_bounds: []
-            
+              path_bounds: []
+
           requirements:
               elements:
                   required_siblings: [attribute ids] for sharing the same element type or element
@@ -84,9 +85,7 @@ options:
           options:
               final:
               human:  
-          servers:
-            read_server_level: default is private
-            write_server_level: default is private
+
 
 ## Value types
 

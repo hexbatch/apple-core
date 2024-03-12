@@ -31,53 +31,7 @@ An attribute can be deleted if only it's not used anywhere
 | Get    | attributes/standard/list     |         | core.attributes.standard.list | Gets standard attributes                            |                                                                       |
 
 
-        parent_attribute: attributes can optionally have a single parent
-        user: can be one or none
-        name: name of the attribute (unique to all attributes)
-        is_retired: default false // if true then cannot be added to element types 
-
-        meta:
-            (can be in different langs or default lang)
-            description: (in plain text or markup)
-            name: (translate the name or a name that does not fit in the name rules for the legal name)
-            standard-family: if named here this is a standard attribute
-            author: who made this
-            copywrite: any copywrite on the attribute content
-            url: where to go for more info
-            rating: marks adult or otherwise sensitive content (includes trigger warnings)
-        bounds:
-            // each bounds can have max one type of bounds: location, time , path
-            read_bounds: []
-            write_bounds: []
-
-        requirements:
-            elements:
-                required_siblings: [attribute ids] for sharing the same element type or element
-                forbidden_siblings: [attribute ids] cannot be in the same element or type
-            sets:
-                allergies: [force_rules] cannot be in the same set if force rules apply 
-                affinities: [force_rules] this can only be in the set where force rules apply
-        permissions:
-            user_groups:
-                usage: [] if empty then only the user's group can use this to create their types or add to elements 
-                read: []  if empty anyone can read the attribute value
-                write: [] if empty the admin group can change the attribute value.
-            set_requirements: 
-                is_read_policy_all: bool  
-                is_write_policy_all: bool  
-                read: [] attribute ids  : based on policy, if one, then any matches in a set makes it readable, or all must match
-                write: [] attribute ids : based on policy, if one, then any matches in a set makes it readable, or all must match
-        value:
-            value_type: (name of the type of data )
-            min: (numeric only)
-            max: (numeric only)
-            regex: (string only can set enums here)
-            default:
-            allow_null: default true, but can only be false if the default is set
-            remote_use_policy enum of read_and_write_local,read_only_remote_write_local,write_only_remote_read_local,read_and_write_remote, default is first  
-        options:
-            final:
-            human:
+        
 
 
 

@@ -1,9 +1,11 @@
 # Actions
 
-Event listeners, they can approve an action or can change attributes values on the same element , or can turn attributes on the element on or off.
+Actions are a type of attribute, a super attribute.
+
+Event listeners, they can approve an action or can change attributes values on itself, other attributes in the same element , or can turn attributes on the element on or off.
+Can listen to events on attributes in different actions.
+The element owner, or the user who created the action, has to be able to read the other attributes, if other attributes are used. Writing to attribute is similar.
 Actions can also turn on and off parents of elements.
-The attributes do not need to be attached to the same element as the attribute that holds the action,
-but as long as the attribute can be changed by the user who owns the element, it can be changed.
 
 
 ## what actions can do
@@ -125,7 +127,7 @@ so an action:
             initial_mapping: array, [rules search path to read attributes (can be anywhere), merge policy, name of the key M to hold value]
             action_mapping: array, [value of a key from above  (logic), optional value of a key from above (value), action type to do, target attribute path id (same element)]
 
-    event-id:  the event These are attributes, can use one event or a parent event. Actions can be turned off and on, to not listen to event, 
+    event-id:  the event attribute, can use one event or a parent event. Actions can be turned off and on, to not listen to event, 
                 based on the path boundaries of the attribute the action is hooked up to
     
 
