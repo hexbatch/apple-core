@@ -60,14 +60,15 @@ Remotes are created by themselves, and can be tested without an action.
             uri_type: (none,url,console,manual,code)
             uri_method if url, (post, get, patch, put, delete)
             uri_protocol: if url, (http, https)
-            uri_port:
-            uri_to_remote_format:
-            uri_from_remote_format:
+            uri_port: number or empty
+            uri_to_remote_format: (text,xml,json,yaml,form-urlencoded,multipart-form-data,query)
+            uri_from_remote_format: (text,xml,json,yaml,form-urlencoded,multipart-form-data,query)
             remote_uri_main: for url this is domain and subdomain, or ip, for commands, this is the first part before any whitespace. 
                                 Manual ignores this. Code has the class with namespace
             remote_uri_path: for url this is the path, for command this is what is left over from the field above
             xml_root_name : if xml then name of the root node
             xml_doc_type : if xml then object containing doc information
+
 
 
 
