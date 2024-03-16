@@ -12,45 +12,60 @@ Remotes are created by themselves, and can be tested without an action.
 
 
     remote:
-        user: required
-        element: 
+        user: the creator of this remote
         usage_group: (optional) if no usage group then anyone can use
-        remote_element: (optional) for notes, discovery and more. This element is from the type below
-        remote_element_type: (optional) This remote type inherits from the standard remote type and the user type of the creator
+        remote_element: (generated) for notes, discovery and more. This element is from the type below
+        remote_element_type: (generated) This remote type inherits from the standard remote type and the user type of the creator
         remote_name : unique in remotes
         is_retired: default false // if true then cannot be added to element types
         is_on : if off then all read and writes will fail and the uri not called
-        uri_type: (none,url,socket,console,manual,code)
-        uri_method (post, get, patch, put, delete)
-        uri_port:
-        uri_protocol: (if url, then choose http or https) 
-        uri_to_remote_format:
-        uri_from_remote_format:
-        remote_uri_main: for url this is domain and subdomain, or ip, for commands and sockets this is the first part before any whitespace. 
-                            Manual leaves this blank. Code has the class with namespace
-        remote_uri_path: for url this is the path, for command and port this is what is left over from the field above, this can have placeholders
-
         data:
-            from_remote_map: array<rule to convert data from the remote to value in (attr or action)>
-            to_remote_map: array<rule to convert either pre-set value, or data in (attr or action) to some part of a data format to the remote>
-            is_sending_context_to_remote: bool (default false)
+            from_remote_map: (zero or more of) [
+                map_type: (data,header,response_code)
+                remote_json_path: optional json path
+                remote_regex_match: optional splitting and or matching of text
+                remote_data_name: the top key of this
+            ]
+
+            to_remote_map: (zero or more of) [
+                map_type: (data,header,file)
+                cast_data_to_format: (text,xml,json,yaml) or null
+                is_secret: bool default false
+                holder_json_path: json path for the data holder
+                remote_data_name: key this is sent under (or null for no key)
+                remote_data_value: constant data value (json or primative)
+            ]
+
         call_schedule:
             rate_limit_max_per_unit: x
             rate_limit_unit_in_seconds: x
             max_concurrent_calls: default 1
+
         cache:
             is_caching: bool, if true then each last call updates the cache, and if same cache param key values then cache is used
+            is_using_cache_on_failure: if remote fails, and has a cache use that
             cache_ttl_seconds: how old the cache is allowed to be
             cache_keys: array of set of allowed keys to use for the cache comparisons, empty means each response resets the cache
+
         meta:
-            time_bounds: optional time bounds, 
-            map_bounds: optional map bounds
+            time_bounds: optional time bounds, not enforced on this end
+            map_bounds: optional map bounds, not enforced on this end
             icu_locale_codes: optional locale codes this remote supports
             privacy_link: optional url 
-            privacy_link: optional terms_of_use_link url 
-            privacy_link: optional about_link url 
+            terms_of_use_link: optional terms_of_use_link url 
+            about_link: optional about_link url 
             description: optional man page for how to use this remote
-        
+
+        uri:
+            uri_type: (none,url,console,manual,code)
+            uri_method if url, (post, get, patch, put, delete)
+            uri_protocol: if url, (http, https)
+            uri_port:
+            uri_to_remote_format:
+            uri_from_remote_format:
+            remote_uri_main: for url this is domain and subdomain, or ip, for commands, this is the first part before any whitespace. 
+                                Manual ignores this. Code has the class with namespace
+            remote_uri_path: for url this is the path, for command this is what is left over from the field above
         
 
 
@@ -64,8 +79,7 @@ Constant data can also be included in these rules, which does not depend on the 
 Header key values can be put in the output map for those to be included.
 
 
-if the is_sending_context_to_remote: bool is on (default off)
-then the following is also sent to the remote:
+the following is also sent to the remote:
 * The guid of the type the remote is associated with is also sent with the data as type_guid
 * The guid of the element the remote is associated with is also sent with the data as element_guid
 * The guid of the attribute the remote is associated with is also sent with the data as attribute_guid
@@ -126,3 +140,5 @@ Remotes will be logged when used to call or even for cache. Logged may be pruned
 Remotes can get notifications for the failure or the success of the api they are used.
 This can be a different uri for either
 
+# meta
+remotes can have information that does not affect their behavior
