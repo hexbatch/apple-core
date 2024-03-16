@@ -66,7 +66,8 @@ Remotes are created by themselves, and can be tested without an action.
             remote_uri_main: for url this is domain and subdomain, or ip, for commands, this is the first part before any whitespace. 
                                 Manual ignores this. Code has the class with namespace
             remote_uri_path: for url this is the path, for command this is what is left over from the field above
-        
+            xml_root_name : if xml then name of the root node
+            xml_doc_type : if xml then object containing doc information
 
 
 
