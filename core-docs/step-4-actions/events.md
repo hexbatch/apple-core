@@ -11,7 +11,7 @@ or event_success of false in a json value
 
 For any event, the attribute is the same, so all elements can listen to the same things
 
-if an attribute or element is out of bounds, or comes back in bounds, there is no event.
+if an attribute or element is out of bounds during when an event would otherwise fire, then there is no event fired.
 Either the thing exists or not.
 
 * element creation
@@ -77,14 +77,13 @@ The action can map into the fields of the remote_error event
 
 ## custom events
 
+inherits from the base attribute of custom_events
+
+two use cases:
+
+A user can create a custom event with action listeners for that. This helps automate.
 Sometimes extensions and layers need to fire off their own events.
-Here, we can send a custom event, anything that inherits from the custom even attribute.
-And the target can be one element per api call
 
-The element has to have the actions listening to that custom event, to act on it
-
-A custom event to can be sent to a search path, and any action in the search path can listen to it.
-If very large amounts of results, then truncated to first page. Other pages can be run after that.
 
 
 # Event messages can  have data
@@ -101,13 +100,12 @@ For example, in element creation , a remote server can decide, for any reason, t
 If the server has a message attribute or key or field in the response, then this will be added to the api response here when something does not succeed
 
 # DB structure
-each event is defined once
+each event definition is defined as an  attribute, the event attribute does not have bounds 
+This parent attribute is a standard attribute
 
-    Event
-        attribute_id
-        all_keys: json data array
-        required_keys: json data array
-    
-standard events are put into the events table
+in the attribute, the value is json and has two optional objects: all_keys and required_keys
+
+When an event is fired, its fired as a child of the attribute
+
 
 

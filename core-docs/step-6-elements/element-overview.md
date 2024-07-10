@@ -67,9 +67,13 @@ the list of active attributes for an element.
 The active attributes from the parents are chosen as the top most attribute for each name, ordered by parent inheritance list 
 The attributes can be toggled on or off
 
+## Personal attributes
+[personal-attribute-overview.md](personal-attribute-overview.md)
+Can organize elements with personal attributes which do not affect the target element, and can be seen only by the group of the user who owns this attribute 
+
 ## time to live
 
-is like a very hard set time boundary for the element, and in many ways is just that, it's factored into any time boundaries the element.
+is like a very hard set time boundary for the element, and in many ways is just that, it's factored into any time boundaries the element has.
 Once it is past the time to live, the element is not usable, because of the time boundary ending, and there is an api in the admin area to start gc
 
 # Creating elements
