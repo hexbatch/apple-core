@@ -43,38 +43,30 @@ Ownership of elements can take place in bulk via set operations.
 AN element may be in any number of sets at once.
 The element bounds does not change when the set bounds changes.
 
-AN element can have the date set so that after it, it's not used or usable, and eventually is recycled. This is determined by the types time to live option
-
 
       So an element:
           user: must be one user
           type:
-          expiration_at: (optional by type)  
           live attributes: (see attributes)
-          live parents:  
-          states: for remotes  
 
 
-## Live parents
-[live parents overview](live-parent-overview.md)
-
-Each inherited parent has a live state, and can be turned off and on
 
 ## Live attributes
 [Live attributes](live-attribute-overview.md)
 
 the list of active attributes for an element.
 The active attributes from the parents are chosen as the top most attribute for each name, ordered by parent inheritance list 
-The attributes can be toggled on or off
+The attributes can be toggled on or off.
+All the attributes of a child can be turned off or on at the same time, or toggled
 
-## Personal attributes
-[personal-attribute-overview.md](personal-attribute-overview.md)
-Can organize elements with personal attributes which do not affect the target element, and can be seen only by the group of the user who owns this attribute 
 
 ## time to live
 
-is like a very hard set time boundary for the element, and in many ways is just that, it's factored into any time boundaries the element has.
-Once it is past the time to live, the element is not usable, because of the time boundary ending, and there is an api in the admin area to start gc
+Elements can be mass deleted by a member of the type editing ( admins of parent types cannot delete a child type's element though).
+This is done via api call. But its only effective on the server that the api call is made.
+For ensuring the elements on other servers are deleted in a timely way, there is a standard attribute which holds an expiration date.
+Periodically, a server will scan for elements that has this attribute as active. If off then will not count.
+The attribute value is the date/time to destroy it.
 
 # Creating elements
 

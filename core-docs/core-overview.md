@@ -129,11 +129,11 @@ They contain the static attributes that come to life when an element is made
 # Elements
 * [elements.md](step-6-elements/element-overview.md)
 * [live attributes](step-6-elements/live-attribute-overview.md)
-* [parents](step-6-elements/live-parent-overview.md)
+
 
 Elements are made from element types, and have live values of those attributes. 
 
-Elements can have other attributes added to them individually, either that are not in the element type, or overwriting the element type's added on to them
+Elements cannot add or remove attributes once they are created.
 
 Elements have their aggregate values: bounds, affinities, allergies
 

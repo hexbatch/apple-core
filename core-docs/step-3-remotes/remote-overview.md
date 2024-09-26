@@ -1,15 +1,28 @@
 # Urls called to get attribute values
 
-Urls and program calls can be assigned to actions, to be called when getting responding to events,
-Events can also be when an attribute value is read or written to.
+Urls and program calls can be used . The result can write to the values of one or more attributes.
 
-Remotes are created by themselves, and can be tested without an action.
+
 
 
 
 
 # Definition of a remote
 
+    Remote is a set, with the main definition of the remote being the element that holds the set, 
+    and other elements holding multiple input and output rules, and results, being in the same set.
+
+    Each time the remote is run, a new set like the above is made.
+    The information and state is saved in these, but the information is run by the code, and the elements updated, without actions
+    The remote status is open to inspection using normal queries about sets and elements.
+
+    If a remote has to be edited, then make a new type that inherits the older one and rewrite the attributes that need changing.
+
+    The final remote answer is sent to one or more element's attributes. The attribute to write is pointed to by a remote attribute.
+    The elements that are written to are put inside the remote set as its run.
+   
+
+## Data outline, not in type or element or set format, this is from older
 
     remote:
         user: the creator of this remote
