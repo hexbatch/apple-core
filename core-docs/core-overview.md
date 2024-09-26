@@ -104,13 +104,13 @@ There is a list of attributes that have standard names
 ----------------------------------------------------
 
 # Remotes
-* [Remotes](step-3-remotes/remote-overview.md) are remote callbacks to be run and generate a value when an element attribute is read# Remotes
+* [Remotes](step-3-remotes/remote-overview.md) are remote callbacks to be run and are used for events 
+* [Stacks](step-3-remotes/stacks.md) are trees of remotes using sets
 
 
 
 # Actions
-* [actions](step-4-actions/action-overview.md)
-are attribute values that listen to events and allow things to happen, they can use remotes
+* [actions](step-4-actions/action-overview.md) are stacks which power the events
 
 * [events](step-4-actions/events.md) are listed here
 
