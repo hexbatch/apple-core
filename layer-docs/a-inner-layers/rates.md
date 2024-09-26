@@ -17,8 +17,11 @@ However, these elements can be traded between servers so the bearer can use it f
 Also, these sets can be used by proxies.
 
 Rate sets can be split by the user though, and the elements given to others. 
+Rates can be traded and parts of contracts. The special step is splitting them into the different sets to be in the market.
+Rate elements can be split into two or more new rates, destorying the original rate. 
+Users cannot adjust rate tokens. Permissions are set to allow admin flag for changing the rate elememts.
 
-it's just the elements that cannot be modified other than the ownership. Once an element is used up, it can be destroyed. There is really no way to recharge it
+Once a rate is used up, it can be destroyed. 
 
 A rate set can have multiple elements for the same api call.
 

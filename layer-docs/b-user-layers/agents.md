@@ -28,7 +28,7 @@ A user can be his own agent, to allow for advanced api call handling.
 
 # Api
 
-* create agent (requires auth agreement)
+* create agent (requires oauth agreement)
 * create agent (no agreement, private api)
 * list agents the logged-in user made, or categories of agents made by group members
 * turn on and off agents
@@ -36,3 +36,13 @@ A user can be his own agent, to allow for advanced api call handling.
 * end agent
 * show log of agent
 
+## Agents for registration and login
+
+Called user-agents
+
+An agent can create new users , then handle the login and logout and cancelling of accounts. 
+This elevated priv of creating new users is admin approved in this api per application.
+
+Once the user is created, the normal agent oauth applies, so the user can revoke this later, if they wish, or add other registration agents.
+
+The user agent will keep a non expiring token

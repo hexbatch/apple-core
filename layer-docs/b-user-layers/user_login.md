@@ -1,65 +1,19 @@
 # Logging In
 
-* This api handles logging in the user via api call
-* different ways of logging in provided by plugins
-* Social networks logging in handled in the internet layers for the login api
-* have an identity api call, and also shows this information after a login with the call return
-
+* This api handles logging in the user via api call done by the user-agent
+* The user agent decides on how the user logs in, and hands the user token to the user api
 
 ## Authentication
+The user-agent is registered as an agent, as long as the user does not cancel it, this user-agent can store that login token and hand it to the user api here.
 
-Once the user is logged in, we use the authentication provided by the laravel framework to authenticate each api call
-see https://laravel.com/docs/10.x/passport#issuing-access-elements
+### User api calls that are for logging in, redoing tokens, and removing users
 
-
-## Next Layer authentication with the inner core
-
-The outer layers uses Oauth, but they have to log in with the inner core via the job queues.
-
-The outer layers have non expiring bearer element for each user, and there is an admin api that allows these element to be regenerated.
-
-When another user, who is allowed via Oauth roles to act on behalf of a user, makes a call for this user, then when the roles are verified for the logged-in user,
-the outer layer will construct the job queue using the behalf-user's element.
-
-
-## First plugins
-
-Logins:
-
-* Make basic auth for api calls
-* Make plugin allowing a username and pw login via form
-* Make plugin that can log in with: email and password. (allow form and api)
-
-# API 
-
-## login choice
-    user_login.login_choice
-shows the list of login choices, reading from its plugins here
-each login choice is its own url inside the user_login_layer, created by that plugin
-output can be either html page, or a json response
-
-## show login form
-    user_login.show_fields
-the plugin handles this.
-shows the fields required, and some description for each, to login.
-Will give the url to call.
-The plugin will decide what to show, and the fields may vary a lot
-
-## do login
-    user_login.do_login
-
-the plugin handles this 
-* calls `user_services.read_layer_data`
-* plugin does verification
-* if login successful, returns `user_login.me`
-
-
-## show me
-    user_login.me
-* calls `user_services.read_core_data`
-* calls `user_services.read_layer_data`
-
-* Shows the user logged in
-* Plugin used to log in may have some extra information
-
+* check if username is valid and available
+* create new user with username and info provided, privides long term token
+* update user info provided
+* remove user
+* logs the user in, returning the user home shell, and uses a token for this user that expires later, (there is no log out)
+* gets a list of user-agents and their url and contact info
+* shows information about the user who uses this token kept by the user-agent
+* makes a new long term token, destorying the older one
 
