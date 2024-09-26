@@ -109,3 +109,14 @@ A linked set cannot see sets in its linker, unless it makes a link itself.
 An api operation can try to put any element it can into a set. The element can go inside if:
 * the user can read at least one attribute of the element
 * the set is visible to the element
+
+# Popping child sets
+
+Sets can be created and destroyed by rules 
+
+When an element is put into a child set, while, also in the parent set, 
+and when that child set is destroyed (popped), the elements merge attribute values based on the new popped_writing_method .
+
+Child sets cannot be popped if they have children.
+
+If an element has a set B created by a rule, while that element is in a set A, then B is a child of A 

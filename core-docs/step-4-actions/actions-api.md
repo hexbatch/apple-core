@@ -1,9 +1,8 @@
 # Actions
 
 
-Actions have an owner, version, name, target, lifecycle, recipient, charge, options,remote
-
-actions can be attached to multiple different attributes
+Actions are remotes tied together, the below api is for making custom actions, and is wrong.
+Actions and remotes need a think about the api here, because they are just existing types
 
 | Method | Path                     | Route name | TO Do | Description                        |
 |--------|--------------------------|------------|:------|------------------------------------|

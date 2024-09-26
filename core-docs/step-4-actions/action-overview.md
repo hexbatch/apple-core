@@ -40,3 +40,7 @@ Actions can be defined with constant data
 #  action  hooks
 
 A new stack can be set to run at any stage of an action
+
+# Custom actions
+
+A user can create a new stack. This is tied to a custom event he defines and can activate this action on one or more elements by calling this custom event. 
