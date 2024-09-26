@@ -36,16 +36,16 @@ the option for location_checks can be turned on or off at set definition time
 [relationships](relationship-overview.md)
 Element sets might be organized to have parents,siblings and links. There should be ways to navigate through this with the api.
 
-## Group sets
-[group sets](group-set-overview.md) allow groups to be used more in the api for many things
 
 
 ## Requirements
-[sets.requirements.md](requirements-overview.md)
+
 Requirements  specify what types are wanted, and amount of each of types.
 I can make a requirement of a couple of types, and say the first type should be 5 to 8 elements, and the second type must be at least 10 in amount
 
 Requirements are used in element set operations and anywhere there are some requirements to the types and amounts of elements.
+
+Requirements are types.
 
 
 ## Set Operations

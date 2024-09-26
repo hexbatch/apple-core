@@ -24,9 +24,6 @@ for servers, this is base.system.user.server
 When a remote has an element type, then it inherits from this and the user type
 base.system.remote
 
-## Group Set Type  (standard_type.group)
-base.system.group
 
-The group-set type has all the core identification and display attributes. When a group-set is created, a new type is made
 
 

@@ -44,3 +44,11 @@ Mutuals:
 ## Common flags for operations
 
 * human set operations can use the human filter, which when used will filter out any element or attribute used in a filter that is marked as not human
+
+## Operations events
+
+set operations can have an optional event here to decline the operation, if any one declines, then  the operation fails
+* allow_operation event
+* 
+# Requirements
+Requiremens are rules in attributes, to put a requirement in a set operation use a type, which has rules

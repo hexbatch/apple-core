@@ -45,15 +45,10 @@ Set operations (run on the element defining a set)
 * each set operation has its own event, to allow to disallow the operation
 
 
-Requirements have an element, events here can be done on it when it's used to filter
-* allow_element
+Each group operation has its own event attribute
+* allow_operation
 
 
-Group sets have events for membership
-* member_added
-* member_removed
-* admin_added
-* admin_removed
 
 
 server transfer and copying
