@@ -28,6 +28,9 @@ Set operations:
         change_owner => new owner id, A source, T pattern ,  G group
         copy => A source, B source ,  T pattern,  G group, D destination
         results => search ,  T Pattern ,  G group, D destination
+        reorder => A source, attribute , sort order, A source
+        pop|unshift => A source, B source
+        push|shift => A source, B source
         find_common_elements => A source, B source ,  T pattern,  G group, D destination 
         remove_common_elements => A source, B source ,  T pattern,  G group, D destination 
         create_context_set => A source, T pattern , creates new D destiation set
@@ -39,6 +42,8 @@ Common elements:
 Mutuals:
   starting with an element or set of elements, and a target set, find the mutual sets shared with these elements.
     can omit the element(s) and just provide a set, and will find all the mutual sets to it
+
+pop push use element pk order
 
 
 ## Common flags for operations
