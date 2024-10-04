@@ -33,28 +33,20 @@ Set parents are in the child as an element, just as the child is in the parent a
 * Removing either element from that set breaks the parent child relationship, and removes the parent child attributes
 * Relationships for sets are still also defined by special defined attributes, and removing those also removes the elements from each other's sets, unless api calls says not to
 
-When linking to a set, that set's element is in the linker's set, and follows the same rules as the parent child elements and special attributes
+When linking to a set, that element will be able to link if it can path the set, but the element is not part of that set
 
-## Relationships as set contents
-
-When a child or a link is added to the set, then the element of those sets are added to that set too.
-
-Actions running on these sets can refuse being added to the set, even though their actions are ok with the event of creating that relationship.
-Both sets of events have to be ok for the relationship to happen
-
-
-Parents are given as set info when their element is listed, but the parent is also an attribute on the child.
-
-When the relationship ends, the element of the set is taken out of the parent or linking set, but no events are called for this.
 
 ## parent child context
 
 a set can have some or all of its elements added over to a new set. In a normal set operation, which adds or removes elements, this does not make that context.
 But, if the create_context_set operation is made, then the new set made in that operation
-    is a context child of the older set, and actions can write to the same elements in either set. So if there is an element A in one set, actions can only write to the element A,
-but the element A in the parent or child can be written instead. They can have different values in their attributes after the context is created, and they are seperate values.
+    is a context child of the older set, where that element in the child can have a different value there.
+When or if the child set is destroyed, then the data in the child and parent are merged
 
-Otherwise, it's just like making a new set, except the children have to be destroyed before the parents are.
-And the elements in the nested child that is destroyed have their changes thrown out, 
-so the same elements in the parent set never have their values changed by operations in the child set, unless an action decides.
-The same elements can be in unlimited nesting.
+When a parent is destroyed, its children, leafs first, are destroyed in a way that the children are done first.
+Elements are updated here when the set is destroyed, unless the operation prevents this
+
+Its possible to destroy a child set without this data merge.
+
+Parent children can do unlimited nesting, but a child can never be a parent to the parents above it.
+

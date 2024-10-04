@@ -14,9 +14,8 @@ Set operations:
 * G is a group of users, and is always optional, who must own the elements to be used in the operation
 * S is an element representing bounds for the filter in the set operations. This can be used in any operations. The elements must be in these bounds.
   Can specify if using map, time or both (path not used). This is always optional
-* A is the source set
-* B is a second source set
-* D is the destination set
+* A is the source set, or element
+* D,E is the destination set
 
 
 
@@ -35,6 +34,8 @@ Set operations:
         remove_common_elements => A source, B source ,  T pattern,  G group, D destination 
         create_context_set => A source, T pattern , creates new D destiation set
         mutuals => A source, B source (optional),  T pattern,  G group,D destination
+        split => A source, T type,  D destination, E destination
+        join => A source, T type,  A source
 
 Common elements:
     get common elements from a group of sets, put them in a new set. Can do opposite too: remove common elements from groups
@@ -57,3 +58,9 @@ set operations can have an optional event here to decline the operation, if any 
 * 
 # Requirements
 Requiremens are rules in attributes, to put a requirement in a set operation use a type, which has rules
+
+# split and join
+* can join live type on an element, or set of elements, new attributes from type added to that element.
+  * If the target has attributes in common with the live (same or ancestors on the target), then these are covered up, and the new attribute used
+* can split off a live type, previously added as live, the target element same except those attributes removed that were given to by the live
+  * if this was covering up a descendent or same type from earlier, it is now exposed again 
