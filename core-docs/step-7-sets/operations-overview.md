@@ -20,7 +20,7 @@ Set operations:
 
 
 
-        combine/add: A source, B source (optional),  T pattern,  G group,D destination
+        combine/add: A source, B source (optional),  T pattern (must match this) or merge strategy (elements not in A but in b),  G group,D destination
         difference: A source, B source ,  T pattern,  G group, D destination
         remove: A source, T pattern,  G group, D destination / removes elements from a set puts it in another (optional) set
         edit_attribute => attribute name, attribute value , A source, T pattern , G group
