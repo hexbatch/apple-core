@@ -54,4 +54,12 @@ these can make certain sorts of actions now and in future possible, by one or mo
 * Groups can be nested, that is there can be parent and child groups, 
   * the parent can moderate the children but the children only have protected access to the parent content and actions
   * user management on this layer is a group, all other groups made on this server is a subgroup to this one
+
+# Remote caching and verification
+The core allows any remote to be called
+* This can be a proxy server for some or all remotes
+  * Moderator can decide if using proxy 
+* Can set up caching rules to remember calls based on time, user,ns,type,element,set
+* Allow moderator to review remote urls
+  * remotes that are blocked return failure code when used so no need to adjust anything in core 
  
